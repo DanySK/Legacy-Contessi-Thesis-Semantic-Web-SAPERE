@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>Semantic Web Technologies</title>
+		<author email="paolo.contessi@studio.unibo.it">Paolo Contessi</author>
+	</properties>
+
+	<body>
+
+		<section name="Semantic Web Technologies">
+
+			<p>
+				This section provides an overview of semantic web domain. In fact
+				it reports all relevant information regarding W3C specification and
+				main technologies which can be used to satisfy requirements.
+			</p>
+
+			<subsection name="W3C specification">
+				<table>
+					<tr>
+						<th width="15%">Resource</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="rdf-spec.html">RDF</a>
+						</td>
+						<td>
+							Resource Description Framework. Basic language which is
+							possible to state a set of information about some resources with.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="rdfs-spec.html">RDF Schema</a>
+						</td>
+						<td>
+							Language, based on RDF, which can model a relationships
+							between classes, and properties: extension, domain and range.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="owl-spec.html">OWL</a>
+						</td>
+						<td>
+							Web Ontology Language. A powerful language which extends
+							RDFSchema providing more expressive power. The full specification
+							is not decidable in general, that's why a number of profiles or
+							subsets, that give up some expressive power in exchange for more
+							attractive and feasible computational characteristics, has been
+							defined.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="sparql-spec.html">SPARQL</a>
+						</td>
+						<td>
+							SPARQL is the standard query language over a RDF Store, meant
+							to retrieve data according to specific requests without
+							modifications. In order to provide write features SPARQL Update has been defined.
+							Its syntax and principles recalls SQL.
+						</td>
+					</tr>
+				</table>
+				<p>
+					All information reported in this subsection has been taken from:
+				</p>
+				<ul>
+					<li>
+						<strong>W3C specification</strong>
+						(see
+						<a href="http://www.w3.org/TR/rdf-primer/">http://www.w3.org/TR/rdf-primer/</a>
+						and related documents)
+					</li>
+					<li>
+						<strong>Semantic Web Programming</strong>
+						- J. Hebler, M. Fisher, R. Blace, A. Perez-Lopez - Wiley
+						Publishing Inc.
+					</li>
+				</ul>
+				<p>
+					<strong>N.B.: A new SPARQL working draft has been submitted (v. 1.1). After February, 6 2012 this version may become the recommended one!</strong>
+				</p>
+			</subsection>
+
+			<subsection name="Technologies">
+				<table>
+					<tr>
+						<th width="15%">Resource</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="jena-framework.html">Jena</a>
+						</td>
+						<td>
+							Jena is a Java framework for building Semantic Web
+							applications, which provides a collection of tools and Java
+							libraries designed to help semantic web and linked-data apps
+							development.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="pellet-reasoner.html">Pellet</a>
+						</td>
+						<td>
+							Pellet is an OWL 2 reasoner, so provides reasoning services
+							for OWL ontologies for all ontology-based data management
+							applications.
+						</td>
+					</tr>
+				</table>
+			</subsection>
+		</section>
+	</body>
+
+</document>

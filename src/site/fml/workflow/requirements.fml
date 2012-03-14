@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  title="Requirements"
+  toplink="true">
+
+  <part id="mandatory-reqs">
+    <title>Mandatory requirements</title>
+
+    <faq id="req1-rdfstore">
+      <question>
+        Provide LSA serialization to a RDF Store
+      </question>
+      <answer>
+        <p>
+        In order to have a system which can exploit semantic web technologies, information need to be serialized in a format 
+        which those technologies are able to understand and manage: <em>RDF</em> (Resource Description Framework).
+        </p>
+        <p>
+       	A plenty of RDF Store are available on internet. A reasonable choice is <em>Jena</em> (see <a href="http://incubator.apache.org/jena/">http://incubator.apache.org/jena/</a>), which is an open-source 
+       	Java framework capable of storing, retrieving and quering information in RDF format. Moreover it provides an API which allows
+       	the developer to customize it, such as linking some external reasoner which fits our requirements.   
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="req2-ontologies">
+      <question>
+        Let SAPERE ecosystem deal with ontologies
+      </question>
+      <answer>
+        <p>
+        Ontologies represent a machine-readable way to associate semantic to RDF models and, if some kind of reasoner is used too,
+        let the application (in this case a SAPERE agent) deal with distributed information whose syntax is not guaranteed 
+        to be always the same.
+        </p>
+        <p>
+        This is the first step to provide <strong>openness</strong> and SAPERE middleware should provide the developer with 
+        the control over this aspects.
+        </p>
+      </answer>
+    </faq>
+    <faq id="req3-smatch">
+      <question>
+        Provide semantic matching capabilities for eco-law execution 
+      </question>
+      <answer>
+        <p>
+        The introduction of semantic matching (beside standard syntax matching) let eco-law to exploit semantic expressiveness,
+        offering all benefits seen above.
+        </p>
+      </answer>
+    </faq>
+    <faq id="req4-profiling">
+      <question>
+        Profile final product and compare to previous solutions
+      </question>
+      <answer>
+        <p>
+        A SAPERE node is meant to be run on any kind of devices, also with limited hardware (pervasive systems).
+        </p>
+        <p>
+        The introduction of the power of semantic should not increase execution time and hardware requirements too much. 
+        </p>
+      </answer>
+    </faq>
+  </part>
+
+  <part id="opt-requirements">
+
+    <title>Optional requirements</title>
+
+    <faq id="opt-req1-ecolaw2sparql">
+      <question>
+        Realize an eco-law parser which generates equivalent SPARQL/SPARUL statements
+      </question>
+      <answer>
+        <p>
+        Since a formal specification of translation from eco-law abstract language to SPARQL/SPARUL statements has been
+        presented, an interpreter should be realized in order to abstract from semantic web details and let the developer focus
+        on a simpler and domain tighter language, based on SAPERE model.
+        </p>
+      </answer>
+    </faq>
+
+  </part>
+
+</faqs>

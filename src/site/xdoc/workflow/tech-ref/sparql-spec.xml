@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>SPARQL specification</title>
+		<author email="paolo.contessi@studio.unibo.it">Paolo Contessi</author>
+	</properties>
+
+	<body>
+
+		<section name="SPARQL specification">
+			<p>
+				SPARQL is a recursive acronym for <em>SPARQL Protocol and RDF Query Language</em> and it is a W3C Recommendation; other alternatives exists (e.g. RDQL and SeRQL)
+				but they aren't recommended so they won't become a future standard.
+			</p>
+			<p>
+				The specification defines the concept of <em>endpoint</em> (or <em>processor</em>) as a service (generally a Web service)
+				that accept and processes SPARQL queries and returns results in different formats, depending on the query form, via HTTP, 
+				using the so called SPARQL protocol.
+			</p>
+			<p>
+				Despite the query language is the most visible and known part of the specification, even the protocol is an important part of it, otherwise clients and effector will
+				not be able to interact. Following the stream in the following we focus on the query language because it's more relevant for this project, in fact  
+				on <a href="jena-framework.html">Jena framework</a> it is possible to perform queries without knowing the protocol.
+			</p>
+			<p>
+				SPARQL language is very similar to SQL, in particular the SELECT statement (obviously adapted in order to handle RDF features). 
+				Unlike SQL, this language is read-only, in fact it does not provide any statement
+				that enables the requestor to modify RDF models; This goal is reached using another language: SPARQL Update (a.k.a. SPARUL); see the end of this document for more details.
+			</p>
+			<p>
+				The four foundational query forms available in SPARQL are:
+			</p>
+			<ul>
+				<li><strong>SELECT</strong>: like SQL SELECT it returns a table which reports all instances (in this case statements, individuals) which can be found in
+					places enumerated in the FORM clause and fit a set of conditions specified in the WHERE clause, called <em>graph pattern</em>.</li>
+				<li><strong>CONSTRUCT</strong>: it provides an easy and powerful way to map some RDF information in a different, but legal, form; the result can be
+					added to or merged with other RDF stores.</li>
+				<li><strong>ASK</strong>: it checks if a particular graph exists and returns the verdict as a boolean value</li>
+				<li><strong>DESCRIBE</strong>: it is an interesting tool that enables the interrogation of the RDF store without requiring a specific knowledge of 
+					repository's data structure; in fact, given a few information, the endpoint will decide what should be returned.</li>
+			</ul>
+			<subsection name="SELECT statement">
+				<p>
+					A simple SELECT query is structured as follows:
+				</p>
+				<ol>
+					<li><strong>Preamble</strong>: it reports all prefixes that will be used in the query. An example of prefix declaration is (similar to Turtle):
+					<source>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;</source>
+						In the same area a <strong><tt>BASE</tt></strong> can be defined: in this way each time a relative (no namespace) URIref is specified the 
+						BASE is prepend
+						<source>
+BASE &lt;http://www.w3.org/People/karl/karl-foaf.xrdf&gt;</source></li>
+					<li><strong><tt>SELECT</tt></strong> followed by the list of variables whose bindings should be returned, or a star ("*") if every 
+						binding should be reported. After the keyword is possible to specify some modifiers:
+						<ul>
+							<li><strong><tt>DISTINCT</tt></strong> in order to obtain a table without duplicates</li>
+							<li><strong><tt>REDUCED</tt></strong> in order to suggest (without imposing it) the application of <tt>DISTINCT</tt> to the endpoint</li>
+							<li><strong><tt>ORDER BY</tt></strong> in order to require a sorting process: it uses keywords <tt>ASC(?var)</tt> and <tt>DESC(?var)</tt></li>
+							<li><strong><tt>OFFSET</tt></strong> and <strong><tt>LIMIT</tt></strong> are useful when returning a large amount of data. Used with <tt>ORDER BY</tt>,
+							which allows a correct handling (it makes result well-ordered and repeatable), 
+							it instructs the endpoint to return at most <tt>LIMIT</tt> solutions, starting from the <tt>OFFSET</tt> one</li>
+						</ul>
+						</li>
+					<li><strong><tt>WHERE { }</tt></strong> which encloses a <em>graph pattern</em> (a set of partially specified RDF statements) 
+						which determines what kind triples the requestor is searching for
+						<ul>
+							<li>In order to have a valid clause, each line specified should match Turtle syntax</li>
+							<li>If a term is a variable its name should be prefixed by a question mark ("?")</li>
+							<li>In order to add flexibility in quering, as the real world requires, some keywords has been introduced:
+								<ul>
+									<li><strong><tt>FILTER</tt></strong>: enables to return a subset of pattern matching triples which verifies the specified boolean conditions
+									<source>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; 
+PREFIX dbprop: &lt;http://dbpedia.org/property/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+
+SELECT ?prop ?object 
+	WHERE { 
+		?person rdfs:label "George Washington"@en; 
+			dbprop:presidentStart ?start;
+			?prop ?object.
+		FILTER(xsd:integer(?start) + 4 &lt;= xsd:integer(?object)) 
+}</source></li>
+									<li><strong><tt>OPTIONAL</tt></strong>: allows to collect additional information without discarding any triple if it doesn't have them but leaving 
+										a blank field
+										<source>
+# Hopefully all of George Washington's Namesakes! 
+PREFIX ex: &lt;http://www.example.com/&gt; 
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX dbprop: &lt;http://dbpedia.org/property/&gt; 
+
+SELECT ?l1 ?l2 ?l3 ?l4 
+WHERE { 
+	?person rdfs:label "George Washington"@en.
+	?l1 dbprop:namedFor ?person. 
+	OPTIONAL { ?l2 dbprop:blankInfo ?person }
+	OPTIONAL { ?l3 ex:isNamedAfter ?person }
+	OPTIONAL { ?person ex:wasFamousAndGaveNameTo ?l4 }
+}</source>If more than a pattern is specified inside an <tt>OPTIONAL</tt> clause then all of them should match otherwise all mentioned fields are left blank.</li>
+									<li><strong><tt>UNION</tt></strong>: let the specification of the result as all the triples that matches at least one of 
+										the specified <em>sub-graph patterns</em>.
+										<source>
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt; 
+SELECT * 
+WHERE { 
+	{ ?unknown foaf:gender "male" } UNION { ?unknown foaf:gender “female” } . 
+	{ ?unknown foaf:interest &lt;http://www.iamhuman.com&gt; } UNION { ?unknown foaf:interest &lt;http://lovebeinghuman.org&gt; } 
+}</source></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ol>
+				<p>
+					An example of query can be the one reported below. 
+				</p>
+				<source>
+# George Washington's Namesakes 
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; PREFIX dbprop: &lt;http://dbpedia.org/property/&gt;
+
+SELECT ?location 
+WHERE { 
+	?person rdfs:label "George Washington"@en.
+	?location dbprop:namedFor ?person		# The period can be omitted in the last line 
+}</source>
+			<p>
+				Until now data has been retrieved by a so called <em>default graph</em>, that's the repository where the endpoint searches for results.
+				<strong>Generally a query is run against at least one default graph and/or one or more <em>named graphs</em></strong>, which can be specified by the requestor
+				via the <strong><tt>FROM</tt></strong> and <strong><tt>FROM NAMED</tt></strong> clauses.
+			</p>
+			<ul>
+				<li>The <strong><tt>FROM</tt></strong> clause is followed by an URIref enclosed in angle brackets.
+				<source>
+FROM &lt;http://www.w3.org/People/Berners-Lee/card&gt;</source>
+					Each specified repository is merged with the others and the default graph (if any) and the pattern is applied to the whole merged repository</li>
+				<li><strong><tt>FROM NAMED</tt></strong> allows the declaration of <em>subgraph queries</em>: while defining the WHERE clause it is possible to scope
+				each pattern applying it to a specific named graph or a at each graph without merging them. In the following example we want to obtain, for each repository,
+				the list of nickname and realname pairs of each known person.
+				<source>
+SELECT * 
+FROM NAMED &lt;http://www.koalie.net/foaf.rdf&gt; 
+FROM NAMED &lt;http://heddley.com/edd/foaf.rdf&gt; 
+FROM NAMED %lt;http://www.cs.umd.edu/~hendler/2003/foaf.rdf&gt;
+...
+
+WHERE {
+	GRAPH ?originGraph {
+		_:blank1 foaf:knows _:blank2.
+		_:blank2 rdf:type foaf:Person; 
+			foaf:nick ?nickname; 
+			foaf:name ?realname
+	}
+}</source>The blank node is used as a sort of <em>hidden variable</em> which can assume every value but cannot be reported in the result table.</li>
+			</ul>
+			</subsection>
+			<subsection name="CONSTRUCT statement">
+				<p>
+					This statement runs a SELECT and then produces a set of RDF statements using all values bound to the variables.
+				</p>
+				<p>
+					An example of its syntax is reported in the following.
+				</p>
+				<source>
+PREFIX myfriends: &lt;http://www.example.com/2008/myfriends/&gt; 
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+
+CONSTRUCT { 
+	?person rdf:type myfriends:Humanoid; 
+		myfriends:handle ?rname; 
+		myfriends:homepage ?hpage; 
+		myfriends:informalName ?nick; 
+		myfriends:email ?mbox. 
+	?mbox myfriends:isOwnedBy ?person. 
+	?hpage myfriends:isManagedBy ?person. 
+} 
+FROM NAMED ... # The following is like a SELECT query</source>
+				<p>
+					The first part defines the structure of RDF triples that will be created, in the second a SELECT query, which will provides values for the variable that
+					has been used, is stated (FROM, FROM NAMED and WHERE clauses).
+				</p>
+			</subsection>
+			<subsection name="ASK statement">
+				<p>
+					ASK returns boolean values of true or false in response to a query. Given a graph pattern, an endpoint can tell you whether or 
+					not the pattern exists in the underlying data store. An example is reported in the following.
+				</p>
+				<source>
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX dbprop: &lt;http://dbpedia.org/property/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+
+ASK
+WHERE { 
+	?person rdfs:label "George Washington"@en;
+		dbprop:presidentStart ?startDate;
+		dbprop:presidentEnd ?endDate.
+	FILTER(xsd:integer(?startDate) &lt; xsd:integer('1795') &amp;&amp; 
+		xsd:integer(?endDate) &gt; xsd:integer('1795')) 
+}
+</source>
+			</subsection>
+			<subsection name="DESCRIBE statement">
+				<p>
+					A statement of this type is useful in order to obtain a reasonable amount of information about a resource even if we don't know anything about it.
+				</p>
+				<p>
+					Given a resource like dbpedia:George_Washington we can request:
+				</p>
+				<source>
+PREFIX dbpedia: &lt;http://dbpedia.org/resource/&gt; 
+DESCRIBE dbpedia:George_Washington</source>
+				<p>
+					Each endpoint has its own policy to handle this type of requests, so the result is not standard and not every processor is capable to provide it.
+				</p>
+				<p>It is also possible to provide a <tt>WHERE</tt> clause and use a syntax like the following, but the former solution should be preferred.</p>
+				<source>
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; 
+PREFIX dbpedia: &lt;http://dbpedia.org/resource/&gt; 
+DESCRIBE * 
+WHERE { 
+	?person ?anyProperty dbpedia:George_Washington
+}</source>
+			</subsection>
+		</section>
+		<section name="SPARQL Update: How to modify data in a Graph Store">
+			<p>
+				SPARQL/Update is a language to express updates to a Graph store; a Graph Store is a repository of RDF graphs managed by a single service.
+				SPARQL/Update is intended to be a standard mechanism by which updates to a remote RDF Store can be described, communicated and stored. 
+				It is a companion language to SPARQL and is envisaged to be used in conjunction with the SPARQL query language.
+			</p>
+			<p> 
+				The reuse of the SPARQL syntax, in both style and detail, reduces the learning curve for developers and reduces implementation costs.
+			</p>
+			<p>
+				SPARQL/Update provides the following facilities:
+			</p>
+			<ul>
+				<li>Insert new triples to an RDF graph.</li>
+				<li>Delete triples from an RDF graph.</li>
+				<li>Perform a group of update operations as a single action.</li>
+				<li>Create a new RDF Graph to a Graph Store.</li>
+				<li>Delete an RDF graph from a Graph Store.</li>
+			</ul>
+			<p>
+				SPARQL Update is not intended to distribute and exchange modifications among different RDF stores.
+			</p>
+			<p>
+				In the following we report basic syntax for each statement (names written in <em>italics</em> are intended to be entities in SPARQL syntax).
+			</p>
+			<dl>
+				<dt>INSERT statement</dt>
+				<dd>
+					<source>
+{"PREFIX" <em>namespace-declaration</em>}
+
+"INSERT" ["DATA"] ["INTO" <em>uri</em>] "{" 
+	(<em>template</em> | <em>triples</em>) 
+"}" 
+[ "WHERE" "{" 
+	<em>pattern</em> 
+"}" ]</source>
+					<ul>
+						<li>If <tt>DATA</tt> is specified, then ground triples (no variables) must be provided; otherwise a pattern should be specified</li>
+						<li>This statement is a special case of a <tt>MODIFY</tt> statement</li>
+					</ul>
+				</dd>
+				<dt>DELETE statement</dt>
+				<dd>
+					<source>
+{"PREFIX" <em>namespace-declaration</em>}
+
+"DELETE" ["DATA"] ["INTO" <em>uri</em>] "{" 
+	<em>template</em> 
+"}" 
+[ "WHERE" "{" 
+	<em>pattern</em> 
+"}" ]</source>
+					<ul>
+						<li>If <tt>DATA</tt> is specified, then ground triples (no variables) must be provided; otherwise a pattern should be specified</li>
+						<li>This statement is a special case of a <tt>MODIFY</tt> statement</li>
+					</ul>
+				</dd>
+				<dt>MODIFY statement</dt>
+				<dd>
+					<source>
+# UPDATE outline syntax : general form:
+"MODIFY" [ &lt;uri&gt; ]
+"DELETE" "{" <em>template</em> "}"
+"INSERT" "{" <em>template</em> "}"
+[ "WHERE" "{" <em>pattern</em> "}" ]</source>
+					<ul>
+						<li>The <tt>WHERE</tt> clause is evaluated only once</li>
+						<li><tt>DELETE</tt> must occur before <tt>INSERT</tt></li>
+					</ul>
+				</dd>
+				<dt>LOAD statement</dt>
+				<dd>
+					<p>
+						This statement copies all triples from the <tt>remoteURI</tt> to the specified (or default) graph.
+					</p>
+					<source>
+"LOAD" &lt;remoteURI&gt; [ "INTO" &lt;uri&gt; ]</source>	
+				</dd>
+				<dt>CLEAR statement</dt>
+				<dd>
+					<p>
+						This statement removes all triples in the specified (or default) graph.	
+					</p>
+					<source>
+"CLEAR" [ "GRAPH" &lt;uri&gt; ]</source>
+				</dd>
+				<dt>CREATE GRAPH statement</dt>
+				<dd>
+					<p>
+						This statement creates a new graph; the provide URI will be its name.
+					</p>
+					<source>
+"CREATE" [ "SILENT" ] "GRAPH" &lt;uri&gt;</source>
+					<p>
+						The <tt>SILENT</tt> keyword is intended to suppress a warning raised, by the endpoint, if creating an already existing graph. 
+					</p>
+				</dd>
+				<dt>DROP GRAPH statement</dt>
+				<dd>
+					<p>
+						This operation removes the specified named graph from the Graph Store associated with the SPARQL/Update service endpoint. 
+						After successful completion of this operation, the named graph is no more available for further graph update operations.
+					</p>
+					<source>
+"DROP" [ "SILENT" ] "GRAPH" &lt;uri&gt;</source>
+					<p>
+						The <tt>SILENT</tt> keyword is intended to suppress a warning raised, by the endpoint, if removing a graph that does not exists. 
+					</p>
+				</dd>
+			</dl>
+  			<p>
+  				Reported information has been taken from <a href="http://www.w3.org/Submission/SPARQL-Update/">http://www.w3.org/Submission/SPARQL-Update/</a> 
+  				(for more detail follow the previous link). On January, 5 2012 a new <em>working draft</em>, which introduces relevant modifications,
+  				 has been published (<a href="http://www.w3.org/TR/sparql11-update/">http://www.w3.org/TR/sparql11-update/</a>).
+  			</p>
+		</section>
+	</body>
+
+</document>

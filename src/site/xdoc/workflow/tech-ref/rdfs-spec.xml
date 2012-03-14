@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>RDF Schema specification</title>
+		<author email="paolo.contessi@studio.unibo.it">Paolo Contessi</author>
+	</properties>
+
+	<body>
+
+		<section name="RDF Schema specification">
+			<p>
+				RDF provides a way to express simple statements about resources, using named properties and values. 
+				However, RDF user communities also need the ability to define the vocabularies (terms) they intend to use 
+				in those statements, specifically, to indicate that they are describing specific kinds or classes 
+				of resources, and will use specific properties in describing those resources. 
+			</p>
+			<p>
+				That's what <strong>RDF Schema</strong> was born for. RDF Schema provides the facilities needed to 
+				define those classes and properties. In other words, <em>RDF Schema provides a type system for RDF</em>. 
+				The RDF Schema type system is similar in some respects to the type systems of object-oriented 
+				programming languages such as Java. 
+			</p>
+			<p>
+				The RDF Schema facilities are themselves provided in the form of an RDF vocabulary; 
+				that is, as a specialized set of predefined RDF resources with their own special meanings. 
+				<em>The resources in the RDF Schema vocabulary have URIrefs with the prefix http://www.w3.org/2000/01/rdf-schema# 
+				(conventionally associated with the namespace rdfs)</em>. Vocabulary descriptions (schemas) written in the 
+				RDF Schema language are legal RDF graphs.
+			</p>
+			<p>
+				The following subsections will illustrate RDF Schema's basic resources and properties.
+			</p>
+			
+			<subsection name="Describing a taxonomy">
+				<p>
+					In RDF Schema is possible to define a taxonomy of concepts exploiting two simple URIrefs:
+				</p>
+				<ul>
+					<li><tt><strong>rdfs:Class</strong></tt> which represents a generic <em>type</em> or <em>category</em></li>
+					<li><tt><strong>rdfs:subClassOf</strong></tt> which models that the subject class extends or specialize
+						the object one</li>
+				</ul>
+				<p>
+					A new class can be defined asserting that a resource has <tt>rdf:type</tt> the resource <tt>rdfs:Class</tt>;
+					the subject resource will be the new class. For example, in Turtle notation, we can say that (namespaces
+					declaration has been omitted, but are the same as in <a href="rdf-spec.htlm">RDF specification</a>):  
+				</p>
+				<source>
+ex:MotorVehicle rdf:type rdfs:Class .</source>
+				<p>
+					Obviously this new class can be the object of a <tt>rdf:type</tt> assertion. 
+					In order to specify that a class is subclass of another one (like in "A truck is a motor vehicle") 
+					we can state: 
+				</p>
+				<source>
+ex:Truck rdf:type        rdfs:Class .
+ex:Truck rdfs:subClassOf ex:MotorVehicle .</source>
+				<p>
+					As said while explaining RDF/XML notation, once a vocabulary has been defined, it can be used to 
+					exploit typed node annotation.
+				</p>
+			</subsection>
+			<subsection name="Defining properties">
+				<p>
+					After defining classes, another useful feature is defining which properties characterize those classes.
+					This can be done through the following URIfreferences:
+				</p>
+				<ul>
+					<li><tt><strong>rdf:Property</strong></tt> the object of an rdf:type statement 
+						used to define a new property (like in class definition)</li>
+					<li><tt><strong>rdfs:domain</strong></tt> a predicate used to specify 
+						the classes (object) which the property (subject) applies to</li>
+					<li><tt><strong>rdfs:range</strong></tt> a predicate used to specify the range of 
+						possible property's values, in particular what kind of classes 
+						(one, more than one, a subset, and so on)</li>
+				</ul>
+				<p>
+					This statement should be interpreted only if present: if no range has been specified nothing should be inferred.
+					Another consideration is that in this way the definition of properties is not part of class definition,
+					like in OOP; this choice has some consequences (in agreement with RDF's open world assumption):
+				</p>
+				<ul>
+					<li>A <em>defined property can be applied to every classes that 
+						wanted to have it</em> just by adding a <tt>rdfs:domain</tt>, in particular to
+						classes that has not defined yet;</li>
+					<li>Once defined <em>a property has a global scope</em>, 
+						so it has a unique (set of) range(s) and a unique (set of) domain(s)
+						<ul>
+							<li>Is not possible to have locally-different ranges or domains for a property</li>
+							<li>If a new range (or domain) is defined somewhere, then it become globally valid</li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					It's also possible to state the <tt>rdfs:subPropertyOf</tt> relation, like for classes. 
+					A complete example is reported in the following:
+				</p>
+				<source>
+ex:Person   rdf:type           rdfs:Class .
+
+ex:age      rdf:type           rdf:Property .
+ex:age      rdfs:range         xsd:integer .
+ex:age      rdfs:domain        ex:Person .
+
+ex:legalAge rdf:type           rdf:Property .
+ex:legalAge rdfs:subPropertyOf ex:age .</source>
+			<p>
+				N.B.: looking at this example a person could think about how to specify the range of <tt>ex:legalAge</tt>
+				property, which is an <tt>xsd:integer</tt> whose value is greater than 18 (or 21 if we're in the USA).
+				It is simply not possible in RDF Schema; in order to have that expressive power 
+				<a href="owl-spec.html">OWL</a> is needed.
+			</p>
+			</subsection>
+		</section>
+	</body>
+
+</document>

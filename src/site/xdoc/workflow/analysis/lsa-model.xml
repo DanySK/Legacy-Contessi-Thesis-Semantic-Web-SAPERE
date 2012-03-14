@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>LSA model</title>
+		<author email="paolo.contessi@studio.unibo.it">Paolo Contessi</author>
+	</properties>
+
+	<body>
+
+		<section name="LSA model">
+			<p>
+				In first place this model should not be so different from the
+				actual one, in fact the idea behind this extension to the semantic
+				domain, is letting to the user the decision of what type of space
+				adopt (through OSGi bundles selection) and, consequently, what
+				capabilities are needed. That's why the model that will result at
+				the end of this section should be transparent to semantic, while
+				providing all the information needed by a semantic platform to work.
+			</p>
+			<subsection name="Supporting Semantic Properties">
+				<p>
+					A property, in the semantic domain, is identified by an URI which
+					states a relation between a subject (another URI) and an object (an
+					URI or Literal).
+				</p>
+				<p>
+					Moving to SAPERE model, an LSA should be serialized in such a way
+					that:
+				</p>
+				<ul>
+					<li>The LSA-id becomes a subject</li>
+					<li>Each LSA's property becomes a property whose subject is the
+						LSA-id and whose object is its value
+					</li>
+				</ul>
+				<p>
+					In order to promote semantic framework some requirements pop up:
+				</p>
+				<ol>
+					<li>The LSA-id should be globally unique (in the ecosystem)</li>
+					<li>Each property should be associated to a specific semantic in
+						order to be globally understood
+					</li>
+				</ol>
+				<p>
+					<em>Requirement #2</em> provides the foundation on which semantic
+					reasoning
+					can be built. In fact, with reference to the following
+					extract, when
+					an agent asserts that "
+					<tt>lsa1432.age := (20)</tt>
+					"
+					the definition of what is the concept of
+					<tt>age</tt>
+					is mandatory, otherwise another agent could misunderstand the
+					information.
+				</p>
+				<source>
+lsa1432{
+	#location := ("room131"), #time := (1011233120),
+	type := (person), age := (20), interests := (music,sport,travels)
+}</source>
+				<p>
+					Another subtle, but relevant, aspect is that <tt>age</tt> is not an URI, 
+					so it cannot be serialized in an RDF Store. 
+				</p>
+				<p>
+					In conclusion <strong>a mapping between logical and physical property name should be stated</strong> in order to provide a correct serialization.
+					This way each time a SAPERE property is called the corresponding semantic is attached by prefixing its URI. If no mapping is proposed then a fake
+					URI should preponed in order to ensure syntax validation but avoiding any semantic inference; this property will have a meaning only in local scope and
+					any other agent will interpret it as pure syntax.
+				</p>
+				<p>
+					About <em>Requirement #1</em> an idea could be definining an URI which identifies each node. Inside the node each LSA-id will be defined by 
+					<tt>&lt;node-uri&gt;#lsa&lt;num&gt;</tt>, where the number is a local counter, incremented each time a new LSA is created.
+				</p>
+			</subsection>
+		</section>
+	</body>
+
+</document>

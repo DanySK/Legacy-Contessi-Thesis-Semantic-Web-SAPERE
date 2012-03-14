@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1331747336278
+Build-Jdk: 1.6.0_29
+Built-By: conteit
+Bundle-Category: sapere-project
+Bundle-Description: This module provides basic interfaces of the project
+Bundle-DocURL: http://apice.unibo.it/
+Bundle-ManifestVersion: 2
+Bundle-Name: Semantic Web SAPERE - API
+Bundle-SymbolicName: it.apice.sapere.semanticwebsapere-api
+Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Studi
+  di Bologna
+Bundle-Version: 0.0.1
+Created-By: Apache Maven Bundle Plugin
+Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.nodes,it.
+ apice.sapere.api.lsas.values,it.apice.sapere.api.lsas";version="0.0.1",
+ it.apice.sapere.api.lsas;uses:="it.apice.sapere.api.nodes,it.apice.sape
+ re.api.lsas.values";version="0.0.1",it.apice.sapere.api.lsas.values;ver
+ sion="0.0.1",it.apice.sapere.api.nodes;uses:="it.apice.sapere.api.space
+ ";version="0.0.1",it.apice.sapere.api.space;uses:="it.apice.sapere.api.
+ nodes,it.apice.sapere.api.lsas";version="0.0.1"
+Tool: Bnd-1.50.0

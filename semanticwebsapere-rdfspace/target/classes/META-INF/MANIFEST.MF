@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1331747336828
+Build-Jdk: 1.6.0_29
+Built-By: conteit
+Bundle-Category: sapere-project
+Bundle-Description: This module provides an implementation of LSA-space 
+ as RDF store
+Bundle-DocURL: http://apice.unibo.it/
+Bundle-ManifestVersion: 2
+Bundle-Name: Semantic Web SAPERE - RDF Space
+Bundle-SymbolicName: semanticwebsapere-rdfspace
+Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Studi
+  di Bologna
+Bundle-Version: 0.0.1
+Created-By: Apache Maven Bundle Plugin
+Export-Package: it.apice.sapere.space;uses:="com.hp.hpl.jena.rdf.model";
+ version="0.0.1"
+Import-Package: com.hp.hpl.jena.rdf.model
+Tool: Bnd-1.50.0

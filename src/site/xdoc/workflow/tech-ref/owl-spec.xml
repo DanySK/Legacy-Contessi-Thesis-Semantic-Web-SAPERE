@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>OWL specification</title>
+		<author email="paolo.contessi@studio.unibo.it">Paolo Contessi</author>
+	</properties>
+
+	<body>
+
+		<section name="OWL specification">
+			<p>
+				<strong>OWL (Web Ontology Language)</strong> is a tool for specifying semantics and defining knowledge models. 
+				It can be said that OWL represents 
+				an extension of <a href="rdfs-spec.html">RDF Schema</a>, which provides <em>more expressive
+				power</em>, but, in order to provide that power, it's computational complexity raises and in <em>some
+				cases</em> becomes a <em>not-decidable problem</em>.
+			</p>
+			<p>
+				With the aim of limiting this problem from the whole specification, called <em>OWL-Full</em>, some subsets and
+				profiles has been defined, providing limited versions of the language, otherwise useless.
+				A diffuse example is <strong>OWL-DL</strong>, named after Description Logic because it provides 
+				many of the capabilities of description logic, an important subset of first-order logic; other examples are
+				OWL-EL, which is designed to perform consistency checks and instance-class mapping in polinomial-time, and 
+				OWL-QL, which is designed to enable the satisfiability of conjunctive queries in logspace with respect to 
+				the number of assertions in the queried knowledge base.
+			</p>
+			<p>
+				<em>OWL is merely an ontology language; it is not an application</em>. As such, OWL alone doesn't really do anything, 
+				but combined with a reasoner like <a href="pellet-reasoner.html">Pellet</a>, represent the 
+				added value against other approaches for exchanging information. A <strong>reasoning engine</strong> (or reasoner) is 
+				a system that <em>infers new information based on the contents of a knowledge base</em>. This can be accomplished using rules 
+				and a rule engine, triggers on a database or RDF store, decision trees, tableau algorithms, or even programmatically 
+				using hard-coded business logic. 
+				Many Semantic Web frameworks perform inference using rules-based reasoning engines. <em>These engines combine the assertions 
+				contained in a knowledge base with a set of logical rules in order to derive assertions or perform actions</em>. 
+				Rules comprise two parts, modeling an if-then statement. The first part is the condition for the rule, 
+				and the second part is conclusion of the rule. <em>Rules can be used to express much of the semantics of OWL and as a tool 
+				for users to express arbitrary relationships that cannot otherwise be modeled in OWL</em>. 
+			</p>
+			<p>
+				An ontology purpose is letting a concept be machine-understandable. Generally these concepts are spread in the World Wide Web,
+				so the knowledge base (expressed in RDF) is considered distributed. In the same way RDF supports distribution, OWL should support it too;
+				this is called <strong>distributed knowledge</strong>. To provide a foundation on which to make valid inferences in this model, 
+				we must make two important assumptions: 
+			</p>
+			<ul>
+				<li><strong>Open World Assumption</strong>: not knowing whether a statement is explicitly true does not imply that the statement is false; 
+					in this context new information must always be additive. It can be contradictory, but it cannot remove previously asserted information.</li>
+				<li><strong>No Unique Names Assumption</strong>: it is unreasonable to assume that everyone is using the same URI to identify a specific resource; 
+					<em>unless explicitly stated otherwise, you cannot assume that resources that are identified by different URIs are different</em>.</li>
+			</ul>
+			<p>
+				An ontology, expressed in OWL-Full version 2.0, is composed by:
+			</p>
+			<ul>
+				<li>Ontology header</li>
+				<li>Classes and individuals</li>
+				<li>Properties: object and datatype</li>
+				<li>Annotations</li>
+				<li>Datatypes: standard or restricted</li>
+			</ul>
+			
+			<subsection name="Ontology header">
+				<p>
+					An ontology header is <strong>a resource that represents the ontology itself</strong>, containing comments, labels, versioning and a list of
+					the imported ontologies, which is very important because instructs the reasoner to refer to them to in order to comprehend the expressed concepts and
+					relationships.
+				</p>
+			</subsection>
+			<subsection name="Classes and individuals">
+				<p>
+					An OWL class is a special kind of resource that represents a set of resources that share common characteristics or are similar in some way. 
+					A resource that is a member of a class is called an individual and represents an instance of that class.
+				</p>
+				<p>
+					Like in <a href="rdfs-spec.html">RDF Schema</a> two classes might be one the subclass of the other; but, when not explicitly stated, a class is 
+					automatically subclass of <strong><tt>owl:Thing</tt></strong> (similarly to OOP with Object). In OWL <tt>owl:Nothing</tt> is also defined: it is
+					the subclass of every class, so specialized that it has literally <em>no individuals</em> (its an empty class).
+				</p>
+				<p>
+					Another relevant concept is <strong>class equivalence</strong>, in fact in general two classes, even if has the same local name, may express different ideas.
+					Two classes are equivalent only if explicitly stated in the ontology, otherwise they aren't; extension does not imply equivalence. 
+				</p>
+				<p>
+					The individuals of a class may be uniquely identified by a subset of its properties (other than by URIreference); these properties determine a <em>key</em>,
+					which can be enumerated in a special property called <strong><tt>owl:hasKey</tt></strong>.
+				</p>
+			</subsection>
+			<subsection name="Properties">
+				<p>
+					In OWL properties can be of two types, based on the resources used:
+				</p>
+				<ul>
+					<li><strong><tt>owl:DatatypeProperty</tt></strong>: these properties as a literal object</li>
+					<li><strong><tt>owl:ObjectProperty</tt></strong>: these properties state a relation between two individuals</li>
+				</ul>
+				<p>
+					The predicates <tt>rdf:domain</tt> and <tt>rdf:range</tt> globally define the class membership for property subject and object.
+					This implies that a class which does not match with membership definition cannot use that properties, avoiding unwanted and unpredicted inferences;  
+					if ex:name is a property for ex:Mammal and we use the same property for ex:Institution we automatically assume that an institution is a mammal, which is false. 
+				</p>
+				<p>
+					As with classes, properties can be arranged into taxonomies using the property <tt>rdfs:subPropertyOf</tt>. <strong>Be careful that asserting that <tt>property2</tt>
+					is sub-property of <tt>property1</tt> implies that two resources in relationship by <tt>property2</tt> are also related by <tt>property1</tt>.</strong>
+					Similar to <tt>owl:Thing</tt> and <tt>owl:Nothing</tt>, <tt>owl:top(Object|Data)Property</tt> and <tt>owl:bottom(Object|Data)Property</tt> represents the most general
+					an most specific properties of the taxonomy. 
+				</p>
+				<p>
+					Other features of properties, descending from mathematics, are:
+				</p>
+				<ul>
+					<li><strong>Inverse Properties</strong>: a property state the inverse relationship stated by another property (e.g. if A owns B then B isOwnedy A)</li>
+					<li><strong>Disjoint Properties</strong>: if two resources are related by propX then they cannot be related by propY (e.g. if A hasFather B then not(A hasMother B))</li>
+					<li><strong>Property Chains</strong>: using a couple or more properties two define a new one (e.g. if A hasFather B and B hasBrother C then A hasUncle C)</li>
+					<li><strong>Symmetric, Reflexive, Transitive Properties</strong>: like in mathematic relationships</li>
+					<li><strong>(Inverse) Functional Property</strong>: each subject (object) is related to only one object (subject)</li>
+				</ul>
+				
+				<h4>Negative Property Assertion</h4>
+				<p>
+					While in general a property is stating in order to assert that something is true, it is also possible to define the opposite (that if stated then something is false)
+					using the type <tt>owl:NegativeProperty</tt>. The following example models that <em>is not true that ex:Daisy ex:hasOwner ex:Amber</em>. 
+				</p>
+				<source>
+@prefix ex: &lt;http://example.org/&gt; . 
+... 
+
+[] rdf:type owl:NegativePropertyAssertion; 
+	owl:sourceIndividual ex:Daisy; 	
+	owl:assertionProperty ex:hasOwner; 
+	owl:targetIndividual ex:Amber.</source>
+			</subsection>
+			<subsection name="Annotations">
+				<p>
+					Annotations are statements that describe resources using annotation properties. Annotation properties are semantics-free properties.
+				</p>
+				<p>
+					Common examples of annotations are: <tt>rdf:label</tt>, <tt>rdf:comment</tt> and <tt>rdf:versionInfo</tt>. 
+				</p>
+			</subsection>
+			<subsection name="Datatypes">
+				<p>
+					Datatypes represent ranges of data values that are identified using URIs. 
+					OWL allows you to use a number of predefined datatypes, most of which are defined in the XML Schema Definition (xsd) namespace.
+				</p>
+				<p>
+					Otherwise OWL allows the definition of custom datatypes, in two ways:
+				</p>
+				<ul>
+					<li>by <strong>Datatypes Restriction</strong>, which consists in defining a new <tt>rdfs:Datatype</tt> and specifying:
+					<ul>
+						<li><strong><tt>owl:onDatatype</tt></strong>: a primitive datatype</li>
+						<li><strong><tt>owl:withRestrictions</tt></strong>: a list of facets (constraints) on data value, length, char pattern and so on</li>
+					</ul>
+					</li>
+					<li>by <strong>Definition in terms of other Datatypes</strong>, in particular by intersection or union of a bunch of datatypes (primitive or custom)</li>
+				</ul>
+			</subsection>
+			<subsection name="Property Restriction">
+				<p>
+					A property restriction describes the class of individuals that meet the specified property-based conditions. The restriction is declared 
+					using the construct <tt>owl:Restriction</tt>, and the property to which the restriction refers is identified using the property <tt>owl:onProperty</tt>.
+				</p>
+				<p>
+					Restrictions are applied to a particular class by stating that the class is either a subclass (<tt>rdfs:subClassOf</tt>) or the equivalent class 
+					(<tt>owl:equivalentClass</tt>) of the restriction. In the <em>former</em> case <em>all members of the class must meet the conditions</em> specified by the 
+					restriction, in the <em>latter</em> case class members must meet the conditions of the restriction and <em>any individual who meets the conditions</em> 
+					of the restriction <em>is implicitly a member of the class</em> (restriction specifies conditions that are not only necessary but also sufficient).
+				</p>
+				<p>
+					<strong>N.B.: The OWL specification requires that restriction cannot be named and must be defined using anonymous resources.</strong> 
+					This is a reasonable condition because restrictions are relevant only to the context of the class in which they are defined and never need to be referred to.
+				</p>
+				<p>
+					There are three types of Property Restrictions: Value restriction, Cardinality restriction and Qualified cardinality description, which is a combination of
+					the former two.
+				</p>
+				
+				<h4>Value restriction</h4>
+				<p>
+					There are three types of value restriction, whose difference is relative to the number of occurrences of the restricted property that must fit the constraint. 
+				</p>
+				<ul>
+					<li><strong><tt>owl:allValuesFrom</tt></strong> states that each occurrence of the property (if any) must have the object value in the specified range</li>
+					<li><strong><tt>owl:someValuesFrom</tt></strong> states that at least one occurrence of the property must have the object value in the specified range</li>
+					<li><strong><tt>owl:hasValue</tt></strong> states that an occurrence of the property must have the specified object value</li>
+				</ul>
+				<source>
+@prefix ex: &lt;http://www.example.org/&gt;
+
+# owl:allValuesFrom example
+# This restriction defines a class, ex:CallableEntities, whose name have a range of xsd:string
+<strong>ex:CallableEnties rdfs:subClassOf [
+	rdf:type owl:Restriction;
+	rdf:onProperty ex:name;
+	owl:allValuesFrom xsd:string
+	].</strong>
+
+# owl:someValuesFrom example
+# This restriction defines a class whose members extends a serializeable class
+<strong>ex:SerializeableClass rdfs:subClassOf [
+	rdf:type owl:Restriction;
+	rdf:onProperty ex:extends;
+	owl:someValuesFrom ex:SerializeableClass;
+	].</strong>
+
+# owl:hasValue example
+# This restriction define a class of mammals whose owner is ex:Ryan
+<strong>ex:Mammal rdf:type owl:Class. 
+ex:hasOwner rdf:type owl:ObjectProperty.
+
+ex:PetsOfRyan rdf:type owl:Class; 
+	rdfs:subClassOf ex:Mammal; 
+	rdfs:subClassOf[
+	rdf:type owl:Restriction;
+	owl:onProperty ex:hasOwner; 
+	owl:hasValue ex:Ryan
+	].</strong></source>
+
+				<p>
+					There's also another type of value restriction, <strong><tt>owl:SelfRestriction</tt></strong>, 
+					which states that value of the property is the subject itself. <tt>owl:SelfRestriction</tt> is an alternative to <tt>owl:Restriction</tt>.
+				</p>
+				<source>
+# owl:SelfRestriction example.
+<strong>ex:cleans rdf:type owl:ObjectProperty.</strong>
+
+# Self cleaners are all individuals who clean themselves (range is implicit) 
+<strong>ex:SelfCleaner rdf:type owl:Class; 
+	owl:equivalentClass [ 
+		rdf:type owl:SelfRestriction;
+		owl:onProperty ex:cleans
+		].</strong></source>
+				
+				<h4>Cardinality restriction</h4>
+				<p>
+					This type of restriction provides a way to specify how many occurrences of the property are required. 
+					This can be done using the following predicates (obviously N >= 0):
+				</p>
+				<ul>
+					<li><strong><tt>owl:minCardinality</tt></strong>, #occs &gt;= N</li>
+					<li><strong><tt>owl:maxCardinality</tt></strong>, #occs &lt;= N</li>
+					<li><strong><tt>owl:cardinality</tt></strong>, #occs == N</li>
+				</ul>
+				<source>
+@prefix ex: &lt;http://example.org/&gt;.
+ 
+ex:Person rdfs:subClassOf [ 
+	rdf:type owl:Restriction; 
+	owl:onProperty ex:name; 
+	<strong>owl:cardinality 1</strong>
+	].
+</source>
+				
+				<h4>Qualified Cardinality restriction</h4>
+				<p>
+					It represents a way to define both cardinality and type. It is useful to model a system composed by some components
+					and you need to assert that there are N components of type X, M components of type Y and so on.
+				</p>
+				<source>
+# This examples models that a person has 2 biological parents:
+# a male and a female.
+@prefix ex: &lt;http://example.org/&gt;. 
+
+ex:Person rdf:type owl:Class; 
+ex:Male rdf:type owl:Class;
+	rdfs:subClassOf ex:Person.
+ex:Female rdf:type owl:Class;
+	rdfs:subClassOf ex:Person. 
+
+ex:hasBiologicalParent rdf:type owl:ObjectProperty.
+
+ex:Person rdfs:subClassOf [ 
+		rdf:type owl:Restriction; 
+		owl:cardinality 2; 
+		owl:onProperty ex:hasBiologicalParent 
+		]; 
+	rdfs:subClassOf [
+		rdf:type owl:Restriction;
+		<strong>owl:qualifiedCardinality 1;</strong>
+		owl:onProperty ex:hasBiologicalParent; 
+		owl:onClass ex:Male 
+		];
+	rdfs:subClassOf [ 
+		rdf:type owl:Restriction; 
+		<strong>owl:qualifiedCardinality 1;</strong>
+		owl:onProperty ex:hasBiologicalParent; 
+		owl:onClass ex:Female 
+		].</source>
+			</subsection>
+		</section>
+		<section name="Advanced Class Description">
+		<p>
+			OWL provides a few more methods for describing classes.
+		</p>
+		<subsection name="Enumerating Class Membership">
+			<p>
+				In some cases you may be interested in the enumeration of the only individuals that can be members of a defined class. 
+				This can be done with the predicate <tt>owl:oneOf</tt>.
+			</p>
+			<source>
+@prefix ex: &lt;http://example.org/&gt;. 
+
+ex:Daisy rdf:type ex:Canine. 
+
+ex:Cubby rdf:type ex:Canine.
+ex:Amber rdf:type ex:Canine. 
+ex:London rdf:type ex:Canine.
+
+# Each friend of Daisy's is explicitly included in this class 
+ex:FriendsOfDaisy rdf:type owl:Class; 
+	<strong>owl:oneOf ( 
+		ex:Cubby 
+		ex:Amber 
+		ex:London 
+	)</strong>.</source>
+		
+		</subsection>
+		<subsection name="Set operators">
+			<p>
+				In order to define new classes it could be useful to specify that a class is the union, intersection or complementary of two or more classes.
+				That's why <tt>owl:unionOf</tt>, <tt>owl:intersectionOf</tt>, <tt>owl:complementaryOf</tt> exists. An example of each one is reported in the following.  
+			</p>
+			<source>
+@prefix ex: %lt;http://example.org/%gt;. 
+
+# Example 1: intersection of 
+ex:PetsOfRyan rdf:type owl:Class; 
+	owl:intersectionOf (
+		ex:Mammal 
+		[ 
+			rdf:type owl:Restriction; 
+			owl:onProperty ex:hasOwner;
+			owl:hasValue ex:Ryan 
+		] 
+	). 
+
+# Example 2: union of 
+ex:isFriendsWith rdf:type owl:ObjectProperty.
+
+ex:FriendsOfRyan rdf:type ex:Class; 
+	owl:unionOf ( 
+		[ 
+			rdf:type owl:Class; 
+			owl:oneOf ( 
+				ex:Daisy 
+			) 
+		] 
+		ex:FriendsOfDaisy 
+		[ 
+			rdf:type owl:Restriction;
+			owl:onProperty ex:isFriendsWith; 
+			owl:hasValue ex:Ryan 
+		] 
+	). 
+	
+#Example 3: complement of 
+ex:EnemiesOfRyan rdf:type owl:Class; 
+	owl:complementOf ex:FriendsOfRyan.</source>
+		</subsection>
+		<subsection name="Disjointed Class">
+			<p>
+				Similarly to properties case it is possible to define that 
+				<strong>if an individual is instance of a class it cannot be also instance of another class, called disjointed</strong>.
+			</p>
+			<source>
+@prefix ex: &lt;http://example.org/&gt;. 
+
+# canine and human are disjoint classes 
+<strong>ex:Canine owl:disjointWith ex:Human.</strong></source>
+		<p>
+			In order to reduce time spent in defining disjunctions (which is considerable augmenting model size), some shorthands has been defined:
+		</p>
+		<ul>
+			<li><strong><tt>owl:AllDisjointedClasses</tt></strong> is an anonymous resource whose <tt>owl:members</tt> 
+			property refers to a list of classes, all subclasses of the same class, that will be considered disjointed.</li>
+			<li><strong><tt>owl:disjointUnionOf</tt></strong> let directly define a class as the union of a list of disjointed classes
+				<ul>
+					<li><em>The drawback to the use of a disjoint union to define a superclass is that any future attempt to 
+					incorporate a new subclass will require you to redefine the disjoint union to include the new subclass.</em></li>
+				</ul>
+			</li>
+		</ul> 
+		<p>
+			Let's present some examples:
+		</p>
+		<source>
+@prefix ex: &lt;http://example.org/&gt;. 
+
+# --> Example 1
+# canine and human are disjoint classes 
+ex:Canine owl:disjointWith ex:Human. 
+
+# --> Example 2
+ex:Animal rdf:type owl:Class.
+ 
+ex:Bird rdf:type owl:Class; 
+	rdfs:subClassOf ex:Animal. 
+ex:Lizard rdf:type owl:Class; 
+	rdfs:subClassOf ex:Animal. 
+ex:Feline rdf:type owl:Class; 
+	rdfs:subClassOf ex:Animal. 
+
+# Each of the classes is pair-wise disjoint 
+_: rdf:type owl:AllDisjointClasses; 
+	owl:members ( ex:Bird ex:Lizard ex:Feline ex:Canine ).
+
+# --> Example 3
+# Each of the classes is pair-wise disjoint 
+# and Animal is the union of those classes 
+ex:Animal owl:disjointUnionOf ( 
+	ex:Bird 
+	ex:Lizard 
+	ex:Feline 
+	ex:Canine 
+). </source>
+		</subsection>
+		</section>
+		<section name="Equivalence in OWL">
+			<p>
+				At this point the last thing to be told is how OWL states the equivalence between two entities.
+			</p>
+			<p>
+				There are several ways of defining an equivalence and each one of them involves different type of entites:
+			</p>
+			<dl>
+				<dt>Equivalence among Individuals</dt>
+				<dd><br />
+					<strong>"Equal":</strong>
+					<ul>
+						<li>Useful to suggest that two URIreferences, even if different, are relative to the same individual</li>
+						<li>Stated with <strong><tt>owl:sameAs</tt></strong> predicate
+						<source>
+&lt;mailto:rblace@bbn.com&gt; owl:sameAs &lt;http://example.org/people#rblace&gt;.</source>
+						</li>
+					</ul><br />
+					<strong>"Not-equal":</strong>
+					<ul>
+						<li>Useful to suggest that two individuals have nothing in common</li>
+						<li>Stated with <strong><tt>owl:differentFrom</tt></strong> predicate</li>
+						<li>
+							In order to reduce the number of statements <strong><tt>owl:AllDifferent</tt></strong> can be used (like in disjoint classes).
+							<source>
+[] rdf:type owl:AllDifferent; 
+	owl:distinctMembers ( ex:Daisy ex:Cubby ex:Amber ex:London ).</source>
+							<p>This property is very important, because the combination of the open world assumption and the no unique names assumption results in an
+							environment where there are very few situations in which you can assume that resources identified by different URIs are different.</p>
+						</li>
+					</ul><br />
+				</dd>
+				<dt>Equivalence among Classes</dt>
+				<dd>
+					<ul>
+						<li>Causes two classes to be considered as a single resource</li>
+						<li>Stated with <strong><tt>owl:equivalentClass</tt></strong> predicate</li>
+					</ul>
+				</dd>
+				<dt>Equivalence among Properties</dt>
+				<dd>
+					<ul>
+						<li>When you assert that two properties are equivalent, the property descriptions are combined. Every statement that uses one of the properties
+							as a predicate implicitly exists with the other equivalent property as a predicate as well</li>
+						<li>Stated with <strong><tt>owl:equivalentProperty</tt></strong> predicate</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</body>
+
+</document>
