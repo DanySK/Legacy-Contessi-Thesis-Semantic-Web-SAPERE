@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>semanticwebsapere-rdfspace</artifactId>
 	<packaging>bundle</packaging>
-	<name>Semantic Web SAPERE - RDF Space</name>
+	<name>LSA-space (RDF)</name>
 	<description>This module provides an implementation of LSA-space as RDF store</description>
 
 	<dependencies>
@@ -35,7 +35,8 @@
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Export-Package>it.apice.sapere.space</Export-Package>
-						<!-- <Private-Package>it.apice.sapere.space.internal</Private-Package> -->
+						<!-- <Private-Package>com.hp.*</Private-Package>-->
+						<Import-Package>!*</Import-Package>
 						<!-- <Bundle-Activator>it.apicActivator</Bundle-Activator> -->
 					</instructions>
 				</configuration>
