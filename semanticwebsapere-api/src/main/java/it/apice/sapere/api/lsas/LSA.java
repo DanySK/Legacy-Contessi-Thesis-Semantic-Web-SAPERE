@@ -54,4 +54,22 @@ public interface LSA extends Cloneable {
 	 * @return True if the agent owns the LSA, false otherwise
 	 */
 	boolean isOwnedBy(SAPEREAgent agent);
+
+	/**
+	 * <p>
+	 * Checks if this is a synthetic LSA.
+	 * </p>
+	 * 
+	 * @return True if is synthetic, false otherwise
+	 */
+	boolean isSynthetic();
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 *
+	 * @return	The clone entity
+	 */
+	LSA clone();
 }

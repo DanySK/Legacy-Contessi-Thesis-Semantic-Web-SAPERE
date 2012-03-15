@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * <p>
- * This class test Property Value for a specific type: Boolean.
+ * This class test Property Value for a specific type: Date.
  * </p>
  * 
  * @author Paolo Contessi

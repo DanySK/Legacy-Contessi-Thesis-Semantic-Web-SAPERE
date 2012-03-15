@@ -105,4 +105,13 @@ public interface SemanticDescription extends Cloneable {
 	 * @return True if extends, false otherwise
 	 */
 	boolean isExtensionOf(SemanticDescription other);
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 *
+	 * @return	The clone entity
+	 */
+	SemanticDescription clone();
 }

@@ -1,6 +1,5 @@
 package it.apice.sapere.api.nodes;
 
-
 import java.net.URI;
 
 /**

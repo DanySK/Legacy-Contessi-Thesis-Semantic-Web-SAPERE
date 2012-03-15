@@ -1,5 +1,8 @@
 package it.apice.sapere.api.nodes;
 
+import it.apice.sapere.api.SAPEREFactory;
+import it.apice.sapere.api.space.LSAspace;
+
 import java.net.URI;
 
 /**
@@ -23,10 +26,19 @@ public interface SAPERENode {
 
 	/**
 	 * <p>
-	 * To be completed!
+	 * Retrieves a reference to the (local) LSA-space.
 	 * </p>
 	 * 
 	 * @return Reference to LSA-space
 	 */
-	Object getLocalLSASpace();
+	LSAspace getLocalLSASpace();
+
+	/**
+	 * <p>
+	 * Retrieves a reference to the model factory.
+	 * </p>
+	 * 
+	 * @return Reference to a SAPEREFactory
+	 */
+	SAPEREFactory getModelFactory();
 }

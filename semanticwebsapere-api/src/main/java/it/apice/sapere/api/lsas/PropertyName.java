@@ -29,4 +29,13 @@ public interface PropertyName extends Cloneable {
 	 * @return The URI which identifies the property
 	 */
 	URI getValue();
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 *
+	 * @return	The clone entity
+	 */
+	PropertyName clone();
 }

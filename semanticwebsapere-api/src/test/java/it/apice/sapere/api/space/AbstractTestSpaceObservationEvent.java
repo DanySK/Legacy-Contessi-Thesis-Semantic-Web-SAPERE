@@ -10,6 +10,7 @@ import it.apice.sapere.api.AbstractModelTest;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestSpaceObservationEvent extends AbstractModelTest {
+public abstract class AbstractTestSpaceObservationEvent 
+		extends AbstractModelTest {
 
 }

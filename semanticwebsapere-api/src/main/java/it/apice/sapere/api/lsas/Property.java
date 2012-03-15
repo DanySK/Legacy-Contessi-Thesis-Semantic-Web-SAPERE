@@ -89,4 +89,13 @@ public interface Property extends Cloneable {
 	 * @return True if associated, false otherwise
 	 */
 	boolean hasValue(PropertyValue<?> value);
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 *
+	 * @return	The clone entity
+	 */
+	Property clone();
 }

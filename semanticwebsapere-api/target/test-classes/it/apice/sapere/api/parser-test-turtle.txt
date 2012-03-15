@@ -1,0 +1,21 @@
+# Namespaces declarations
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sapere: <http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#> .
+@prefix ex: <http://www.example.org#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# lsa1432
+sapere:lsa1432 rdf:type sapere:LSA ;
+	sapere:type sapere:person ;
+	sapere:location loc:room131 ;
+	sapere:time "2011-05-31T12:45:39"^^xsd:dateTime ;
+	foaf:age "20"^^xsd:integer ;
+	ex:interest "music" ;
+	ex:interest "sport" ;
+	ex:interest "travelling" .
+
+# lsa2543
+sapere:lsa2543 rdf:type sapere:LSA ;
+	sapere:type sapere:person ;
+	foaf:age "25"^^xsd:integer ;
+	sapere:time "2010-05-31T18:05:00"^^xsd:dateTime .

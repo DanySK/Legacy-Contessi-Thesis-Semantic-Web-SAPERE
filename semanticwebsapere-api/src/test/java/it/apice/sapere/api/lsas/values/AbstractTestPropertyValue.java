@@ -1,6 +1,7 @@
 package it.apice.sapere.api.lsas.values;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import it.apice.sapere.api.AbstractModelTest;
@@ -21,7 +22,8 @@ import org.junit.Test;
  * @param <ValueType>
  *            The type that will be contained in the tested PropertyValue
  */
-abstract class AbstractTestPropertyValue<ValueType> extends AbstractModelTest {
+public abstract class AbstractTestPropertyValue<ValueType> extends
+		AbstractModelTest {
 
 	/**
 	 * <p>
@@ -41,8 +43,8 @@ abstract class AbstractTestPropertyValue<ValueType> extends AbstractModelTest {
 		for (int idx = 0; idx < vals.size(); idx++) {
 			final PropertyValue<ValueType> pval = pvalues.get(idx);
 			final ValueType val = vals.get(idx);
-			assertEquals("Stored value should be equal to provided one", pval
-					.getValue().equals(val));
+			assertEquals("Stored value should be equal to provided one",
+					pval.getValue(), val);
 			if (pval.hasLocale()) {
 				assertNotNull("Should have a language code "
 						+ "(according to hasLocale()), why not?",
@@ -56,6 +58,15 @@ abstract class AbstractTestPropertyValue<ValueType> extends AbstractModelTest {
 					|| val instanceof Long || val instanceof Float 
 					|| val instanceof Double));
 			assertTrue(pval.isURI() == (val instanceof URI));
+
+			final PropertyValue<ValueType> clonedVal = pval.clone();
+			assertEquals(pval, clonedVal);
+			assertTrue(pval.hashCode() == clonedVal.hashCode());
+
+			final PropertyValue<ValueType> other = pvalues.get((idx + 1)
+					% vals.size());
+			assertFalse(pval.equals(other));
+			assertFalse(pval.hashCode() == other.hashCode());
 		}
 	}
 
@@ -72,10 +83,10 @@ abstract class AbstractTestPropertyValue<ValueType> extends AbstractModelTest {
 	 *            Values from which Property Values should be generated
 	 * @return A list of Property Values
 	 */
-	protected List<PropertyValue<ValueType>> createPropertyValues(
+	private List<PropertyValue<ValueType>> createPropertyValues(
 			final List<ValueType> vals) {
-		final List<PropertyValue<ValueType>> res = 
-				new ArrayList<PropertyValue<ValueType>>(vals.size());
+		final List<PropertyValue<ValueType>> res = new ArrayList<PropertyValue<ValueType>>(
+				vals.size());
 
 		for (ValueType val : vals) {
 			res.add(createPropertyValue(val));

@@ -92,4 +92,13 @@ public interface PropertyValue<Type> extends Cloneable {
 	 * @return The value
 	 */
 	Type getValue();
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 * 
+	 * @return The cloned entity
+	 */
+	PropertyValue<Type> clone();
 }

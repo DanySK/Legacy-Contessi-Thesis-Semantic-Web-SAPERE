@@ -29,4 +29,13 @@ public interface LSAid extends Cloneable {
 	 * @return The id as an URI
 	 */
 	URI getId();
+
+	/**
+	 * <p>
+	 * Clones this entity.
+	 * </p>
+	 *
+	 * @return	The clone entity
+	 */
+	LSAid clone();
 }
