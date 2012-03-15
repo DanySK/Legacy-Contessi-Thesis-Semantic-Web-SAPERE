@@ -1,6 +1,6 @@
 package it.apice.sapere.api.space;
 
-import it.apice.sapere.api.lsas.LSAId;
+import it.apice.sapere.api.lsas.LSAid;
 
 
 /**
@@ -20,7 +20,7 @@ public interface SpaceObservationEvent {
 	 * 
 	 * @return The LSA-id of the LSA which has been involved in this event
 	 */
-	LSAId getLSAId();
+	LSAid getLSAId();
 
 	/**
 	 * <p>

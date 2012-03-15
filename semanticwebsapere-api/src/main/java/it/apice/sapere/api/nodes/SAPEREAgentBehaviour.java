@@ -1,6 +1,6 @@
 package it.apice.sapere.api.nodes;
 
-import it.apice.sapere.api.space.LSASpace;
+import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.SpaceObservationEvent;
 
 /**
@@ -25,7 +25,7 @@ public interface SAPEREAgentBehaviour {
 	 * @param actualNode
 	 *            The node on which the agent is actually located
 	 */
-	void behave(LSASpace lsaSpace, SAPERENode actualNode);
+	void behave(LSAspace lsaSpace, SAPERENode actualNode);
 
 	/**
 	 * <p>

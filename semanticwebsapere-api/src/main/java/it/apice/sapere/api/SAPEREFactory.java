@@ -1,8 +1,7 @@
 package it.apice.sapere.api;
 
-
 import it.apice.sapere.api.lsas.LSA;
-import it.apice.sapere.api.lsas.LSAId;
+import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.BooleanValue;
@@ -10,7 +9,7 @@ import it.apice.sapere.api.lsas.values.DateTimeValue;
 import it.apice.sapere.api.lsas.values.DoubleValue;
 import it.apice.sapere.api.lsas.values.FloatValue;
 import it.apice.sapere.api.lsas.values.IntegerValue;
-import it.apice.sapere.api.lsas.values.LSAIdValue;
+import it.apice.sapere.api.lsas.values.LSAidValue;
 import it.apice.sapere.api.lsas.values.LiteralValue;
 import it.apice.sapere.api.lsas.values.LongValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
@@ -20,7 +19,6 @@ import it.apice.sapere.api.nodes.SAPEREAgentBehaviour;
 
 import java.net.URI;
 import java.util.Date;
-
 
 /**
  * <p>
@@ -111,7 +109,7 @@ public interface SAPEREFactory {
 	 *            A valid LSA-id
 	 * @return A fresh property value
 	 */
-	LSAIdValue createPropertyValue(LSAId value);
+	LSAidValue createPropertyValue(LSAid value);
 
 	/**
 	 * <p>
@@ -217,11 +215,9 @@ public interface SAPEREFactory {
 	 * Creates a new LSAId.
 	 * </p>
 	 * 
-	 * @param value
-	 *            The URI which is the LSA-id
 	 * @return A fresh LSA-id
 	 */
-	LSAId createLSAId(URI value);
+	LSAid createLSAId();
 
 	/* === LSA'S PROPERTY NAMES === */
 

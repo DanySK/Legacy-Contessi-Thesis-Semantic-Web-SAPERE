@@ -32,7 +32,7 @@ public interface PropertyValue<Type> extends Cloneable {
 
 	/**
 	 * <p>
-	 * Checks if the value is a Literal (not an URI).
+	 * Checks if the value is a Literal (a String).
 	 * </p>
 	 * 
 	 * @return True if is a Literal, false otherwise
@@ -56,15 +56,6 @@ public interface PropertyValue<Type> extends Cloneable {
 	 * @return True if is a Boolean, false otherwise
 	 */
 	boolean isBoolean();
-
-	/**
-	 * <p>
-	 * Checks if the value is a String.
-	 * </p>
-	 * 
-	 * @return True if is a String, false otherwise
-	 */
-	boolean isString();
 
 	/**
 	 * <p>

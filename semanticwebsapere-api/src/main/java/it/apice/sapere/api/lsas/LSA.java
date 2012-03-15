@@ -33,7 +33,7 @@ public interface LSA extends Cloneable {
 	 * 
 	 * @return The LSA identifier
 	 */
-	LSAId getLSAId();
+	LSAid getLSAId();
 
 	/**
 	 * <p>
