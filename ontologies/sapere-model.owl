@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY sapere-model "http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#"
+     xml:base="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:sapere-model="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl">
+        <rdfs:label rdf:datatype="&xsd;string">sapere</rdfs:label>
+        <dc:description rdf:datatype="&xsd;string">Draft of an Ontology for SAPERE model</dc:description>
+        <owl:versionIRI rdf:resource="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="&sapere-model;hasProperty">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Registeres that an LSA has a specific LSAProperty</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;hasProperty"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSAProperty"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isBond -->
+
+    <owl:ObjectProperty rdf:about="&sapere-model;isBond">
+        <rdfs:comment rdf:datatype="&xsd;string">Register a bond between a source LSA and a target one</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isBond"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isBond"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isOwned -->
+
+    <owl:ObjectProperty rdf:about="&sapere-model;isOwned">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Registers that an LSA has been created (so is owned by) a SAPERE agent</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isOwned"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isOwned"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;Agent"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#location -->
+
+    <owl:ObjectProperty rdf:about="&sapere-model;location">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Registers where the agent is actually located</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;location"/>
+                <owl:onClass rdf:resource="&sapere-model;LSA"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;location"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;Node"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#owns -->
+
+    <owl:ObjectProperty rdf:about="&sapere-model;owns">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Inverse property of isOwnedBy</rdfs:comment>
+        <owl:inverseOf rdf:resource="&sapere-model;isOwned"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;owns"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;Agent"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;owns"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#time -->
+
+    <owl:DatatypeProperty rdf:about="&sapere-model;time">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Registers the creation time of an LSA, accordingly to the local time of the node on which the LSA has been created</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topObjectProperty"/>
+                <owl:onClass rdf:resource="&sapere-model;LSA"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&owl;topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#Agent -->
+
+    <owl:Class rdf:about="&sapere-model;Agent">
+        <rdfs:comment rdf:datatype="&xsd;string">A SAPERE agent, on a computational node, inside the SAPERE ecosystem</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA -->
+
+    <owl:Class rdf:about="&sapere-model;LSA">
+        <dc:description rdf:datatype="&xsd;string">Live Semantic Annotation</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSAProperty -->
+
+    <owl:Class rdf:about="&sapere-model;LSAProperty">
+        <rdfs:comment rdf:datatype="&xsd;string">A property relative to an LSA</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSASyntheticProperty -->
+
+    <owl:Class rdf:about="&sapere-model;LSASyntheticProperty">
+        <rdfs:subClassOf rdf:resource="&sapere-model;LSAProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A Synthetic Property is an LSA Property managed entirely by the middleware</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#Node -->
+
+    <owl:Class rdf:about="&sapere-model;Node">
+        <rdfs:comment rdf:datatype="&xsd;string">A computational node in the SAPERE ecosystem</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa1234 -->
+
+    <owl:NamedIndividual rdf:about="&sapere-model;lsa1234">
+        <rdf:type rdf:resource="&sapere-model;LSA"/>
+        <time rdf:datatype="&xsd;dateTime">2011-05-31T12:45:39</time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#nodeA -->
+
+    <owl:NamedIndividual rdf:about="&sapere-model;nodeA">
+        <rdf:type rdf:resource="&sapere-model;Node"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.0.0.1451) http://owlapi.sourceforge.net -->
+
