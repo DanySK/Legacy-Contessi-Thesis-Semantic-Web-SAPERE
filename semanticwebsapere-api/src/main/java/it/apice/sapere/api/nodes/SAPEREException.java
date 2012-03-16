@@ -11,9 +11,7 @@ package it.apice.sapere.api.nodes;
  */
 public class SAPEREException extends Exception {
 
-	/**
-	 * Serialization ID.
-	 */
+	/** Serialization ID. */
 	private static final long serialVersionUID = -6516948830118838759L;
 
 	/**
@@ -22,7 +20,7 @@ public class SAPEREException extends Exception {
 	 * </p>
 	 */
 	public SAPEREException() {
-		super("", null);
+		this("", null);
 	}
 
 	/**

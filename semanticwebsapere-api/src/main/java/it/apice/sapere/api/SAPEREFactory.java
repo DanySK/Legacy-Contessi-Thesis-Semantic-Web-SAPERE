@@ -53,38 +53,6 @@ public interface SAPEREFactory {
 	 */
 	LSA createLSA(SAPEREAgent owner);
 
-	/**
-	 * <p>
-	 * Creates a new synthetic LSA instance.
-	 * </p>
-	 * <p>
-	 * WARNING: In order to avoid id clashes the provided LSA-id must be unique.
-	 * The method <code>createLSA()</code> should be preferred!
-	 * </p>
-	 * 
-	 * @param lsaId
-	 *            The LSA-id to be used
-	 * @return A fresh, custom, LSA
-	 */
-	LSA createCustomLSA(LSAid lsaId);
-
-	/**
-	 * <p>
-	 * Creates a new LSA instance.
-	 * </p>
-	 * <p>
-	 * WARNING: In order to avoid id clashes the provided LSA-id must be unique.
-	 * The method <code>createLSA()</code> should be preferred!
-	 * </p>
-	 * 
-	 * @param lsaId
-	 *            The LSA-id to be used
-	 * @param owner
-	 *            The SAPEREAgents which creates, and will own, the created LSA.
-	 * @return A fresh, custom, LSA
-	 */
-	LSA createCustomLSA(LSAid lsaId, SAPEREAgent owner);
-
 	/* === LSA'S PROPERTIES === */
 
 	/**
@@ -117,7 +85,8 @@ public interface SAPEREFactory {
 	 *            Initial property values
 	 * @return A fresh property
 	 */
-	Property createProperty(URI name, PropertyValue<?>... initialValues);
+	Property createProperty(URI name,
+			PropertyValue<?>... initialValues);
 
 	/* === LSA'S PROPERTY VALUES === */
 
@@ -172,7 +141,8 @@ public interface SAPEREFactory {
 	 *            understand the provided String
 	 * @return A fresh property value
 	 */
-	LiteralValue createPropertyValue(String value, String languageCode);
+	LiteralValue createPropertyValue(String value,
+			String languageCode);
 
 	/**
 	 * <p>
@@ -251,21 +221,6 @@ public interface SAPEREFactory {
 	 */
 	LSAid createLSAid();
 
-	/**
-	 * <p>
-	 * Creates a new LSA-id, with a custom URI.
-	 * </p>
-	 * <p>
-	 * WARNING: In order to avoid id clashes the provided URI must be unique.
-	 * The method <code>createLSAid()</code> should be preferred!
-	 * </p>
-	 * 
-	 * @param id
-	 *            A unique id
-	 * @return A fresh, custom, LSA-id
-	 */
-	LSAid createCustomLSAid(URI id);
-
 	/* === LSA'S PROPERTY NAMES === */
 
 	/**
@@ -293,4 +248,5 @@ public interface SAPEREFactory {
 	 * @return A fresh SAPERE Agent
 	 */
 	SAPEREAgent createAgent(URI id, SAPEREAgentBehaviour behav);
+
 }

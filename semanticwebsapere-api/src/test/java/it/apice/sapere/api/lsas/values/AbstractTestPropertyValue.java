@@ -85,8 +85,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 	 */
 	private List<PropertyValue<ValueType>> createPropertyValues(
 			final List<ValueType> vals) {
-		final List<PropertyValue<ValueType>> res = new ArrayList<PropertyValue<ValueType>>(
-				vals.size());
+		final List<PropertyValue<ValueType>> res = 
+				new ArrayList<PropertyValue<ValueType>>(vals.size());
 
 		for (ValueType val : vals) {
 			res.add(createPropertyValue(val));

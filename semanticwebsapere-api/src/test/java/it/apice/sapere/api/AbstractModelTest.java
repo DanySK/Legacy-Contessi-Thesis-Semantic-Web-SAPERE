@@ -23,4 +23,12 @@ public abstract class AbstractModelTest {
 	 */
 	protected abstract SAPEREFactory createFactory();
 
+	/**
+	 * <p>
+	 * Creates a new Extended SAPEREFactory.
+	 * </p>
+	 * 
+	 * @return A reference to an ExtSAPEREFactory
+	 */
+	protected abstract ExtSAPEREFactory createExtFactory();
 }

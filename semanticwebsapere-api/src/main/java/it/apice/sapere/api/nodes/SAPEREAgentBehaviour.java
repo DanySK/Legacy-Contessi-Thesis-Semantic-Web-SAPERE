@@ -1,7 +1,6 @@
 package it.apice.sapere.api.nodes;
 
 import it.apice.sapere.api.space.LSAspace;
-import it.apice.sapere.api.space.SpaceObservationEvent;
 
 /**
  * <p>
@@ -24,28 +23,10 @@ public interface SAPEREAgentBehaviour {
 	 *            of the system
 	 * @param actualNode
 	 *            The node on which the agent is actually located
+	 * @throws SAPEREAgentTerminateException
+	 *             Terminates the Agent unfairly
 	 */
-	void behave(LSAspace lsaSpace, SAPERENode actualNode);
+	void behave(LSAspace lsaSpace, SAPERENode actualNode)
+			throws SAPEREAgentTerminateException;
 
-	/**
-	 * <p>
-	 * Specifies how the agent will handle events relative to required
-	 * observations.
-	 * </p>
-	 * 
-	 * @param ev
-	 *            The observation event that occurred
-	 */
-	void handle(SpaceObservationEvent ev);
-
-	/**
-	 * <p>
-	 * Specifies how to handle error situations.
-	 * </p>
-	 * 
-	 * @param cause
-	 *            The exception that caused the situation
-	 * @return The action to be executed
-	 */
-	OnErrorAction error(Throwable cause);
 }

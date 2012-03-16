@@ -4,11 +4,10 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.values.PropertyValue;
-import it.apice.sapere.api.nodes.OnErrorAction;
+import it.apice.sapere.api.nodes.SAPEREAgent;
 import it.apice.sapere.api.nodes.SAPEREAgentBehaviour;
 import it.apice.sapere.api.nodes.SAPERENode;
 import it.apice.sapere.api.space.LSAspace;
-import it.apice.sapere.api.space.SpaceObservationEvent;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -26,7 +25,7 @@ import org.junit.Test;
  */
 public abstract class AbstractTestSAPEREFactory extends AbstractModelTest {
 
-	/** Reference to SAPERE Factory. */
+	/** Reference to an SAPERE Factory. */
 	private final transient SAPEREFactory factory = createFactory();
 
 	/**
@@ -35,29 +34,8 @@ public abstract class AbstractTestSAPEREFactory extends AbstractModelTest {
 	@Test
 	public final void testUnwanted() {
 		try {
-			factory.createLSA(null);
+			factory.createLSA((SAPEREAgent) null);
 			fail("Unwanted LSA(null)");
-		} catch (Exception ex) {
-			assertTrue(true);
-		}
-
-		try {
-			factory.createCustomLSA(null);
-			fail("Unwanted CustomLSA(null)");
-		} catch (Exception ex) {
-			assertTrue(true);
-		}
-
-		try {
-			factory.createCustomLSA(null, null);
-			fail("Unwanted CustomLSA(null, null)");
-		} catch (Exception ex) {
-			assertTrue(true);
-		}
-
-		try {
-			factory.createCustomLSAid(null);
-			fail("Unwanted (1)");
 		} catch (Exception ex) {
 			assertTrue(true);
 		}
@@ -212,16 +190,6 @@ public abstract class AbstractTestSAPEREFactory extends AbstractModelTest {
 	 */
 	private SAPEREAgentBehaviour createMockBehav() {
 		return new SAPEREAgentBehaviour() {
-
-			@Override
-			public void handle(final SpaceObservationEvent ev) {
-
-			}
-
-			@Override
-			public OnErrorAction error(final Throwable cause) {
-				return OnErrorAction.TERMINATE;
-			}
 
 			@Override
 			public void behave(final LSAspace lsaSpace,

@@ -78,16 +78,19 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	private static final transient int LSA2543_AGE = 25;
 
 	/** Reference to a SAPEREFactory. */
-	private final transient SAPEREFactory factory = createFactory();
+	private final transient ExtSAPEREFactory factory = createExtFactory();
 
 	/**
 	 * <p>
 	 * Should create a new instance of the Parser.
 	 * </p>
 	 * 
+	 * @param fact
+	 *            A reference to the ExtSAPEREFactory that the parser will use
+	 *            to generate model's entities
 	 * @return An instance of the SAPEREParser
 	 */
-	protected abstract SAPEREParser createParser(SAPEREFactory factory);
+	protected abstract SAPEREParser createParser(ExtSAPEREFactory fact);
 
 	/**
 	 * <p>
@@ -135,8 +138,8 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA2543() throws Exception {
-		final LSA lsa = factory.createCustomLSA(factory
-				.createCustomLSAid(sapereURI("lsa2543")));
+		final LSA lsa = factory.createLSA(factory
+				.createLSAid(sapereURI("lsa2543")));
 
 		Calendar.getInstance().set(LSA2543_TIME_YEAR, LSA2543_TIME_MONTH,
 				LSA2543_TIME_DAY, LSA2543_TIME_HOUR, LSA2543_TIME_MIN,
@@ -165,8 +168,8 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA1432() throws Exception {
-		final LSA lsa = factory.createCustomLSA(factory
-				.createCustomLSAid(new URI("http://www.sapere-project.eu/"
+		final LSA lsa = factory.createLSA(factory.createLSAid(new URI(
+				"http://www.sapere-project.eu/"
 						+ "ontologies/2012/0/sapere-model.owl#lsa1432")));
 
 		Calendar.getInstance().set(LSA1432_TIME_YEAR, LSA1432_TIME_MONTH,
