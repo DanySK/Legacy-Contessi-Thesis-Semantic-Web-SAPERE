@@ -52,61 +52,45 @@
     
 
 
-    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#hasProperty -->
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isBondTo -->
 
-    <owl:ObjectProperty rdf:about="&sapere-model;hasProperty">
-        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:comment rdf:datatype="&xsd;string">Registeres that an LSA has a specific LSAProperty</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;hasProperty"/>
-                <owl:someValuesFrom rdf:resource="&sapere-model;LSAProperty"/>
-            </owl:Restriction>
-        </rdfs:range>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isBond -->
-
-    <owl:ObjectProperty rdf:about="&sapere-model;isBond">
+    <owl:ObjectProperty rdf:about="&sapere-model;isBondTo">
         <rdfs:comment rdf:datatype="&xsd;string">Register a bond between a source LSA and a target one</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:range>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;isBond"/>
-                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
-            </owl:Restriction>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;isBond"/>
+                <owl:onProperty rdf:resource="&sapere-model;isBondTo"/>
                 <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
             </owl:Restriction>
         </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isBondTo"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:range>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isOwned -->
+    <!-- http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#isOwnedBy -->
 
-    <owl:ObjectProperty rdf:about="&sapere-model;isOwned">
+    <owl:ObjectProperty rdf:about="&sapere-model;isOwnedBy">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string">Registers that an LSA has been created (so is owned by) a SAPERE agent</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;isOwned"/>
-                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
-            </owl:Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;isOwned"/>
+                <owl:onProperty rdf:resource="&sapere-model;isOwnedBy"/>
                 <owl:someValuesFrom rdf:resource="&sapere-model;Agent"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;isOwnedBy"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
+            </owl:Restriction>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -138,21 +122,21 @@
 
     <owl:ObjectProperty rdf:about="&sapere-model;owns">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <rdfs:comment rdf:datatype="&xsd;string">Inverse property of isOwnedBy</rdfs:comment>
-        <owl:inverseOf rdf:resource="&sapere-model;isOwned"/>
+        <rdfs:comment rdf:datatype="&xsd;string">Inverse property of isOwnedByBy</rdfs:comment>
+        <owl:inverseOf rdf:resource="&sapere-model;isOwnedBy"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-        <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&sapere-model;owns"/>
-                <owl:someValuesFrom rdf:resource="&sapere-model;Agent"/>
-            </owl:Restriction>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&sapere-model;owns"/>
                 <owl:someValuesFrom rdf:resource="&sapere-model;LSA"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sapere-model;owns"/>
+                <owl:someValuesFrom rdf:resource="&sapere-model;Agent"/>
+            </owl:Restriction>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
