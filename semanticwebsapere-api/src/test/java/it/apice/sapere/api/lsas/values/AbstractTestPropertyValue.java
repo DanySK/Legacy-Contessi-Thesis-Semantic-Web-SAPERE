@@ -59,9 +59,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 					|| val instanceof Double));
 			assertTrue(pval.isURI() == (val instanceof URI));
 
-			final PropertyValue<ValueType> clonedVal = pval.clone();
-			assertEquals(pval, clonedVal);
-			assertTrue(pval.hashCode() == clonedVal.hashCode());
+			assertEquals(pval, pval);
+			assertTrue(pval.hashCode() == pval.hashCode());
 
 			final PropertyValue<ValueType> other = pvalues.get((idx + 1)
 					% vals.size());

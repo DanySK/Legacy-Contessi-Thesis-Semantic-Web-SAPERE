@@ -19,7 +19,7 @@ import java.net.URI;
  * @author Paolo Contessi
  * 
  */
-public interface LSAid extends Cloneable {
+public interface LSAid {
 
 	/**
 	 * <p>
@@ -30,12 +30,4 @@ public interface LSAid extends Cloneable {
 	 */
 	URI getId();
 
-	/**
-	 * <p>
-	 * Clones this entity.
-	 * </p>
-	 *
-	 * @return	The clone entity
-	 */
-	LSAid clone();
 }

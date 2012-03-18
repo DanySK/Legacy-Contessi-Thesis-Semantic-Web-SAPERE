@@ -23,7 +23,7 @@ package it.apice.sapere.api.lsas;
  * @author Paolo Contessi
  * 
  */
-public interface SemanticDescription extends Cloneable {
+public interface SemanticDescription {
 
 	/**
 	 * <p>

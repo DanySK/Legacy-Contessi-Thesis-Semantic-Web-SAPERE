@@ -1,6 +1,5 @@
 package it.apice.sapere.api.lsas;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -47,12 +46,8 @@ public abstract class AbstractTestLSAid extends AbstractModelTest {
 				assertFalse(ids[i].hashCode() == ids[j].hashCode());
 			}
 
-			assertTrue("Equivalence should be reflexive",
-					ids[i].equals(ids[i]));
-
-			final LSAid id = ids[i].clone();
-			assertEquals(ids[i], id);
-			assertTrue(ids[i].hashCode() == id.hashCode());
+			assertTrue("Equivalence should be reflexive", ids[i].equals(ids[i]));
+			assertTrue(ids[i].hashCode() == ids[i].hashCode());
 		}
 	}
 

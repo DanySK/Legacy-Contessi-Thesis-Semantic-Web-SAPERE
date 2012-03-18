@@ -24,7 +24,7 @@ import it.apice.sapere.api.lsas.values.PropertyValue;
  * @author Paolo Contessi
  * 
  */
-public interface Property extends Cloneable {
+public interface Property {
 
 	/**
 	 * <p>
@@ -94,8 +94,19 @@ public interface Property extends Cloneable {
 	 * <p>
 	 * Clones this entity.
 	 * </p>
-	 *
-	 * @return	The clone entity
+	 * 
+	 * @return The clone entity
 	 */
 	Property clone();
+
+	/**
+	 * <p>
+	 * Checks if this property extends the provided one.
+	 * </p>
+	 * 
+	 * @param other
+	 *            Another property to be checked against
+	 * @return True if extends, false otherwise
+	 */
+	boolean isExtensionOf(Property other);
 }

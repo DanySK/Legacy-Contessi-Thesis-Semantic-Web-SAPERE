@@ -23,7 +23,7 @@ import it.apice.sapere.api.nodes.SAPEREAgent;
  * @author Paolo Contessi
  * 
  */
-public interface LSA extends Cloneable {
+public interface LSA {
 
 	/**
 	 * <p>
@@ -68,8 +68,8 @@ public interface LSA extends Cloneable {
 	 * <p>
 	 * Clones this entity.
 	 * </p>
-	 *
-	 * @return	The clone entity
+	 * 
+	 * @return The clone entity
 	 */
 	LSA clone();
 }

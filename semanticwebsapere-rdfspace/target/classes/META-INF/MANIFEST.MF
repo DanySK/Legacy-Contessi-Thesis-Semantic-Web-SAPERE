@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
-Export-Package: it.apice.sapere.space
-Ignore-Package: com.hp.hpl.jena.rdf.model,it.apice.sapere.api.nodes,ja
- va.util,java.io,it.apice.sapere.space,java.lang,it.apice.sapere.api,i
- t.apice.sapere.api.lsas
+Ignore-Package: it.apice.sapere.api.nodes,java.util,java.net,it.apice.
+ sapere.api.space,java.security,com.hp.hpl.jena.rdf.model,com.hp.hpl.j
+ ena.datatypes.xsd,java.io,it.apice.sapere.api.lsas.values,java.lang,i
+ t.apice.sapere.api.space.observation,it.apice.sapere.api,it.apice.sap
+ ere.api.lsas
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -12,7 +13,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_29
 Bundle-Version: 0.0.1
-Bnd-LastModified: 1331906448952
+Bnd-LastModified: 1332113859910
 Bundle-ManifestVersion: 2
 Bundle-Description: This module provides an implementation of LSA-spac
  e as RDF store

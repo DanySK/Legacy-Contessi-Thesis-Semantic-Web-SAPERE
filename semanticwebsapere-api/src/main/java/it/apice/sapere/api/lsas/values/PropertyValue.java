@@ -19,7 +19,7 @@ package it.apice.sapere.api.lsas.values;
  * @param <Type>
  *            Inner type stored inside the Property Value
  */
-public interface PropertyValue<Type> extends Cloneable {
+public interface PropertyValue<Type> {
 
 	/**
 	 * <p>
@@ -93,12 +93,4 @@ public interface PropertyValue<Type> extends Cloneable {
 	 */
 	Type getValue();
 
-	/**
-	 * <p>
-	 * Clones this entity.
-	 * </p>
-	 * 
-	 * @return The cloned entity
-	 */
-	PropertyValue<Type> clone();
 }

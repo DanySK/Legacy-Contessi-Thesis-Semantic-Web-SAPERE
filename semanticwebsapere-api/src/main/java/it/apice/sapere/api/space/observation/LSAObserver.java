@@ -1,9 +1,10 @@
 package it.apice.sapere.api.space.observation;
 
+
 /**
  * <p>
- * An LSA Observer is an entity capable of listening remarkable events
- * that involve a specific LSA in the LSA-space.
+ * An LSA Observer is an entity capable of listening remarkable events that
+ * involve a specific LSA in the LSA-space.
  * </p>
  * 
  * @author Paolo Contessi

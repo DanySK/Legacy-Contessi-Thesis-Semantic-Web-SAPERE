@@ -19,7 +19,7 @@ import java.net.URI;
  * @author Paolo Contessi
  * 
  */
-public interface PropertyName extends Cloneable {
+public interface PropertyName {
 
 	/**
 	 * <p>
@@ -30,12 +30,4 @@ public interface PropertyName extends Cloneable {
 	 */
 	URI getValue();
 
-	/**
-	 * <p>
-	 * Clones this entity.
-	 * </p>
-	 *
-	 * @return	The clone entity
-	 */
-	PropertyName clone();
 }
