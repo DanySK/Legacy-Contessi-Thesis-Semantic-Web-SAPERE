@@ -49,5 +49,4 @@ public class TestExtLSAspace extends AbstractTestExtLSAspace {
 	protected final ExtLSAspace createSpace() {
 		return new LSAspaceImpl(factory);
 	}
-
 }
