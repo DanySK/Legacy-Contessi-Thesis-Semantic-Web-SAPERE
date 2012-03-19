@@ -17,6 +17,9 @@ import org.junit.Test;
  * <p>
  * Test case for PropertyValue entity.
  * </p>
+ * <p>
+ * THIS CLASS SHOULD NOT BE DIRECTLY EXTENDED
+ * </p>
  * 
  * @author Paolo Contessi
  * @param <ValueType>

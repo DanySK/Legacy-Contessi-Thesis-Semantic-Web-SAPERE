@@ -28,14 +28,11 @@ public abstract class AbstractTestSAPERENode extends AbstractModelTest {
 	 * 
 	 * @param nodeId
 	 *            Identifier of the new node
-	 * @param factory
-	 *            A reference to an Extended Factory
 	 * @return A new SAPERENode
 	 * @throws Exception
 	 *             Invalid node-id provided
 	 */
-	protected abstract SAPERENode createNode(URI nodeId,
-			ExtSAPEREFactory factory) throws Exception;
+	protected abstract SAPERENode createNode(URI nodeId) throws Exception;
 
 	/**
 	 * <p>
@@ -48,7 +45,7 @@ public abstract class AbstractTestSAPERENode extends AbstractModelTest {
 	@Test
 	public final void testNode() throws Exception {
 		final URI nodeId = new URI("http://localhost:8080/sapere#node");
-		final SAPERENode node = createNode(nodeId, createExtFactory());
+		final SAPERENode node = createNode(nodeId);
 
 		assertNotNull("Why no node has been created?", node);
 		assertNotNull("Why no LSA-space has been created?",
@@ -61,22 +58,8 @@ public abstract class AbstractTestSAPERENode extends AbstractModelTest {
 				node.getNodeId(), nodeId);
 
 		try {
-			createNode(null, createExtFactory());
+			createNode(null);
 			fail("NULL should not be a valid node-id");
-		} catch (Exception ex) {
-			assertTrue(true);
-		}
-
-		try {
-			createNode(nodeId, null);
-			fail("NULL should not be a valid extended factory");
-		} catch (Exception ex) {
-			assertTrue(true);
-		}
-
-		try {
-			createNode(null, null);
-			fail("NULL should not be a valid extended factory or node-id");
 		} catch (Exception ex) {
 			assertTrue(true);
 		}

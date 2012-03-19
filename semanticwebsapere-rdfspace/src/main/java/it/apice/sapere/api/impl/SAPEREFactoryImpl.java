@@ -31,6 +31,7 @@ import it.apice.sapere.api.lsas.values.impl.URIValueImpl;
 import it.apice.sapere.api.nodes.SAPEREAgent;
 import it.apice.sapere.api.nodes.SAPEREAgentBehaviour;
 import it.apice.sapere.api.nodes.SAPERENode;
+import it.apice.sapere.nodes.impl.SAPEREAgentImpl;
 
 import java.net.URI;
 import java.security.MessageDigest;
@@ -56,17 +57,25 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	/** Identifier of this factory (one per node). */
 	private final transient String factoryId;
 
+	/** Where the factory is running. */
+	private final transient SAPERENode thisNode;
+
 	/**
 	 * <p>
 	 * Builds a new SAPEREFactoryImpl.
 	 * </p>
 	 * 
 	 * @param node
-	 *            The SAPERENode on which the factory will run
+	 *            The node on which the factory will run (unique id)
 	 */
 	public SAPEREFactoryImpl(final SAPERENode node) {
+		if (node == null) {
+			throw new IllegalArgumentException("Invalid node");
+		}
+
 		try {
 			factoryId = hash(node.getNodeId().toString());
+			thisNode = node;
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			throw new Error("Unforseen situation occurred", e);
@@ -167,7 +176,7 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	@Override
 	public final SAPEREAgent createAgent(final URI id,
 			final SAPEREAgentBehaviour behav) {
-		throw new UnsupportedOperationException("Not supported yet");
+		return new SAPEREAgentImpl(id, thisNode, behav);
 	}
 
 	@Override
@@ -198,8 +207,8 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	 */
 	private LSAid generateLSAid() {
 		try {
-			return new LSAidImpl(new URI(URI_PREFIX + "lsa" + factoryId
-					+ "-" + System.currentTimeMillis()));
+			return new LSAidImpl(new URI(URI_PREFIX + "lsa" + factoryId + "-"
+					+ System.currentTimeMillis()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error("Unforseen situation occurred", e);

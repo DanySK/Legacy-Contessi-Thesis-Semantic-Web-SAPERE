@@ -43,4 +43,5 @@ public interface SAPEREAgent {
 	 * @return True if is running, false otherwise
 	 */
 	boolean isRunning();
+
 }
