@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.001" errors="1" skipped="0" tests="1" name="it.apice.sapere.api.lsas.TestLSAid">
+<testsuite failures="0" time="0.092" errors="0" skipped="0" tests="1" name="it.apice.sapere.api.lsas.TestLSAid">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -28,7 +28,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Mac OS X"/>
     <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/cobertura/cobertura.ser"/>
-    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf7806919652166119286.tmp"/>
+    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf2931369488390098976.tmp"/>
     <property name="sun.jnu.encoding" value="MacRoman"/>
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -66,85 +66,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.001" classname="it.apice.sapere.api.lsas.TestLSAid" name="testUniqueness">
-    <error message="Unforseen situation occurred" type="java.lang.Error">java.lang.Error: Unforseen situation occurred
-	at it.apice.sapere.api.impl.SAPEREFactoryImpl.generateLSAid(SAPEREFactoryImpl.java:214)
-	at it.apice.sapere.api.impl.SAPEREFactoryImpl.createLSAid(SAPEREFactoryImpl.java:168)
-	at it.apice.sapere.api.lsas.AbstractTestLSAid.testUniqueness(AbstractTestLSAid.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-Caused by: java.net.URISyntaxException: Illegal character in fragment at index 68: http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa‘&amp;#29;åŸè&amp;#0;≤&amp;#4;ÈÄ	òÏ¯B~-1332165506325
-	at java.net.URI$Parser.fail(URI.java:2809)
-	at java.net.URI$Parser.checkChars(URI.java:2982)
-	at java.net.URI$Parser.parse(URI.java:3028)
-	at java.net.URI.&lt;init&gt;(URI.java:578)
-	at it.apice.sapere.api.impl.SAPEREFactoryImpl.generateLSAid(SAPEREFactoryImpl.java:210)
-	... 31 more
-</error>
-    <system-err>java.net.URISyntaxException: Illegal character in fragment at index 68: http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa‘&amp;#29;åŸè&amp;#0;≤&amp;#4;ÈÄ	òÏ¯B~-1332165506325
-	at java.net.URI$Parser.fail(URI.java:2809)
-	at java.net.URI$Parser.checkChars(URI.java:2982)
-	at java.net.URI$Parser.parse(URI.java:3028)
-	at java.net.URI.&lt;init&gt;(URI.java:578)
-	at it.apice.sapere.api.impl.SAPEREFactoryImpl.generateLSAid(SAPEREFactoryImpl.java:210)
-	at it.apice.sapere.api.impl.SAPEREFactoryImpl.createLSAid(SAPEREFactoryImpl.java:168)
-	at it.apice.sapere.api.lsas.AbstractTestLSAid.testUniqueness(AbstractTestLSAid.java:35)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
-	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</system-err>
-  </testcase>
+  <testcase time="0.092" classname="it.apice.sapere.api.lsas.TestLSAid" name="testUniqueness"/>
 </testsuite>

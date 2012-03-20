@@ -134,7 +134,8 @@ public class SemanticDescriptionImpl implements SemanticDescription {
 
 	@Override
 	public final boolean isCloneOf(final SemanticDescription other) {
-		return equals(other);
+		return equals(other)
+				|| (properties.isEmpty() && other.properties().length == 0);
 	}
 
 	@Override

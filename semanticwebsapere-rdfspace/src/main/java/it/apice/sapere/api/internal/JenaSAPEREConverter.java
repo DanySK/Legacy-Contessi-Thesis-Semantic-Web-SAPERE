@@ -12,12 +12,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDateTime;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
@@ -95,6 +100,7 @@ public class JenaSAPEREConverter {
 	 */
 	public final LSA parseLSA(final Resource lsa, final Model model)
 			throws Exception {
+		System.out.println("\nLSA " + lsa.getURI() + ":");
 		final Statement owner = lsa.getProperty(model
 				.createProperty(IS_OWNED_PROP));
 		LSA res;
@@ -105,13 +111,132 @@ public class JenaSAPEREConverter {
 					.getString())));
 		}
 
-		StmtIterator props = lsa.listProperties();
-		while (props.hasNext()) {
-			res.getSemanticDescription().addProperty(
-					parseProperty(props.next().getPredicate()));
-		}
+		populateLSA(res, lsa, model);
 
 		return res;
+	}
+
+	/**
+	 * <p>
+	 * Inspects the model, to populate the LSA.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The lsa to be populated
+	 * @param res
+	 *            The resource representing the LSA in the model
+	 * @param model
+	 *            The model to inspected
+	 * @throws Exception
+	 *             Something went wrong during model navigation
+	 */
+	private void populateLSA(final LSA lsa, final Resource res,
+			final Model model) throws Exception {
+		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
+		while (iter.hasNext()) {
+			final Resource curr = iter.next().getResource(propVar());
+			lsa.getSemanticDescription().addProperty(
+					parseProperty(model, res, curr.getURI()));
+		}
+	}
+
+	/**
+	 * <p>
+	 * Retrieves the name of the query's prop variable.
+	 * </p>
+	 * 
+	 * @return Name of the prop var
+	 */
+	private String propVar() {
+		return "?prop";
+	}
+
+	/**
+	 * <p>
+	 * Retrieves the name of the query's obj variable.
+	 * </p>
+	 * 
+	 * @return Name of the obj var
+	 */
+	private String objVar() {
+		return "?obj";
+	}
+
+	/**
+	 * <p>
+	 * Retrieves the text of the SPARQL query which will retrieve LSA's
+	 * properties.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be inspected
+	 * @return The query string
+	 */
+	private String lsaPropsQueryText(final Resource lsa) {
+		return "SELECT DISTINCT " + propVar() + " WHERE { <" + lsa.getURI()
+				+ "> " + propVar() + " " + objVar() + " }";
+	}
+
+	/**
+	 * <p>
+	 * Retrieves the text of the SPARQL query which will retrieve values of
+	 * LSA's properties.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be inspected
+	 * @param propURI
+	 *            The property whose values should be retrieved
+	 * @return The query string
+	 */
+	private String lsaPropsValuesQueryText(final Resource lsa,
+			final String propURI) {
+		return "SELECT DISTINCT " + objVar() + " WHERE { <" + lsa.getURI()
+				+ "> <" + propURI + "> " + objVar() + " }";
+	}
+
+	/**
+	 * <p>
+	 * Creates a new query that retrieves LSA's properties.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA whose properties will be retrieved
+	 * @return The query object
+	 */
+	private Query lsaPropsQuery(final Resource lsa) {
+		return QueryFactory.create(lsaPropsQueryText(lsa));
+	}
+
+	/**
+	 * <p>
+	 * Creates a new query which will retrieve values of LSA's properties.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be inspected
+	 * @param propURI
+	 *            The property whose values should be retrieved
+	 * @return The query object
+	 */
+	private Query lsaPropsValuesQuery(final Resource lsa, 
+			final String propURI) {
+		return QueryFactory.create(lsaPropsValuesQueryText(lsa, propURI));
+	}
+
+	/**
+	 * <p>
+	 * Executes a SPARQL query on provided model.
+	 * </p>
+	 * 
+	 * @param model
+	 *            The queried model
+	 * @param query
+	 *            The query to be executed
+	 * @return Query's result set
+	 */
+	private ResultSet execQuery(final Model model, final Query query) {
+		return QueryExecutionFactory.create(query, model).execSelect();
 	}
 
 	/**
@@ -119,16 +244,21 @@ public class JenaSAPEREConverter {
 	 * Parses an LSA's property.
 	 * </p>
 	 * 
-	 * @param prop
+	 * @param res
+	 *            The resource to be inspected
+	 * @param model
+	 *            The model on which work
+	 * 
+	 * @param propURI
 	 *            The property in RDF
 	 * @return The LSA's property
 	 * @throws Exception
 	 *             Invalid information provided
 	 */
-	private it.apice.sapere.api.lsas.Property parseProperty(
-			final com.hp.hpl.jena.rdf.model.Property prop) throws Exception {
-		return factory
-				.createProperty(new URI(prop.getURI()), parseValues(prop));
+	private it.apice.sapere.api.lsas.Property parseProperty(final Model model,
+			final Resource res, final String propURI) throws Exception {
+		return factory.createProperty(new URI(propURI),
+				parseValues(model, res, propURI));
 	}
 
 	/**
@@ -136,20 +266,31 @@ public class JenaSAPEREConverter {
 	 * Parses all LSA's property values.
 	 * </p>
 	 * 
-	 * @param prop
+	 * @param lsa
+	 *            The LSA on which work
+	 * @param model
+	 *            The model on which work
+	 * @param propURI
 	 *            The property in RDF
 	 * @return The list of property values
 	 * @throws Exception
 	 *             Cannot parse values
 	 */
-	private PropertyValue<?>[] parseValues(
-			final com.hp.hpl.jena.rdf.model.Property prop) throws Exception {
+	private PropertyValue<?>[] parseValues(final Model model,
+			final Resource lsa, final String propURI) throws Exception {
 		final Set<PropertyValue<?>> res = new HashSet<PropertyValue<?>>();
-		final StmtIterator iter = prop.listProperties(prop);
+		final ResultSet iter = execQuery(model,
+				lsaPropsValuesQuery(lsa, propURI));
 		while (iter.hasNext()) {
-			final Statement stmt = iter.next();
+			final QuerySolution curr = iter.next();
+			final RDFNode rVal = curr.get(objVar());
 
-			res.add(parseValue(stmt.getLiteral()));
+			if (rVal.isURIResource()) {
+				res.add(factory.createPropertyValue(new URI(rVal.asResource()
+						.getURI())));
+			} else if (rVal.isLiteral()) {
+				res.add(parseValue(rVal.asLiteral()));
+			}
 		}
 
 		return res.toArray(new PropertyValue<?>[res.size()]);

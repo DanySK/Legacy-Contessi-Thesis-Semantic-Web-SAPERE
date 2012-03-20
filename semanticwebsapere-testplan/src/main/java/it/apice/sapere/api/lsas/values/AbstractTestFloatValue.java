@@ -1,7 +1,5 @@
 package it.apice.sapere.api.lsas.values;
 
-import it.apice.sapere.api.SAPEREFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,9 +13,6 @@ import java.util.List;
  */
 public abstract class AbstractTestFloatValue extends
 		AbstractTestPropertyValue<Float> {
-
-	/** Reference to SAPERE API Factory. */
-	private final transient SAPEREFactory factory = createFactory();
 
 	@Override
 	protected final List<Float> createValues() {
@@ -35,7 +30,7 @@ public abstract class AbstractTestFloatValue extends
 
 	@Override
 	protected final PropertyValue<Float> createPropertyValue(final Float val) {
-		return factory.createPropertyValue(val);
+		return createFactory().createPropertyValue(val);
 	}
 
 }

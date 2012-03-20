@@ -1,10 +1,9 @@
 package it.apice.sapere.api.lsas;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import it.apice.sapere.api.AbstractModelTest;
-import it.apice.sapere.api.SAPEREFactory;
 
 import java.net.URI;
 
@@ -21,9 +20,6 @@ import org.junit.Test;
 public abstract class AbstractTestSemanticDescription 
 		extends AbstractModelTest {
 
-	/** Reference to a SAPERE Factory. */
-	private final transient SAPEREFactory factory = createFactory();
-
 	/**
 	 * <p>
 	 * Test SemanticDescription.
@@ -34,27 +30,49 @@ public abstract class AbstractTestSemanticDescription
 	 */
 	@Test
 	public final void testSemanticDescription() throws Exception {
-		final SemanticDescription sd = factory.createLSA()
+		final SemanticDescription sd = createFactory().createLSA()
 				.getSemanticDescription();
-		final SemanticDescription clonedSD = sd.clone();
+		SemanticDescription clonedSD = sd.clone();
+		
+//		System.out.println("Checking..");
+//		System.out.println("original sd: \"" + sd.toString() + "\"");
+//		System.out.println("  cloned sd: \"" + sd.toString() + "\"");
+
 		assertEquals(sd, clonedSD);
+		assertTrue(sd.isCloneOf(clonedSD));
 		assertTrue(clonedSD.isCloneOf(sd));
 		assertTrue(clonedSD.isExtensionOf(sd));
 		assertTrue(sd.isExtensionOf(clonedSD));
 
 		final URI propName = new URI("http://localhost:8080/sapere#prop");
-		sd.addProperty(factory.createProperty(propName));
+		sd.addProperty(createFactory().createProperty(propName));
+		clonedSD = sd.clone();
 
+//		System.out.println("done.\n");
+//		System.out.println("Checking..");
+//		System.out.println("original sd: \"" + sd.toString() + "\"");
+//		System.out.println("  cloned sd: \"" + sd.toString() + "\"");
+
+		assertEquals(sd, clonedSD);
 		assertTrue(clonedSD.isCloneOf(sd));
+		assertTrue(sd.isCloneOf(clonedSD));
 		assertTrue(clonedSD.isExtensionOf(sd));
 		assertTrue(sd.isExtensionOf(clonedSD));
 
-		sd.get(factory.createPropertyName(propName)).addValue(
-				factory.createPropertyValue(false));
+		sd.get(createFactory().createPropertyName(propName)).addValue(
+				createFactory().createPropertyValue(false));
+
+//		System.out.println("done.\n");
+//		System.out.println("Checking..");
+//		System.out.println("original sd: \"" + sd.toString() + "\"");
+//		System.out.println("  cloned sd: \"" + sd.toString() + "\"");
 
 		assertFalse(sd.equals(clonedSD));
 		assertFalse(clonedSD.isCloneOf(sd));
+		assertFalse(sd.isCloneOf(clonedSD));
 		assertFalse(clonedSD.isExtensionOf(sd));
 		assertTrue(sd.isExtensionOf(clonedSD));
+		
+//		System.out.println("done.");
 	}
 }

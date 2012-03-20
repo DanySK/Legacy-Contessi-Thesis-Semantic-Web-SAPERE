@@ -19,7 +19,7 @@ import java.net.URI;
 public class SAPEREAgentImpl implements SAPEREAgent, Runnable {
 
 	/** The identifier of the agent. */
-	private final transient URI id;
+	private final URI id;
 
 	/** Node where the agent has been created. */
 	private final transient SAPERENode node;
@@ -95,6 +95,42 @@ public class SAPEREAgentImpl implements SAPEREAgent, Runnable {
 	@Override
 	public final boolean isRunning() {
 		return running;
+	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+
+		if (id != null) {
+			result += id.hashCode();
+		}
+
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+
+		SAPEREAgentImpl other = (SAPEREAgentImpl) obj;
+		if (id == null) {
+			if (other.id != null) {
+				return false;
+			}
+		} else if (!id.equals(other.id)) {
+			return false;
+		}
+		return true;
 	}
 
 }

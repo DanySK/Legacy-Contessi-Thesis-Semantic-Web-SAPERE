@@ -84,7 +84,7 @@ public class PropertyValueImpl<Type> implements PropertyValue<Type> {
 
 	@Override
 	public final boolean hasLocale() {
-		return langCode == null || langCode.equals("");
+		return langCode != null && !langCode.equals("");
 	}
 
 	@Override
@@ -101,4 +101,50 @@ public class PropertyValueImpl<Type> implements PropertyValue<Type> {
 	public final String toString() {
 		return value.toString();
 	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+		if (langCode != null) {
+			result += langCode.hashCode();
+		}
+
+		result *= prime;
+		if (value != null) {
+			result += value.hashCode();
+		}
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		PropertyValueImpl<?> other = (PropertyValueImpl<?>) obj;
+		if (langCode == null) {
+			if (other.langCode != null) {
+				return false;
+			}
+		} else if (!langCode.equals(other.langCode)) {
+			return false;
+		}
+		if (value == null) {
+			if (other.value != null) {
+				return false;
+			}
+		} else if (!value.equals(other.value)) {
+			return false;
+		}
+		return true;
+	}
+
 }

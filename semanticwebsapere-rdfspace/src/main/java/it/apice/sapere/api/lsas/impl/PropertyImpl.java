@@ -115,4 +115,67 @@ public class PropertyImpl implements Property {
 	public final Property clone() {
 		return new PropertyImpl(this);
 	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+		if (name != null) {
+			result += name.hashCode();
+		}
+
+		result *= prime;
+		if (values != null) {
+			result += values.hashCode();
+		}
+
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		PropertyImpl other = (PropertyImpl) obj;
+		if (name == null) {
+			if (other.name != null) {
+				return false;
+			}
+		} else if (!name.equals(other.name)) {
+			return false;
+		}
+		if (values == null) {
+			if (other.values != null) {
+				return false;
+			}
+		} else if (!values.equals(other.values)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public final String toString() {
+		final StringBuilder builder = new StringBuilder();
+		builder.append(name.toString()).append(" := (");
+		
+		int count = 0;
+		for (PropertyValue<?> val : values) {
+			builder.append(val);
+			count++;
+			if (count < values.size()) {
+				builder.append(", ");
+			}
+		}
+
+		return builder.append(")").toString();
+	}
 }

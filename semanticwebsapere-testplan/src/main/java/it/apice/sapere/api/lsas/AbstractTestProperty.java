@@ -5,7 +5,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import it.apice.sapere.api.AbstractModelTest;
-import it.apice.sapere.api.SAPEREFactory;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
 import java.net.URI;
@@ -22,9 +21,6 @@ import org.junit.Test;
  */
 public abstract class AbstractTestProperty extends AbstractModelTest {
 
-	/** Reference to a SAPERE Factory. */
-	private final transient SAPEREFactory factory = createFactory();
-
 	/**
 	 * <p>
 	 * Test Property with no initial values.
@@ -36,16 +32,16 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 	@Test
 	public final void testEmptyProperty() throws Exception {
 		final URI propName = new URI("http://localhost:8080/sapere#prop");
-		final Property prop = factory.createProperty(propName);
+		final Property prop = createFactory().createProperty(propName);
 
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 0);
 
-		final PropertyValue<?> val = factory.createPropertyValue(true);
+		final PropertyValue<?> val = createFactory().createPropertyValue(true);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.addValue(val).hasValue(val));
 
-		final PropertyValue<?> val2 = factory.createPropertyValue(false);
+		final PropertyValue<?> val2 = createFactory().createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -64,14 +60,14 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 	@Test
 	public final void testProperty() throws Exception {
 		final URI propName = new URI("http://localhost:8080/sapere#prop");
-		final PropertyValue<?> val = factory.createPropertyValue(true);
-		final Property prop = factory.createProperty(propName, val);
+		final PropertyValue<?> val = createFactory().createPropertyValue(true);
+		final Property prop = createFactory().createProperty(propName, val);
 
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 1);
 		assertTrue(prop.hasValue(val));
 
-		final PropertyValue<?> val2 = factory.createPropertyValue(false);
+		final PropertyValue<?> val2 = createFactory().createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -79,7 +75,7 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 		assertTrue(prop.hasValue(val));
 
 		final URI prop2Name = new URI("http://localhost:8080/sapere#prop2");
-		final Property prop2 = factory.createProperty(prop2Name, val, val2);
+		final Property prop2 = createFactory().createProperty(prop2Name, val, val2);
 		assertTrue(prop.values().length == 2);
 		assertFalse(
 				"Two properties should be equals only if their name are equal",

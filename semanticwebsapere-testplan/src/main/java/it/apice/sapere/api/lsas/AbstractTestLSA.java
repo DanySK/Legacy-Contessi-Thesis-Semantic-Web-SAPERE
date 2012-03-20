@@ -1,13 +1,12 @@
 package it.apice.sapere.api.lsas;
 
-import org.junit.Assert;
 import it.apice.sapere.api.AbstractModelTest;
-import it.apice.sapere.api.SAPEREFactory;
 import it.apice.sapere.api.nodes.SAPEREAgent;
 import it.apice.sapere.api.nodes.SAPERENode;
 
 import java.net.URI;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -20,9 +19,6 @@ import org.junit.Test;
  */
 public abstract class AbstractTestLSA extends AbstractModelTest {
 
-	/** Reference to SAPEREFactory. */
-	private final transient SAPEREFactory factory = createFactory();
-
 	/**
 	 * <p>
 	 * Tests LSA invariants.
@@ -31,14 +27,14 @@ public abstract class AbstractTestLSA extends AbstractModelTest {
 	@Test
 	public final void testLSA() {
 		final SAPEREAgent agent = createAgent();
-		final LSA lsa = factory.createLSA();
+		final LSA lsa = createFactory().createLSA();
 
 		Assert.assertTrue(lsa.isSynthetic());
 		Assert.assertFalse(lsa.isOwnedBy(agent));
 		Assert.assertNotNull(lsa.getLSAId());
 		Assert.assertNotNull(lsa.getSemanticDescription());
 
-		final LSA lsa2 = factory.createLSA(agent);
+		final LSA lsa2 = createFactory().createLSA(agent);
 
 		Assert.assertFalse(lsa2.isSynthetic());
 		Assert.assertTrue(lsa2.isOwnedBy(agent));

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="6" time="0.015" errors="1" skipped="0" tests="7" name="it.apice.sapere.api.space.TestExtLSAspace">
+<testsuite failures="6" time="0.025" errors="1" skipped="0" tests="7" name="it.apice.sapere.api.space.TestExtLSAspace">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -28,7 +28,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Mac OS X"/>
     <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/cobertura/cobertura.ser"/>
-    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf7806919652166119286.tmp"/>
+    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf2931369488390098976.tmp"/>
     <property name="sun.jnu.encoding" value="MacRoman"/>
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -66,7 +66,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testInjectExceptions">
+  <testcase time="0.018" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testInjectExceptions">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -106,7 +106,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </failure>
   </testcase>
-  <testcase time="0.008" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testReadExceptions">
+  <testcase time="0.002" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testReadExceptions">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -146,7 +146,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </failure>
   </testcase>
-  <testcase time="0" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testRemoveExceptions">
+  <testcase time="0.001" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testRemoveExceptions">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -186,7 +186,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </failure>
   </testcase>
-  <testcase time="0" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testUpdateExceptions">
+  <testcase time="0.001" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testUpdateExceptions">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -266,7 +266,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </failure>
   </testcase>
-  <testcase time="0.003" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testIgnoreExceptions">
+  <testcase time="0.001" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testIgnoreExceptions">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -306,7 +306,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </failure>
   </testcase>
-  <testcase time="0.003" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testScenario">
+  <testcase time="0.001" classname="it.apice.sapere.api.space.TestExtLSAspace" name="testScenario">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at it.apice.sapere.api.space.AbstractTestExtLSAspace.testScenario(AbstractTestExtLSAspace.java:234)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

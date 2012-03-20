@@ -36,8 +36,7 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 	@Test
 	public final void testPropertyValue() {
 		final List<ValueType> vals = createValues();
-		final List<PropertyValue<ValueType>> pvalues = 
-				createPropertyValues(vals);
+		final List<PropertyValue<ValueType>> pvalues = createPropertyValues(vals);
 
 		assertTrue(
 				"Why values and property values cardinalities are not equal?",
@@ -58,17 +57,26 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 			assertTrue(pval.isLiteral() == (val instanceof String));
 			assertTrue(pval.isLSAId() == (val instanceof LSAid));
 			assertTrue(pval.isNumber() == (val instanceof Integer
-					|| val instanceof Long || val instanceof Float 
-					|| val instanceof Double));
+					|| val instanceof Long || val instanceof Float || val instanceof Double));
 			assertTrue(pval.isURI() == (val instanceof URI));
 
 			assertEquals(pval, pval);
 			assertTrue(pval.hashCode() == pval.hashCode());
 
-			final PropertyValue<ValueType> other = pvalues.get((idx + 1)
-					% vals.size());
-			assertFalse(pval.equals(other));
-			assertFalse(pval.hashCode() == other.hashCode());
+			if (vals.size() > 1) {
+				final PropertyValue<ValueType> other = pvalues.get((idx + 1)
+						% vals.size());
+				assertFalse(pval.equals(other));
+
+//				// Why hashcode of 0 and -1 are equals? the same with 1 and -2, MIN and MAX
+//				System.err.println(new Long(1).hashCode());
+//				System.err.println(new Long(0).hashCode());
+//				System.err.println(new Long(-1).hashCode());  
+//				System.err.println(new Long(-2).hashCode() + "\n");
+//				System.err.println(new Long(Long.MAX_VALUE).hashCode());
+//				System.err.println(new Long(Long.MIN_VALUE).hashCode());
+				assertFalse("hashcode clash: idx=" + idx, pval.hashCode() == other.hashCode());
+			}
 		}
 	}
 
@@ -87,8 +95,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 	 */
 	private List<PropertyValue<ValueType>> createPropertyValues(
 			final List<ValueType> vals) {
-		final List<PropertyValue<ValueType>> res = 
-				new ArrayList<PropertyValue<ValueType>>(vals.size());
+		final List<PropertyValue<ValueType>> res = new ArrayList<PropertyValue<ValueType>>(
+				vals.size());
 
 		for (ValueType val : vals) {
 			res.add(createPropertyValue(val));

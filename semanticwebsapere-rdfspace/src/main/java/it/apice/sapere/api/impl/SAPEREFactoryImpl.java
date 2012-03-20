@@ -1,6 +1,7 @@
 package it.apice.sapere.api.impl;
 
 import it.apice.sapere.api.ExtSAPEREFactory;
+import it.apice.sapere.api.internal.AeSimpleMD5;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
@@ -34,9 +35,8 @@ import it.apice.sapere.api.nodes.SAPERENode;
 import it.apice.sapere.nodes.impl.SAPEREAgentImpl;
 
 import java.net.URI;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>
@@ -60,6 +60,9 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	/** Where the factory is running. */
 	private final transient SAPERENode thisNode;
 
+	/** Counts generated ids. */
+	private final transient AtomicInteger idCounter = new AtomicInteger();
+
 	/**
 	 * <p>
 	 * Builds a new SAPEREFactoryImpl.
@@ -76,7 +79,7 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 		try {
 			factoryId = hash(node.getNodeId().toString());
 			thisNode = node;
-		} catch (NoSuchAlgorithmException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error("Unforseen situation occurred", e);
 		}
@@ -84,7 +87,7 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 
 	@Override
 	public final LSA createLSA() {
-		return createLSA(generateLSAid(), null);
+		return new LSAImpl(generateLSAid(), null);
 	}
 
 	@Override
@@ -207,8 +210,10 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	 */
 	private LSAid generateLSAid() {
 		try {
-			return new LSAidImpl(new URI(URI_PREFIX + "lsa" + factoryId + "-"
-					+ System.currentTimeMillis()));
+			return new LSAidImpl(new URI(URI_PREFIX + "lsa"
+					+ String.format("%X", idCounter.getAndIncrement()
+							/*System.currentTimeMillis()*/)
+			+ "-" + factoryId));
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error("Unforseen situation occurred", e);
@@ -223,14 +228,16 @@ public class SAPEREFactoryImpl implements ExtSAPEREFactory {
 	 * @param content
 	 *            The string whose hash should be calculated
 	 * @return An hash built upon content
-	 * @throws NoSuchAlgorithmException
-	 *             Cannot calculate the hash
+	 * @throws Exception
+	 *             Cannot calculate the hash (no algorithm or invalid encoding)
 	 */
-	private String hash(final String content) throws NoSuchAlgorithmException {
-		MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
-		digest.digest(content.getBytes());
-		byte[] hash = digest.digest();
-
-		return new String(hash);
+	private String hash(final String content) throws Exception {
+		// MessageDigest digest =
+		// java.security.MessageDigest.getInstance("MD5");
+		// digest.digest(content.getBytes());
+		// byte[] hash = digest.digest();
+		//
+		// return new String(hash);
+		return AeSimpleMD5.calculateMD5(content);
 	}
 }

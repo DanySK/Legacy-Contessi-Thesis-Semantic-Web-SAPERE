@@ -8,11 +8,11 @@ import java.net.URI;
  * <p>
  * Implementation of PropertyName.
  * </p>
- *
+ * 
  * @author Paolo Contessi
- *
+ * 
  * @see PropertyName
- *
+ * 
  */
 public class PropertyNameImpl implements PropertyName {
 
@@ -44,4 +44,40 @@ public class PropertyNameImpl implements PropertyName {
 	public final String toString() {
 		return id.toString();
 	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+		if (id != null) {
+			result += id.hashCode();
+		}
+
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+
+		PropertyNameImpl other = (PropertyNameImpl) obj;
+		if (id == null) {
+			if (other.id != null) {
+				return false;
+			}
+		} else if (!id.equals(other.id)) {
+			return false;
+		}
+		return true;
+	}
+
 }

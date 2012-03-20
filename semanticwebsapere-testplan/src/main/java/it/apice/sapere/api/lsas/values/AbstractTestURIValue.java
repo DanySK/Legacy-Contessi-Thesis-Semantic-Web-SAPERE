@@ -18,9 +18,6 @@ import java.util.List;
 public abstract class AbstractTestURIValue extends
 		AbstractTestPropertyValue<URI> {
 
-	/** Reference to SAPERE API Factory. */
-	private final transient SAPEREFactory factory = createFactory();
-
 	@Override
 	protected final List<URI> createValues() {
 		final List<URI> res = new ArrayList<URI>(5);
@@ -41,7 +38,7 @@ public abstract class AbstractTestURIValue extends
 	@Override
 	protected final PropertyValue<URI> createPropertyValue(
 			final URI val) {
-		return factory.createPropertyValue(val);
+		return createFactory().createPropertyValue(val);
 	}
 
 }

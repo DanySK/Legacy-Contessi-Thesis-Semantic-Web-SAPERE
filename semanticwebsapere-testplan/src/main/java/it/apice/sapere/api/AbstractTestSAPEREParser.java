@@ -77,9 +77,6 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	/** Constant: sapere:lsa2543 foaf:age. */
 	private static final transient int LSA2543_AGE = 25;
 
-	/** Reference to a SAPEREFactory. */
-	private final transient ExtSAPEREFactory factory = createExtFactory();
-
 	/**
 	 * <p>
 	 * Should create a new instance of the Parser.
@@ -102,7 +99,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 */
 	@Test
 	public final void testSAPEREParser() throws Exception {
-		final SAPEREParser parser = createParser(factory);
+		final SAPEREParser parser = createParser(createExtFactory());
 		final Set<LSA> model = createModelForTest();
 
 		assertEquals(parser.parseLSAs(getInputAsStream()), model);
@@ -138,7 +135,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA2543() throws Exception {
-		final LSA lsa = factory.createLSA(factory
+		final LSA lsa = createExtFactory().createLSA(createExtFactory()
 				.createLSAid(sapereURI("lsa2543")));
 
 		Calendar.getInstance().set(LSA2543_TIME_YEAR, LSA2543_TIME_MONTH,
@@ -146,15 +143,15 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 				LSA2543_TIME_SEC);
 		lsa.getSemanticDescription()
 				.addProperty(
-						factory.createProperty(sapereURI("type"), factory
+						createFactory().createProperty(sapereURI("type"), createFactory()
 								.createPropertyValue(sapereURI("person"))))
 				.addProperty(
-						factory.createProperty(sapereURI("time"), factory
+						createFactory().createProperty(sapereURI("time"), createFactory()
 								.createPropertyValue(Calendar.getInstance()
 										.getTime())))
 				.addProperty(
-						factory.createProperty(foafURI("age"),
-								factory.createPropertyValue(LSA2543_AGE)));
+						createFactory().createProperty(foafURI("age"),
+								createFactory().createPropertyValue(LSA2543_AGE)));
 		return lsa;
 	}
 
@@ -168,7 +165,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA1432() throws Exception {
-		final LSA lsa = factory.createLSA(factory.createLSAid(new URI(
+		final LSA lsa = createExtFactory().createLSA(createExtFactory().createLSAid(new URI(
 				"http://www.sapere-project.eu/"
 						+ "ontologies/2012/0/sapere-model.owl#lsa1432")));
 
@@ -177,20 +174,20 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 				LSA1432_TIME_SEC);
 		lsa.getSemanticDescription()
 				.addProperty(
-						factory.createProperty(sapereURI("type"), factory
+						createFactory().createProperty(sapereURI("type"), createFactory()
 								.createPropertyValue(sapereURI("person"))))
 				.addProperty(
-						factory.createProperty(sapereURI("time"), factory
+						createFactory().createProperty(sapereURI("time"), createFactory()
 								.createPropertyValue(Calendar.getInstance()
 										.getTime())))
 				.addProperty(
-						factory.createProperty(foafURI("age"),
-								factory.createPropertyValue(LSA1432_AGE)))
+						createFactory().createProperty(foafURI("age"),
+								createFactory().createPropertyValue(LSA1432_AGE)))
 				.addProperty(
-						factory.createProperty(exURI("interest"),
-								factory.createPropertyValue("music"),
-								factory.createPropertyValue("sport"),
-								factory.createPropertyValue("travelling")));
+						createFactory().createProperty(exURI("interest"),
+								createFactory().createPropertyValue("music"),
+								createFactory().createPropertyValue("sport"),
+								createFactory().createPropertyValue("travelling")));
 		return lsa;
 	}
 
@@ -284,7 +281,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Cannot produce input
 	 */
 	private InputStream getInputAsStream() throws Exception {
-		return getClass().getClassLoader().getResourceAsStream(
-				"parser-test.txt");
+		return AbstractTestSAPEREParser.class.getClassLoader().getResourceAsStream(
+				"it/apice/sapere/api/parser-test-turtle.txt");
 	}
 }
