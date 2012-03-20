@@ -39,7 +39,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	private static final transient int LSA1432_TIME_YEAR = 2011;
 
 	/** Constant: sapere:lsa1432 sapere:time month. */
-	private static final transient int LSA1432_TIME_MONTH = 5;
+	private static final transient int LSA1432_TIME_MONTH = 4;
 
 	/** Constant: sapere:lsa1432 sapere:time day. */
 	private static final transient int LSA1432_TIME_DAY = 31;
@@ -60,7 +60,7 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	private static final transient int LSA2543_TIME_YEAR = 2010;
 
 	/** Constant: sapere:lsa2543 sapere:time month. */
-	private static final transient int LSA2543_TIME_MONTH = 5;
+	private static final transient int LSA2543_TIME_MONTH = 4;
 
 	/** Constant: sapere:lsa2543 sapere:time day. */
 	private static final transient int LSA2543_TIME_DAY = 31;
@@ -102,9 +102,47 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 		final SAPEREParser parser = createParser(createExtFactory());
 		final Set<LSA> model = createModelForTest();
 
-		assertEquals(parser.parseLSAs(getInputAsStream()), model);
-		assertEquals(parser.parseLSAs(getInputAsReader()), model);
-		assertEquals(parser.parseLSAs(getInputAsString()), model);
+		System.out.println("Checking from InputStream..");
+		System.out.println("==========================================");
+
+		for (LSA lsa : model) {
+			for (LSA pLsa : parser.parseLSAs(getInputAsStream())) {
+				if (lsa.getLSAId().equals(pLsa.getLSAId())) {
+					System.out.println(lsa);
+					System.err.println(pLsa);
+					System.out.println("==========================================");
+					assertEquals(lsa, pLsa);
+				}
+			}
+		}
+		
+		System.out.println("Checking from Reader..");
+		System.out.println("==========================================");
+		
+		for (LSA lsa : model) {
+			for (LSA pLsa : parser.parseLSAs(getInputAsReader())) {
+				if (lsa.getLSAId().equals(pLsa.getLSAId())) {
+					System.err.println(pLsa);
+					System.out.println(lsa);
+					System.out.println("==========================================");
+					assertEquals(lsa, pLsa);
+				}
+			}
+		}
+		
+		System.out.println("Checking from String..");
+		System.out.println("==========================================");
+		
+		for (LSA lsa : model) {
+			for (LSA pLsa : parser.parseLSAs(getInputAsString())) {
+				if (lsa.getLSAId().equals(pLsa.getLSAId())) {
+					System.err.println(pLsa);
+					System.out.println(lsa);
+					System.out.println("==========================================");
+					assertEquals(lsa, pLsa);
+				}
+			}
+		}
 	}
 
 	/**
@@ -135,23 +173,29 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA2543() throws Exception {
-		final LSA lsa = createExtFactory().createLSA(createExtFactory()
-				.createLSAid(sapereURI("lsa2543")));
+		final LSA lsa = createExtFactory().createLSA(
+				createExtFactory().createLSAid(sapereURI("lsa2543")));
 
-		Calendar.getInstance().set(LSA2543_TIME_YEAR, LSA2543_TIME_MONTH,
-				LSA2543_TIME_DAY, LSA2543_TIME_HOUR, LSA2543_TIME_MIN,
-				LSA2543_TIME_SEC);
+		Calendar cal = Calendar.getInstance();
+		cal.set(LSA2543_TIME_YEAR, LSA2543_TIME_MONTH, LSA2543_TIME_DAY,
+				LSA2543_TIME_HOUR, LSA2543_TIME_MIN, LSA2543_TIME_SEC);
+		cal.set(Calendar.MILLISECOND, 0);
 		lsa.getSemanticDescription()
 				.addProperty(
-						createFactory().createProperty(sapereURI("type"), createFactory()
-								.createPropertyValue(sapereURI("person"))))
+						createFactory().createProperty(
+								sapereURI("type"),
+								createFactory().createPropertyValue(
+										sapereURI("person"))))
 				.addProperty(
-						createFactory().createProperty(sapereURI("time"), createFactory()
-								.createPropertyValue(Calendar.getInstance()
-										.getTime())))
+						createFactory().createProperty(
+								sapereURI("time"),
+								createFactory().createPropertyValue(
+										cal.getTime())))
 				.addProperty(
-						createFactory().createProperty(foafURI("age"),
-								createFactory().createPropertyValue(LSA2543_AGE)));
+						createFactory().createProperty(
+								foafURI("age"),
+								createFactory()
+										.createPropertyValue(LSA2543_AGE)));
 		return lsa;
 	}
 
@@ -165,29 +209,41 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Something went wrong
 	 */
 	private LSA createLSA1432() throws Exception {
-		final LSA lsa = createExtFactory().createLSA(createExtFactory().createLSAid(new URI(
-				"http://www.sapere-project.eu/"
-						+ "ontologies/2012/0/sapere-model.owl#lsa1432")));
+		final LSA lsa = createExtFactory()
+				.createLSA(
+						createExtFactory()
+								.createLSAid(
+										new URI(
+												"http://www.sapere-project.eu/"
+														+ "ontologies/2012/0/sapere-model.owl#lsa1432")));
 
-		Calendar.getInstance().set(LSA1432_TIME_YEAR, LSA1432_TIME_MONTH,
-				LSA1432_TIME_DAY, LSA1432_TIME_HOUR, LSA1432_TIME_MIN,
-				LSA1432_TIME_SEC);
+		Calendar cal = Calendar.getInstance();
+		cal.set(LSA1432_TIME_YEAR, LSA1432_TIME_MONTH, LSA1432_TIME_DAY,
+				LSA1432_TIME_HOUR, LSA1432_TIME_MIN, LSA1432_TIME_SEC);
+		cal.set(Calendar.MILLISECOND, 0);
 		lsa.getSemanticDescription()
 				.addProperty(
-						createFactory().createProperty(sapereURI("type"), createFactory()
-								.createPropertyValue(sapereURI("person"))))
+						createFactory().createProperty(
+								sapereURI("type"),
+								createFactory().createPropertyValue(
+										sapereURI("person"))))
 				.addProperty(
-						createFactory().createProperty(sapereURI("time"), createFactory()
-								.createPropertyValue(Calendar.getInstance()
-										.getTime())))
+						createFactory().createProperty(
+								sapereURI("time"),
+								createFactory().createPropertyValue(
+										cal.getTime())))
 				.addProperty(
-						createFactory().createProperty(foafURI("age"),
-								createFactory().createPropertyValue(LSA1432_AGE)))
+						createFactory().createProperty(
+								foafURI("age"),
+								createFactory()
+										.createPropertyValue(LSA1432_AGE)))
 				.addProperty(
-						createFactory().createProperty(exURI("interest"),
+						createFactory().createProperty(
+								exURI("interest"),
 								createFactory().createPropertyValue("music"),
 								createFactory().createPropertyValue("sport"),
-								createFactory().createPropertyValue("travelling")));
+								createFactory().createPropertyValue(
+										"travelling")));
 		return lsa;
 	}
 
@@ -281,7 +337,8 @@ public abstract class AbstractTestSAPEREParser extends AbstractModelTest {
 	 *             Cannot produce input
 	 */
 	private InputStream getInputAsStream() throws Exception {
-		return AbstractTestSAPEREParser.class.getClassLoader().getResourceAsStream(
-				"it/apice/sapere/api/parser-test-turtle.txt");
+		return AbstractTestSAPEREParser.class.getClassLoader()
+				.getResourceAsStream(
+						"it/apice/sapere/api/parser-test-turtle.txt");
 	}
 }

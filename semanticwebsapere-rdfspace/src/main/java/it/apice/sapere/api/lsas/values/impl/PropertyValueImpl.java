@@ -4,6 +4,7 @@ import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
 import java.net.URI;
+import java.util.Arrays;
 
 /**
  * <p>
@@ -115,6 +116,7 @@ public class PropertyValueImpl<Type> implements PropertyValue<Type> {
 		if (value != null) {
 			result += value.hashCode();
 		}
+
 		return result;
 	}
 

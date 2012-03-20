@@ -4,6 +4,7 @@ import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -156,7 +157,29 @@ public class PropertyImpl implements Property {
 			if (other.values != null) {
 				return false;
 			}
+			
 		} else if (!values.equals(other.values)) {
+			Object d1 = new Date(), d2 = null;
+			System.err.println(values.size() + " <-> " + values.size());
+			for (PropertyValue<?> v : values) {
+				if (!other.values.contains(v)) {
+					d1 = v.getValue();
+					System.err.println("other does not contain " + v + " -- " + v.getClass().getCanonicalName() + " hash: " + v.hashCode() + "," + v.getValue().hashCode() + "| ");
+				}
+			}
+			
+			for (PropertyValue<?> v : other.values) {
+				if (!values.contains(v)) {
+					d2 = v.getValue();
+					System.err.println("this does not contain " + v + " -- " + v.getClass().getCanonicalName() + " hash: " + v.hashCode() + "," + v.getValue().hashCode());
+				}
+			}
+			
+			if (d1 instanceof Date && d2 instanceof Date) {
+				System.err.println(d1.equals(d2));
+				System.err.println(""+(((Date) d1).getTime() + " =?= " + ((Date) d2).getTime())); 
+			}
+
 			return false;
 		}
 		return true;

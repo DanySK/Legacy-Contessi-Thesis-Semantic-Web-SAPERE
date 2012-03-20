@@ -100,7 +100,7 @@ public class JenaSAPEREConverter {
 	 */
 	public final LSA parseLSA(final Resource lsa, final Model model)
 			throws Exception {
-		System.out.println("\nLSA " + lsa.getURI() + ":");
+//		System.out.println("\nLSA " + lsa.getURI() + ":");
 		final Statement owner = lsa.getProperty(model
 				.createProperty(IS_OWNED_PROP));
 		LSA res;
@@ -135,8 +135,10 @@ public class JenaSAPEREConverter {
 		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
 		while (iter.hasNext()) {
 			final Resource curr = iter.next().getResource(propVar());
+			if (!curr.getURI().equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
 			lsa.getSemanticDescription().addProperty(
 					parseProperty(model, res, curr.getURI()));
+			}
 		}
 	}
 
@@ -286,10 +288,11 @@ public class JenaSAPEREConverter {
 			final RDFNode rVal = curr.get(objVar());
 
 			if (rVal.isURIResource()) {
+//				System.out.println("URI: " + rVal.asResource().getURI());
 				res.add(factory.createPropertyValue(new URI(rVal.asResource()
 						.getURI())));
 			} else if (rVal.isLiteral()) {
-				res.add(parseValue(rVal.asLiteral()));
+				res.add(parseLiteral(rVal.asLiteral()));
 			}
 		}
 
@@ -307,31 +310,38 @@ public class JenaSAPEREConverter {
 	 * @throws Exception
 	 *             Cannot parse value
 	 */
-	private PropertyValue<?> parseValue(final Literal literal) 
+	private PropertyValue<?> parseLiteral(final Literal literal)
 			throws Exception {
-		final Object value = literal.getValue();
 		final String langCode = literal.getLanguage();
+		final String dataType = literal.getDatatypeURI();
+		final Object value = literal.getValue();
 
-		if (value instanceof Boolean) {
-			return factory.createPropertyValue((Boolean) value);
-		} else if (value instanceof Double) {
-			return factory.createPropertyValue((Double) value);
-		} else if (value instanceof Float) {
-			return factory.createPropertyValue((Float) value);
-		} else if (value instanceof Long) {
-			return factory.createPropertyValue((Long) value);
-		} else if (value instanceof Integer) {
-			return factory.createPropertyValue((Integer) value);
-		} else if (literal.isURIResource()) {
-			return factory.createPropertyValue(new URI(value.toString()));
-		} else if (value instanceof XSDDateTime) {
-			return factory.createPropertyValue(((XSDDateTime) value)
-					.asCalendar().getTime());
-		} else if (value instanceof Date) {
-			return factory.createPropertyValue((Date) value);
+//		System.out.println("Literal: " + literal + "--> value: "
+//				+ literal.getValue() + "; type: "
+//				+ literal.getValue().getClass().getCanonicalName()
+//				+ "; datatypeURI: " + literal.getDatatypeURI());
+
+		// Typed literal
+		if (dataType != null) {
+			if (value instanceof Boolean) {
+				return factory.createPropertyValue((Boolean) value);
+			} else if (value instanceof Double) {
+				return factory.createPropertyValue((Double) value);
+			} else if (value instanceof Float) {
+				return factory.createPropertyValue((Float) value);
+			} else if (value instanceof Long) {
+				return factory.createPropertyValue((Long) value);
+			} else if (value instanceof Integer) {
+				return factory.createPropertyValue((Integer) value);
+			} else if (value instanceof XSDDateTime) {
+				return factory.createPropertyValue(((XSDDateTime) value)
+						.asCalendar().getTime());
+			} else if (value instanceof Date) {
+				return factory.createPropertyValue((Date) value);
+			}
 		}
 
-		// Using String representation..
+		// Plain literal: using String representation..
 		if (langCode != null) {
 			return factory.createPropertyValue(literal.getString(), langCode);
 		}
