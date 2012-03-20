@@ -3,13 +3,13 @@
 @prefix sapere: <http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#> .
 @prefix ex: <http://www.example.org#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # lsa1432
 sapere:lsa1432 rdf:type sapere:LSA ;
 	sapere:type sapere:person ;
-	sapere:location loc:room131 ;
-	sapere:time "2011-05-31T12:45:39"^^xsd:dateTime ;
-	foaf:age "20"^^xsd:integer ;
+	sapere:time "2011-05-31T10:45:39Z"^^xsd:dateTime ;
+	foaf:age "20"^^xsd:int ;
 	ex:interest "music" ;
 	ex:interest "sport" ;
 	ex:interest "travelling" .
@@ -17,5 +17,5 @@ sapere:lsa1432 rdf:type sapere:LSA ;
 # lsa2543
 sapere:lsa2543 rdf:type sapere:LSA ;
 	sapere:type sapere:person ;
-	foaf:age "25"^^xsd:integer ;
-	sapere:time "2010-05-31T18:05:00"^^xsd:dateTime .
+	foaf:age "25"^^xsd:int ;
+	sapere:time "2010-05-31T16:05:00Z"^^xsd:dateTime .

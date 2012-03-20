@@ -159,25 +159,30 @@ public class PropertyImpl implements Property {
 			}
 			
 		} else if (!values.equals(other.values)) {
-			Object d1 = new Date(), d2 = null;
+			Object[] d1 = new Object[3], d2 = new Object[3], vs = new Object[3];
 			System.err.println(values.size() + " <-> " + values.size());
+			int i = 0;
 			for (PropertyValue<?> v : values) {
 				if (!other.values.contains(v)) {
-					d1 = v.getValue();
+					vs[i] = v;
+					d1[i] = v.getValue();
+					i++;
 					System.err.println("other does not contain " + v + " -- " + v.getClass().getCanonicalName() + " hash: " + v.hashCode() + "," + v.getValue().hashCode() + "| ");
 				}
 			}
 			
+			i = 0;
 			for (PropertyValue<?> v : other.values) {
+				System.out.println(v.equals(vs[i]));
 				if (!values.contains(v)) {
-					d2 = v.getValue();
+					d2[i] = v.getValue();
+					i++;
 					System.err.println("this does not contain " + v + " -- " + v.getClass().getCanonicalName() + " hash: " + v.hashCode() + "," + v.getValue().hashCode());
 				}
 			}
 			
-			if (d1 instanceof Date && d2 instanceof Date) {
-				System.err.println(d1.equals(d2));
-				System.err.println(""+(((Date) d1).getTime() + " =?= " + ((Date) d2).getTime())); 
+			for (i = 0; i < 3; i++) {
+				System.err.println(d1[i].equals(d2[i]));
 			}
 
 			return false;

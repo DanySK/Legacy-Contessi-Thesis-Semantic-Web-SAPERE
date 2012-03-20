@@ -342,7 +342,7 @@ public class JenaSAPEREConverter {
 		}
 
 		// Plain literal: using String representation..
-		if (langCode != null) {
+		if (langCode != null && !langCode.equals("")) {
 			return factory.createPropertyValue(literal.getString(), langCode);
 		}
 
