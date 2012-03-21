@@ -1,12 +1,13 @@
 Manifest-Version: 1.0
-Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.nodes,i
- t.apice.sapere.api.lsas,it.apice.sapere.api.lsas.values",it.apice.sap
- ere.api.lsas;uses:="it.apice.sapere.api.nodes,it.apice.sapere.api.lsa
- s.values",it.apice.sapere.api.lsas.values,it.apice.sapere.api.nodes;u
- ses:="it.apice.sapere.api.space,it.apice.sapere.api",it.apice.sapere.
- api.space;uses:="it.apice.sapere.api.nodes,it.apice.sapere.api.space.
- observation,it.apice.sapere.api.lsas",it.apice.sapere.api.space.obser
- vation;uses:="it.apice.sapere.api.lsas"
+Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.lsas.va
+ lues,it.apice.sapere.api.lsas",it.apice.sapere.api.lsas;uses:="it.api
+ ce.sapere.api.lsas.visitor,it.apice.sapere.api.lsas.values",it.apice.
+ sapere.api.lsas.values;uses:="it.apice.sapere.api.lsas.visitor",it.ap
+ ice.sapere.api.lsas.visitor;uses:="it.apice.sapere.api.lsas.values,it
+ .apice.sapere.api.lsas",it.apice.sapere.api.space;uses:="it.apice.sap
+ ere.api.space.observation,it.apice.sapere.api,it.apice.sapere.api.lsa
+ s",it.apice.sapere.api.space.observation;uses:="it.apice.sapere.api.l
+ sas"
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -16,13 +17,13 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_29
 Bundle-Version: 0.0.1
-Bnd-LastModified: 1332262356229
+Bnd-LastModified: 1332370058746
 Bundle-ManifestVersion: 2
 Bundle-Description: This module provides basic interfaces of the proje
  ct
 Import-Package: it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.
- sapere.api.lsas.values,it.apice.sapere.api.nodes,it.apice.sapere.api.
- space,it.apice.sapere.api.space.observation
+ sapere.api.lsas.values,it.apice.sapere.api.lsas.visitor,it.apice.sape
+ re.api.space,it.apice.sapere.api.space.observation
 Bundle-SymbolicName: it.apice.sapere.semanticwebsapere-api
 Bundle-DocURL: http://apice.unibo.it/
 

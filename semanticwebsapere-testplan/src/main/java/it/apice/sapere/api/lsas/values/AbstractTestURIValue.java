@@ -1,8 +1,7 @@
 package it.apice.sapere.api.lsas.values;
 
-import it.apice.sapere.api.SAPEREFactory;
-
 import static org.junit.Assert.fail;
+
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;

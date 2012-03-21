@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>semanticwebsapere</artifactId>
+		<groupId>it.apice.sapere</groupId>
+		<version>0.0.1</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>semanticwebsapere-tdbspace</artifactId>
+	<packaging>bundle</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena</artifactId>
+			<version>2.7.0-incubating</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-api</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-testplan</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-rdfmodel</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement></dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Category>sapere-project</Bundle-Category>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Import-Package>!*</Import-Package>
+						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
+						<Export-Package>it.apice.sapere.space.tdb</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<name>LSA-space (RDF + ACID)</name>
+	<description>This project provides an alternative implementation of LSA-space which provides native support to ACID transactions.
+
+jena-tdb (component on which this implementation is based) is meant to be an high-performance solution and that's why it's memory fingerprint is big (documentation declares a Java Heap Space requirement of 1GB).
+
+This solution could be problematic on pervasive systems.</description>
+</project>

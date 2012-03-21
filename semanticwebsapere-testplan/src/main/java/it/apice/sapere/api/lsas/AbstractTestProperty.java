@@ -41,7 +41,8 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.addValue(val).hasValue(val));
 
-		final PropertyValue<?> val2 = createFactory().createPropertyValue(false);
+		final PropertyValue<?> val2 = createFactory()
+				.createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -67,7 +68,8 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 		assertTrue("Property should have no values", prop.values().length == 1);
 		assertTrue(prop.hasValue(val));
 
-		final PropertyValue<?> val2 = createFactory().createPropertyValue(false);
+		final PropertyValue<?> val2 = createFactory()
+				.createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -75,7 +77,8 @@ public abstract class AbstractTestProperty extends AbstractModelTest {
 		assertTrue(prop.hasValue(val));
 
 		final URI prop2Name = new URI("http://localhost:8080/sapere#prop2");
-		final Property prop2 = createFactory().createProperty(prop2Name, val, val2);
+		final Property prop2 = createFactory()
+				.createProperty(prop2Name, val, val2);
 		assertTrue(prop.values().length == 2);
 		assertFalse(
 				"Two properties should be equals only if their name are equal",

@@ -68,14 +68,17 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 						% vals.size());
 				assertFalse(pval.equals(other));
 
-//				// Why hashcode of 0 and -1 are equals? the same with 1 and -2, MIN and MAX
-//				System.err.println(new Long(1).hashCode());
-//				System.err.println(new Long(0).hashCode());
-//				System.err.println(new Long(-1).hashCode());  
-//				System.err.println(new Long(-2).hashCode() + "\n");
-//				System.err.println(new Long(Long.MAX_VALUE).hashCode());
-//				System.err.println(new Long(Long.MIN_VALUE).hashCode());
-				assertFalse("hashcode clash: idx=" + idx, pval.hashCode() == other.hashCode());
+				// // Why hashcode of 0 and -1 are equals? the same with 1 and
+				// -2,
+				// MIN and MAX
+				// System.err.println(new Long(1).hashCode());
+				// System.err.println(new Long(0).hashCode());
+				// System.err.println(new Long(-1).hashCode());
+				// System.err.println(new Long(-2).hashCode() + "\n");
+				// System.err.println(new Long(Long.MAX_VALUE).hashCode());
+				// System.err.println(new Long(Long.MIN_VALUE).hashCode());
+				assertFalse("hashcode clash: idx=" + idx,
+						pval.hashCode() == other.hashCode());
 			}
 		}
 	}

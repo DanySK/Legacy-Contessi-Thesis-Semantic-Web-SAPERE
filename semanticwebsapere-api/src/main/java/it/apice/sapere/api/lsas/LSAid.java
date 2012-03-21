@@ -1,5 +1,7 @@
 package it.apice.sapere.api.lsas;
 
+import it.apice.sapere.api.lsas.visitor.LSAVisitor;
+
 import java.net.URI;
 
 /**
@@ -30,4 +32,12 @@ public interface LSAid {
 	 */
 	URI getId();
 
+	/**
+	 * <p>
+	 * Pattern VISITOR.
+	 * </p>
+	 *
+	 * @param visitor The visitor
+	 */
+	void accept(LSAVisitor visitor);
 }

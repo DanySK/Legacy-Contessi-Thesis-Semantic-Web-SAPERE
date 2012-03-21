@@ -12,6 +12,8 @@
 		<module>semanticwebsapere-api</module>
 		<module>semanticwebsapere-rdfspace</module>
 		<module>semanticwebsapere-testplan</module>
+		<module>semanticwebsapere-rdfmodel</module>
+		<module>semanticwebsapere-tdbspace</module>
 	</modules>
 
 	<organization>
@@ -43,6 +45,14 @@
 				<artifactId>junit</artifactId>
 				<version>4.8.2</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>
+					org.apache.felix.ipojo.annotations
+				</artifactId>
+				<version>1.8.0</version>
+				<type>bundle</type>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -90,6 +100,22 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12</version>
 			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
+<!-- 				<version>2.12</version> -->
+<!-- 				<configuration> -->
+<!-- 					<encoding>UTF-8</encoding> -->
+<!-- 				</configuration> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<goals> -->
+<!-- 							<goal>integration-test</goal> -->
+<!-- 							<goal>verify</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>

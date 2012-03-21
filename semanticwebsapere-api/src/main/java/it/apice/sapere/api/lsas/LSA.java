@@ -1,6 +1,7 @@
 package it.apice.sapere.api.lsas;
 
-import it.apice.sapere.api.nodes.SAPEREAgent;
+import it.apice.sapere.api.lsas.visitor.LSAVisitor;
+
 
 /**
  * <p>
@@ -46,30 +47,19 @@ public interface LSA {
 
 	/**
 	 * <p>
-	 * Checks if the provided agent owns the LSA.
-	 * </p>
-	 * 
-	 * @param agent
-	 *            An agent of the ecosystem
-	 * @return True if the agent owns the LSA, false otherwise
-	 */
-	boolean isOwnedBy(SAPEREAgent agent);
-
-	/**
-	 * <p>
-	 * Checks if this is a synthetic LSA.
-	 * </p>
-	 * 
-	 * @return True if is synthetic, false otherwise
-	 */
-	boolean isSynthetic();
-
-	/**
-	 * <p>
 	 * Clones this entity.
 	 * </p>
 	 * 
 	 * @return The clone entity
 	 */
 	LSA clone();
+
+	/**
+	 * <p>
+	 * Pattern VISITOR.
+	 * </p>
+	 *
+	 * @param visitor The visitor
+	 */
+	void accept(LSAVisitor visitor);
 }

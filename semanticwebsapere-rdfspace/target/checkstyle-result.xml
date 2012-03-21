@@ -1,65 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.5">
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/package-info.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/InjectorVisitorImpl.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/SAPEREFactoryImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/package-info.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/SAPEREParserImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/RemoverVisitorImpl.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/AeSimpleMD5.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/JenaSAPEREConverter.java">
-<error line="138" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/LSAidImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/LSAImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/PropertyImpl.java">
-<error line="7" column="8" severity="warning" message="Unused import - java.util.Date." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="162" column="38" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="162" column="58" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="162" column="78" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="170" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="180" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="184" column="29" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/PropertyNameImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/SemanticDescriptionImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/BooleanValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/DateTimeValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/DoubleValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/FloatValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/IntegerValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LiteralValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LongValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LSAidValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/PropertyValueImpl.java">
-<error line="7" column="8" severity="warning" message="Unused import - java.util.Arrays." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/URIValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/SAPEREAgentImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/SAPERENodeImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/impl/Jena2SAPEREConverter.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/impl/LSAspaceImpl.java">
 </file>

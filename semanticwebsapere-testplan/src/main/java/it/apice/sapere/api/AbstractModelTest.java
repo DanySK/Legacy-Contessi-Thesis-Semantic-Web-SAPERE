@@ -21,7 +21,7 @@ public abstract class AbstractModelTest {
 	 * 
 	 * @return A reference to a SAPEREFactory
 	 */
-	protected abstract SAPEREFactory createFactory();
+	protected abstract LSAFactory createFactory();
 
 	/**
 	 * <p>
@@ -30,5 +30,5 @@ public abstract class AbstractModelTest {
 	 * 
 	 * @return A reference to an ExtSAPEREFactory
 	 */
-	protected abstract ExtSAPEREFactory createExtFactory();
+	protected abstract PrivilegedLSAFactory createPrivilegedFactory();
 }

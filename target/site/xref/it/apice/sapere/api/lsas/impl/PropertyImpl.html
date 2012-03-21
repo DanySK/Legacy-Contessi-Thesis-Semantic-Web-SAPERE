@@ -13,8 +13,8 @@
 <a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.Property;
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.PropertyName;
 <a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.values.PropertyValue;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> java.util.Date;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.visitor.LSAVisitor;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   
 <a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> java.util.HashSet;
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> java.util.Set;
 <a class="jxr_linenumber" name="10" href="#10">10</a>  
@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment">	 * @param property</em>
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment">	 *            Property to be cloned</em>
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../../it/apice/sapere/api/lsas/impl/PropertyImpl.html">PropertyImpl</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/lsas/impl/PropertyImpl.html">PropertyImpl</a> property) {
+<a class="jxr_linenumber" name="54" href="#54">54</a>  	<strong class="jxr_keyword">protected</strong> <a href="../../../../../../it/apice/sapere/api/lsas/impl/PropertyImpl.html">PropertyImpl</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/lsas/impl/PropertyImpl.html">PropertyImpl</a> property) {
 <a class="jxr_linenumber" name="55" href="#55">55</a>  		name = property.name;
 <a class="jxr_linenumber" name="56" href="#56">56</a>  		values = <strong class="jxr_keyword">new</strong> HashSet&lt;PropertyValue&lt;?&gt;&gt;(property.values);
 <a class="jxr_linenumber" name="57" href="#57">57</a>  	}
@@ -169,54 +169,33 @@
 <a class="jxr_linenumber" name="159" href="#159">159</a> 			}
 <a class="jxr_linenumber" name="160" href="#160">160</a> 			
 <a class="jxr_linenumber" name="161" href="#161">161</a> 		} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (!values.equals(other.values)) {
-<a class="jxr_linenumber" name="162" href="#162">162</a> 			Object[] d1 = <strong class="jxr_keyword">new</strong> Object[3], d2 = <strong class="jxr_keyword">new</strong> Object[3], vs = <strong class="jxr_keyword">new</strong> Object[3];
-<a class="jxr_linenumber" name="163" href="#163">163</a> 			System.err.println(values.size() + <span class="jxr_string">" &lt;-&gt; "</span> + values.size());
-<a class="jxr_linenumber" name="164" href="#164">164</a> 			<strong class="jxr_keyword">int</strong> i = 0;
-<a class="jxr_linenumber" name="165" href="#165">165</a> 			<strong class="jxr_keyword">for</strong> (PropertyValue&lt;?&gt; v : values) {
-<a class="jxr_linenumber" name="166" href="#166">166</a> 				<strong class="jxr_keyword">if</strong> (!other.values.contains(v)) {
-<a class="jxr_linenumber" name="167" href="#167">167</a> 					vs[i] = v;
-<a class="jxr_linenumber" name="168" href="#168">168</a> 					d1[i] = v.getValue();
-<a class="jxr_linenumber" name="169" href="#169">169</a> 					i++;
-<a class="jxr_linenumber" name="170" href="#170">170</a> 					System.err.println(<span class="jxr_string">"other does not contain "</span> + v + <span class="jxr_string">" -- "</span> + v.getClass().getCanonicalName() + <span class="jxr_string">" hash: "</span> + v.hashCode() + <span class="jxr_string">","</span> + v.getValue().hashCode() + <span class="jxr_string">"| "</span>);
-<a class="jxr_linenumber" name="171" href="#171">171</a> 				}
-<a class="jxr_linenumber" name="172" href="#172">172</a> 			}
-<a class="jxr_linenumber" name="173" href="#173">173</a> 			
-<a class="jxr_linenumber" name="174" href="#174">174</a> 			i = 0;
-<a class="jxr_linenumber" name="175" href="#175">175</a> 			<strong class="jxr_keyword">for</strong> (PropertyValue&lt;?&gt; v : other.values) {
-<a class="jxr_linenumber" name="176" href="#176">176</a> 				System.out.println(v.equals(vs[i]));
-<a class="jxr_linenumber" name="177" href="#177">177</a> 				<strong class="jxr_keyword">if</strong> (!values.contains(v)) {
-<a class="jxr_linenumber" name="178" href="#178">178</a> 					d2[i] = v.getValue();
-<a class="jxr_linenumber" name="179" href="#179">179</a> 					i++;
-<a class="jxr_linenumber" name="180" href="#180">180</a> 					System.err.println(<span class="jxr_string">"this does not contain "</span> + v + <span class="jxr_string">" -- "</span> + v.getClass().getCanonicalName() + <span class="jxr_string">" hash: "</span> + v.hashCode() + <span class="jxr_string">","</span> + v.getValue().hashCode());
-<a class="jxr_linenumber" name="181" href="#181">181</a> 				}
-<a class="jxr_linenumber" name="182" href="#182">182</a> 			}
-<a class="jxr_linenumber" name="183" href="#183">183</a> 			
-<a class="jxr_linenumber" name="184" href="#184">184</a> 			<strong class="jxr_keyword">for</strong> (i = 0; i &lt; 3; i++) {
-<a class="jxr_linenumber" name="185" href="#185">185</a> 				System.err.println(d1[i].equals(d2[i]));
-<a class="jxr_linenumber" name="186" href="#186">186</a> 			}
-<a class="jxr_linenumber" name="187" href="#187">187</a> 
-<a class="jxr_linenumber" name="188" href="#188">188</a> 			<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="189" href="#189">189</a> 		}
-<a class="jxr_linenumber" name="190" href="#190">190</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="191" href="#191">191</a> 	}
-<a class="jxr_linenumber" name="192" href="#192">192</a> 
-<a class="jxr_linenumber" name="193" href="#193">193</a> 	@Override
-<a class="jxr_linenumber" name="194" href="#194">194</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String toString() {
-<a class="jxr_linenumber" name="195" href="#195">195</a> 		<strong class="jxr_keyword">final</strong> StringBuilder builder = <strong class="jxr_keyword">new</strong> StringBuilder();
-<a class="jxr_linenumber" name="196" href="#196">196</a> 		builder.append(name.toString()).append(<span class="jxr_string">" := ("</span>);
-<a class="jxr_linenumber" name="197" href="#197">197</a> 		
-<a class="jxr_linenumber" name="198" href="#198">198</a> 		<strong class="jxr_keyword">int</strong> count = 0;
-<a class="jxr_linenumber" name="199" href="#199">199</a> 		<strong class="jxr_keyword">for</strong> (PropertyValue&lt;?&gt; val : values) {
-<a class="jxr_linenumber" name="200" href="#200">200</a> 			builder.append(val);
-<a class="jxr_linenumber" name="201" href="#201">201</a> 			count++;
-<a class="jxr_linenumber" name="202" href="#202">202</a> 			<strong class="jxr_keyword">if</strong> (count &lt; values.size()) {
-<a class="jxr_linenumber" name="203" href="#203">203</a> 				builder.append(<span class="jxr_string">", "</span>);
-<a class="jxr_linenumber" name="204" href="#204">204</a> 			}
-<a class="jxr_linenumber" name="205" href="#205">205</a> 		}
-<a class="jxr_linenumber" name="206" href="#206">206</a> 
-<a class="jxr_linenumber" name="207" href="#207">207</a> 		<strong class="jxr_keyword">return</strong> builder.append(<span class="jxr_string">")"</span>).toString();
-<a class="jxr_linenumber" name="208" href="#208">208</a> 	}
-<a class="jxr_linenumber" name="209" href="#209">209</a> }
+<a class="jxr_linenumber" name="162" href="#162">162</a> 			<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="163" href="#163">163</a> 		}
+<a class="jxr_linenumber" name="164" href="#164">164</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="165" href="#165">165</a> 	}
+<a class="jxr_linenumber" name="166" href="#166">166</a> 
+<a class="jxr_linenumber" name="167" href="#167">167</a> 	@Override
+<a class="jxr_linenumber" name="168" href="#168">168</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String toString() {
+<a class="jxr_linenumber" name="169" href="#169">169</a> 		<strong class="jxr_keyword">final</strong> StringBuilder builder = <strong class="jxr_keyword">new</strong> StringBuilder();
+<a class="jxr_linenumber" name="170" href="#170">170</a> 		builder.append(name.toString()).append(<span class="jxr_string">" := ("</span>);
+<a class="jxr_linenumber" name="171" href="#171">171</a> 		
+<a class="jxr_linenumber" name="172" href="#172">172</a> 		<strong class="jxr_keyword">int</strong> count = 0;
+<a class="jxr_linenumber" name="173" href="#173">173</a> 		<strong class="jxr_keyword">for</strong> (PropertyValue&lt;?&gt; val : values) {
+<a class="jxr_linenumber" name="174" href="#174">174</a> 			builder.append(val);
+<a class="jxr_linenumber" name="175" href="#175">175</a> 			count++;
+<a class="jxr_linenumber" name="176" href="#176">176</a> 			<strong class="jxr_keyword">if</strong> (count &lt; values.size()) {
+<a class="jxr_linenumber" name="177" href="#177">177</a> 				builder.append(<span class="jxr_string">", "</span>);
+<a class="jxr_linenumber" name="178" href="#178">178</a> 			}
+<a class="jxr_linenumber" name="179" href="#179">179</a> 		}
+<a class="jxr_linenumber" name="180" href="#180">180</a> 
+<a class="jxr_linenumber" name="181" href="#181">181</a> 		<strong class="jxr_keyword">return</strong> builder.append(<span class="jxr_string">")"</span>).toString();
+<a class="jxr_linenumber" name="182" href="#182">182</a> 	}
+<a class="jxr_linenumber" name="183" href="#183">183</a> 
+<a class="jxr_linenumber" name="184" href="#184">184</a> 	@Override
+<a class="jxr_linenumber" name="185" href="#185">185</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> accept(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/lsas/visitor/LSAVisitor.html">LSAVisitor</a> visitor) {
+<a class="jxr_linenumber" name="186" href="#186">186</a> 		visitor.visit(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="187" href="#187">187</a> 	}
+<a class="jxr_linenumber" name="188" href="#188">188</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

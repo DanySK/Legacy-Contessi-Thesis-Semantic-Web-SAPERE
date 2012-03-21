@@ -110,7 +110,7 @@
 <a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="101" href="#101">101</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/lsas/LSA.html">LSA</a> parseLSA(<strong class="jxr_keyword">final</strong> Resource lsa, <strong class="jxr_keyword">final</strong> Model model)
 <a class="jxr_linenumber" name="102" href="#102">102</a> 			<strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="103" href="#103">103</a> <em class="jxr_comment">//		System.out.println("\nLSA " + lsa.getURI() + ":");</em>
+<a class="jxr_linenumber" name="103" href="#103">103</a> 		<em class="jxr_comment">// System.out.println("\nLSA " + lsa.getURI() + ":");</em>
 <a class="jxr_linenumber" name="104" href="#104">104</a> 		<strong class="jxr_keyword">final</strong> Statement owner = lsa.getProperty(model
 <a class="jxr_linenumber" name="105" href="#105">105</a> 				.createProperty(IS_OWNED_PROP));
 <a class="jxr_linenumber" name="106" href="#106">106</a> 		LSA res;
@@ -145,94 +145,94 @@
 <a class="jxr_linenumber" name="135" href="#135">135</a> 		<strong class="jxr_keyword">final</strong> ResultSet iter = execQuery(model, lsaPropsQuery(res));
 <a class="jxr_linenumber" name="136" href="#136">136</a> 		<strong class="jxr_keyword">while</strong> (iter.hasNext()) {
 <a class="jxr_linenumber" name="137" href="#137">137</a> 			<strong class="jxr_keyword">final</strong> Resource curr = iter.next().getResource(propVar());
-<a class="jxr_linenumber" name="138" href="#138">138</a> 			<strong class="jxr_keyword">if</strong> (!curr.getURI().equals(<span class="jxr_string">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>)) {
-<a class="jxr_linenumber" name="139" href="#139">139</a> 			lsa.getSemanticDescription().addProperty(
-<a class="jxr_linenumber" name="140" href="#140">140</a> 					parseProperty(model, res, curr.getURI()));
-<a class="jxr_linenumber" name="141" href="#141">141</a> 			}
-<a class="jxr_linenumber" name="142" href="#142">142</a> 		}
-<a class="jxr_linenumber" name="143" href="#143">143</a> 	}
-<a class="jxr_linenumber" name="144" href="#144">144</a> 
-<a class="jxr_linenumber" name="145" href="#145">145</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="146" href="#146">146</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="147" href="#147">147</a> <em class="jxr_javadoccomment">	 * Retrieves the name of the query's prop variable.</em>
-<a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="150" href="#150">150</a> <em class="jxr_javadoccomment">	 * @return Name of the prop var</em>
-<a class="jxr_linenumber" name="151" href="#151">151</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="152" href="#152">152</a> 	<strong class="jxr_keyword">private</strong> String propVar() {
-<a class="jxr_linenumber" name="153" href="#153">153</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"?prop"</span>;
-<a class="jxr_linenumber" name="154" href="#154">154</a> 	}
-<a class="jxr_linenumber" name="155" href="#155">155</a> 
-<a class="jxr_linenumber" name="156" href="#156">156</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="157" href="#157">157</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">	 * Retrieves the name of the query's obj variable.</em>
-<a class="jxr_linenumber" name="159" href="#159">159</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="160" href="#160">160</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="161" href="#161">161</a> <em class="jxr_javadoccomment">	 * @return Name of the obj var</em>
-<a class="jxr_linenumber" name="162" href="#162">162</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="163" href="#163">163</a> 	<strong class="jxr_keyword">private</strong> String objVar() {
-<a class="jxr_linenumber" name="164" href="#164">164</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"?obj"</span>;
-<a class="jxr_linenumber" name="165" href="#165">165</a> 	}
-<a class="jxr_linenumber" name="166" href="#166">166</a> 
-<a class="jxr_linenumber" name="167" href="#167">167</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="168" href="#168">168</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="169" href="#169">169</a> <em class="jxr_javadoccomment">	 * Retrieves the text of the SPARQL query which will retrieve LSA's</em>
-<a class="jxr_linenumber" name="170" href="#170">170</a> <em class="jxr_javadoccomment">	 * properties.</em>
-<a class="jxr_linenumber" name="171" href="#171">171</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="172" href="#172">172</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="173" href="#173">173</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
-<a class="jxr_linenumber" name="174" href="#174">174</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
-<a class="jxr_linenumber" name="175" href="#175">175</a> <em class="jxr_javadoccomment">	 * @return The query string</em>
-<a class="jxr_linenumber" name="176" href="#176">176</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="177" href="#177">177</a> 	<strong class="jxr_keyword">private</strong> String lsaPropsQueryText(<strong class="jxr_keyword">final</strong> Resource lsa) {
-<a class="jxr_linenumber" name="178" href="#178">178</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SELECT DISTINCT "</span> + propVar() + <span class="jxr_string">" WHERE { &lt;"</span> + lsa.getURI()
-<a class="jxr_linenumber" name="179" href="#179">179</a> 				+ <span class="jxr_string">"&gt; "</span> + propVar() + <span class="jxr_string">" "</span> + objVar() + <span class="jxr_string">" }"</span>;
-<a class="jxr_linenumber" name="180" href="#180">180</a> 	}
-<a class="jxr_linenumber" name="181" href="#181">181</a> 
-<a class="jxr_linenumber" name="182" href="#182">182</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="183" href="#183">183</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="184" href="#184">184</a> <em class="jxr_javadoccomment">	 * Retrieves the text of the SPARQL query which will retrieve values of</em>
-<a class="jxr_linenumber" name="185" href="#185">185</a> <em class="jxr_javadoccomment">	 * LSA's properties.</em>
-<a class="jxr_linenumber" name="186" href="#186">186</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="188" href="#188">188</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
-<a class="jxr_linenumber" name="189" href="#189">189</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
-<a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">	 * @param propURI</em>
-<a class="jxr_linenumber" name="191" href="#191">191</a> <em class="jxr_javadoccomment">	 *            The property whose values should be retrieved</em>
-<a class="jxr_linenumber" name="192" href="#192">192</a> <em class="jxr_javadoccomment">	 * @return The query string</em>
-<a class="jxr_linenumber" name="193" href="#193">193</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="194" href="#194">194</a> 	<strong class="jxr_keyword">private</strong> String lsaPropsValuesQueryText(<strong class="jxr_keyword">final</strong> Resource lsa,
-<a class="jxr_linenumber" name="195" href="#195">195</a> 			<strong class="jxr_keyword">final</strong> String propURI) {
-<a class="jxr_linenumber" name="196" href="#196">196</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SELECT DISTINCT "</span> + objVar() + <span class="jxr_string">" WHERE { &lt;"</span> + lsa.getURI()
-<a class="jxr_linenumber" name="197" href="#197">197</a> 				+ <span class="jxr_string">"&gt; &lt;"</span> + propURI + <span class="jxr_string">"&gt; "</span> + objVar() + <span class="jxr_string">" }"</span>;
-<a class="jxr_linenumber" name="198" href="#198">198</a> 	}
-<a class="jxr_linenumber" name="199" href="#199">199</a> 
-<a class="jxr_linenumber" name="200" href="#200">200</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="201" href="#201">201</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="202" href="#202">202</a> <em class="jxr_javadoccomment">	 * Creates a new query that retrieves LSA's properties.</em>
-<a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="205" href="#205">205</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
-<a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">	 *            The LSA whose properties will be retrieved</em>
-<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">	 * @return The query object</em>
-<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="209" href="#209">209</a> 	<strong class="jxr_keyword">private</strong> Query lsaPropsQuery(<strong class="jxr_keyword">final</strong> Resource lsa) {
-<a class="jxr_linenumber" name="210" href="#210">210</a> 		<strong class="jxr_keyword">return</strong> QueryFactory.create(lsaPropsQueryText(lsa));
-<a class="jxr_linenumber" name="211" href="#211">211</a> 	}
-<a class="jxr_linenumber" name="212" href="#212">212</a> 
-<a class="jxr_linenumber" name="213" href="#213">213</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="214" href="#214">214</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="215" href="#215">215</a> <em class="jxr_javadoccomment">	 * Creates a new query which will retrieve values of LSA's properties.</em>
-<a class="jxr_linenumber" name="216" href="#216">216</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="217" href="#217">217</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="218" href="#218">218</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
-<a class="jxr_linenumber" name="219" href="#219">219</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
-<a class="jxr_linenumber" name="220" href="#220">220</a> <em class="jxr_javadoccomment">	 * @param propURI</em>
-<a class="jxr_linenumber" name="221" href="#221">221</a> <em class="jxr_javadoccomment">	 *            The property whose values should be retrieved</em>
-<a class="jxr_linenumber" name="222" href="#222">222</a> <em class="jxr_javadoccomment">	 * @return The query object</em>
-<a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="224" href="#224">224</a> 	<strong class="jxr_keyword">private</strong> Query lsaPropsValuesQuery(<strong class="jxr_keyword">final</strong> Resource lsa, 
-<a class="jxr_linenumber" name="225" href="#225">225</a> 			<strong class="jxr_keyword">final</strong> String propURI) {
+<a class="jxr_linenumber" name="138" href="#138">138</a> 			<strong class="jxr_keyword">if</strong> (!curr.getURI().equals(
+<a class="jxr_linenumber" name="139" href="#139">139</a> 					<span class="jxr_string">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>)) {
+<a class="jxr_linenumber" name="140" href="#140">140</a> 				lsa.getSemanticDescription().addProperty(
+<a class="jxr_linenumber" name="141" href="#141">141</a> 						parseProperty(model, res, curr.getURI()));
+<a class="jxr_linenumber" name="142" href="#142">142</a> 			}
+<a class="jxr_linenumber" name="143" href="#143">143</a> 		}
+<a class="jxr_linenumber" name="144" href="#144">144</a> 	}
+<a class="jxr_linenumber" name="145" href="#145">145</a> 
+<a class="jxr_linenumber" name="146" href="#146">146</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="147" href="#147">147</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">	 * Retrieves the name of the query's prop variable.</em>
+<a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="150" href="#150">150</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="151" href="#151">151</a> <em class="jxr_javadoccomment">	 * @return Name of the prop var</em>
+<a class="jxr_linenumber" name="152" href="#152">152</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="153" href="#153">153</a> 	<strong class="jxr_keyword">private</strong> String propVar() {
+<a class="jxr_linenumber" name="154" href="#154">154</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"?prop"</span>;
+<a class="jxr_linenumber" name="155" href="#155">155</a> 	}
+<a class="jxr_linenumber" name="156" href="#156">156</a> 
+<a class="jxr_linenumber" name="157" href="#157">157</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="159" href="#159">159</a> <em class="jxr_javadoccomment">	 * Retrieves the name of the query's obj variable.</em>
+<a class="jxr_linenumber" name="160" href="#160">160</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="161" href="#161">161</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="162" href="#162">162</a> <em class="jxr_javadoccomment">	 * @return Name of the obj var</em>
+<a class="jxr_linenumber" name="163" href="#163">163</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="164" href="#164">164</a> 	<strong class="jxr_keyword">private</strong> String objVar() {
+<a class="jxr_linenumber" name="165" href="#165">165</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"?obj"</span>;
+<a class="jxr_linenumber" name="166" href="#166">166</a> 	}
+<a class="jxr_linenumber" name="167" href="#167">167</a> 
+<a class="jxr_linenumber" name="168" href="#168">168</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="169" href="#169">169</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="170" href="#170">170</a> <em class="jxr_javadoccomment">	 * Retrieves the text of the SPARQL query which will retrieve LSA's</em>
+<a class="jxr_linenumber" name="171" href="#171">171</a> <em class="jxr_javadoccomment">	 * properties.</em>
+<a class="jxr_linenumber" name="172" href="#172">172</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="173" href="#173">173</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="174" href="#174">174</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
+<a class="jxr_linenumber" name="175" href="#175">175</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
+<a class="jxr_linenumber" name="176" href="#176">176</a> <em class="jxr_javadoccomment">	 * @return The query string</em>
+<a class="jxr_linenumber" name="177" href="#177">177</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="178" href="#178">178</a> 	<strong class="jxr_keyword">private</strong> String lsaPropsQueryText(<strong class="jxr_keyword">final</strong> Resource lsa) {
+<a class="jxr_linenumber" name="179" href="#179">179</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SELECT DISTINCT "</span> + propVar() + <span class="jxr_string">" WHERE { &lt;"</span> + lsa.getURI()
+<a class="jxr_linenumber" name="180" href="#180">180</a> 				+ <span class="jxr_string">"&gt; "</span> + propVar() + <span class="jxr_string">" "</span> + objVar() + <span class="jxr_string">" }"</span>;
+<a class="jxr_linenumber" name="181" href="#181">181</a> 	}
+<a class="jxr_linenumber" name="182" href="#182">182</a> 
+<a class="jxr_linenumber" name="183" href="#183">183</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="184" href="#184">184</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="185" href="#185">185</a> <em class="jxr_javadoccomment">	 * Retrieves the text of the SPARQL query which will retrieve values of</em>
+<a class="jxr_linenumber" name="186" href="#186">186</a> <em class="jxr_javadoccomment">	 * LSA's properties.</em>
+<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="188" href="#188">188</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="189" href="#189">189</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
+<a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
+<a class="jxr_linenumber" name="191" href="#191">191</a> <em class="jxr_javadoccomment">	 * @param propURI</em>
+<a class="jxr_linenumber" name="192" href="#192">192</a> <em class="jxr_javadoccomment">	 *            The property whose values should be retrieved</em>
+<a class="jxr_linenumber" name="193" href="#193">193</a> <em class="jxr_javadoccomment">	 * @return The query string</em>
+<a class="jxr_linenumber" name="194" href="#194">194</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="195" href="#195">195</a> 	<strong class="jxr_keyword">private</strong> String lsaPropsValuesQueryText(<strong class="jxr_keyword">final</strong> Resource lsa,
+<a class="jxr_linenumber" name="196" href="#196">196</a> 			<strong class="jxr_keyword">final</strong> String propURI) {
+<a class="jxr_linenumber" name="197" href="#197">197</a> 		<strong class="jxr_keyword">return</strong> <span class="jxr_string">"SELECT DISTINCT "</span> + objVar() + <span class="jxr_string">" WHERE { &lt;"</span> + lsa.getURI()
+<a class="jxr_linenumber" name="198" href="#198">198</a> 				+ <span class="jxr_string">"&gt; &lt;"</span> + propURI + <span class="jxr_string">"&gt; "</span> + objVar() + <span class="jxr_string">" }"</span>;
+<a class="jxr_linenumber" name="199" href="#199">199</a> 	}
+<a class="jxr_linenumber" name="200" href="#200">200</a> 
+<a class="jxr_linenumber" name="201" href="#201">201</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="202" href="#202">202</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">	 * Creates a new query that retrieves LSA's properties.</em>
+<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="205" href="#205">205</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
+<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">	 *            The LSA whose properties will be retrieved</em>
+<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">	 * @return The query object</em>
+<a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="210" href="#210">210</a> 	<strong class="jxr_keyword">private</strong> Query lsaPropsQuery(<strong class="jxr_keyword">final</strong> Resource lsa) {
+<a class="jxr_linenumber" name="211" href="#211">211</a> 		<strong class="jxr_keyword">return</strong> QueryFactory.create(lsaPropsQueryText(lsa));
+<a class="jxr_linenumber" name="212" href="#212">212</a> 	}
+<a class="jxr_linenumber" name="213" href="#213">213</a> 
+<a class="jxr_linenumber" name="214" href="#214">214</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="215" href="#215">215</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="216" href="#216">216</a> <em class="jxr_javadoccomment">	 * Creates a new query which will retrieve values of LSA's properties.</em>
+<a class="jxr_linenumber" name="217" href="#217">217</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="218" href="#218">218</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="219" href="#219">219</a> <em class="jxr_javadoccomment">	 * @param lsa</em>
+<a class="jxr_linenumber" name="220" href="#220">220</a> <em class="jxr_javadoccomment">	 *            The LSA to be inspected</em>
+<a class="jxr_linenumber" name="221" href="#221">221</a> <em class="jxr_javadoccomment">	 * @param propURI</em>
+<a class="jxr_linenumber" name="222" href="#222">222</a> <em class="jxr_javadoccomment">	 *            The property whose values should be retrieved</em>
+<a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">	 * @return The query object</em>
+<a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="225" href="#225">225</a> 	<strong class="jxr_keyword">private</strong> Query lsaPropsValuesQuery(<strong class="jxr_keyword">final</strong> Resource lsa, <strong class="jxr_keyword">final</strong> String propURI) {
 <a class="jxr_linenumber" name="226" href="#226">226</a> 		<strong class="jxr_keyword">return</strong> QueryFactory.create(lsaPropsValuesQueryText(lsa, propURI));
 <a class="jxr_linenumber" name="227" href="#227">227</a> 	}
 <a class="jxr_linenumber" name="228" href="#228">228</a> 
@@ -298,7 +298,7 @@
 <a class="jxr_linenumber" name="288" href="#288">288</a> 			<strong class="jxr_keyword">final</strong> RDFNode rVal = curr.get(objVar());
 <a class="jxr_linenumber" name="289" href="#289">289</a> 
 <a class="jxr_linenumber" name="290" href="#290">290</a> 			<strong class="jxr_keyword">if</strong> (rVal.isURIResource()) {
-<a class="jxr_linenumber" name="291" href="#291">291</a> <em class="jxr_comment">//				System.out.println("URI: " + rVal.asResource().getURI());</em>
+<a class="jxr_linenumber" name="291" href="#291">291</a> 				<em class="jxr_comment">// System.out.println("URI: " + rVal.asResource().getURI());</em>
 <a class="jxr_linenumber" name="292" href="#292">292</a> 				res.add(factory.createPropertyValue(<strong class="jxr_keyword">new</strong> URI(rVal.asResource()
 <a class="jxr_linenumber" name="293" href="#293">293</a> 						.getURI())));
 <a class="jxr_linenumber" name="294" href="#294">294</a> 			} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (rVal.isLiteral()) {
@@ -326,10 +326,10 @@
 <a class="jxr_linenumber" name="316" href="#316">316</a> 		<strong class="jxr_keyword">final</strong> String dataType = literal.getDatatypeURI();
 <a class="jxr_linenumber" name="317" href="#317">317</a> 		<strong class="jxr_keyword">final</strong> Object value = literal.getValue();
 <a class="jxr_linenumber" name="318" href="#318">318</a> 
-<a class="jxr_linenumber" name="319" href="#319">319</a> <em class="jxr_comment">//		System.out.println("Literal: " + literal + "--&gt; value: "</em>
-<a class="jxr_linenumber" name="320" href="#320">320</a> <em class="jxr_comment">//				+ literal.getValue() + "; type: "</em>
-<a class="jxr_linenumber" name="321" href="#321">321</a> <em class="jxr_comment">//				+ literal.getValue().getClass().getCanonicalName()</em>
-<a class="jxr_linenumber" name="322" href="#322">322</a> <em class="jxr_comment">//				+ "; datatypeURI: " + literal.getDatatypeURI());</em>
+<a class="jxr_linenumber" name="319" href="#319">319</a> 		<em class="jxr_comment">// System.out.println("Literal: " + literal + "--&gt; value: "</em>
+<a class="jxr_linenumber" name="320" href="#320">320</a> 		<em class="jxr_comment">// + literal.getValue() + "; type: "</em>
+<a class="jxr_linenumber" name="321" href="#321">321</a> 		<em class="jxr_comment">// + literal.getValue().getClass().getCanonicalName()</em>
+<a class="jxr_linenumber" name="322" href="#322">322</a> 		<em class="jxr_comment">// + "; datatypeURI: " + literal.getDatatypeURI());</em>
 <a class="jxr_linenumber" name="323" href="#323">323</a> 
 <a class="jxr_linenumber" name="324" href="#324">324</a> 		<em class="jxr_comment">// Typed literal</em>
 <a class="jxr_linenumber" name="325" href="#325">325</a> 		<strong class="jxr_keyword">if</strong> (dataType != <strong class="jxr_keyword">null</strong>) {

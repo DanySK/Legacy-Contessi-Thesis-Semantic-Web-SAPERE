@@ -21,15 +21,14 @@ public abstract class AbstractTestLongValue extends
 		res.add(Long.MAX_VALUE);
 		res.add(1L);
 		res.add(0L);
-		res.add(-2L);
+		res.add((-1L - 1L));
 		res.add(Long.MIN_VALUE + 1);
 
 		return res;
 	}
 
 	@Override
-	protected final PropertyValue<Long> createPropertyValue(
-			final Long val) {
+	protected final PropertyValue<Long> createPropertyValue(final Long val) {
 		return createFactory().createPropertyValue(val);
 	}
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import it.apice.sapere.api.AbstractModelTest;
-import it.apice.sapere.api.SAPEREFactory;
+import it.apice.sapere.api.LSAFactory;
 
 import org.junit.Test;
 
@@ -28,7 +28,7 @@ public abstract class AbstractTestLSAid extends AbstractModelTest {
 	 */
 	@Test
 	public final void testUniqueness() {
-		final SAPEREFactory factory = createFactory();
+		final LSAFactory factory = createFactory();
 		final LSAid[] ids = new LSAid[NUMBER_OF_TESTS];
 
 		for (int i = 0; i < NUMBER_OF_TESTS; i++) {
@@ -46,7 +46,8 @@ public abstract class AbstractTestLSAid extends AbstractModelTest {
 				assertFalse(ids[i].hashCode() == ids[j].hashCode());
 			}
 
-			assertTrue("Equivalence should be reflexive", ids[i].equals(ids[i]));
+			assertTrue("Equivalence should be reflexive", 
+					ids[i].equals(ids[i]));
 			assertTrue(ids[i].hashCode() == ids[i].hashCode());
 		}
 	}

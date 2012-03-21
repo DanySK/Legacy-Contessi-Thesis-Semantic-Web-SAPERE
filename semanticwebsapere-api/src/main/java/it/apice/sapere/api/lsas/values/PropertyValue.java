@@ -1,5 +1,7 @@
 package it.apice.sapere.api.lsas.values;
 
+import it.apice.sapere.api.lsas.visitor.LSAVisitor;
+
 /**
  * <p>
  * A Property Value is a generic value (URI or Literal) that can be associated
@@ -93,4 +95,12 @@ public interface PropertyValue<Type> {
 	 */
 	Type getValue();
 
+	/**
+	 * <p>
+	 * Pattern VISITOR.
+	 * </p>
+	 *
+	 * @param visitor The visitor
+	 */
+	void accept(LSAVisitor visitor);
 }

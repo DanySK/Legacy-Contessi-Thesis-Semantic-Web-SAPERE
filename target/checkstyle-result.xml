@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.5">
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ExtSAPEREFactory.java">
-</file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/internal/Foo.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/internal/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/LSAFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/LSAParser.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/LSA.java">
 </file>
@@ -40,27 +42,17 @@
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/URIValue.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/package-info.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/visitor/LSAVisitor.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/SAPEREAgent.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/SAPEREAgentBehaviour.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/SAPEREAgentTerminateException.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/SAPEREException.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/nodes/SAPERENode.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/visitor/package-info.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/package-info.java">
 </file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/PrivilegedLSAFactory.java">
+</file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/RDFFormat.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/SAPEREFactory.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/SAPEREParser.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/ExtLSAspace.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/SAPEREException.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/LSAspace.java">
 </file>
@@ -81,36 +73,21 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractModelTest.java">
 <error line="0" severity="warning" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestExtSAPEREFactory.java">
-<error line="17" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestLSAFactory.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestSAPEREFactory.java">
-<error line="34" column="5" severity="warning" message="Method &apos;testUnwanted&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="143" column="5" severity="warning" message="Method &apos;createValidStringValue&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="154" column="5" severity="warning" message="Method &apos;createValidStringValue2&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="165" column="5" severity="warning" message="Method &apos;createValidLanguageCode&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="176" column="5" severity="warning" message="Method &apos;createValidURI&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="191" column="5" severity="warning" message="Method &apos;createMockBehav&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestLSAParser.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestSAPEREParser.java">
-<error line="113" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="127" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="141" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="218" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/AbstractTestPrivilegedLSAFactory.java">
+<error line="21" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestLSA.java">
 <error line="0" severity="warning" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestLSAid.java">
-<error line="49" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestProperty.java">
-<error line="44" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="70" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="78" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestPropertyName.java">
-<error line="35" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestSemanticDescription.java">
 </file>
@@ -126,97 +103,26 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/AbstractTestIntegerValue.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/AbstractTestLongValue.java">
-<error line="24" column="17" severity="warning" message="&apos;-2L&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/AbstractTestLSAidValue.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/AbstractTestPropertyValue.java">
 <error line="39" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 <error line="60" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="71" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="78" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="98" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="101" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/AbstractTestURIValue.java">
-<error line="3" column="8" severity="warning" message="Unused import - it.apice.sapere.api.SAPEREFactory." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/nodes/AbstractTestSAPERENode.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/space/AbstractITLSAspace.java">
 <error line="0" severity="warning" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/space/AbstractTestExtLSAspace.java">
-<error line="0" severity="warning" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
-<error line="316" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/InjectorVisitorImpl.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/space/AbstractTestLSAspace.java">
-<error line="48" column="5" severity="warning" message="Method &apos;testInjectExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="71" column="5" severity="warning" message="Method &apos;testReadExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="93" column="5" severity="warning" message="Method &apos;testRemoveExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="129" column="5" severity="warning" message="Method &apos;testUpdateExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="158" column="5" severity="warning" message="Method &apos;testObserveExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="187" column="5" severity="warning" message="Method &apos;testIgnoreExceptions&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="221" column="5" severity="warning" message="Method &apos;testScenario&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
-<error line="261" column="5" severity="warning" message="Method &apos;createScenarioObserver&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/package-info.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/package-info.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/RemoverVisitorImpl.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/SAPEREFactoryImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/impl/SAPEREParserImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/AeSimpleMD5.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/JenaSAPEREConverter.java">
-<error line="138" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/internal/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/LSAidImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/LSAImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/PropertyImpl.java">
-<error line="7" column="8" severity="warning" message="Unused import - java.util.Date." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-<error line="162" column="38" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="162" column="58" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="162" column="78" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="170" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="180" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="184" column="29" severity="warning" message="&apos;3&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/PropertyNameImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/impl/SemanticDescriptionImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/BooleanValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/DateTimeValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/DoubleValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/FloatValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/IntegerValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LiteralValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LongValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/LSAidValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/PropertyValueImpl.java">
-<error line="7" column="8" severity="warning" message="Unused import - java.util.Arrays." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/lsas/values/impl/URIValueImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/SAPEREAgentImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/nodes/impl/SAPERENodeImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/impl/Jena2SAPEREConverter.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/impl/LSAspaceImpl.java">
 </file>
@@ -227,5 +133,55 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/observation/impl/package-info.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/observation/impl/SpaceEventImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAFactoryImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAParserImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/internal/AeSimpleMD5.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/internal/Jena2SAPEREConverter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/internal/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/LSAidImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/LSAImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/PropertyImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/PropertyNameImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/impl/SemanticDescriptionImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/BooleanValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/DateTimeValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/DoubleValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/FloatValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/IntegerValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/LiteralValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/LongValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/LSAidValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/PropertyValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/URIValueImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-tdbspace/src/main/java/it/apice/sapere/space/tdb/Foo.java">
+<error line="0" severity="warning" message="Missing package-info.java file." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck"/>
+<error line="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
 </file>
 </checkstyle>

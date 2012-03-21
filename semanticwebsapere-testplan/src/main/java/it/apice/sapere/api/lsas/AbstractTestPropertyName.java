@@ -32,7 +32,8 @@ public abstract class AbstractTestPropertyName extends AbstractModelTest {
 		final PropertyName prop = createFactory().createPropertyName(propName);
 		final PropertyName propB = createFactory().createPropertyName(propName);
 		final URI prop2Name = new URI("http://localhost:8080/sapere#prop2");
-		final PropertyName prop2 = createFactory().createPropertyName(prop2Name);
+		final PropertyName prop2 = createFactory()
+				.createPropertyName(prop2Name);
 
 		assertTrue(prop.equals(propB));
 		assertTrue(prop.hashCode() == propB.hashCode());

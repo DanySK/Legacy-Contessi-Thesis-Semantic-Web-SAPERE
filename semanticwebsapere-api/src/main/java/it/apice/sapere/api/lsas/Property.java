@@ -1,6 +1,7 @@
 package it.apice.sapere.api.lsas;
 
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.lsas.visitor.LSAVisitor;
 
 /**
  * <p>
@@ -109,4 +110,13 @@ public interface Property {
 	 * @return True if extends, false otherwise
 	 */
 	boolean isExtensionOf(Property other);
+
+	/**
+	 * <p>
+	 * Pattern VISITOR.
+	 * </p>
+	 *
+	 * @param visitor The visitor
+	 */
+	void accept(LSAVisitor visitor);
 }

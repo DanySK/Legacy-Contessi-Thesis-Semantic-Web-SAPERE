@@ -13,29 +13,35 @@
 	<description>This module provides an implementation of LSA-space as RDF store</description>
 
 	<dependencies>
-	<dependency>
-		<groupId>org.apache.jena</groupId>
-		<artifactId>apache-jena</artifactId>
-		<version>2.7.0-incubating</version>
-		<type>pom</type>
-	</dependency>
-	<dependency>
-		<groupId>it.apice.sapere</groupId>
-		<artifactId>semanticwebsapere-api</artifactId>
-		<version>0.0.1</version>
-		<type>bundle</type>
-	</dependency>
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<scope>test</scope>
-	</dependency>
-	<dependency>
-		<groupId>it.apice.sapere</groupId>
-		<artifactId>semanticwebsapere-testplan</artifactId>
-		<version>0.0.1</version>
-		<type>bundle</type>
-	</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena</artifactId>
+			<version>2.7.0-incubating</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-api</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-testplan</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>it.apice.sapere</groupId> -->
+		<!-- <artifactId>semanticwebsapere-rdfmodel</artifactId> -->
+		<!-- <version>0.0.1</version> -->
+		<!-- <type>bundle</type> -->
+		<!-- </dependency> -->
 	</dependencies>
 
 	<dependencyManagement></dependencyManagement>
@@ -52,8 +58,8 @@
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Import-Package>!*</Import-Package>
-<!-- 						<Import-Package>it.apice.sapere.api.*</Import-Package> -->
-						<!-- <Bundle-Activator>it.apicActivator</Bundle-Activator> -->
+						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
+						<!-- <Bundle-Activator>it.apice.sapere.api.space.internal.Activator</Bundle-Activator> -->
 					</instructions>
 				</configuration>
 			</plugin>

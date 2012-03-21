@@ -1,10 +1,10 @@
 package it.apice.sapere.api.space;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
-import it.apice.sapere.api.nodes.SAPEREAgent;
-import it.apice.sapere.api.nodes.SAPEREException;
 import it.apice.sapere.api.space.observation.LSAObserver;
+import it.apice.sapere.api.space.observation.SpaceObserver;
 
 /**
  * <p>
@@ -48,7 +48,8 @@ public interface LSAspace {
 	 *            The LSA-id of the requested LSA
 	 * @return The LSA the caller requested
 	 * @throws SAPEREException
-	 *             The requested LSA does not exists in this LSA-space
+	 *             The requested LSA does not exists in this LSA-space or
+	 *             parsing errors
 	 */
 	LSA read(LSAid lsaId) throws SAPEREException;
 
@@ -59,14 +60,11 @@ public interface LSAspace {
 	 * 
 	 * @param lsa
 	 *            The LSA to be removed
-	 * @param requestor
-	 *            The Agent which perpetrates the action
 	 * @return The LSAspace itself for further operations
 	 * @throws SAPEREException
-	 *             The requester is not allowed to remove the LSA (e.g. it does
-	 *             not owns it) or the LSA is not in the LSA-space
+	 *             The LSA is not in the LSA-space
 	 */
-	LSAspace remove(LSA lsa, SAPEREAgent requestor) throws SAPEREException;
+	LSAspace remove(LSA lsa) throws SAPEREException;
 
 	/**
 	 * <p>
@@ -86,14 +84,11 @@ public interface LSAspace {
 	 * 
 	 * @param lsa
 	 *            The LSA to be removed
-	 * @param requestor
-	 *            The Agent which perpetrates the action
 	 * @return The LSAspace itself for further operations
 	 * @throws SAPEREException
-	 *             The requester is not allowed to update the LSA (e.g. it does
-	 *             not owns it) or the LSA is not in the LSA-space
+	 *             The LSA is not in the LSA-space
 	 */
-	LSAspace update(LSA lsa, SAPEREAgent requestor) throws SAPEREException;
+	LSAspace update(LSA lsa) throws SAPEREException;
 
 	/**
 	 * <p>
@@ -103,16 +98,10 @@ public interface LSAspace {
 	 * @param lsaId
 	 *            The LSA-id of the LSA to be observed
 	 * @param obs
-	 *            The entity that will observe the LSA (an Agent)
-	 * @param requestor
-	 *            The Agent which perpetrates the action
+	 *            The entity that will observe the LSA
 	 * @return The LSAspace itself for further operations
-	 * @throws SAPEREException
-	 *             The requester is not allowed to observe the desired LSA (not
-	 *             bound or not not local)
 	 */
-	LSAspace observe(LSAid lsaId, SAPEREAgent requestor, LSAObserver obs)
-			throws SAPEREException;
+	LSAspace observe(LSAid lsaId, LSAObserver obs);
 
 	/**
 	 * <p>
@@ -125,12 +114,41 @@ public interface LSAspace {
 	 * 
 	 * @param lsaId
 	 *            The id of the LSA to ignore
-	 * @param requestor
-	 *            The Agent which perpetrates the action
 	 * @return The LSAspace itself for further operations
 	 * @param obs
-	 *            The entity that is observing the LSA (an Agent)
+	 *            The entity that is observing the LSA
 	 */
-	LSAspace ignore(LSAid lsaId, SAPEREAgent requestor, LSAObserver obs);
+	LSAspace ignore(LSAid lsaId, LSAObserver obs);
+
+	/**
+	 * <p>
+	 * Removes all LSAs.
+	 * </p>
+	 * 
+	 * @return The LSAspace itself for further operations
+	 */
+	LSAspace clear();
+
+	/* === LSA-SPACE OBSERVATION === */
+
+	/**
+	 * <p>
+	 * Adds a Space Observer.
+	 * </p>
+	 * 
+	 * @param obs
+	 *            The observer
+	 */
+	void addSpaceObserver(SpaceObserver obs);
+
+	/**
+	 * <p>
+	 * Removes a Space Observer.
+	 * </p>
+	 * 
+	 * @param obs
+	 *            The observer
+	 */
+	void removeSpaceObserver(SpaceObserver obs);
 
 }

@@ -1,5 +1,7 @@
 package it.apice.sapere.api.lsas;
 
+import it.apice.sapere.api.lsas.visitor.LSAVisitor;
+
 
 /**
  * <p>
@@ -114,4 +116,13 @@ public interface SemanticDescription {
 	 * @return	The clone entity
 	 */
 	SemanticDescription clone();
+
+	/**
+	 * <p>
+	 * Pattern VISITOR.
+	 * </p>
+	 *
+	 * @param visitor The visitor
+	 */
+	void accept(LSAVisitor visitor);
 }
