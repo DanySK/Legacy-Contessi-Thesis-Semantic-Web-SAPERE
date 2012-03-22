@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>semanticwebsapere</artifactId>
+		<groupId>it.apice.sapere</groupId>
+		<version>0.0.1</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>semanticwebsapere-integration-tests</artifactId>
+	<packaging>bundle</packaging>
+	<name>SemanticWebSAPERE - Integration Tests</name>
+	<description>This project provides integration tests</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-testplan</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-api</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-rdfspace</artifactId>
+			<version>0.0.1</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.ipojo.annotations</artifactId>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.ipojo.junit4osgi</artifactId>
+			<version>1.0.0</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Category>sapere-project</Bundle-Category>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Import-Package>!*</Import-Package>
+						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
+						<!-- <Bundle-Activator>it.apice.sapere.api.space.internal.Activator</Bundle-Activator> -->
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
