@@ -30,7 +30,11 @@
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>org.osgi.core</artifactId>
-			<version>4.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-j2se</artifactId>
+			<version>200504122039</version>
 		</dependency>
 	</dependencies>
 
@@ -44,7 +48,7 @@
 				<configuration>
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
-						<Bundle-SymbolicName>semanticsapereweb-requirements</Bundle-SymbolicName>
+						<Bundle-SymbolicName>semanticwebsapere-requirements</Bundle-SymbolicName>
 						<Export-Package>*</Export-Package>
 						<Import-Package>!*</Import-Package>
 						<Embed-Dependency>*</Embed-Dependency>

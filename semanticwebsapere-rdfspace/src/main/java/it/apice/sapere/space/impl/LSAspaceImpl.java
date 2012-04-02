@@ -355,7 +355,8 @@ public class LSAspaceImpl implements LSAspace {
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
 		for (SpaceObserver obs : listeners) {
-			obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id }, type));
+			obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id }, 
+					type));
 		}
 	}
 
