@@ -18,7 +18,8 @@ public abstract class AbstractTestPrivilegedLSAFactory extends
 		AbstractTestLSAFactory {
 
 	/** Reference to an Privileged LSA Factory. */
-	private final transient PrivilegedLSAFactory factory = createPrivilegedFactory();
+	private final transient PrivilegedLSAFactory factory = 
+			createPrivilegedFactory();
 
 	/**
 	 * Checks that unwanted behaviours are handled.

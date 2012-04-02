@@ -36,7 +36,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 	@Test
 	public final void testPropertyValue() {
 		final List<ValueType> vals = createValues();
-		final List<PropertyValue<ValueType>> pvalues = createPropertyValues(vals);
+		final List<PropertyValue<ValueType>> pvalues = 
+				createPropertyValues(vals);
 
 		assertTrue(
 				"Why values and property values cardinalities are not equal?",
@@ -57,7 +58,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 			assertTrue(pval.isLiteral() == (val instanceof String));
 			assertTrue(pval.isLSAId() == (val instanceof LSAid));
 			assertTrue(pval.isNumber() == (val instanceof Integer
-					|| val instanceof Long || val instanceof Float || val instanceof Double));
+					|| val instanceof Long || val instanceof Float 
+					|| val instanceof Double));
 			assertTrue(pval.isURI() == (val instanceof URI));
 
 			assertEquals(pval, pval);
@@ -98,7 +100,8 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 	 */
 	private List<PropertyValue<ValueType>> createPropertyValues(
 			final List<ValueType> vals) {
-		final List<PropertyValue<ValueType>> res = new ArrayList<PropertyValue<ValueType>>(
+		final List<PropertyValue<ValueType>> res = 
+				new ArrayList<PropertyValue<ValueType>>(
 				vals.size());
 
 		for (ValueType val : vals) {
