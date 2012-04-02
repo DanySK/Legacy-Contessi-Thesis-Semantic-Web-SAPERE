@@ -15,7 +15,8 @@ import java.net.URI;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.felix.ipojo.junit4osgi.OSGiTestCase;
+import junit.framework.TestCase;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +29,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestLSAspace extends OSGiTestCase {
+public abstract class AbstractTestLSAspace extends TestCase {
 
 	/** Reference to tested space. */
 	private transient LSAspace space;
@@ -63,7 +64,7 @@ public abstract class AbstractTestLSAspace extends OSGiTestCase {
 	 * </p>
 	 */
 	@Before
-	public final void prepare() {
+	public final void setUp() {
 		space = createSpace();
 		lObs = createLSAObserver();
 		sObs = createSpaceObserver();
@@ -77,7 +78,7 @@ public abstract class AbstractTestLSAspace extends OSGiTestCase {
 	 * </p>
 	 */
 	@After
-	public final void cleanUp() {
+	public final void tearDown() {
 		space.removeSpaceObserver(sObs);
 		sObs.reset();
 		space.clear();
@@ -149,7 +150,7 @@ public abstract class AbstractTestLSAspace extends OSGiTestCase {
 			fail("Should not accept to remove "
 					+ "something that is not in the space");
 		} catch (Exception ex) {
-			assertTrue(ex instanceof IllegalArgumentException);
+			assertTrue(ex instanceof SAPEREException);
 		}
 
 		assertTrue(sObs.noEventOccurred());
@@ -192,15 +193,16 @@ public abstract class AbstractTestLSAspace extends OSGiTestCase {
 
 		try {
 			space.observe(createFactory().createLSAid(), lObs);
-			fail("Should not accept to observe "
-					+ "something that is not in the space");
+			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
-			assertTrue(ex instanceof SAPEREException);
+			fail("Should accept to observe "
+					+ "something that is not in the space");
 		}
 
 		try {
 			final LSA lsa = createFactory().createLSA();
 			space.inject(lsa);
+			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to register a NULL observer");
 		} catch (Exception ex) {
@@ -226,16 +228,15 @@ public abstract class AbstractTestLSAspace extends OSGiTestCase {
 
 		try {
 			space.ignore(createFactory().createLSAid(), lObs);
-			assertTrue(true);
+			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
 			fail("Ignoring something not observed could be dropped silently");
 		}
 
-		assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
-
 		try {
 			final LSA lsa = createFactory().createLSA();
 			space.inject(lsa);
+			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to unregister a NULL observer");
 		} catch (Exception ex) {

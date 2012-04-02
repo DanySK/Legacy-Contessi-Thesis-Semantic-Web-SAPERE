@@ -1,12 +1,12 @@
 <ipojo>
 	<!-- declare your component types and instances here -->
-	<component name="LSAFactoryService" classname="it.apice.sapere.api.impl.LSAFactoryImpl">
-		<provides />
-	</component>
-	<component name="LSAParserService" classname="it.apice.sapere.api.impl.LSAParserImpl">
-		<provides />
-	</component>
+<!-- 	<component name="LSAFactoryService" classname="it.apice.sapere.api.impl.LSAFactoryImpl"> -->
+<!-- 		<provides /> -->
+<!-- 	</component> -->
+<!-- 	<component name="LSAParserService" classname="it.apice.sapere.api.impl.LSAParserImpl"> -->
+<!-- 		<provides /> -->
+<!-- 	</component> -->
 
-	<instance component="LSAFactoryService" name="it.apice.sapere.api.factory" />
-	<instance component="LSAParserService" name="it.apice.sapere.api.parser" />
+<!-- 	<instance component="LSAFactoryService" name="it.apice.sapere.api.factory" /> -->
+<!-- 	<instance component="LSAParserService" name="it.apice.sapere.api.parser" /> -->
 </ipojo>

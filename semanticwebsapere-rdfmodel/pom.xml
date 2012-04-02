@@ -12,21 +12,10 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>apache-jena</artifactId>
-			<version>2.7.0-incubating</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
 			<version>0.0.1</version>
 			<type>bundle</type>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
@@ -35,9 +24,9 @@
 			<type>bundle</type>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.ipojo.junit4osgi</artifactId>
-			<version>1.0.0</version>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-requirements</artifactId>
+			<version>0.0.1</version>
 			<type>bundle</type>
 		</dependency>
 	</dependencies>
@@ -54,29 +43,27 @@
 				<configuration>
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>!*</Import-Package>
-						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
-						<!-- <Bundle-Activator>it.apicActivator</Bundle-Activator> -->
+						<Bundle-SymbolicName>semanticsapereweb-rdfmodel</Bundle-SymbolicName>
+						<Bundle-Activator>it.apice.sapere.api.internal.RDFModelActivator</Bundle-Activator>
 					</instructions>
 				</configuration>
 			</plugin>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
-<!-- 				<version>2.12</version> -->
-<!-- 				<configuration> -->
-<!-- 					<encoding>UTF-8</encoding> -->
-<!-- 				</configuration> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<goals> -->
-<!-- 							<goal>integration-test</goal> -->
-<!-- 							<goal>verify</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-failsafe-plugin</artifactId> -->
+			<!-- <version>2.12</version> -->
+			<!-- <configuration> -->
+			<!-- <encoding>UTF-8</encoding> -->
+			<!-- </configuration> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <goals> -->
+			<!-- <goal>integration-test</goal> -->
+			<!-- <goal>verify</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
 		</plugins>
 	</build>
 	<name>LSA model (RDF)</name>

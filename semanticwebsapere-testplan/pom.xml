@@ -25,10 +25,10 @@
 			<type>bundle</type>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.ipojo.junit4osgi</artifactId>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-requirements</artifactId>
+			<version>0.0.1</version>
 			<type>bundle</type>
-			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -43,6 +43,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
+						<Bundle-SymbolicName>semanticsapereweb-testplan</Bundle-SymbolicName>
 						<Bundle-Category>sapere-project</Bundle-Category>
 					</instructions>
 				</configuration>

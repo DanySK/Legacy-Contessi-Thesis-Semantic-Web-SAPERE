@@ -33,14 +33,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.ipojo.annotations</artifactId>
-			<type>bundle</type>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.ipojo.junit4osgi</artifactId>
 			<version>1.0.0</version>
 			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -56,6 +55,7 @@
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Import-Package>!*</Import-Package>
+						<Export-Package>it.apice.sapere.space</Export-Package>
 						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
 						<!-- <Bundle-Activator>it.apice.sapere.api.space.internal.Activator</Bundle-Activator> -->
 					</instructions>

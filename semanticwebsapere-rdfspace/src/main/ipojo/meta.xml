@@ -1,9 +1,9 @@
 <ipojo>
-	<!-- declare your component types and instances here -->
-	<component name="LSAspaceService" classname="it.apice.sapere.space.impl.LSAspaceImpl">
-		<provides />
-	</component>
-	<component name="Jena2SAPEREConverter" classname="it.apice.sapere.space.impl.Jena2SAPEREConverter">
-		<requires field="factory" />
-	</component>
+<!-- 	<!-- declare your component types and instances here --> -->
+<!-- 	<component name="LSAspaceService" classname="it.apice.sapere.space.impl.LSAspaceImpl"> -->
+<!-- 		<provides /> -->
+<!-- 	</component> -->
+<!-- 	<component name="Jena2SAPEREConverter" classname="it.apice.sapere.space.impl.Jena2SAPEREConverter"> -->
+<!-- 		<requires field="factory" /> -->
+<!-- 	</component> -->
 </ipojo>

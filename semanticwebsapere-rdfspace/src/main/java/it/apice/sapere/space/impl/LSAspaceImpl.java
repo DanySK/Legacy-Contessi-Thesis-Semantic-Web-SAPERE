@@ -1,5 +1,6 @@
 package it.apice.sapere.space.impl;
 
+import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
@@ -16,6 +17,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -31,8 +34,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
  * 
  * @see LSAspace
  */
-//@Component(name = "RDF-based LSA-space Service")
-//@Provides
 public class LSAspaceImpl implements LSAspace {
 
 	/** The sapere:LSA type. */
@@ -58,15 +59,18 @@ public class LSAspaceImpl implements LSAspace {
 	/** Reference to internal converter. */
 	private final transient Jena2SAPEREConverter converter;
 
-	// /** IF JENA METHOD WORKS DELETE THIS. */
-	// private final transient Lock mutex = new ReentrantLock();
+	/** Provides naive transaction support (only mutual-exclusion). */
+	private final transient Lock mutex = new ReentrantLock();
 
 	/**
 	 * <p>
-	 * Default constructor.
+	 * Builds a new LSAspaceImpl.
 	 * </p>
+	 * 
+	 * @param aFactory
+	 *            A PrivilegedLSAFactory
 	 */
-	public LSAspaceImpl() {
+	public LSAspaceImpl(final PrivilegedLSAFactory aFactory) {
 		// Observation initialization
 		listeners = new LinkedList<SpaceObserver>();
 		observers = new HashMap<LSAid, List<LSAObserver>>();
@@ -76,7 +80,7 @@ public class LSAspaceImpl implements LSAspace {
 
 		// Other stuff initialization
 		rdfTypeProp = model.createProperty(RDF_TYPE);
-		converter = new Jena2SAPEREConverter();
+		converter = new Jena2SAPEREConverter(aFactory);
 	}
 
 	/**
@@ -98,6 +102,7 @@ public class LSAspaceImpl implements LSAspace {
 	 * </p>
 	 */
 	private void acquireReadLock() {
+		mutex.lock();
 		model.enterCriticalSection(false);
 	}
 
@@ -107,6 +112,7 @@ public class LSAspaceImpl implements LSAspace {
 	 * </p>
 	 */
 	private void acquireWriteLock() {
+		mutex.lock();
 		model.enterCriticalSection(true);
 	}
 
@@ -116,6 +122,7 @@ public class LSAspaceImpl implements LSAspace {
 	 * </p>
 	 */
 	private void releaseLock() {
+		mutex.unlock();
 		model.leaveCriticalSection();
 	}
 
@@ -127,7 +134,7 @@ public class LSAspaceImpl implements LSAspace {
 
 		acquireWriteLock();
 		try {
-			if (!checkExistencePreCondition(lsa.getLSAId())) {
+			if (checkExistencePreCondition(lsa.getLSAId())) {
 				throw new SAPEREException("Duplicate LSA: " + lsa.getLSAId());
 			}
 
@@ -156,7 +163,7 @@ public class LSAspaceImpl implements LSAspace {
 	 * @return True if ok, false otherwise
 	 */
 	private boolean checkExistencePreCondition(final LSAid lsaId) {
-		return !lsaExist(model.createResource(lsaId.toString()));
+		return lsaExist(model.createResource(lsaId.toString()));
 	}
 
 	@Override
@@ -250,6 +257,10 @@ public class LSAspaceImpl implements LSAspace {
 			throw new IllegalArgumentException("Invalid LSA-id");
 		}
 
+		if (obs == null) {
+			throw new IllegalArgumentException("Invalid LSAObserver");
+		}
+
 		acquireWriteLock();
 		try {
 			if (!observers.containsKey(lsaId)) {
@@ -276,6 +287,10 @@ public class LSAspaceImpl implements LSAspace {
 	public final LSAspace ignore(final LSAid lsaId, final LSAObserver obs) {
 		if (lsaId == null) {
 			throw new IllegalArgumentException("Invalid LSA-id");
+		}
+
+		if (obs == null) {
+			throw new IllegalArgumentException("Invalid LSAObserver");
 		}
 
 		acquireWriteLock();
@@ -340,8 +355,7 @@ public class LSAspaceImpl implements LSAspace {
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
 		for (SpaceObserver obs : listeners) {
-			obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id }, 
-					type));
+			obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id }, type));
 		}
 	}
 
@@ -366,5 +380,25 @@ public class LSAspaceImpl implements LSAspace {
 				obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
 			}
 		}
+	}
+
+	@Override
+	public final void beginRead() {
+		mutex.lock();
+	}
+
+	@Override
+	public final void beginWrite() {
+		mutex.lock();
+	}
+
+	@Override
+	public final void commit() {
+		mutex.unlock();
+	}
+
+	@Override
+	public final void rollback() {
+		throw new UnsupportedOperationException();
 	}
 }

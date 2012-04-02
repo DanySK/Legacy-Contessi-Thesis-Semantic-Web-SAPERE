@@ -151,4 +151,41 @@ public interface LSAspace {
 	 */
 	void removeSpaceObserver(SpaceObserver obs);
 
+	/* === TRANSACTION SUPPORT === */
+
+	/**
+	 * <p>
+	 * Starts a new READ Transaction.
+	 * </p>
+	 * <p>
+	 * At the end <code>commit()</code> or <code>rollback()</code> should be
+	 * called in order to release resources.
+	 * </p>
+	 */
+	void beginRead();
+
+	/**
+	 * <p>
+	 * Starts a new WRITE Transaction.
+	 * </p>
+	 * <p>
+	 * At the end <code>commit()</code> or <code>rollback()</code> should be
+	 * called in order to release resources.
+	 * </p>
+	 */
+	void beginWrite();
+
+	/**
+	 * <p>
+	 * Terminates a Transaction, stabilizing changes.
+	 * </p> 
+	 */
+	void commit();
+
+	/**
+	 * <p>
+	 * Terminates a Transaction, reverting its operations.
+	 * </p> 
+	 */
+	void rollback();
 }

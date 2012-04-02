@@ -45,8 +45,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @see PrivilegedLSAFactory
  * 
  */
-//@Component(name = "LSAs Factory Service")
-//@Provides
 public class LSAFactoryImpl implements PrivilegedLSAFactory {
 
 	/** Prefix for automatically generated URIs. */
@@ -202,9 +200,12 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	 */
 	private LSAid generateLSAid() {
 		try {
+			// final LSAid id =
 			return new LSAidImpl(new URI(URI_PREFIX + "lsa"
-					+ String.format("%X", idCounter.getAndIncrement()
-					/* System.currentTimeMillis() */) + "-" + factoryId));
+					+ String.format("%X", idCounter.getAndIncrement()) + "-"
+					+ factoryId));
+			// System.out.println(id);
+			// return id;
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Error("Unforseen situation occurred", e);

@@ -9,12 +9,11 @@
 	<name>Semantic Web SAPERE</name>
 	<description>This project reflects the work produced during the development of semanticwebsapere thesis. See http://apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere for more details.</description>
 	<modules>
+		<module>semanticwebsapere-requirements</module>
 		<module>semanticwebsapere-api</module>
-		<module>semanticwebsapere-rdfspace</module>
 		<module>semanticwebsapere-testplan</module>
 		<module>semanticwebsapere-rdfmodel</module>
-		<module>semanticwebsapere-tdbspace</module>
-		<module>semanticwebsapere-integration-tests</module>
+		<module>semanticwebsapere-rdfspace</module>
 	</modules>
 
 	<organization>
@@ -48,12 +47,46 @@
 				<scope>test</scope>
 			</dependency>
 			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-container-forked</artifactId>
+				<version>${exam.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-junit4</artifactId>
+				<version>${exam.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-link-mvn</artifactId>
+				<version>${exam.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.url</groupId>
+				<artifactId>pax-url-aether</artifactId>
+				<version>${url.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.apache.felix</groupId>
-				<artifactId>
-					org.apache.felix.ipojo.annotations
-				</artifactId>
-				<version>1.8.0</version>
-				<type>bundle</type>
+				<artifactId>org.apache.felix.framework</artifactId>
+				<version>4.0.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>0.9.29</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>0.9.29</version>
+				<scope>test</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -117,21 +150,6 @@
 			<!-- </execution> -->
 			<!-- </executions> -->
 			<!-- </plugin> -->
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.felix</groupId> -->
-			<!-- <artifactId>maven-junit4osgi-plugin</artifactId> -->
-			<!-- <version>1.0.0</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>test</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <deployprojectartifact>true</deployprojectartifact> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -149,21 +167,21 @@
 					<remoteOBR>releases-repo</remoteOBR>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-ipojo-plugin</artifactId>
-				<version>1.8.2</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>ipojo-bundle</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<metadata>src/main/ipojo/meta.xml</metadata>
-				</configuration>
-			</plugin>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.felix</groupId> -->
+			<!-- <artifactId>maven-junit4osgi-plugin</artifactId> -->
+			<!-- <version>1.0.0</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <goals> -->
+			<!-- <goal>test</goal> -->
+			<!-- </goals> -->
+			<!-- <configuration> -->
+			<!-- <deployprojectartifact>true</deployprojectartifact> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
 		</plugins>
 	</build>
 
@@ -203,19 +221,6 @@
 				<configuration>
 				</configuration>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-surefire-report-plugin</artifactId> -->
-			<!-- <version>2.12</version> -->
-			<!-- <reportSets> -->
-			<!-- <reportSet> -->
-			<!-- <id>integration-tests</id> -->
-			<!-- <reports> -->
-			<!-- <report>failsafe-report-only</report> -->
-			<!-- </reports> -->
-			<!-- </reportSet> -->
-			<!-- </reportSets> -->
-			<!-- </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
@@ -290,4 +295,8 @@
 		</repository>
 	</distributionManagement>
 	<url>http://apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere</url>
+	<properties>
+		<exam.version>2.3.1</exam.version>
+		<url.version>1.3.5</url.version>
+	</properties>
 </project>

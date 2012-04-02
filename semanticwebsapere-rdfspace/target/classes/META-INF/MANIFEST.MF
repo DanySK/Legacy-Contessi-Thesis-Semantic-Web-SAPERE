@@ -1,9 +1,4 @@
 Manifest-Version: 1.0
-Ignore-Package: it.apice.sapere.api.lsas.visitor,com.hp.hpl.jena.rdf.m
- odel,com.hp.hpl.jena.datatypes.xsd,java.util,java.net,it.apice.sapere
- .api.lsas.values,it.apice.sapere.api.space,com.hp.hpl.jena.query,java
- .lang,it.apice.sapere.api.space.observation,it.apice.sapere.api,it.ap
- ice.sapere.api.lsas
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -13,10 +8,16 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_29
 Bundle-Version: 0.0.1
-Bnd-LastModified: 1332415059471
+Bnd-LastModified: 1333365440781
 Bundle-ManifestVersion: 2
+Bundle-Activator: it.apice.sapere.space.internal.RDFSpaceActivator
 Bundle-Description: This module provides an implementation of LSA-spac
  e as RDF store
-Bundle-SymbolicName: semanticwebsapere-rdfspace
+Import-Package: com.hp.hpl.jena.datatypes.xsd,com.hp.hpl.jena.query,co
+ m.hp.hpl.jena.rdf.model,it.apice.sapere.api,it.apice.sapere.api.lsas,
+ it.apice.sapere.api.lsas.values,it.apice.sapere.api.lsas.visitor,it.a
+ pice.sapere.api.space,it.apice.sapere.api.space.observation,org.osgi.
+ framework;version="1.6"
+Bundle-SymbolicName: semanticsapereweb-rdfspace
 Bundle-DocURL: http://apice.unibo.it/
 

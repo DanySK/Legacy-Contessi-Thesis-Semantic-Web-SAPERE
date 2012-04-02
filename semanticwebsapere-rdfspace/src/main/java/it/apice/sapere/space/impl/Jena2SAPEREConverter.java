@@ -29,7 +29,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
  * @author Paolo Contessi
  * 
  */
-//@Component
 public class Jena2SAPEREConverter {
 
 	/** URI of rdf:type property. */
@@ -41,8 +40,19 @@ public class Jena2SAPEREConverter {
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA";
 
 	/** SAPERE Model Factory. */
-//	@Requires
 	private transient PrivilegedLSAFactory factory;
+
+	/**
+	 * <p>
+	 * Builds a new Jena2SAPEREConverter.
+	 * </p>
+	 * 
+	 * @param aFactory
+	 *            A PrivislegedLSAFactory
+	 */
+	public Jena2SAPEREConverter(final PrivilegedLSAFactory aFactory) {
+		factory = aFactory;
+	}
 
 	/**
 	 * <p>

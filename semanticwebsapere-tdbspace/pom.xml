@@ -40,12 +40,6 @@
 			<version>0.0.1</version>
 			<type>bundle</type>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.ipojo.junit4osgi</artifactId>
-			<version>1.0.0</version>
-			<type>bundle</type>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement></dependencyManagement>
@@ -60,7 +54,7 @@
 				<configuration>
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-SymbolicName>semanticsapereweb-tdbspace</Bundle-SymbolicName>
 						<Import-Package>!*</Import-Package>
 						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
 						<Export-Package>it.apice.sapere.space.tdb</Export-Package>

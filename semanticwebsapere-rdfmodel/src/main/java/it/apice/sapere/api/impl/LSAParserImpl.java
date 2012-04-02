@@ -26,8 +26,6 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
  * @see LSAParser
  * 
  */
-//@Component(name = "LSAs Parser Service")
-//@Provides
 public class LSAParserImpl implements LSAParser {
 
 	/** Base used in relative URI resolution. */
