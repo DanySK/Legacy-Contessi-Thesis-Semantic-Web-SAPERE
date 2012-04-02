@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>semanticwebsapere-rdfspace</artifactId>
 	<packaging>bundle</packaging>
-	<name>LSA-space (RDF)</name>
+	<name>SAPERE LSA-space (RDF)</name>
 	<description>This module provides an implementation of LSA-space as RDF store</description>
 
 	<dependencies>
@@ -53,12 +53,10 @@
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.framework</artifactId>
-			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>org.ops4j.pax.url</groupId>
 			<artifactId>pax-url-aether</artifactId>
-			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>org.ops4j.pax.exam</groupId>

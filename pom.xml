@@ -14,7 +14,7 @@
 		<module>semanticwebsapere-testplan</module>
 		<module>semanticwebsapere-rdfmodel</module>
 		<module>semanticwebsapere-rdfspace</module>
-		
+
 	</modules>
 
 	<organization>
@@ -53,66 +53,64 @@
 				<scope>test</scope>
 			</dependency>
 			<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-			<version>4.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>1.0.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.0.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.framework</artifactId>
-			<version>4.0.2</version>
-			<type>bundle</type>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.ops4j.pax.url</groupId>
-			<artifactId>pax-url-aether</artifactId>
-			<version>1.4.0.RC1</version>
-			<type>bundle</type>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.ops4j.pax.exam</groupId>
-			<artifactId>pax-exam-link-mvn</artifactId>
-			<version>2.4.0.RC1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.ops4j.pax.exam</groupId>
-			<artifactId>pax-exam-junit4</artifactId>
-			<version>2.4.0.RC1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.ops4j.pax.exam</groupId>
-			<artifactId>pax-exam-container-native</artifactId>
-			<version>2.4.0.RC1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.geronimo.specs</groupId>
-			<artifactId>geronimo-atinject_1.0_spec</artifactId>
-			<version>1.0</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit</groupId>
-			<artifactId>com.springsource.org.junit</artifactId>
-			<version>4.9.0</version>
-			<scope>test</scope>
-		</dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>4.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>1.0.1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>1.0.1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.framework</artifactId>
+				<version>4.0.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.url</groupId>
+				<artifactId>pax-url-aether</artifactId>
+				<version>1.4.0.RC1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-link-mvn</artifactId>
+				<version>2.4.0.RC1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-junit4</artifactId>
+				<version>2.4.0.RC1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.exam</groupId>
+				<artifactId>pax-exam-container-native</artifactId>
+				<version>2.4.0.RC1</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.geronimo.specs</groupId>
+				<artifactId>geronimo-atinject_1.0_spec</artifactId>
+				<version>1.0</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>com.springsource.org.junit</artifactId>
+				<version>4.9.0</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -159,22 +157,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12</version>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.maven.plugins</groupId> -->
-			<!-- <artifactId>maven-failsafe-plugin</artifactId> -->
-			<!-- <version>2.12</version> -->
-			<!-- <configuration> -->
-			<!-- <encoding>UTF-8</encoding> -->
-			<!-- </configuration> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>integration-test</goal> -->
-			<!-- <goal>verify</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -190,23 +172,9 @@
 				<version>2.1.0</version>
 				<configuration>
 					<remoteOBR>releases-repo</remoteOBR>
+					<prefixUrl>file:///Users/conteit/Desktop/THESIS/repository</prefixUrl>
 				</configuration>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>org.apache.felix</groupId> -->
-			<!-- <artifactId>maven-junit4osgi-plugin</artifactId> -->
-			<!-- <version>1.0.0</version> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <goals> -->
-			<!-- <goal>test</goal> -->
-			<!-- </goals> -->
-			<!-- <configuration> -->
-			<!-- <deployprojectartifact>true</deployprojectartifact> -->
-			<!-- </configuration> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- </plugin> -->
 		</plugins>
 	</build>
 
