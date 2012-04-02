@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.004" errors="0" skipped="0" tests="2" name="it.apice.sapere.api.lsas.TestProperty">
+<testsuite failures="0" time="0.005" errors="0" skipped="0" tests="2" name="it.apice.sapere.api.lsas.TestProperty">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -27,7 +27,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf5520858368830719271.tmp"/>
+    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf106692445103456465.tmp"/>
     <property name="sun.jnu.encoding" value="MacRoman"/>
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean site:site site:attach-descriptor site:deploy"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean deploy"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="it"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -64,6 +64,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.004" classname="it.apice.sapere.api.lsas.TestProperty" name="testEmptyProperty"/>
+  <testcase time="0.005" classname="it.apice.sapere.api.lsas.TestProperty" name="testEmptyProperty"/>
   <testcase time="0" classname="it.apice.sapere.api.lsas.TestProperty" name="testProperty"/>
 </testsuite>
