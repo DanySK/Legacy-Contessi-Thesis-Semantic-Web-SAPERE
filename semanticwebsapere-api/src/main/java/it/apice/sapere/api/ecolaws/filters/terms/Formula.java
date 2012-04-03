@@ -1,5 +1,7 @@
 package it.apice.sapere.api.ecolaws.filters.terms;
 
+import it.apice.sapere.api.ecolaws.Term;
+
 /**
  * <p>
  * This interface models a Formula used to annotate a Variable term.
@@ -7,10 +9,8 @@ package it.apice.sapere.api.ecolaws.filters.terms;
  * 
  * @author Paolo Contessi
  * 
- * @param <VarType>
- *            The expected type for the variable
  */
-public interface Formula<VarType> {
+public interface Formula {
 
 	/**
 	 * <p>
@@ -21,5 +21,5 @@ public interface Formula<VarType> {
 	 *            The candidate value
 	 * @return True if can be assigned, false otherwise
 	 */
-	boolean accept(VarType value);
+	boolean accept(Term value);
 }

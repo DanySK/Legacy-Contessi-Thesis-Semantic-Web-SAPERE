@@ -1,5 +1,7 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
+
 /**
  * This interface represents the rate at which a reaction is triggered.
  * 
@@ -33,4 +35,14 @@ public interface Rate<Type> {
 	 * @return The rate value
 	 */
 	Type getRateValue();
+
+	/**
+	 * <p>
+	 * Accepts a Visitor.
+	 * </p>
+	 * 
+	 * @param visitor
+	 *            Ecolaw visitor
+	 */
+	void accept(EcolawVisitor visitor);
 }

@@ -1,5 +1,7 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
+
 /**
  * <p>
  * This interface models a pattern name, that should be use to handle the
@@ -19,4 +21,14 @@ public interface PatternName {
 	 * @return The pattern name as a String
 	 */
 	String getValue();
+
+	/**
+	 * <p>
+	 * Accepts a Visitor.
+	 * </p>
+	 * 
+	 * @param visitor
+	 *            Ecolaw visitor
+	 */
+	void accept(EcolawVisitor visitor);
 }
