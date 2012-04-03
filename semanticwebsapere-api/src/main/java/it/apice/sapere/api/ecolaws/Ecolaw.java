@@ -64,9 +64,42 @@ public interface Ecolaw {
 
 	/**
 	 * <p>
+	 * Modifies the rate of this Ecolaw.
+	 * </p>
+	 * 
+	 * @param rate
+	 *            The new scheduling rate
+	 * @return The updated ecolaw
+	 */
+	Ecolaw rate(Rate<?> rate);
+
+	/**
+	 * <p>
+	 * Adds a new Reactant.
+	 * </p>
+	 * 
+	 * @param react
+	 *            The reactant
+	 * @return The updated ecolaw
+	 */
+	Ecolaw reactant(Reactant react);
+
+	/**
+	 * <p>
+	 * Adds a new Product.
+	 * </p>
+	 * 
+	 * @param prod
+	 *            The product
+	 * @return The updated ecolaw
+	 */
+	Ecolaw product(Product prod);
+
+	/**
+	 * <p>
 	 * Binds Ecolaw's variables to matching values found in LSA-space.
 	 * </p>
-	 *
+	 * 
 	 * @return The Matching Ecolaw
 	 */
 	MatchingEcolaw bind(); // TODO find how to pass bindings

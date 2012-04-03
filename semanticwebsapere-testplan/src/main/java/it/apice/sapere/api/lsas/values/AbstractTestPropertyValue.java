@@ -87,16 +87,16 @@ public abstract class AbstractTestPropertyValue<ValueType> extends
 
 	/**
 	 * <p>
-	 * Creates a list of Property Values, generated from the provided list of
-	 * values.
+	 * Creates a list of Property Values, generated from the provided list
+	 * of values.
 	 * </p>
 	 * <p>
 	 * Please respect the order.
 	 * </p>
 	 * 
 	 * @param vals
-	 *            Values from which Property Values should be generated
-	 * @return A list of Property Values
+	 *            ValuesList from which Property ValuesList should be generated
+	 * @return A list of Property ValuesList
 	 */
 	private List<PropertyValue<ValueType>> createPropertyValues(
 			final List<ValueType> vals) {
