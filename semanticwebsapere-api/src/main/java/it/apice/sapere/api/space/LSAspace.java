@@ -1,6 +1,8 @@
 package it.apice.sapere.api.space;
 
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.ecolaws.Ecolaw;
+import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.observation.LSAObserver;
@@ -129,6 +131,30 @@ public interface LSAspace {
 	 */
 	LSAspace clear();
 
+	/* === ECOLAWS HANDLING === */
+
+	/**
+	 * <p>
+	 * Finds possible matches in the LSA-space for the provided Ecolaw.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The law to be checked
+	 * @return Possible matches that has been found (empty list if no match)
+	 */
+	MatchingEcolaw[] match(Ecolaw law);
+
+	/**
+	 * <p>
+	 * Executes the Ecolaw, changing LSA-space current state.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The law to be applied
+	 * @return The updated LSA-space
+	 */
+	LSAspace apply(MatchingEcolaw law);
+
 	/* === LSA-SPACE OBSERVATION === */
 
 	/**
@@ -178,14 +204,14 @@ public interface LSAspace {
 	/**
 	 * <p>
 	 * Terminates a Transaction, stabilizing changes.
-	 * </p> 
+	 * </p>
 	 */
 	void commit();
 
 	/**
 	 * <p>
 	 * Terminates a Transaction, reverting its operations.
-	 * </p> 
+	 * </p>
 	 */
 	void rollback();
 }

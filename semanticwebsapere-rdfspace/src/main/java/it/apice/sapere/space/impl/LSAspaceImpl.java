@@ -2,6 +2,8 @@ package it.apice.sapere.space.impl;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.ecolaws.Ecolaw;
+import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.LSAspace;
@@ -323,6 +325,18 @@ public class LSAspaceImpl implements LSAspace {
 	}
 
 	@Override
+	public MatchingEcolaw[] match(Ecolaw law) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public LSAspace apply(MatchingEcolaw law) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public final void addSpaceObserver(final SpaceObserver obs) {
 		if (obs == null) {
 			throw new IllegalArgumentException("Invalid space observer");
@@ -402,4 +416,5 @@ public class LSAspaceImpl implements LSAspace {
 	public final void rollback() {
 		throw new UnsupportedOperationException();
 	}
+
 }
