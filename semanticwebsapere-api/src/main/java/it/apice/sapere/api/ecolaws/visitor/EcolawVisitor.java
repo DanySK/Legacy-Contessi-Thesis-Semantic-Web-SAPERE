@@ -1,9 +1,11 @@
 package it.apice.sapere.api.ecolaws.visitor;
 
 import it.apice.sapere.api.ecolaws.Ecolaw;
+import it.apice.sapere.api.ecolaws.Filter;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
+import it.apice.sapere.api.ecolaws.Term;
 
 /**
  * <p>
@@ -54,4 +56,24 @@ public interface EcolawVisitor {
 	 *            instance
 	 */
 	void visit(Reactant react);
+
+	/**
+	 * <p>
+	 * Visits an Ecolaw's pattern's filter.
+	 * </p>
+	 * 
+	 * @param filter
+	 *            instance
+	 */
+	void visit(Filter filter);
+	
+	/**
+	 * <p>
+	 * Visits an Ecolaw's pattern's term.
+	 * </p>
+	 * 
+	 * @param term
+	 *            instance
+	 */
+	void visit(Term<?> term);
 }

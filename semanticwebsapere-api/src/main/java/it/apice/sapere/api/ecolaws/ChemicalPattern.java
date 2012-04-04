@@ -1,5 +1,9 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.terms.ListTerm;
+import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
+import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
+import it.apice.sapere.api.ecolaws.terms.SDescTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 /**
@@ -10,8 +14,12 @@ import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
  * 
  * @author Paolo Contessi
  * 
+ * @param <ExtenderType>
+ *            Is the class type which extends this interface (This information
+ *            is used in order to provide a correct cast for methods that
+ *            provide cascade invocation).
  */
-public interface ChemicalPattern {
+public interface ChemicalPattern<ExtenderType> {
 
 	/**
 	 * <p>
@@ -20,7 +28,7 @@ public interface ChemicalPattern {
 	 * 
 	 * @return Symbolic name of the pattern
 	 */
-	PatternName getName();
+	PatternNameTerm getName();
 
 	/**
 	 * <p>
@@ -52,7 +60,7 @@ public interface ChemicalPattern {
 	 *            The values of the property
 	 * @return The updated pattern
 	 */
-	ChemicalPattern has(Term prop, Term values);
+	ExtenderType has(PropertyTerm prop, ListTerm<?> values);
 
 	/**
 	 * <p>
@@ -65,7 +73,7 @@ public interface ChemicalPattern {
 	 *            The values of the property
 	 * @return The updated pattern
 	 */
-	ChemicalPattern hasNot(Term prop, Term values);
+	ExtenderType hasNot(PropertyTerm prop, ListTerm<?> values);
 
 	/**
 	 * <p>
@@ -78,7 +86,7 @@ public interface ChemicalPattern {
 	 *            The values of the property
 	 * @return The updated pattern
 	 */
-	ChemicalPattern assign(Term prop, Term values);
+	ExtenderType assign(PropertyTerm prop, ListTerm<?> values);
 
 	/**
 	 * <p>
@@ -89,7 +97,7 @@ public interface ChemicalPattern {
 	 *            The Semantic Description term to be cloned
 	 * @return The updated pattern
 	 */
-	ChemicalPattern clone(Term desc);
+	ExtenderType clone(SDescTerm desc);
 
 	/**
 	 * <p>
@@ -100,9 +108,18 @@ public interface ChemicalPattern {
 	 *            The Semantic Description term to be extended
 	 * @return The updated pattern
 	 */
-	ChemicalPattern extend(Term desc);
+	ExtenderType extend(SDescTerm desc);
 
-	ChemicalPattern match(Term term1, Term term2);
-
-	ChemicalPattern smatch(Term term1, Term term2);
+	/**
+	 * <p>
+	 * Adds a MATCH filter.
+	 * </p>
+	 * 
+	 * @param term1
+	 *            First term that should match with the second one
+	 * @param term2
+	 *            Second term that should match with the first one
+	 * @return The updated pattern
+	 */
+	ExtenderType match(Term<?> term1, Term<?> term2);
 }

@@ -2,6 +2,7 @@ package it.apice.sapere.api.space;
 
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
+import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
@@ -142,7 +143,7 @@ public interface LSAspace {
 	 *            The law to be checked
 	 * @return Possible matches that has been found (empty list if no match)
 	 */
-	MatchingEcolaw[] match(Ecolaw law);
+	MatchResult[] match(Ecolaw law);
 
 	/**
 	 * <p>
@@ -177,7 +178,7 @@ public interface LSAspace {
 	 */
 	void removeSpaceObserver(SpaceObserver obs);
 
-	/* === TRANSACTION SUPPORT === */
+	/* === TRANSACTIONS SUPPORT === */
 
 	/**
 	 * <p>

@@ -1,20 +1,22 @@
 Manifest-Version: 1.0
-Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.lsas.va
- lues,it.apice.sapere.api.ecolaws,it.apice.sapere.api.lsas",it.apice.s
- apere.api.ecolaws;uses:="it.apice.sapere.api.ecolaws.visitor,it.apice
- .sapere.api.ecolaws.match",it.apice.sapere.api.ecolaws.filters;uses:=
- "it.apice.sapere.api.ecolaws",it.apice.sapere.api.ecolaws.match;uses:
- ="it.apice.sapere.api.ecolaws",it.apice.sapere.api.ecolaws.terms;uses
- :="it.apice.sapere.api.ecolaws",it.apice.sapere.api.ecolaws.visitor;u
- ses:="it.apice.sapere.api.ecolaws",it.apice.sapere.api.lsas;uses:="it
- .apice.sapere.api.lsas.visitor,it.apice.sapere.api.lsas.values",it.ap
- ice.sapere.api.lsas.values;uses:="it.apice.sapere.api.lsas.visitor",i
- t.apice.sapere.api.lsas.visitor;uses:="it.apice.sapere.api.lsas.value
- s,it.apice.sapere.api.lsas",it.apice.sapere.api.space;uses:="it.apice
- .sapere.api.ecolaws.match,it.apice.sapere.api.ecolaws,it.apice.sapere
- .api.space.observation,it.apice.sapere.api,it.apice.sapere.api.lsas",
- it.apice.sapere.api.space.observation;uses:="it.apice.sapere.api.lsas
- "
+Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.ecolaws
+ .terms,it.apice.sapere.api.lsas.values,it.apice.sapere.api.ecolaws,it
+ .apice.sapere.api.lsas",it.apice.sapere.api.ecolaws;uses:="it.apice.s
+ apere.api.ecolaws.terms,it.apice.sapere.api.ecolaws.visitor,it.apice.
+ sapere.api.ecolaws.match",it.apice.sapere.api.ecolaws.filters;uses:="
+ it.apice.sapere.api.ecolaws.terms,it.apice.sapere.api.ecolaws",it.api
+ ce.sapere.api.ecolaws.match;uses:="it.apice.sapere.api.ecolaws.terms,
+ it.apice.sapere.api.space,it.apice.sapere.api.ecolaws",it.apice.saper
+ e.api.ecolaws.terms;uses:="it.apice.sapere.api.ecolaws,it.apice.saper
+ e.api",it.apice.sapere.api.ecolaws.visitor;uses:="it.apice.sapere.api
+ .ecolaws",it.apice.sapere.api.lsas;uses:="it.apice.sapere.api.lsas.vi
+ sitor,it.apice.sapere.api.lsas.values",it.apice.sapere.api.lsas.value
+ s;uses:="it.apice.sapere.api.lsas.visitor",it.apice.sapere.api.lsas.v
+ isitor;uses:="it.apice.sapere.api.lsas.values,it.apice.sapere.api.lsa
+ s",it.apice.sapere.api.space;uses:="it.apice.sapere.api.ecolaws.match
+ ,it.apice.sapere.api.ecolaws,it.apice.sapere.api.space.observation,it
+ .apice.sapere.api,it.apice.sapere.api.lsas",it.apice.sapere.api.space
+ .observation;uses:="it.apice.sapere.api.lsas"
 Ignore-Package: java.util,java.net,it.apice.sapere.api.ecolaws.filters
  ,it.apice.sapere.api.space,it.apice.sapere.api.ecolaws.match,it.apice
  .sapere.api.ecolaws.visitor,it.apice.sapere.api.ecolaws.terms,it.apic
@@ -30,7 +32,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_29
 Bundle-Version: 0.0.1
-Bnd-LastModified: 1333531540138
+Bnd-LastModified: 1333547719091
 Bundle-ManifestVersion: 2
 Bundle-Description: This module provides basic interfaces of the proje
  ct

@@ -1,5 +1,7 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
+
 /**
  * <p>
  * This interface models an Ecolaw Term, used in filters.
@@ -7,8 +9,10 @@ package it.apice.sapere.api.ecolaws;
  * 
  * @author Paolo Contessi
  * 
+ * @param <Type>
+ *            The type of the term's value
  */
-public interface Term {
+public interface Term<Type> {
 
 	/**
 	 * <p>
@@ -36,4 +40,23 @@ public interface Term {
 	 * @return True if is a variable and has an assigned value, false otherwise
 	 */
 	boolean isBound();
+
+	/**
+	 * <p>
+	 * Retrieves the value stored in the term.
+	 * </p>
+	 * 
+	 * @return The inner value
+	 */
+	Type getValue();
+
+	/**
+	 * <p>
+	 * Accepts a Visitor.
+	 * </p>
+	 * 
+	 * @param visitor
+	 *            Ecolaw visitor
+	 */
+	void accept(EcolawVisitor visitor);
 }

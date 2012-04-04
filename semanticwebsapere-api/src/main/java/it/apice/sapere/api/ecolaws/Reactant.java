@@ -9,6 +9,6 @@ package it.apice.sapere.api.ecolaws;
  * @author Paolo Contessi
  * @see ChemicalPattern
  */
-public interface Reactant extends ChemicalPattern {
+public interface Reactant extends ChemicalPattern<Reactant> {
 
 }

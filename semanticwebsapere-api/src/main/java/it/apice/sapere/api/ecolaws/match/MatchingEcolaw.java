@@ -2,16 +2,16 @@ package it.apice.sapere.api.ecolaws.match;
 
 import it.apice.sapere.api.ecolaws.Ecolaw;
 
-// TODO define...
+/**
+ * <p>
+ * This interface models an Ecolaw whose variables has been bound to some values
+ * after a matching phase.
+ * </p>
+ * 
+ * @author Paolo Contessi
+ * 
+ */
 public interface MatchingEcolaw extends Ecolaw {
-
-	void bind(Object... objs);
-
-	void unbind();
-
-	void bindings();
-
-	double score();
 
 	/**
 	 * <p>

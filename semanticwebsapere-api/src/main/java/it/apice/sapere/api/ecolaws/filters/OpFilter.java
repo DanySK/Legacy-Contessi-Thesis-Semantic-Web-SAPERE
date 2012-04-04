@@ -1,12 +1,14 @@
 package it.apice.sapere.api.ecolaws.filters;
 
 import it.apice.sapere.api.ecolaws.Filter;
-import it.apice.sapere.api.ecolaws.Term;
+import it.apice.sapere.api.ecolaws.terms.ListTerm;
+import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
 
 /**
  * <p>
- * This interface models an Op filter, which is a filter which applies an
- * operator to a couple of operands.
+ * This interface models an OpFilter, which is a filter which applies an
+ * operator to a couple of operands: a property on the left and a list of values
+ * on the right.
  * </p>
  * 
  * @author Paolo Contessi
@@ -21,7 +23,7 @@ public interface OpFilter extends Filter {
 	 * 
 	 * @return Operand on the left
 	 */
-	Term getLeftTerm();
+	PropertyTerm getLeftTerm();
 
 	/**
 	 * <p>
@@ -30,5 +32,5 @@ public interface OpFilter extends Filter {
 	 * 
 	 * @return Operand on the right
 	 */
-	Term getRightTerm();
+	ListTerm<?> getRightTerm();
 }

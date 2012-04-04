@@ -1,6 +1,8 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
+import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 /**
@@ -64,6 +66,15 @@ public interface Ecolaw {
 
 	/**
 	 * <p>
+	 * Retrieves all variables used in this Ecolaw.
+	 * </p>
+	 * 
+	 * @return A list of all variable terms (unconstrained or annotated)
+	 */
+	VarTerm<?> variables();
+
+	/**
+	 * <p>
 	 * Modifies the rate of this Ecolaw.
 	 * </p>
 	 * 
@@ -71,7 +82,7 @@ public interface Ecolaw {
 	 *            The new scheduling rate
 	 * @return The updated ecolaw
 	 */
-	Ecolaw rate(Rate<?> rate);
+	Ecolaw setRate(Rate<?> rate);
 
 	/**
 	 * <p>
@@ -82,7 +93,7 @@ public interface Ecolaw {
 	 *            The reactant
 	 * @return The updated ecolaw
 	 */
-	Ecolaw reactant(Reactant react);
+	Ecolaw addReactant(Reactant react);
 
 	/**
 	 * <p>
@@ -93,14 +104,17 @@ public interface Ecolaw {
 	 *            The product
 	 * @return The updated ecolaw
 	 */
-	Ecolaw product(Product prod);
+	Ecolaw addProduct(Product prod);
 
 	/**
 	 * <p>
 	 * Binds Ecolaw's variables to matching values found in LSA-space.
 	 * </p>
 	 * 
+	 * @param match
+	 *            Values, determined during matching phase, to be assigned to
+	 *            variables
 	 * @return The Matching Ecolaw
 	 */
-	MatchingEcolaw bind(); // TODO find how to pass bindings
+	MatchingEcolaw bind(MatchResult match);
 }

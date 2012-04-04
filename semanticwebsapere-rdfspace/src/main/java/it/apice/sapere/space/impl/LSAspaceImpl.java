@@ -3,6 +3,7 @@ package it.apice.sapere.space.impl;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
+import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
@@ -325,14 +326,29 @@ public class LSAspaceImpl implements LSAspace {
 	}
 
 	@Override
-	public MatchingEcolaw[] match(Ecolaw law) {
+	public final MatchResult[] match(final Ecolaw law) {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * 1. Translate Reagent patterns to SPARQL
+		 * 2. Run translated query
+		 * 3. Extract bindings
+		 * 4. Return them for ranking
+		 */
+
 		return null;
 	}
 
 	@Override
-	public LSAspace apply(MatchingEcolaw law) {
+	public final LSAspace apply(final MatchingEcolaw law) {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * 1. Apply selected binding to the law
+		 * 2. Translate binded Product patterns in to SPARQL Update
+		 * 3. Run query
+		 */
+		
 		return null;
 	}
 
