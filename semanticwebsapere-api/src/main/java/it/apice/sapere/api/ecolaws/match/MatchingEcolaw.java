@@ -19,4 +19,13 @@ public interface MatchingEcolaw extends Ecolaw {
 	 * </p>
 	 */
 	void apply();
+
+	/**
+	 * <p>
+	 * Retrieves the score associated to this MatchingEcolaw.
+	 * </p>
+	 * 
+	 * @return Matching Ecolaw Score
+	 */
+	double getScore();
 }
