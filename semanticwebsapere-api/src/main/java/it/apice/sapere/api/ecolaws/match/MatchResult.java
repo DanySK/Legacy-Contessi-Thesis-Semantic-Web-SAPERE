@@ -68,4 +68,5 @@ public interface MatchResult {
 	 * @return A reference to the LSA-space
 	 */
 	LSAspace getLSAspace();
+
 }

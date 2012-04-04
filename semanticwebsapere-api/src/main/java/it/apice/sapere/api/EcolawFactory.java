@@ -7,6 +7,7 @@ import it.apice.sapere.api.ecolaws.Reactant;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
+import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
 import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
 import it.apice.sapere.api.ecolaws.terms.SDescTerm;
 import it.apice.sapere.api.ecolaws.terms.ValueTerm;
@@ -64,6 +65,17 @@ public interface EcolawFactory {
 
 	/**
 	 * <p>
+	 * Creates a new Reactant.
+	 * </p>
+	 * 
+	 * @param name
+	 *            The name of the pattern (as a term)
+	 * @return A fresh Reactant
+	 */
+	Reactant createReactant(PatternNameTerm name);
+
+	/**
+	 * <p>
 	 * Creates a new Product.
 	 * </p>
 	 * 
@@ -72,6 +84,17 @@ public interface EcolawFactory {
 	 * @return A fresh Product
 	 */
 	Product createProduct(String name);
+
+	/**
+	 * <p>
+	 * Creates a new Product.
+	 * </p>
+	 * 
+	 * @param name
+	 *            The name of the pattern (as a term)
+	 * @return A fresh Product
+	 */
+	Product createProduct(PatternNameTerm name);
 
 	/* === RATES === */
 
