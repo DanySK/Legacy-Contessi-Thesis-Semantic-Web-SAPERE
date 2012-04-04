@@ -9,6 +9,6 @@ package it.apice.sapere.api.ecolaws;
  * @author Paolo Contessi
  * @see ChemicalPattern
  */
-public interface Product {
+public interface Product extends ChemicalPattern {
 
 }

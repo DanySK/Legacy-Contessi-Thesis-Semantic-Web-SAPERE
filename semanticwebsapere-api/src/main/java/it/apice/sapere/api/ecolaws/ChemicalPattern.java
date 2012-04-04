@@ -1,8 +1,5 @@
 package it.apice.sapere.api.ecolaws;
 
-import it.apice.sapere.api.ecolaws.filters.terms.PropertyTerm;
-import it.apice.sapere.api.ecolaws.filters.terms.SemDescTerm;
-import it.apice.sapere.api.ecolaws.filters.terms.ValuesListTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 /**
@@ -44,17 +41,68 @@ public interface ChemicalPattern {
 	 */
 	void accept(EcolawVisitor visitor);
 
-	ChemicalPattern has(PropertyTerm term, ValuesListTerm values);
+	/**
+	 * <p>
+	 * Adds an HAS filter.
+	 * </p>
+	 * 
+	 * @param prop
+	 *            The property term involved
+	 * @param values
+	 *            The values of the property
+	 * @return The updated pattern
+	 */
+	ChemicalPattern has(Term prop, Term values);
 
-	ChemicalPattern has_not(PropertyTerm term, ValuesListTerm values);
+	/**
+	 * <p>
+	 * Adds an HAS-NOT filter.
+	 * </p>
+	 * 
+	 * @param prop
+	 *            The property term involved
+	 * @param values
+	 *            The values of the property
+	 * @return The updated pattern
+	 */
+	ChemicalPattern hasNot(Term prop, Term values);
 
-	ChemicalPattern assign(PropertyTerm term, ValuesListTerm values);
+	/**
+	 * <p>
+	 * Adds an ASSIGN (=) filter.
+	 * </p>
+	 * 
+	 * @param prop
+	 *            The property term involved
+	 * @param values
+	 *            The values of the property
+	 * @return The updated pattern
+	 */
+	ChemicalPattern assign(Term prop, Term values);
 
-	ChemicalPattern clone(SemDescTerm term);
+	/**
+	 * <p>
+	 * Adds a CLONES filter.
+	 * </p>
+	 * 
+	 * @param desc
+	 *            The Semantic Description term to be cloned
+	 * @return The updated pattern
+	 */
+	ChemicalPattern clone(Term desc);
 
-	ChemicalPattern extend(SemDescTerm term);
+	/**
+	 * <p>
+	 * Adds a EXTENDS filter.
+	 * </p>
+	 * 
+	 * @param desc
+	 *            The Semantic Description term to be extended
+	 * @return The updated pattern
+	 */
+	ChemicalPattern extend(Term desc);
 
 	ChemicalPattern match(Term term1, Term term2);
-	
-	ChemicalPattern s_match(Term term1, Term term2);
+
+	ChemicalPattern smatch(Term term1, Term term2);
 }
