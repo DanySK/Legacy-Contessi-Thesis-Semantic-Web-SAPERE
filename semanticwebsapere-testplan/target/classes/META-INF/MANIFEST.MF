@@ -1,13 +1,14 @@
 Manifest-Version: 1.0
 Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.lsas.va
- lues,org.junit,it.apice.sapere.api.lsas",it.apice.sapere.api.lsas;use
- s:="org.junit,it.apice.sapere.api,it.apice.sapere.api.lsas.values,it.
- apice.sapere.api.lsas.visitor",it.apice.sapere.api.lsas.values;uses:=
- "it.apice.sapere.api,it.apice.sapere.api.lsas,org.junit,it.apice.sape
- re.api.lsas.visitor",it.apice.sapere.space;uses:="it.apice.sapere.api
- .space.observation,it.apice.sapere.api.lsas,junit.framework,it.apice.
- sapere.api.space,it.apice.sapere.api.lsas.values,org.junit,it.apice.s
- apere.api"
+ lues,org.junit,it.apice.sapere.api.lsas,it.apice.sapere.api.ecolaws.t
+ erms,it.apice.sapere.api.ecolaws",it.apice.sapere.api.lsas;uses:="org
+ .junit,it.apice.sapere.api,it.apice.sapere.api.lsas.values,it.apice.s
+ apere.api.lsas.visitor",it.apice.sapere.api.lsas.values;uses:="it.api
+ ce.sapere.api,it.apice.sapere.api.lsas,org.junit,it.apice.sapere.api.
+ lsas.visitor",it.apice.sapere.space;uses:="it.apice.sapere.api.space.
+ observation,it.apice.sapere.api.lsas,junit.framework,it.apice.sapere.
+ api.space,it.apice.sapere.api.lsas.values,org.junit,it.apice.sapere.a
+ pi",it.apice.sapere.utils;uses:="com.hp.hpl.jena.rdf.model"
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -17,13 +18,15 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_29
 Bundle-Version: 0.0.1
-Bnd-LastModified: 1333452093569
+Bnd-LastModified: 1333558629360
 Bundle-ManifestVersion: 2
 Bundle-Description: This project encloses Testing Plan for SAPERE-APIs
-Import-Package: it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.
- sapere.api.lsas.values,it.apice.sapere.api.lsas.visitor,it.apice.sape
- re.api.space,it.apice.sapere.api.space.observation,it.apice.sapere.sp
- ace,junit.framework,org.junit
+Import-Package: com.hp.hpl.jena.rdf.model,it.apice.sapere.api,it.apice
+ .sapere.api.ecolaws,it.apice.sapere.api.ecolaws.terms,it.apice.sapere
+ .api.lsas,it.apice.sapere.api.lsas.values,it.apice.sapere.api.lsas.vi
+ sitor,it.apice.sapere.api.space,it.apice.sapere.api.space.observation
+ ,it.apice.sapere.space,it.apice.sapere.utils,junit.framework,org.juni
+ t
 Bundle-SymbolicName: semanticwebsapere-testplan
 Bundle-DocURL: http://apice.unibo.it/
 

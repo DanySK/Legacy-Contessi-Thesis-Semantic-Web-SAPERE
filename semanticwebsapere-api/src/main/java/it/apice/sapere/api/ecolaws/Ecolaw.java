@@ -1,7 +1,7 @@
 package it.apice.sapere.api.ecolaws;
 
-import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
+import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
@@ -116,5 +116,5 @@ public interface Ecolaw {
 	 *            variables
 	 * @return The Matching Ecolaw
 	 */
-	MatchingEcolaw bind(MatchResult match);
+	MatchingEcolaw bind(ScoredMatchResult match);
 }

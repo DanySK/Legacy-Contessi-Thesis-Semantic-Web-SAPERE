@@ -320,4 +320,16 @@ public interface EcolawFactory {
 	 * @return A fresh Term
 	 */
 	SDescTerm createSDescTerm(String name, Formula<PropertyName> formula);
+
+	/**
+	 * <p>
+	 * Creates a new Ecolaw chemical pattern name, which is a variable that will
+	 * unify with the LSA-id of the LSA which matches the pattern.
+	 * </p>
+	 * 
+	 * @param name
+	 *            The name that identifies the pattern
+	 * @return A fresh Term
+	 */
+	PatternNameTerm createPatternNameTerm(String name);
 }

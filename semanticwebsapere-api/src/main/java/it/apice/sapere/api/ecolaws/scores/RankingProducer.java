@@ -1,6 +1,7 @@
 package it.apice.sapere.api.ecolaws.scores;
 
 import it.apice.sapere.api.ecolaws.match.MatchResult;
+import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 
 /**
  * <p>
@@ -24,6 +25,6 @@ public interface RankingProducer {
 	 * @return A list of matching solution ordered from the most promising to
 	 *         the worst
 	 */
-	MatchResult[] rank(MatchResult[] alternatives);
+	ScoredMatchResult[] rank(MatchResult[] alternatives);
 
 }
