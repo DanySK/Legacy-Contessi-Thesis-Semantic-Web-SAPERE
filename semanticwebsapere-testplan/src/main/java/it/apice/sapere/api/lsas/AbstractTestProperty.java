@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import it.apice.sapere.api.AbstractModelTest;
+import it.apice.sapere.api.AbstractLSAModelTest;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
 import java.net.URI;
@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestProperty extends AbstractModelTest {
+public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 
 	/**
 	 * <p>

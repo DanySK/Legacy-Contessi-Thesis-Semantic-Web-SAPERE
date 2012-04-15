@@ -3,7 +3,7 @@ package it.apice.sapere.api.lsas;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import it.apice.sapere.api.AbstractModelTest;
+import it.apice.sapere.api.AbstractLSAModelTest;
 
 import java.net.URI;
 
@@ -18,7 +18,7 @@ import org.junit.Test;
  * 
  */
 public abstract class AbstractTestSemanticDescription 
-		extends AbstractModelTest {
+		extends AbstractLSAModelTest {
 
 	/**
 	 * <p>

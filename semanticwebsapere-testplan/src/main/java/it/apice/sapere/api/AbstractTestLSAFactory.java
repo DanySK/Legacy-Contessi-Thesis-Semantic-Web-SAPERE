@@ -19,7 +19,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestLSAFactory extends AbstractModelTest {
+public abstract class AbstractTestLSAFactory extends AbstractLSAModelTest {
 
 	/** Reference to an LSA Factory. */
 	private final transient LSAFactory factory = createFactory();

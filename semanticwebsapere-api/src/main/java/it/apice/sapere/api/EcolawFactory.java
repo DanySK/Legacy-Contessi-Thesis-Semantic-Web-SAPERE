@@ -4,6 +4,7 @@ import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
@@ -15,6 +16,7 @@ import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.SemanticDescription;
+import it.apice.sapere.api.lsas.values.DoubleValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
 /**
@@ -113,6 +115,18 @@ public interface EcolawFactory {
 	/**
 	 * <p>
 	 * Creates a new Ecolaw scheduling rate which asserts that the law should be
+	 * scheduled according to Continuous-time Markov Chains (CTMC).
+	 * </p>
+	 * 
+	 * @param rate
+	 *            The actual rate
+	 * @return A Markovian Rate
+	 */
+	Rate<?> createMarkovianRate(ValueTerm<DoubleValue> rate);
+
+	/**
+	 * <p>
+	 * Creates a new Ecolaw scheduling rate which asserts that the law should be
 	 * scheduled "As Soon As Possible".
 	 * </p>
 	 * 
@@ -164,7 +178,7 @@ public interface EcolawFactory {
 	 * @return A fresh term
 	 */
 	<Type extends PropertyValue<?>> ValueTerm<Type> createTypedValueTerm(
-			PropertyValue<Type> value);
+			Type value);
 
 	/**
 	 * <p>
@@ -175,7 +189,40 @@ public interface EcolawFactory {
 	 *            A Value
 	 * @return A fresh term
 	 */
-	ValueTerm<?> createValueTerm(PropertyValue<?> value);
+	ValueTerm<? extends PropertyValue<?>> createValueTerm(
+			PropertyValue<?> value);
+
+	/**
+	 * <p>
+	 * Creates a new Ecolaw term for an unconstrained variable which will point
+	 * to a value.
+	 * </p>
+	 * 
+	 * @param <Type>
+	 *            Type of term's inner value
+	 * @param name
+	 *            Name of the variable
+	 * @return A fresh Term
+	 */
+	<Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+			String name);
+
+	/**
+	 * <p>
+	 * Creates a new Ecolaw term for an annotated variable which will point to a
+	 * value.
+	 * </p>
+	 * 
+	 * @param <Type>
+	 *            Type of term's inner value
+	 * @param name
+	 *            Name of the variable
+	 * @param formula
+	 *            Boolean condition for assignment acceptance
+	 * @return A fresh Term
+	 */
+	<Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+			String name, Formula<Type> formula);
 
 	/**
 	 * <p>
@@ -202,8 +249,8 @@ public interface EcolawFactory {
 	 *            Terms that compose the list
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
-			ValueTerm<Type>... values);
+	<Type extends PropertyValue<?>> ListTerm<Type> createListTermFromTerms(
+			Term<Type>... values);
 
 	/**
 	 * <p>
@@ -275,7 +322,7 @@ public interface EcolawFactory {
 
 	/**
 	 * <p>
-	 * Creates a new Ecolaw term for a Property name.
+	 * Creates a new Ecolaw term for a Semantic Description.
 	 * </p>
 	 * 
 	 * @param lsa
@@ -286,7 +333,7 @@ public interface EcolawFactory {
 
 	/**
 	 * <p>
-	 * Creates a new Ecolaw term for a Property name.
+	 * Creates a new Ecolaw term for a Semantic Description.
 	 * </p>
 	 * 
 	 * @param sdesc
@@ -294,6 +341,18 @@ public interface EcolawFactory {
 	 * @return A fresh Term
 	 */
 	SDescTerm createSDescTerm(SemanticDescription sdesc);
+
+	/**
+	 * <p>
+	 * Creates a new Ecolaw term for a Semantic Description.
+	 * </p>
+	 * 
+	 * @param pname
+	 *            The PatternName whose assigned LSA's SemanticDescription
+	 *            should be used
+	 * @return A fresh Term
+	 */
+	SDescTerm createSDescTerm(PatternNameTerm pname);
 
 	/**
 	 * <p>

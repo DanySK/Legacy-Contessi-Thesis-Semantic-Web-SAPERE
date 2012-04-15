@@ -22,7 +22,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestLSAParser extends AbstractModelTest {
+public abstract class AbstractTestLSAParser extends AbstractLSAModelTest {
 
 	/** Constant: LSA RDF prefix. */
 	private static final transient String SAPERE_PREFIX = "http://"

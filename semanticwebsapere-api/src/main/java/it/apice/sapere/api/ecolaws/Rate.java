@@ -3,10 +3,11 @@ package it.apice.sapere.api.ecolaws;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 /**
+ * <p>
  * This interface represents the rate at which a reaction is triggered.
+ * </p>
  * 
  * @author Marco Santarelli
- * 
  * @author Paolo Contessi
  * 
  * @param <Type>

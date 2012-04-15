@@ -2,6 +2,8 @@ package it.apice.sapere.api.ecolaws.terms;
 
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
+import java.util.List;
+
 /**
  * <p>
  * This interface models a List of values inside an Ecolaw.
@@ -16,6 +18,6 @@ import it.apice.sapere.api.lsas.values.PropertyValue;
  *            The type of the term's value
  */
 public interface ListTerm<Type extends PropertyValue<?>> extends
-		AnnotatedVarTerm<ValueTerm<Type>> {
+		AnnotatedVarTerm<List<ValueTerm<Type>>> {
 
 }

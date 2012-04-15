@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import it.apice.sapere.api.AbstractModelTest;
+import it.apice.sapere.api.AbstractLSAModelTest;
 import it.apice.sapere.api.lsas.LSAid;
 
 import java.net.URI;
@@ -26,7 +26,7 @@ import org.junit.Test;
  *            The type that will be contained in the tested PropertyValue
  */
 public abstract class AbstractTestPropertyValue<ValueType> extends
-		AbstractModelTest {
+		AbstractLSAModelTest {
 
 	/**
 	 * <p>

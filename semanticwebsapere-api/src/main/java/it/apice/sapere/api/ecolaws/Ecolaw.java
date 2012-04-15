@@ -71,7 +71,7 @@ public interface Ecolaw {
 	 * 
 	 * @return A list of all variable terms (unconstrained or annotated)
 	 */
-	VarTerm<?> variables();
+	VarTerm<?>[] variables();
 
 	/**
 	 * <p>

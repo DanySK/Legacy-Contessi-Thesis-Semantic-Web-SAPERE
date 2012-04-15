@@ -13,29 +13,36 @@ import it.apice.sapere.api.impl.LSAFactoryImpl;
 public class TestLSAFactory extends AbstractTestLSAFactory {
 
 	/** Factory reference. */
-	private final transient PrivilegedLSAFactory factory;
-
-	/**
-	 * <p>
-	 * Builds a new Test Case.
-	 * </p>
-	 * 
-	 * @throws Exception
-	 *             Initialization problems
-	 */
-	public TestLSAFactory() throws Exception {
-		factory = new LSAFactoryImpl("http://www.sapere-project.eu/sapere#node"
-				+ System.currentTimeMillis());
-	}
+	private transient PrivilegedLSAFactory factory;
 
 	@Override
 	protected final LSAFactory createFactory() {
+		if (factory == null) {
+			factory = initFactory();
+		}
+
 		return factory;
 	}
 
 	@Override
 	protected final PrivilegedLSAFactory createPrivilegedFactory() {
+		if (factory == null) {
+			factory = initFactory();
+		}
+
 		return factory;
 	}
 
+	/**
+	 * <p>
+	 * Initializes the factory.
+	 * </p>
+	 *
+	 * @return Instance to the tested factory
+	 */
+	private PrivilegedLSAFactory initFactory() {
+		return new LSAFactoryImpl(
+				"http://www.sapere-project.eu/sapere#node"
+						+ System.currentTimeMillis());
+	}
 }

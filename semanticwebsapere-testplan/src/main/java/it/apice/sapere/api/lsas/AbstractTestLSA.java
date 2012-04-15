@@ -1,6 +1,6 @@
 package it.apice.sapere.api.lsas;
 
-import it.apice.sapere.api.AbstractModelTest;
+import it.apice.sapere.api.AbstractLSAModelTest;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestLSA extends AbstractModelTest {
+public abstract class AbstractTestLSA extends AbstractLSAModelTest {
 
 	/**
 	 * <p>

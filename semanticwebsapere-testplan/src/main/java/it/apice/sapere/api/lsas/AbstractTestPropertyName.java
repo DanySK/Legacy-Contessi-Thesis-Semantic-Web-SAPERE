@@ -2,7 +2,7 @@ package it.apice.sapere.api.lsas;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import it.apice.sapere.api.AbstractModelTest;
+import it.apice.sapere.api.AbstractLSAModelTest;
 
 import java.net.URI;
 
@@ -16,7 +16,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestPropertyName extends AbstractModelTest {
+public abstract class AbstractTestPropertyName extends AbstractLSAModelTest {
 
 	/**
 	 * <p>
