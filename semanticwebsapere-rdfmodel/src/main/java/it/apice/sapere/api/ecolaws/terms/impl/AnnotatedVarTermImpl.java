@@ -68,6 +68,20 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		formula = boolCond;
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public AnnotatedVarTermImpl(final AnnotatedVarTermImpl<Type> src) {
+		super(src);
+
+		formula = src.formula;
+	}
+
 	@Override
 	public final Formula<Type> getFormula() {
 		return formula;
@@ -77,6 +91,11 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 	public final void bindTo(final Term<Type> term) throws SAPEREException {
 		if (term == null) {
 			throw new IllegalArgumentException("Invalid value to be bound");
+		}
+
+		if (isGround()) {
+			throw new SAPEREException(
+					"Cannot bind a value to a term which is not variable");
 		}
 
 		if (formula != null && !formula.accept(term)) {

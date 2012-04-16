@@ -83,6 +83,25 @@ public class EcolawImpl implements Ecolaw {
 		label = aLabel;
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Eco-law to be cloned
+	 */
+	public EcolawImpl(final Ecolaw src) {
+		if (src == null) {
+			throw new IllegalArgumentException("Cannot clone nothing");
+		}
+
+		label = src.getLabel();
+		//if (src.getRate().getRateValue() instanceof Term)
+		// TODO complete clone
+		rate = null;
+	}
+
 	@Override
 	public final String getLabel() {
 		return label;

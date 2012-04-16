@@ -67,4 +67,16 @@ public class PropertyTermImpl extends AnnotatedVarTermImpl<PropertyName>
 		throw new IllegalStateException(
 				"This term is not bound, so the value cannot be extracted");
 	}
+
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public PropertyTermImpl(final PropertyTermImpl src) {
+		super(src);
+	}
 }

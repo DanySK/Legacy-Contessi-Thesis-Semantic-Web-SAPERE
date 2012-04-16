@@ -28,4 +28,13 @@ public interface MatchingEcolaw extends Ecolaw {
 	 * @return Matching Ecolaw Score
 	 */
 	double getScore();
+
+	/**
+	 * <p>
+	 * Retrieves the original eco-law used for matching process.
+	 * </p>
+	 * 
+	 * @return The eco-law used for matching (before variable binding)
+	 */
+	Ecolaw getOriginal();
 }

@@ -17,6 +17,7 @@ import it.apice.sapere.api.lsas.values.PropertyValue;
 import it.apice.sapere.api.lsas.values.URIValue;
 
 import java.net.URI;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -243,7 +244,8 @@ public abstract class AbstractTestEcolawFactory
 		}
 
 		try {
-			factory.<BooleanValue> createListTermFromTerms((ValueTerm<BooleanValue>[]) null);
+			factory.<BooleanValue> createListTermFromTerms(
+					(ValueTerm<BooleanValue>[]) null);
 			Assert.fail("Strange ListTerm (3)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -384,14 +386,15 @@ public abstract class AbstractTestEcolawFactory
 
 		try {
 			factory.createListTerm((String) null,
-					this.<BooleanValue> createValidFormula());
+					this.<List<Term<BooleanValue>>> createValidFormula());
 			Assert.fail("Strange VarListTerm (1)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
 		}
 
 		try {
-			factory.createListTerm("", this.<BooleanValue> createValidFormula());
+			factory.createListTerm("",
+					this.<List<Term<BooleanValue>>> createValidFormula());
 			Assert.fail("Strange VarListTerm (2)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -440,7 +443,7 @@ public abstract class AbstractTestEcolawFactory
 
 		try {
 			factory.createSDescTerm((String) null,
-					this.<PropertyName> createValidFormula());
+					this.<SemanticDescription> createValidFormula());
 			Assert.fail("Strange VarSDescTerm (1)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -448,7 +451,7 @@ public abstract class AbstractTestEcolawFactory
 
 		try {
 			factory.createSDescTerm("",
-					this.<PropertyName> createValidFormula());
+					this.<SemanticDescription> createValidFormula());
 			Assert.fail("Strange VarSDescTerm (2)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -637,8 +640,7 @@ public abstract class AbstractTestEcolawFactory
 	 *            minor value)
 	 * @return The formula
 	 */
-	private Formula<LongValue> createGtFormula(
-			final ValueTerm<LongValue> tVar) {
+	private Formula<LongValue> createGtFormula(final ValueTerm<LongValue> tVar) {
 		return new Formula<LongValue>() {
 
 			@Override

@@ -5,9 +5,17 @@ import it.apice.sapere.api.ecolaws.impl.EcolawImpl;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 
+/**
+ * <p>
+ * This class implements {@link MatchingEcolaw} interface.
+ * </p>
+ *
+ * @author Paolo Contessi
+ *
+ */
 public class MatchingEcolawImpl extends EcolawImpl implements MatchingEcolaw {
 
-	/** The ecolaw that has been matched. */
+	/** The eco-law that has been matched. */
 	private final transient Ecolaw law;
 
 	/** The chosen match. */
@@ -26,6 +34,8 @@ public class MatchingEcolawImpl extends EcolawImpl implements MatchingEcolaw {
 	 */
 	public MatchingEcolawImpl(final Ecolaw aLaw, 
 			final ScoredMatchResult aMatch) {
+		super(aLaw);
+
 		if (aLaw == null) {
 			throw new IllegalArgumentException("Invalid eco-law provided");
 		}
@@ -47,6 +57,11 @@ public class MatchingEcolawImpl extends EcolawImpl implements MatchingEcolaw {
 	@Override
 	public final double getScore() {
 		return match.getScore();
+	}
+
+	@Override
+	public final Ecolaw getOriginal() {
+		return law;
 	}
 
 }

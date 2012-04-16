@@ -1,8 +1,8 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
-import it.apice.sapere.api.ecolaws.terms.ValueTerm;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
  *            Internal type value
  */
 public class ListTermImpl<Type extends PropertyValue<?>> extends
-		AnnotatedVarTermImpl<List<ValueTerm<Type>>> implements ListTerm<Type> {
+		AnnotatedVarTermImpl<List<Term<Type>>> implements ListTerm<Type> {
 
 	/**
 	 * <p>
@@ -43,7 +43,7 @@ public class ListTermImpl<Type extends PropertyValue<?>> extends
 	 *            The binding acceptance criteria
 	 */
 	public ListTermImpl(final String varName,
-			final Formula<List<ValueTerm<Type>>> boolCond) {
+			final Formula<List<Term<Type>>> boolCond) {
 		super(varName, boolCond);
 	}
 
@@ -55,8 +55,19 @@ public class ListTermImpl<Type extends PropertyValue<?>> extends
 	 * @param values
 	 *            A list of values
 	 */
-	public ListTermImpl(final List<ValueTerm<Type>> values) {
+	public ListTermImpl(final List<Term<Type>> values) {
 		super(values);
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public ListTermImpl(final ListTermImpl<Type> src) {
+		super(src);
+	}
 }

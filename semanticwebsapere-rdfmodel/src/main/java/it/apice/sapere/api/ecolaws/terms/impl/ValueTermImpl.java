@@ -55,4 +55,16 @@ public class ValueTermImpl<Type extends PropertyValue<?>> extends
 	public ValueTermImpl(final Type val) {
 		super(val);
 	}
+
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public ValueTermImpl(final ValueTermImpl<Type> src) {
+		super(src);
+	}
 }

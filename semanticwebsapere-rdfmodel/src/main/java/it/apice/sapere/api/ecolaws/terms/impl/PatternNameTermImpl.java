@@ -53,4 +53,16 @@ public class PatternNameTermImpl extends AnnotatedVarTermImpl<LSAidValue>
 	public PatternNameTermImpl(final LSAidValue lsaId) {
 		super(lsaId);
 	}
+
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public PatternNameTermImpl(final PatternNameTermImpl src) {
+		super(src);
+	}
 }

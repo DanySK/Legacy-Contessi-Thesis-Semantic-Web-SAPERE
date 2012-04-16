@@ -6,10 +6,7 @@ import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
 import it.apice.sapere.api.ecolaws.Term;
-import it.apice.sapere.api.ecolaws.filters.CopyFilter;
-import it.apice.sapere.api.ecolaws.filters.OpFilter;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
-import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -23,10 +20,7 @@ import java.util.List;
  * @author Paolo Contessi
  * 
  */
-public class VarRetrieverVisitor implements EcolawVisitor {
-
-	/** Eco-law to be visited. */
-	private final transient Ecolaw ecolaw;
+public class VarRetrieverVisitor extends AbstractEcolawVisitor {
 
 	/** Eco-law's variables list. */
 	private final transient List<VarTerm<?>> vars;
@@ -41,62 +35,33 @@ public class VarRetrieverVisitor implements EcolawVisitor {
 	 *            The eco-law to be inspected
 	 */
 	public VarRetrieverVisitor(final Ecolaw anEcolaw) {
-		if (anEcolaw == null) {
-			throw new IllegalArgumentException("Invalid Ecolaw to be visited");
-		}
-
-		ecolaw = anEcolaw;
+		super(anEcolaw);
 		vars = new LinkedList<VarTerm<?>>();
 	}
-
+	
 	@Override
-	public final void visit(final Ecolaw law) {
-		law.getRate().accept(this);
-		for (Reactant react : law.reactants()) {
-			react.accept(this);
-		}
-
-		for (Product prod : law.products()) {
-			prod.accept(this);
-		}
-	}
-
-	@Override
-	public final void visit(final Rate<?> rate) {
+	protected final void doVisit(final Rate<?> rate) {
 		checkAndAddIfVar(rate.getRateValue());
 	}
 
 	@Override
-	public final void visit(final Product prod) {
-		prod.getName().accept(this);
-		for (Filter filter : prod.filters()) {
-			filter.accept(this);
-		}
-	}
-
-	@Override
-	public final void visit(final Reactant react) {
-		react.getName().accept(this);
-		for (Filter filter : react.filters()) {
-			filter.accept(this);
-		}
-	}
-
-	@Override
-	public final void visit(final Filter filter) {
-		if (filter instanceof CopyFilter) {
-			final CopyFilter cfilt = (CopyFilter) filter;
-			checkAndAddIfVar(cfilt.getSource());
-		} else if (filter instanceof OpFilter) {
-			final OpFilter pfilt = (OpFilter) filter;
-			checkAndAddIfVar(pfilt.getLeftTerm());
-			checkAndAddIfVar(pfilt.getRightTerm());
-		}
-	}
-
-	@Override
-	public final void visit(final Term<?> term) {
+	protected final void doVisit(final Term<?> term) {
 		checkAndAddIfVar(term);
+	}
+
+	@Override
+	protected void doVisit(final Filter filter) {
+		// Nothing to do...
+	}
+
+	@Override
+	protected void doVisit(final Product product) {
+		// Nothing to do...
+	}
+
+	@Override
+	protected void doVisit(final Reactant reactant) {
+		// Nothing to do...
 	}
 
 	/**
@@ -108,7 +73,7 @@ public class VarRetrieverVisitor implements EcolawVisitor {
 	 */
 	public final List<VarTerm<?>> getAllVariables() {
 		vars.clear();
-		ecolaw.accept(this);
+		getEcolaw().accept(this);
 
 		return vars;
 	}
@@ -122,7 +87,7 @@ public class VarRetrieverVisitor implements EcolawVisitor {
 	 * @param obj
 	 *            The candidate variable
 	 */
-	private void checkAndAddIfVar(final Object obj) {
+	final void checkAndAddIfVar(final Object obj) {
 		if (obj instanceof VarTerm<?>) {
 			final VarTerm<?> var = (VarTerm<?>) obj;
 			if (var.isVar()) {
@@ -137,7 +102,7 @@ public class VarRetrieverVisitor implements EcolawVisitor {
 	 * </p>
 	 * 
 	 * @param law
-	 *            The ecolaw to be inspected
+	 *            The eco-law to be inspected
 	 * @return The list of all eco-law's variables
 	 */
 	public static final List<VarTerm<?>> retrieveAllVariables(

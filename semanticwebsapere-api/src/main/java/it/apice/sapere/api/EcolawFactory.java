@@ -1,5 +1,7 @@
 package it.apice.sapere.api;
 
+import java.util.List;
+
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
@@ -281,7 +283,7 @@ public interface EcolawFactory {
 	 * @return A fresh Term
 	 */
 	<Type extends PropertyValue<?>> ListTerm<Type> createListTerm(String name,
-			Formula<Type> formula);
+			Formula<List<Term<Type>>> formula);
 
 	/**
 	 * <p>
@@ -344,18 +346,6 @@ public interface EcolawFactory {
 
 	/**
 	 * <p>
-	 * Creates a new Ecolaw term for a Semantic Description.
-	 * </p>
-	 * 
-	 * @param pname
-	 *            The PatternName whose assigned LSA's SemanticDescription
-	 *            should be used
-	 * @return A fresh Term
-	 */
-	SDescTerm createSDescTerm(PatternNameTerm pname);
-
-	/**
-	 * <p>
 	 * Creates a new Ecolaw term for an unconstrained variable which will point
 	 * to an LSA's Semantic Description.
 	 * </p>
@@ -378,7 +368,8 @@ public interface EcolawFactory {
 	 *            Boolean condition for assignment acceptance
 	 * @return A fresh Term
 	 */
-	SDescTerm createSDescTerm(String name, Formula<PropertyName> formula);
+	SDescTerm createSDescTerm(String name, 
+			Formula<SemanticDescription> formula);
 
 	/**
 	 * <p>

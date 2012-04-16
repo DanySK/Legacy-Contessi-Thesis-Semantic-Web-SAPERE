@@ -66,4 +66,16 @@ public class SDescTermImpl extends AnnotatedVarTermImpl<SemanticDescription>
 	public SDescTermImpl(final LSA lsa) {
 		this(lsa.getSemanticDescription());
 	}
+
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public SDescTermImpl(final SDescTermImpl src) {
+		super(src);
+	}
 }

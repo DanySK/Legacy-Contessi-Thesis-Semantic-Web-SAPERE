@@ -48,6 +48,19 @@ public class VarTermImpl<Type> implements VarTerm<Type> {
 		name = varName;
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            Term to be cloned
+	 */
+	public VarTermImpl(final VarTermImpl<Type> src) {
+		name = src.name;
+		value = src.value;
+	}
+
 	@Override
 	public final boolean isGround() {
 		return !isVar();
@@ -84,11 +97,21 @@ public class VarTermImpl<Type> implements VarTerm<Type> {
 			throw new IllegalArgumentException("Invalid value to be bound");
 		}
 
+		if (isGround()) {
+			throw new SAPEREException(
+					"Cannot bind a value to a term which is not variable");
+		}
+
 		value = term.getValue();
 	}
 
 	@Override
 	public final void clearBinding() throws SAPEREException {
+		if (isGround()) {
+			throw new SAPEREException(
+					"Cannot bind a value to a term which is not variable");
+		}
+
 		if (value == null) {
 			throw new SAPEREException("Cannot clear binding. "
 					+ "No value has been bound to this variable");
