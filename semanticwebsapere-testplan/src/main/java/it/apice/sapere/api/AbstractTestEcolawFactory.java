@@ -644,8 +644,8 @@ public abstract class AbstractTestEcolawFactory
 		return new Formula<LongValue>() {
 
 			@Override
-			public boolean accept(final Term<LongValue> t2Var) {
-				return t2Var.getValue().getValue() > tVar.getValue().getValue();
+			public boolean accept(final LongValue t2Var) {
+				return t2Var.getValue() > tVar.getValue().getValue();
 			}
 
 		};
@@ -664,7 +664,7 @@ public abstract class AbstractTestEcolawFactory
 		return new Formula<T>() {
 
 			@Override
-			public boolean accept(final Term<T> term) {
+			public boolean accept(final T term) {
 				return true;
 			}
 

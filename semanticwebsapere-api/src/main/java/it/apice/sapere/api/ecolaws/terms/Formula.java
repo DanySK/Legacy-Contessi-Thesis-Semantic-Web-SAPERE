@@ -1,6 +1,5 @@
 package it.apice.sapere.api.ecolaws.terms;
 
-import it.apice.sapere.api.ecolaws.Term;
 
 /**
  * <p>
@@ -19,10 +18,10 @@ public interface Formula<Type> {
 	 * Checks the term and decides if represents a valid assignment.
 	 * </p>
 	 * 
-	 * @param term
-	 *            The term to be verified
+	 * @param value
+	 *            The value to be verified
 	 * @return True if condition is satisfied (valid assignment), false
 	 *         otherwise
 	 */
-	boolean accept(Term<Type> term);
+	boolean accept(Type value);
 }

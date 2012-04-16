@@ -3,6 +3,7 @@ package it.apice.sapere.api.ecolaws.terms.impl;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
 import it.apice.sapere.api.ecolaws.terms.ValueTerm;
+import it.apice.sapere.api.ecolaws.terms.observers.impl.PropagationObserverImpl;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.URIValue;
 import it.apice.sapere.api.lsas.values.impl.URIValueImpl;
@@ -60,8 +61,12 @@ public class PropertyTermImpl extends AnnotatedVarTermImpl<PropertyName>
 	@Override
 	public final ValueTerm<URIValue> toValueTerm() {
 		if (isBound() || isGround()) {
-			return new ValueTermImpl<URIValue>(new URIValueImpl(getValue()
-					.getValue()));
+			final ValueTerm<URIValue> val = new ValueTermImpl<URIValue>(
+					new URIValueImpl(getValue().getValue()));
+			val.addBindingObserver(new PropagationObserverImpl<URIValue>(
+					new URItoPNameConverter(this)));
+
+			return val;
 		}
 
 		throw new IllegalStateException(

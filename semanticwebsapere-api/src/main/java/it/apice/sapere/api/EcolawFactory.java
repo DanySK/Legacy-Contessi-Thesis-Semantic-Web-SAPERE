@@ -358,6 +358,17 @@ public interface EcolawFactory {
 
 	/**
 	 * <p>
+	 * Creates a new Ecolaw term for a Semantic Description.
+	 * </p>
+	 * 
+	 * @param field
+	 *            A PatternName whose LSA will provide the Semantic Description
+	 * @return A fresh Term
+	 */
+	SDescTerm createSDescTerm(PatternNameTerm field);
+
+	/**
+	 * <p>
 	 * Creates a new Ecolaw term for an annotated variable which will point to
 	 * an LSA's Semantic Description.
 	 * </p>

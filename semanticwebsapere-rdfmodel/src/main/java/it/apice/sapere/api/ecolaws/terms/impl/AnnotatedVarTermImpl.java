@@ -1,7 +1,6 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 
@@ -88,20 +87,12 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 	}
 
 	@Override
-	public final void bindTo(final Term<Type> term) throws SAPEREException {
-		if (term == null) {
-			throw new IllegalArgumentException("Invalid value to be bound");
-		}
+	protected final void checkBindingPreconditions(final Type value)
+			throws SAPEREException {
+		super.checkBindingPreconditions(value);
 
-		if (isGround()) {
-			throw new SAPEREException(
-					"Cannot bind a value to a term which is not variable");
-		}
-
-		if (formula != null && !formula.accept(term)) {
+		if (formula != null && !formula.accept(value)) {
 			throw new SAPEREException("The value does not fit the annotation");
 		}
-
-		setValue(term.getValue());
 	}
 }

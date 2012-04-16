@@ -30,13 +30,31 @@ public interface VarTerm<Type> extends Term<Type> {
 	 * boolean condition (if any).
 	 * </p>
 	 * 
-	 * @param term
+	 * @param value
 	 *            The value to be assigned
 	 * @throws SAPEREException
 	 *             The value does not satisfy the boolean condition or this is
 	 *             not a variable
 	 */
-	void bindTo(Term<Type> term) throws SAPEREException;
+	void bindTo(Type value) throws SAPEREException;
+
+	/**
+	 * <p>
+	 * Assigns the provided value to this variable, checking if it satisfies the
+	 * boolean condition (if any).
+	 * </p>
+	 * <p>
+	 * WARNING: THIS METHOD CAN RAISE ClassCastException IF TERM'S VALUE TYPE IS
+	 * NOT COMPATIBLE.
+	 * </p>
+	 * 
+	 * @param value
+	 *            The value to be assigned (as a Term)
+	 * @throws SAPEREException
+	 *             The value does not satisfy the boolean condition or this is
+	 *             not a variable
+	 */
+	void bindTo(Term<?> value) throws SAPEREException;
 
 	/**
 	 * <p>

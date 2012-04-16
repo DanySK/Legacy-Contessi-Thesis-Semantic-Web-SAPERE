@@ -203,4 +203,9 @@ public class EcolawFactoryImpl implements EcolawFactory {
 		return new SDescTermImpl(name, formula);
 	}
 
+	@Override
+	public final SDescTerm createSDescTerm(final PatternNameTerm field) {
+		return new SDescTermImpl(field);
+	}
+
 }

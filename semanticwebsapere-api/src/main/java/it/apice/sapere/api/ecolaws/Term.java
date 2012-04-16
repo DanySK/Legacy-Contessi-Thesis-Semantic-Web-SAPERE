@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.ecolaws.terms.observers.BindingObserver;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
 /**
@@ -59,4 +60,24 @@ public interface Term<Type> {
 	 *            Ecolaw visitor
 	 */
 	void accept(EcolawVisitor visitor);
+
+	/**
+	 * <p>
+	 * Registers a new BindingObserver.
+	 * </p>
+	 * 
+	 * @param obs
+	 *            The observer
+	 */
+	void addBindingObserver(final BindingObserver<Type> obs);
+
+	/**
+	 * <p>
+	 * Removes a BindingObserver.
+	 * </p>
+	 * 
+	 * @param obs
+	 *            The observer
+	 */
+	void removeBindingObserver(final BindingObserver<Type> obs);
 }

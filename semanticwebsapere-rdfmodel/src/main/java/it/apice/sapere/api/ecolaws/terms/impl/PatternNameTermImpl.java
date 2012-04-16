@@ -25,6 +25,11 @@ public class PatternNameTermImpl extends AnnotatedVarTermImpl<LSAidValue>
 	 */
 	public PatternNameTermImpl(final String varName) {
 		super(varName);
+
+		if (varName.contains(".")) {
+			throw new IllegalArgumentException(
+					"Pattern names should not contain dots");
+		}
 	}
 
 	/**

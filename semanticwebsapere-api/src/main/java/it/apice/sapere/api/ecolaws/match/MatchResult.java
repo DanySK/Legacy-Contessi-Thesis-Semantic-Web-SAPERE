@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.match;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
@@ -28,7 +29,7 @@ public interface MatchResult {
 	 * 
 	 * @param var
 	 *            The variable to be assigned
-	 * @return The assigned term
+	 * @return The value to be assigned (as a Term)
 	 */
 	Term<?> lookup(VarTerm<?> var);
 
@@ -37,7 +38,7 @@ public interface MatchResult {
 	 * Retrieves the whole list of assignments.
 	 * </p>
 	 * 
-	 * @return A list of couples <code>&lt;VarName, AssignedTerm&gt;</code>
+	 * @return A list of couples <code>&lt;VarName, AssignedValue&gt;</code>
 	 */
 	Entry<String, Term<?>>[] entries();
 
@@ -48,8 +49,10 @@ public interface MatchResult {
 	 * 
 	 * @param var
 	 *            The variable to be assigned
+	 * @throws SAPEREException
+	 *             Cannot complete assignment
 	 */
-	void assign(VarTerm<?> var);
+	void assign(VarTerm<?> var) throws SAPEREException;
 
 	/**
 	 * <p>
