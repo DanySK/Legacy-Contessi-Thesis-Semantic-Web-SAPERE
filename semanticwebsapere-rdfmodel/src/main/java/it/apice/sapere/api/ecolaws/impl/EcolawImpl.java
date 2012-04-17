@@ -4,6 +4,7 @@ import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 import it.apice.sapere.api.ecolaws.match.impl.MatchingEcolawImpl;
@@ -11,9 +12,8 @@ import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 import it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor;
 
-import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * <p>
@@ -27,16 +27,19 @@ import java.util.Set;
 public class EcolawImpl implements Ecolaw {
 
 	/** Eco-law's label. */
-	private final transient String label;
+	private final String label;
 
 	/** Eco-law's scheduling rate. */
-	private final transient Rate<?> rate;
+	private final Rate<?> rate;
 
 	/** List of all reactants. */
-	private final transient Set<Reactant> reactants = new HashSet<Reactant>();
+	private final List<Reactant> reactants = new LinkedList<Reactant>();
 
 	/** List of all products. */
-	private final transient Set<Product> products = new HashSet<Product>();
+	private final List<Product> products = new LinkedList<Product>();
+
+	/** Extra info. */
+	private transient String extras = "";
 
 	/**
 	 * <p>
@@ -97,9 +100,14 @@ public class EcolawImpl implements Ecolaw {
 		}
 
 		label = src.getLabel();
-		//if (src.getRate().getRateValue() instanceof Term)
-		// TODO complete clone
-		rate = null;
+		final Object rateVal = src.getRate().getRateValue();
+		if (rateVal instanceof Term<?> && ((Term<?>) rateVal).isVar()) {
+			rate = src.getRate();
+		} else {
+			rate = src.getRate();
+		}
+
+		
 	}
 
 	@Override
@@ -148,25 +156,131 @@ public class EcolawImpl implements Ecolaw {
 
 	@Override
 	public final Ecolaw addReactant(final Reactant react) {
-		if (!reactants.add(react)) {
+		if (reactants.contains(react)) {
 			throw new IllegalArgumentException("Already added.");
 		}
 
+		reactants.add(react);
 		return this;
 	}
 
 	@Override
 	public final Ecolaw addProduct(final Product prod) {
-		if (!products.add(prod)) {
+		if (products.contains(prod)) {
 			throw new IllegalArgumentException("Already added.");
 		}
 
+		products.add(prod);
 		return this;
 	}
 
 	@Override
 	public final MatchingEcolaw bind(final ScoredMatchResult match) {
 		return new MatchingEcolawImpl(this, match);
+	}
+
+	@Override
+	public final String toString() {
+		final StringBuilder builder = new StringBuilder("<").append(label)
+				.append(extras).append("> ");
+
+		boolean notFirst = false;
+		for (Reactant react : reactants) {
+			if (notFirst) {
+				builder.append(" + ");
+			}
+
+			builder.append(react.toString());
+			notFirst = true;
+		}
+
+		builder.append(" --").append(rate.toString()).append("--> ");
+
+		notFirst = false;
+		for (Product prod : products) {
+			if (notFirst) {
+				builder.append(" + ");
+			}
+
+			builder.append(prod.toString());
+			notFirst = true;
+		}
+
+		return builder.toString();
+	}
+
+	/**
+	 * <p>
+	 * Provides extra info to be printed out.
+	 * </p>
+	 * 
+	 * @param info
+	 *            Extra info
+	 */
+	protected final void setExtraInfo(final String info) {
+		if (info == null) {
+			throw new IllegalArgumentException("Invalid extra info");
+		}
+		extras = info;
+	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((label == null) ? 0 : label.hashCode());
+		result = prime * result
+				+ ((products == null) ? 0 : products.hashCode());
+		result = prime * result + ((rate == null) ? 0 : rate.hashCode());
+		result = prime * result
+				+ ((reactants == null) ? 0 : reactants.hashCode());
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		EcolawImpl other = (EcolawImpl) obj;
+		if (label == null) {
+			if (other.label != null) {
+				return false;
+			}
+		} else if (!label.equals(other.label)) {
+			return false;
+		} else if (label.equals("")) {
+			// The two laws are unlabelled
+			return false;
+		}
+		if (products == null) {
+			if (other.products != null) {
+				return false;
+			}
+		} else if (!products.equals(other.products)) {
+			return false;
+		}
+		if (rate == null) {
+			if (other.rate != null) {
+				return false;
+			}
+		} else if (!rate.equals(other.rate)) {
+			return false;
+		}
+		if (reactants == null) {
+			if (other.reactants != null) {
+				return false;
+			}
+		} else if (!reactants.equals(other.reactants)) {
+			return false;
+		}
+		return true;
 	}
 
 }

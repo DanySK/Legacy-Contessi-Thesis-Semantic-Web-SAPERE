@@ -33,6 +33,9 @@ public class MatchResultImpl implements MutableMatchResult {
 	private final transient Map<String, Term<?>> mappings = 
 			new HashMap<String, Term<?>>();
 
+	/** Extra info. */
+	private transient String extras = "";
+
 	/**
 	 * <p>
 	 * Builds a new {@link MatchResultImpl}.
@@ -100,5 +103,40 @@ public class MatchResultImpl implements MutableMatchResult {
 	@Override
 	public final void reset() {
 		mappings.clear();
+	}
+
+	@Override
+	public final String toString() {
+		final StringBuilder builder = new StringBuilder("match[")
+				.append(law.getLabel()).append(extras).append("]")
+				.append(" { ");
+
+		boolean notFirst = false;
+		for (Entry<String, Term<?>> entry : mappings.entrySet()) {
+			if (notFirst) {
+				builder.append("; ");
+			}
+
+			builder.append(entry.getKey()).append(": ")
+					.append(entry.getValue().toString());
+		}
+
+		builder.append("}");
+		return builder.toString();
+	}
+
+	/**
+	 * <p>
+	 * Provides extra info to be printed out.
+	 * </p>
+	 * 
+	 * @param info
+	 *            Extra info
+	 */
+	protected final void setExtraInfo(final String info) {
+		if (info == null) {
+			throw new IllegalArgumentException("Invalid extra info");
+		}
+		extras = info;
 	}
 }

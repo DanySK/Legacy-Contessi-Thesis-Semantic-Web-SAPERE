@@ -122,4 +122,15 @@ public interface ChemicalPattern<ExtenderType> {
 	 * @return The updated pattern
 	 */
 	ExtenderType match(Term<?> term1, Term<?> term2);
+	
+	/**
+	 * <p>
+	 * Creates a clone of the pattern.
+	 * </p>
+	 * 
+	 * @return The clone instance
+	 * @throws CloneNotSupportedException
+	 *             Cannot clone
+	 */
+	ChemicalPattern<ExtenderType> clone() throws CloneNotSupportedException;
 }

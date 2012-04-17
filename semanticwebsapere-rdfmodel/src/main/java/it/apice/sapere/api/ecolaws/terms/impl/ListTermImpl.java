@@ -70,4 +70,9 @@ public class ListTermImpl<Type extends PropertyValue<?>> extends
 	public ListTermImpl(final ListTermImpl<Type> src) {
 		super(src);
 	}
+	
+	@Override
+	public ListTerm<Type> clone() throws CloneNotSupportedException {
+		return new ListTermImpl<Type>(this);
+	}
 }

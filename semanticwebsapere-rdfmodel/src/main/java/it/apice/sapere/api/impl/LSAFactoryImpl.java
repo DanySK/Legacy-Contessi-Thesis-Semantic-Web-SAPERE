@@ -109,7 +109,16 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 			final PropertyValue<?>... initialValues) {
 		final Property prop = createProperty(name);
 
+		if (initialValues.length == 0) {
+			throw new IllegalArgumentException("Cannot use this method to init"
+					+ " a property with zero values");
+		}
+
 		for (PropertyValue<?> val : initialValues) {
+			if (val == null) {
+				throw new IllegalArgumentException(
+						"Cannot init with a null value");
+			}
 			prop.addValue(val);
 		}
 
@@ -134,6 +143,9 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	@Override
 	public final LiteralValue createPropertyValue(final String value,
 			final String languageCode) {
+		if (languageCode == null || languageCode.equals("")) {
+			throw new IllegalArgumentException("Invalid language code");
+		}
 		return new LiteralValueImpl(value, languageCode);
 	}
 

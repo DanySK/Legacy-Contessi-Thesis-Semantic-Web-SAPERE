@@ -22,4 +22,15 @@ public interface Filter {
 	 *            Ecolaw visitor
 	 */
 	void accept(EcolawVisitor visitor);
+	
+	/**
+	 * <p>
+	 * Creates a clone of the filter.
+	 * </p>
+	 * 
+	 * @return The clone instance
+	 * @throws CloneNotSupportedException
+	 *             Cannot clone
+	 */
+	Filter clone() throws CloneNotSupportedException;
 }

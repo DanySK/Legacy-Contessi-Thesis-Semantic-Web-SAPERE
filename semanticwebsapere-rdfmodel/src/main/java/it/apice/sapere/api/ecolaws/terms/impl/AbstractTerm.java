@@ -20,7 +20,7 @@ import java.util.List;
 public abstract class AbstractTerm<Type> implements Term<Type> {
 
 	/** Term Value. */
-	private transient Type value;
+	private Type value;
 
 	/** Observers list. */
 	private final transient List<BindingObserver<Type>> obss = 
@@ -78,5 +78,11 @@ public abstract class AbstractTerm<Type> implements Term<Type> {
 		for (BindingObserver<Type> obs : obss) {
 			obs.bindingCleared(this);
 		}
+	}
+	
+	@Override
+	public Term<Type> clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return (Term<Type>) super.clone();
 	}
 }

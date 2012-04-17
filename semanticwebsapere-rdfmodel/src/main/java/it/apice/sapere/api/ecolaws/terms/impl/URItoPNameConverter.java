@@ -35,6 +35,17 @@ public class URItoPNameConverter implements VarTerm<URIValue> {
 		wrapped = aTerm;
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src The source
+	 */
+	public URItoPNameConverter(URItoPNameConverter src) {
+		wrapped = src.wrapped;
+	}
+
 	@Override
 	public final boolean isGround() {
 		return wrapped.isGround();
@@ -95,4 +106,8 @@ public class URItoPNameConverter implements VarTerm<URIValue> {
 		}
 	}
 
+	@Override
+	public Term<URIValue> clone() throws CloneNotSupportedException {
+		return new URItoPNameConverter(this);
+	}
 }

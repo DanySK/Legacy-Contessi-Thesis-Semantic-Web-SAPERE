@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
 import it.apice.sapere.api.lsas.values.LSAidValue;
@@ -69,5 +70,10 @@ public class PatternNameTermImpl extends AnnotatedVarTermImpl<LSAidValue>
 	 */
 	public PatternNameTermImpl(final PatternNameTermImpl src) {
 		super(src);
+	}
+	
+	@Override
+	public Term<LSAidValue> clone() throws CloneNotSupportedException {
+		return new PatternNameTermImpl(this);
 	}
 }

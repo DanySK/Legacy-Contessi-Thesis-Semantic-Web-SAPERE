@@ -46,4 +46,15 @@ public interface Rate<Type> {
 	 *            Ecolaw visitor
 	 */
 	void accept(EcolawVisitor visitor);
+
+	/**
+	 * <p>
+	 * Creates a clone of the rate.
+	 * </p>
+	 * 
+	 * @return The clone instance
+	 * @throws CloneNotSupportedException
+	 *             Cannot clone
+	 */
+	Rate<?> clone() throws CloneNotSupportedException;
 }

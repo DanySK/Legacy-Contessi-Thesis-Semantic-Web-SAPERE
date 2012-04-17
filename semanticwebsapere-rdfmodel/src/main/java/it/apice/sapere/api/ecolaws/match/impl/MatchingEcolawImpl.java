@@ -47,6 +47,7 @@ public class MatchingEcolawImpl extends EcolawImpl implements MatchingEcolaw {
 
 		law = aLaw;
 		match = aMatch;
+		setExtraInfo(String.format(":%.3f", match.getScore()));
 	}
 
 	@Override

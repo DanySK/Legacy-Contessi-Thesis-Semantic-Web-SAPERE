@@ -1,6 +1,7 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
 import it.apice.sapere.api.ecolaws.terms.SDescTerm;
@@ -118,5 +119,10 @@ public class SDescTermImpl extends AnnotatedVarTermImpl<SemanticDescription>
 
 		throw new SAPEREException("Cannot retrieve LSAid, "
 				+ "because the linked Pattern has not been resolved");
+	}
+	
+	@Override
+	public Term<SemanticDescription> clone() throws CloneNotSupportedException {
+		return new SDescTermImpl(this);
 	}
 }

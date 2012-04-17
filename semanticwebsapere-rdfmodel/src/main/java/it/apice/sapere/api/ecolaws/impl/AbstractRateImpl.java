@@ -28,5 +28,9 @@ public abstract class AbstractRateImpl<Type> implements Rate<Type> {
 	public final void accept(final EcolawVisitor visitor) {
 		visitor.visit(this);
 	}
-
+	
+	@Override
+	public Rate<?> clone() throws CloneNotSupportedException {
+		return (Rate<?>) super.clone();
+	}
 }

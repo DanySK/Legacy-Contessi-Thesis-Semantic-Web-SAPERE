@@ -41,7 +41,7 @@ import java.util.List;
  * </p>
  * 
  * @author Paolo Contessi
- *
+ * 
  */
 public class EcolawFactoryImpl implements EcolawFactory {
 
@@ -62,6 +62,10 @@ public class EcolawFactoryImpl implements EcolawFactory {
 
 	@Override
 	public final Reactant createReactant(final PatternNameTerm name) {
+		if (name == null) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ReactantImpl(name);
 	}
 
@@ -72,17 +76,25 @@ public class EcolawFactoryImpl implements EcolawFactory {
 
 	@Override
 	public final Product createProduct(final PatternNameTerm name) {
+		if (name == null) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ProductImpl(name);
 	}
 
 	@Override
 	public final Rate<?> createMarkovianRate(final double rate) {
+		if (rate <= 0.0) {
+			throw new IllegalArgumentException(
+					"Invalid rate (should be greater than zero");
+		}
+
 		return new MarkovianRateImpl(rate);
 	}
 
 	@Override
-	public final Rate<?> createMarkovianRate(
-			final ValueTerm<DoubleValue> rate) {
+	public final Rate<?> createMarkovianRate(final ValueTerm<DoubleValue> rate) {
 		return new MarkovianRateImpl(rate);
 	}
 
@@ -93,36 +105,60 @@ public class EcolawFactoryImpl implements EcolawFactory {
 
 	@Override
 	public final <Type> VarTerm<Type> createVarTerm(final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new VarTermImpl<Type>(name);
 	}
 
 	@Override
 	public final <Type> AnnotatedVarTerm<Type> createAnnotatedVarTerm(
 			final String name, final Formula<Type> formula) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new AnnotatedVarTermImpl<Type>(name, formula);
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
-			createTypedValueTerm(final Type value) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> createTypedValueTerm(
+			final Type value) {
+		if (value == null) {
+			throw new IllegalArgumentException("Invalid value");
+		}
+
 		return new ValueTermImpl<Type>(value);
 	}
 
 	@Override
 	public final ValueTerm<? extends PropertyValue<?>> createValueTerm(
 			final PropertyValue<?> value) {
+		if (value == null) {
+			throw new IllegalArgumentException("Invalid value");
+		}
+
 		return new ValueTermImpl<PropertyValue<?>>(value);
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
-			createValueTerm(final String name) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+			final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ValueTermImpl<Type>(name);
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
-			createValueTerm(final String name, final Formula<Type> formula) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+			final String name, final Formula<Type> formula) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ValueTermImpl<Type>(name, formula);
 	}
 
@@ -130,8 +166,16 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	@Override
 	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
 			final Type... values) {
+		if (values == null || values.length == 0) {
+			throw new IllegalArgumentException("Invalid values (null or empty)");
+		}
+
 		final List<Term<Type>> vterms = new LinkedList<Term<Type>>();
 		for (Type val : values) {
+			if (val == null) {
+				throw new IllegalArgumentException(
+						"Cannot add null values to a list");
+			}
 			vterms.add((ValueTerm<Type>) createValueTerm(val));
 		}
 
@@ -139,10 +183,17 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> 
-			createListTermFromTerms(final Term<Type>... values) {
+	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTermFromTerms(
+			final Term<Type>... values) {
+		if (values == null || values.length == 0) {
+			throw new IllegalArgumentException("Invalid values (null or empty)");
+		}
+
 		final List<Term<Type>> vterms = new LinkedList<Term<Type>>();
 		for (Term<Type> val : values) {
+			if (val == null) {
+				throw new IllegalArgumentException("Cannot add null values to a list");
+			}
 			vterms.add(val);
 		}
 
@@ -152,54 +203,94 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	@Override
 	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
 			final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ListTermImpl<Type>(name);
 	}
 
 	@Override
 	public final PropertyTerm createPropertyTerm(final PropertyName pname) {
+		if (pname == null) {
+			throw new IllegalArgumentException("Invalid property name");
+		}
+
 		return new PropertyTermImpl(pname);
 	}
 
 	@Override
 	public final PropertyTerm createPropertyTerm(final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new PropertyTermImpl(name);
 	}
 
 	@Override
 	public final PropertyTerm createPropertyTerm(final String name,
 			final Formula<PropertyName> formula) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new PropertyTermImpl(name, formula);
 	}
 
 	@Override
 	public final SDescTerm createSDescTerm(final LSA lsa) {
+		if (lsa == null) {
+			throw new IllegalArgumentException("Invalid lsa");
+		}
+
 		return new SDescTermImpl(lsa);
 	}
 
 	@Override
 	public final SDescTerm createSDescTerm(final SemanticDescription sdesc) {
+		if (sdesc == null) {
+			throw new IllegalArgumentException("Invalid semantic description");
+		}
+
 		return new SDescTermImpl(sdesc);
 	}
 
 	@Override
 	public final SDescTerm createSDescTerm(final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new SDescTermImpl(name);
 	}
 
 	@Override
 	public final PatternNameTerm createPatternNameTerm(final String name) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new PatternNameTermImpl(name);
 	}
 
 	@Override
 	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
 			final String name, final Formula<List<Term<Type>>> formula) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new ListTermImpl<Type>(name, formula);
 	}
 
 	@Override
 	public final SDescTerm createSDescTerm(final String name,
 			final Formula<SemanticDescription> formula) {
+		if (name == null || name.equals("")) {
+			throw new IllegalArgumentException("Invalid name");
+		}
+
 		return new SDescTermImpl(name, formula);
 	}
 

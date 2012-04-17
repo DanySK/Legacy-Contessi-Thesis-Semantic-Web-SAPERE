@@ -27,7 +27,7 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 	private static final transient int MILLISEC_IN_SEC = 1000;
 
 	/** Rate Value. */
-	private final transient ValueTerm<DoubleValue> rate;
+	private final ValueTerm<DoubleValue> rate;
 
 	/** Random Number Generator. */
 	private final transient Random rng;
@@ -116,6 +116,22 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 		rng = new Random(seed);
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 *
+	 * @param src The source
+	 */
+	public MarkovianRateImpl(final MarkovianRateImpl src) {
+		try {
+			rate = (ValueTerm<DoubleValue>) src.rate.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new IllegalStateException("Cannot clone", e);
+		}
+		rng = src.rng;
+	}
+
 	@Override
 	public final long getNextOccurrence(final double score,
 			final long currentTime) {
@@ -135,5 +151,40 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 	@Override
 	public final String toString() {
 		return rate.toString();
+	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((rate == null) ? 0 : rate.hashCode());
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		MarkovianRateImpl other = (MarkovianRateImpl) obj;
+		if (rate == null) {
+			if (other.rate != null) {
+				return false;
+			}
+		} else if (!rate.equals(other.rate)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public Rate<?> clone() throws CloneNotSupportedException {
+		return new MarkovianRateImpl(this);
 	}
 }

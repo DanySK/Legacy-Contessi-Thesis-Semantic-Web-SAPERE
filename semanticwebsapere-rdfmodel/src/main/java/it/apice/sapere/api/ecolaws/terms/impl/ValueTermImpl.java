@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.ValueTerm;
 import it.apice.sapere.api.lsas.values.PropertyValue;
@@ -66,5 +67,10 @@ public class ValueTermImpl<Type extends PropertyValue<?>> extends
 	 */
 	public ValueTermImpl(final ValueTermImpl<Type> src) {
 		super(src);
+	}
+	
+	@Override
+	public Term<Type> clone() throws CloneNotSupportedException {
+		return new ValueTermImpl<Type>(this);
 	}
 }

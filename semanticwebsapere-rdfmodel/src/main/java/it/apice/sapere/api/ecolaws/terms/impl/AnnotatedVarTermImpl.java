@@ -1,6 +1,7 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 
@@ -18,7 +19,7 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		AnnotatedVarTerm<Type> {
 
 	/** The boolean condition for value acceptance. */
-	private final transient Formula<Type> formula;
+	private final Formula<Type> formula;
 
 	/**
 	 * <p>
@@ -94,5 +95,58 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		if (formula != null && !formula.accept(value)) {
 			throw new SAPEREException("The value does not fit the annotation");
 		}
+	}
+
+	@Override
+	public final void varNamePrefix(final StringBuilder builder) {
+		super.varNamePrefix(builder);
+
+		if (formula != null) {
+			builder.append("{");
+		}
+	}
+
+	@Override
+	public final void varNameSuffix(final StringBuilder builder) {
+		super.varNameSuffix(builder);
+
+		if (formula != null) {
+			builder.append(" : ").append(formula.getDescription()).append("}");
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((formula == null) ? 0 : formula.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!super.equals(obj)) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		AnnotatedVarTermImpl other = (AnnotatedVarTermImpl) obj;
+		if (formula == null) {
+			if (other.formula != null) {
+				return false;
+			}
+		} else if (!formula.equals(other.formula)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public Term<Type> clone() throws CloneNotSupportedException {
+		return new AnnotatedVarTermImpl<Type>(this);
 	}
 }

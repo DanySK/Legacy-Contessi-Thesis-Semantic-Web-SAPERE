@@ -80,4 +80,15 @@ public interface Term<Type> {
 	 *            The observer
 	 */
 	void removeBindingObserver(final BindingObserver<Type> obs);
+
+	/**
+	 * <p>
+	 * Creates a clone of the term.
+	 * </p>
+	 * 
+	 * @return The clone instance
+	 * @throws CloneNotSupportedException
+	 *             Cannot clone
+	 */
+	Term<Type> clone() throws CloneNotSupportedException;
 }

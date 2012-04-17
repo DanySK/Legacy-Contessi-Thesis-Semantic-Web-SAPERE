@@ -30,8 +30,7 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestEcolawFactory 
-		extends AbstractEcolawModelTest {
+public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest {
 
 	/** Reference to an Ecolaw Factory. */
 	private final transient EcolawFactory factory = createEcolawFactory();
@@ -244,8 +243,7 @@ public abstract class AbstractTestEcolawFactory
 		}
 
 		try {
-			factory.<BooleanValue> createListTermFromTerms(
-					(ValueTerm<BooleanValue>[]) null);
+			factory.<BooleanValue> createListTermFromTerms((ValueTerm<BooleanValue>[]) null);
 			Assert.fail("Strange ListTerm (3)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -522,7 +520,7 @@ public abstract class AbstractTestEcolawFactory
 						"http://www.example.org/pump#pump_time")));
 		final PropertyTerm pumpDiffTime = factory.createPropertyTerm(lsaFactory
 				.createPropertyName(new URI(
-						"http://www.example.org/pump#pump_diff_time")));
+						"http://www.example.org/pump#diff_time")));
 
 		final ValueTerm<LongValue> tVar = factory
 				.<LongValue> createValueTerm("T");
@@ -552,14 +550,14 @@ public abstract class AbstractTestEcolawFactory
 								factory.createSDescTerm(field2)));
 
 		Assert.assertNotNull(ecol);
-		Assert.assertEquals(
-				"?FIELD:[http://www.example.org/pump#source = (?L); "
-						+ "http://www.example.org/pump#pump_time = (?T)] + "
-						+ "?FIELD2:[clones ?FIELD.D; "
-						+ "http://www.example.org/pump#pump_time = "
-						+ "(?{T2 : ?T2 > ?T}); "
-						+ "http://www.example.org/pump#diff_time = (?DT)] "
-						+ "----> ?FIELD:[clones ?FIELD2.D]", ecol.toString());
+		Assert.assertEquals("<YOUNGEST> "
+				+ "?FIELD:[http://www.example.org/pump#source = (?L); "
+				+ "http://www.example.org/pump#pump_time = (?T)] + "
+				+ "?FIELD2:[clones ?FIELD.D; "
+				+ "http://www.example.org/pump#pump_time = "
+				+ "(?{T2 : ?T2 > ?T}); "
+				+ "http://www.example.org/pump#diff_time = (?DT)] "
+				+ "----> ?FIELD:[clones ?FIELD2.D]", ecol.toString());
 	}
 
 	/**
@@ -595,7 +593,13 @@ public abstract class AbstractTestEcolawFactory
 								"http://www.example.org/bond#request_pv")));
 		final PropertyTerm bondProp = factory.createPropertyTerm(lsaFactory
 				.createPropertyName(new URI(
-						"http://www.example.org/bond#request")));
+						"http://www.example.org/bond#bond_prop")));
+		final PropertyTerm tProp = factory.createPropertyTerm(lsaFactory
+				.createPropertyName(new URI(
+						"http://www.example.org/bond#target_prop")));
+		final PropertyTerm tValues = factory.createPropertyTerm(lsaFactory
+				.createPropertyName(new URI(
+						"http://www.example.org/bond#target_value")));
 
 		final Ecolaw ecol = factory
 				.createEcolaw("BOND-PV")
@@ -612,7 +616,10 @@ public abstract class AbstractTestEcolawFactory
 										factory.createListTermFromTerms(bondRequestPV))
 								.assign(bondProp,
 										factory.<URIValue> createListTermFromTerms(b
-												.toValueTerm())))
+												.toValueTerm()))
+								.assign(tProp, factory.<URIValue> createListTermFromTerms(prop
+										.toValueTerm()))
+								.assign(tValues, values))
 				.addProduct(
 						factory.createProduct(src).has(b,
 								factory.createListTermFromTerms(target)))
@@ -620,11 +627,13 @@ public abstract class AbstractTestEcolawFactory
 				.addProduct(factory.createProduct(target));
 
 		Assert.assertNotNull(ecol);
-		Assert.assertEquals("?TARGET:[?PROP has ?VALUES] + "
+		Assert.assertEquals("<BOND-PV> ?TARGET:[?PROP has ?VALUES] + "
 				+ "?SRC:[http://www.example.org/bond#request has (?BOND-REQ); "
 				+ "?B has-not (?TARGET)] + "
 				+ "?BOND-REQ:[http://www.example.org/sapere#type has "
 				+ "(http://www.example.org/bond#request_pv); "
+				+ "http://www.example.org/bond#bond_prop = (?B); "
+				+ "http://www.example.org/bond#target_prop = (?PROP); "
 				+ "http://www.example.org/bond#target_value = ?VALUES] "
 				+ "----> ?SRC:[?B has (?TARGET)] + ?BOND-REQ + ?TARGET",
 				ecol.toString());
@@ -648,6 +657,11 @@ public abstract class AbstractTestEcolawFactory
 				return t2Var.getValue() > tVar.getValue().getValue();
 			}
 
+			@Override
+			public String getDescription() {
+				return "?T2 > ?T";
+			}
+
 		};
 	}
 
@@ -666,6 +680,11 @@ public abstract class AbstractTestEcolawFactory
 			@Override
 			public boolean accept(final T term) {
 				return true;
+			}
+
+			@Override
+			public String getDescription() {
+				return "true";
 			}
 
 		};

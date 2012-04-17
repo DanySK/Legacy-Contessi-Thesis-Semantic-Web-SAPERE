@@ -1,6 +1,5 @@
 package it.apice.sapere.api.ecolaws.terms;
 
-
 /**
  * <p>
  * This interface models a boolean condition for annotated variables.
@@ -24,4 +23,13 @@ public interface Formula<Type> {
 	 *         otherwise
 	 */
 	boolean accept(Type value);
+
+	/**
+	 * <p>
+	 * Provides a formula representation as a String.
+	 * </p>
+	 * 
+	 * @return The representation of the formula as a String
+	 */
+	String getDescription();
 }

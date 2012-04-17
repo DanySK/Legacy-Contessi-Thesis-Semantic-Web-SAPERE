@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.filter.impl;
 
+import it.apice.sapere.api.ecolaws.Filter;
 import it.apice.sapere.api.ecolaws.filters.ClonesFilter;
 import it.apice.sapere.api.ecolaws.terms.SDescTerm;
 
@@ -13,6 +14,9 @@ import it.apice.sapere.api.ecolaws.terms.SDescTerm;
  */
 public class ClonesFilterImpl extends CopyFilterImpl implements ClonesFilter {
 
+	/** Copy Operator String. */
+	private static final transient String COPY_OP_STRING = "clones";
+
 	/**
 	 * <p>
 	 * Builds a new {@link ClonesFilterImpl}.
@@ -23,6 +27,23 @@ public class ClonesFilterImpl extends CopyFilterImpl implements ClonesFilter {
 	 */
 	public ClonesFilterImpl(final SDescTerm src) {
 		super(src);
+		setCopyOpString(COPY_OP_STRING);
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            The source
+	 */
+	public ClonesFilterImpl(final ClonesFilterImpl src) {
+		super(src);
+	}
+
+	@Override
+	public Filter clone() throws CloneNotSupportedException {
+		return new ClonesFilterImpl(this);
+	}
 }

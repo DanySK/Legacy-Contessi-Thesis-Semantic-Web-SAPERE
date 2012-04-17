@@ -1,5 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.5">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/AssignFilterImpl.java">
+<error line="49" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/ClonesFilterImpl.java">
+<error line="45" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/CopyFilterImpl.java">
+<error line="5" column="8" severity="warning" message="Unused import - it.apice.sapere.api.ecolaws.terms.ListTerm." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="6" column="8" severity="warning" message="Unused import - it.apice.sapere.api.ecolaws.terms.PropertyTerm." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="98" column="43" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="99" column="53" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="132" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/ExtendsFilterImpl.java">
+<error line="45" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/HasFilterImpl.java">
+<error line="49" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/HasNotFilterImpl.java">
+<error line="49" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/OpFilterImpl.java">
+<error line="119" column="51" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="121" column="39" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="122" column="52" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="162" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/AbstractRateImpl.java">
+<error line="32" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ASAPRateImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ChemicalPatternImpl.java">
+<error line="178" column="54" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="179" column="51" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="212" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="213" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/EcolawImpl.java">
+<error line="231" column="52" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="233" column="39" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="234" column="51" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="236" column="40" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/MarkovianRateImpl.java">
+<error line="160" column="51" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="186" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ProductImpl.java">
+<error line="37" column="24" severity="warning" message="Parameter src should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="46" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ReactantImpl.java">
+<error line="37" column="25" severity="warning" message="Parameter src should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="46" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/MatchingEcolawImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/MatchResultImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/ScoredMatchResultImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/MeanScoreFunction.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/MultiplicativeScoreFunction.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/RankingProducerImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/AbstractTerm.java">
+<error line="83" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/AnnotatedVarTermImpl.java">
+<error line="118" column="5" severity="warning" message="Method &apos;hashCode&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="122" column="54" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="126" column="5" severity="warning" message="Method &apos;equals&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="127" column="27" severity="warning" message="Parameter obj should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="148" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/ListTermImpl.java">
+<error line="74" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/PatternNameTermImpl.java">
+<error line="75" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/PropertyTermImpl.java">
+<error line="89" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/SDescTermImpl.java">
+<error line="124" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/URItoPNameConverter.java">
+<error line="45" column="32" severity="warning" message="Parameter src should be final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="109" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/ValueTermImpl.java">
+<error line="72" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/VarTermImpl.java">
+<error line="186" column="5" severity="warning" message="Method &apos;hashCode&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="190" column="51" severity="warning" message="Avoid inline conditionals." source="com.puppycrawl.tools.checkstyle.checks.coding.AvoidInlineConditionalsCheck"/>
+<error line="194" column="5" severity="warning" message="Method &apos;equals&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="223" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/observers/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/observers/impl/PropagationObserverImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/visitors/impl/AbstractEcolawVisitor.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/visitors/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/visitors/impl/VarRetrieverVisitor.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/EcolawFactoryImpl.java">
+<error line="97" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="126" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="146" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="156" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="170" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="186" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="189" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="195" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAFactoryImpl.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAParserImpl.java">

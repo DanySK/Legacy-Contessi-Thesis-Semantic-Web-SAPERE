@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.terms.impl;
 
+import it.apice.sapere.api.ecolaws.Term;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
 import it.apice.sapere.api.ecolaws.terms.ValueTerm;
@@ -60,17 +61,17 @@ public class PropertyTermImpl extends AnnotatedVarTermImpl<PropertyName>
 
 	@Override
 	public final ValueTerm<URIValue> toValueTerm() {
-		if (isBound() || isGround()) {
+		if (isVar() && !isBound()) {
 			final ValueTerm<URIValue> val = new ValueTermImpl<URIValue>(
-					new URIValueImpl(getValue().getValue()));
+					getVarName());
 			val.addBindingObserver(new PropagationObserverImpl<URIValue>(
 					new URItoPNameConverter(this)));
 
 			return val;
 		}
 
-		throw new IllegalStateException(
-				"This term is not bound, so the value cannot be extracted");
+		return new ValueTermImpl<URIValue>(
+				new URIValueImpl(getValue().getValue()));
 	}
 
 	/**
@@ -83,5 +84,10 @@ public class PropertyTermImpl extends AnnotatedVarTermImpl<PropertyName>
 	 */
 	public PropertyTermImpl(final PropertyTermImpl src) {
 		super(src);
+	}
+	
+	@Override
+	public Term<PropertyName> clone() throws CloneNotSupportedException {
+		return new PropertyTermImpl(this);
 	}
 }

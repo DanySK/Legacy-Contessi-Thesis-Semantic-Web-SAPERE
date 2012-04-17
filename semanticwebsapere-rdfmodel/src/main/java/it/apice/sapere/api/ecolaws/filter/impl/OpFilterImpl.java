@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.filter.impl;
 
+import it.apice.sapere.api.ecolaws.Filter;
 import it.apice.sapere.api.ecolaws.filters.OpFilter;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
 import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
@@ -9,17 +10,20 @@ import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
  * <p>
  * This class provides an implementation of the {@link OpFilter} interface.
  * </p>
- *
+ * 
  * @author Paolo Contessi
- *
+ * 
  */
-public class OpFilterImpl implements OpFilter {
+public abstract class OpFilterImpl implements OpFilter {
+
+	/** String that represents the operator. */
+	private String opString = "";
 
 	/** Left-side operand. */
-	private final transient PropertyTerm left;
+	private final PropertyTerm left;
 
 	/** Right-side operand. */
-	private final transient ListTerm<?> right;
+	private final ListTerm<?> right;
 
 	/**
 	 * <p>
@@ -46,6 +50,32 @@ public class OpFilterImpl implements OpFilter {
 		right = rightTerm;
 	}
 
+	/**
+	 * <p>
+	 * Clone constructor.
+	 * </p>
+	 * 
+	 * @param src
+	 *            The source
+	 */
+	public OpFilterImpl(final OpFilterImpl src) {
+		try {
+			if (src.left.isVar()) {
+				left = (PropertyTerm) src.left.clone();
+			} else {
+				left = src.left;
+			}
+			
+			if (src.right.isVar()) {
+				right = (ListTerm) src.right.clone();
+			} else {
+				right = src.right;
+			}
+		} catch (CloneNotSupportedException e) {
+			throw new IllegalStateException("Cannot clone", e);
+		}
+	}
+
 	@Override
 	public final void accept(final EcolawVisitor visitor) {
 		visitor.visit(this);
@@ -61,4 +91,76 @@ public class OpFilterImpl implements OpFilter {
 		return right;
 	}
 
+	/**
+	 * <p>
+	 * Sets Operator String, used by toString() method.
+	 * </p>
+	 * 
+	 * @param op
+	 *            The op string
+	 */
+	protected final void setOpString(final String op) {
+		opString = op;
+	}
+
+	@Override
+	public final String toString() {
+		final StringBuilder builder = new StringBuilder();
+
+		builder.append(left.toString()).append(" ").append(opString)
+				.append(" ").append(right.toString());
+		return builder.toString();
+	}
+
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((left == null) ? 0 : left.hashCode());
+		result = prime * result
+				+ ((opString == null) ? 0 : opString.hashCode());
+		result = prime * result + ((right == null) ? 0 : right.hashCode());
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		OpFilterImpl other = (OpFilterImpl) obj;
+		if (left == null) {
+			if (other.left != null) {
+				return false;
+			}
+		} else if (!left.equals(other.left)) {
+			return false;
+		}
+		if (opString == null) {
+			if (other.opString != null) {
+				return false;
+			}
+		} else if (!opString.equals(other.opString)) {
+			return false;
+		}
+		if (right == null) {
+			if (other.right != null) {
+				return false;
+			}
+		} else if (!right.equals(other.right)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public Filter clone() throws CloneNotSupportedException {
+		return (Filter) super.clone();
+	}
 }

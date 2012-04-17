@@ -32,6 +32,7 @@ public class ScoredMatchResultImpl extends MatchResultImpl implements
 			final ScoreFunction function) {
 		super(result);
 		score = function.computeScore(result);
+		setExtraInfo(String.format(":%.3f", score));
 	}
 
 	@Override
