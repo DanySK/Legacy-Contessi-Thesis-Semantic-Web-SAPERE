@@ -14,7 +14,7 @@ import java.util.List;
  * 
  */
 public abstract class AbstractTestLSAidValue extends
-		AbstractTestPropertyValue<LSAid> {
+		AbstractTestPropertyValue<LSAid, LSAidValue> {
 
 	/** Number of ids to be created. */
 	private static final transient int NUM_OF_IDS = 20;
@@ -34,7 +34,7 @@ public abstract class AbstractTestLSAidValue extends
 	}
 
 	@Override
-	protected final PropertyValue<LSAid> createPropertyValue(final LSAid val) {
+	protected final PropertyValue<LSAid, LSAidValue> createPropertyValue(final LSAid val) {
 		return createFactory().createPropertyValue(val);
 	}
 

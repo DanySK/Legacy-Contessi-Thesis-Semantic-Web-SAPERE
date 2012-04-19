@@ -15,11 +15,13 @@ import java.net.URI;
  * 
  * @param <Type>
  *            Inner type stored inside the Property Value
+ * @param <CompType>
+ *            The type for comparable
  * 
  * @see PropertyValue
  */
-public class PropertyValueImpl<Type extends Comparable<Type>> implements
-		PropertyValue<Type> {
+public class PropertyValueImpl<Type extends Comparable<Type>, CompType>
+		implements PropertyValue<Type, CompType> {
 
 	/** Stored value. */
 	private final Type value;
@@ -156,13 +158,19 @@ public class PropertyValueImpl<Type extends Comparable<Type>> implements
 		visitor.visit(this);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public final int compareTo(final PropertyValue<Type> other) {
+	public final int compareTo(final CompType other) {
 		if (other == null) {
 			throw new NullPointerException();
 		}
 
-		return value.compareTo(other.getValue());
+		if (other instanceof PropertyValue<?, ?>) {
+			return value.compareTo((Type) ((PropertyValue<?, ?>) other)
+					.getValue());
+		}
+
+		throw new IllegalArgumentException("Cannot compare incompatible types");
 	}
 
 }

@@ -11,7 +11,7 @@ import it.apice.sapere.api.lsas.values.FloatValue;
  * 
  * @see FloatValue
  */
-public class FloatValueImpl extends PropertyValueImpl<Float> implements
+public class FloatValueImpl extends PropertyValueImpl<Float, FloatValue> implements
 		FloatValue {
 
 	/**

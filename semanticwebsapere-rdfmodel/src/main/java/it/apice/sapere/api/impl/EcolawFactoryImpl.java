@@ -124,7 +124,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+	public final <Type extends PropertyValue<?, ?>> ValueTerm<Type> 
 			createTypedValueTerm(final Type value) {
 		if (value == null) {
 			throw new IllegalArgumentException("Invalid value");
@@ -134,17 +134,17 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final ValueTerm<? extends PropertyValue<?>> createValueTerm(
-			final PropertyValue<?> value) {
+	public final ValueTerm<? extends PropertyValue<?, ?>> createValueTerm(
+			final PropertyValue<?, ?> value) {
 		if (value == null) {
 			throw new IllegalArgumentException("Invalid value");
 		}
 
-		return new ValueTermImpl<PropertyValue<?>>(value);
+		return new ValueTermImpl<PropertyValue<?, ?>>(value);
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+	public final <Type extends PropertyValue<?, ?>> ValueTerm<Type> 
 	createValueTerm(final String name) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
@@ -154,7 +154,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+	public final <Type extends PropertyValue<?, ?>> ValueTerm<Type> 
 			createValueTerm(final String name, final Formula<Type> formula) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
@@ -165,7 +165,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
 			final Type... values) {
 		if (values == null || values.length == 0) {
 			throw new IllegalArgumentException(
@@ -185,7 +185,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> 
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> 
 			createListTermFromTerms(final Term<Type>... values) {
 		if (values == null || values.length == 0) {
 			throw new IllegalArgumentException(
@@ -205,7 +205,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
 			final String name) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
@@ -279,7 +279,7 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
 			final String name, final Formula<List<Term<Type>>> formula) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");

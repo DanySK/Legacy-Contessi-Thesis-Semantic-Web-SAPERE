@@ -20,9 +20,10 @@ import it.apice.sapere.api.lsas.visitor.LSAVisitor;
  * 
  * @param <Type>
  *            Inner type stored inside the Property Value
+ * @param <CompType> Type for comparison (the final interface name)
  */
-public interface PropertyValue<Type extends Comparable<Type>> extends
-		Comparable<PropertyValue<Type>> {
+public interface PropertyValue<Type extends Comparable<Type>, CompType> 
+		extends Comparable<CompType> {
 
 	/**
 	 * <p>

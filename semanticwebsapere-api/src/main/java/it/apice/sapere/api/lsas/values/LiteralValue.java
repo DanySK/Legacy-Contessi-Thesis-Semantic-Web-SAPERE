@@ -10,6 +10,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface LiteralValue extends PropertyValue<String> {
+public interface LiteralValue extends PropertyValue<String, LiteralValue> {
 
 }

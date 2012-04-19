@@ -43,7 +43,7 @@ public class RemoverVisitorImpl implements LSAVisitor {
 	@Override
 	public final void visit(final Property prop) {
 		prop.getName().accept(this);
-		for (PropertyValue<?> val : prop.values()) {
+		for (PropertyValue<?, ?> val : prop.values()) {
 			val.accept(this);
 		}
 	}
@@ -61,7 +61,7 @@ public class RemoverVisitorImpl implements LSAVisitor {
 	}
 
 	@Override
-	public final void visit(final PropertyValue<?> val) {
+	public final void visit(final PropertyValue<?, ?> val) {
 		
 	}
 

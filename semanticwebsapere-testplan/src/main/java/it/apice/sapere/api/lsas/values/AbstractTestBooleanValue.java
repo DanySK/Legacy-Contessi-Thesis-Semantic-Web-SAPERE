@@ -12,7 +12,7 @@ import java.util.List;
  * 
  */
 public abstract class AbstractTestBooleanValue extends
-		AbstractTestPropertyValue<Boolean> {
+		AbstractTestPropertyValue<Boolean, BooleanValue> {
 
 	@Override
 	protected final List<Boolean> createValues() {
@@ -25,7 +25,7 @@ public abstract class AbstractTestBooleanValue extends
 	}
 
 	@Override
-	protected final PropertyValue<Boolean> createPropertyValue(
+	protected final PropertyValue<Boolean, BooleanValue> createPropertyValue(
 			final Boolean val) {
 		return createFactory().createPropertyValue(val);
 	}

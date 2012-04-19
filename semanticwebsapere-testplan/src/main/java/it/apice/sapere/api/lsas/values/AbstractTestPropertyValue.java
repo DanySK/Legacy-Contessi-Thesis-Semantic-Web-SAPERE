@@ -24,9 +24,12 @@ import org.junit.Test;
  * @author Paolo Contessi
  * @param <ValueType>
  *            The type that will be contained in the tested PropertyValue
+ * @param <CompType>
+ *            The interface for comparison
  */
-public abstract class AbstractTestPropertyValue<ValueType extends Comparable<ValueType>> extends
-		AbstractLSAModelTest {
+public abstract class AbstractTestPropertyValue<ValueType 
+		extends Comparable<ValueType>, CompType>
+		extends AbstractLSAModelTest {
 
 	/**
 	 * <p>
@@ -36,7 +39,7 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 	@Test
 	public final void testPropertyValue() {
 		final List<ValueType> vals = createValues();
-		final List<PropertyValue<ValueType>> pvalues = 
+		final List<PropertyValue<ValueType, CompType>> pvalues = 
 				createPropertyValues(vals);
 
 		assertTrue(
@@ -44,7 +47,7 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 				vals.size() == pvalues.size());
 
 		for (int idx = 0; idx < vals.size(); idx++) {
-			final PropertyValue<ValueType> pval = pvalues.get(idx);
+			final PropertyValue<ValueType, CompType> pval = pvalues.get(idx);
 			final ValueType val = vals.get(idx);
 			assertEquals("Stored value should be equal to provided one",
 					pval.getValue(), val);
@@ -66,8 +69,8 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 			assertTrue(pval.hashCode() == pval.hashCode());
 
 			if (vals.size() > 1) {
-				final PropertyValue<ValueType> other = pvalues.get((idx + 1)
-						% vals.size());
+				final PropertyValue<ValueType, CompType> other = pvalues
+						.get((idx + 1) % vals.size());
 				assertFalse(pval.equals(other));
 
 				// // Why hashcode of 0 and -1 are equals? the same with 1 and
@@ -87,8 +90,8 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 
 	/**
 	 * <p>
-	 * Creates a list of Property Values, generated from the provided list
-	 * of values.
+	 * Creates a list of Property Values, generated from the provided list of
+	 * values.
 	 * </p>
 	 * <p>
 	 * Please respect the order.
@@ -98,10 +101,10 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 	 *            ValuesList from which Property ValuesList should be generated
 	 * @return A list of Property ValuesList
 	 */
-	private List<PropertyValue<ValueType>> createPropertyValues(
+	private List<PropertyValue<ValueType, CompType>> createPropertyValues(
 			final List<ValueType> vals) {
-		final List<PropertyValue<ValueType>> res = 
-				new ArrayList<PropertyValue<ValueType>>(
+		final List<PropertyValue<ValueType, CompType>> res = 
+				new ArrayList<PropertyValue<ValueType, CompType>>(
 				vals.size());
 
 		for (ValueType val : vals) {
@@ -120,7 +123,7 @@ public abstract class AbstractTestPropertyValue<ValueType extends Comparable<Val
 	 *            The value
 	 * @return The Property VAlue
 	 */
-	protected abstract PropertyValue<ValueType> createPropertyValue(
+	protected abstract PropertyValue<ValueType, CompType> createPropertyValue(
 			ValueType val);
 
 	/**

@@ -12,7 +12,7 @@ import it.apice.sapere.api.lsas.values.LSAidValue;
  * 
  * @see LSAidValue
  */
-public class LSAidValueImpl extends PropertyValueImpl<LSAid> implements
+public class LSAidValueImpl extends PropertyValueImpl<LSAid, LSAidValue> implements
 		LSAidValue {
 
 	/**

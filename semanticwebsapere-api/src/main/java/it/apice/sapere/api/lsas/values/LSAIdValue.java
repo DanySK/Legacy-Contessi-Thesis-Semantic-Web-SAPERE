@@ -11,6 +11,6 @@ import it.apice.sapere.api.lsas.LSAid;
  * @author Paolo Contessi
  * 
  */
-public interface LSAidValue extends PropertyValue<LSAid> {
+public interface LSAidValue extends PropertyValue<LSAid, LSAidValue> {
 
 }

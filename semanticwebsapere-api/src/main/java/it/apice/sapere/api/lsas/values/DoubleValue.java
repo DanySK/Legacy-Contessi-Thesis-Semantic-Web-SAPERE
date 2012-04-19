@@ -10,6 +10,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface DoubleValue extends PropertyValue<Double> {
+public interface DoubleValue extends PropertyValue<Double, DoubleValue> {
 
 }

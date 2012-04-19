@@ -134,7 +134,7 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a> 	}
 <a class="jxr_linenumber" name="125" href="#125">125</a> 
 <a class="jxr_linenumber" name="126" href="#126">126</a> 	@Override
-<a class="jxr_linenumber" name="127" href="#127">127</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="127" href="#127">127</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; 
 <a class="jxr_linenumber" name="128" href="#128">128</a> 			createTypedValueTerm(<strong class="jxr_keyword">final</strong> Type value) {
 <a class="jxr_linenumber" name="129" href="#129">129</a> 		<strong class="jxr_keyword">if</strong> (value == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="130" href="#130">130</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid value"</span>);
@@ -144,17 +144,17 @@
 <a class="jxr_linenumber" name="134" href="#134">134</a> 	}
 <a class="jxr_linenumber" name="135" href="#135">135</a> 
 <a class="jxr_linenumber" name="136" href="#136">136</a> 	@Override
-<a class="jxr_linenumber" name="137" href="#137">137</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> ValueTerm&lt;? <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; createValueTerm(
-<a class="jxr_linenumber" name="138" href="#138">138</a> 			<strong class="jxr_keyword">final</strong> PropertyValue&lt;?&gt; value) {
+<a class="jxr_linenumber" name="137" href="#137">137</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> ValueTerm&lt;? <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; createValueTerm(
+<a class="jxr_linenumber" name="138" href="#138">138</a> 			<strong class="jxr_keyword">final</strong> PropertyValue&lt;?, ?&gt; value) {
 <a class="jxr_linenumber" name="139" href="#139">139</a> 		<strong class="jxr_keyword">if</strong> (value == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="140" href="#140">140</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid value"</span>);
 <a class="jxr_linenumber" name="141" href="#141">141</a> 		}
 <a class="jxr_linenumber" name="142" href="#142">142</a> 
-<a class="jxr_linenumber" name="143" href="#143">143</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ValueTermImpl&lt;PropertyValue&lt;?&gt;&gt;(value);
+<a class="jxr_linenumber" name="143" href="#143">143</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ValueTermImpl&lt;PropertyValue&lt;?, ?&gt;&gt;(value);
 <a class="jxr_linenumber" name="144" href="#144">144</a> 	}
 <a class="jxr_linenumber" name="145" href="#145">145</a> 
 <a class="jxr_linenumber" name="146" href="#146">146</a> 	@Override
-<a class="jxr_linenumber" name="147" href="#147">147</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="147" href="#147">147</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; 
 <a class="jxr_linenumber" name="148" href="#148">148</a> 	createValueTerm(<strong class="jxr_keyword">final</strong> String name) {
 <a class="jxr_linenumber" name="149" href="#149">149</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
 <a class="jxr_linenumber" name="150" href="#150">150</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
@@ -164,7 +164,7 @@
 <a class="jxr_linenumber" name="154" href="#154">154</a> 	}
 <a class="jxr_linenumber" name="155" href="#155">155</a> 
 <a class="jxr_linenumber" name="156" href="#156">156</a> 	@Override
-<a class="jxr_linenumber" name="157" href="#157">157</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="157" href="#157">157</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; 
 <a class="jxr_linenumber" name="158" href="#158">158</a> 			createValueTerm(<strong class="jxr_keyword">final</strong> String name, <strong class="jxr_keyword">final</strong> Formula&lt;Type&gt; formula) {
 <a class="jxr_linenumber" name="159" href="#159">159</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
 <a class="jxr_linenumber" name="160" href="#160">160</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
@@ -175,7 +175,7 @@
 <a class="jxr_linenumber" name="165" href="#165">165</a> 
 <a class="jxr_linenumber" name="166" href="#166">166</a> 	@SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
 <a class="jxr_linenumber" name="167" href="#167">167</a> 	@Override
-<a class="jxr_linenumber" name="168" href="#168">168</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
+<a class="jxr_linenumber" name="168" href="#168">168</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
 <a class="jxr_linenumber" name="169" href="#169">169</a> 			<strong class="jxr_keyword">final</strong> Type... values) {
 <a class="jxr_linenumber" name="170" href="#170">170</a> 		<strong class="jxr_keyword">if</strong> (values == <strong class="jxr_keyword">null</strong> || values.length == 0) {
 <a class="jxr_linenumber" name="171" href="#171">171</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(
@@ -195,7 +195,7 @@
 <a class="jxr_linenumber" name="185" href="#185">185</a> 	}
 <a class="jxr_linenumber" name="186" href="#186">186</a> 
 <a class="jxr_linenumber" name="187" href="#187">187</a> 	@Override
-<a class="jxr_linenumber" name="188" href="#188">188</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="188" href="#188">188</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; 
 <a class="jxr_linenumber" name="189" href="#189">189</a> 			createListTermFromTerms(<strong class="jxr_keyword">final</strong> Term&lt;Type&gt;... values) {
 <a class="jxr_linenumber" name="190" href="#190">190</a> 		<strong class="jxr_keyword">if</strong> (values == <strong class="jxr_keyword">null</strong> || values.length == 0) {
 <a class="jxr_linenumber" name="191" href="#191">191</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(
@@ -215,7 +215,7 @@
 <a class="jxr_linenumber" name="205" href="#205">205</a> 	}
 <a class="jxr_linenumber" name="206" href="#206">206</a> 
 <a class="jxr_linenumber" name="207" href="#207">207</a> 	@Override
-<a class="jxr_linenumber" name="208" href="#208">208</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
+<a class="jxr_linenumber" name="208" href="#208">208</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
 <a class="jxr_linenumber" name="209" href="#209">209</a> 			<strong class="jxr_keyword">final</strong> String name) {
 <a class="jxr_linenumber" name="210" href="#210">210</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
 <a class="jxr_linenumber" name="211" href="#211">211</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
@@ -289,7 +289,7 @@
 <a class="jxr_linenumber" name="279" href="#279">279</a> 	}
 <a class="jxr_linenumber" name="280" href="#280">280</a> 
 <a class="jxr_linenumber" name="281" href="#281">281</a> 	@Override
-<a class="jxr_linenumber" name="282" href="#282">282</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
+<a class="jxr_linenumber" name="282" href="#282">282</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
 <a class="jxr_linenumber" name="283" href="#283">283</a> 			<strong class="jxr_keyword">final</strong> String name, <strong class="jxr_keyword">final</strong> Formula&lt;List&lt;Term&lt;Type&gt;&gt;&gt; formula) {
 <a class="jxr_linenumber" name="284" href="#284">284</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
 <a class="jxr_linenumber" name="285" href="#285">285</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);

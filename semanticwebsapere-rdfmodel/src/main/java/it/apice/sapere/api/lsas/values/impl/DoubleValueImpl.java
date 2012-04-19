@@ -11,7 +11,7 @@ import it.apice.sapere.api.lsas.values.DoubleValue;
  * 
  * @see DoubleValue
  */
-public class DoubleValueImpl extends PropertyValueImpl<Double> implements
+public class DoubleValueImpl extends PropertyValueImpl<Double, DoubleValue> implements
 		DoubleValue {
 
 	/**

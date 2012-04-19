@@ -10,6 +10,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface IntegerValue extends PropertyValue<Integer> {
+public interface IntegerValue extends PropertyValue<Integer, IntegerValue> {
 
 }

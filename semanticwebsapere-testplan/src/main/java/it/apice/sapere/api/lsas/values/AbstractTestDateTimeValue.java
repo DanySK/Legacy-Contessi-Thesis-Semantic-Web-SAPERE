@@ -13,7 +13,7 @@ import java.util.List;
  * 
  */
 public abstract class AbstractTestDateTimeValue extends
-		AbstractTestPropertyValue<Date> {
+		AbstractTestPropertyValue<Date, DateTimeValue> {
 
 	@Override
 	protected final List<Date> createValues() {
@@ -25,7 +25,7 @@ public abstract class AbstractTestDateTimeValue extends
 	}
 
 	@Override
-	protected final PropertyValue<Date> createPropertyValue(
+	protected final PropertyValue<Date, DateTimeValue> createPropertyValue(
 			final Date val) {
 		return createFactory().createPropertyValue(val);
 	}

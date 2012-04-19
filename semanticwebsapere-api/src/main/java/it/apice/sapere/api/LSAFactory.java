@@ -83,7 +83,7 @@ public interface LSAFactory {
 	 *            Initial property values
 	 * @return A fresh property
 	 */
-	Property createProperty(URI name, PropertyValue<?>... initialValues);
+	Property createProperty(URI name, PropertyValue<?, ?>... initialValues);
 
 	/* === LSA'S PROPERTY VALUES === */
 

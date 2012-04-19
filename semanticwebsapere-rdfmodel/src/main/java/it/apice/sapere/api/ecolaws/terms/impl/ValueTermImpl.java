@@ -15,7 +15,7 @@ import it.apice.sapere.api.lsas.values.PropertyValue;
  * @param <Type>
  *            Internal value type
  */
-public class ValueTermImpl<Type extends PropertyValue<?>> extends
+public class ValueTermImpl<Type extends PropertyValue<?, ?>> extends
 		AnnotatedVarTermImpl<Type> implements ValueTerm<Type> {
 
 	/**

@@ -12,6 +12,6 @@ import java.util.Date;
  * @author Paolo Contessi
  * 
  */
-public interface DateTimeValue extends PropertyValue<Date> {
+public interface DateTimeValue extends PropertyValue<Date, DateTimeValue> {
 
 }

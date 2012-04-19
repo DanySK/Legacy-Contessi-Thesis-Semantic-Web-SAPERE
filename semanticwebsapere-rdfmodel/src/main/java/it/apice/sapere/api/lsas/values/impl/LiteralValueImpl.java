@@ -12,7 +12,7 @@ import it.apice.sapere.api.lsas.values.LiteralValue;
  * 
  * @see StringValue
  */
-public class LiteralValueImpl extends PropertyValueImpl<String> implements
+public class LiteralValueImpl extends PropertyValueImpl<String, LiteralValue> implements
 		LiteralValue {
 
 	/**

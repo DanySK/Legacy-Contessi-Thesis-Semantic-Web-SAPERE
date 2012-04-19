@@ -37,11 +37,11 @@ public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 0);
 
-		final PropertyValue<?> val = createFactory().createPropertyValue(true);
+		final PropertyValue<?, ?> val = createFactory().createPropertyValue(true);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.addValue(val).hasValue(val));
 
-		final PropertyValue<?> val2 = createFactory()
+		final PropertyValue<?, ?> val2 = createFactory()
 				.createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
@@ -61,14 +61,14 @@ public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 	@Test
 	public final void testProperty() throws Exception {
 		final URI propName = new URI("http://localhost:8080/sapere#prop");
-		final PropertyValue<?> val = createFactory().createPropertyValue(true);
+		final PropertyValue<?, ?> val = createFactory().createPropertyValue(true);
 		final Property prop = createFactory().createProperty(propName, val);
 
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 1);
 		assertTrue(prop.hasValue(val));
 
-		final PropertyValue<?> val2 = createFactory()
+		final PropertyValue<?, ?> val2 = createFactory()
 				.createPropertyValue(false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));

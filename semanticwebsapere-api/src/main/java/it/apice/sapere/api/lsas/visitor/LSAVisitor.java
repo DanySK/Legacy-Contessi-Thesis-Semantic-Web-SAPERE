@@ -65,7 +65,7 @@ public interface LSAVisitor {
 	 * @param val
 	 *            instance
 	 */
-	void visit(PropertyValue<?> val);
+	void visit(PropertyValue<?, ?> val);
 
 	/**
 	 * <p>

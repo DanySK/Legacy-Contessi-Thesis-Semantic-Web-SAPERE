@@ -22,7 +22,7 @@
 <a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../it/apice/sapere/api/lsas/values/AbstractTestDoubleValue.html">AbstractTestDoubleValue</a> <strong class="jxr_keyword">extends</strong>
-<a class="jxr_linenumber" name="15" href="#15">15</a>  		AbstractTestPropertyValue&lt;Double&gt; {
+<a class="jxr_linenumber" name="15" href="#15">15</a>  		AbstractTestPropertyValue&lt;Double, DoubleValue&gt; {
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
 <a class="jxr_linenumber" name="17" href="#17">17</a>  	@Override
 <a class="jxr_linenumber" name="18" href="#18">18</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> List&lt;Double&gt; createValues() {
@@ -39,7 +39,7 @@
 <a class="jxr_linenumber" name="29" href="#29">29</a>  	}
 <a class="jxr_linenumber" name="30" href="#30">30</a>  
 <a class="jxr_linenumber" name="31" href="#31">31</a>  	@Override
-<a class="jxr_linenumber" name="32" href="#32">32</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PropertyValue&lt;Double&gt; createPropertyValue(
+<a class="jxr_linenumber" name="32" href="#32">32</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PropertyValue&lt;Double, DoubleValue&gt; createPropertyValue(
 <a class="jxr_linenumber" name="33" href="#33">33</a>  			<strong class="jxr_keyword">final</strong> Double val) {
 <a class="jxr_linenumber" name="34" href="#34">34</a>  		<strong class="jxr_keyword">return</strong> createFactory().createPropertyValue(val);
 <a class="jxr_linenumber" name="35" href="#35">35</a>  	}

@@ -1,5 +1,7 @@
 package it.apice.sapere.api;
 
+import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
+import it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl;
 import it.apice.sapere.api.impl.EcolawFactoryImpl;
 import it.apice.sapere.api.impl.LSAFactoryImpl;
 
@@ -18,6 +20,9 @@ public class TestEcolawFactory extends AbstractTestEcolawFactory {
 	
 	/** Eco-law Factory reference. */
 	private transient EcolawFactory efactory;
+	
+	/** Formula Factory reference. */
+	private transient FormulaFactory ffactory;
 
 	@Override
 	protected final LSAFactory createFactory() {
@@ -68,6 +73,26 @@ public class TestEcolawFactory extends AbstractTestEcolawFactory {
 		}
 
 		return efactory;
+	}
+	
+	/**
+	 * <p>
+	 * Initializes the factory.
+	 * </p>
+	 *
+	 * @return Instance to the tested factory
+	 */
+	private FormulaFactory initFormulaFactory() {
+		return new FormulaFactoryImpl();
+	}
+
+	@Override
+	protected final FormulaFactory createFormulaFactory() {
+		if (ffactory == null) {
+			ffactory = initFormulaFactory();
+		}
+
+		return ffactory;
 	}
 
 }

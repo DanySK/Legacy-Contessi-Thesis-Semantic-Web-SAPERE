@@ -18,7 +18,7 @@ import java.util.List;
  * @param <Type>
  *            The type of the term's value
  */
-public interface ListTerm<Type extends PropertyValue<?>> extends
+public interface ListTerm<Type extends PropertyValue<?, ?>> extends
 		AnnotatedVarTerm<List<Term<Type>>> {
 
 }

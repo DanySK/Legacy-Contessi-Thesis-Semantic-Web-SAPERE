@@ -11,7 +11,7 @@ import it.apice.sapere.api.lsas.values.LongValue;
  * 
  * @see LongValue
  */
-public class LongValueImpl extends PropertyValueImpl<Long> implements
+public class LongValueImpl extends PropertyValueImpl<Long, LongValue> implements
 		LongValue {
 
 	/**

@@ -13,7 +13,7 @@ import java.util.Date;
  * 
  * @see DateValue
  */
-public class DateTimeValueImpl extends PropertyValueImpl<Date> implements
+public class DateTimeValueImpl extends PropertyValueImpl<Date, DateTimeValue> implements
 		DateTimeValue {
 
 	/**

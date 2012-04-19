@@ -263,9 +263,9 @@ public class Jena2SAPEREConverter {
 	 * @throws Exception
 	 *             Cannot parse values
 	 */
-	private PropertyValue<?>[] parseValues(final Model model,
+	private PropertyValue<?, ?>[] parseValues(final Model model,
 			final Resource lsa, final String propURI) throws Exception {
-		final Set<PropertyValue<?>> res = new HashSet<PropertyValue<?>>();
+		final Set<PropertyValue<?, ?>> res = new HashSet<PropertyValue<?, ?>>();
 		final ResultSet iter = execQuery(model,
 				lsaPropsValuesQuery(lsa, propURI));
 		while (iter.hasNext()) {
@@ -280,7 +280,7 @@ public class Jena2SAPEREConverter {
 			}
 		}
 
-		return res.toArray(new PropertyValue<?>[res.size()]);
+		return res.toArray(new PropertyValue<?, ?>[res.size()]);
 	}
 
 	/**
@@ -294,7 +294,7 @@ public class Jena2SAPEREConverter {
 	 * @throws Exception
 	 *             Cannot parse value
 	 */
-	private PropertyValue<?> parseLiteral(final Literal literal)
+	private PropertyValue<?, ?> parseLiteral(final Literal literal)
 			throws Exception {
 		final String langCode = literal.getLanguage();
 		final String dataType = literal.getDatatypeURI();

@@ -106,7 +106,7 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 
 	@Override
 	public final Property createProperty(final URI name,
-			final PropertyValue<?>... initialValues) {
+			final PropertyValue<?, ?>... initialValues) {
 		final Property prop = createProperty(name);
 
 		if (initialValues.length == 0) {
@@ -114,7 +114,7 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 					+ " a property with zero values");
 		}
 
-		for (PropertyValue<?> val : initialValues) {
+		for (PropertyValue<?, ?> val : initialValues) {
 			if (val == null) {
 				throw new IllegalArgumentException(
 						"Cannot init with a null value");

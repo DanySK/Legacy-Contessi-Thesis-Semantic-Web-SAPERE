@@ -15,7 +15,7 @@ import java.util.List;
  * 
  */
 public abstract class AbstractTestURIValue extends
-		AbstractTestPropertyValue<URI> {
+		AbstractTestPropertyValue<URI, URIValue> {
 
 	@Override
 	protected final List<URI> createValues() {
@@ -35,7 +35,7 @@ public abstract class AbstractTestURIValue extends
 	}
 
 	@Override
-	protected final PropertyValue<URI> createPropertyValue(
+	protected final PropertyValue<URI, URIValue> createPropertyValue(
 			final URI val) {
 		return createFactory().createPropertyValue(val);
 	}

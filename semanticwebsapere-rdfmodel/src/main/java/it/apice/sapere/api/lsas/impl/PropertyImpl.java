@@ -24,7 +24,7 @@ public class PropertyImpl implements Property {
 	private final PropertyName name;
 
 	/** Set of values. */
-	private final Set<PropertyValue<?>> values;
+	private final Set<PropertyValue<?, ?>> values;
 
 	/**
 	 * <p>
@@ -40,7 +40,7 @@ public class PropertyImpl implements Property {
 		}
 
 		name = aName;
-		values = new HashSet<PropertyValue<?>>();
+		values = new HashSet<PropertyValue<?, ?>>();
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class PropertyImpl implements Property {
 	 */
 	protected PropertyImpl(final PropertyImpl property) {
 		name = property.name;
-		values = new HashSet<PropertyValue<?>>(property.values);
+		values = new HashSet<PropertyValue<?, ?>>(property.values);
 	}
 
 	@Override
@@ -62,20 +62,20 @@ public class PropertyImpl implements Property {
 	}
 
 	@Override
-	public final Property addValue(final PropertyValue<?> value) {
+	public final Property addValue(final PropertyValue<?, ?> value) {
 		values.add(value);
 		return this;
 	}
 
 	@Override
-	public final Property removeValue(final PropertyValue<?> value) {
+	public final Property removeValue(final PropertyValue<?, ?> value) {
 		values.remove(value);
 		return this;
 	}
 
 	@Override
-	public final Property changeValue(final PropertyValue<?> oldValue,
-			final PropertyValue<?> newValue) {
+	public final Property changeValue(final PropertyValue<?, ?> oldValue,
+			final PropertyValue<?, ?> newValue) {
 		if (!values.contains(oldValue)) {
 			throw new IllegalArgumentException(String.format(
 					"Cannot change value %s to %s (unknown old value)",
@@ -92,18 +92,18 @@ public class PropertyImpl implements Property {
 	}
 
 	@Override
-	public final PropertyValue<?>[] values() {
-		return values.toArray(new PropertyValue<?>[values.size()]);
+	public final PropertyValue<?, ?>[] values() {
+		return values.toArray(new PropertyValue<?, ?>[values.size()]);
 	}
 
 	@Override
-	public final boolean hasValue(final PropertyValue<?> value) {
+	public final boolean hasValue(final PropertyValue<?, ?> value) {
 		return values.contains(value);
 	}
 
 	@Override
 	public final boolean isExtensionOf(final Property other) {
-		for (PropertyValue<?> val : other.values()) {
+		for (PropertyValue<?, ?> val : other.values()) {
 			if (!values.contains(val)) {
 				return false;
 			}
@@ -170,7 +170,7 @@ public class PropertyImpl implements Property {
 		builder.append(name.toString()).append(" := (");
 		
 		int count = 0;
-		for (PropertyValue<?> val : values) {
+		for (PropertyValue<?, ?> val : values) {
 			builder.append(val);
 			count++;
 			if (count < values.size()) {

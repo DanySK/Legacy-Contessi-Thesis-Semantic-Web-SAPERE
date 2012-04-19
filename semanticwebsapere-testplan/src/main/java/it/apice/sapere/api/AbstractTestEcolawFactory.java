@@ -289,7 +289,7 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 		}
 
 		try {
-			factory.createValueTerm((PropertyValue<?>) null);
+			factory.createValueTerm((PropertyValue<?, ?>) null);
 			Assert.fail("Strange ValueTerm (1)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -661,12 +661,12 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 	 *            minor value)
 	 * @return The formula
 	 */
-	private Formula<PropertyValue<Long>> createGtFormula(final ValueTerm<LongValue> tVar) {
-		return createFormulaFactory().<PropertyValue<Long>> createGtFormula(
-				"?T", new RightOperand<PropertyValue<Long>>() {
+	private Formula<LongValue> createGtFormula(final ValueTerm<LongValue> tVar) {
+		return createFormulaFactory().<LongValue> createGtFormula(
+				"?T", new RightOperand<LongValue>() {
 
 					@Override
-					public PropertyValue<Long> rightOperand() {
+					public LongValue rightOperand() {
 						return tVar.getValue();
 					}
 

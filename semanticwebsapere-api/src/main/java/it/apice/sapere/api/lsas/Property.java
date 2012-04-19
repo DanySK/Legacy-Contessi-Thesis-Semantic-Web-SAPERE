@@ -45,7 +45,7 @@ public interface Property {
 	 *            The value to be added
 	 * @return A reference to the updated property
 	 */
-	Property addValue(PropertyValue<?> value);
+	Property addValue(PropertyValue<?, ?> value);
 
 	/**
 	 * <p>
@@ -56,7 +56,7 @@ public interface Property {
 	 *            The value to be removed
 	 * @return A reference to the updated property
 	 */
-	Property removeValue(PropertyValue<?> value);
+	Property removeValue(PropertyValue<?, ?> value);
 
 	/**
 	 * <p>
@@ -69,7 +69,8 @@ public interface Property {
 	 *            The new value that will replace the actual one
 	 * @return A reference to the updated property
 	 */
-	Property changeValue(PropertyValue<?> oldValue, PropertyValue<?> newValue);
+	Property changeValue(PropertyValue<?, ?> oldValue,
+			PropertyValue<?, ?> newValue);
 
 	/**
 	 * <p>
@@ -78,7 +79,7 @@ public interface Property {
 	 * 
 	 * @return All values that this property has
 	 */
-	PropertyValue<?>[] values();
+	PropertyValue<?, ?>[] values();
 
 	/**
 	 * <p>
@@ -89,7 +90,7 @@ public interface Property {
 	 *            The value to be checked
 	 * @return True if associated, false otherwise
 	 */
-	boolean hasValue(PropertyValue<?> value);
+	boolean hasValue(PropertyValue<?, ?> value);
 
 	/**
 	 * <p>
@@ -115,8 +116,9 @@ public interface Property {
 	 * <p>
 	 * Pattern VISITOR.
 	 * </p>
-	 *
-	 * @param visitor The visitor
+	 * 
+	 * @param visitor
+	 *            The visitor
 	 */
 	void accept(LSAVisitor visitor);
 }

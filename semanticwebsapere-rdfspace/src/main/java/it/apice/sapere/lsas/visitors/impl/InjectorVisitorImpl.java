@@ -68,7 +68,7 @@ public class InjectorVisitorImpl implements LSAVisitor {
 	@Override
 	public final void visit(final Property prop) {
 		prop.getName().accept(this);
-		for (PropertyValue<?> val : prop.values()) {
+		for (PropertyValue<?, ?> val : prop.values()) {
 			val.accept(this);
 		}
 	}
@@ -86,7 +86,7 @@ public class InjectorVisitorImpl implements LSAVisitor {
 	}
 
 	@Override
-	public final void visit(final PropertyValue<?> val) {
+	public final void visit(final PropertyValue<?, ?> val) {
 		Object obj = val.getValue();
 		if (obj instanceof Date) {
 			final Calendar cal = Calendar.getInstance();

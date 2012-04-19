@@ -11,6 +11,6 @@ import java.net.URI;
  * @author Paolo Contessi
  * 
  */
-public interface URIValue extends PropertyValue<URI> {
+public interface URIValue extends PropertyValue<URI, URIValue> {
 
 }

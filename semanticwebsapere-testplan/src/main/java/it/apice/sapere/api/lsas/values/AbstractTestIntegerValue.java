@@ -12,7 +12,7 @@ import java.util.List;
  * 
  */
 public abstract class AbstractTestIntegerValue extends
-		AbstractTestPropertyValue<Integer> {
+		AbstractTestPropertyValue<Integer, IntegerValue> {
 
 	@Override
 	protected final List<Integer> createValues() {
@@ -28,7 +28,7 @@ public abstract class AbstractTestIntegerValue extends
 	}
 
 	@Override
-	protected final PropertyValue<Integer> createPropertyValue(
+	protected final PropertyValue<Integer, IntegerValue> createPropertyValue(
 			final Integer val) {
 		return createFactory().createPropertyValue(val);
 	}

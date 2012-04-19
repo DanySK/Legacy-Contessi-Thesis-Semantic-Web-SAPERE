@@ -11,8 +11,8 @@ import it.apice.sapere.api.lsas.values.BooleanValue;
  * 
  * @see BooleanValue
  */
-public class BooleanValueImpl extends PropertyValueImpl<Boolean> implements
-		BooleanValue {
+public class BooleanValueImpl extends PropertyValueImpl<Boolean, BooleanValue>
+		implements BooleanValue {
 
 	/**
 	 * <p>

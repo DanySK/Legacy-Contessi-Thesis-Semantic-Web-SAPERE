@@ -9,6 +9,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface FloatValue extends PropertyValue<Float> {
+public interface FloatValue extends PropertyValue<Float, FloatValue> {
 
 }

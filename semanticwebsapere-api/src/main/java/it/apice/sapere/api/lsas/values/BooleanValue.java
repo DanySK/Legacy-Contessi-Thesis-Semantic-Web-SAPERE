@@ -10,6 +10,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface BooleanValue extends PropertyValue<Boolean> {
+public interface BooleanValue extends PropertyValue<Boolean, BooleanValue> {
 
 }

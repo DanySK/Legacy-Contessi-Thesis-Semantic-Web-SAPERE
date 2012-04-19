@@ -9,6 +9,6 @@ package it.apice.sapere.api.lsas.values;
  * @author Paolo Contessi
  * 
  */
-public interface LongValue extends PropertyValue<Long> {
+public interface LongValue extends PropertyValue<Long, LongValue> {
 
 }

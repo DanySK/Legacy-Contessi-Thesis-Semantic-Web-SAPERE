@@ -179,7 +179,7 @@ public interface EcolawFactory {
 	 *            A Value
 	 * @return A fresh term
 	 */
-	<Type extends PropertyValue<?>> ValueTerm<Type> createTypedValueTerm(
+	<Type extends PropertyValue<?, ?>> ValueTerm<Type> createTypedValueTerm(
 			Type value);
 
 	/**
@@ -191,8 +191,8 @@ public interface EcolawFactory {
 	 *            A Value
 	 * @return A fresh term
 	 */
-	ValueTerm<? extends PropertyValue<?>> createValueTerm(
-			PropertyValue<?> value);
+	ValueTerm<? extends PropertyValue<?, ?>> createValueTerm(
+			PropertyValue<?, ?> value);
 
 	/**
 	 * <p>
@@ -206,7 +206,7 @@ public interface EcolawFactory {
 	 *            Name of the variable
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+	<Type extends PropertyValue<?, ?>> ValueTerm<Type> createValueTerm(
 			String name);
 
 	/**
@@ -223,7 +223,7 @@ public interface EcolawFactory {
 	 *            Boolean condition for assignment acceptance
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
+	<Type extends PropertyValue<?, ?>> ValueTerm<Type> createValueTerm(
 			String name, Formula<Type> formula);
 
 	/**
@@ -237,7 +237,7 @@ public interface EcolawFactory {
 	 *            PropertyValues that compose the list
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
+	<Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
 			Type... values);
 
 	/**
@@ -251,7 +251,7 @@ public interface EcolawFactory {
 	 *            Terms that compose the list
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ListTerm<Type> createListTermFromTerms(
+	<Type extends PropertyValue<?, ?>> ListTerm<Type> createListTermFromTerms(
 			Term<Type>... values);
 
 	/**
@@ -266,7 +266,7 @@ public interface EcolawFactory {
 	 *            Name of the variable
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ListTerm<Type> createListTerm(String name);
+	<Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(String name);
 
 	/**
 	 * <p>
@@ -282,7 +282,7 @@ public interface EcolawFactory {
 	 *            Boolean condition for assignment acceptance
 	 * @return A fresh Term
 	 */
-	<Type extends PropertyValue<?>> ListTerm<Type> createListTerm(String name,
+	<Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(String name,
 			Formula<List<Term<Type>>> formula);
 
 	/**

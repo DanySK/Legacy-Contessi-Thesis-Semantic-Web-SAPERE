@@ -17,7 +17,7 @@ import java.util.List;
  * @param <Type>
  *            Internal type value
  */
-public class ListTermImpl<Type extends PropertyValue<?>> extends
+public class ListTermImpl<Type extends PropertyValue<?, ?>> extends
 		AnnotatedVarTermImpl<List<Term<Type>>> implements ListTerm<Type> {
 
 	/**

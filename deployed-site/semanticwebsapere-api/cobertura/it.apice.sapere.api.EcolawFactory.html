@@ -380,7 +380,7 @@
 <tr>  <td class="numLine">&nbsp;181</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;182</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createTypedValueTerm(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createTypedValueTerm(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;183</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        Type value);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;184</td>  <td class="nbHits">&nbsp;</td>
@@ -404,9 +404,9 @@
 <tr>  <td class="numLine">&nbsp;193</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;194</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        ValueTerm&lt;? <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; createValueTerm(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        ValueTerm&lt;? <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; createValueTerm(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;195</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;                        PropertyValue&lt;?&gt; value);</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;                        PropertyValue&lt;?, ?&gt; value);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;196</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;197</td>  <td class="nbHits">&nbsp;</td>
@@ -434,7 +434,7 @@
 <tr>  <td class="numLine">&nbsp;208</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;209</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;210</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        String name);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;211</td>  <td class="nbHits">&nbsp;</td>
@@ -468,7 +468,7 @@
 <tr>  <td class="numLine">&nbsp;225</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;226</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;227</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        String name, Formula&lt;Type&gt; formula);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;228</td>  <td class="nbHits">&nbsp;</td>
@@ -496,7 +496,7 @@
 <tr>  <td class="numLine">&nbsp;239</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;240</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;241</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        Type... values);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;242</td>  <td class="nbHits">&nbsp;</td>
@@ -524,7 +524,7 @@
 <tr>  <td class="numLine">&nbsp;253</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;254</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTermFromTerms(</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTermFromTerms(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;255</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        Term&lt;Type&gt;... values);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;256</td>  <td class="nbHits">&nbsp;</td>
@@ -554,7 +554,7 @@
 <tr>  <td class="numLine">&nbsp;268</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;269</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name);</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;270</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;271</td>  <td class="nbHits">&nbsp;</td>
@@ -586,7 +586,7 @@
 <tr>  <td class="numLine">&nbsp;284</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;285</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name,</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;        &lt;Type <span class="keyword">extends</span> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name,</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;286</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        Formula&lt;List&lt;Term&lt;Type&gt;&gt;&gt; formula);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;287</td>  <td class="nbHits">&nbsp;</td>
@@ -811,6 +811,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 18/04/12 12.49.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 19/04/12 10.42.</div>
 </body>
 </html>

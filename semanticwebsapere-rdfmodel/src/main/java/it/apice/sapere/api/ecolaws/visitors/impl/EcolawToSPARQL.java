@@ -6,6 +6,7 @@ import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
 import it.apice.sapere.api.ecolaws.Term;
+import it.apice.sapere.api.ecolaws.formulas.IsFormula;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
@@ -88,7 +89,7 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	}
 	
 	private void ruleW(final AnnotatedVarTerm<?> var) {
-		if (var.getFormula().isAnAssignment()) {
+		if (var.getFormula() instanceof IsFormula) {
 			// BIND rule
 		} else {
 			// FILTER rule
