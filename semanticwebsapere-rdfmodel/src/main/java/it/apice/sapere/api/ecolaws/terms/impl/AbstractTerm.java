@@ -80,9 +80,9 @@ public abstract class AbstractTerm<Type> implements Term<Type> {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public Term<Type> clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
 		return (Term<Type>) super.clone();
 	}
 }

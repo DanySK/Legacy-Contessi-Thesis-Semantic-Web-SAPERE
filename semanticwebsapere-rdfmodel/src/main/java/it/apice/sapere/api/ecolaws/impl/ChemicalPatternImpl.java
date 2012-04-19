@@ -55,8 +55,9 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 	 * <p>
 	 * Clone constructor.
 	 * </p>
-	 *
-	 * @param src The source
+	 * 
+	 * @param src
+	 *            The source
 	 */
 	protected ChemicalPatternImpl(final ChemicalPattern<ExtenderType> src) {
 		try {
@@ -164,7 +165,7 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 				builder.append(filter.toString());
 				notFirst = true;
 			}
-			
+
 			builder.append("]");
 		}
 
@@ -175,8 +176,16 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 	public final int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((filters == null) ? 0 : filters.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result *= prime;
+		if (filters != null) {
+			result += filters.hashCode();
+		}
+
+		result *= prime;
+		if (name != null) {
+			result += name.hashCode();
+		}
+
 		return result;
 	}
 
@@ -191,6 +200,7 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
+		@SuppressWarnings("rawtypes")
 		ChemicalPatternImpl other = (ChemicalPatternImpl) obj;
 		if (filters == null) {
 			if (other.filters != null) {
@@ -209,9 +219,10 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public ChemicalPattern<ExtenderType> clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
+	public ChemicalPattern<ExtenderType> clone()
+			throws CloneNotSupportedException {
 		return (ChemicalPattern<ExtenderType>) super.clone();
 	}
 }

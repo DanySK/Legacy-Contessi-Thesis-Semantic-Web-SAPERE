@@ -25,7 +25,7 @@ import org.junit.Test;
  * @param <ValueType>
  *            The type that will be contained in the tested PropertyValue
  */
-public abstract class AbstractTestPropertyValue<ValueType> extends
+public abstract class AbstractTestPropertyValue<ValueType extends Comparable<ValueType>> extends
 		AbstractLSAModelTest {
 
 	/**

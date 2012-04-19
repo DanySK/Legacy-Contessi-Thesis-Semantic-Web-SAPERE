@@ -80,4 +80,13 @@ public class LSAidImpl implements LSAid {
 	public final void accept(final LSAVisitor visitor) {
 		visitor.visit(this);
 	}
+
+	@Override
+	public final int compareTo(final LSAid o) {
+		if (o == null) {
+			throw new NullPointerException();
+		}
+
+		return id.compareTo(o.getId());
+	}
 }

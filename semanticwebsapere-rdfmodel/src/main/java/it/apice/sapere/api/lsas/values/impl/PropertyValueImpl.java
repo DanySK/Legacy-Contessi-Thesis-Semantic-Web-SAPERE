@@ -18,7 +18,8 @@ import java.net.URI;
  * 
  * @see PropertyValue
  */
-public class PropertyValueImpl<Type> implements PropertyValue<Type> {
+public class PropertyValueImpl<Type extends Comparable<Type>> implements
+		PropertyValue<Type> {
 
 	/** Stored value. */
 	private final Type value;
@@ -131,7 +132,8 @@ public class PropertyValueImpl<Type> implements PropertyValue<Type> {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		PropertyValueImpl<?> other = (PropertyValueImpl<?>) obj;
+		@SuppressWarnings("rawtypes")
+		PropertyValueImpl other = (PropertyValueImpl) obj;
 		if (langCode == null) {
 			if (other.langCode != null) {
 				return false;
@@ -152,6 +154,15 @@ public class PropertyValueImpl<Type> implements PropertyValue<Type> {
 	@Override
 	public final void accept(final LSAVisitor visitor) {
 		visitor.visit(this);
+	}
+
+	@Override
+	public final int compareTo(final PropertyValue<Type> other) {
+		if (other == null) {
+			throw new NullPointerException();
+		}
+
+		return value.compareTo(other.getValue());
 	}
 
 }

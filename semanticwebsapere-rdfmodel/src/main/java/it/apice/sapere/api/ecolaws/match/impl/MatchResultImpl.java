@@ -9,6 +9,8 @@ import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.space.LSAspace;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -32,6 +34,9 @@ public class MatchResultImpl implements MutableMatchResult {
 	/** All Mappings. */
 	private final transient Map<String, Term<?>> mappings = 
 			new HashMap<String, Term<?>>();
+
+	/** List of assignment scores. */
+	private final transient List<Double> scores = new LinkedList<Double>();
 
 	/** Extra info. */
 	private transient String extras = "";
@@ -96,8 +101,15 @@ public class MatchResultImpl implements MutableMatchResult {
 	}
 
 	@Override
-	public final void register(final String varName, final Term<?> term) {
+	public final void register(final String varName, final Term<?> term,
+			final double score) throws SAPEREException {
+		if (mappings.containsKey(varName) && !mappings.containsValue(term)) {
+			throw new SAPEREException("Assignment clash (var: " + varName
+					+ "; term: " + term.toString() + ")");
+		}
+		
 		mappings.put(varName, term);
+		scores.add(score);
 	}
 
 	@Override
@@ -138,5 +150,10 @@ public class MatchResultImpl implements MutableMatchResult {
 			throw new IllegalArgumentException("Invalid extra info");
 		}
 		extras = info;
+	}
+
+	@Override
+	public final Double[] getAssignmentScores() {
+		return scores.toArray(new Double[scores.size()]);
 	}
 }

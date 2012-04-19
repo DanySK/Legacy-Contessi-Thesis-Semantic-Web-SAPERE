@@ -2,6 +2,8 @@ package it.apice.sapere.api;
 
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Term;
+import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
+import it.apice.sapere.api.ecolaws.formulas.RightOperand;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
 import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
@@ -37,6 +39,15 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 
 	/** Reference to an LSA Factory. */
 	private final transient LSAFactory lsaFactory = createFactory();
+
+	/**
+	 * <p>
+	 * Provides a new {@link FormulaFactory}.
+	 * </p>
+	 * 
+	 * @return Instance of FormulaFactory
+	 */
+	protected abstract FormulaFactory createFormulaFactory();
 
 	/**
 	 * Checks that unwanted behaviours are handled (createEcolaw).
@@ -617,8 +628,9 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 								.assign(bondProp,
 										factory.<URIValue> createListTermFromTerms(b
 												.toValueTerm()))
-								.assign(tProp, factory.<URIValue> createListTermFromTerms(prop
-										.toValueTerm()))
+								.assign(tProp,
+										factory.<URIValue> createListTermFromTerms(prop
+												.toValueTerm()))
 								.assign(tValues, values))
 				.addProduct(
 						factory.createProduct(src).has(b,
@@ -649,20 +661,16 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 	 *            minor value)
 	 * @return The formula
 	 */
-	private Formula<LongValue> createGtFormula(final ValueTerm<LongValue> tVar) {
-		return new Formula<LongValue>() {
+	private Formula<PropertyValue<Long>> createGtFormula(final ValueTerm<LongValue> tVar) {
+		return createFormulaFactory().<PropertyValue<Long>> createGtFormula(
+				"?T", new RightOperand<PropertyValue<Long>>() {
 
-			@Override
-			public boolean accept(final LongValue t2Var) {
-				return t2Var.getValue() > tVar.getValue().getValue();
-			}
+					@Override
+					public PropertyValue<Long> rightOperand() {
+						return tVar.getValue();
+					}
 
-			@Override
-			public String getDescription() {
-				return "?T2 > ?T";
-			}
-
-		};
+				});
 	}
 
 	/**
@@ -675,18 +683,13 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 	 * @return A simple formula (accepts everything)
 	 */
 	private <T> Formula<T> createValidFormula() {
-		return new Formula<T>() {
+		return createFormulaFactory().<T> createIsFormula("0",
+				new RightOperand<T>() {
 
-			@Override
-			public boolean accept(final T term) {
-				return true;
-			}
-
-			@Override
-			public String getDescription() {
-				return "true";
-			}
-
-		};
+					@Override
+					public T rightOperand() {
+						return null;
+					}
+				});
 	}
 }

@@ -66,6 +66,7 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		}
 
 		formula = boolCond;
+		formula.setLeftOp(varName);
 	}
 
 	/**
@@ -111,20 +112,24 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		super.varNameSuffix(builder);
 
 		if (formula != null) {
-			builder.append(" : ").append(formula.getDescription()).append("}");
+			builder.append(" : ").append(formula.getStringRepr()).append("}");
 		}
 	}
 
 	@Override
-	public int hashCode() {
+	public final int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((formula == null) ? 0 : formula.hashCode());
+		result *= prime;
+		if (formula != null) {
+			result += formula.hashCode();
+		}
+
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public final boolean equals(final Object obj) {
 		if (this == obj) {
 			return true;
 		}
@@ -134,6 +139,7 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
+		@SuppressWarnings("rawtypes")
 		AnnotatedVarTermImpl other = (AnnotatedVarTermImpl) obj;
 		if (formula == null) {
 			if (other.formula != null) {

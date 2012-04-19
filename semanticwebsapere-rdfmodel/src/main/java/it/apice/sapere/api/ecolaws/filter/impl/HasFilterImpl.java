@@ -47,7 +47,7 @@ public class HasFilterImpl extends OpFilterImpl implements HasFilter {
 	}
 
 	@Override
-	public Filter clone() throws CloneNotSupportedException {
+	public final Filter clone() throws CloneNotSupportedException {
 		return new HasFilterImpl(this);
 	}
 }

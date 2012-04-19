@@ -87,7 +87,7 @@ public class PropertyTermImpl extends AnnotatedVarTermImpl<PropertyName>
 	}
 	
 	@Override
-	public Term<PropertyName> clone() throws CloneNotSupportedException {
+	public final Term<PropertyName> clone() throws CloneNotSupportedException {
 		return new PropertyTermImpl(this);
 	}
 }

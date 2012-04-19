@@ -35,6 +35,15 @@ public interface MatchResult {
 
 	/**
 	 * <p>
+	 * Retrieves the list of all the scores assigned to each assignment.
+	 * </p>
+	 * 
+	 * @return All scores of each assignment
+	 */
+	Double[] getAssignmentScores();
+
+	/**
+	 * <p>
 	 * Retrieves the whole list of assignments.
 	 * </p>
 	 * 

@@ -21,7 +21,7 @@ import java.net.URI;
  * @author Paolo Contessi
  * 
  */
-public interface LSAid {
+public interface LSAid extends Comparable<LSAid> {
 
 	/**
 	 * <p>

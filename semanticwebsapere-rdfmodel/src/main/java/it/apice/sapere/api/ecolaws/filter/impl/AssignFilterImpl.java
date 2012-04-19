@@ -47,7 +47,7 @@ public class AssignFilterImpl extends OpFilterImpl implements AssignFilter {
 	}
 
 	@Override
-	public Filter clone() throws CloneNotSupportedException {
+	public final Filter clone() throws CloneNotSupportedException {
 		return new AssignFilterImpl(this);
 	}
 }

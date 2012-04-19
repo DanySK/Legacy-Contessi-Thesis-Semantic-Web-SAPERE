@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.impl;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
@@ -107,7 +108,6 @@ public class EcolawImpl implements Ecolaw {
 			rate = src.getRate();
 		}
 
-		
 	}
 
 	@Override
@@ -175,14 +175,18 @@ public class EcolawImpl implements Ecolaw {
 	}
 
 	@Override
-	public final MatchingEcolaw bind(final ScoredMatchResult match) {
+	public final MatchingEcolaw bind(final ScoredMatchResult match)
+			throws SAPEREException {
 		return new MatchingEcolawImpl(this, match);
 	}
 
 	@Override
 	public final String toString() {
-		final StringBuilder builder = new StringBuilder("<").append(label)
-				.append(extras).append("> ");
+		final StringBuilder builder = new StringBuilder();
+
+		if (!label.equals("")) {
+			builder.append("<").append(label).append(extras).append("> ");
+		}
 
 		boolean notFirst = false;
 		for (Reactant react : reactants) {
@@ -228,12 +232,26 @@ public class EcolawImpl implements Ecolaw {
 	public final int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((label == null) ? 0 : label.hashCode());
-		result = prime * result
-				+ ((products == null) ? 0 : products.hashCode());
-		result = prime * result + ((rate == null) ? 0 : rate.hashCode());
-		result = prime * result
-				+ ((reactants == null) ? 0 : reactants.hashCode());
+		result *= prime;
+		if (label != null) {
+			result += label.hashCode();
+		}
+
+		result *= prime;
+		if (products != null) {
+			result += products.hashCode();
+		}
+
+		result *= prime;
+		if (rate != null) {
+			result += rate.hashCode();
+		}
+
+		result *= prime;
+		if (reactants != null) {
+			result += reactants.hashCode();
+		}
+
 		return result;
 	}
 

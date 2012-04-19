@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws.match;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Term;
 
 /**
@@ -22,8 +23,13 @@ public interface MutableMatchResult extends MatchResult {
 	 *            The name of the variable
 	 * @param term
 	 *            The term that matches
+	 * @param score
+	 *            The score of the registered assignment
+	 * @throws SAPEREException
+	 *             Clash
 	 */
-	void register(String varName, Term<?> term);
+	void register(String varName, Term<?> term, double score)
+			throws SAPEREException;
 
 	/**
 	 * <p>

@@ -1,5 +1,6 @@
 package it.apice.sapere.api.ecolaws;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
@@ -115,6 +116,8 @@ public interface Ecolaw {
 	 *            Values, determined during matching phase, to be assigned to
 	 *            variables
 	 * @return The Matching Ecolaw
+	 * @throws SAPEREException
+	 *             Cannot complete binding procedure, some variables are unbound
 	 */
-	MatchingEcolaw bind(ScoredMatchResult match);
+	MatchingEcolaw bind(ScoredMatchResult match) throws SAPEREException;
 }

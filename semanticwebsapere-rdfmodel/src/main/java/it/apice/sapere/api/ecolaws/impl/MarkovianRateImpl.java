@@ -157,7 +157,11 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 	public final int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((rate == null) ? 0 : rate.hashCode());
+		result *= prime;
+		if (rate != null) {
+			result += rate.hashCode();
+		}
+
 		return result;
 	}
 
@@ -184,7 +188,7 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 	}
 
 	@Override
-	public Rate<?> clone() throws CloneNotSupportedException {
+	public final Rate<?> clone() throws CloneNotSupportedException {
 		return new MarkovianRateImpl(this);
 	}
 }

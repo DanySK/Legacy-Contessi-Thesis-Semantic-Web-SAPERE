@@ -58,6 +58,7 @@ public abstract class OpFilterImpl implements OpFilter {
 	 * @param src
 	 *            The source
 	 */
+	@SuppressWarnings("rawtypes")
 	public OpFilterImpl(final OpFilterImpl src) {
 		try {
 			if (src.left.isVar()) {
@@ -116,10 +117,20 @@ public abstract class OpFilterImpl implements OpFilter {
 	public final int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((left == null) ? 0 : left.hashCode());
-		result = prime * result
-				+ ((opString == null) ? 0 : opString.hashCode());
-		result = prime * result + ((right == null) ? 0 : right.hashCode());
+		result *= prime;
+		if (left != null) {
+			result += left.hashCode();
+		}
+
+		result *= prime;
+		if (opString != null) {
+			result += opString.hashCode();
+		}
+
+		result *= prime;
+		if (right != null) {
+			result += right.hashCode();
+		}
 		return result;
 	}
 

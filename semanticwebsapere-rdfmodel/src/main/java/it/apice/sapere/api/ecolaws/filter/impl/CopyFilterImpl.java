@@ -2,8 +2,6 @@ package it.apice.sapere.api.ecolaws.filter.impl;
 
 import it.apice.sapere.api.ecolaws.Filter;
 import it.apice.sapere.api.ecolaws.filters.CopyFilter;
-import it.apice.sapere.api.ecolaws.terms.ListTerm;
-import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
 import it.apice.sapere.api.ecolaws.terms.SDescTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
@@ -94,9 +92,16 @@ public abstract class CopyFilterImpl implements CopyFilter {
 	public final int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((copyOpString == null) ? 0 : copyOpString.hashCode());
-		result = prime * result + ((source == null) ? 0 : source.hashCode());
+		result *= prime;
+		if (copyOpString != null) {
+			result += copyOpString.hashCode();
+		}
+
+		result *= prime;
+		if (source != null) {
+			result += source.hashCode();
+		}
+
 		return result;
 	}
 

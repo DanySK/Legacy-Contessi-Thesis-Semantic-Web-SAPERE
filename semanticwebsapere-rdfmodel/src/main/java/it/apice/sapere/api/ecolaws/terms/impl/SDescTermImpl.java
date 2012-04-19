@@ -109,8 +109,7 @@ public class SDescTermImpl extends AnnotatedVarTermImpl<SemanticDescription>
 	@Override
 	public final LSAid getLinkedLSAid() throws SAPEREException {
 		if (link == null) {
-			throw new SAPEREException(
-					"This term is not linked to an LSAid");
+			throw new SAPEREException("This term is not linked to an LSAid");
 		}
 
 		if (link.isGround() || link.isBound()) {
@@ -120,9 +119,10 @@ public class SDescTermImpl extends AnnotatedVarTermImpl<SemanticDescription>
 		throw new SAPEREException("Cannot retrieve LSAid, "
 				+ "because the linked Pattern has not been resolved");
 	}
-	
+
 	@Override
-	public Term<SemanticDescription> clone() throws CloneNotSupportedException {
+	public final Term<SemanticDescription> clone()
+			throws CloneNotSupportedException {
 		return new SDescTermImpl(this);
 	}
 }

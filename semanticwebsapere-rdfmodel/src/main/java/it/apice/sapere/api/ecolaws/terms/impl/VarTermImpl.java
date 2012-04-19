@@ -42,6 +42,11 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 	 *            The name of the variable
 	 */
 	public VarTermImpl(final String varName) {
+		if (!varName.toUpperCase().equals(varName)) {
+			throw new IllegalArgumentException(
+					"Variable names should be all uppercase");
+		}
+
 		name = varName;
 	}
 
@@ -165,8 +170,9 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 	 * <p>
 	 * Specifies a prefix for name representation.
 	 * </p>
-	 *
-	 * @param builder The String Builder
+	 * 
+	 * @param builder
+	 *            The String Builder
 	 */
 	public void varNamePrefix(final StringBuilder builder) {
 
@@ -176,8 +182,9 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 	 * <p>
 	 * Specifies a suffix for name representation.
 	 * </p>
-	 *
-	 * @param builder The String Builder
+	 * 
+	 * @param builder
+	 *            The String Builder
 	 */
 	public void varNameSuffix(final StringBuilder builder) {
 
@@ -187,7 +194,11 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result *= prime;
+		if (name != null) {
+			result += name.hashCode();
+		}
+
 		return result;
 	}
 
@@ -202,6 +213,7 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
+		@SuppressWarnings("rawtypes")
 		VarTermImpl other = (VarTermImpl) obj;
 		if (name == null) {
 			if (other.name != null) {

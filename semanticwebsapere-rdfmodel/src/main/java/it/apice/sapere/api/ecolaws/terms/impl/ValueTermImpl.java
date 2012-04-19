@@ -70,7 +70,7 @@ public class ValueTermImpl<Type extends PropertyValue<?>> extends
 	}
 	
 	@Override
-	public Term<Type> clone() throws CloneNotSupportedException {
+	public final Term<Type> clone() throws CloneNotSupportedException {
 		return new ValueTermImpl<Type>(this);
 	}
 }

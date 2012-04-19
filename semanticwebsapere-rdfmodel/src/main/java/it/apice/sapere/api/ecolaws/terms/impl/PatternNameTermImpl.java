@@ -73,7 +73,7 @@ public class PatternNameTermImpl extends AnnotatedVarTermImpl<LSAidValue>
 	}
 	
 	@Override
-	public Term<LSAidValue> clone() throws CloneNotSupportedException {
+	public final Term<LSAidValue> clone() throws CloneNotSupportedException {
 		return new PatternNameTermImpl(this);
 	}
 }

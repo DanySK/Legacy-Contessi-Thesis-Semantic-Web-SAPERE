@@ -36,13 +36,13 @@ public class ScoredMatchResultImpl extends MatchResultImpl implements
 	}
 
 	@Override
-	public final double getScore() {
+	public final double getTotalScore() {
 		return score;
 	}
 
 	@Override
 	public final int compareTo(final ScoredMatchResult o) {
-		return -1 * new Double(score).compareTo(o.getScore());
+		return -1 * new Double(score).compareTo(o.getTotalScore());
 	}
 
 }

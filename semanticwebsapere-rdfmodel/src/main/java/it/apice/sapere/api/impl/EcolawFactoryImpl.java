@@ -94,7 +94,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final Rate<?> createMarkovianRate(final ValueTerm<DoubleValue> rate) {
+	public final Rate<?> createMarkovianRate(
+			final ValueTerm<DoubleValue> rate) {
 		return new MarkovianRateImpl(rate);
 	}
 
@@ -123,8 +124,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> createTypedValueTerm(
-			final Type value) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+			createTypedValueTerm(final Type value) {
 		if (value == null) {
 			throw new IllegalArgumentException("Invalid value");
 		}
@@ -143,8 +144,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
-			final String name) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+	createValueTerm(final String name) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
 		}
@@ -153,8 +154,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ValueTerm<Type> createValueTerm(
-			final String name, final Formula<Type> formula) {
+	public final <Type extends PropertyValue<?>> ValueTerm<Type> 
+			createValueTerm(final String name, final Formula<Type> formula) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
 		}
@@ -167,7 +168,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTerm(
 			final Type... values) {
 		if (values == null || values.length == 0) {
-			throw new IllegalArgumentException("Invalid values (null or empty)");
+			throw new IllegalArgumentException(
+					"Invalid values (null or empty)");
 		}
 
 		final List<Term<Type>> vterms = new LinkedList<Term<Type>>();
@@ -183,16 +185,18 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?>> ListTerm<Type> createListTermFromTerms(
-			final Term<Type>... values) {
+	public final <Type extends PropertyValue<?>> ListTerm<Type> 
+			createListTermFromTerms(final Term<Type>... values) {
 		if (values == null || values.length == 0) {
-			throw new IllegalArgumentException("Invalid values (null or empty)");
+			throw new IllegalArgumentException(
+					"Invalid values (null or empty)");
 		}
 
 		final List<Term<Type>> vterms = new LinkedList<Term<Type>>();
 		for (Term<Type> val : values) {
 			if (val == null) {
-				throw new IllegalArgumentException("Cannot add null values to a list");
+				throw new IllegalArgumentException(
+						"Cannot add null values to a list");
 			}
 			vterms.add(val);
 		}

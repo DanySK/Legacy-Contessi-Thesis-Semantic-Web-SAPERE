@@ -21,7 +21,8 @@ import it.apice.sapere.api.lsas.visitor.LSAVisitor;
  * @param <Type>
  *            Inner type stored inside the Property Value
  */
-public interface PropertyValue<Type> {
+public interface PropertyValue<Type extends Comparable<Type>> extends
+		Comparable<PropertyValue<Type>> {
 
 	/**
 	 * <p>
@@ -99,8 +100,9 @@ public interface PropertyValue<Type> {
 	 * <p>
 	 * Pattern VISITOR.
 	 * </p>
-	 *
-	 * @param visitor The visitor
+	 * 
+	 * @param visitor
+	 *            The visitor
 	 */
 	void accept(LSAVisitor visitor);
 }

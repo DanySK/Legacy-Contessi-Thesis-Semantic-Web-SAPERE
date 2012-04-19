@@ -11,7 +11,7 @@ import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
  * </p>
  * 
  * @author Paolo Contessi
- *
+ * 
  */
 public class ProductImpl extends ChemicalPatternImpl<Product> implements
 		Product {
@@ -20,8 +20,9 @@ public class ProductImpl extends ChemicalPatternImpl<Product> implements
 	 * <p>
 	 * Builds a new {@link ProductImpl}.
 	 * </p>
-	 *
-	 * @param pname Product name
+	 * 
+	 * @param pname
+	 *            Product name
 	 */
 	public ProductImpl(final PatternNameTerm pname) {
 		super(pname);
@@ -31,10 +32,11 @@ public class ProductImpl extends ChemicalPatternImpl<Product> implements
 	 * <p>
 	 * Clone constructor.
 	 * </p>
-	 *
-	 * @param src The source
+	 * 
+	 * @param src
+	 *            The source
 	 */
-	public ProductImpl(ProductImpl src) {
+	public ProductImpl(final ProductImpl src) {
 		super(src);
 	}
 
@@ -44,7 +46,8 @@ public class ProductImpl extends ChemicalPatternImpl<Product> implements
 	}
 
 	@Override
-	public ChemicalPattern<Product> clone() throws CloneNotSupportedException {
+	public final ChemicalPattern<Product> clone()
+			throws CloneNotSupportedException {
 		return new ProductImpl(this);
 	}
 }

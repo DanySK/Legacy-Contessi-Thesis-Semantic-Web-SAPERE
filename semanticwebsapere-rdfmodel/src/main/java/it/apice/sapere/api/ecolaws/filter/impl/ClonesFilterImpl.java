@@ -43,7 +43,7 @@ public class ClonesFilterImpl extends CopyFilterImpl implements ClonesFilter {
 	}
 
 	@Override
-	public Filter clone() throws CloneNotSupportedException {
+	public final Filter clone() throws CloneNotSupportedException {
 		return new ClonesFilterImpl(this);
 	}
 }

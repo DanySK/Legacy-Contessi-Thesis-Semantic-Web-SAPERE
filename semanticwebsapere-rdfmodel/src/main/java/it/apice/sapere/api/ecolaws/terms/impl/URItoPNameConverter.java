@@ -42,7 +42,7 @@ public class URItoPNameConverter implements VarTerm<URIValue> {
 	 * 
 	 * @param src The source
 	 */
-	public URItoPNameConverter(URItoPNameConverter src) {
+	public URItoPNameConverter(final URItoPNameConverter src) {
 		wrapped = src.wrapped;
 	}
 
@@ -107,7 +107,7 @@ public class URItoPNameConverter implements VarTerm<URIValue> {
 	}
 
 	@Override
-	public Term<URIValue> clone() throws CloneNotSupportedException {
+	public final Term<URIValue> clone() throws CloneNotSupportedException {
 		return new URItoPNameConverter(this);
 	}
 }

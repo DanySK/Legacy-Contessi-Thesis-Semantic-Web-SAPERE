@@ -18,5 +18,5 @@ public interface ScoredMatchResult extends MatchResult {
 	 * 
 	 * @return MatchResult Score
 	 */
-	double getScore();
+	double getTotalScore();
 }
