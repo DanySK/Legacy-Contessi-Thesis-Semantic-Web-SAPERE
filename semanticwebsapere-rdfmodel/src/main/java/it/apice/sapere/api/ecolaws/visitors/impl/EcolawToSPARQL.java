@@ -17,9 +17,15 @@ import it.apice.sapere.api.ecolaws.filters.OpFilter;
 import it.apice.sapere.api.ecolaws.formulas.IsFormula;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
 import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
+import it.apice.sapere.api.ecolaws.terms.SDescTerm;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
+import it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions;
+import it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * <p>
@@ -41,6 +47,12 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 
 	/** The query builder. */
 	private final transient StringBuilder query;
+
+	/** Reactants of the eco-law. */
+	private transient Reactant[] lawReactants;
+
+	/** OpFilters of current Reactant. */
+	private transient List<OpFilter> opFilters;
 
 	/** Reference to the current pattern's name. */
 	private transient PatternNameTerm currPatternName;
@@ -65,7 +77,8 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	@Override
 	public void visit(final Ecolaw elaw) {
 		elaw.getRate().accept(this);
-		for (Reactant react : elaw.reactants()) {
+		lawReactants = elaw.reactants();
+		for (Reactant react : lawReactants) {
 			react.accept(this);
 		}
 	}
@@ -90,7 +103,7 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		} else if (filt instanceof ClonesFilter) {
 			ruleLC((ClonesFilter) filt);
 		} else if (filt instanceof ExtendsFilter) {
-			ruleLE((ExtendsFilter) filt);
+			ruleLE((ExtendsFilter) filt, opFilters);
 		}
 	}
 
@@ -101,6 +114,13 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 
 	@Override
 	public void visit(final Reactant reactant) {
+		opFilters = new LinkedList<OpFilter>();
+		for (Filter filt : reactant.filters()) {
+			if (filt instanceof OpFilter) {
+				opFilters.add((OpFilter) filt);
+			}
+		}
+
 		ruleLP(reactant);
 	}
 
@@ -145,13 +165,17 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 *            Input annotated variable term
 	 */
 	private void ruleW(final AnnotatedVarTerm<?> var) {
+		if (var.getFormula() == null) {
+			return;
+		}
+
 		if (var.getFormula() instanceof IsFormula) {
 			// BIND rule
-			query.append(String.format("BIND( %s AS ?%s)", var.getFormula()
+			query.append(String.format("\tBIND( %s AS ?%s)\n", var.getFormula()
 					.getRightOp(), var.getVarName()));
 		} else {
 			// FILTER rule
-			query.append(String.format("FILTER(%s)", var.getFormula()
+			query.append(String.format("\tFILTER(%s)\n", var.getFormula()
 					.getStringRepr()));
 		}
 
@@ -169,8 +193,22 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 *            Input term
 	 */
 	private void ruleTL(final Term<?> term) {
+		ruleTL(term, true);
+	}
+
+	/**
+	 * <p>
+	 * Applies rule [TL]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param term
+	 *            Input term
+	 * @param spaceAfter
+	 *            True in order to append a whitespace after, false otherwise
+	 */
+	private void ruleTL(final Term<?> term, final boolean spaceAfter) {
 		if (term instanceof VarTerm<?>) {
-			ruleTL((VarTerm<?>) term);
+			ruleTL((VarTerm<?>) term, spaceAfter);
 		}
 	}
 
@@ -183,13 +221,29 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 *            Input variable term
 	 */
 	private void ruleTL(final VarTerm<?> term) {
+		ruleTL(term, true);
+	}
+
+	/**
+	 * <p>
+	 * Applies rule [TL]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param term
+	 *            Input variable term
+	 * @param spaceAfter
+	 *            True in order to append a whitespace after, false otherwise
+	 */
+	private void ruleTL(final VarTerm<?> term, final boolean spaceAfter) {
 		if (term.isGround()) {
 			query.append(term.toString());
 		} else {
 			query.append("?" + term.getVarName());
 		}
 
-		query.append(" ");
+		if (spaceAfter) {
+			query.append(" ");
+		}
 	}
 
 	/* ==================== [LP] ==================== */
@@ -220,8 +274,9 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 *            Input clones filter
 	 */
 	private void ruleLC(final ClonesFilter filter) {
-		ruleLE(new ExtendsFilterImpl(filter.getSource()));
-		ruleLE(new ExtendsFilterImpl(new SDescTermImpl(currPatternName)));
+		ruleLE(new ExtendsFilterImpl(filter.getSource()), opFilters);
+		ruleLE(new ExtendsFilterImpl(new SDescTermImpl(currPatternName)),
+				AuxFunctions.getInstance().c(opFilters));
 	}
 
 	/* ==================== [LE] ==================== */
@@ -233,9 +288,137 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 * 
 	 * @param filter
 	 *            Input extends filter
+	 * @param ops
+	 *            List of OpFilters
 	 */
-	private void ruleLE(final ExtendsFilter filter) {
+	private void ruleLE(final ExtendsFilter filter, final List<OpFilter> ops) {
+		query.append("\tFILTER NOT EXISTS {\n");
+		query.append("\t\t").append(currPatternName).append(" ?p ?o .\n");
+		// w
+		for (OpFilter opFilt : ops) {
+			ruleEE(opFilt, filter.getSource());
+		}
 
+		// w'
+		query.append("\t\tFILTER NOT EXISTS {\n");
+		query.append("\t\t\t?")
+				.append(filter.getSource().getVarName().replace(".D", ""))
+				.append(" ?p ?o\n");
+		query.append("\t\t}\n");
+
+		query.append("\t}\n");
+
+		// w''
+		for (OpFilter opFilt : ops) {
+			ruleEEVar(opFilt, filter.getSource());
+		}
+	}
+
+	/* ==================== [EE] ==================== */
+
+	/**
+	 * <p>
+	 * Applies rule [EE]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param filt
+	 *            Input extends filter
+	 * @param y
+	 *            Semantic Description from y.D
+	 */
+	private void ruleEE(final OpFilter filt, final SDescTerm y) {
+		if (filt instanceof AssignFilter) {
+			ruleEEAssign((AssignFilter) filt);
+		} else if (filt instanceof HasNotFilter) {
+			if (filt.getRightTerm().isVar()) {
+				ruleEEVar((HasNotFilter) filt, y);
+			} else {
+				ruleEEHasNot((HasNotFilter) filt);
+			}
+		}
+	}
+
+	/* ===>> [EE=] <<=== */
+
+	/**
+	 * <p>
+	 * Applies rule [EE=]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param filt
+	 *            Input extends filter
+	 */
+	private void ruleEEAssign(final AssignFilter filt) {
+		query.append("\t\tFILTER (?p != ");
+		ruleTL(filt.getLeftTerm(), false);
+		query.append(")\n");
+	}
+
+	/* ===>> [EEn] <<=== */
+
+	/**
+	 * <p>
+	 * Applies rule [EEn]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param filt
+	 *            Input extends filter
+	 */
+	private void ruleEEHasNot(final HasNotFilter filt) {
+		query.append("\t\tFILTER (?p != ");
+		ruleTL(filt.getLeftTerm());
+		query.append("|| ");
+		if (filt.getRightTerm().isGround()) {
+			query.append("(");
+			boolean notFirst = false;
+			for (Term<?> t : filt.getRightTerm().getValue()) {
+				if (notFirst) {
+					query.append(" && ");
+				}
+
+				query.append("?o != ");
+				ruleTL(t, false);
+				notFirst = true;
+			}
+			query.append(")");
+		} else {
+			query.append("true");
+		}
+		query.append(")\n");
+	}
+
+	/* ===>> [EE?] <<=== */
+
+	/**
+	 * <p>
+	 * Applies rule [EE?]. See TR.WP1.2011.06.
+	 * </p>
+	 * 
+	 * @param filt
+	 *            Input op filter
+	 * @param y
+	 *            Semantic Description from y.D
+	 */
+	private void ruleEEVar(final OpFilter filt, final SDescTerm y) {
+		final List<LookUpResult> triples = AuxFunctions.getInstance().look(
+				lawReactants, filt.getRightTerm());
+		query.append("\tFILTER NOT EXISTS {\n");
+		query.append("\t\t").append(currPatternName).append(" ");
+		ruleTL(filt.getLeftTerm());
+		query.append(" ?o .\n");
+		query.append("\t\t").append(y.getVarName().replace(".D", ""))
+				.append(" ");
+		ruleTL(filt.getLeftTerm());
+		query.append(" ?o .\n\t\tFILTER NOT EXISTS {\n");
+		for (LookUpResult res : triples) {
+			query.append("\t\t\t")
+					.append(res.getY().toString().replace(".D", ""))
+					.append(" ").append(res.getT()).append(" ?o\n");
+		}
+		query.append("\t\t}\n");
+		query.append("\t}\n");
+
+		ruleW(filt.getLeftTerm());
 	}
 
 	/* ==================== [LO] ==================== */
@@ -299,15 +482,26 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 
 	/**
 	 * <p>
-	 * Applies rule [LOh]. See TR.WP1.2011.06.
+	 * Applies rule [LOh?]. See TR.WP1.2011.06.
 	 * </p>
 	 * 
 	 * @param filter
 	 *            Input var has filter
 	 */
 	private void ruleLOHasVar(final HasFilter filter) {
-		// TODO Auto-generated method stub
-
+		final List<LookUpResult> triples = AuxFunctions.getInstance().look(
+				lawReactants, filter.getRightTerm());
+		query.append("\tFILTER NOT EXISTS {\n");
+		query.append("\t\t").append(currPatternName).append(" ");
+		ruleTL(filter.getLeftTerm());
+		query.append(" ?o .\n\t\tFILTER NOT EXISTS {\n");
+		for (LookUpResult res : triples) {
+			query.append("\t\t\t").append(res.getY()).append(" ")
+					.append(res.getT()).append(" ?o .\n");
+		}
+		query.append("\t\t}\n");
+		query.append("\t}\n");
+		ruleW(filter.getLeftTerm());
 	}
 
 	/* ===>> [LO-has-not] <<=== */
@@ -337,29 +531,40 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 *            Input ground has-not filter
 	 */
 	private void ruleLOHasNotGround(final HasNotFilter filter) {
-		query.append("FILTER NOT EXISTS { ");
+		query.append("\tFILTER NOT EXISTS {\n");
 		for (Term<?> obj : filter.getRightTerm().getValue()) {
-			query.append(currPatternName).append(" ");
+			query.append("\t\t").append(currPatternName).append(" ");
 			ruleTL(filter.getLeftTerm());
 			ruleTL(obj);
+			query.append(".\n");
 			ruleW(obj);
 		}
 
-		query.append("}");
+		query.append("\t}\n");
 		ruleW(filter.getLeftTerm());
 	}
 
 	/**
 	 * <p>
-	 * Applies rule [LOn]. See TR.WP1.2011.06.
+	 * Applies rule [LOn?]. See TR.WP1.2011.06.
 	 * </p>
 	 * 
 	 * @param filter
 	 *            Input var has-not filter
 	 */
 	private void ruleLOHasNotVar(final HasNotFilter filter) {
-		// TODO Auto-generated method stub
-
+		final List<LookUpResult> triples = AuxFunctions.getInstance().look(
+				lawReactants, filter.getRightTerm());
+		query.append("\tFILTER NOT EXISTS {\n");
+		query.append("\t\t").append(currPatternName).append(" ");
+		ruleTL(filter.getLeftTerm());
+		query.append(" ?o .\n");
+		for (LookUpResult res : triples) {
+			query.append("\t\t").append(res.getY()).append(" ")
+					.append(res.getT()).append(" ?o .\n");
+		}
+		query.append("\t}\n");
+		ruleW(filter.getLeftTerm());
 	}
 
 	/* ===>> [LO-assign] <<=== */
@@ -392,11 +597,12 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		ruleLOHas(new HasFilterImpl(filter.getLeftTerm(), 
 				filter.getRightTerm()));
 
-		query.append("FILTER NOT EXISTS { ").append(currPatternName)
+		query.append("\tFILTER NOT EXISTS {\n\t\t").append(currPatternName)
 				.append(" ");
 		ruleTL(filter.getLeftTerm());
 		query.append("?o ");
-		query.append("FILTER (");
+		query.append(".\n");
+		query.append("\t\tFILTER (");
 
 		boolean notFirst = false;
 		for (Term<?> obj : filter.getRightTerm().getValue()) {
@@ -405,24 +611,44 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 			}
 
 			query.append("o != ");
-			ruleTL(obj);
+			ruleTL(obj, false);
 			notFirst = true;
 		}
 
-		query.append(")").append("}");
+		query.append(")").append("\n\t}\n");
 	}
 
 	/**
 	 * <p>
-	 * Applies rule [LO=]. See TR.WP1.2011.06.
+	 * Applies rule [LO=?]. See TR.WP1.2011.06.
 	 * </p>
 	 * 
 	 * @param filter
 	 *            Input ground assign filter
 	 */
 	private void ruleLOAssignVar(final AssignFilter filter) {
-		// TODO Auto-generated method stub
+		ruleLOHas(new HasFilterImpl(filter.getLeftTerm(), 
+				filter.getRightTerm()));
 
+		final List<LookUpResult> triples = AuxFunctions.getInstance().look(
+				lawReactants, filter.getRightTerm());
+		for (LookUpResult res : triples) {
+			if (!res.getY().equals(currPatternName)
+					&& !res.getT().equals(filter.getLeftTerm())) {
+				query.append("\tFILTER NOT EXISTS {\n");
+				query.append("\t\t").append(res.getY()).append(" ")
+						.append(res.getT())
+						.append(" ?o .\n\t\tFILTER NOT EXISTS {\n");
+
+				query.append("\t\t\t").append(currPatternName).append(" ");
+				ruleW(filter.getLeftTerm());
+				query.append(" ?o .\n");
+				query.append("\t\t}\n");
+				query.append("\t}\n");
+			}
+		}
+
+		ruleW(filter.getLeftTerm());
 	}
 
 	/* ===================== Rules (end) ===================== */
