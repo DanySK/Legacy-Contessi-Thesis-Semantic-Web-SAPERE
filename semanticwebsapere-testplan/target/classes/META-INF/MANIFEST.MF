@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.ecolaws
+ .terms,it.apice.sapere.api.lsas.values,it.apice.sapere.api.ecolaws.fo
+ rmulas,it.apice.sapere.api.ecolaws,org.junit,it.apice.sapere.api.lsas
+ ",it.apice.sapere.api.ecolaws.formulas;uses:="it.apice.sapere.api.eco
+ laws.terms,org.junit,it.apice.sapere.api",it.apice.sapere.api.lsas;us
+ es:="org.junit,it.apice.sapere.api,it.apice.sapere.api.lsas.values,it
+ .apice.sapere.api.lsas.visitor",it.apice.sapere.api.lsas.values;uses:
+ ="it.apice.sapere.api,it.apice.sapere.api.lsas,org.junit,it.apice.sap
+ ere.api.lsas.visitor",it.apice.sapere.space;uses:="junit.framework,it
+ .apice.sapere.api.space.observation,it.apice.sapere.api.lsas,it.apice
+ .sapere.api.lsas.values,it.apice.sapere.api.space,org.junit,it.apice.
+ sapere.api",it.apice.sapere.utils;uses:="com.hp.hpl.jena.rdf.model"
+Built-By: conteit
+Tool: Bnd-0.0.357
+Bundle-Category: sapere-project
+Bundle-Name: SAPERE API Testing Plan
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
+ di di Bologna
+Build-Jdk: 1.6.0_31
+Bundle-Version: 0.0.1
+Bnd-LastModified: 1334922204530
+Bundle-ManifestVersion: 2
+Bundle-Description: This project encloses Testing Plan for SAPERE-APIs
+Import-Package: com.hp.hpl.jena.rdf.model,it.apice.sapere.api,it.apice
+ .sapere.api.ecolaws,it.apice.sapere.api.ecolaws.formulas,it.apice.sap
+ ere.api.ecolaws.terms,it.apice.sapere.api.lsas,it.apice.sapere.api.ls
+ as.values,it.apice.sapere.api.lsas.visitor,it.apice.sapere.api.space,
+ it.apice.sapere.api.space.observation,it.apice.sapere.space,it.apice.
+ sapere.utils,junit.framework,org.junit
+Bundle-SymbolicName: semanticwebsapere-testplan
+Bundle-DocURL: http://apice.unibo.it/
+
