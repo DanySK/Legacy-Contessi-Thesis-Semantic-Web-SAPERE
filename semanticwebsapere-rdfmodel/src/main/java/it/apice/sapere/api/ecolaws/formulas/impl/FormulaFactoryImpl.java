@@ -21,6 +21,10 @@ public class FormulaFactoryImpl implements FormulaFactory {
 	@Override
 	public final <Type> IsFormula<Type> createIsFormula(final String rOpString,
 			final RightOperand<Type> rOp) {
+		if (rOp == null) {
+			throw new IllegalArgumentException("Invalid right operand provided");
+		}
+
 		return new IsFormulaImpl<Type>(rOpString) {
 
 			@Override
@@ -35,6 +39,10 @@ public class FormulaFactoryImpl implements FormulaFactory {
 	public final <Type extends Comparable<Type>> GtFormula<Type> 
 			createGtFormula(final String rOpString, 
 					final RightOperand<Type> rOp) {
+		if (rOp == null) {
+			throw new IllegalArgumentException("Invalid right operand provided");
+		}
+
 		return new GtFormulaImpl<Type>(rOpString) {
 
 			@Override
@@ -49,6 +57,10 @@ public class FormulaFactoryImpl implements FormulaFactory {
 	public final <Type extends Comparable<Type>> GtEqFormula<Type> 
 			createGtEqFormula(final String rOpString, 
 					final RightOperand<Type> rOp) {
+		if (rOp == null) {
+			throw new IllegalArgumentException("Invalid right operand provided");
+		}
+
 		return new GtEqFormulaImpl<Type>(rOpString) {
 
 			@Override
@@ -63,6 +75,10 @@ public class FormulaFactoryImpl implements FormulaFactory {
 	public final <Type extends Comparable<Type>> LtFormula<Type> 
 			createLtFormula(final String rOpString, 
 					final RightOperand<Type> rOp) {
+		if (rOp == null) {
+			throw new IllegalArgumentException("Invalid right operand provided");
+		}
+
 		return new LtFormulaImpl<Type>(rOpString) {
 
 			@Override
@@ -77,6 +93,10 @@ public class FormulaFactoryImpl implements FormulaFactory {
 	public final <Type extends Comparable<Type>> LtEqFormula<Type> 
 			createLtEqFormula(final String rOpString, 
 					final RightOperand<Type> rOp) {
+		if (rOp == null) {
+			throw new IllegalArgumentException("Invalid right operand provided");
+		}
+
 		return new LtEqFormulaImpl<Type>(rOpString) {
 
 			@Override

@@ -20,6 +20,10 @@ import org.junit.Test;
  * <p>
  * THIS CLASS SHOULD NOT BE DIRECTLY EXTENDED
  * </p>
+ * <p><em>
+ * In order to overcome an external bug with generics a dummy variable has been used, 
+ * see {@link http://stackoverflow.com/questions/4829576/javac-error-inconvertible-types-with-generics}.
+ * </em></p>
  * 
  * @author Paolo Contessi
  * @param <ValueType>
@@ -57,13 +61,14 @@ public abstract class AbstractTestPropertyValue<ValueType
 						pval.getLanguageCode());
 			}
 
-			assertTrue(pval.isBoolean() == (val instanceof Boolean));
-			assertTrue(pval.isLiteral() == (val instanceof String));
-			assertTrue(pval.isLSAId() == (val instanceof LSAid));
-			assertTrue(pval.isNumber() == (val instanceof Integer
-					|| val instanceof Long || val instanceof Float 
-					|| val instanceof Double));
-			assertTrue(pval.isURI() == (val instanceof URI));
+			final Object dummy = val;
+			assertTrue(pval.isBoolean() == (dummy instanceof Boolean));
+			assertTrue(pval.isLiteral() == (dummy instanceof String));
+			assertTrue(pval.isLSAId() == (dummy instanceof LSAid));
+			assertTrue(pval.isNumber() == (dummy instanceof Integer
+					|| dummy instanceof Long || dummy instanceof Float 
+					|| dummy instanceof Double));
+			assertTrue(pval.isURI() == (dummy instanceof URI));
 
 			assertEquals(pval, pval);
 			assertTrue(pval.hashCode() == pval.hashCode());

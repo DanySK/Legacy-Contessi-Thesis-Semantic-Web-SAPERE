@@ -66,7 +66,7 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 		}
 
 		formula = boolCond;
-		formula.setLeftOp(varName);
+		formula.setLeftOp("?" + varName);
 	}
 
 	/**

@@ -22,7 +22,7 @@
 <a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../it/apice/sapere/api/lsas/values/AbstractTestBooleanValue.html">AbstractTestBooleanValue</a> <strong class="jxr_keyword">extends</strong>
-<a class="jxr_linenumber" name="15" href="#15">15</a>  		AbstractTestPropertyValue&lt;Boolean&gt; {
+<a class="jxr_linenumber" name="15" href="#15">15</a>  		AbstractTestPropertyValue&lt;Boolean, BooleanValue&gt; {
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
 <a class="jxr_linenumber" name="17" href="#17">17</a>  	@Override
 <a class="jxr_linenumber" name="18" href="#18">18</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> List&lt;Boolean&gt; createValues() {
@@ -35,7 +35,7 @@
 <a class="jxr_linenumber" name="25" href="#25">25</a>  	}
 <a class="jxr_linenumber" name="26" href="#26">26</a>  
 <a class="jxr_linenumber" name="27" href="#27">27</a>  	@Override
-<a class="jxr_linenumber" name="28" href="#28">28</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PropertyValue&lt;Boolean&gt; createPropertyValue(
+<a class="jxr_linenumber" name="28" href="#28">28</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PropertyValue&lt;Boolean, BooleanValue&gt; createPropertyValue(
 <a class="jxr_linenumber" name="29" href="#29">29</a>  			<strong class="jxr_keyword">final</strong> Boolean val) {
 <a class="jxr_linenumber" name="30" href="#30">30</a>  		<strong class="jxr_keyword">return</strong> createFactory().createPropertyValue(val);
 <a class="jxr_linenumber" name="31" href="#31">31</a>  	}

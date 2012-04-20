@@ -189,7 +189,7 @@
 <a class="jxr_linenumber" name="179" href="#179">179</a> <em class="jxr_javadoccomment">	 *            A Value</em>
 <a class="jxr_linenumber" name="180" href="#180">180</a> <em class="jxr_javadoccomment">	 * @return A fresh term</em>
 <a class="jxr_linenumber" name="181" href="#181">181</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="182" href="#182">182</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createTypedValueTerm(
+<a class="jxr_linenumber" name="182" href="#182">182</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createTypedValueTerm(
 <a class="jxr_linenumber" name="183" href="#183">183</a> 			Type value);
 <a class="jxr_linenumber" name="184" href="#184">184</a> 
 <a class="jxr_linenumber" name="185" href="#185">185</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -201,8 +201,8 @@
 <a class="jxr_linenumber" name="191" href="#191">191</a> <em class="jxr_javadoccomment">	 *            A Value</em>
 <a class="jxr_linenumber" name="192" href="#192">192</a> <em class="jxr_javadoccomment">	 * @return A fresh term</em>
 <a class="jxr_linenumber" name="193" href="#193">193</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="194" href="#194">194</a> 	ValueTerm&lt;? <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; createValueTerm(
-<a class="jxr_linenumber" name="195" href="#195">195</a> 			PropertyValue&lt;?&gt; value);
+<a class="jxr_linenumber" name="194" href="#194">194</a> 	ValueTerm&lt;? <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; createValueTerm(
+<a class="jxr_linenumber" name="195" href="#195">195</a> 			PropertyValue&lt;?, ?&gt; value);
 <a class="jxr_linenumber" name="196" href="#196">196</a> 
 <a class="jxr_linenumber" name="197" href="#197">197</a> 	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="198" href="#198">198</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
@@ -216,7 +216,7 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">	 *            Name of the variable</em>
 <a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="209" href="#209">209</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(
+<a class="jxr_linenumber" name="209" href="#209">209</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(
 <a class="jxr_linenumber" name="210" href="#210">210</a> 			String name);
 <a class="jxr_linenumber" name="211" href="#211">211</a> 
 <a class="jxr_linenumber" name="212" href="#212">212</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -233,7 +233,7 @@
 <a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">	 *            Boolean condition for assignment acceptance</em>
 <a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="226" href="#226">226</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(
+<a class="jxr_linenumber" name="226" href="#226">226</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ValueTerm&lt;Type&gt; createValueTerm(
 <a class="jxr_linenumber" name="227" href="#227">227</a> 			String name, Formula&lt;Type&gt; formula);
 <a class="jxr_linenumber" name="228" href="#228">228</a> 
 <a class="jxr_linenumber" name="229" href="#229">229</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -247,7 +247,7 @@
 <a class="jxr_linenumber" name="237" href="#237">237</a> <em class="jxr_javadoccomment">	 *            PropertyValues that compose the list</em>
 <a class="jxr_linenumber" name="238" href="#238">238</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="239" href="#239">239</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="240" href="#240">240</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
+<a class="jxr_linenumber" name="240" href="#240">240</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
 <a class="jxr_linenumber" name="241" href="#241">241</a> 			Type... values);
 <a class="jxr_linenumber" name="242" href="#242">242</a> 
 <a class="jxr_linenumber" name="243" href="#243">243</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -261,7 +261,7 @@
 <a class="jxr_linenumber" name="251" href="#251">251</a> <em class="jxr_javadoccomment">	 *            Terms that compose the list</em>
 <a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="254" href="#254">254</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTermFromTerms(
+<a class="jxr_linenumber" name="254" href="#254">254</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTermFromTerms(
 <a class="jxr_linenumber" name="255" href="#255">255</a> 			Term&lt;Type&gt;... values);
 <a class="jxr_linenumber" name="256" href="#256">256</a> 
 <a class="jxr_linenumber" name="257" href="#257">257</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -276,7 +276,7 @@
 <a class="jxr_linenumber" name="266" href="#266">266</a> <em class="jxr_javadoccomment">	 *            Name of the variable</em>
 <a class="jxr_linenumber" name="267" href="#267">267</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="268" href="#268">268</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="269" href="#269">269</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name);
+<a class="jxr_linenumber" name="269" href="#269">269</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name);
 <a class="jxr_linenumber" name="270" href="#270">270</a> 
 <a class="jxr_linenumber" name="271" href="#271">271</a> 	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="272" href="#272">272</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
@@ -292,7 +292,7 @@
 <a class="jxr_linenumber" name="282" href="#282">282</a> <em class="jxr_javadoccomment">	 *            Boolean condition for assignment acceptance</em>
 <a class="jxr_linenumber" name="283" href="#283">283</a> <em class="jxr_javadoccomment">	 * @return A fresh Term</em>
 <a class="jxr_linenumber" name="284" href="#284">284</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="285" href="#285">285</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name,
+<a class="jxr_linenumber" name="285" href="#285">285</a> 	&lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(String name,
 <a class="jxr_linenumber" name="286" href="#286">286</a> 			Formula&lt;List&lt;Term&lt;Type&gt;&gt;&gt; formula);
 <a class="jxr_linenumber" name="287" href="#287">287</a> 
 <a class="jxr_linenumber" name="288" href="#288">288</a> 	<em class="jxr_javadoccomment">/**</em>

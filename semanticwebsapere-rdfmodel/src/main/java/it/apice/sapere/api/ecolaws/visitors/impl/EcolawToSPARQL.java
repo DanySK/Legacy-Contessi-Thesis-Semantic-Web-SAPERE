@@ -6,8 +6,12 @@ import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
 import it.apice.sapere.api.ecolaws.Term;
+import it.apice.sapere.api.ecolaws.filters.ClonesFilter;
+import it.apice.sapere.api.ecolaws.filters.ExtendsFilter;
+import it.apice.sapere.api.ecolaws.filters.OpFilter;
 import it.apice.sapere.api.ecolaws.formulas.IsFormula;
 import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
+import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
@@ -48,7 +52,7 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		law = anEcolaw;
 		query = new StringBuilder("SELECT DISTINCT * WHERE ");
 	}
-	
+
 	@Override
 	public void visit(final Ecolaw elaw) {
 		elaw.getRate().accept(this);
@@ -57,25 +61,23 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
+	 @SuppressWarnings("rawtypes")
 	@Override
 	public void visit(final Rate<?> rate) {
-		final Object rVal = rate.getRateValue();
-		if (rVal instanceof VarTerm<?> && ((VarTerm) rVal).isVar()) {
-			// TODO Auto-generated method stub
-		}
+		 final Object rVal = rate.getRateValue();
+		 if (rVal instanceof VarTerm<?> && ((VarTerm) rVal).isVar()) {
+			 ruleW((VarTerm<?>) rVal);
+		 }
 	}
 
 	@Override
 	public void visit(final Term<?> term) {
-		// TODO Auto-generated method stub
-
+		// Ignored because following rules order
 	}
 
 	@Override
 	public void visit(final Filter filter) {
-		// TODO Auto-generated method stub
-
+		// Ignored because following rules order
 	}
 
 	@Override
@@ -85,15 +87,56 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 
 	@Override
 	public void visit(final Reactant reactant) {
-		
+		ruleLP(reactant);
 	}
-	
+
+	private void ruleW(final VarTerm<?> var) {
+		if (var instanceof AnnotatedVarTerm<?>) {
+			ruleW((AnnotatedVarTerm<?>) var);
+		}
+	}
+
 	private void ruleW(final AnnotatedVarTerm<?> var) {
 		if (var.getFormula() instanceof IsFormula) {
 			// BIND rule
+			query.append(String.format("BIND( %s AS ?%s)", var.getFormula()
+					.getRightOp(), var.getVarName()));
 		} else {
 			// FILTER rule
+			query.append(String.format("FILTER(%s)", var.getFormula().getStringRepr()));
 		}
+	}
+	
+	private void ruleTL(final VarTerm<?> term) {
+		if (term.isGround()) {
+			query.append(term.toString());
+		} else {
+			query.append("?" + term.getVarName());
+		}
+	}
+	
+	private void ruleLP(final Reactant react) {
+		for (Filter filt : react.filters()) {
+			if (filt instanceof OpFilter) {
+				ruleLO((OpFilter) filt, react.getName());
+			} else if (filt instanceof ClonesFilter) {
+				ruleLC((ClonesFilter) filt, react.getName());
+			} else if (filt instanceof ExtendsFilter) {
+				ruleLE((ExtendsFilter) filt, react.getName());
+			}
+		}
+	}
+	
+	private void ruleLC(final ClonesFilter filter, final PatternNameTerm pname) {
+		
+	}
+	
+	private void ruleLE(final ExtendsFilter filter, final PatternNameTerm pname) {
+		
+	}
+	
+	private void ruleLO(final OpFilter filter, final PatternNameTerm pname) {
+		
 	}
 
 	/**

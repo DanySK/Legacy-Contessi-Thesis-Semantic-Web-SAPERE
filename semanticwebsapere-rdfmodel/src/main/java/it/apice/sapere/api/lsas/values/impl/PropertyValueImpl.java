@@ -10,6 +10,10 @@ import java.net.URI;
  * <p>
  * Implementation of PropertyValue.
  * </p>
+ * <p><em>
+ * In order to overcome an external bug with generics a dummy variable has been used, 
+ * see {@link http://stackoverflow.com/questions/4829576/javac-error-inconvertible-types-with-generics}.
+ * </em></p>
  * 
  * @author Paolo Contessi
  * 
@@ -62,28 +66,33 @@ public class PropertyValueImpl<Type extends Comparable<Type>, CompType>
 
 	@Override
 	public final boolean isURI() {
-		return value instanceof URI;
+		final Object dummy = value;
+		return dummy instanceof URI;
 	}
 
 	@Override
 	public final boolean isLiteral() {
-		return value instanceof String;
+		final Object dummy = value;
+		return dummy instanceof String;
 	}
 
 	@Override
 	public final boolean isNumber() {
-		return value instanceof Integer || value instanceof Long
-				|| value instanceof Float || value instanceof Double;
+		final Object dummy = value;
+		return dummy instanceof Integer || dummy instanceof Long
+				|| dummy instanceof Float || dummy instanceof Double;
 	}
 
 	@Override
 	public final boolean isBoolean() {
-		return value instanceof Boolean;
+		final Object dummy = value;
+		return dummy instanceof Boolean;
 	}
 
 	@Override
 	public final boolean isLSAId() {
-		return value instanceof LSAid;
+		final Object dummy = value;
+		return dummy instanceof LSAid;
 	}
 
 	@Override

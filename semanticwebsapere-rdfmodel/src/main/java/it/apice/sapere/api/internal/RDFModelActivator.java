@@ -1,11 +1,15 @@
 package it.apice.sapere.api.internal;
 
-import java.util.Hashtable;
-
+import it.apice.sapere.api.EcolawFactory;
 import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
+import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
+import it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl;
+import it.apice.sapere.api.impl.EcolawFactoryImpl;
 import it.apice.sapere.api.impl.LSAFactoryImpl;
 import it.apice.sapere.api.impl.LSAParserImpl;
+
+import java.util.Hashtable;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -30,6 +34,12 @@ public class RDFModelActivator implements BundleActivator {
 	/** LSA-Parser Service registration. */
 	private ServiceRegistration<?> lsaParserServiceReg;
 
+	/** Ecolaw-Factory Service registration. */
+	private ServiceRegistration<?> ecolawFactoryServiceReg;
+	
+	/** Formula-Factory Service registration. */
+	private ServiceRegistration<?> formulaFactoryServiceReg;
+
 	/** Node-Uri property key. */
 	private static final transient String NODE_URI_PROPERTY = "node-uri";
 
@@ -38,11 +48,11 @@ public class RDFModelActivator implements BundleActivator {
 		System.out.println("SemanticWebSAPERE [RDFModel]: Starting up..");
 		final PrivilegedLSAFactory lsaFactory = initLSAFactoryService(context);
 		initLSAParserService(context, lsaFactory);
+		initEcolawFactoryService(context);
+		initFormulaFactoryService(context);
 
 		System.out.println("SemanticWebSAPERE [RDFModel]: Node URI = "
 				+ nodeURI);
-		System.out.println("SemanticWebSAPERE [RDFModel]: "
-				+ "LSAFactory REGISTERED");
 	}
 
 	/**
@@ -88,8 +98,46 @@ public class RDFModelActivator implements BundleActivator {
 		lsaFactoryServiceReg = context.registerService(
 				PrivilegedLSAFactory.class.getName(), lsaFactory,
 				declareProps());
+		System.out.println("SemanticWebSAPERE [RDFModel]: "
+				+ "LSAFactory REGISTERED");
 
 		return lsaFactory;
+	}
+
+	/**
+	 * <p>
+	 * Registers the Ecolaw-Factory Service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 */
+	private void initEcolawFactoryService(
+			final BundleContext context) {
+		ecolawFactoryServiceReg = context.registerService(
+				EcolawFactory.class.getName(), new EcolawFactoryImpl(),
+				declareProps());
+		System.out.println("SemanticWebSAPERE [RDFModel]: "
+				+ "EcolawFactory REGISTERED");
+
+	}
+	
+	/**
+	 * <p>
+	 * Registers the Formula-Factory Service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 */
+	private void initFormulaFactoryService(
+			final BundleContext context) {
+		formulaFactoryServiceReg = context.registerService(
+				FormulaFactory.class.getName(), new FormulaFactoryImpl(),
+				declareProps());
+		System.out.println("SemanticWebSAPERE [RDFModel]: "
+				+ "FormulaFactory REGISTERED");
+
 	}
 
 	/**
@@ -113,15 +161,29 @@ public class RDFModelActivator implements BundleActivator {
 		if (lsaParserServiceReg != null) {
 			context.ungetService(lsaParserServiceReg.getReference());
 			System.out.println("SemanticWebSAPERE [RDFModel]: "
-					+ "LSA-Parser UNREGISTERED.");
+					+ "LSAParser UNREGISTERED.");
 			lsaParserServiceReg = null;
 		}
 
 		if (lsaFactoryServiceReg != null) {
 			context.ungetService(lsaFactoryServiceReg.getReference());
 			System.out.println("SemanticWebSAPERE [RDFModel]: "
-					+ "LSA-Factory UNREGISTERED.");
+					+ "LSAFactory UNREGISTERED.");
 			lsaFactoryServiceReg = null;
+		}
+		
+		if (ecolawFactoryServiceReg != null) {
+			context.ungetService(ecolawFactoryServiceReg.getReference());
+			System.out.println("SemanticWebSAPERE [RDFModel]: "
+					+ "EcolawFactory UNREGISTERED.");
+			ecolawFactoryServiceReg = null;
+		}
+		
+		if (formulaFactoryServiceReg != null) {
+			context.ungetService(formulaFactoryServiceReg.getReference());
+			System.out.println("SemanticWebSAPERE [RDFModel]: "
+					+ "FormulaFactory UNREGISTERED.");
+			formulaFactoryServiceReg = null;
 		}
 	}
 }

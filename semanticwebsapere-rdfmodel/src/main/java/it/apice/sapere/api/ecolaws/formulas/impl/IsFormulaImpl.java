@@ -27,6 +27,7 @@ public abstract class IsFormulaImpl<Type> extends AbstractFormulaImpl<Type>
 	public IsFormulaImpl(final String rightOperandString) {
 		super();
 		setRightOp(rightOperandString);
+		setOperator("=");
 	}
 
 	@Override

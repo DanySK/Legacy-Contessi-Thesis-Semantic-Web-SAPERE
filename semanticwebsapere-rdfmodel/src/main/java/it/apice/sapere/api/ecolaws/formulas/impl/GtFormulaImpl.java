@@ -26,6 +26,7 @@ public abstract class GtFormulaImpl<Type extends Comparable<Type>> extends
 	public GtFormulaImpl(final String rightOperandString) {
 		super();
 		setRightOp(rightOperandString);
+		setOperator(">");
 	}
 
 	@Override

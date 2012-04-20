@@ -26,6 +26,7 @@ public abstract class LtEqFormulaImpl<Type extends Comparable<Type>> extends
 	public LtEqFormulaImpl(final String rightOperandString) {
 		super();
 		setRightOp(rightOperandString);
+		setOperator("<=");
 	}
 
 	@Override
