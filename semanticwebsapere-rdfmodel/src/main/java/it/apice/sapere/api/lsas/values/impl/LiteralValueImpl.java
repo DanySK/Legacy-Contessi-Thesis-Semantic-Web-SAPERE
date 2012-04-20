@@ -2,7 +2,6 @@ package it.apice.sapere.api.lsas.values.impl;
 
 import it.apice.sapere.api.lsas.values.LiteralValue;
 
-
 /**
  * <p>
  * Implementation of StringValue.
@@ -12,8 +11,8 @@ import it.apice.sapere.api.lsas.values.LiteralValue;
  * 
  * @see StringValue
  */
-public class LiteralValueImpl extends PropertyValueImpl<String, LiteralValue> implements
-		LiteralValue {
+public class LiteralValueImpl extends PropertyValueImpl<String, LiteralValue>
+		implements LiteralValue {
 
 	/**
 	 * <p>

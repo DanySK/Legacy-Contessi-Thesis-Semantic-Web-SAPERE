@@ -10,10 +10,12 @@ import java.net.URI;
  * <p>
  * Implementation of PropertyValue.
  * </p>
- * <p><em>
- * In order to overcome an external bug with generics a dummy variable has been used, 
- * see {@link http://stackoverflow.com/questions/4829576/javac-error-inconvertible-types-with-generics}.
- * </em></p>
+ * <p>
+ * In order to overcome an external bug with generics a dummy variable has been
+ * used, see {@link http
+ * ://stackoverflow.com/questions/4829576/javac-error-inconvertible
+ * -types-with-generics}.
+ * </p>
  * 
  * @author Paolo Contessi
  * 

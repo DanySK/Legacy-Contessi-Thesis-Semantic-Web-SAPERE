@@ -165,8 +165,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
-			final Type... values) {
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> 
+			createListTerm(final Type... values) {
 		if (values == null || values.length == 0) {
 			throw new IllegalArgumentException(
 					"Invalid values (null or empty)");
@@ -205,8 +205,8 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
-			final String name) {
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> 
+			createListTerm(final String name) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
 		}
@@ -279,8 +279,9 @@ public class EcolawFactoryImpl implements EcolawFactory {
 	}
 
 	@Override
-	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> createListTerm(
-			final String name, final Formula<List<Term<Type>>> formula) {
+	public final <Type extends PropertyValue<?, ?>> ListTerm<Type> 
+			createListTerm(final String name, 
+					final Formula<List<Term<Type>>> formula) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("Invalid name");
 		}

@@ -37,7 +37,8 @@ public abstract class AbstractTestLSAFactory extends AbstractLSAModelTest {
 		}
 
 		try {
-			factory.createProperty(createValidURI(), new PropertyValue<?, ?>[] {});
+			factory.createProperty(createValidURI(),
+					new PropertyValue<?, ?>[] {});
 			fail("Unwanted Property(ok, empty)");
 		} catch (Exception ex) {
 			assertTrue(true);

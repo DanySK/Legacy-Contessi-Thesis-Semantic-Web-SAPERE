@@ -37,12 +37,13 @@ public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 0);
 
-		final PropertyValue<?, ?> val = createFactory().createPropertyValue(true);
+		final PropertyValue<?, ?> val = createFactory().createPropertyValue(
+				true);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.addValue(val).hasValue(val));
 
-		final PropertyValue<?, ?> val2 = createFactory()
-				.createPropertyValue(false);
+		final PropertyValue<?, ?> val2 = createFactory().createPropertyValue(
+				false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -61,15 +62,16 @@ public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 	@Test
 	public final void testProperty() throws Exception {
 		final URI propName = new URI("http://localhost:8080/sapere#prop");
-		final PropertyValue<?, ?> val = createFactory().createPropertyValue(true);
+		final PropertyValue<?, ?> val = createFactory().createPropertyValue(
+				true);
 		final Property prop = createFactory().createProperty(propName, val);
 
 		assertNotNull("Why no property has been created?", prop);
 		assertTrue("Property should have no values", prop.values().length == 1);
 		assertTrue(prop.hasValue(val));
 
-		final PropertyValue<?, ?> val2 = createFactory()
-				.createPropertyValue(false);
+		final PropertyValue<?, ?> val2 = createFactory().createPropertyValue(
+				false);
 		prop.changeValue(val, val2);
 		assertFalse(prop.hasValue(val));
 		assertTrue(prop.hasValue(val2));
@@ -77,8 +79,8 @@ public abstract class AbstractTestProperty extends AbstractLSAModelTest {
 		assertTrue(prop.hasValue(val));
 
 		final URI prop2Name = new URI("http://localhost:8080/sapere#prop2");
-		final Property prop2 = createFactory()
-				.createProperty(prop2Name, val, val2);
+		final Property prop2 = createFactory().createProperty(prop2Name, val,
+				val2);
 		assertTrue(prop.values().length == 2);
 		assertFalse(
 				"Two properties should be equals only if their name are equal",

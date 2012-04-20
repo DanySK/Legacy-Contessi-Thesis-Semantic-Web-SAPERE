@@ -29,7 +29,8 @@ public abstract class AbstractTestFloatValue extends
 	}
 
 	@Override
-	protected final PropertyValue<Float, FloatValue> createPropertyValue(final Float val) {
+	protected final PropertyValue<Float, FloatValue> createPropertyValue(
+			final Float val) {
 		return createFactory().createPropertyValue(val);
 	}
 

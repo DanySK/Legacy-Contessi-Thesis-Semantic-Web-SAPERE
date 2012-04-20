@@ -32,7 +32,8 @@ import org.junit.Test;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest {
+public abstract class AbstractTestEcolawFactory 
+		extends AbstractEcolawModelTest {
 
 	/** Reference to an Ecolaw Factory. */
 	private final transient EcolawFactory factory = createEcolawFactory();
@@ -254,7 +255,8 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 		}
 
 		try {
-			factory.<BooleanValue> createListTermFromTerms((ValueTerm<BooleanValue>[]) null);
+			factory.<BooleanValue> createListTermFromTerms(
+					(ValueTerm<BooleanValue>[]) null);
 			Assert.fail("Strange ListTerm (3)");
 		} catch (Exception ex) {
 			Assert.assertTrue(ex instanceof IllegalArgumentException);
@@ -541,21 +543,21 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 				.addReactant(
 						factory.createReactant(field)
 								.assign(pumpSource,
-										factory.<LSAidValue> createListTermFromTerms(factory
-												.<LSAidValue> createValueTerm("L")))
+							factory.<LSAidValue> createListTermFromTerms(factory
+									.<LSAidValue> createValueTerm("L")))
 								.assign(pumpTime,
-										factory.<LongValue> createListTermFromTerms(tVar)))
+							factory.<LongValue> createListTermFromTerms(tVar)))
 				.addReactant(
 						factory.createReactant(field2)
 								.clone(factory.createSDescTerm(field))
 								.assign(pumpTime,
-										factory.<LongValue> createListTermFromTerms(factory
+							factory.<LongValue> createListTermFromTerms(factory
 												.<LongValue> createValueTerm(
 														"T2",
 														createGtFormula(tVar))))
 								.assign(pumpDiffTime,
-										factory.<LongValue> createListTermFromTerms(factory
-												.<LongValue> createValueTerm("DT"))))
+							factory.<LongValue> createListTermFromTerms(factory
+								.<LongValue> createValueTerm("DT"))))
 				.addProduct(
 						factory.createProduct(field).clone(
 								factory.createSDescTerm(field2)));
@@ -618,19 +620,19 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 				.addReactant(
 						factory.createReactant(src)
 								.has(bondRequest,
-										factory.createListTermFromTerms(bondReq))
+							factory.createListTermFromTerms(bondReq))
 								.hasNot(b,
-										factory.createListTermFromTerms(target)))
+							factory.createListTermFromTerms(target)))
 				.addReactant(
 						factory.createReactant(bondReq)
 								.has(sapereType,
-										factory.createListTermFromTerms(bondRequestPV))
+							factory.createListTermFromTerms(bondRequestPV))
 								.assign(bondProp,
-										factory.<URIValue> createListTermFromTerms(b
-												.toValueTerm()))
+							factory.<URIValue> createListTermFromTerms(b
+									.toValueTerm()))
 								.assign(tProp,
-										factory.<URIValue> createListTermFromTerms(prop
-												.toValueTerm()))
+							factory.<URIValue> createListTermFromTerms(prop
+									.toValueTerm()))
 								.assign(tValues, values))
 				.addProduct(
 						factory.createProduct(src).has(b,
@@ -661,9 +663,10 @@ public abstract class AbstractTestEcolawFactory extends AbstractEcolawModelTest 
 	 *            minor value)
 	 * @return The formula
 	 */
-	private Formula<LongValue> createGtFormula(final ValueTerm<LongValue> tVar) {
-		return createFormulaFactory().<LongValue> createGtFormula(
-				"?T", new RightOperand<LongValue>() {
+	private Formula<LongValue> createGtFormula(
+			final ValueTerm<LongValue> tVar) {
+		return createFormulaFactory().<LongValue> createGtFormula("?T",
+				new RightOperand<LongValue>() {
 
 					@Override
 					public LongValue rightOperand() {

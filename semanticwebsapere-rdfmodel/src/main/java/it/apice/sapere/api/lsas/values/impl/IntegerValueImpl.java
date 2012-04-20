@@ -11,8 +11,8 @@ import it.apice.sapere.api.lsas.values.IntegerValue;
  * 
  * @see IntegerValue
  */
-public class IntegerValueImpl extends PropertyValueImpl<Integer, IntegerValue> implements
-		IntegerValue {
+public class IntegerValueImpl extends PropertyValueImpl<Integer, IntegerValue>
+		implements IntegerValue {
 
 	/**
 	 * <p>

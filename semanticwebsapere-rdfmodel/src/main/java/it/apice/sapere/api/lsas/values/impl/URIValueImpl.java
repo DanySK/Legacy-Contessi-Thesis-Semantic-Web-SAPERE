@@ -13,7 +13,8 @@ import it.apice.sapere.api.lsas.values.URIValue;
  * 
  * @see URIValue
  */
-public class URIValueImpl extends PropertyValueImpl<URI, URIValue> implements URIValue {
+public class URIValueImpl extends PropertyValueImpl<URI, URIValue> implements
+		URIValue {
 
 	/**
 	 * <p>

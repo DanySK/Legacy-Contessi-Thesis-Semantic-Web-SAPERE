@@ -61,13 +61,13 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		}
 	}
 
-	 @SuppressWarnings("rawtypes")
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void visit(final Rate<?> rate) {
-		 final Object rVal = rate.getRateValue();
-		 if (rVal instanceof VarTerm<?> && ((VarTerm) rVal).isVar()) {
-			 ruleW((VarTerm<?>) rVal);
-		 }
+		final Object rVal = rate.getRateValue();
+		if (rVal instanceof VarTerm<?> && ((VarTerm) rVal).isVar()) {
+			ruleW((VarTerm<?>) rVal);
+		}
 	}
 
 	@Override
@@ -103,10 +103,11 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 					.getRightOp(), var.getVarName()));
 		} else {
 			// FILTER rule
-			query.append(String.format("FILTER(%s)", var.getFormula().getStringRepr()));
+			query.append(String.format("FILTER(%s)", var.getFormula()
+					.getStringRepr()));
 		}
 	}
-	
+
 	private void ruleTL(final VarTerm<?> term) {
 		if (term.isGround()) {
 			query.append(term.toString());
@@ -114,7 +115,7 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 			query.append("?" + term.getVarName());
 		}
 	}
-	
+
 	private void ruleLP(final Reactant react) {
 		for (Filter filt : react.filters()) {
 			if (filt instanceof OpFilter) {
@@ -126,17 +127,17 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 			}
 		}
 	}
-	
+
 	private void ruleLC(final ClonesFilter filter, final PatternNameTerm pname) {
-		
+
 	}
-	
+
 	private void ruleLE(final ExtendsFilter filter, final PatternNameTerm pname) {
-		
+
 	}
-	
+
 	private void ruleLO(final OpFilter filter, final PatternNameTerm pname) {
-		
+
 	}
 
 	/**

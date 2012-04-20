@@ -1,70 +1,244 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="18.65" errors="0" skipped="0" tests="7" name="it.apice.sapere.space.TestLSAspace">
+<testsuite failures="0" time="17.939" errors="1" skipped="0" tests="7" name="it.apice.sapere.space.TestLSAspace">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_23\jre\bin"/>
-    <property name="java.vm.version" value="19.0-b09"/>
-    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
-    <property name="java.vendor.url" value="http://java.sun.com/"/>
-    <property name="path.separator" value=";"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.6-b01-415"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11M3635"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
     <property name="user.country" value="IT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="Service Pack 2"/>
+    <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\ConteIt\Desktop\THESIS\sharing\semanticwebsapere"/>
-    <property name="java.runtime.version" value="1.6.0_23-b04"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\endorsed"/>
-    <property name="os.arch" value="x86"/>
-    <property name="java.io.tmpdir" value="C:\Users\ConteIt\AppData\Local\Temp\"/>
+    <property name="user.dir" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere"/>
+    <property name="java.runtime.version" value="1.6.0_31-b04-415-11M3635"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0y/lbhy86kn1rs50xzlxkbmzlqm0000gn/T/"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
-    <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows Vista"/>
-    <property name="net.sourceforge.cobertura.datafile" value="C:\Users\ConteIt\Desktop\THESIS\sharing\semanticwebsapere\semanticwebsapere-rdfspace\target\cobertura\cobertura.ser"/>
-    <property name="classworlds.conf" value="C:\Users\ConteIt\Desktop\THESIS\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf7466835247243879085.tmp"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.6.0_23\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\PC Connectivity Solution\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\10.0\DLLShared\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\Common Files\DivX Shared\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files (x86)\Altova\AltovaXML2010;C:\Program Files (x86)\MaudeFW\cygwin\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\ConteIt\pax-scripts\pax-construct-1.4\bin;C:\Users\ConteIt\apache-maven-3.0.4\bin;C:\Ruby193\bin;C:\Sun\SDK\bin;C:\Sun\SDK\bin;ï/Ã"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/cobertura/cobertura.ser"/>
+    <property name="classworlds.conf" value="/Users/conteit/Desktop/THESIS/workspace/.metadata/.plugins/org.eclipse.m2e.core/launches/m2conf6908466093964179860.tmp"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
-    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
-    <property name="os.version" value="6.0"/>
-    <property name="user.home" value="C:\Users\ConteIt"/>
-    <property name="user.timezone" value="Europe/Berlin"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.7.3"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/conteit"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
     <property name="java.specification.version" value="1.6"/>
-    <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="ConteIt"/>
-    <property name="java.class.path" value="/C:/Users/ConteIt/Desktop/eclipse-tesi/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.0.200.20111228-1245/jars/plexus-classworlds-2.4.jar"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="conteit"/>
+    <property name="java.class.path" value="/Applications/Eclipse (Indigo w. Xtext)/plugins/org.eclipse.m2e.maven.runtime_1.0.100.20110804-1717/jars/plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.0"/>
-    <property name="sun.arch.data.model" value="32"/>
-    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.6.0_23\jre"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean site:site site:attach-descriptor site:deploy"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="it"/>
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.6.0_23"/>
-    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\lib\modules\jdk.boot.jar;C:\Program Files (x86)\Java\jdk1.6.0_23\jre\classes"/>
-    <property name="java.vendor" value="Sun Microsystems Inc."/>
-    <property name="maven.home" value="C:\Users\ConteIt\Desktop\THESIS\sharing\semanticwebsapere\EMBEDDED"/>
-    <property name="file.separator" value="\"/>
-    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="java.version" value="1.6.0_31"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="maven.home" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="project.build.outputDirectory" value="C:\Users\ConteIt\Desktop\THESIS\sharing\semanticwebsapere\semanticwebsapere-rdfspace\target\generated-classes\cobertura"/>
-    <property name="sun.desktop" value="windows"/>
-    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="project.build.outputDirectory" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/generated-classes/cobertura"/>
+    <property name="mrj.version" value="1070.1.6.0_31-415"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="4.396" classname="it.apice.sapere.space.TestLSAspace" name="testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="1.841" classname="it.apice.sapere.space.TestLSAspace" name="testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="1.925" classname="it.apice.sapere.space.TestLSAspace" name="testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="3.104" classname="it.apice.sapere.space.TestLSAspace" name="testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="2.984" classname="it.apice.sapere.space.TestLSAspace" name="testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="2.305" classname="it.apice.sapere.space.TestLSAspace" name="testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
-  <testcase time="2.095" classname="it.apice.sapere.space.TestLSAspace" name="testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@fd54d6"/>
+  <testcase time="3.762" classname="it.apice.sapere.space.TestLSAspace" name="testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de">
+    <error message="it.apice.sapere.api.lsas.values.PropertyValue.getValue()Ljava/lang/Object;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: it.apice.sapere.api.lsas.values.PropertyValue.getValue()Ljava/lang/Object;
+	at it.apice.sapere.lsas.visitors.impl.InjectorVisitorImpl.visit(InjectorVisitorImpl.java:90)
+	at it.apice.sapere.api.lsas.values.impl.PropertyValueImpl.accept(PropertyValueImpl.java:154)
+	at it.apice.sapere.lsas.visitors.impl.InjectorVisitorImpl.visit(InjectorVisitorImpl.java:72)
+	at it.apice.sapere.api.lsas.impl.PropertyImpl.accept(PropertyImpl.java:186)
+	at it.apice.sapere.lsas.visitors.impl.InjectorVisitorImpl.visit(InjectorVisitorImpl.java:84)
+	at it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl.accept(SemanticDescriptionImpl.java:161)
+	at it.apice.sapere.lsas.visitors.impl.InjectorVisitorImpl.visit(InjectorVisitorImpl.java:110)
+	at it.apice.sapere.api.lsas.impl.LSAImpl.accept(LSAImpl.java:129)
+	at it.apice.sapere.space.impl.LSAspaceImpl.update(LSAspaceImpl.java:240)
+	at it.apice.sapere.space.AbstractTestLSAspace.testScenario(AbstractTestLSAspace.java:281)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>0    [main] INFO  org.ops4j.pax.exam.spi.DefaultExamSystem  - Pax Exam System (Version: 2.4.0.RC1) created.
+ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@31304043]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [com.springsource.org.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+SemanticWebSAPERE [RDFModel]: LSAParser REGISTERED
+SemanticWebSAPERE [RDFModel]: Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#nodeeaae1f62-6c3b-4024-a569-63f05be2f022
+SemanticWebSAPERE [RDFModel]: LSAFactory REGISTERED
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+SemanticWebSAPERE [RDFSpace]: Starting up..
+SemanticWebSAPERE [RDFSpace]: LSA-space REGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfspace]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-8db0a942-6482-4fcd-a467-4ab4e04e759a]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b3541704-41a1-459a-a232-570722fcbc8d, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930, }, ManifestEntry{ key=PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }, ManifestEntry{ key=PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75 to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3 to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b3541704-41a1-459a-a232-570722fcbc8d to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b3541704-41a1-459a-a232-570722fcbc8d&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6 to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568 to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930 to be in PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testScenario in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-8db0a942-6482-4fcd-a467-4ab4e04e759a]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b3541704-41a1-459a-a232-570722fcbc8d, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-7831104b-5f59-4a4f-ac88-aa84dfd58b75,PaxExam-f1fff171-8b80-453a-8cc2-e03bdba759b3,PaxExam-b3541704-41a1-459a-a232-570722fcbc8d,PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6,PaxExam-ddaf0cce-d43e-49e5-88f3-859cb967176f,PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568,PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930, }, ManifestEntry{ key=PaxExam-754a44e0-0950-48d9-99c3-1d0564be9be6, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }, ManifestEntry{ key=PaxExam-70b8e6aa-0f0b-408e-9480-c9344b705568, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-7caae638-0a77-4843-81cd-9084b5a5b930, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@d89d7eb.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFSpace]: Stopping..
+SemanticWebSAPERE [RDFSpace]: LSA-space UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+SemanticWebSAPERE [RDFModel]: Stopping..
+SemanticWebSAPERE [RDFModel]: LSA-Parser UNREGISTERED.
+SemanticWebSAPERE [RDFModel]: LSA-Factory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [com.springsource.org.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+</system-out>
+    <system-err>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/conteit/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/conteit/.m2/repository/ch/qos/logback/logback-classic/1.0.1/logback-classic-1.0.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:19/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@6b98e8b4] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@53004901].
+log4j:ERROR Could not instantiate appender named &quot;A1&quot;.
+log4j:WARN No appenders could be found for logger (com.hp.hpl.jena.sparql.mgt.ARQMgt).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+</system-err>
+  </testcase>
+  <testcase time="2.394" classname="it.apice.sapere.space.TestLSAspace" name="testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
+  <testcase time="2.259" classname="it.apice.sapere.space.TestLSAspace" name="testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
+  <testcase time="2.138" classname="it.apice.sapere.space.TestLSAspace" name="testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
+  <testcase time="2.379" classname="it.apice.sapere.space.TestLSAspace" name="testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
+  <testcase time="2.851" classname="it.apice.sapere.space.TestLSAspace" name="testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
+  <testcase time="2.156" classname="it.apice.sapere.space.TestLSAspace" name="testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@a19b1de"/>
 </testsuite>

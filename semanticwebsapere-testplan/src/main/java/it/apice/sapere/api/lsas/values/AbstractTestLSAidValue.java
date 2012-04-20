@@ -24,7 +24,7 @@ public abstract class AbstractTestLSAidValue extends
 		final List<LSAid> res = new ArrayList<LSAid>(NUM_OF_IDS);
 
 		for (int count = 0; count < NUM_OF_IDS; count++) {
-			//res.add(createFactory().createLSAid());
+			// res.add(createFactory().createLSAid());
 			final LSAid id = createFactory().createLSAid();
 			System.out.println(id);
 			res.add(id);
@@ -34,7 +34,8 @@ public abstract class AbstractTestLSAidValue extends
 	}
 
 	@Override
-	protected final PropertyValue<LSAid, LSAidValue> createPropertyValue(final LSAid val) {
+	protected final PropertyValue<LSAid, LSAidValue> createPropertyValue(
+			final LSAid val) {
 		return createFactory().createPropertyValue(val);
 	}
 

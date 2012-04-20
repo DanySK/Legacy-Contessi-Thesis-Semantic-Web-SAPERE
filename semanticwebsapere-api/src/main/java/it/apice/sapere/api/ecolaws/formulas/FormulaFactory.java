@@ -1,12 +1,10 @@
 package it.apice.sapere.api.ecolaws.formulas;
 
-import it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm;
-import it.apice.sapere.api.ecolaws.terms.Formula;
 
 /**
  * <p>
- * This interface models a factory, capable of creating a {@link Formula} for
- * {@link AnnotatedVarTerm}.
+ * This interface models a factory, capable of creating a Formula for
+ * AnnotatedVarTerm.
  * </p>
  * 
  * @author Paolo Contessi

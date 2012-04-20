@@ -28,7 +28,8 @@ public abstract class AbstractTestLongValue extends
 	}
 
 	@Override
-	protected final PropertyValue<Long, LongValue> createPropertyValue(final Long val) {
+	protected final PropertyValue<Long, LongValue> createPropertyValue(
+			final Long val) {
 		return createFactory().createPropertyValue(val);
 	}
 

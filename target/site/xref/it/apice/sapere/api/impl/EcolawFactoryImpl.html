@@ -175,8 +175,8 @@
 <a class="jxr_linenumber" name="165" href="#165">165</a> 
 <a class="jxr_linenumber" name="166" href="#166">166</a> 	@SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
 <a class="jxr_linenumber" name="167" href="#167">167</a> 	@Override
-<a class="jxr_linenumber" name="168" href="#168">168</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
-<a class="jxr_linenumber" name="169" href="#169">169</a> 			<strong class="jxr_keyword">final</strong> Type... values) {
+<a class="jxr_linenumber" name="168" href="#168">168</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="169" href="#169">169</a> 			createListTerm(<strong class="jxr_keyword">final</strong> Type... values) {
 <a class="jxr_linenumber" name="170" href="#170">170</a> 		<strong class="jxr_keyword">if</strong> (values == <strong class="jxr_keyword">null</strong> || values.length == 0) {
 <a class="jxr_linenumber" name="171" href="#171">171</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(
 <a class="jxr_linenumber" name="172" href="#172">172</a> 					<span class="jxr_string">"Invalid values (null or empty)"</span>);
@@ -215,8 +215,8 @@
 <a class="jxr_linenumber" name="205" href="#205">205</a> 	}
 <a class="jxr_linenumber" name="206" href="#206">206</a> 
 <a class="jxr_linenumber" name="207" href="#207">207</a> 	@Override
-<a class="jxr_linenumber" name="208" href="#208">208</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
-<a class="jxr_linenumber" name="209" href="#209">209</a> 			<strong class="jxr_keyword">final</strong> String name) {
+<a class="jxr_linenumber" name="208" href="#208">208</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="209" href="#209">209</a> 			createListTerm(<strong class="jxr_keyword">final</strong> String name) {
 <a class="jxr_linenumber" name="210" href="#210">210</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
 <a class="jxr_linenumber" name="211" href="#211">211</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
 <a class="jxr_linenumber" name="212" href="#212">212</a> 		}
@@ -289,31 +289,32 @@
 <a class="jxr_linenumber" name="279" href="#279">279</a> 	}
 <a class="jxr_linenumber" name="280" href="#280">280</a> 
 <a class="jxr_linenumber" name="281" href="#281">281</a> 	@Override
-<a class="jxr_linenumber" name="282" href="#282">282</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; createListTerm(
-<a class="jxr_linenumber" name="283" href="#283">283</a> 			<strong class="jxr_keyword">final</strong> String name, <strong class="jxr_keyword">final</strong> Formula&lt;List&lt;Term&lt;Type&gt;&gt;&gt; formula) {
-<a class="jxr_linenumber" name="284" href="#284">284</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
-<a class="jxr_linenumber" name="285" href="#285">285</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
-<a class="jxr_linenumber" name="286" href="#286">286</a> 		}
-<a class="jxr_linenumber" name="287" href="#287">287</a> 
-<a class="jxr_linenumber" name="288" href="#288">288</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ListTermImpl&lt;Type&gt;(name, formula);
-<a class="jxr_linenumber" name="289" href="#289">289</a> 	}
-<a class="jxr_linenumber" name="290" href="#290">290</a> 
-<a class="jxr_linenumber" name="291" href="#291">291</a> 	@Override
-<a class="jxr_linenumber" name="292" href="#292">292</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/SDescTerm.html">SDescTerm</a> createSDescTerm(<strong class="jxr_keyword">final</strong> String name,
-<a class="jxr_linenumber" name="293" href="#293">293</a> 			<strong class="jxr_keyword">final</strong> Formula&lt;SemanticDescription&gt; formula) {
-<a class="jxr_linenumber" name="294" href="#294">294</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
-<a class="jxr_linenumber" name="295" href="#295">295</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
-<a class="jxr_linenumber" name="296" href="#296">296</a> 		}
-<a class="jxr_linenumber" name="297" href="#297">297</a> 
-<a class="jxr_linenumber" name="298" href="#298">298</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/impl/SDescTermImpl.html">SDescTermImpl</a>(name, formula);
-<a class="jxr_linenumber" name="299" href="#299">299</a> 	}
-<a class="jxr_linenumber" name="300" href="#300">300</a> 
-<a class="jxr_linenumber" name="301" href="#301">301</a> 	@Override
-<a class="jxr_linenumber" name="302" href="#302">302</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/SDescTerm.html">SDescTerm</a> createSDescTerm(<strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/PatternNameTerm.html">PatternNameTerm</a> field) {
-<a class="jxr_linenumber" name="303" href="#303">303</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/impl/SDescTermImpl.html">SDescTermImpl</a>(field);
-<a class="jxr_linenumber" name="304" href="#304">304</a> 	}
-<a class="jxr_linenumber" name="305" href="#305">305</a> 
-<a class="jxr_linenumber" name="306" href="#306">306</a> }
+<a class="jxr_linenumber" name="282" href="#282">282</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> &lt;Type <strong class="jxr_keyword">extends</strong> PropertyValue&lt;?, ?&gt;&gt; ListTerm&lt;Type&gt; 
+<a class="jxr_linenumber" name="283" href="#283">283</a> 			createListTerm(<strong class="jxr_keyword">final</strong> String name, 
+<a class="jxr_linenumber" name="284" href="#284">284</a> 					<strong class="jxr_keyword">final</strong> Formula&lt;List&lt;Term&lt;Type&gt;&gt;&gt; formula) {
+<a class="jxr_linenumber" name="285" href="#285">285</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
+<a class="jxr_linenumber" name="286" href="#286">286</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
+<a class="jxr_linenumber" name="287" href="#287">287</a> 		}
+<a class="jxr_linenumber" name="288" href="#288">288</a> 
+<a class="jxr_linenumber" name="289" href="#289">289</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> ListTermImpl&lt;Type&gt;(name, formula);
+<a class="jxr_linenumber" name="290" href="#290">290</a> 	}
+<a class="jxr_linenumber" name="291" href="#291">291</a> 
+<a class="jxr_linenumber" name="292" href="#292">292</a> 	@Override
+<a class="jxr_linenumber" name="293" href="#293">293</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/SDescTerm.html">SDescTerm</a> createSDescTerm(<strong class="jxr_keyword">final</strong> String name,
+<a class="jxr_linenumber" name="294" href="#294">294</a> 			<strong class="jxr_keyword">final</strong> Formula&lt;SemanticDescription&gt; formula) {
+<a class="jxr_linenumber" name="295" href="#295">295</a> 		<strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong> || name.equals(<span class="jxr_string">""</span>)) {
+<a class="jxr_linenumber" name="296" href="#296">296</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid name"</span>);
+<a class="jxr_linenumber" name="297" href="#297">297</a> 		}
+<a class="jxr_linenumber" name="298" href="#298">298</a> 
+<a class="jxr_linenumber" name="299" href="#299">299</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/impl/SDescTermImpl.html">SDescTermImpl</a>(name, formula);
+<a class="jxr_linenumber" name="300" href="#300">300</a> 	}
+<a class="jxr_linenumber" name="301" href="#301">301</a> 
+<a class="jxr_linenumber" name="302" href="#302">302</a> 	@Override
+<a class="jxr_linenumber" name="303" href="#303">303</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/SDescTerm.html">SDescTerm</a> createSDescTerm(<strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/PatternNameTerm.html">PatternNameTerm</a> field) {
+<a class="jxr_linenumber" name="304" href="#304">304</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/ecolaws/terms/impl/SDescTermImpl.html">SDescTermImpl</a>(field);
+<a class="jxr_linenumber" name="305" href="#305">305</a> 	}
+<a class="jxr_linenumber" name="306" href="#306">306</a> 
+<a class="jxr_linenumber" name="307" href="#307">307</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
