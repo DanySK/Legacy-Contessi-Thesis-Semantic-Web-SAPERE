@@ -127,7 +127,7 @@ public class SemanticDescriptionImpl implements SemanticDescription {
 	public final String toString() {
 		final StringBuilder builder = new StringBuilder();
 		for (Property prop : properties.values()) {
-			builder.append(prop.toString()).append("; ");
+			builder.append("\t").append(prop.toString()).append(";\n");
 		}
 
 		return builder.toString();

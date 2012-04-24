@@ -25,7 +25,7 @@ public class RemoverVisitorImpl implements LSAVisitor {
 
 	/**
 	 * <p>
-	 * Builds a new InjectorVisitorImpl.
+	 * Builds a new ToJenaVisitorImpl.
 	 * </p>
 	 * 
 	 * @param aModel

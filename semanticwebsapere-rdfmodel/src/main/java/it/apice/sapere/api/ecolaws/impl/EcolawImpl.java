@@ -1,14 +1,10 @@
 package it.apice.sapere.api.ecolaws.impl;
 
-import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.Product;
 import it.apice.sapere.api.ecolaws.Rate;
 import it.apice.sapere.api.ecolaws.Reactant;
 import it.apice.sapere.api.ecolaws.Term;
-import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
-import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
-import it.apice.sapere.api.ecolaws.match.impl.MatchingEcolawImpl;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 import it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor;
@@ -172,12 +168,6 @@ public class EcolawImpl implements Ecolaw {
 
 		products.add(prod);
 		return this;
-	}
-
-	@Override
-	public final MatchingEcolaw bind(final ScoredMatchResult match)
-			throws SAPEREException {
-		return new MatchingEcolawImpl(this, match);
 	}
 
 	@Override

@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="119" href="#119">119</a> 	@Override
 <a class="jxr_linenumber" name="120" href="#120">120</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String toString() {
 <a class="jxr_linenumber" name="121" href="#121">121</a> 		<strong class="jxr_keyword">final</strong> StringBuilder builder = <strong class="jxr_keyword">new</strong> StringBuilder(id.toString());
-<a class="jxr_linenumber" name="122" href="#122">122</a> 		builder.append(<span class="jxr_string">"; "</span>).append(content.toString()).append(<span class="jxr_string">"}"</span>);
+<a class="jxr_linenumber" name="122" href="#122">122</a> 		builder.append(<span class="jxr_string">" {\n"</span>).append(content.toString()).append(<span class="jxr_string">"}"</span>);
 <a class="jxr_linenumber" name="123" href="#123">123</a> 
 <a class="jxr_linenumber" name="124" href="#124">124</a> 		<strong class="jxr_keyword">return</strong> builder.toString();
 <a class="jxr_linenumber" name="125" href="#125">125</a> 	}

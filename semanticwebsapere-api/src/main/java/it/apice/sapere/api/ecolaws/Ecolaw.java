@@ -1,8 +1,6 @@
 package it.apice.sapere.api.ecolaws;
 
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
-import it.apice.sapere.api.ecolaws.match.ScoredMatchResult;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 
@@ -107,17 +105,4 @@ public interface Ecolaw {
 	 */
 	Ecolaw addProduct(Product prod);
 
-	/**
-	 * <p>
-	 * Binds Ecolaw's variables to matching values found in LSA-space.
-	 * </p>
-	 * 
-	 * @param match
-	 *            Values, determined during matching phase, to be assigned to
-	 *            variables
-	 * @return The Matching Ecolaw
-	 * @throws SAPEREException
-	 *             Cannot complete binding procedure, some variables are unbound
-	 */
-	MatchingEcolaw bind(ScoredMatchResult match) throws SAPEREException;
 }

@@ -119,7 +119,7 @@ public class LSAImpl implements LSA {
 	@Override
 	public final String toString() {
 		final StringBuilder builder = new StringBuilder(id.toString());
-		builder.append("; ").append(content.toString()).append("}");
+		builder.append(" {\n").append(content.toString()).append("}");
 
 		return builder.toString();
 	}

@@ -277,7 +277,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			lsa.getSemanticDescription().addProperty(
 					createFactory().createProperty(
 							new URI("http://localhost:8080/sapere#prop"),
-							createFactory().createPropertyValue(true)));
+							createFactory().createPropertyValue(Boolean.TRUE)));
 			space.update(lsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_UPDATE));

@@ -1,17 +1,13 @@
 package it.apice.sapere.api.space;
 
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.ecolaws.Ecolaw;
-import it.apice.sapere.api.ecolaws.match.MatchResult;
-import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.observation.LSAObserver;
-import it.apice.sapere.api.space.observation.SpaceObserver;
 
 /**
  * <p>
- * This interface models an LSA-space (local) as seen by a SAPEREAgent, so
+ * This interface models a (local) LSA-space as seen by a SAPEREAgent, so
  * capable of storing and retrieve LSAs whenever needed.
  * </p>
  * <p>
@@ -123,96 +119,32 @@ public interface LSAspace {
 	 */
 	LSAspace ignore(LSAid lsaId, LSAObserver obs);
 
-	/**
-	 * <p>
-	 * Removes all LSAs.
-	 * </p>
-	 * 
-	 * @return The LSAspace itself for further operations
-	 */
-	LSAspace clear();
-
-	/* === ECOLAWS HANDLING === */
+	/* === THREAD-SAFETY SUPPORT === */
 
 	/**
 	 * <p>
-	 * Finds possible matches in the LSA-space for the provided Ecolaw.
-	 * </p>
-	 * 
-	 * @param law
-	 *            The law to be checked
-	 * @return Possible matches that has been found (empty list if no match)
-	 */
-	MatchResult[] match(Ecolaw law);
-
-	/**
-	 * <p>
-	 * Executes the Ecolaw, changing LSA-space current state.
-	 * </p>
-	 * 
-	 * @param law
-	 *            The law to be applied
-	 * @return The updated LSA-space
-	 */
-	LSAspace apply(MatchingEcolaw law);
-
-	/* === LSA-SPACE OBSERVATION === */
-
-	/**
-	 * <p>
-	 * Adds a Space Observer.
-	 * </p>
-	 * 
-	 * @param obs
-	 *            The observer
-	 */
-	void addSpaceObserver(SpaceObserver obs);
-
-	/**
-	 * <p>
-	 * Removes a Space Observer.
-	 * </p>
-	 * 
-	 * @param obs
-	 *            The observer
-	 */
-	void removeSpaceObserver(SpaceObserver obs);
-
-	/* === TRANSACTIONS SUPPORT === */
-
-	/**
-	 * <p>
-	 * Starts a new READ Transaction.
+	 * Gets lock for READ procedures.
 	 * </p>
 	 * <p>
-	 * At the end <code>commit()</code> or <code>rollback()</code> should be
-	 * called in order to release resources.
+	 * In order to release the lock call <code>done()</code>.
 	 * </p>
 	 */
 	void beginRead();
 
 	/**
 	 * <p>
-	 * Starts a new WRITE Transaction.
+	 * Gets lock for WRITE procedures.
 	 * </p>
 	 * <p>
-	 * At the end <code>commit()</code> or <code>rollback()</code> should be
-	 * called in order to release resources.
+	 * In order to release the lock call <code>done()</code>.
 	 * </p>
 	 */
 	void beginWrite();
 
 	/**
 	 * <p>
-	 * Terminates a Transaction, stabilizing changes.
+	 * Releases the acquired lock.
 	 * </p>
 	 */
-	void commit();
-
-	/**
-	 * <p>
-	 * Terminates a Transaction, reverting its operations.
-	 * </p>
-	 */
-	void rollback();
+	void done();
 }
