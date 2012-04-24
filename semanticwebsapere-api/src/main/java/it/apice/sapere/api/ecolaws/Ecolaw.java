@@ -1,6 +1,5 @@
 package it.apice.sapere.api.ecolaws;
 
-import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.terms.VarTerm;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 

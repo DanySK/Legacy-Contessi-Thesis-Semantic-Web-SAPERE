@@ -5,6 +5,8 @@ import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
+import it.apice.sapere.api.ecolaws.match.MutableMatchResult;
+import it.apice.sapere.api.ecolaws.match.impl.MutableMatchResultImpl;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.LSAspace;
@@ -21,6 +23,7 @@ import it.apice.sapere.space.observation.impl.SpaceEventImpl;
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,21 +32,26 @@ import java.util.Set;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+import com.hp.hpl.jena.query.QueryExecutionFactory;
+import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.update.UpdateAction;
 
 /**
  * <p>
- * Implementation of LSAspaceCore.
+ * Implementation of {@link LSAspaceCore}.
  * </p>
  * 
  * @author Paolo Contessi
  * 
- * @see LSAspace
  */
-public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
+public abstract class AbstractLSAspaceCoreImpl implements
+		LSAspaceCore<StmtIterator> {
 
 	/** The sapere:LSA type. */
 	private static final transient String LSA_TYPE = "http://"
@@ -63,7 +71,7 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	private final transient Model model;
 
 	/** Reference to an LSACompiler. */
-	private final transient LSACompiler compiler;
+	private final transient LSACompiler<StmtIterator> compiler;
 
 	/** Reference to an LSAParser. */
 	private final transient LSAParser parser;
@@ -87,7 +95,8 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	 * @param lsaParser
 	 *            Reference to a {@link LSAParser}
 	 */
-	public AbstractLSAspaceCoreImpl(final LSACompiler lsaCompiler,
+	public AbstractLSAspaceCoreImpl(
+			final LSACompiler<StmtIterator> lsaCompiler,
 			final LSAParser lsaParser) {
 		if (lsaCompiler == null) {
 			throw new IllegalArgumentException("Invalid LSACompiler provided");
@@ -284,24 +293,58 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	}
 
 	@Override
-	public final MatchResult[] match(final CompiledEcolaw law) {
-		// TODO Auto-generated method stub
+	public final MatchResult[] match(final CompiledEcolaw law)
+			throws SAPEREException {
+		if (law == null) {
+			throw new IllegalArgumentException(
+					"Invalid compiled eco-law provided");
+		}
 
-		// 1. Run query
-		// 2. Extract bindings
-		// 3. Return them for evaluation
+		final List<MatchResult> res = new LinkedList<MatchResult>();
 
-		return null;
+		acquireReadLock();
+		try {
+			// 1. Run query
+			final ResultSet iter = execQuery(model, law.getMatchQuery());
+
+			while (iter.hasNext()) {
+				// 2. Extract bindings
+				final MutableMatchResult match = 
+						new MutableMatchResultImpl(this);
+				for (String varName : law.variablesNames()) {
+					match.register(varName, null, 1.0);
+				}
+
+				// 3. Return them for evaluation
+				res.add(match);
+			}
+		} catch (Exception ex) {
+			throw new SAPEREException("Cannot complete match process", ex);
+		} finally {
+			releaseLock();
+		}
+
+		return res.toArray(new MatchResult[res.size()]);
 	}
 
 	@Override
-	public final LSAspace apply(final MatchingEcolaw law) {
-		// TODO Auto-generated method stub
+	public final LSAspace apply(final MatchingEcolaw law)
+			throws SAPEREException {
+		if (law == null) {
+			throw new IllegalArgumentException(
+					"Invalid matching eco-law provided");
+		}
 
-		// 1. Apply selected binding to the law
-		// 2. Run query
+		acquireWriteLock();
+		try {
+			execUpdateQuery(model, law.getUpdateQuery());
+		} catch (Exception ex) {
+			throw new SAPEREException("Cannot apply eco-law", ex);
+		} finally {
+			releaseLock();
+		}
 
-		return null;
+		return this;
 	}
 
 	@Override
@@ -387,7 +430,7 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	}
 
 	@Override
-	public final LSAspace injectCompiled(final CompiledLSA lsa)
+	public final LSAspace injectCompiled(final CompiledLSA<StmtIterator> lsa)
 			throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
@@ -418,7 +461,7 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	}
 
 	@Override
-	public final CompiledLSA readCompiled(final LSAid lsaId)
+	public final CompiledLSA<StmtIterator> readCompiled(final LSAid lsaId)
 			throws SAPEREException {
 		if (lsaId == null) {
 			throw new IllegalArgumentException("Invalid LSA-id provided");
@@ -441,7 +484,7 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	}
 
 	@Override
-	public final LSAspace removeCompiled(final CompiledLSA lsa)
+	public final LSAspace removeCompiled(final CompiledLSA<StmtIterator> lsa)
 			throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
@@ -472,7 +515,7 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	}
 
 	@Override
-	public final LSAspace updateCompiled(final CompiledLSA lsa)
+	public final LSAspace updateCompiled(final CompiledLSA<StmtIterator> lsa)
 			throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
@@ -515,7 +558,8 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	 * @throws SAPEREException
 	 *             Cannot retrieve LSA due to parsing issues
 	 */
-	private LSA retrieveLSA(final CompiledLSA cLsa) throws SAPEREException {
+	private LSA retrieveLSA(final CompiledLSA<StmtIterator> cLsa)
+			throws SAPEREException {
 		final Model tmp = ModelFactory.createDefaultModel();
 		final PipedOutputStream out = new PipedOutputStream();
 
@@ -540,6 +584,21 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 		return null;
 	}
 
+	@Override
+	public final void loadOntology(final URI ontoURI) throws SAPEREException {
+		if (ontoURI == null) {
+			throw new IllegalArgumentException("Invalid URI provided");
+		}
+
+		try {
+			model.read(ontoURI.toString());
+		} catch (Exception ex) {
+			throw new SAPEREException(
+					"Unable to retrieve and load the ontology at "
+							+ ontoURI.toString(), ex);
+		}
+	}
+
 	/**
 	 * <p>
 	 * Compiles the LSA.
@@ -549,7 +608,53 @@ public abstract class AbstractLSAspaceCoreImpl implements LSAspaceCore {
 	 *            The LSA to be compiled
 	 * @return A CompiledLSA
 	 */
-	private CompiledLSA compile(final LSA lsa) {
+	private CompiledLSA<StmtIterator> compile(final LSA lsa) {
 		return compiler.compile(lsa);
 	}
+
+	/**
+	 * <p>
+	 * Executes a SPARQL query on provided model.
+	 * </p>
+	 * 
+	 * @param aModel
+	 *            The queried model
+	 * @param query
+	 *            The query to be executed (provided as a String)
+	 * @return Query's result set
+	 */
+	private ResultSet execQuery(final Model aModel, final String query) {
+		return QueryExecutionFactory.create(QueryFactory.create(query), aModel)
+				.execSelect();
+	}
+
+	// /**
+	// * <p>
+	// * Executes a SPARQL query on provided model.
+	// * </p>
+	// *
+	// * @param aModel
+	// * The queried model
+	// * @param query
+	// * The query to be executed
+	// * @return Query's result set
+	// */
+	// private ResultSet execQuery(final Model aModel, final Query query) {
+	// return QueryExecutionFactory.create(query, aModel).execSelect();
+	// }
+
+	/**
+	 * <p>
+	 * Executes a SPARQL Update query on provided model.
+	 * </p>
+	 * 
+	 * @param aModel
+	 *            The queried model
+	 * @param query
+	 *            The update query to be executed
+	 */
+	private void execUpdateQuery(final Model aModel, final String query) {
+		UpdateAction.parseExecute(query, aModel);
+	}
+
 }

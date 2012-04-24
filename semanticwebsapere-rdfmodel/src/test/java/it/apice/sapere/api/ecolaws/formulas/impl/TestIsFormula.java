@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class TestIsFormula extends AbstractTestFormula {
 
+	private static final int NUM_10 = 10;
+
 	@Override
 	protected final Formula<Integer> createFormula() {
 		return new IsFormulaImpl<Integer>("0") {
@@ -41,11 +43,11 @@ public class TestIsFormula extends AbstractTestFormula {
 	protected final List<Integer> createInvalidValues() {
 		final List<Integer> vals = new LinkedList<Integer>();
 
-		for (int i = -10; i <= -1; i++) {
+		for (int i = -NUM_10; i <= -1; i++) {
 			vals.add(i);
 		}
 		
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 1; i <= NUM_10; i++) {
 			vals.add(i);
 		}
 

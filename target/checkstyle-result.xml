@@ -52,13 +52,15 @@
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/MatchingEcolaw.java">
 </file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/MatchingEcolawTemplate.java">
+</file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/MatchResult.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/MutableMatchResult.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/package-info.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/ScoredMatchResult.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/match/RatedMatchResult.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/package-info.java">
 </file>
@@ -69,10 +71,6 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Reactant.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scores/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scores/RankingProducer.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scores/ScoreFunction.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Term.java">
 </file>
@@ -153,6 +151,16 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/RDFFormat.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/SAPEREException.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/CompiledEcolaw.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/CompiledLSA.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/LSACompiler.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/LSAspaceCore.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/package-info.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/LSAspace.java">
 </file>
@@ -252,10 +260,14 @@
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/formulas/impl/FormulaFactoryImpl.java">
 <error line="25" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="43" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="61" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="79" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
-<error line="97" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="39" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="42" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="56" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="59" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="73" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="76" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="90" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="93" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/formulas/impl/GtEqFormulaImpl.java">
 </file>
@@ -286,24 +298,6 @@
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ProductImpl.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/impl/ReactantImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/MatchingEcolawImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/MatchResultImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/match/impl/ScoredMatchResultImpl.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/MeanScoreFunction.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/MultiplicativeScoreFunction.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/impl/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/package-info.java">
-</file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/scores/RankingProducerImpl.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/impl/AbstractTerm.java">
 <error line="83" column="5" severity="warning" message="Method &apos;clone&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
@@ -398,11 +392,23 @@
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/URIValueImpl.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/InjectorVisitorImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/ecolaws/match/impl/MutableMatchResultImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/ecolaws/match/impl/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/ecolaws/match/impl/RatedMatchResultImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/space/core/impl/AbstractLSAspaceCoreImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/space/core/impl/CompiledLSAImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/space/core/impl/LSACompilerImpl.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/api/space/core/impl/package-info.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/package-info.java">
 </file>
-<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/RemoverVisitorImpl.java">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/lsas/visitors/impl/ToJenaVisitorImpl.java">
 </file>
 <file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/impl/Jena2SAPEREConverter.java">
 </file>

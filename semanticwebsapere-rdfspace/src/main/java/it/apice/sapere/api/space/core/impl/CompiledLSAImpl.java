@@ -1,9 +1,9 @@
 package it.apice.sapere.api.space.core.impl;
 
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.core.CompiledLSA;
+
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
@@ -13,7 +13,7 @@ import it.apice.sapere.api.space.core.CompiledLSA;
  * @author Paolo Contessi
  * 
  */
-public class CompiledLSAImpl implements CompiledLSA {
+public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 
 	/** LSA-id. */
 	private final LSAid lsaId;

@@ -7,6 +7,7 @@ import it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
@@ -16,10 +17,10 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
  * @author Paolo Contessi
  * 
  */
-public class LSACompilerImpl implements LSACompiler {
+public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 
 	@Override
-	public final CompiledLSA compile(final LSA lsa) {
+	public final CompiledLSA<StmtIterator> compile(final LSA lsa) {
 		final Model tmp = ModelFactory.createDefaultModel();
 		new ToJenaVisitorImpl(tmp).visit(lsa);
 

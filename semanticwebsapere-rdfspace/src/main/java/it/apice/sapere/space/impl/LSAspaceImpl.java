@@ -6,6 +6,7 @@ import it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ public class LSAspaceImpl extends AbstractLSAspaceCoreImpl {
 	 * @param lsaParser
 	 *            Reference to a {@link LSAParser}
 	 */
-	public LSAspaceImpl(final LSACompiler lsaCompiler,
+	public LSAspaceImpl(final LSACompiler<StmtIterator> lsaCompiler,
 			final LSAParser lsaParser) {
 		super(lsaCompiler, lsaParser);
 	}

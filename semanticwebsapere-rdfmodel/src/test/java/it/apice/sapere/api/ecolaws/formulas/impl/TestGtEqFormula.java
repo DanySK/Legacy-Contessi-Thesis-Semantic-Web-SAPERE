@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class TestGtEqFormula extends AbstractTestFormula {
 
+	private static final int NUM_10 = 10;
+
 	@Override
 	protected final Formula<Integer> createFormula() {
 		return new GtEqFormulaImpl<Integer>("0") {
@@ -32,7 +34,7 @@ public class TestGtEqFormula extends AbstractTestFormula {
 	protected final List<Integer> createValidValues() {
 		final List<Integer> vals = new LinkedList<Integer>();
 
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= NUM_10; i++) {
 			vals.add(i);
 		}
 
@@ -43,7 +45,7 @@ public class TestGtEqFormula extends AbstractTestFormula {
 	protected final List<Integer> createInvalidValues() {
 		final List<Integer> vals = new LinkedList<Integer>();
 
-		for (int i = -10; i <= -1; i++) {
+		for (int i = -NUM_10; i <= -1; i++) {
 			vals.add(i);
 		}
 

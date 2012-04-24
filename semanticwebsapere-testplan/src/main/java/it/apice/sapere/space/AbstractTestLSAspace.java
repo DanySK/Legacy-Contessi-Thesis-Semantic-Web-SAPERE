@@ -69,7 +69,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 		lObs = createLSAObserver();
 		sObs = createSpaceObserver();
 
-		space.addSpaceObserver(sObs);
+		//space.addSpaceObserver(sObs);
 	}
 
 	/**
@@ -79,9 +79,9 @@ public abstract class AbstractTestLSAspace extends TestCase {
 	 */
 	@After
 	public final void tearDown() {
-		space.removeSpaceObserver(sObs);
+		//space.removeSpaceObserver(sObs);
 		sObs.reset();
-		space.clear();
+		//space.clear();
 	}
 
 	/**
