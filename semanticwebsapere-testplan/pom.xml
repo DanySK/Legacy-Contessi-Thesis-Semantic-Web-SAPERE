@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.0.1</version>
+		<version>0.1.0</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-testplan</artifactId>
@@ -21,13 +21,13 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-requirements</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 			<type>bundle</type>
 		</dependency>
 	</dependencies>
@@ -48,22 +48,6 @@
 					</instructions>
 				</configuration>
 			</plugin>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
-<!-- 				<version>2.12</version> -->
-<!-- 				<configuration> -->
-<!-- 					<encoding>UTF-8</encoding> -->
-<!-- 				</configuration> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<goals> -->
-<!-- 							<goal>integration-test</goal> -->
-<!-- 							<goal>verify</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
 		</plugins>
 	</build>
 </project>

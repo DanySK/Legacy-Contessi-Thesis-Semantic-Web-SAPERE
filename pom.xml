@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.apice.sapere</groupId>
 	<artifactId>semanticwebsapere</artifactId>
-	<version>0.0.1</version>
+	<version>0.1.0</version>
 	<packaging>pom</packaging>
 	<name>Semantic Web SAPERE</name>
 	<description>This project reflects the work produced during the development of semanticwebsapere thesis. See http://apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere for more details.</description>
@@ -30,13 +30,6 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
-<!-- 		<repository> -->
-<!-- 			<id>apache-repo1-releases</id> -->
-<!-- 			<url>http://repo1.maven.org/maven2</url> -->
-<!-- 			<releases> -->
-<!-- 				<enabled>true</enabled> -->
-<!-- 			</releases> -->
-<!-- 		</repository> -->
 		<repository>
 			<id>com.springsource.repository.bundles.external</id>
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
