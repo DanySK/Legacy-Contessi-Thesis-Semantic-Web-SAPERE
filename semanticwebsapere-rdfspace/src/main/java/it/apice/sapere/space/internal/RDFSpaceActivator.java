@@ -1,6 +1,6 @@
 package it.apice.sapere.space.internal;
 
-import it.apice.sapere.api.LSAParser;
+import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.core.impl.LSACompilerImpl;
 import it.apice.sapere.space.impl.LSAspaceImpl;
@@ -30,7 +30,7 @@ public class RDFSpaceActivator implements BundleActivator {
 		System.out.println("SemanticWebSAPERE [RDFSpace]: Starting up..");
 		lsaSpaceServiceReg = context.registerService(LSAspace.class.getName(),
 				new LSAspaceImpl(new LSACompilerImpl(),
-						retrieveLSAParserService(context)), declareProps());
+						retrieveLSAFactoryService(context)), declareProps());
 		System.out.println("SemanticWebSAPERE [RDFSpace]: "
 				+ "LSA-space REGISTERED.");
 	}
@@ -58,11 +58,12 @@ public class RDFSpaceActivator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            Bundle context
-	 * @return A reference to an LSAParser
+	 * @return A reference to an PrivilegedLSAFactory
 	 */
-	private LSAParser retrieveLSAParserService(final BundleContext context) {
-		final ServiceReference<LSAParser> ref = context
-				.getServiceReference(LSAParser.class);
+	private PrivilegedLSAFactory retrieveLSAFactoryService(
+			final BundleContext context) {
+		final ServiceReference<PrivilegedLSAFactory> ref = context
+				.getServiceReference(PrivilegedLSAFactory.class);
 		if (ref == null) {
 			throw new IllegalStateException("Cannot retrieve a reference to "
 					+ "PrivilegedLSAFactory service.");

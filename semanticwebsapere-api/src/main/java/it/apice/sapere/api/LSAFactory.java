@@ -4,6 +4,7 @@ import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
+import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.lsas.values.BooleanValue;
 import it.apice.sapere.api.lsas.values.DateTimeValue;
 import it.apice.sapere.api.lsas.values.DoubleValue;
@@ -13,6 +14,7 @@ import it.apice.sapere.api.lsas.values.LSAidValue;
 import it.apice.sapere.api.lsas.values.LiteralValue;
 import it.apice.sapere.api.lsas.values.LongValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.lsas.values.SDescValue;
 import it.apice.sapere.api.lsas.values.URIValue;
 
 import java.net.URI;
@@ -205,6 +207,17 @@ public interface LSAFactory {
 	 * @return A fresh property value
 	 */
 	DateTimeValue createPropertyValue(Date value);
+
+	/**
+	 * <p>
+	 * Creates a new Property Value starting from a semantic description.
+	 * </p>
+	 * 
+	 * @param value
+	 *            A semantic description
+	 * @return A fresh property value
+	 */
+	SDescValue createPropertyValue(SemanticDescription value);
 
 	/* === LSA-ID === */
 

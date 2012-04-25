@@ -113,7 +113,7 @@ public class PropertyValueImpl<Type extends Comparable<Type>, CompType>
 	}
 
 	@Override
-	public final String toString() {
+	public String toString() {
 		return value.toString();
 	}
 

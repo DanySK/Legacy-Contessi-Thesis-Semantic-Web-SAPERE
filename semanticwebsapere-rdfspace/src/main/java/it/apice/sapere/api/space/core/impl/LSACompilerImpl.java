@@ -22,9 +22,9 @@ public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 	@Override
 	public final CompiledLSA<StmtIterator> compile(final LSA lsa) {
 		final Model tmp = ModelFactory.createDefaultModel();
-		new ToJenaVisitorImpl(tmp).visit(lsa);
+		lsa.accept(new ToJenaVisitorImpl(tmp));
 
-		return new CompiledLSAImpl(lsa.getLSAId(), tmp.listStatements());
+		return new CompiledLSAImpl(lsa.getLSAId(), tmp);
 	}
 
 }

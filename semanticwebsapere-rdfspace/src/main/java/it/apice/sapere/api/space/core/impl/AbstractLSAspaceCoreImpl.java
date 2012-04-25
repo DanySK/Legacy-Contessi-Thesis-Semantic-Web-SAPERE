@@ -1,7 +1,6 @@
 package it.apice.sapere.api.space.core.impl;
 
-import it.apice.sapere.api.LSAParser;
-import it.apice.sapere.api.RDFFormat;
+import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.match.MatchResult;
 import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
@@ -17,12 +16,10 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.LSAObserver;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
+import it.apice.sapere.space.impl.Jena2SAPEREConverter;
 import it.apice.sapere.space.observation.impl.LSAEventImpl;
 import it.apice.sapere.space.observation.impl.SpaceEventImpl;
 
-import java.io.IOException;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -73,8 +70,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Reference to an LSACompiler. */
 	private final transient LSACompiler<StmtIterator> compiler;
 
-	/** Reference to an LSAParser. */
-	private final transient LSAParser parser;
+	/** Reference to a Jena2SAPEREConverter. */
+	private final transient Jena2SAPEREConverter converter;
+
+	/** Resource representing the LSA owl:Class. */
+	private final transient Resource lsaClass;
 
 	/** rdf:type property. */
 	private final transient Property rdfTypeProp;
@@ -85,6 +85,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Read/Write flag. */
 	private transient boolean isWriting = false;
 
+	/** Notification enabled flag. */
+	private transient boolean notificationsEnabled = true;
+
 	/**
 	 * <p>
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
@@ -92,18 +95,18 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * 
 	 * @param lsaCompiler
 	 *            Reference to a {@link LSACompiler}
-	 * @param lsaParser
-	 *            Reference to a {@link LSAParser}
+	 * @param lsaFactory
+	 *            Reference to a {@link PrivilegedLSAFactory}
 	 */
 	public AbstractLSAspaceCoreImpl(
 			final LSACompiler<StmtIterator> lsaCompiler,
-			final LSAParser lsaParser) {
+			final PrivilegedLSAFactory lsaFactory) {
 		if (lsaCompiler == null) {
 			throw new IllegalArgumentException("Invalid LSACompiler provided");
 		}
 
-		if (lsaParser == null) {
-			throw new IllegalArgumentException("Invalid LSAParser provided");
+		if (lsaFactory == null) {
+			throw new IllegalArgumentException("Invalid LSAFactory provided");
 		}
 
 		// Observation initialization
@@ -112,11 +115,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		// RDFModel initialization
 		model = initRDFGraphModel();
+		lsaClass = model.createResource(LSA_TYPE);
 
 		// Other stuff initialization
 		rdfTypeProp = model.createProperty(RDF_TYPE);
 		compiler = lsaCompiler;
-		parser = lsaParser;
+		converter = new Jena2SAPEREConverter(lsaFactory);
 	}
 
 	/**
@@ -139,7 +143,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @return True if contained, false otherwise
 	 */
 	private boolean lsaExist(final Resource lsa) {
-		return model.contains(lsa, rdfTypeProp, LSA_TYPE);
+		return model.contains(lsa, rdfTypeProp, lsaClass);
 	}
 
 	/**
@@ -148,7 +152,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireReadLock() {
-		model.enterCriticalSection(false);
+		model.enterCriticalSection(Model.READ);
 	}
 
 	/**
@@ -157,7 +161,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireWriteLock() {
-		model.enterCriticalSection(true);
+		model.enterCriticalSection(Model.WRITE);
 	}
 
 	/**
@@ -309,8 +313,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			while (iter.hasNext()) {
 				// 2. Extract bindings
-				final MutableMatchResult match = 
-						new MutableMatchResultImpl(this);
+				final MutableMatchResult match = new MutableMatchResultImpl(
+						this);
 				for (String varName : law.variablesNames()) {
 					match.register(varName, null, 1.0);
 				}
@@ -379,9 +383,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
-		for (SpaceObserver obs : listeners) {
-			obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id }, 
-					type));
+		if (notificationsEnabled) {
+			for (SpaceObserver obs : listeners) {
+				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id },
+						type));
+			}
 		}
 	}
 
@@ -400,10 +406,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifyLSAObservers(final String msg, final LSA lsa,
 			final SpaceOperationType type) {
-		final List<LSAObserver> obss = observers.get(lsa.getLSAId());
-		if (obss != null) {
-			for (LSAObserver obs : obss) {
-				obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+		if (notificationsEnabled) {
+			final List<LSAObserver> obss = observers.get(lsa.getLSAId());
+			if (obss != null) {
+				for (LSAObserver obs : obss) {
+					obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+				}
 			}
 		}
 	}
@@ -528,8 +536,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsa.getLSAid());
 			}
 
+			disableNotifications();
 			removeCompiled(readCompiled(lsa.getLSAid()));
 			injectCompiled(lsa);
+			enableNotifications();
 
 			// Notification
 			final String msg = String.format("LSA updated: %s", lsa.getLSAid());
@@ -548,8 +558,25 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/**
 	 * <p>
-	 * Reverts the CompiledLSA to a SAPERE model LSA, exploiting
-	 * {@link LSAParser} capabilities.
+	 * Disables notifications to (LSA|Space)Observers.
+	 * </p>
+	 */
+	private void disableNotifications() {
+		notificationsEnabled = false;
+	}
+
+	/**
+	 * <p>
+	 * Enables notifications to (LSA|Space)Observers.
+	 * </p>
+	 */
+	private void enableNotifications() {
+		notificationsEnabled = true;
+	}
+
+	/**
+	 * <p>
+	 * Reverts the CompiledLSA to a SAPERE model LSA.
 	 * </p>
 	 * 
 	 * @param cLsa
@@ -561,14 +588,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private LSA retrieveLSA(final CompiledLSA<StmtIterator> cLsa)
 			throws SAPEREException {
 		final Model tmp = ModelFactory.createDefaultModel();
-		final PipedOutputStream out = new PipedOutputStream();
 
 		tmp.add(cLsa.getStatements());
-		tmp.write(out, RDFFormat.RDF_XML.toString());
+		if (tmp.isEmpty()) {
+			throw new SAPEREException("LSA is empty");
+		}
 
 		try {
-			final Set<LSA> res = parser.parseLSAs(new PipedInputStream(out),
-					RDFFormat.RDF_XML);
+			final Set<LSA> res = converter.parseJenaModel(tmp);
 			if (res.isEmpty() || res.size() > 1) {
 				throw new SAPEREException("Invalid compiled LSA: "
 						+ "should contains information about a single LSA");
@@ -577,7 +604,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			for (LSA lsa : res) {
 				return lsa;
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new SAPEREException("Cannot parse LSA", e);
 		}
 

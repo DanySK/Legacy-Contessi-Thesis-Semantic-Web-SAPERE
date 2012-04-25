@@ -160,4 +160,14 @@ public class SemanticDescriptionImpl implements SemanticDescription {
 	public final void accept(final LSAVisitor visitor) {
 		visitor.visit(this);
 	}
+
+	// TODO Provide a better implementation
+	@Override
+	public final int compareTo(final SemanticDescription other) {
+		if (equals(other)) {
+			return 0;
+		}
+
+		return toString().compareTo(other.toString());
+	}
 }

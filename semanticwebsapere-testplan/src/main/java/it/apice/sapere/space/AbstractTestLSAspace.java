@@ -7,13 +7,9 @@ import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.observation.LSAEvent;
 import it.apice.sapere.api.space.observation.LSAObserver;
-import it.apice.sapere.api.space.observation.SpaceEvent;
-import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 
 import java.net.URI;
-import java.util.LinkedList;
-import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -37,8 +33,8 @@ public abstract class AbstractTestLSAspace extends TestCase {
 	/** Reference to tested space. */
 	private transient LSAObserver lObs;
 
-	/** Reference to tested space. */
-	private transient SpaceObserverTester sObs;
+//	/** Reference to tested space. */
+//	private transient SpaceObserverTester sObs;
 
 	/**
 	 * <p>
@@ -67,7 +63,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 	public final void setUp() {
 		space = createSpace();
 		lObs = createLSAObserver();
-		sObs = createSpaceObserver();
+//		sObs = createSpaceObserver();
 
 		//space.addSpaceObserver(sObs);
 	}
@@ -80,7 +76,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 	@After
 	public final void tearDown() {
 		//space.removeSpaceObserver(sObs);
-		sObs.reset();
+//		sObs.reset();
 		//space.clear();
 	}
 
@@ -96,12 +92,12 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			assertTrue(ex instanceof IllegalArgumentException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 
 		try {
 			final LSA lsa = createFactory().createLSA();
 			space.inject(lsa);
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.inject(lsa);
 			fail("Double insertion should be avoided and notified");
 		} catch (Exception ex) {
@@ -130,7 +126,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			assertTrue(ex instanceof SAPEREException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 	}
 
 	/**
@@ -153,7 +149,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			assertTrue(ex instanceof SAPEREException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 	}
 
 	/**
@@ -176,7 +172,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			assertTrue(ex instanceof SAPEREException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 	}
 
 	/**
@@ -193,7 +189,7 @@ public abstract class AbstractTestLSAspace extends TestCase {
 
 		try {
 			space.observe(createFactory().createLSAid(), lObs);
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
 			fail("Should accept to observe "
 					+ "something that is not in the space");
@@ -202,14 +198,14 @@ public abstract class AbstractTestLSAspace extends TestCase {
 		try {
 			final LSA lsa = createFactory().createLSA();
 			space.inject(lsa);
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to register a NULL observer");
 		} catch (Exception ex) {
 			assertTrue(ex instanceof IllegalArgumentException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 	}
 
 	/**
@@ -224,11 +220,11 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			assertTrue(ex instanceof IllegalArgumentException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 
 		try {
 			space.ignore(createFactory().createLSAid(), lObs);
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
 			fail("Ignoring something not observed could be dropped silently");
 		}
@@ -236,14 +232,14 @@ public abstract class AbstractTestLSAspace extends TestCase {
 		try {
 			final LSA lsa = createFactory().createLSA();
 			space.inject(lsa);
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to unregister a NULL observer");
 		} catch (Exception ex) {
 			assertTrue(ex instanceof IllegalArgumentException);
 		}
 
-		assertTrue(sObs.noEventOccurred());
+//		assertTrue(sObs.noEventOccurred());
 	}
 
 	/**
@@ -260,18 +256,18 @@ public abstract class AbstractTestLSAspace extends TestCase {
 			final LSA lsa = createFactory().createLSA();
 			final LSAObserver scObs = createScenarioObserver(lsa);
 
-			assertTrue(sObs.noEventOccurred());
+//			assertTrue(sObs.noEventOccurred());
 
 			// 1. Register observer
 			space.observe(lsa.getLSAId(), scObs);
 
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 
 			// 2. Inject and read the same LSA
 			assertEquals(space.inject(lsa).read(lsa.getLSAId()), lsa);
 
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_READ));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_READ));
 
 			// 3. Update the LSA
 			lsa.getSemanticDescription().addProperty(
@@ -280,18 +276,18 @@ public abstract class AbstractTestLSAspace extends TestCase {
 							createFactory().createPropertyValue(Boolean.TRUE)));
 			space.update(lsa);
 
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_UPDATE));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_UPDATE));
 
 			// 4. Remove the LSA
 			space.remove(lsa);
 
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_REMOVE));
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_REMOVE));
 
 			// 5. Ignore the LSA
 			space.ignore(lsa.getLSAId(), scObs);
 
-			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
-			assertTrue(sObs.noEventOccurred());
+//			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
+//			assertTrue(sObs.noEventOccurred());
 		} catch (SAPEREException e) {
 			e.printStackTrace();
 			fail("Something went wrong during normal scenario "
@@ -376,74 +372,74 @@ public abstract class AbstractTestLSAspace extends TestCase {
 		};
 	}
 
-	/**
-	 * <p>
-	 * Creates a mock Space observer that registers events occurred for testing
-	 * purposes.
-	 * </p>
-	 * 
-	 * @return A reference to an LSAObserver
-	 */
-	private SpaceObserverTester createSpaceObserver() {
-		return new SpaceObserverTester();
-	}
+//	/**
+//	 * <p>
+//	 * Creates a mock Space observer that registers events occurred for testing
+//	 * purposes.
+//	 * </p>
+//	 * 
+//	 * @return A reference to an LSAObserver
+//	 */
+//	private SpaceObserverTester createSpaceObserver() {
+//		return new SpaceObserverTester();
+//	}
 
-	/**
-	 * <p>
-	 * Test utility.
-	 * </p>
-	 * 
-	 * @author Paolo Contessi
-	 * 
-	 */
-	private static class SpaceObserverTester implements SpaceObserver {
-
-		/** Event queue. */
-		private final transient List<SpaceOperationType> queue = 
-				new LinkedList<SpaceOperationType>();
-
-		@Override
-		public void eventOccurred(final SpaceEvent ev) {
-			queue.add(ev.getOperationType());
-		}
-
-		/**
-		 * <p>
-		 * Checks if an event occurred.
-		 * </p>
-		 * 
-		 * @param type
-		 *            Type of interesting event
-		 * @return True if occurred, false otherwise
-		 */
-		public boolean checkFirstOcc(final SpaceOperationType type) {
-			final int idx = queue.indexOf(type);
-			if (idx >= 0) {
-				queue.remove(idx);
-				return true;
-			}
-
-			return false;
-		}
-
-		/**
-		 * <p>
-		 * Clears event queue.
-		 * </p>
-		 */
-		public void reset() {
-			queue.clear();
-		}
-
-		/**
-		 * <p>
-		 * Checks if queue is empty.
-		 * </p>
-		 * 
-		 * @return True if empty, false otherwise
-		 */
-		public boolean noEventOccurred() {
-			return queue.isEmpty();
-		}
-	}
+//	/**
+//	 * <p>
+//	 * Test utility.
+//	 * </p>
+//	 * 
+//	 * @author Paolo Contessi
+//	 * 
+//	 */
+//	private static class SpaceObserverTester implements SpaceObserver {
+//
+//		/** Event queue. */
+//		private final transient List<SpaceOperationType> queue = 
+//				new LinkedList<SpaceOperationType>();
+//
+//		@Override
+//		public void eventOccurred(final SpaceEvent ev) {
+//			queue.add(ev.getOperationType());
+//		}
+//
+//		/**
+//		 * <p>
+//		 * Checks if an event occurred.
+//		 * </p>
+//		 * 
+//		 * @param type
+//		 *            Type of interesting event
+//		 * @return True if occurred, false otherwise
+//		 */
+//		public boolean checkFirstOcc(final SpaceOperationType type) {
+//			final int idx = queue.indexOf(type);
+//			if (idx >= 0) {
+//				queue.remove(idx);
+//				return true;
+//			}
+//
+//			return false;
+//		}
+//
+//		/**
+//		 * <p>
+//		 * Clears event queue.
+//		 * </p>
+//		 */
+//		public void reset() {
+//			queue.clear();
+//		}
+//
+//		/**
+//		 * <p>
+//		 * Checks if queue is empty.
+//		 * </p>
+//		 * 
+//		 * @return True if empty, false otherwise
+//		 */
+//		public boolean noEventOccurred() {
+//			return queue.isEmpty();
+//		}
+//	}
 }

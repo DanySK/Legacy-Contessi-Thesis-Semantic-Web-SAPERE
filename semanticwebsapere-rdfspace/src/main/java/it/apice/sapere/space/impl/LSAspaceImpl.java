@@ -1,6 +1,6 @@
 package it.apice.sapere.space.impl;
 
-import it.apice.sapere.api.LSAParser;
+import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl;
 
@@ -24,12 +24,12 @@ public class LSAspaceImpl extends AbstractLSAspaceCoreImpl {
 	 * 
 	 * @param lsaCompiler
 	 *            Reference to a {@link LSACompiler}
-	 * @param lsaParser
-	 *            Reference to a {@link LSAParser}
+	 * @param lsaFactory
+	 *            Reference to a {@link PrivilegedLSAFactory}
 	 */
 	public LSAspaceImpl(final LSACompiler<StmtIterator> lsaCompiler,
-			final LSAParser lsaParser) {
-		super(lsaCompiler, lsaParser);
+			final PrivilegedLSAFactory lsaFactory) {
+		super(lsaCompiler, lsaFactory);
 	}
 
 	@Override

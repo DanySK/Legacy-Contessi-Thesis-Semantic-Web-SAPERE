@@ -3,6 +3,8 @@ package it.apice.sapere.api.space.core.impl;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.core.CompiledLSA;
 
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
@@ -19,7 +21,7 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	private final LSAid lsaId;
 
 	/** Iterator over LSA's statements. */
-	private final transient StmtIterator iter;
+	private final transient Model model;
 
 	/**
 	 * <p>
@@ -28,21 +30,45 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	 * 
 	 * @param id
 	 *            The LSA-id of related LSA
-	 * @param stmtIter
-	 *            An iterator over LSA's statements
+	 * @param compModel
+	 *            The model which contains the compiled LSA statements
 	 */
-	public CompiledLSAImpl(final LSAid id, final StmtIterator stmtIter) {
+	public CompiledLSAImpl(final LSAid id, final Model compModel) {
 		if (id == null) {
 			throw new IllegalArgumentException("Invalid LSA-id provided");
 		}
 
-		if (stmtIter == null) {
+		if (compModel == null) {
+			throw new IllegalArgumentException("Invalid Model provided");
+		}
+
+		lsaId = id;
+		model = compModel;
+	}
+
+	/**
+	 * <p>
+	 * Builds a new {@link CompiledLSAImpl}.
+	 * </p>
+	 * 
+	 * @param id
+	 *            The LSA-id of related LSA
+	 * @param iter
+	 *            An iterator over all compiled LSA statements
+	 */
+	public CompiledLSAImpl(final LSAid id, final StmtIterator iter) {
+		if (id == null) {
+			throw new IllegalArgumentException("Invalid LSA-id provided");
+		}
+
+		if (iter == null) {
 			throw new IllegalArgumentException(
 					"Invalid Statement Iterator provided");
 		}
 
 		lsaId = id;
-		iter = stmtIter;
+		model = ModelFactory.createDefaultModel();
+		model.add(iter);
 	}
 
 	@Override
@@ -52,7 +78,7 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 
 	@Override
 	public final StmtIterator getStatements() {
-		return iter;
+		return model.listStatements();
 	}
 
 }

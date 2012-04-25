@@ -6,6 +6,7 @@ import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
+import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.lsas.impl.LSAImpl;
 import it.apice.sapere.api.lsas.impl.LSAidImpl;
 import it.apice.sapere.api.lsas.impl.PropertyImpl;
@@ -19,6 +20,7 @@ import it.apice.sapere.api.lsas.values.LSAidValue;
 import it.apice.sapere.api.lsas.values.LiteralValue;
 import it.apice.sapere.api.lsas.values.LongValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.lsas.values.SDescValue;
 import it.apice.sapere.api.lsas.values.URIValue;
 import it.apice.sapere.api.lsas.values.impl.BooleanValueImpl;
 import it.apice.sapere.api.lsas.values.impl.DateTimeValueImpl;
@@ -28,6 +30,7 @@ import it.apice.sapere.api.lsas.values.impl.IntegerValueImpl;
 import it.apice.sapere.api.lsas.values.impl.LSAidValueImpl;
 import it.apice.sapere.api.lsas.values.impl.LiteralValueImpl;
 import it.apice.sapere.api.lsas.values.impl.LongValueImpl;
+import it.apice.sapere.api.lsas.values.impl.SDescValueImpl;
 import it.apice.sapere.api.lsas.values.impl.URIValueImpl;
 
 import java.net.URI;
@@ -177,6 +180,12 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	@Override
 	public final DateTimeValue createPropertyValue(final Date value) {
 		return new DateTimeValueImpl(value);
+	}
+	
+	@Override
+	public final SDescValue createPropertyValue(
+			final SemanticDescription value) {
+		return new SDescValueImpl(value);
 	}
 
 	@Override

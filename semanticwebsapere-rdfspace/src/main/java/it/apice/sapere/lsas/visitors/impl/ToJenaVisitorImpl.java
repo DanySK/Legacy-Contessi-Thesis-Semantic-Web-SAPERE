@@ -6,11 +6,13 @@ import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.lsas.values.SDescValue;
 import it.apice.sapere.api.lsas.visitor.LSAVisitor;
 
 import java.util.Calendar;
 import java.util.Date;
 
+import com.hp.hpl.jena.rdf.model.AnonId;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -41,6 +43,9 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 
 	/** rdf:type property. */
 	private final transient com.hp.hpl.jena.rdf.model.Property rdfTypeProp;
+	
+	/** Resource representing the LSA owl:Class. */
+	private final transient Resource lsaClass;
 
 	/** The property actually under translation. */
 	private transient com.hp.hpl.jena.rdf.model.Property actualProp;
@@ -57,12 +62,13 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 		model = aModel;
 
 		rdfTypeProp = model.createProperty(RDF_TYPE);
+		lsaClass = model.createResource(LSA_TYPE);
 	}
 
 	@Override
 	public final void visit(final LSAid lsaId) {
 		lsaResource = model.createResource(lsaId.getId().toString());
-		model.add(lsaResource, rdfTypeProp, LSA_TYPE);
+		model.add(lsaResource, rdfTypeProp, lsaClass);
 	}
 
 	@Override
@@ -94,14 +100,22 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 			obj = cal;
 		}
 
-		Literal lit;
-		if (val.hasLocale()) {
-			lit = model.createLiteral(obj.toString(), val.getLanguageCode());
+		if (val instanceof SDescValue) {
+			final AnonId bId = new AnonId();
+			final Resource bNode = model.createResource(bId);
+			bNode.isAnon();
+			// TODO Complete translation
 		} else {
-			lit = model.createTypedLiteral(obj);
-		}
+			Literal lit;
+			if (val.hasLocale()) {
+				lit = model
+						.createLiteral(obj.toString(), val.getLanguageCode());
+			} else {
+				lit = model.createTypedLiteral(obj);
+			}
 
-		model.addLiteral(lsaResource, actualProp, lit);
+			model.addLiteral(lsaResource, actualProp, lit);
+		}
 	}
 
 	@Override

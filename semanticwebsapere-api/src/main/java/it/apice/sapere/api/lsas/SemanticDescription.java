@@ -25,7 +25,7 @@ import it.apice.sapere.api.lsas.visitor.LSAVisitor;
  * @author Paolo Contessi
  * 
  */
-public interface SemanticDescription {
+public interface SemanticDescription extends Comparable <SemanticDescription> {
 
 	/**
 	 * <p>
