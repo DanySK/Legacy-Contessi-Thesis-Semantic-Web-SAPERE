@@ -1,6 +1,6 @@
 package it.apice.sapere.api.space.core;
 
-import it.apice.sapere.api.ecolaws.match.MatchingEcolawTemplate;
+import it.apice.sapere.api.space.match.MatchingEcolawTemplate;
 
 /**
  * <p>

@@ -53,7 +53,7 @@
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> rdf:type property. */</em>
 <a class="jxr_linenumber" name="45" href="#45">45</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> com.hp.hpl.jena.rdf.model.Property rdfTypeProp;
-<a class="jxr_linenumber" name="46" href="#46">46</a>  	
+<a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Resource representing the <a href="../../../../../../it/apice/sapere/api/lsas/LSA.html">LSA</a> owl:Class. */</em>
 <a class="jxr_linenumber" name="48" href="#48">48</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> Resource lsaClass;
 <a class="jxr_linenumber" name="49" href="#49">49</a>  
@@ -110,31 +110,47 @@
 <a class="jxr_linenumber" name="100" href="#100">100</a> 			obj = cal;
 <a class="jxr_linenumber" name="101" href="#101">101</a> 		}
 <a class="jxr_linenumber" name="102" href="#102">102</a> 
-<a class="jxr_linenumber" name="103" href="#103">103</a> 		<strong class="jxr_keyword">if</strong> (val instanceof SDescValue) {
-<a class="jxr_linenumber" name="104" href="#104">104</a> 			<strong class="jxr_keyword">final</strong> AnonId bId = <strong class="jxr_keyword">new</strong> AnonId();
-<a class="jxr_linenumber" name="105" href="#105">105</a> 			<strong class="jxr_keyword">final</strong> Resource bNode = model.createResource(bId);
-<a class="jxr_linenumber" name="106" href="#106">106</a> 			bNode.isAnon();
-<a class="jxr_linenumber" name="107" href="#107">107</a> 			<em class="jxr_comment">// TODO Complete translation</em>
-<a class="jxr_linenumber" name="108" href="#108">108</a> 		} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="109" href="#109">109</a> 			Literal lit;
-<a class="jxr_linenumber" name="110" href="#110">110</a> 			<strong class="jxr_keyword">if</strong> (val.hasLocale()) {
-<a class="jxr_linenumber" name="111" href="#111">111</a> 				lit = model
-<a class="jxr_linenumber" name="112" href="#112">112</a> 						.createLiteral(obj.toString(), val.getLanguageCode());
-<a class="jxr_linenumber" name="113" href="#113">113</a> 			} <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="114" href="#114">114</a> 				lit = model.createTypedLiteral(obj);
-<a class="jxr_linenumber" name="115" href="#115">115</a> 			}
-<a class="jxr_linenumber" name="116" href="#116">116</a> 
-<a class="jxr_linenumber" name="117" href="#117">117</a> 			model.addLiteral(lsaResource, actualProp, lit);
-<a class="jxr_linenumber" name="118" href="#118">118</a> 		}
-<a class="jxr_linenumber" name="119" href="#119">119</a> 	}
+<a class="jxr_linenumber" name="103" href="#103">103</a> 		<em class="jxr_comment">// Handle nested Semantic Descriptions:</em>
+<a class="jxr_linenumber" name="104" href="#104">104</a> 		<strong class="jxr_keyword">if</strong> (val instanceof SDescValue) {
+<a class="jxr_linenumber" name="105" href="#105">105</a> 			<em class="jxr_comment">// Create a Blank Node</em>
+<a class="jxr_linenumber" name="106" href="#106">106</a> 			<strong class="jxr_keyword">final</strong> AnonId bId = <strong class="jxr_keyword">new</strong> AnonId();
+<a class="jxr_linenumber" name="107" href="#107">107</a> 			<strong class="jxr_keyword">final</strong> Resource bNode = model.createResource(bId);
+<a class="jxr_linenumber" name="108" href="#108">108</a> 
+<a class="jxr_linenumber" name="109" href="#109">109</a> 			<em class="jxr_comment">// Associate it to the actualProp</em>
+<a class="jxr_linenumber" name="110" href="#110">110</a> 			model.add(lsaResource, actualProp, bNode);
+<a class="jxr_linenumber" name="111" href="#111">111</a> 
+<a class="jxr_linenumber" name="112" href="#112">112</a> 			<em class="jxr_comment">// Push actual (root) lsaResource and property [stack]</em>
+<a class="jxr_linenumber" name="113" href="#113">113</a> 			<strong class="jxr_keyword">final</strong> Resource tmpRes = lsaResource;
+<a class="jxr_linenumber" name="114" href="#114">114</a> 			<strong class="jxr_keyword">final</strong> com.hp.hpl.jena.rdf.model.Property tmpProp = actualProp;
+<a class="jxr_linenumber" name="115" href="#115">115</a> 
+<a class="jxr_linenumber" name="116" href="#116">116</a> 			<em class="jxr_comment">// Set the Blank node as current resource and visit the nested</em>
+<a class="jxr_linenumber" name="117" href="#117">117</a> 			<em class="jxr_comment">// Semantic Description</em>
+<a class="jxr_linenumber" name="118" href="#118">118</a> 			lsaResource = bNode;
+<a class="jxr_linenumber" name="119" href="#119">119</a> 			((SDescValue) val).getValue().accept(<strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="120" href="#120">120</a> 
-<a class="jxr_linenumber" name="121" href="#121">121</a> 	@Override
-<a class="jxr_linenumber" name="122" href="#122">122</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> visit(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/lsas/LSA.html">LSA</a> lsa) {
-<a class="jxr_linenumber" name="123" href="#123">123</a> 		lsa.getLSAId().accept(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="124" href="#124">124</a> 		lsa.getSemanticDescription().accept(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="125" href="#125">125</a> 	}
-<a class="jxr_linenumber" name="126" href="#126">126</a> 
-<a class="jxr_linenumber" name="127" href="#127">127</a> }
+<a class="jxr_linenumber" name="121" href="#121">121</a> 			<em class="jxr_comment">// Pop root lsaResource and property [unstack]</em>
+<a class="jxr_linenumber" name="122" href="#122">122</a> 			lsaResource = tmpRes;
+<a class="jxr_linenumber" name="123" href="#123">123</a> 			actualProp = tmpProp;
+<a class="jxr_linenumber" name="124" href="#124">124</a> 		} <strong class="jxr_keyword">else</strong> { <em class="jxr_comment">// Standard (flat) behaviour</em>
+<a class="jxr_linenumber" name="125" href="#125">125</a> 			Literal lit;
+<a class="jxr_linenumber" name="126" href="#126">126</a> 			<strong class="jxr_keyword">if</strong> (val.hasLocale()) {
+<a class="jxr_linenumber" name="127" href="#127">127</a> 				lit = model
+<a class="jxr_linenumber" name="128" href="#128">128</a> 						.createLiteral(obj.toString(), val.getLanguageCode());
+<a class="jxr_linenumber" name="129" href="#129">129</a> 			} <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="130" href="#130">130</a> 				lit = model.createTypedLiteral(obj);
+<a class="jxr_linenumber" name="131" href="#131">131</a> 			}
+<a class="jxr_linenumber" name="132" href="#132">132</a> 
+<a class="jxr_linenumber" name="133" href="#133">133</a> 			model.addLiteral(lsaResource, actualProp, lit);
+<a class="jxr_linenumber" name="134" href="#134">134</a> 		}
+<a class="jxr_linenumber" name="135" href="#135">135</a> 	}
+<a class="jxr_linenumber" name="136" href="#136">136</a> 
+<a class="jxr_linenumber" name="137" href="#137">137</a> 	@Override
+<a class="jxr_linenumber" name="138" href="#138">138</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> visit(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/lsas/LSA.html">LSA</a> lsa) {
+<a class="jxr_linenumber" name="139" href="#139">139</a> 		lsa.getLSAId().accept(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="140" href="#140">140</a> 		lsa.getSemanticDescription().accept(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="141" href="#141">141</a> 	}
+<a class="jxr_linenumber" name="142" href="#142">142</a> 
+<a class="jxr_linenumber" name="143" href="#143">143</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

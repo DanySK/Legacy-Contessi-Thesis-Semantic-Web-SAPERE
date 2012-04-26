@@ -1,10 +1,11 @@
 package it.apice.sapere.api.space.core;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSA;
 
 /**
  * <p>
- * This inteface models an entity that compiles LSAs into a set of RDF
+ * This interface models an entity that compiles LSAs into a set of RDF
  * Statements.
  * </p>
  * 
@@ -25,4 +26,18 @@ public interface LSACompiler<RDFStmtIterType> {
 	 * @return The compiled LSA
 	 */
 	CompiledLSA<RDFStmtIterType> compile(LSA lsa);
+
+	/**
+	 * <p>
+	 * Parses provided string in order to extract a {@link CompiledLSA}.
+	 * </p>
+	 * 
+	 * @param rdf
+	 *            A String, in one of the supported RDF formats, which contains
+	 *            information about the LSA
+	 * @param format
+	 *            The format in which the String is written
+	 * @return The corresponding compiled LSA
+	 */
+	CompiledLSA<RDFStmtIterType> parse(String rdf, RDFFormat format);
 }

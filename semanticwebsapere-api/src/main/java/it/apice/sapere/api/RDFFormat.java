@@ -13,6 +13,8 @@ public enum RDFFormat {
 	RDF_XML("RDF/XML"),
 	/** Turtle format (preferred). */
 	TURTLE("TURTLE"),
+	/** N3 format (super-set of Turtle). */
+	N3("N3"),
 	/** N-Triples. */
 	N_TRIPLES("N-TRIPLE");
 

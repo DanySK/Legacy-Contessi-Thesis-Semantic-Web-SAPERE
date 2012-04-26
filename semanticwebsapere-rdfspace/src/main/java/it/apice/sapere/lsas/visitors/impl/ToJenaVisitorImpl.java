@@ -43,7 +43,7 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 
 	/** rdf:type property. */
 	private final transient com.hp.hpl.jena.rdf.model.Property rdfTypeProp;
-	
+
 	/** Resource representing the LSA owl:Class. */
 	private final transient Resource lsaClass;
 
@@ -100,12 +100,28 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 			obj = cal;
 		}
 
+		// Handle nested Semantic Descriptions:
 		if (val instanceof SDescValue) {
+			// Create a Blank Node
 			final AnonId bId = new AnonId();
 			final Resource bNode = model.createResource(bId);
-			bNode.isAnon();
-			// TODO Complete translation
-		} else {
+
+			// Associate it to the actualProp
+			model.add(lsaResource, actualProp, bNode);
+
+			// Push actual (root) lsaResource and property [stack]
+			final Resource tmpRes = lsaResource;
+			final com.hp.hpl.jena.rdf.model.Property tmpProp = actualProp;
+
+			// Set the Blank node as current resource and visit the nested
+			// Semantic Description
+			lsaResource = bNode;
+			((SDescValue) val).getValue().accept(this);
+
+			// Pop root lsaResource and property [unstack]
+			lsaResource = tmpRes;
+			actualProp = tmpProp;
+		} else { // Standard (flat) behaviour
 			Literal lit;
 			if (val.hasLocale()) {
 				lit = model

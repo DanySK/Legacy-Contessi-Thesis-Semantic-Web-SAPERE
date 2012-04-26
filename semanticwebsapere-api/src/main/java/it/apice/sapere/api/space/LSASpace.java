@@ -5,8 +5,6 @@ import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.observation.LSAObserver;
 
-import java.net.URI;
-
 /**
  * <p>
  * This interface models a (local) LSA-space as seen by a SAPEREAgent, so
@@ -25,7 +23,7 @@ import java.net.URI;
  * @author Paolo Contessi
  * 
  */
-public interface LSAspace {
+public interface LSAspace extends OntologyHandler {
 
 	/**
 	 * <p>
@@ -150,15 +148,4 @@ public interface LSAspace {
 	 */
 	void done();
 
-	/**
-	 * <p>
-	 * Instructs the LSA-space to load and exploit the provided URI.
-	 * </p>
-	 * 
-	 * @param ontoURI
-	 *            Where the ontology can be found
-	 * @throws SAPEREException
-	 *             Cannot load ontology
-	 */
-	void loadOntology(URI ontoURI) throws SAPEREException;
 }

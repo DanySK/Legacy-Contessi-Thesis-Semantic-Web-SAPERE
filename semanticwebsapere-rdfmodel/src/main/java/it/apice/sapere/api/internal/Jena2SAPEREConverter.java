@@ -2,7 +2,9 @@ package it.apice.sapere.api.internal;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.lsas.LSA;
+import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.lsas.values.SDescValue;
 
 import java.net.URI;
 import java.util.Date;
@@ -95,7 +97,7 @@ public class Jena2SAPEREConverter {
 		final LSA res = factory.createLSA(factory.createLSAid(new URI(lsa
 				.getURI())));
 
-		populateLSA(res, lsa, model);
+		populateLSA(res.getSemanticDescription(), lsa, model);
 
 		return res;
 	}
@@ -105,8 +107,8 @@ public class Jena2SAPEREConverter {
 	 * Inspects the model, to populate the LSA.
 	 * </p>
 	 * 
-	 * @param lsa
-	 *            The lsa to be populated
+	 * @param sdesc
+	 *            The LSA's Semantic Description to be populated
 	 * @param res
 	 *            The resource representing the LSA in the model
 	 * @param model
@@ -114,15 +116,14 @@ public class Jena2SAPEREConverter {
 	 * @throws Exception
 	 *             Something went wrong during model navigation
 	 */
-	private void populateLSA(final LSA lsa, final Resource res,
-			final Model model) throws Exception {
+	private void populateLSA(final SemanticDescription sdesc,
+			final Resource res, final Model model) throws Exception {
 		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
 		while (iter.hasNext()) {
 			final Resource curr = iter.next().getResource(propVar());
 			if (!curr.getURI().equals(
 					"http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
-				lsa.getSemanticDescription().addProperty(
-						parseProperty(model, res, curr.getURI()));
+				sdesc.addProperty(parseProperty(model, res, curr.getURI()));
 			}
 		}
 	}
@@ -272,10 +273,14 @@ public class Jena2SAPEREConverter {
 			final QuerySolution curr = iter.next();
 			final RDFNode rVal = curr.get(objVar());
 
-			if (rVal.isURIResource()) {
+			if (rVal.isAnon()) { // Check if there's a Blank Node (nesting)
+				final SDescValue sdv = factory.createNestingPropertyValue();
+				populateLSA(sdv.getValue(), rVal.asResource(), model);
+				res.add(sdv);
+			} else if (rVal.isURIResource()) { // Checks if the object is a URI
 				res.add(factory.createPropertyValue(new URI(rVal.asResource()
 						.getURI())));
-			} else if (rVal.isLiteral()) {
+			} else if (rVal.isLiteral()) { // Checks if the object is a Literal
 				res.add(parseLiteral(rVal.asLiteral()));
 			}
 		}

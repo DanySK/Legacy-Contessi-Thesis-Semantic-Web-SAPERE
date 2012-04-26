@@ -6,11 +6,11 @@ import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
-import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.lsas.impl.LSAImpl;
 import it.apice.sapere.api.lsas.impl.LSAidImpl;
 import it.apice.sapere.api.lsas.impl.PropertyImpl;
 import it.apice.sapere.api.lsas.impl.PropertyNameImpl;
+import it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl;
 import it.apice.sapere.api.lsas.values.BooleanValue;
 import it.apice.sapere.api.lsas.values.DateTimeValue;
 import it.apice.sapere.api.lsas.values.DoubleValue;
@@ -183,9 +183,8 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	}
 	
 	@Override
-	public final SDescValue createPropertyValue(
-			final SemanticDescription value) {
-		return new SDescValueImpl(value);
+	public final SDescValue createNestingPropertyValue() {
+		return new SDescValueImpl(new SemanticDescriptionImpl());
 	}
 
 	@Override

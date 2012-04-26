@@ -2,10 +2,6 @@ package it.apice.sapere.api.space.core.impl;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.ecolaws.match.MatchResult;
-import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
-import it.apice.sapere.api.ecolaws.match.MutableMatchResult;
-import it.apice.sapere.api.ecolaws.match.impl.MutableMatchResultImpl;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.LSAspace;
@@ -13,6 +9,10 @@ import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.match.MatchResult;
+import it.apice.sapere.api.space.match.MatchingEcolaw;
+import it.apice.sapere.api.space.match.MutableMatchResult;
+import it.apice.sapere.api.space.match.impl.MutableMatchResultImpl;
 import it.apice.sapere.api.space.observation.LSAObserver;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
@@ -22,6 +22,7 @@ import it.apice.sapere.space.observation.impl.SpaceEventImpl;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
+import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -88,6 +90,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Notification enabled flag. */
 	private transient boolean notificationsEnabled = true;
 
+	/** Set of loaded ontologies. */
+	private final Set<URI> loadedOntos = new HashSet<URI>();
+
 	/**
 	 * <p>
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
@@ -101,6 +106,25 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	public AbstractLSAspaceCoreImpl(
 			final LSACompiler<StmtIterator> lsaCompiler,
 			final PrivilegedLSAFactory lsaFactory) {
+		this(lsaCompiler, lsaFactory, ReasoningLevel.NONE);
+	}
+			
+	/**
+	 * <p>
+	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
+	 * </p>
+	 * 
+	 * @param lsaCompiler
+	 *            Reference to a {@link LSACompiler}
+	 * @param lsaFactory
+	 *            Reference to a {@link PrivilegedLSAFactory}
+	 * @param rLevel
+	 *            The {@link ReasoningLevel}
+	 */
+	public AbstractLSAspaceCoreImpl(
+			final LSACompiler<StmtIterator> lsaCompiler,
+			final PrivilegedLSAFactory lsaFactory, 
+			final ReasoningLevel rLevel) {
 		if (lsaCompiler == null) {
 			throw new IllegalArgumentException("Invalid LSACompiler provided");
 		}
@@ -114,7 +138,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		observers = new HashMap<LSAid, List<LSAObserver>>();
 
 		// RDFModel initialization
-		model = initRDFGraphModel();
+		model = initRDFGraphModel(rLevel);
 		lsaClass = model.createResource(LSA_TYPE);
 
 		// Other stuff initialization
@@ -129,9 +153,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * stored.
 	 * </p>
 	 * 
+	 * @param rLevel
+	 *            The {@link ReasoningLevel}
 	 * @return A reference to a (Jena's) Model
 	 */
-	protected abstract Model initRDFGraphModel();
+	protected abstract Model initRDFGraphModel(ReasoningLevel rLevel);
 
 	/**
 	 * <p>
@@ -312,11 +338,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final ResultSet iter = execQuery(model, law.getMatchQuery());
 
 			while (iter.hasNext()) {
+				final QuerySolution sol = iter.next();
 				// 2. Extract bindings
 				final MutableMatchResult match = new MutableMatchResultImpl(
 						this);
 				for (String varName : law.variablesNames()) {
-					match.register(varName, null, 1.0);
+					match.register(varName,
+							extractValue(sol.getResource(varName)), 1.0);
 				}
 
 				// 3. Return them for evaluation
@@ -329,6 +357,19 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		return res.toArray(new MatchResult[res.size()]);
+	}
+
+	/**
+	 * <p>
+	 * Extracts a String that represents the provided resource's value.
+	 * </p>
+	 * 
+	 * @param res
+	 *            The resource whose value should be extracted
+	 * @return A String representation of the Resource's value
+	 */
+	private String extractValue(final Resource res) {
+		return res.toString();
 	}
 
 	@Override
@@ -482,8 +523,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsaId);
 			}
 
-			return new CompiledLSAImpl(lsaId, model.createResource(
-					lsaId.toString()).listProperties());
+			final CompiledLSAImpl res = new CompiledLSAImpl(lsaId, model
+					.createResource(lsaId.toString()).listProperties());
+			notifySpaceOperation(String.format("LSA read: %s", lsaId), lsaId,
+					SpaceOperationType.AGENT_READ);
+
+			return res;
 		} catch (Exception e) {
 			throw new SAPEREException("Cannot retrieve LSA: " + lsaId, e);
 		} finally {
@@ -618,12 +663,19 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		try {
-			model.read(ontoURI.toString());
+			if (loadedOntos.add(ontoURI)) {
+				model.read(ontoURI.toString());
+			}
 		} catch (Exception ex) {
 			throw new SAPEREException(
 					"Unable to retrieve and load the ontology at "
 							+ ontoURI.toString(), ex);
 		}
+	}
+
+	@Override
+	public final URI[] getLoadedOntologies() {
+		return loadedOntos.toArray(new URI[loadedOntos.size()]);
 	}
 
 	/**
@@ -654,21 +706,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		return QueryExecutionFactory.create(QueryFactory.create(query), aModel)
 				.execSelect();
 	}
-
-	// /**
-	// * <p>
-	// * Executes a SPARQL query on provided model.
-	// * </p>
-	// *
-	// * @param aModel
-	// * The queried model
-	// * @param query
-	// * The query to be executed
-	// * @return Query's result set
-	// */
-	// private ResultSet execQuery(final Model aModel, final Query query) {
-	// return QueryExecutionFactory.create(query, aModel).execSelect();
-	// }
 
 	/**
 	 * <p>

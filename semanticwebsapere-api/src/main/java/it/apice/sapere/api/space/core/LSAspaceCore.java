@@ -1,10 +1,10 @@
 package it.apice.sapere.api.space.core;
 
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.ecolaws.match.MatchResult;
-import it.apice.sapere.api.ecolaws.match.MatchingEcolaw;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.LSAspace;
+import it.apice.sapere.api.space.match.MatchResult;
+import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 
 /**
