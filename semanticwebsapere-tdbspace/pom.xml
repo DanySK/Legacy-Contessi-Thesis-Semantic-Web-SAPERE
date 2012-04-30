@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.0.1</version>
+		<version>0.1.0</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-tdbspace</artifactId>
@@ -20,7 +20,7 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
@@ -31,13 +31,19 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-testplan</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-rdfmodel</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
+			<type>bundle</type>
+		</dependency>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-rdfspace</artifactId>
+			<version>0.1.0</version>
 			<type>bundle</type>
 		</dependency>
 	</dependencies>
@@ -56,27 +62,10 @@
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>semanticwebsapere-tdbspace</Bundle-SymbolicName>
 						<Import-Package>!*</Import-Package>
-						<!-- <Import-Package>it.apice.sapere.api.*</Import-Package> -->
 						<Export-Package>it.apice.sapere.space.tdb</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
-<!-- 			<plugin> -->
-<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
-<!-- 				<version>2.12</version> -->
-<!-- 				<configuration> -->
-<!-- 					<encoding>UTF-8</encoding> -->
-<!-- 				</configuration> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<goals> -->
-<!-- 							<goal>integration-test</goal> -->
-<!-- 							<goal>verify</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
 		</plugins>
 	</build>
 	<name>LSA-space (RDF + ACID)</name>

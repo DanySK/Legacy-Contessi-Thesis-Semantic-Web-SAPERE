@@ -1,7 +1,10 @@
 package it.apice.sapere.space.internal;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
+import it.apice.sapere.api.space.core.EcolawCompiler;
+import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.core.impl.EcolawCompilerImpl;
 import it.apice.sapere.api.space.core.impl.LSACompilerImpl;
 import it.apice.sapere.api.space.core.impl.ReasoningLevel;
 import it.apice.sapere.space.impl.LSAspaceImpl;
@@ -12,6 +15,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
+
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
@@ -29,15 +34,99 @@ public class RDFSpaceActivator implements BundleActivator {
 	/** LSA-space Service registration. */
 	private transient ServiceRegistration<?> lsaSpaceServiceReg;
 
+	/** LSA Compiler Service registration. */
+	private transient ServiceRegistration<?> lsaCompilerServiceReg;
+
+	/** Eco-law Compiler Service registration. */
+	private transient ServiceRegistration<?> elCompilerServiceReg;
+
 	@Override
 	public final void start(final BundleContext context) throws Exception {
 		System.out.println("SemanticWebSAPERE [RDFSpace]: Starting up..");
 
 		final PrivilegedLSAFactory fact = retrieveLSAFactoryService(context);
+
+		final LSACompiler<StmtIterator> comp = registerLSACompiler(context,
+				fact);
+		registerEcolawCompiler(context);
+		registerLSAspace(context, comp, fact);
+	}
+
+	/**
+	 * <p>
+	 * Registers the Eco-law Compiler service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle Context
+	 */
+	private void registerEcolawCompiler(final BundleContext context) {
+		elCompilerServiceReg = context.registerService(EcolawCompiler.class,
+				new EcolawCompilerImpl(), declareCompilersProps());
+
+		System.out.println("SemanticWebSAPERE [RDFSpace]: "
+				+ "Eco-law Compiler REGISTERED.");
+	}
+
+	/**
+	 * <p>
+	 * Registers the LSA Compiler service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle Context
+	 * @param fact
+	 *            The {@link PrivilegedLSAFactory} to be used
+	 * @return A direct reference to the service implementation
+	 */
+	private LSACompiler<StmtIterator> registerLSACompiler(
+			final BundleContext context, final PrivilegedLSAFactory fact) {
+		final LSACompiler<StmtIterator> comp = new LSACompilerImpl(fact);
+		lsaCompilerServiceReg = context.registerService(LSACompiler.class,
+				comp, declareCompilersProps());
+
+		System.out.println("SemanticWebSAPERE [RDFSpace]: "
+				+ "LSA Compiler REGISTERED.");
+
+		return comp;
+	}
+	
+	/**
+	 * <p>
+	 * Defines properties of Compiler services that will be registered.
+	 * </p>
+	 * 
+	 * @return Service properties
+	 */
+	private Hashtable<String, ?> declareCompilersProps() {
+		final Hashtable<String, Object> props = new Hashtable<String, Object>();
+
+		props.put("sapere.rdf-based", Boolean.TRUE);
+		props.put("sapere.acid-transactions", Boolean.FALSE);
+		props.put("sapere.lsa-space.with-reasoner", Boolean.TRUE);
+
+		return props;
+	}
+
+	/**
+	 * <p>
+	 * Registers the LSA-space service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle Context
+	 * @param comp
+	 *            The {@link LSACompiler}
+	 * @param fact
+	 *            The {@link PrivilegedLSAFactory}
+	 */
+	private void registerLSAspace(final BundleContext context,
+			final LSACompiler<StmtIterator> comp,
+			final PrivilegedLSAFactory fact) {
 		lsaSpaceServiceReg = context.registerService(LSAspaceCore.class
-				.getName(), new LSAspaceImpl(new LSACompilerImpl(fact), fact,
+				.getName(), new LSAspaceImpl(comp, fact,
 				getReasoningLevel(System.getProperty(REASONING_LEVEL))),
-				declareProps());
+				declareSpaceProps());
 
 		System.out.println("SemanticWebSAPERE [RDFSpace]: "
 				+ "LSA-space REGISTERED.");
@@ -74,12 +163,12 @@ public class RDFSpaceActivator implements BundleActivator {
 
 	/**
 	 * <p>
-	 * Defines properties of services that will be registered.
+	 * Defines properties of LSA-space service that will be registered.
 	 * </p>
 	 * 
 	 * @return Service properties
 	 */
-	private Hashtable<String, ?> declareProps() {
+	private Hashtable<String, ?> declareSpaceProps() {
 		final Hashtable<String, Object> props = new Hashtable<String, Object>();
 
 		props.put("sapere.rdf-based", Boolean.TRUE);
@@ -118,6 +207,20 @@ public class RDFSpaceActivator implements BundleActivator {
 			lsaSpaceServiceReg = null;
 			System.out.println("SemanticWebSAPERE [RDFSpace]: "
 					+ "LSA-space UNREGISTERED.");
+		}
+		
+		if (lsaCompilerServiceReg != null) {
+			context.ungetService(lsaCompilerServiceReg.getReference());
+			lsaCompilerServiceReg = null;
+			System.out.println("SemanticWebSAPERE [RDFSpace]: "
+					+ "LSA Compiler UNREGISTERED.");
+		}
+		
+		if (elCompilerServiceReg != null) {
+			context.ungetService(elCompilerServiceReg.getReference());
+			elCompilerServiceReg = null;
+			System.out.println("SemanticWebSAPERE [RDFSpace]: "
+					+ "Eco-law Compiler UNREGISTERED.");
 		}
 	}
 

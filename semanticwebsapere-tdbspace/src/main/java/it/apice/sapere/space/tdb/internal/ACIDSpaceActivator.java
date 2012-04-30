@@ -1,10 +1,10 @@
 package it.apice.sapere.space.tdb.internal;
 
-import java.util.Hashtable;
-
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.space.LSAspace;
-import it.apice.sapere.space.tdb.impl.ACIDLSAspaceImpl;
+import it.apice.sapere.space.tdb.impl.HPLSAspaceImpl;
+
+import java.util.Hashtable;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -25,11 +25,11 @@ public class ACIDSpaceActivator implements BundleActivator {
 	private transient ServiceRegistration<?> lsaSpaceServiceReg;
 
 	/** Direct reference to LSA-space. */
-	private transient ACIDLSAspaceImpl space;
+	private transient HPLSAspaceImpl space;
 
 	@Override
 	public final void start(final BundleContext context) throws Exception {
-		space = new ACIDLSAspaceImpl(retrieveLSAFactoryService(context));
+		space = new HPLSAspaceImpl(retrieveLSAFactoryService(context));
 		lsaSpaceServiceReg = context.registerService(LSAspace.class.getName(),
 				space, declareProps());
 	}

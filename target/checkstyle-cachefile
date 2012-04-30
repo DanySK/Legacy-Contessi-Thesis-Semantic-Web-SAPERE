@@ -1,4 +1,4 @@
-#Mon Apr 30 15:58:10 CEST 2012
+#Mon Apr 30 17:35:02 CEST 2012
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Reactant.java=1333544411000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Ecolaw.java=1335268143000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/VarTerm.java=1334595882000
@@ -26,7 +26,7 @@
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/visitors/internal/AuxFunctions.java=1334928661000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/observation/impl/package-info.java=1332152880000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/terms/observers/impl/PropagationObserverImpl.java=1334591689000
-/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/internal/RDFSpaceActivator.java=1335793269000
+/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/src/main/java/it/apice/sapere/space/internal/RDFSpaceActivator.java=1335800067000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/formulas/impl/LtEqFormulaImpl.java=1334839800000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/package-info.java=1332088612000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/space/match/AbstractTestMatchingEcolawTemplate.java=1335438567000
@@ -60,6 +60,7 @@
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/package-info.java=1331898669000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/PropertyTerm.java=1334142550000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/values/package-info.java=1333398683000
+/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/internal/Jena2SAPEREConverter.java=1335796539000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/compilers/package-info.java=1335436706000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/filter/impl/ExtendsFilterImpl.java=1334745871000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/LSAEvent.java=1331898670000
@@ -86,7 +87,7 @@
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/utils/RDFSerializer.java=1333558628000
 configuration*?=727EFF64CC6FE78333BB8793C9483CCFB37DEE50
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/package-info.java=1331736843000
-/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAFactoryImpl.java=1335428932000
+/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/impl/LSAFactoryImpl.java=1335796392000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/LongValueImpl.java=1334824096000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/DateTimeValue.java=1334823167000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/LSAidValue.java=1334823101000
@@ -163,6 +164,7 @@ configuration*?=727EFF64CC6FE78333BB8793C9483CCFB37DEE50
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/LSACompiler.java=1335430595000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-testplan/src/main/java/it/apice/sapere/api/lsas/AbstractTestProperty.java=1334921430000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/LiteralValue.java=1334823130000
+/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/formulas/impl/FormulaFactoryImpl.java=1335796457000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/lsas/values/impl/FloatValueImpl.java=1334921265000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfmodel/src/main/java/it/apice/sapere/api/ecolaws/formulas/impl/AbstractFormulaImpl.java=1334766441000
 /Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/EcolawCompiler.java=1335443725000
