@@ -23,6 +23,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
 
+
 /**
  * <p>
  * Utilty class which provides translation from Jena to SAPERE model.
@@ -73,7 +74,7 @@ public class Jena2SAPEREConverter {
 				model.createProperty(RDF_TYPE_PROP),
 				model.createResource(LSA_CLASS));
 		while (iter.hasNext()) {
-			res.add(parseLSA(iter.next(), model));
+			res.add(parseLSA((Resource) iter.next(), model));
 		}
 
 		return res;
@@ -120,7 +121,8 @@ public class Jena2SAPEREConverter {
 			final Resource res, final Model model) throws Exception {
 		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
 		while (iter.hasNext()) {
-			final Resource curr = iter.next().getResource(propVar());
+			final Resource curr = ((QuerySolution) iter.next())
+					.getResource(propVar());
 			if (!curr.getURI().equals(
 					"http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
 				sdesc.addProperty(parseProperty(model, res, curr.getURI()));
@@ -270,18 +272,20 @@ public class Jena2SAPEREConverter {
 		final ResultSet iter = execQuery(model,
 				lsaPropsValuesQuery(lsa, propURI));
 		while (iter.hasNext()) {
-			final QuerySolution curr = iter.next();
+			final QuerySolution curr = (QuerySolution) iter.next();
 			final RDFNode rVal = curr.get(objVar());
 
 			if (rVal.isAnon()) { // Check if there's a Blank Node (nesting)
 				final SDescValue sdv = factory.createNestingPropertyValue();
-				populateLSA(sdv.getValue(), rVal.asResource(), model);
+				populateLSA(sdv.getValue(), (Resource) rVal.as(Resource.class),
+						model);
 				res.add(sdv);
 			} else if (rVal.isURIResource()) { // Checks if the object is a URI
-				res.add(factory.createPropertyValue(new URI(rVal.asResource()
+				res.add(factory.createPropertyValue(
+						new URI(((Resource) rVal.as(Resource.class))
 						.getURI())));
 			} else if (rVal.isLiteral()) { // Checks if the object is a Literal
-				res.add(parseLiteral(rVal.asLiteral()));
+				res.add(parseLiteral((Literal) rVal.as(Literal.class)));
 			}
 		}
 
@@ -332,4 +336,5 @@ public class Jena2SAPEREConverter {
 
 		return factory.createPropertyValue(literal.getString());
 	}
+
 }

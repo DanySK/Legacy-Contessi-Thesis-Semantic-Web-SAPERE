@@ -20,9 +20,9 @@ import com.hp.hpl.jena.rdf.model.StmtIterator;
  * <p>
  * This class runs an integration test for the provided LSAspace implementation.
  * </p>
- *
+ * 
  * @author Paolo Contessi
- *
+ * 
  */
 @RunWith(JUnit4TestRunner.class)
 @ExamReactorStrategy(AllConfinedStagedReactorFactory.class)
@@ -40,7 +40,7 @@ public class TstLSAspace extends AbstractTestLSAspaceCore<StmtIterator> {
 	 * <p>
 	 * Provides test configuration.
 	 * </p>
-	 *
+	 * 
 	 * @return Chosen options
 	 */
 	@Configuration
@@ -55,8 +55,9 @@ public class TstLSAspace extends AbstractTestLSAspaceCore<StmtIterator> {
 				CoreOptions.mavenBundle().groupId("it.apice.sapere")
 						.artifactId("semanticwebsapere-rdfmodel"),
 				CoreOptions.mavenBundle().groupId("it.apice.sapere")
-						.artifactId("semanticwebsapere-rdfspace"), CoreOptions
-						.junitBundles(), CoreOptions.felix().version("4.0.2"));
+						.artifactId("semanticwebsapere-rdfspace")
+						.version("0.1.0"), CoreOptions.junitBundles(),
+				CoreOptions.felix().version("4.0.2"));
 	}
 
 	@Override

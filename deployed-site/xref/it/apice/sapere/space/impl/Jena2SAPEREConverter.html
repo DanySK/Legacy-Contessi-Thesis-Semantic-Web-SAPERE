@@ -83,7 +83,7 @@
 <a class="jxr_linenumber" name="73" href="#73">73</a>  				model.createProperty(RDF_TYPE_PROP),
 <a class="jxr_linenumber" name="74" href="#74">74</a>  				model.createResource(LSA_CLASS));
 <a class="jxr_linenumber" name="75" href="#75">75</a>  		<strong class="jxr_keyword">while</strong> (iter.hasNext()) {
-<a class="jxr_linenumber" name="76" href="#76">76</a>  			res.add(parseLSA(iter.next(), model));
+<a class="jxr_linenumber" name="76" href="#76">76</a>  			res.add(parseLSA((Resource) iter.next(), model));
 <a class="jxr_linenumber" name="77" href="#77">77</a>  		}
 <a class="jxr_linenumber" name="78" href="#78">78</a>  
 <a class="jxr_linenumber" name="79" href="#79">79</a>  		<strong class="jxr_keyword">return</strong> res;
@@ -130,7 +130,7 @@
 <a class="jxr_linenumber" name="120" href="#120">120</a> 			<strong class="jxr_keyword">final</strong> Resource res, <strong class="jxr_keyword">final</strong> Model model) <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="121" href="#121">121</a> 		<strong class="jxr_keyword">final</strong> ResultSet iter = execQuery(model, lsaPropsQuery(res));
 <a class="jxr_linenumber" name="122" href="#122">122</a> 		<strong class="jxr_keyword">while</strong> (iter.hasNext()) {
-<a class="jxr_linenumber" name="123" href="#123">123</a> 			<strong class="jxr_keyword">final</strong> Resource curr = iter.next().getResource(propVar());
+<a class="jxr_linenumber" name="123" href="#123">123</a> 			<strong class="jxr_keyword">final</strong> Resource curr = ((QuerySolution) iter.next()).getResource(propVar());
 <a class="jxr_linenumber" name="124" href="#124">124</a> 			<strong class="jxr_keyword">if</strong> (!curr.getURI().equals(
 <a class="jxr_linenumber" name="125" href="#125">125</a> 					<span class="jxr_string">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>)) {
 <a class="jxr_linenumber" name="126" href="#126">126</a> 				sdesc.addProperty(parseProperty(model, res, curr.getURI()));
@@ -280,18 +280,18 @@
 <a class="jxr_linenumber" name="270" href="#270">270</a> 		<strong class="jxr_keyword">final</strong> ResultSet iter = execQuery(model,
 <a class="jxr_linenumber" name="271" href="#271">271</a> 				lsaPropsValuesQuery(lsa, propURI));
 <a class="jxr_linenumber" name="272" href="#272">272</a> 		<strong class="jxr_keyword">while</strong> (iter.hasNext()) {
-<a class="jxr_linenumber" name="273" href="#273">273</a> 			<strong class="jxr_keyword">final</strong> QuerySolution curr = iter.next();
+<a class="jxr_linenumber" name="273" href="#273">273</a> 			<strong class="jxr_keyword">final</strong> QuerySolution curr = (QuerySolution) iter.next();
 <a class="jxr_linenumber" name="274" href="#274">274</a> 			<strong class="jxr_keyword">final</strong> RDFNode rVal = curr.get(objVar());
 <a class="jxr_linenumber" name="275" href="#275">275</a> 
 <a class="jxr_linenumber" name="276" href="#276">276</a> 			<strong class="jxr_keyword">if</strong> (rVal.isAnon()) { <em class="jxr_comment">// Check if there's a Blank Node (nesting)</em>
 <a class="jxr_linenumber" name="277" href="#277">277</a> 				<strong class="jxr_keyword">final</strong> <a href="../../../../../it/apice/sapere/api/lsas/values/SDescValue.html">SDescValue</a> sdv = factory.createNestingPropertyValue();
-<a class="jxr_linenumber" name="278" href="#278">278</a> 				populateLSA(sdv.getValue(), rVal.asResource(), model);
+<a class="jxr_linenumber" name="278" href="#278">278</a> 				populateLSA(sdv.getValue(), (Resource) rVal.as(Resource.<strong class="jxr_keyword">class</strong>), model);
 <a class="jxr_linenumber" name="279" href="#279">279</a> 				res.add(sdv);
 <a class="jxr_linenumber" name="280" href="#280">280</a> 			} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (rVal.isURIResource()) { <em class="jxr_comment">// Checks if the object is a URI</em>
-<a class="jxr_linenumber" name="281" href="#281">281</a> 				res.add(factory.createPropertyValue(<strong class="jxr_keyword">new</strong> URI(rVal.asResource()
+<a class="jxr_linenumber" name="281" href="#281">281</a> 				res.add(factory.createPropertyValue(<strong class="jxr_keyword">new</strong> URI(((Resource) rVal.as(Resource.<strong class="jxr_keyword">class</strong>))
 <a class="jxr_linenumber" name="282" href="#282">282</a> 						.getURI())));
 <a class="jxr_linenumber" name="283" href="#283">283</a> 			} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (rVal.isLiteral()) { <em class="jxr_comment">// Checks if the object is a Literal</em>
-<a class="jxr_linenumber" name="284" href="#284">284</a> 				res.add(parseLiteral(rVal.asLiteral()));
+<a class="jxr_linenumber" name="284" href="#284">284</a> 				res.add(parseLiteral((Literal) rVal.as(Literal.<strong class="jxr_keyword">class</strong>)));
 <a class="jxr_linenumber" name="285" href="#285">285</a> 			}
 <a class="jxr_linenumber" name="286" href="#286">286</a> 		}
 <a class="jxr_linenumber" name="287" href="#287">287</a> 

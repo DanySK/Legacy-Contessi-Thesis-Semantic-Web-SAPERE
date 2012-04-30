@@ -35,20 +35,25 @@
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
+		<!-- <repository> -->
+		<!-- <id>maven.aksw.org</id> -->
+		<!-- <name>Maven AKSW archivia</name> -->
+		<!-- <url>http://maven.aksw.org/archiva/repository/internal/</url> -->
+		<!-- </repository> -->
 		<repository>
-			<id>maven.aksw.org</id>
-			<name>Maven AKSW archivia</name>
-			<url>http://maven.aksw.org/archiva/repository/internal/</url>
+			<id>com.clarkparsia.repo</id>
+			<url>http://dev.biordf.net/maven</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>com.owldl</groupId>
-				<artifactId>pellet</artifactId>
-				<version>2.3.0</version>
-			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
@@ -114,6 +119,76 @@
 				<version>4.9.0</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>antlr</artifactId>
+				<version>2.7.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>arq-extra</artifactId>
+				<version>2.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>arq</artifactId>
+				<version>2.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>aterm-java</artifactId>
+				<version>1.6.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>concurrent</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>icu4j</artifactId>
+				<version>3.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>iri</artifactId>
+				<version>2.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>jena</artifactId>
+				<version>2.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>pellet-full</artifactId>
+				<version>2.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>relaxngDatatype</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>xercesImpl</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mindswap.pellet</groupId>
+				<artifactId>xsdlib</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<!-- <dependency> -->
+			<!-- <groupId>com.clarkparsia.pellet</groupId> -->
+			<!-- <artifactId>pellet-jena</artifactId> -->
+			<!-- <version>2.3.0</version> -->
+			<!-- </dependency> -->
 		</dependencies>
 	</dependencyManagement>
 

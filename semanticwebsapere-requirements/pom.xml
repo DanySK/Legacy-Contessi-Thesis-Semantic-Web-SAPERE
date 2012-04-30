@@ -13,17 +13,6 @@
 	<description>Wraps all SemanticWebSAPERE requirements</description>
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>apache-jena</artifactId>
-			<version>2.7.0-incubating</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>jena-tdb</artifactId>
-			<version>0.9.0-incubating</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
@@ -37,13 +26,61 @@
 			<version>200504122039</version>
 		</dependency>
 		<dependency>
-			<groupId>com.owldl</groupId>
-			<artifactId>pellet</artifactId>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>antlr</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.owldl</groupId>
-			<artifactId>pellet-jena</artifactId>
-			<version>2.3.0</version>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>arq-extra</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>arq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>aterm-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>concurrent</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>icu4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>iri</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>jena</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>pellet-full</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>relaxngDatatype</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>xercesImpl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>xsdlib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>2.0.2</version>
 		</dependency>
 	</dependencies>
 
@@ -61,7 +98,7 @@
 						<Export-Package>*</Export-Package>
 						<Import-Package>!*</Import-Package>
 						<Embed-Dependency>*</Embed-Dependency>
-						<Embed-Dependency>*</Embed-Dependency>
+						<!-- <Embed-Dependency>*</Embed-Dependency> -->
 						<Embed-Transitive>true</Embed-Transitive>
 					</instructions>
 				</configuration>

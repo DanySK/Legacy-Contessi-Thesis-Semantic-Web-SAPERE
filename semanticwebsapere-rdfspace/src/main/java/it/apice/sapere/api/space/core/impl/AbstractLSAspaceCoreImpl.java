@@ -20,6 +20,7 @@ import it.apice.sapere.space.impl.Jena2SAPEREConverter;
 import it.apice.sapere.space.observation.impl.LSAEventImpl;
 import it.apice.sapere.space.observation.impl.SpaceEventImpl;
 
+import java.io.StringWriter;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,6 +31,7 @@ import java.util.Set;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+import com.hp.hpl.jena.query.DatasetFactory;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
@@ -39,7 +41,9 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.update.UpdateAction;
+import com.hp.hpl.jena.update.GraphStore;
+import com.hp.hpl.jena.update.GraphStoreFactory;
+import com.hp.hpl.jena.update.UpdateFactory;
 
 /**
  * <p>
@@ -66,8 +70,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** LSAs observations map. */
 	private final transient Map<LSAid, List<LSAObserver>> observers;
 
-	/** RDF Graph Store. */
+	/** RDF Graph Store (model). */
 	private final transient Model model;
+
+	/** RDF Graph Store (real one). */
+	private final transient GraphStore modelGraph;
 
 	/** Reference to an LSACompiler. */
 	private final transient LSACompiler<StmtIterator> compiler;
@@ -93,6 +100,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Set of loaded ontologies. */
 	private final Set<URI> loadedOntos = new HashSet<URI>();
 
+	/** Current node-id. */
+	private final transient String nodeId;
+
 	/**
 	 * <p>
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
@@ -108,7 +118,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final PrivilegedLSAFactory lsaFactory) {
 		this(lsaCompiler, lsaFactory, ReasoningLevel.NONE);
 	}
-			
+
 	/**
 	 * <p>
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
@@ -140,11 +150,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		// RDFModel initialization
 		model = initRDFGraphModel(rLevel);
 		lsaClass = model.createResource(LSA_TYPE);
+		modelGraph = GraphStoreFactory.create(DatasetFactory.create(model));
 
 		// Other stuff initialization
 		rdfTypeProp = model.createProperty(RDF_TYPE);
 		compiler = lsaCompiler;
 		converter = new Jena2SAPEREConverter(lsaFactory);
+		nodeId = lsaFactory.getNodeID();
 	}
 
 	/**
@@ -178,7 +190,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireReadLock() {
-		model.enterCriticalSection(Model.READ);
+		model.enterCriticalSection(true/* Model.READ */);
 	}
 
 	/**
@@ -187,7 +199,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireWriteLock() {
-		model.enterCriticalSection(Model.WRITE);
+		model.enterCriticalSection(false/* Model.WRITE */);
 	}
 
 	/**
@@ -338,7 +350,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final ResultSet iter = execQuery(model, law.getMatchQuery());
 
 			while (iter.hasNext()) {
-				final QuerySolution sol = iter.next();
+				final QuerySolution sol = (QuerySolution) iter.next();
 				// 2. Extract bindings
 				final MutableMatchResult match = new MutableMatchResultImpl(
 						this);
@@ -382,7 +394,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
-			execUpdateQuery(model, law.getUpdateQuery());
+			execUpdateQuery(modelGraph, law.getUpdateQuery());
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot apply eco-law", ex);
 		} finally {
@@ -712,13 +724,31 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * Executes a SPARQL Update query on provided model.
 	 * </p>
 	 * 
-	 * @param aModel
-	 *            The queried model
+	 * @param aGraphStore
+	 *            The queried model's graph store
 	 * @param query
 	 *            The update query to be executed
 	 */
-	private void execUpdateQuery(final Model aModel, final String query) {
-		UpdateAction.parseExecute(query, aModel);
+	private void execUpdateQuery(final GraphStore aGraphStore,
+			final String query) {
+		UpdateFactory.create(query).exec(aGraphStore);
 	}
 
+	@Override
+	public final String toString() {
+		final StringWriter strW = new StringWriter();
+		try {
+			model.write(strW, "TURTLE");
+			return "===== SAPERE :: LSA-space (sapere:" + nodeId.split("#")[1]
+					+ ") =====\n" + strW.toString();
+		} finally {
+			if (strW != null) {
+				try {
+					strW.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
 }

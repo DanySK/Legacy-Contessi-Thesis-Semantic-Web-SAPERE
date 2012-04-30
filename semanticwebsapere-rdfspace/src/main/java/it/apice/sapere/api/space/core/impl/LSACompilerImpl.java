@@ -106,7 +106,7 @@ public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 				model.createProperty(RDF_TYPE), model.createResource(LSA_TYPE));
 		try {
 			while (iter.hasNext()) {
-				final Resource lsa = iter.next();
+				final Resource lsa = (Resource) iter.next();
 				if (iter.hasNext()) {
 					throw new IllegalArgumentException(
 							"Only one LSA should be parsed");

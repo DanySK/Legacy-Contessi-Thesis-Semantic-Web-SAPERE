@@ -69,7 +69,7 @@ public class RDFSpaceActivator implements BundleActivator {
 
 		System.out.println("SemanticWebSAPERE [RDFSpace]: "
 				+ "NO reasoner enabled");
-		return ReasoningLevel.OWL_DL;
+		return ReasoningLevel.NONE;
 	}
 
 	/**

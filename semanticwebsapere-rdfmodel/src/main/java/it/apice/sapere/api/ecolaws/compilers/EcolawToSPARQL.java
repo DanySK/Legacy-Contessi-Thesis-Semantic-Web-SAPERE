@@ -23,6 +23,8 @@ import it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl;
 import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
 import it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions;
 import it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult;
+import it.apice.sapere.api.lsas.PropertyName;
+import it.apice.sapere.api.lsas.values.URIValue;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -236,7 +238,18 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 	 */
 	private void ruleTL(final VarTerm<?> term, final boolean spaceAfter) {
 		if (term.isGround()) {
+			final Object obj = term.getValue();
+			final boolean wrap = obj instanceof URIValue
+					|| obj instanceof PropertyName;
+			if (wrap) {
+				query.append("<");
+			}
+
 			query.append(term.toString());
+
+			if (wrap) {
+				query.append(">");
+			}
 		} else {
 			query.append("?" + term.getVarName());
 		}
@@ -413,7 +426,7 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		for (LookUpResult res : triples) {
 			query.append("\t\t\t")
 					.append(res.getY().toString().replace(".D", ""))
-					.append(" ").append(res.getT()).append(" ?o\n");
+					.append(" <").append(res.getT()).append("> ?o\n");
 		}
 		query.append("\t\t}\n");
 		query.append("\t}\n");
@@ -496,8 +509,8 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 		ruleTL(filter.getLeftTerm());
 		query.append(" ?o .\n\t\tFILTER NOT EXISTS {\n");
 		for (LookUpResult res : triples) {
-			query.append("\t\t\t").append(res.getY()).append(" ")
-					.append(res.getT()).append(" ?o .\n");
+			query.append("\t\t\t").append(res.getY()).append(" <")
+					.append(res.getT()).append("> ?o .\n");
 		}
 		query.append("\t\t}\n");
 		query.append("\t}\n");
