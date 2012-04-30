@@ -271,7 +271,13 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 
 			// 2. Inject and read the same LSA
-			assertEquals(space.inject(lsa).read(lsa.getLSAId()), lsa);
+			final LSA rLsa = space.inject(lsa).read(lsa.getLSAId());
+
+			// (added to ignore additions from the reasoner)
+			rLsa.getSemanticDescription().removeProperty(
+					createFactory().createProperty(
+							new URI("http://www.w3.org/2002/07/owl#sameAs")));
+			assertEquals(lsa, rLsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_READ));

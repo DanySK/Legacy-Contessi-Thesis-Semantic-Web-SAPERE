@@ -30,9 +30,9 @@
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_javadoccomment"> * This class runs an integration test for the provided LSAspace implementation.</em>
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_javadoccomment"> * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <em class="jxr_javadoccomment"> * @author Paolo Contessi</em>
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="27" href="#27">27</a>  @RunWith(JUnit4TestRunner.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="28" href="#28">28</a>  @ExamReactorStrategy(AllConfinedStagedReactorFactory.<strong class="jxr_keyword">class</strong>)
@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">	 * Provides test configuration.</em>
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment">	 *</em>
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment">	 * </em>
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_javadoccomment">	 * @return Chosen options</em>
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="46" href="#46">46</a>  	@Configuration
@@ -65,26 +65,27 @@
 <a class="jxr_linenumber" name="55" href="#55">55</a>  				CoreOptions.mavenBundle().groupId(<span class="jxr_string">"it.apice.sapere"</span>)
 <a class="jxr_linenumber" name="56" href="#56">56</a>  						.artifactId(<span class="jxr_string">"semanticwebsapere-rdfmodel"</span>),
 <a class="jxr_linenumber" name="57" href="#57">57</a>  				CoreOptions.mavenBundle().groupId(<span class="jxr_string">"it.apice.sapere"</span>)
-<a class="jxr_linenumber" name="58" href="#58">58</a>  						.artifactId(<span class="jxr_string">"semanticwebsapere-rdfspace"</span>), CoreOptions
-<a class="jxr_linenumber" name="59" href="#59">59</a>  						.junitBundles(), CoreOptions.felix().version(<span class="jxr_string">"4.0.2"</span>));
-<a class="jxr_linenumber" name="60" href="#60">60</a>  	}
-<a class="jxr_linenumber" name="61" href="#61">61</a>  
-<a class="jxr_linenumber" name="62" href="#62">62</a>  	@Override
-<a class="jxr_linenumber" name="63" href="#63">63</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> LSAFactory createFactory() {
-<a class="jxr_linenumber" name="64" href="#64">64</a>  		<strong class="jxr_keyword">return</strong> lsaFactory;
-<a class="jxr_linenumber" name="65" href="#65">65</a>  	}
-<a class="jxr_linenumber" name="66" href="#66">66</a>  
-<a class="jxr_linenumber" name="67" href="#67">67</a>  	@Override
-<a class="jxr_linenumber" name="68" href="#68">68</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PrivilegedLSAFactory createPrivilegedFactory() {
-<a class="jxr_linenumber" name="69" href="#69">69</a>  		<strong class="jxr_keyword">return</strong> lsaFactory;
-<a class="jxr_linenumber" name="70" href="#70">70</a>  	}
-<a class="jxr_linenumber" name="71" href="#71">71</a>  
-<a class="jxr_linenumber" name="72" href="#72">72</a>  	@Override
-<a class="jxr_linenumber" name="73" href="#73">73</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> LSAspaceCore&lt;StmtIterator&gt; createSpace() {
-<a class="jxr_linenumber" name="74" href="#74">74</a>  		<strong class="jxr_keyword">return</strong> lsaSpace;
-<a class="jxr_linenumber" name="75" href="#75">75</a>  	}
-<a class="jxr_linenumber" name="76" href="#76">76</a>  
-<a class="jxr_linenumber" name="77" href="#77">77</a>  }
+<a class="jxr_linenumber" name="58" href="#58">58</a>  						.artifactId(<span class="jxr_string">"semanticwebsapere-rdfspace"</span>)
+<a class="jxr_linenumber" name="59" href="#59">59</a>  						.version(<span class="jxr_string">"0.1.0"</span>), CoreOptions.junitBundles(),
+<a class="jxr_linenumber" name="60" href="#60">60</a>  				CoreOptions.felix().version(<span class="jxr_string">"4.0.2"</span>));
+<a class="jxr_linenumber" name="61" href="#61">61</a>  	}
+<a class="jxr_linenumber" name="62" href="#62">62</a>  
+<a class="jxr_linenumber" name="63" href="#63">63</a>  	@Override
+<a class="jxr_linenumber" name="64" href="#64">64</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> LSAFactory createFactory() {
+<a class="jxr_linenumber" name="65" href="#65">65</a>  		<strong class="jxr_keyword">return</strong> lsaFactory;
+<a class="jxr_linenumber" name="66" href="#66">66</a>  	}
+<a class="jxr_linenumber" name="67" href="#67">67</a>  
+<a class="jxr_linenumber" name="68" href="#68">68</a>  	@Override
+<a class="jxr_linenumber" name="69" href="#69">69</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> PrivilegedLSAFactory createPrivilegedFactory() {
+<a class="jxr_linenumber" name="70" href="#70">70</a>  		<strong class="jxr_keyword">return</strong> lsaFactory;
+<a class="jxr_linenumber" name="71" href="#71">71</a>  	}
+<a class="jxr_linenumber" name="72" href="#72">72</a>  
+<a class="jxr_linenumber" name="73" href="#73">73</a>  	@Override
+<a class="jxr_linenumber" name="74" href="#74">74</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> LSAspaceCore&lt;StmtIterator&gt; createSpace() {
+<a class="jxr_linenumber" name="75" href="#75">75</a>  		<strong class="jxr_keyword">return</strong> lsaSpace;
+<a class="jxr_linenumber" name="76" href="#76">76</a>  	}
+<a class="jxr_linenumber" name="77" href="#77">77</a>  
+<a class="jxr_linenumber" name="78" href="#78">78</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
