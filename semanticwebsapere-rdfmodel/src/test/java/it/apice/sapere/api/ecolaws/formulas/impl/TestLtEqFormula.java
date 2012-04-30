@@ -1,7 +1,6 @@
 package it.apice.sapere.api.ecolaws.formulas.impl;
 
 import it.apice.sapere.api.ecolaws.formulas.AbstractTestFormula;
-import it.apice.sapere.api.ecolaws.formulas.LtEqFormula;
 import it.apice.sapere.api.ecolaws.terms.Formula;
 
 import java.util.LinkedList;
@@ -17,6 +16,7 @@ import java.util.List;
  */
 public class TestLtEqFormula extends AbstractTestFormula {
 
+	/** Constant 10. */
 	private static final int NUM_10 = 10;
 
 	@Override

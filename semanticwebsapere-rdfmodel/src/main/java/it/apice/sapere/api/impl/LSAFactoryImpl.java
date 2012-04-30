@@ -67,7 +67,8 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	 * Factory default constructor.
 	 */
 	public LSAFactoryImpl() {
-		this(String.format("%snode%s", URI_PREFIX, UUID.randomUUID()));
+		this(String.format("%snode%s", URI_PREFIX, UUID.randomUUID().toString()
+				.toUpperCase()));
 	}
 
 	/**
@@ -181,7 +182,7 @@ public class LSAFactoryImpl implements PrivilegedLSAFactory {
 	public final DateTimeValue createPropertyValue(final Date value) {
 		return new DateTimeValueImpl(value);
 	}
-	
+
 	@Override
 	public final SDescValue createNestingPropertyValue() {
 		return new SDescValueImpl(new SemanticDescriptionImpl());
