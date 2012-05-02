@@ -15,6 +15,7 @@
 		<module>semanticwebsapere-rdfmodel</module>
 		<module>semanticwebsapere-rdfspace</module>
 
+		<module>semanticwebsapere-node</module>
 	</modules>
 
 	<organization>
@@ -35,11 +36,6 @@
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
-		<!-- <repository> -->
-		<!-- <id>maven.aksw.org</id> -->
-		<!-- <name>Maven AKSW archivia</name> -->
-		<!-- <url>http://maven.aksw.org/archiva/repository/internal/</url> -->
-		<!-- </repository> -->
 		<repository>
 			<id>com.clarkparsia.repo</id>
 			<url>http://dev.biordf.net/maven</url>
@@ -184,11 +180,11 @@
 				<artifactId>xsdlib</artifactId>
 				<version>1.0.0</version>
 			</dependency>
-			<!-- <dependency> -->
-			<!-- <groupId>com.clarkparsia.pellet</groupId> -->
-			<!-- <artifactId>pellet-jena</artifactId> -->
-			<!-- <version>2.3.0</version> -->
-			<!-- </dependency> -->
+			<dependency>
+				<groupId>net.sf.bluecove</groupId>
+				<artifactId>bluecove</artifactId>
+				<version>2.1.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

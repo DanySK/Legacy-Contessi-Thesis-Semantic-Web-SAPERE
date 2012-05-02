@@ -9,9 +9,9 @@ import it.apice.sapere.api.ecolaws.visitor.EcolawVisitor;
  * <p>
  * This class implements {@link CopyFilter} interface.
  * </p>
- *
+ * 
  * @author Paolo Contessi
- *
+ * 
  */
 public abstract class CopyFilterImpl implements CopyFilter {
 
@@ -83,8 +83,7 @@ public abstract class CopyFilterImpl implements CopyFilter {
 	public final String toString() {
 		final StringBuilder builder = new StringBuilder();
 
-		builder.append(copyOpString).append(" ")
-				.append(source.toString());
+		builder.append(copyOpString).append(" ").append(source.toString());
 		return builder.toString();
 	}
 
@@ -133,7 +132,7 @@ public abstract class CopyFilterImpl implements CopyFilter {
 		}
 		return true;
 	}
-	
+
 	@Override
 	public Filter clone() throws CloneNotSupportedException {
 		return (Filter) super.clone();

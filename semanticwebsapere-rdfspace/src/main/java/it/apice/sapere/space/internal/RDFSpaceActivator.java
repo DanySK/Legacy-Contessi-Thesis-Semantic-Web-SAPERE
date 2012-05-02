@@ -11,6 +11,7 @@ import it.apice.sapere.space.impl.LSAspaceImpl;
 
 import java.util.Hashtable;
 
+import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -40,9 +41,12 @@ public class RDFSpaceActivator implements BundleActivator {
 	/** Eco-law Compiler Service registration. */
 	private transient ServiceRegistration<?> elCompilerServiceReg;
 
+	/** Reference to LSA Factory service. */
+	private transient ServiceReference<PrivilegedLSAFactory> lsaFactoryRef;
+
 	@Override
 	public final void start(final BundleContext context) throws Exception {
-		System.out.println("SemanticWebSAPERE [RDFSpace]: Starting up..");
+		log("Starting up..");
 
 		final PrivilegedLSAFactory fact = retrieveLSAFactoryService(context);
 
@@ -64,8 +68,7 @@ public class RDFSpaceActivator implements BundleActivator {
 		elCompilerServiceReg = context.registerService(EcolawCompiler.class,
 				new EcolawCompilerImpl(), declareCompilersProps());
 
-		System.out.println("SemanticWebSAPERE [RDFSpace]: "
-				+ "Eco-law Compiler REGISTERED.");
+		log("Eco-law Compiler REGISTERED.");
 	}
 
 	/**
@@ -85,12 +88,13 @@ public class RDFSpaceActivator implements BundleActivator {
 		lsaCompilerServiceReg = context.registerService(LSACompiler.class,
 				comp, declareCompilersProps());
 
-		System.out.println("SemanticWebSAPERE [RDFSpace]: "
-				+ "LSA Compiler REGISTERED.");
+		if (lsaCompilerServiceReg != null) {
+			log("LSA Compiler REGISTERED.");
+		}
 
 		return comp;
 	}
-	
+
 	/**
 	 * <p>
 	 * Defines properties of Compiler services that will be registered.
@@ -128,8 +132,9 @@ public class RDFSpaceActivator implements BundleActivator {
 				getReasoningLevel(System.getProperty(REASONING_LEVEL))),
 				declareSpaceProps());
 
-		System.out.println("SemanticWebSAPERE [RDFSpace]: "
-				+ "LSA-space REGISTERED.");
+		if (lsaSpaceServiceReg != null) {
+			log("LSA-space REGISTERED.");
+		}
 	}
 
 	/**
@@ -144,20 +149,17 @@ public class RDFSpaceActivator implements BundleActivator {
 	private ReasoningLevel getReasoningLevel(final String levelString) {
 		if (levelString != null) {
 			if (levelString.equals("rdfs")) {
-				System.out.println("SemanticWebSAPERE [RDFSpace]: "
-						+ "RDFS reasoner enabled");
+				log("RDFS reasoner enabled");
 				return ReasoningLevel.RDFS_INF;
 			}
 
 			if (levelString.equals("owl-dl")) {
-				System.out.println("SemanticWebSAPERE [RDFSpace]: "
-						+ "OWL-DL reasoner enabled");
+				log("OWL-DL reasoner enabled");
 				return ReasoningLevel.OWL_DL;
 			}
 		}
 
-		System.out.println("SemanticWebSAPERE [RDFSpace]: "
-				+ "NO reasoner enabled");
+		log("NO reasoner enabled");
 		return ReasoningLevel.NONE;
 	}
 
@@ -189,39 +191,54 @@ public class RDFSpaceActivator implements BundleActivator {
 	 */
 	private PrivilegedLSAFactory retrieveLSAFactoryService(
 			final BundleContext context) {
-		final ServiceReference<PrivilegedLSAFactory> ref = context
-				.getServiceReference(PrivilegedLSAFactory.class);
-		if (ref == null) {
+		lsaFactoryRef = context.getServiceReference(PrivilegedLSAFactory.class);
+		if (lsaFactoryRef == null) {
 			throw new IllegalStateException("Cannot retrieve a reference to "
 					+ "PrivilegedLSAFactory service.");
 		}
 
-		return context.getService(ref);
+		if (lsaFactoryRef != null) {
+			log("LSA Factory ACQUIRED");
+		}
+
+		return context.getService(lsaFactoryRef);
 	}
 
 	@Override
 	public final void stop(final BundleContext context) throws Exception {
-		System.out.println("SemanticWebSAPERE [RDFSpace]: Stopping..");
-		if (lsaSpaceServiceReg != null) {
-			context.ungetService(lsaSpaceServiceReg.getReference());
-			lsaSpaceServiceReg = null;
-			System.out.println("SemanticWebSAPERE [RDFSpace]: "
-					+ "LSA-space UNREGISTERED.");
-		}
-		
+		log("Stopping..");
 		if (lsaCompilerServiceReg != null) {
-			context.ungetService(lsaCompilerServiceReg.getReference());
-			lsaCompilerServiceReg = null;
-			System.out.println("SemanticWebSAPERE [RDFSpace]: "
-					+ "LSA Compiler UNREGISTERED.");
+			lsaCompilerServiceReg.unregister();
+			log("LSA Compiler UNREGISTERED.");
 		}
 		
 		if (elCompilerServiceReg != null) {
-			context.ungetService(elCompilerServiceReg.getReference());
-			elCompilerServiceReg = null;
-			System.out.println("SemanticWebSAPERE [RDFSpace]: "
-					+ "Eco-law Compiler UNREGISTERED.");
+			elCompilerServiceReg.unregister();
+			log("Eco-law Compiler UNREGISTERED.");
+		}
+
+		if (lsaSpaceServiceReg != null) {
+			lsaSpaceServiceReg.unregister();
+			log("LSA-Space UNREGISTERED.");
+		}
+
+		if (lsaFactoryRef != null) {
+			context.ungetService(lsaFactoryRef);
+			lsaFactoryRef = null;
+			log("LSA Factory RELEASED.");
 		}
 	}
 
+	/**
+	 * <p>
+	 * Logs a message.
+	 * </p>
+	 * 
+	 * @param msg
+	 *            The message to be logged
+	 */
+	private void log(final String msg) {
+		LogFactory.getLog(RDFSpaceActivator.class).info(
+				"rdf-space> " + msg);
+	}
 }

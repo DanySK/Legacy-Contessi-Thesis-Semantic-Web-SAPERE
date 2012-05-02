@@ -9,9 +9,9 @@ Export-Package: it.apice.sapere.api;uses:="it.apice.sapere.api.ecolaws
  ="it.apice.sapere.api,it.apice.sapere.api.lsas,org.junit,it.apice.sap
  ere.api.lsas.visitor",it.apice.sapere.api.space.match;uses:="junit.fr
  amework,org.junit,it.apice.sapere.api.space.core,it.apice.sapere.api"
- ,it.apice.sapere.space;uses:="junit.framework,it.apice.sapere.api.spa
- ce.observation,it.apice.sapere.api.lsas,it.apice.sapere.api.space,it.
- apice.sapere.api.lsas.values,it.apice.sapere.api.space.core,org.junit
+ ,it.apice.sapere.space;uses:="it.apice.sapere.api.space.observation,i
+ t.apice.sapere.api.lsas,junit.framework,it.apice.sapere.api.lsas.valu
+ es,it.apice.sapere.api.space,it.apice.sapere.api.space.core,org.junit
  ,it.apice.sapere.api",it.apice.sapere.utils;uses:="com.hp.hpl.jena.rd
  f.model"
 Built-By: conteit
@@ -23,7 +23,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1335949245527
+Bnd-LastModified: 1335970957463
 Bundle-ManifestVersion: 2
 Bundle-Description: This project encloses Testing Plan for SAPERE-APIs
 Import-Package: com.hp.hpl.jena.rdf.model,it.apice.sapere.api,it.apice
