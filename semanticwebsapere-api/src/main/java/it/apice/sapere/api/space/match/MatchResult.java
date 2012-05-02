@@ -1,6 +1,7 @@
 package it.apice.sapere.api.space.match;
 
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 
 /**
@@ -59,4 +60,12 @@ public interface MatchResult {
 	 */
 	LSAspaceCore<?> getLSAspace();
 
+	/**
+	 * <p>
+	 * Retrieves the eco-law that has been used in order to produce this match.
+	 * </p>
+	 * 
+	 * @return The (compiled) eco-law involved in the match phase
+	 */
+	CompiledEcolaw getRelCompiledEcolaw();
 }

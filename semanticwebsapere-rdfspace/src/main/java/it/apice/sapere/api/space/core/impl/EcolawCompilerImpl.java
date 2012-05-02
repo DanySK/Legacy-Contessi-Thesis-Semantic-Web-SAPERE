@@ -21,29 +21,32 @@ public class EcolawCompilerImpl implements EcolawCompiler {
 	@Override
 	public final CompiledEcolaw compile(final Ecolaw law) {
 		return create(EcolawToSPARQL.convert(law),
-				EcolawToUpdTemplate.convert(law));
+				EcolawToUpdTemplate.convert(law), law.getRate().getRateValue()
+						.toString());
 	}
 
 	@Override
-	public final CompiledEcolaw create(final String mQuery, 
-			final String uQuery) {
+	public final CompiledEcolaw create(final String mQuery,
+			final String uQuery, final String rate) {
 		return new CompiledEcolawImpl(mQuery, new MatchingEcolawTemplateImpl(
-				uQuery));
+				uQuery), rate);
 	}
 
 	/**
 	 * <p>
 	 * Creates a {@link CompiledEcolaw}.
 	 * </p>
-	 *
+	 * 
 	 * @param mQuery
 	 *            The query for matching phase
 	 * @param uQuery
 	 *            The query template for update phase
+	 * @param rate
+	 *            The rate variable name ("?&ltname;&gt;"), or the rate value
 	 * @return The compiled eco-law
 	 */
 	private CompiledEcolaw create(final String mQuery,
-			final MatchingEcolawTemplate uQuery) {
-		return new CompiledEcolawImpl(mQuery, uQuery);
+			final MatchingEcolawTemplate uQuery, final String rate) {
+		return new CompiledEcolawImpl(mQuery, uQuery, rate);
 	}
 }

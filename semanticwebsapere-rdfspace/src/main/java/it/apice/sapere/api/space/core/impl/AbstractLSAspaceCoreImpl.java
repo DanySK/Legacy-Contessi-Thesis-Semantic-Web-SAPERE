@@ -30,6 +30,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.hp.hpl.jena.query.DatasetFactory;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -60,6 +62,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private static final transient String LSA_TYPE = "http://"
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA";
 
+	/** A SAPERE LSA-id prefix. */
+	private static final transient String LSA_PREFIX = "http://"
+			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa";
+
+	/** LSA-id pattern. */
+	private static final transient Pattern LSA_ID_PATTERN = Pattern
+			.compile(LSA_PREFIX + "\\w+");
+
 	/** The rdf:type. */
 	private static final transient String RDF_TYPE = "http://"
 			+ "www.w3.org/1999/02/22-rdf-syntax-ns#type";
@@ -73,7 +83,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** RDF Graph Store (model). */
 	private final transient Model model;
 
-	/** RDF Graph Store (real one). */
+	/** RDF Graph Store (the real one). */
 	private final transient GraphStore modelGraph;
 
 	/** Reference to an LSACompiler. */
@@ -353,7 +363,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				final QuerySolution sol = (QuerySolution) iter.next();
 				// 2. Extract bindings
 				final MutableMatchResult match = new MutableMatchResultImpl(
-						this);
+						this, law);
 				for (String varName : law.variablesNames()) {
 					match.register(varName,
 							extractValue(sol.getResource(varName)), 1.0);
@@ -362,6 +372,16 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				// 3. Return them for evaluation
 				res.add(match);
 			}
+
+			// Notification
+			final StringBuilder msg = new StringBuilder(
+					"Trying match for eco-law");
+			if (!law.getLabel().equals("")) {
+				msg.append(" ").append(law.getLabel());
+			}
+
+			notifySpaceOperation(msg.toString(),
+					SpaceOperationType.SYSTEM_ACTION);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot complete match process", ex);
 		} finally {
@@ -395,6 +415,17 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		acquireWriteLock();
 		try {
 			execUpdateQuery(modelGraph, law.getUpdateQuery());
+
+			// Notification
+			final StringBuilder msg = new StringBuilder("Applying eco-law");
+			if (!law.getLabel().equals("")) {
+				msg.append(" ").append(law.getLabel());
+			}
+
+			notifySpaceOperation(msg.toString(),
+					SpaceOperationType.SYSTEM_ACTION);
+			notifyLSAObservers(msg.toString(), retrieveUpdatedLSAs(law),
+					SpaceOperationType.SYSTEM_ACTION);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot apply eco-law", ex);
 		} finally {
@@ -402,6 +433,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		return this;
+	}
+
+	/**
+	 * <p>
+	 * Retrieves all the LSAs that has been modified by an applied eco-law.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The applied eco-law
+	 * @return A list of LSAs that has been modified by the applied eco-law
+	 * @throws Exception
+	 *             Cannot retrieve wanted LSA for notification
+	 */
+	private LSA[] retrieveUpdatedLSAs(final MatchingEcolaw law)
+			throws Exception {
+		final List<LSA> res = new LinkedList<LSA>();
+		final Matcher matcher = LSA_ID_PATTERN.matcher(law.getUpdateQuery());
+		while (matcher.find()) {
+			String sLsaId = matcher.group(1);
+			res.add(converter.parseLSA(model.getResource(sLsaId), model));
+		}
+
+		return res.toArray(new LSA[res.size()]);
 	}
 
 	@Override
@@ -420,6 +474,26 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		listeners.remove(obs);
+	}
+
+	/**
+	 * <p>
+	 * Notifies Space observers of an internal event.
+	 * </p>
+	 * 
+	 * @param msg
+	 *            Description of the event
+	 * @param type
+	 *            Event type
+	 */
+	private void notifySpaceOperation(final String msg,
+			final SpaceOperationType type) {
+		if (notificationsEnabled) {
+			for (SpaceObserver obs : listeners) {
+				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] {}, 
+						type));
+			}
+		}
 	}
 
 	/**
@@ -464,6 +538,33 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			if (obss != null) {
 				for (LSAObserver obs : obss) {
 					obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+				}
+			}
+		}
+	}
+
+	/**
+	 * <p>
+	 * Notifies observing agents (only the interested ones) that something
+	 * happened to an LSA.
+	 * </p>
+	 * 
+	 * @param msg
+	 *            Description of the event
+	 * @param lsas
+	 *            Actual LSAs status
+	 * @param type
+	 *            Event type
+	 */
+	private void notifyLSAObservers(final String msg, final LSA[] lsas,
+			final SpaceOperationType type) {
+		if (notificationsEnabled) {
+			for (LSA lsa : lsas) {
+				final List<LSAObserver> obss = observers.get(lsa.getLSAId());
+				if (obss != null) {
+					for (LSAObserver obs : obss) {
+						obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+					}
 				}
 			}
 		}

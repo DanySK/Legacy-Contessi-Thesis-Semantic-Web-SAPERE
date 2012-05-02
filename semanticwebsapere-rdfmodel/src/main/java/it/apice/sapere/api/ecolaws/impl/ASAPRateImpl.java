@@ -14,15 +14,15 @@ import it.apice.sapere.api.ecolaws.Rate;
 public class ASAPRateImpl extends AbstractRateImpl<Double> implements
 		Rate<Double> {
 
-	@Override
-	public final long getNextOccurrence(final double score,
-			final long currentTime) {
-		return currentTime;
-	}
+//	@Override
+//	public final long getNextOccurrence(final double score,
+//			final long currentTime) {
+//		return currentTime;
+//	}
 
 	@Override
 	public final Double getRateValue() {
-		return 0.0;
+		return Double.POSITIVE_INFINITY;
 	}
 
 	@Override

@@ -15,6 +15,15 @@ public interface MatchingEcolawTemplate {
 
 	/**
 	 * <p>
+	 * Retrieves the label associated to the eco-law (if any).
+	 * </p>
+	 * 
+	 * @return Ecolaw's label
+	 */
+	String getLabel();
+
+	/**
+	 * <p>
 	 * Binds template variables to provided values and returns an applicable
 	 * {@link MatchingEcolaw}.
 	 * </p>

@@ -14,6 +14,15 @@ public interface CompiledEcolaw {
 
 	/**
 	 * <p>
+	 * Retrieves the label associated to the eco-law (if any).
+	 * </p>
+	 * 
+	 * @return Ecolaw's label
+	 */
+	String getLabel();
+
+	/**
+	 * <p>
 	 * Retrieves the query that corresponds to the provided eco-law.
 	 * </p>
 	 * 
@@ -29,7 +38,26 @@ public interface CompiledEcolaw {
 	 * @return A list of all variables names
 	 */
 	String[] variablesNames();
-	
+
+	/**
+	 * <p>
+	 * Retrieves the name of the variable used as rate, or the constant value
+	 * specified for it.
+	 * </p>
+	 * 
+	 * @return A String representing actual rate
+	 */
+	String getRate();
+
+	/**
+	 * <p>
+	 * Checks if the rate is expressed as a variable term.
+	 * </p>
+	 * 
+	 * @return True if variable, false otherwise
+	 */
+	boolean hasVariableRate();
+
 	/**
 	 * <p>
 	 * Retrieves the query that corresponds to the provided eco-law.

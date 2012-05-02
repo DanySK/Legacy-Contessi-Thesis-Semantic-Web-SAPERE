@@ -21,6 +21,7 @@ import it.apice.sapere.api.lsas.values.URIValue;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.core.impl.CompiledEcolawImpl;
 import it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl;
 import it.apice.sapere.api.space.match.impl.MutableMatchResultImpl;
 import it.apice.sapere.space.impl.LSAspaceImpl;
@@ -86,7 +87,7 @@ public class TestMatchingEcolawTemplate extends
 		} catch (SAPEREException e) {
 			Assert.fail(e.getMessage());
 		}
-		
+
 		return list;
 	}
 
@@ -98,7 +99,10 @@ public class TestMatchingEcolawTemplate extends
 	 * @return a {@link MutableMatchResult}
 	 */
 	private MutableMatchResultImpl createMatchResult() {
-		return new MutableMatchResultImpl(createDummySpace());
+		return new MutableMatchResultImpl(createDummySpace(),
+				new CompiledEcolawImpl("SELECT *",
+						new MatchingEcolawTemplateImpl("INSERT{?s ?p ?o}"),
+						"?R"));
 	}
 
 	/**

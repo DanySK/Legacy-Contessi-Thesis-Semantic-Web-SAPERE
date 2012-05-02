@@ -15,6 +15,15 @@ public interface MatchingEcolaw {
 
 	/**
 	 * <p>
+	 * Retrieves the label associated to the eco-law (if any).
+	 * </p>
+	 * 
+	 * @return Ecolaw's label
+	 */
+	String getLabel();
+
+	/**
+	 * <p>
 	 * Applies this eco-law's effects to the LSA-space.
 	 * </p>
 	 * 

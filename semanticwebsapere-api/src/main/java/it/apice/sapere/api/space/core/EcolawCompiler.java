@@ -23,7 +23,7 @@ public interface EcolawCompiler {
 	 * @return The compiled eco-law
 	 */
 	CompiledEcolaw compile(Ecolaw law);
-	
+
 	/**
 	 * <p>
 	 * Creates a new {@link CompiledEcolaw}.
@@ -33,7 +33,9 @@ public interface EcolawCompiler {
 	 *            The query for matching phase
 	 * @param uQuery
 	 *            The query template for update phase
+	 * @param rate
+	 *            The rate variable name ("?&ltname;&gt;"), or the rate value
 	 * @return The compiled eco-law
 	 */
-	CompiledEcolaw create(String mQuery, String uQuery);
+	CompiledEcolaw create(String mQuery, String uQuery, String rate);
 }

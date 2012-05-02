@@ -5,6 +5,7 @@ import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.match.MatchingEcolawTemplate;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -30,6 +31,9 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	/** List of all template's variables. */
 	private final String[] vars;
 
+	/** Eco-law's label. */
+	private final String label;
+
 	/**
 	 * <p>
 	 * Builds a new {@link MatchingEcolawTemplateImpl}.
@@ -39,12 +43,32 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	 *            The template of the update query
 	 */
 	public MatchingEcolawTemplateImpl(final String queryTemplate) {
+		this(queryTemplate, null);
+	}
+
+	/**
+	 * <p>
+	 * Builds a new {@link MatchingEcolawTemplateImpl}.
+	 * </p>
+	 * 
+	 * @param queryTemplate
+	 *            The template of the update query
+	 * @param lLabel
+	 *            Eco-law's label
+	 */
+	public MatchingEcolawTemplateImpl(final String queryTemplate,
+			final String lLabel) {
 		if (queryTemplate == null || queryTemplate.equals("")) {
 			throw new IllegalArgumentException("Invalid template provided");
 		}
 
 		template = queryTemplate;
 		vars = initVariablesArray();
+		if (lLabel == null) {
+			label = "";
+		} else {
+			label = lLabel;
+		}
 	}
 
 	/**
@@ -104,4 +128,53 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 		return vars;
 	}
 
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+		if (template != null) {
+			result += template.hashCode();
+		}
+
+		result *= prime;
+		result += Arrays.hashCode(vars);
+
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		MatchingEcolawTemplateImpl other = (MatchingEcolawTemplateImpl) obj;
+		if (template == null) {
+			if (other.template != null) {
+				return false;
+			}
+		} else if (!template.equals(other.template)) {
+			return false;
+		}
+		if (!Arrays.equals(vars, other.vars)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public final String toString() {
+		return template;
+	}
+
+	@Override
+	public final String getLabel() {
+		return label;
+	}
 }

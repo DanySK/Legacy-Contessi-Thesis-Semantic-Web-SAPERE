@@ -8,6 +8,7 @@ import it.apice.sapere.api.ecolaws.filter.impl.ClonesFilterImpl;
 import it.apice.sapere.api.ecolaws.filter.impl.ExtendsFilterImpl;
 import it.apice.sapere.api.ecolaws.filter.impl.HasFilterImpl;
 import it.apice.sapere.api.ecolaws.filter.impl.HasNotFilterImpl;
+import it.apice.sapere.api.ecolaws.filter.impl.MatchFilterImpl;
 import it.apice.sapere.api.ecolaws.terms.ListTerm;
 import it.apice.sapere.api.ecolaws.terms.PatternNameTerm;
 import it.apice.sapere.api.ecolaws.terms.PropertyTerm;
@@ -138,15 +139,14 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 		return (ExtenderType) this;
 	}
 
-	// @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	@Override
 	public final ExtenderType match(final Term<?> term1, final Term<?> term2) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not yet implemented");
+		filters.add(new MatchFilterImpl(term1, term2));
 		// Cannot be checked at runtime but holds
 		// || assert this instanceof ExtenderType; ||
 
-		// return (ExtenderType) this;
+		return (ExtenderType) this;
 	}
 
 	@Override

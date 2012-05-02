@@ -21,7 +21,7 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	private final LSAid lsaId;
 
 	/** Iterator over LSA's statements. */
-	private final transient Model model;
+	private final Model model;
 
 	/**
 	 * <p>

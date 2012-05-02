@@ -23,8 +23,8 @@ import java.util.Random;
 public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 		Rate<DoubleValue> {
 
-	/** Number of milliseconds in one second. */
-	private static final transient int MILLISEC_IN_SEC = 1000;
+//	/** Number of milliseconds in one second. */
+//	private static final transient int MILLISEC_IN_SEC = 1000;
 
 	/** Rate Value. */
 	private final ValueTerm<DoubleValue> rate;
@@ -132,16 +132,16 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 		rng = src.rng;
 	}
 
-	@Override
-	public final long getNextOccurrence(final double score,
-			final long currentTime) {
-		final double cts = (currentTime * 1.0) / MILLISEC_IN_SEC;
-
-		// Function extracted from previous work
-		return Math.round(cts
-				+ +Math.log((1.0 / rng.nextDouble())
-						/ (rate.getValue().getValue() * score)));
-	}
+//	@Override
+//	public final long getNextOccurrence(final double score,
+//			final long currentTime) {
+//		final double cts = (currentTime * 1.0) / MILLISEC_IN_SEC;
+//
+//		// Function extracted from previous work
+//		return Math.round(cts
+//				+ +Math.log((1.0 / rng.nextDouble())
+//						/ (rate.getValue().getValue() * score)));
+//	}
 
 	@Override
 	public final DoubleValue getRateValue() {
