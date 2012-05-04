@@ -1,8 +1,8 @@
 package it.apice.sapere.node.networking.guestsmngt;
 
 import it.apice.sapere.node.agents.InternalAgent;
-import it.apice.sapere.node.networking.CommunicationUtils;
 import it.apice.sapere.node.networking.Message;
+import it.apice.sapere.node.networking.utils.CommunicationUtils;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -227,12 +227,13 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleCancelSubscription(final GuestMessage message) {
 		spy("CANCEL REGISTRATION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
-//		doDeregister(message.getId(),
-//				new GuestSubscriber(message.getMacAddress()), null);
+		// doDeregister(message.getId(),
+		// new GuestSubscriber(message.getMacAddress()), null);
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
 		}
@@ -240,12 +241,13 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleSubscription(final GuestMessage message) {
 		spy("OBSERVE PERMANENT_SUBSCRIPTION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
-//		doObserveMany(message.getId(),
-//				new GuestSubscriber(message.getMacAddress()), null);
+		// doObserveMany(message.getId(),
+		// new GuestSubscriber(message.getMacAddress()), null);
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
 		}
@@ -253,12 +255,13 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleOnceSubscription(final GuestMessage message) {
 		spy("OBSERVE ONE_TIME_SUBSCRIPTION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
-//		doObserveOne(message.getId(),
-//				new GuestSubscriber(message.getMacAddress()), null);
+		// doObserveOne(message.getId(),
+		// new GuestSubscriber(message.getMacAddress()), null);
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
 		}
@@ -266,11 +269,12 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleRead(final GuestMessage message) {
 		spy("READ Id: " + message.getId() + " from " + message.getMacAddress());
-//		doRead(message.getId(), new GuestSubscriber(message.getMacAddress()),
-//				null);
+		// doRead(message.getId(), new GuestSubscriber(message.getMacAddress()),
+		// null);
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
 		}
@@ -278,26 +282,28 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleRefresh(final GuestMessage message) {
-//		String idLocalization5 = locMap.get(message.getId().toString());
+		assert message != null;
+		// String idLocalization5 = locMap.get(message.getId().toString());
 
-//		Property[] properties5 = new Property[5];
-//		properties5[0] = new Property("type", new SetPropertyValue(
-//				"localization"));
-//		properties5[1] = new Property("signal", new SetPropertyValue(""
-//				+ (1.0 * message.getSignal())));
-//		properties5[2] = new Property("orientation1", new SetPropertyValue(""
-//				+ message.getOrientation()[0]));
-//		properties5[3] = new Property("orientation2", new SetPropertyValue(""
-//				+ message.getOrientation()[1]));
-//		properties5[4] = new Property("orientation3", new SetPropertyValue(""
-//				+ message.getOrientation()[2]));
-//		Content contentLoc5 = new JavaLsaContent(properties5);
+		// Property[] properties5 = new Property[5];
+		// properties5[0] = new Property("type", new SetPropertyValue(
+		// "localization"));
+		// properties5[1] = new Property("signal", new SetPropertyValue(""
+		// + (1.0 * message.getSignal())));
+		// properties5[2] = new Property("orientation1", new SetPropertyValue(""
+		// + message.getOrientation()[0]));
+		// properties5[3] = new Property("orientation2", new SetPropertyValue(""
+		// + message.getOrientation()[1]));
+		// properties5[4] = new Property("orientation3", new SetPropertyValue(""
+		// + message.getOrientation()[2]));
+		// Content contentLoc5 = new JavaLsaContent(properties5);
 
-//		spy("REFRESH: " + contentLoc5.toString());
-//		doUpdate(new LsaId(idLocalization5), contentLoc5.getProperties(),
-//				message.getMacAddress());
+		// spy("REFRESH: " + contentLoc5.toString());
+		// doUpdate(new LsaId(idLocalization5), contentLoc5.getProperties(),
+		// message.getMacAddress());
 
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
@@ -306,12 +312,13 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleUpdate(final GuestMessage message) {
 		spy("UPDATE Id: " + message.getId());
 
-//		doUpdate(message.getId(), message.content.getProperties(),
-//				message.getMacAddress());
+		// doUpdate(message.getId(), message.content.getProperties(),
+		// message.getMacAddress());
 
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
@@ -320,14 +327,15 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleMove(final GuestMessage message) {
 		spy("MOVE Id: " + message.getId());
 
-//		doRemove(message.getId(), message.getMacAddress());
-//		String idLocalization = locMap.get(message.getId().toString());
-//
-//		doRemove(new LsaId(idLocalization), message.getMacAddress());
+		// doRemove(message.getId(), message.getMacAddress());
+		// String idLocalization = locMap.get(message.getId().toString());
+		//
+		// doRemove(new LsaId(idLocalization), message.getMacAddress());
 
 		locMap.remove(message.getId().toString());
 
@@ -338,34 +346,36 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleReInject(final GuestMessage message) {
+		assert message != null;
 		spy("REINJECT ");
 
-//		Property[] properties2 = new Property[5];
-//		properties2[0] = new Property("type", new SetPropertyValue(
-//				"localization"));
-//		properties2[1] = new Property("signal", new SetPropertyValue(""
-//				+ (1.0 * message.getSignal())));
-//		properties2[2] = new Property("orientation1", new SetPropertyValue(""
-//				+ message.getOrientation()[0]));
-//		properties2[3] = new Property("orientation2", new SetPropertyValue(""
-//				+ message.getOrientation()[1]));
-//		properties2[4] = new Property("orientation3", new SetPropertyValue(""
-//				+ message.getOrientation()[2]));
-//		Content contentLoc2 = new JavaLsaContent(properties2);
-//
-//		LsaId idLoc2 = doInject(new Lsa(null, contentLoc2),
-//				message.getMacAddress());
-//
-//		Property prop2 = new Property("position", new SetPropertyValue(
-//				idLoc2.toString()));
-//		message.content.addProperty(prop2);
-//
-//		doInject(new Lsa(message.getId(), message.content),
-//				message.getMacAddress());
+		// Property[] properties2 = new Property[5];
+		// properties2[0] = new Property("type", new SetPropertyValue(
+		// "localization"));
+		// properties2[1] = new Property("signal", new SetPropertyValue(""
+		// + (1.0 * message.getSignal())));
+		// properties2[2] = new Property("orientation1", new SetPropertyValue(""
+		// + message.getOrientation()[0]));
+		// properties2[3] = new Property("orientation2", new SetPropertyValue(""
+		// + message.getOrientation()[1]));
+		// properties2[4] = new Property("orientation3", new SetPropertyValue(""
+		// + message.getOrientation()[2]));
+		// Content contentLoc2 = new JavaLsaContent(properties2);
+		//
+		// LsaId idLoc2 = doInject(new Lsa(null, contentLoc2),
+		// message.getMacAddress());
+		//
+		// Property prop2 = new Property("position", new SetPropertyValue(
+		// idLoc2.toString()));
+		// message.content.addProperty(prop2);
+		//
+		// doInject(new Lsa(message.getId(), message.content),
+		// message.getMacAddress());
 
-//		locMap.put(message.getId().toString(), idLoc2.toString());
+		// locMap.put(message.getId().toString(), idLoc2.toString());
 
 		if (!CommunicationUtils.sendString("ack", socket)) {
 			spy("Error on ack sending");
@@ -374,44 +384,45 @@ class RequestHandler extends InternalAgent {
 
 	/**
 	 * @param message
+	 *            The message to be handled
 	 */
 	private void handleInject(final GuestMessage message) {
 		spy("INJECT :" + message.getLSA());
 
 		// creation of the localization LSA
-//		Property[] properties = new Property[5];
-//		properties[0] = new Property("type", new SetPropertyValue(
-//				"localization"));
-//		properties[1] = new Property("signal", new SetPropertyValue(""
-//				+ (1.0 * message.getSignal())));
-//		properties[2] = new Property("orientation1", new SetPropertyValue(""
-//				+ message.getOrientation()[0]));
-//		properties[3] = new Property("orientation2", new SetPropertyValue(""
-//				+ message.getOrientation()[1]));
-//		properties[4] = new Property("orientation3", new SetPropertyValue(""
-//				+ message.getOrientation()[2]));
-//		Content contentLoc = new JavaLsaContent(properties);
+		// Property[] properties = new Property[5];
+		// properties[0] = new Property("type", new SetPropertyValue(
+		// "localization"));
+		// properties[1] = new Property("signal", new SetPropertyValue(""
+		// + (1.0 * message.getSignal())));
+		// properties[2] = new Property("orientation1", new SetPropertyValue(""
+		// + message.getOrientation()[0]));
+		// properties[3] = new Property("orientation2", new SetPropertyValue(""
+		// + message.getOrientation()[1]));
+		// properties[4] = new Property("orientation3", new SetPropertyValue(""
+		// + message.getOrientation()[2]));
+		// Content contentLoc = new JavaLsaContent(properties);
 
 		// injecting localization LSA
-//		LsaId idLoc = doInject(new Lsa(null, contentLoc),
-//				message.getMacAddress());
+		// LsaId idLoc = doInject(new Lsa(null, contentLoc),
+		// message.getMacAddress());
 
 		// binding localization LSA to user LSA
-//		Property prop = new Property("position", new SetPropertyValue(
-//				idLoc.toString()));
-//		message.content.addProperty(prop);
+		// Property prop = new Property("position", new SetPropertyValue(
+		// idLoc.toString()));
+		// message.content.addProperty(prop);
 
 		// injecting user LSA
-//		LsaId id = doInject(new Lsa(null, message.content),
-//				message.getMacAddress());
+		// LsaId id = doInject(new Lsa(null, message.content),
+		// message.getMacAddress());
 
 		// association lsa-lsaLoc
-//		locMap.put(id.toString(), idLoc.toString());
+		// locMap.put(id.toString(), idLoc.toString());
 
 		// sending back LsaId
-//		if (!CommunicationUtils.sendString(id.toString(), socket)) {
-//			spy("Error on Lsaid sending");
-//		}
+		// if (!CommunicationUtils.sendString(id.toString(), socket)) {
+		// spy("Error on Lsaid sending");
+		// }
 	}
 }
 

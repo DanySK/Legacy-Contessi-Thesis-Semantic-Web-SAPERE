@@ -1,5 +1,7 @@
 package it.apice.sapere.management;
 
+import it.apice.sapere.api.space.core.CompiledEcolaw;
+
 /**
  * <p>
  * This is an interface for an entity which wants to observe the
@@ -11,5 +13,38 @@ package it.apice.sapere.management;
  */
 public interface ReactionManagerObserver {
 
-	
+	/**
+	 * <p>
+	 * Notifies all observers that a new eco-law has been added.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The eco-law
+	 */
+	void ecolawAdded(CompiledEcolaw law);
+
+	/**
+	 * <p>
+	 * Notifies all observers that an eco-law has been removed.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The eco-law
+	 */
+	void ecolawRemoved(CompiledEcolaw law);
+
+	/**
+	 * <p>
+	 * Notifies all observers that an eco-law is going to be applied at a
+	 * certain local time.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The eco-law
+	 * @param time
+	 *            When the eco-law is going to be applied (in milliseconds from
+	 *            epoch)
+	 */
+	void ecolawEnabled(CompiledEcolaw law, long time);
+
 }

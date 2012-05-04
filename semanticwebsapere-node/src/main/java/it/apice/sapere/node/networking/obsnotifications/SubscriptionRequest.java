@@ -2,6 +2,7 @@ package it.apice.sapere.node.networking.obsnotifications;
 
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.node.networking.Message;
+import it.apice.sapere.node.networking.Subscriber;
 
 import java.io.Serializable;
 

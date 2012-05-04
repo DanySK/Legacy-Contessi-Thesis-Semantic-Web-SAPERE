@@ -274,9 +274,15 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 			final LSA rLsa = space.inject(lsa).read(lsa.getLSAId());
 
 			// (added to ignore additions from the reasoner)
+			try {
 			rLsa.getSemanticDescription().removeProperty(
 					createFactory().createProperty(
 							new URI("http://www.w3.org/2002/07/owl#sameAs")));
+			} catch (Exception ex) {
+				// No reasoner used
+				assertTrue(ex instanceof IllegalArgumentException);
+			}
+
 			assertEquals(lsa, rLsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));

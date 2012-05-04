@@ -1,5 +1,7 @@
 package it.apice.sapere.node.networking;
 
+import it.apice.sapere.node.networking.utils.SpaceOperation;
+
 import java.io.Serializable;
 
 

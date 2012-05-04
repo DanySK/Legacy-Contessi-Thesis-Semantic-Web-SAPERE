@@ -97,7 +97,8 @@ public class BTClient {
 
 		}
 
-		public void serviceSearchCompleted(final int transID, final int respCode) {
+		public void serviceSearchCompleted(final int transID, 
+				final int respCode) {
 
 			synchronized (serviceSearchCompletedEvent) {
 				isSearchCompleted = true;
@@ -180,6 +181,7 @@ public class BTClient {
 					String newId = netManager
 							.registerNeighbour(new BTNeighbour(btManager,
 									messageRec.getSender()));
+					assert newId != null;
 
 					// Property[] properties = new Property[7];
 					// properties[0] = new Property("type", new

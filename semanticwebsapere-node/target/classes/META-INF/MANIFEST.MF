@@ -1,23 +1,26 @@
 Manifest-Version: 1.0
 Export-Package: it.apice.sapere.management;uses:="it.apice.sapere.api.
- ecolaws,it.apice.sapere.node.agents",it.apice.sapere.node.agents;uses
- :="it.apice.sapere.node.networking.obsnotifications,it.apice.sapere.n
- ode.networking,org.apache.commons.logging",it.apice.sapere.node.netwo
- rking.bluetooth;uses:="javax.bluetooth,it.apice.sapere.node.networkin
- g,org.apache.commons.logging,javax.microedition.io,it.apice.sapere.no
- de.agents,it.apice.sapere.api.lsas",it.apice.sapere.node.networking;u
- ses:="it.apice.sapere.node.networking.obsnotifications,org.apache.com
- mons.logging,it.apice.sapere.node.networking.guestsmngt,it.apice.sape
- re.api.lsas,it.apice.sapere.api.space.core,it.apice.sapere.api.space.
- observation,it.apice.sapere.api",it.apice.sapere.node.networking.gues
- tsmngt;uses:="it.apice.sapere.api.space.core,it.apice.sapere.api,it.a
- pice.sapere.api.lsas,it.apice.sapere.node.networking.obsnotifications
- ,it.apice.sapere.node.networking,it.apice.sapere.node.agents,org.apac
- he.commons.logging",it.apice.sapere.node.networking.obsnotifications;
- uses:="it.apice.sapere.node.networking,it.apice.sapere.api.space.core
- ,it.apice.sapere.api.space.observation,it.apice.sapere.api,it.apice.s
- apere.api.lsas,it.apice.sapere.node.networking.guestsmngt,it.apice.sa
- pere.node.agents"
+ space,it.apice.sapere.api.space.match,it.apice.sapere.api.space.core,
+ it.apice.sapere.api.ecolaws,it.apice.sapere.api.space.observation,it.
+ apice.sapere.api,it.apice.sapere.node.agents",it.apice.sapere.node.ag
+ ents;uses:="it.apice.sapere.node.networking,org.apache.commons.loggin
+ g",it.apice.sapere.node.networking.bluetooth;uses:="javax.bluetooth,i
+ t.apice.sapere.node.networking,org.apache.commons.logging,javax.micro
+ edition.io,it.apice.sapere.node.networking.utils,it.apice.sapere.node
+ .agents,it.apice.sapere.api.lsas",it.apice.sapere.node.networking.gue
+ stsmngt;uses:="it.apice.sapere.api.space.core,it.apice.sapere.api,it.
+ apice.sapere.api.lsas,it.apice.sapere.node.networking,it.apice.sapere
+ .node.agents,org.apache.commons.logging,it.apice.sapere.node.networki
+ ng.utils",it.apice.sapere.node.networking;uses:="it.apice.sapere.node
+ .networking.utils",it.apice.sapere.node.networking.obsnotifications;u
+ ses:="it.apice.sapere.node.networking,it.apice.sapere.api.space.core,
+ it.apice.sapere.api.space.observation,it.apice.sapere.api,it.apice.sa
+ pere.api.lsas,it.apice.sapere.node.networking.guestsmngt,it.apice.sap
+ ere.node.agents",it.apice.sapere.node.networking.utils;uses:="it.apic
+ e.sapere.node.networking.obsnotifications,it.apice.sapere.node.networ
+ king,org.apache.commons.logging,it.apice.sapere.node.networking.guest
+ smngt,it.apice.sapere.api.lsas,it.apice.sapere.api.space.core,it.apic
+ e.sapere.api.space.observation,it.apice.sapere.api"
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -27,18 +30,19 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1336124867784
+Bnd-LastModified: 1336134361930
 Bundle-ManifestVersion: 2
 Bundle-Description: This bundle provides basic structure of SAPERE nod
  e.
 Import-Package: it.apice.sapere.api,it.apice.sapere.api.ecolaws,it.api
  ce.sapere.api.ecolaws.formulas,it.apice.sapere.api.lsas,it.apice.sape
  re.api.space,it.apice.sapere.api.space.core,it.apice.sapere.api.space
- .observation,it.apice.sapere.management,it.apice.sapere.node.agents,i
- t.apice.sapere.node.networking,it.apice.sapere.node.networking.blueto
- oth,it.apice.sapere.node.networking.guestsmngt,it.apice.sapere.node.n
- etworking.obsnotifications,javax.bluetooth,javax.microedition.io,org.
- apache.commons.logging,org.osgi.framework;version="1.6"
+ .match,it.apice.sapere.api.space.observation,it.apice.sapere.manageme
+ nt,it.apice.sapere.node.agents,it.apice.sapere.node.networking,it.api
+ ce.sapere.node.networking.bluetooth,it.apice.sapere.node.networking.g
+ uestsmngt,it.apice.sapere.node.networking.obsnotifications,it.apice.s
+ apere.node.networking.utils,javax.bluetooth,javax.microedition.io,org
+ .apache.commons.logging,org.osgi.framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-node
 Bundle-DocURL: http://apice.unibo.it/
 

@@ -1,7 +1,7 @@
 package it.apice.sapere.node.networking.guestsmngt;
 
 import it.apice.sapere.node.networking.Message;
-import it.apice.sapere.node.networking.obsnotifications.Subscriber;
+import it.apice.sapere.node.networking.Subscriber;
 
 /**
  * <p>

@@ -256,6 +256,7 @@ public final class BluetoothManager extends InternalAgent {
 			final NodeMessage message) throws IOException {
 		String newId = netManager.registerNeighbour(new BTNeighbour(this,
 				message.getSender()));
+		assert newId != null;
 
 		// Property[] properties = new Property[7];
 		// properties[0] = new Property("type", new SetPropertyValue(

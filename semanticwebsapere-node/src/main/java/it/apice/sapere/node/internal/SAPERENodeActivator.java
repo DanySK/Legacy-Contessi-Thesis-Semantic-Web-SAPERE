@@ -1,15 +1,14 @@
 package it.apice.sapere.node.internal;
 
 import it.apice.sapere.api.EcolawFactory;
-import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
-import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.node.agents.SAPEREAgentsFactory;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,11 +29,8 @@ import org.osgi.framework.ServiceRegistration;
  */
 public class SAPERENodeActivator implements BundleActivator {
 
-	/** . */
-	private transient PrivilegedLSAFactory sysLsaFactory;
-
 	/** LSA Factory service. */
-	private transient LSAFactory lsaFactory;
+	private transient PrivilegedLSAFactory sysLsaFactory;
 
 	/** LSA Compiler service. */
 	private transient LSACompiler<?> lsaCompiler;
@@ -51,11 +47,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	/** Formula Factory service. */
 	private transient FormulaFactory fFactory;
 
-	/** LSA-space (system) service. */
-	private transient LSAspaceCore<?> sysSpace;
-
 	/** LSA-space service. */
-	private transient LSAspace lsaSpace;
+	private transient LSAspaceCore<?> sysSpace;
 
 	/** List of published registrations. */
 	private final transient List<ServiceRegistration<?>> regs = 
@@ -73,12 +66,14 @@ public class SAPERENodeActivator implements BundleActivator {
 		initLSAFactory(context);
 		log(" - LSA Factory");
 		initLSACompiler(context);
+		assert lsaCompiler != null;
 		log(" - LSA Compiler");
 		initLSAParser(context);
 		log(" - LSA Parser");
 		initELFactory(context);
 		log(" - Eco-law Factory");
 		initELCompiler(context);
+		assert lawCompiler != null;
 		log(" - Eco-law Compiler");
 		initFFactory(context);
 		log(" - Eco-law's Formula Factory");
@@ -86,8 +81,24 @@ public class SAPERENodeActivator implements BundleActivator {
 		log(" - LSA-space");
 
 		// TODO Implement it! (REGISTRATION)
+		log("Registering SAPEREAgents Factory..");
+		registerSAPEREAgentsFactory(context);
 
 		log("Ready.");
+	}
+
+	/**
+	 * <p>
+	 * Registers the SAPEREAgents Factory service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 */
+	private void registerSAPEREAgentsFactory(final BundleContext context) {
+		regs.add(context.registerService(SAPEREAgentsFactory.class,
+				new SAPEREAgentsFactoryImpl(sysLsaFactory, lsaParser,
+						lawFactory, fFactory, sysSpace), null));
 	}
 
 	/**
@@ -109,7 +120,6 @@ public class SAPERENodeActivator implements BundleActivator {
 		}
 
 		sysLsaFactory = context.getService(ref);
-		lsaFactory = sysLsaFactory;
 		refs.add(ref);
 	}
 
@@ -247,7 +257,6 @@ public class SAPERENodeActivator implements BundleActivator {
 		}
 
 		sysSpace = context.getService(ref);
-		lsaSpace = sysSpace;
 		refs.add(ref);
 	}
 
@@ -255,13 +264,19 @@ public class SAPERENodeActivator implements BundleActivator {
 	public final void stop(final BundleContext context) throws Exception {
 		log("Shutting down...");
 
+		// Release imported services
 		for (ServiceReference<?> ref : refs) {
 			context.ungetService(ref);
 		}
 		refs.clear();
 		log("Services RELEASED");
 
-		// TODO Implement it! (UNREGISTRATION)
+		// Cancel registered services
+		for (ServiceRegistration<?> reg : regs) {
+			reg.unregister();
+		}
+		regs.clear();
+		log("Published services UNREGISTERED");
 
 		log("Bye bye.");
 	}

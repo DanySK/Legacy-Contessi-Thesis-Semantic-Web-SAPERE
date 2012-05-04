@@ -1,7 +1,7 @@
 package it.apice.sapere.node.agents;
 
 import it.apice.sapere.node.networking.Message;
-import it.apice.sapere.node.networking.obsnotifications.Subscriber;
+import it.apice.sapere.node.networking.Subscriber;
 
 import java.util.concurrent.PriorityBlockingQueue;
 

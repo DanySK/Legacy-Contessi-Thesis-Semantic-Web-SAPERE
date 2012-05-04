@@ -4,6 +4,7 @@ import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.node.agents.InternalAgent;
 import it.apice.sapere.node.networking.Message;
+import it.apice.sapere.node.networking.Subscriber;
 import it.apice.sapere.node.networking.guestsmngt.GuestSubscriber;
 
 import java.util.ArrayList;

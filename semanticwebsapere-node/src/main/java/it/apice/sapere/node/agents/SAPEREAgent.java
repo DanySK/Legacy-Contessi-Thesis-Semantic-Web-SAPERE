@@ -1,5 +1,7 @@
 package it.apice.sapere.node.agents;
 
+import it.apice.sapere.node.networking.Subscriber;
+
 /**
  * <p>
  * This interface models a generic agent running on the SAPERE middleware.
@@ -8,7 +10,7 @@ package it.apice.sapere.node.agents;
  * @author Paolo Contessi
  *
  */
-public interface SAPEREAgent {
+public interface SAPEREAgent extends Subscriber {
 
 	/**
 	 * <p>
@@ -23,7 +25,7 @@ public interface SAPEREAgent {
 	 * </p>
 	 */
 	void kill();
-	
+
 	/**
 	 * <p>
 	 * Check if someone requested the termination.
