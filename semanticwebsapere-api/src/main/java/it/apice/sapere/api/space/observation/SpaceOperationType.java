@@ -28,6 +28,6 @@ public enum SpaceOperationType {
 	/** A generic action perpetrated by the system. */
 	SYSTEM_ACTION,
 
-	/** The LSA-space dropped a request because not allowed. */
-	DROPPED_REQUEST;
+	/** The system found an LSA to be diffused. */
+	SYSTEM_DIFFUSE;
 }

@@ -2,6 +2,8 @@ package it.apice.sapere.api.ecolaws.scheduling;
 
 import it.apice.sapere.api.space.match.MatchResult;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <p>
  * This interface models a MatchResult that can be scheduled at the computed
@@ -29,8 +31,10 @@ public interface SchedulableMatchResult extends MatchResult {
 	 * </p>
 	 * 
 	 * @param currentTime
-	 *            Current time (in milliseconds)
-	 * @return Scheduling time (in milliseconds)
+	 *            Current time
+	 * @param tu
+	 *            Unit of Measure of the provided (and desired) time value
+	 * @return Scheduling time (in <code>tu</code> unit of measure)
 	 */
-	long getSchedulingTime(long currentTime);
+	long getSchedulingTime(long currentTime, TimeUnit tu);
 }

@@ -1,12 +1,12 @@
 package it.apice.sapere.api.ecolaws.scheduling.impl;
 
-import java.util.Random;
-
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulingFunction;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.match.MatchResult;
+
+import java.util.Random;
 
 /**
  * <p>
@@ -67,9 +67,9 @@ public class SchedulingFunctionImpl implements SchedulingFunction {
 
 			// @author Danilo Pianini
 			final double time = -Math.log(rng.nextDouble())
-					/ Double.parseDouble(rString);
+					/ Double.parseDouble(rString); // seconds
 
-			return new SchedulableMatchResultImpl(mResult, Math.round(time));
+			return new SchedulableMatchResultImpl(mResult, time);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot compute scheduling rate", ex);
 		}

@@ -1,5 +1,10 @@
 package it.apice.sapere.api.space.core.impl;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.net.URI;
+
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.core.CompiledLSA;
 
@@ -79,6 +84,47 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	@Override
 	public final StmtIterator getStatements() {
 		return model.listStatements();
+	}
+
+	@Override
+	public final String toString() {
+		return toString(RDFFormat.TURTLE);
+	}
+
+	@Override
+	public final String toString(final RDFFormat format) {
+		final StringWriter out = new StringWriter();
+		try {
+			model.write(out, format.toString());
+			return out.toString();
+		} finally {
+			try {
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	@Override
+	public final void assertProperty(final URI propURI, 
+			final String propValue) {
+		model.addLiteral(model.createResource(lsaId.getId().toString()),
+				model.createProperty(propURI.toString()), propValue);
+	}
+
+	@Override
+	public final void assertProperty(final URI propURI, final URI propValue) {
+		model.add(model.createResource(lsaId.getId().toString()),
+				model.createProperty(propURI.toString()),
+				model.createResource(propValue.toString()));
+	}
+
+	@Override
+	public final void clearProperty(final URI propURI) {
+		model.remove(model.getResource(lsaId.getId().toString())
+				.listProperties(model.createProperty(propURI.toString())));
 	}
 
 }

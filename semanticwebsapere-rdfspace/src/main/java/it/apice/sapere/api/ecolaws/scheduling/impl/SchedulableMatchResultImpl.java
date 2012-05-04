@@ -6,6 +6,8 @@ import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.match.MatchResult;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * <p>
  * This class implements the {@link SchedulableMatchResult} interface.
@@ -18,7 +20,10 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 		Comparable<SchedulableMatchResult> {
 
 	/** Shift quantification (for hash computation). */
-	private static final int NUM_32 = 32;
+	private static final transient int NUM_32 = 32;
+
+	/** Seconds to Millieconds conversion constant. */
+	private static final transient double S_TO_MS = 1000;
 
 	/** Reference to match result. */
 	private final MatchResult result;
@@ -36,8 +41,8 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 	 * @param waitTime
 	 *            The (computed) scheduling interleaving time
 	 */
-	public SchedulableMatchResultImpl(final MatchResult mResult, 
-			final long waitTime) {
+	public SchedulableMatchResultImpl(final MatchResult mResult,
+			final double waitTime) {
 		if (mResult == null) {
 			throw new IllegalArgumentException("Invalid match result provided");
 		}
@@ -47,7 +52,7 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 		}
 
 		result = mResult;
-		time = waitTime;
+		time = Math.round(waitTime * S_TO_MS);
 	}
 
 	@Override
@@ -119,8 +124,8 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 
 	@Override
 	public final String toString() {
-		return "SchedulableMatchResultImpl [result=" + result + ", time=" + time
-				+ "]";
+		return "SchedulableMatchResultImpl [result=" + result + ", time="
+				+ time + "]";
 	}
 
 	@Override
@@ -134,8 +139,10 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 	}
 
 	@Override
-	public final long getSchedulingTime(final long currentTime) {
-		return currentTime + time;
+	public final long getSchedulingTime(final long currentTime,
+			final TimeUnit tu) {
+		return tu.convert(tu.toMillis(currentTime) + time,
+				TimeUnit.MILLISECONDS);
 	}
 
 }

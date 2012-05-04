@@ -68,7 +68,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** LSA-id pattern. */
 	private static final transient Pattern LSA_ID_PATTERN = Pattern
-			.compile(LSA_PREFIX + "\\w+");
+			.compile("(" + LSA_PREFIX + "\\w+-\\w+)");
 
 	/** The rdf:type. */
 	private static final transient String RDF_TYPE = "http://"
@@ -99,7 +99,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private final transient Property rdfTypeProp;
 
 	/** Provides thread-safety. */
-	private final transient ReadWriteLock mutex = new ReentrantReadWriteLock();
+	private final transient ReadWriteLock mutex = 
+			new ReentrantReadWriteLock(true);
 
 	/** Read/Write flag. */
 	private transient boolean isWriting = false;

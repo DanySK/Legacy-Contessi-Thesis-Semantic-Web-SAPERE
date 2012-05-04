@@ -121,4 +121,16 @@ public interface Property {
 	 *            The visitor
 	 */
 	void accept(LSAVisitor visitor);
+
+//	/**
+//	 * <p>
+//	 * Checks if the property is synthetic.
+//	 * </p>
+//	 * <p>
+//	 * Synthetic Properties cannot be modified by a user agent.
+//	 * </p>
+//	 *
+//	 * @return True if synthetic, false otherwise
+//	 */
+//	boolean isSynthetic();
 }

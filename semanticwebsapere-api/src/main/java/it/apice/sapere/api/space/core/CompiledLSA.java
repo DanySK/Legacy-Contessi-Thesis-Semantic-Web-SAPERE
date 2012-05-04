@@ -1,10 +1,13 @@
 package it.apice.sapere.api.space.core;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
+
+import java.net.URI;
 
 /**
  * <p>
- * This inteface models an LSA that has been compiled in a set of RDF
+ * This interface models an LSA that has been compiled in a set of RDF
  * statements.
  * </p>
  * 
@@ -32,4 +35,58 @@ public interface CompiledLSA<RDFStmtIterType> {
 	 * @return An RDF Statement iterator
 	 */
 	RDFStmtIterType getStatements();
+
+	/**
+	 * <p>
+	 * Converts this CompiledLSA to a String format, according to RDFFormat.
+	 * </p>
+	 * 
+	 * @param format
+	 *            The format of the String
+	 * @return An equivalent String in the desired format
+	 */
+	String toString(RDFFormat format);
+
+	/**
+	 * <p>
+	 * Adds a property to this compiled LSA.
+	 * </p>
+	 * <p>
+	 * THIS METHOD SHOULD BE USED ONLY BY THE MIDDLEWARE, IN ORDER TO HANDLE
+	 * SYNTHETIC PROPERTIES AND LOW-LEVEL ASPECTS.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 * @param propValue
+	 *            The value of the property (literal)
+	 */
+	void assertProperty(URI propURI, String propValue);
+
+	/**
+	 * <p>
+	 * Adds a property to this compiled LSA.
+	 * </p>
+	 * <p>
+	 * THIS METHOD SHOULD BE USED ONLY BY THE MIDDLEWARE, IN ORDER TO HANDLE
+	 * SYNTHETIC PROPERTIES AND LOW-LEVEL ASPECTS.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 * @param propValue
+	 *            The value of the property (a URI)
+	 */
+	void assertProperty(URI propURI, URI propValue);
+
+	/**
+	 * <p>
+	 * Removes all information about the specified property from this compiled
+	 * LSA.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 */
+	void clearProperty(URI propURI);
 }
