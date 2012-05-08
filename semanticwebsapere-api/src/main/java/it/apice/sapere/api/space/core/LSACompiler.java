@@ -40,4 +40,13 @@ public interface LSACompiler<RDFStmtIterType> {
 	 * @return The corresponding compiled LSA
 	 */
 	CompiledLSA<RDFStmtIterType> parse(String rdf, RDFFormat format);
+
+	/**
+	 * <p>
+	 * Creates an empty {@link CompiledLSA}.
+	 * </p>
+	 * 
+	 * @return An empty {@link CompiledLSA}
+	 */
+	CompiledLSA<RDFStmtIterType> create();
 }

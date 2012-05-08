@@ -17,6 +17,14 @@ import java.net.URI;
  */
 public class PropertyNameImpl implements PropertyName {
 
+	/** List of namespaces reserved to synthetic properties. */
+	public static final transient String[] SYNTHETIC_NS = new String[] {
+			"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+			"http://www.w3.org/2000/01/rdf-schema#",
+			"http://www.w3.org/2001/XMLSchema#",
+			"http://www.w3.org/2002/07/owl#",
+			"http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#"};
+
 	/** Property name. */
 	private final URI id;
 
@@ -84,6 +92,17 @@ public class PropertyNameImpl implements PropertyName {
 	@Override
 	public final void accept(final LSAVisitor visitor) {
 		visitor.visit(this);
+	}
+
+	@Override
+	public final boolean isSynthetic() {
+		for (String ns : SYNTHETIC_NS) {
+			if (id.toString().toLowerCase().startsWith(ns.toLowerCase())) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 }

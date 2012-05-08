@@ -15,7 +15,7 @@ import it.apice.sapere.node.networking.NodeMessage;
 public class BTNeighbour implements Neighbour {
 
 	/** Reference to BT Manager. */
-	private BluetoothManager manager;
+	private BluetoothManagerAgent manager;
 
 	/** BT Neighbour's address. */
 	private String btAddress;
@@ -26,11 +26,11 @@ public class BTNeighbour implements Neighbour {
 	 * </p>
 	 * 
 	 * @param aManager
-	 *            the BluetoothManager of the node
+	 *            the BluetoothManagerAgent of the node
 	 * @param aBtAddress
 	 *            the BluetoothAddress of the neighbour
 	 */
-	public BTNeighbour(final BluetoothManager aManager, 
+	public BTNeighbour(final BluetoothManagerAgent aManager, 
 			final String aBtAddress) {
 		manager = aManager;
 		btAddress = aBtAddress;

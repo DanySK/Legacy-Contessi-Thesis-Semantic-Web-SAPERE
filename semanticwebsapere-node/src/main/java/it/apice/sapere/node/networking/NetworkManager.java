@@ -14,7 +14,7 @@ public final class NetworkManager {
 	private final transient NeighboursTable table;
 
 //	/** Bluetooth manager. */
-//	private final transient BluetoothManager btManager;
+//	private final transient BluetoothManagerAgent btManager;
 
 	/** Singleton instance. */
 	private static NetworkManager instance;
@@ -41,7 +41,7 @@ public final class NetworkManager {
 	 */
 	private NetworkManager() {
 		table = new NeighboursTable();
-//		btManager = BluetoothManager.getInstance(this);
+//		btManager = BluetoothManagerAgent.getInstance(this);
 	}
 
 	/**

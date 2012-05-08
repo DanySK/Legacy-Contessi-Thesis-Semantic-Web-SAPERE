@@ -75,7 +75,7 @@ public class BTClient {
 	private NodeMessage myNodeMessage;
 
 	/** Reference to Bluetooth Manager. */
-	private BluetoothManager btManager;
+	private BluetoothManagerAgent btManager;
 
 	/** Reference to Network Manager. */
 	private NetworkManager netManager;
@@ -134,7 +134,7 @@ public class BTClient {
 		services = new ArrayList<ServiceRecord>();
 		myNodeMessage = nodeMessage;
 		netManager = NetworkManager.getInstance();
-		btManager = BluetoothManager.getInstance(netManager);
+		btManager = BluetoothManagerAgent.getInstance(netManager);
 
 		try {
 
@@ -177,40 +177,7 @@ public class BTClient {
 				ObjectInputStream ois = new ObjectInputStream(is);
 				try {
 					NodeMessage messageRec = (NodeMessage) ois.readObject();
-
-					String newId = netManager
-							.registerNeighbour(new BTNeighbour(btManager,
-									messageRec.getSender()));
-					assert newId != null;
-
-					// Property[] properties = new Property[7];
-					// properties[0] = new Property("type", new
-					// SetPropertyValue(
-					// "#neighbour"));
-					// properties[1] = new Property("where", new
-					// SetPropertyValue(
-					// newId));
-					// properties[2] = new Property("latitude",
-					// new SetPropertyValue("" + messageRec.getLatitude()));
-					// properties[3] = new Property(
-					// "longitude",
-					// new SetPropertyValue("" + messageRec.getLongitude()));
-					// properties[4] = new Property(
-					// "orientation1",
-					// new SetPropertyValue("" +
-					// messageRec.getOrientation()[0]));
-					// properties[5] = new Property(
-					// "orientation2",
-					// new SetPropertyValue("" + messageRec.Orientation()[1]));
-					// properties[6] = new Property(
-					// "orientation3",
-					// new SetPropertyValue("" + messageRec.Orientation()[2]));
-					// Content contentLoc = new JavaLsaContent(properties);
-					//
-					// SpaceOperation op2 = new SpaceOperation(
-					// SpaceOperationType.Inject, null, new Lsa(null,
-					// contentLoc), null, "system");
-					// ReactionManager.getInstance().queueOperation(op2, null);
+					btManager.neighbourRegistration(messageRec);
 				} finally {
 					if (ois != null) {
 						ois.close();

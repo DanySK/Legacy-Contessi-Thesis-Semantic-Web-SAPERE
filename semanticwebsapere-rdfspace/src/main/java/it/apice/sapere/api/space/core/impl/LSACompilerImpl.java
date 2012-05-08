@@ -123,4 +123,9 @@ public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 				"Invalid LSA representation as an RDF String");
 	}
 
+	@Override
+	public final CompiledLSA<StmtIterator> create() {
+		return compile(factory.createLSA());
+	}
+
 }

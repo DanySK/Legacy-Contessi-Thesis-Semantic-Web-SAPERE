@@ -63,12 +63,22 @@ public class PropertyImpl implements Property {
 
 	@Override
 	public final Property addValue(final PropertyValue<?, ?> value) {
+		if (isSynthetic()) {
+			throw new IllegalStateException(
+					"Cannot modify a Synthetic Property");
+		}
+
 		values.add(value);
 		return this;
 	}
 
 	@Override
 	public final Property removeValue(final PropertyValue<?, ?> value) {
+		if (isSynthetic()) {
+			throw new IllegalStateException(
+					"Cannot modify a Synthetic Property");
+		}
+
 		values.remove(value);
 		return this;
 	}
@@ -76,6 +86,11 @@ public class PropertyImpl implements Property {
 	@Override
 	public final Property changeValue(final PropertyValue<?, ?> oldValue,
 			final PropertyValue<?, ?> newValue) {
+		if (isSynthetic()) {
+			throw new IllegalStateException(
+					"Cannot modify a Synthetic Property");
+		}
+
 		if (!values.contains(oldValue)) {
 			throw new IllegalArgumentException(String.format(
 					"Cannot change value %s to %s (unknown old value)",
@@ -184,5 +199,10 @@ public class PropertyImpl implements Property {
 	@Override
 	public final void accept(final LSAVisitor visitor) {
 		visitor.visit(this);
+	}
+
+	@Override
+	public final boolean isSynthetic() {
+		return name.isSynthetic();
 	}
 }

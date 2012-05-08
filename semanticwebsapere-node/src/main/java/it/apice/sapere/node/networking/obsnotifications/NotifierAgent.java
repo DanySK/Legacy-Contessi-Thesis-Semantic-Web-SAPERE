@@ -1,8 +1,14 @@
 package it.apice.sapere.node.networking.obsnotifications;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
+import it.apice.sapere.api.space.observation.SpaceEvent;
+import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
-import it.apice.sapere.node.agents.InternalAgent;
+import it.apice.sapere.node.agents.AbstractSAPEREAgent;
+import it.apice.sapere.node.agents.SystemAgent;
+import it.apice.sapere.node.internal.NodeServices;
+import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.Message;
 import it.apice.sapere.node.networking.Subscriber;
 import it.apice.sapere.node.networking.guestsmngt.GuestSubscriber;
@@ -10,13 +16,19 @@ import it.apice.sapere.node.networking.guestsmngt.GuestSubscriber;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-
 /**
  * <p>
  * Internal agent that handles notifications.
  * </p>
+ * 
+ * <p>
+ * Some modifications occurred during RDF-based subsystem intergration.
+ * </p>
+ * 
+ * @author Unknown
+ * @author Paolo Contessi
  */
-public final class Notifier extends InternalAgent {
+public final class NotifierAgent extends SystemAgent implements SpaceObserver {
 
 	/** Many Times subscribers. */
 	private final Hashtable<String, ArrayList<Subscriber>> mtsubscribers;
@@ -24,40 +36,41 @@ public final class Notifier extends InternalAgent {
 	/** One Time subscribers. */
 	private final Hashtable<String, ArrayList<Subscriber>> otsubscribers;
 
-	/** Read subscribers. */
-	private final Hashtable<String, ArrayList<Subscriber>> rdsubscribers;
-
 	/** Singleton instance. */
-	private static final transient Notifier INSTANCE = new Notifier();
+	private static final transient NotifierAgent INSTANCE = new NotifierAgent();
 
 	/**
 	 * <p>
-	 * Retrieves the singleton reference of {@link Notifier}.
+	 * Retrieves the singleton reference of {@link NotifierAgent}.
 	 * </p>
 	 * 
-	 * @return Global reference to {@link Notifier}
+	 * @return Global reference to {@link NotifierAgent}
 	 */
-	public static Notifier getInstance() {
+	public static NotifierAgent getInstance() {
 		return INSTANCE;
 	}
 
 	/**
 	 * <p>
-	 * Builds a new {@link Notifier}.
+	 * Builds a new {@link NotifierAgent}.
 	 * </p>
 	 */
-	private Notifier() {
+	private NotifierAgent() {
 		super("notifier");
 
 		mtsubscribers = new Hashtable<String, ArrayList<Subscriber>>();
 		otsubscribers = new Hashtable<String, ArrayList<Subscriber>>();
-		rdsubscribers = new Hashtable<String, ArrayList<Subscriber>>();
-
-		// TODO start();
 	}
 
 	@Override
-	protected void execute() {
+	protected void behaviour(final NodeServices services) {
+		services.getLSAspace().beginWrite();
+		try {
+			services.getLSAspace().addSpaceObserver(this);
+		} finally {
+			services.getLSAspace().done();
+		}
+
 		while (isRunning()) {
 			try {
 				final Message note = getInputQueue().take();
@@ -87,9 +100,6 @@ public final class Notifier extends InternalAgent {
 		case PERMANENT_SUBSCRIPTION:
 			handleSubscription(sub);
 			break;
-		case READ:
-			handleReadSubscription(sub);
-			break;
 		case CANCEL_SUBSCRIPTION:
 			handleCancelSubscription(sub);
 			break;
@@ -112,8 +122,8 @@ public final class Notifier extends InternalAgent {
 		if (res1 != null) {
 			for (int i = 0; i < res1.size(); i++) {
 				Subscriber e = res1.get(i);
-				if (e instanceof InternalAgent
-						&& sub.getSubscriber() instanceof InternalAgent) {
+				if (e instanceof AbstractSAPEREAgent
+						&& sub.getSubscriber() instanceof AbstractSAPEREAgent) {
 					res1.remove(sub.getSubscriber());
 				} else {
 					if (e instanceof GuestSubscriber
@@ -129,8 +139,8 @@ public final class Notifier extends InternalAgent {
 		if (res2 != null) {
 			for (int i = 0; i < res1.size(); i++) {
 				Subscriber e = res1.get(i);
-				if (e instanceof InternalAgent
-						&& sub.getSubscriber() instanceof InternalAgent) {
+				if (e instanceof AbstractSAPEREAgent
+						&& sub.getSubscriber() instanceof AbstractSAPEREAgent) {
 					res2.remove(sub.getSubscriber());
 				} else {
 					if (e instanceof GuestSubscriber
@@ -151,25 +161,9 @@ public final class Notifier extends InternalAgent {
 	 * @param sub
 	 *            A {@link SubscriptionRequest}
 	 */
-	private void handleReadSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res = rdsubscribers.get(sub.getLSAid()
-				.toString());
-		if (res != null) {
-			res.add(sub.getSubscriber());
-		} else {
-			ArrayList<Subscriber> list = new ArrayList<Subscriber>();
-			list.add(sub.getSubscriber());
-			rdsubscribers.put(sub.getLSAid().toString(), list);
-		}
-	}
-
-	/**
-	 * @param sub
-	 *            A {@link SubscriptionRequest}
-	 */
 	private void handleSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res = mtsubscribers.get(sub.getLSAid()
-				.toString());
+		ArrayList<Subscriber> res = mtsubscribers
+				.get(sub.getLSAid().toString());
 		if (res != null) {
 			res.add(sub.getSubscriber());
 		} else {
@@ -184,8 +178,8 @@ public final class Notifier extends InternalAgent {
 	 *            A {@link SubscriptionRequest}
 	 */
 	private void handleOneTimeSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res = otsubscribers.get(sub.getLSAid()
-				.toString());
+		ArrayList<Subscriber> res = otsubscribers
+				.get(sub.getLSAid().toString());
 		if (res != null) {
 			res.add(sub.getSubscriber());
 		} else {
@@ -204,27 +198,10 @@ public final class Notifier extends InternalAgent {
 	 *            A {@link Notification} to be handled
 	 */
 	private void manageNotification(final Notification notify) {
-		if (notify.getType() == SpaceOperationType.AGENT_READ) {
-			ArrayList<Subscriber> rdnotificables = rdsubscribers.get(notify
-					.getSubjectLSAid().toString());
-
-			if (rdnotificables.size() > 0) {
-				Notification newNote = new Notification(notify);
-
-				try {
-					rdnotificables.get(0).sendMessage(newNote);
-				} catch (Exception e) {
-					spy("Ignored Exception raised: " + e.getMessage());
-					return;
-				}
-				rdnotificables.remove(0);
-			}
-			return;
-		}
 		spy("notification received: " + notify);
 		LSAid lsaId = notify.getSubjectLSAid();
-		ArrayList<Subscriber> notificables = mtsubscribers.get(lsaId
-				.toString());
+		ArrayList<Subscriber> notificables = mtsubscribers
+				.get(lsaId.toString());
 
 		if (!(notificables == null || notificables.size() == 0)) {
 			spy("found subscribers...");
@@ -253,7 +230,7 @@ public final class Notifier extends InternalAgent {
 			return;
 		}
 
-		spy("found one time subscribers...");
+		spy("found one-time subscribers...");
 		for (Subscriber n : otnotificables) {
 			if (notify.getType() == SpaceOperationType.AGENT_UPDATE) {
 				Notification newNote = new Notification(notify);
@@ -269,7 +246,7 @@ public final class Notifier extends InternalAgent {
 					e.printStackTrace();
 				}
 			}
-			// L'iscrizione viene rimossa
+			// One-Time Subscription removal
 			otsubscribers.remove(lsaId.toString());
 		}
 
@@ -282,39 +259,28 @@ public final class Notifier extends InternalAgent {
 	 * </p>
 	 */
 	private void printSubscribersList() {
-		String msg = "subscribers list: ";
+		StringBuilder builder = new StringBuilder();
+		builder.append("NotifierAgent [subscribers=");
+		builder.append(mtsubscribers);
+		builder.append(", one-time-subscribers=");
+		builder.append(otsubscribers);
+		builder.append("]");
 
-		if (mtsubscribers.keySet().isEmpty()) {
-			msg += "empty";
-		} else {
-			msg += " \n-----------\n";
-			for (String id : mtsubscribers.keySet()) {
-				msg += id + " : [";
-				for (Subscriber ia : mtsubscribers.get(id)) {
-					msg += " " + ia + " ";
-				}
-				msg += "]" + "\n";
-			}
-			msg += "-----------";
-		}
-		msg += "\n";
-		msg += "one time subscribers list: ";
-
-		if (otsubscribers.keySet().isEmpty()) {
-			msg += "empty";
-		} else {
-			msg += " \n-----------\n";
-			for (String id : otsubscribers.keySet()) {
-				msg += id + " : [";
-				for (Subscriber ia : otsubscribers.get(id)) {
-					msg += " " + ia + " ";
-				}
-				msg += "]" + "\n";
-			}
-			msg += "-----------";
-		}
-
-		spy(msg);
+		spy(builder.toString());
 	}
 
+	@Override
+	public void eventOccurred(final SpaceEvent ev) {
+		if (ev.getOperationType() != SpaceOperationType.AGENT_READ
+				&& ev.getOperationType() != SpaceOperationType.AGENT_ACTION) {
+			spy("Requiring notification for event " + ev.toString());
+
+			final String[] lsas = ev.getLSAContent(RDFFormat.RDF_XML);
+			for (int i = 0; i < lsas.length; i++) {
+				sendMessage(new Notification(ev.getOperationType(),
+						NodeServicesImpl.getInstance().getLSACompiler()
+								.parse(lsas[i], RDFFormat.RDF_XML)));
+			}
+		}
+	}
 }

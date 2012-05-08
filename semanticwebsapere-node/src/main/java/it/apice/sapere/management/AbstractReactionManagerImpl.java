@@ -8,7 +8,7 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
-import it.apice.sapere.node.agents.InternalAgent;
+import it.apice.sapere.node.agents.AbstractSAPEREAgent;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -26,7 +26,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author Paolo Contessi
  * 
  */
-public abstract class AbstractReactionManagerImpl extends InternalAgent
+public abstract class AbstractReactionManagerImpl extends AbstractSAPEREAgent
 		implements ReactionManager, SpaceObserver {
 
 	/** Reference to the LSA-space. */

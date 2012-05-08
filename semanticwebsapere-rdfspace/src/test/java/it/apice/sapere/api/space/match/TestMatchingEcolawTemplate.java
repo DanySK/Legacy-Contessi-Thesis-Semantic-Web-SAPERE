@@ -118,130 +118,136 @@ public class TestMatchingEcolawTemplate extends
 			@Override
 			public CompiledLSA<StmtIterator> parse(final String rdf,
 					final RDFFormat format) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public CompiledLSA<StmtIterator> compile(final LSA lsa) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
+				return null;
+			}
+
+			@Override
+			public CompiledLSA<StmtIterator> create() {
+				// Foo implementation, not relevant
 				return null;
 			}
 		}, new PrivilegedLSAFactory() {
 
 			@Override
 			public String getNodeID() {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public DateTimeValue createPropertyValue(final Date value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public DoubleValue createPropertyValue(final double value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public FloatValue createPropertyValue(final float value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public BooleanValue createPropertyValue(final boolean value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LongValue createPropertyValue(final long value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public IntegerValue createPropertyValue(final int value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LiteralValue createPropertyValue(final String value,
 					final String languageCode) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LiteralValue createPropertyValue(final String value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LSAidValue createPropertyValue(final LSAid value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public URIValue createPropertyValue(final URI value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public PropertyName createPropertyName(final URI value) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public Property createProperty(final URI name,
 					final PropertyValue<?, ?>... initialValues) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public Property createProperty(final URI name) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public SDescValue createNestingPropertyValue() {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LSAid createLSAid() {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LSA createLSA() {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LSAid createLSAid(final URI id) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 
 			@Override
 			public LSA createLSA(final LSAid lsaId) {
-				// TODO Auto-generated method stub
+				// Foo implementation, not relevant
 				return null;
 			}
 		});

@@ -1,6 +1,13 @@
 package it.apice.sapere.node.networking.bluetooth;
 
-import it.apice.sapere.node.agents.InternalAgent;
+import it.apice.sapere.api.RDFFormat;
+import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.space.core.CompiledLSA;
+import it.apice.sapere.api.space.core.LSACompiler;
+import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.node.agents.SystemAgent;
+import it.apice.sapere.node.internal.NodeServices;
+import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.NetworkManager;
 import it.apice.sapere.node.networking.NodeMessage;
 import it.apice.sapere.node.networking.NodeMessageType;
@@ -10,6 +17,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -37,7 +45,43 @@ import javax.microedition.io.StreamConnectionNotifier;
  * @author Paolo Contessi
  * 
  */
-public final class BluetoothManager extends InternalAgent {
+public final class BluetoothManagerAgent extends SystemAgent {
+
+	/** Prefix for Synthetic Properties. */
+	private static final transient String SYNT_PROPS_PREFIX = "http://"
+			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#";
+
+	/** Type property URI (as String). */
+	private static final transient String TYPE_PROP_URI = SYNT_PROPS_PREFIX
+			+ "type";
+
+	/** Neighbour individual URI (as String). */
+	private static final transient String NEIGHB_INDIV_URI = SYNT_PROPS_PREFIX
+			+ "neighbour";
+
+	/** Where property URI (as String). */
+	private static final transient String WHERE_PROP_URI = SYNT_PROPS_PREFIX
+			+ "where";
+
+	/** Longitude property URI (as String). */
+	private static final transient String LNG_PROP_URI = SYNT_PROPS_PREFIX
+			+ "longitude";
+
+	/** Latitude property URI (as String). */
+	private static final transient String LAT_PROP_URI = SYNT_PROPS_PREFIX
+			+ "latitude";
+
+	/** Orientation 1 property URI (as String). */
+	private static final transient String OR1_PROP_URI = SYNT_PROPS_PREFIX
+			+ "orientation1";
+
+	/** Orientation 2 property URI (as String). */
+	private static final transient String OR2_PROP_URI = SYNT_PROPS_PREFIX
+			+ "orientation2";
+
+	/** Orientation 3 property URI (as String). */
+	private static final transient String OR3_PROP_URI = SYNT_PROPS_PREFIX
+			+ "orientation3";
 
 	/* === BLUETOOTH PROTOCOL CONSTANTS (begin) === */
 
@@ -82,23 +126,23 @@ public final class BluetoothManager extends InternalAgent {
 
 	/** Map of all instances per {@link NetworkManager}. */
 	private static final transient 
-		Map<NetworkManager, BluetoothManager> INSTANCES = 
-		new HashMap<NetworkManager, BluetoothManager>();
+		Map<NetworkManager, BluetoothManagerAgent> INSTANCES = 
+			new HashMap<NetworkManager, BluetoothManagerAgent>();
 
 	/**
 	 * <p>
-	 * Returns the instance of the BluetoothManager (pattern Singleton).
+	 * Returns the instance of the BluetoothManagerAgent (pattern Singleton).
 	 * </p>
 	 * 
 	 * @param netManager
 	 *            the networkManager
-	 * @return the instance of the BluetoothManager
+	 * @return the instance of the BluetoothManagerAgent
 	 */
-	public static BluetoothManager getInstance(
+	public static BluetoothManagerAgent getInstance(
 			final NetworkManager netManager) {
-		BluetoothManager inst = INSTANCES.get(netManager);
+		BluetoothManagerAgent inst = INSTANCES.get(netManager);
 		if (inst == null) {
-			inst = new BluetoothManager(netManager);
+			inst = new BluetoothManagerAgent(netManager);
 			INSTANCES.put(netManager, inst);
 		}
 
@@ -107,13 +151,13 @@ public final class BluetoothManager extends InternalAgent {
 
 	/**
 	 * <p>
-	 * Creates a BluetoothManager.
+	 * Creates a BluetoothManagerAgent.
 	 * </p>
 	 * 
 	 * @param aNetManager
 	 *            a reference to the NetworkManager
 	 */
-	private BluetoothManager(final NetworkManager aNetManager) {
+	private BluetoothManagerAgent(final NetworkManager aNetManager) {
 		super("btmanager");
 
 		netManager = aNetManager;
@@ -130,8 +174,6 @@ public final class BluetoothManager extends InternalAgent {
 				localDevice.getBluetoothAddress(), null, DUMMY_LATITUDE,
 				DUMMY_LONGITUDE, new float[] { DUMMY_ORIENTATION_X,
 						DUMMY_ORIENTATION_Y, DUMMY_ORIENTATION_Z });
-
-		// TODO this.start();
 	}
 
 	/**
@@ -150,7 +192,7 @@ public final class BluetoothManager extends InternalAgent {
 	/**
 	 * <p>
 	 * Invoked in order to contact a specific neighbour node or all nodes if
-	 * <code>BluetoothManager.ALL_BT_ADDRESSES</code> is provided.
+	 * <code>BluetoothManagerAgent.ALL_BT_ADDRESSES</code> is provided.
 	 * </p>
 	 * 
 	 * @param btAddress
@@ -169,7 +211,7 @@ public final class BluetoothManager extends InternalAgent {
 	}
 
 	@Override
-	protected void execute() {
+	protected void behaviour(final NodeServices services) {
 		btClient = new BTClient(myNodeMessage);
 
 		try {
@@ -204,10 +246,10 @@ public final class BluetoothManager extends InternalAgent {
 
 					switch (message.getType()) {
 					case DIFFUSE:
-						handleDiffuse(message);
+						handleDiffuse(message, services);
 						break;
 					case NODE_INFO:
-						handleNodeInfo(out, message);
+						handleNodeInfo(out, message, services);
 						break;
 					default:
 						spy("Error on NodeMessage type: unsupported type");
@@ -249,37 +291,74 @@ public final class BluetoothManager extends InternalAgent {
 	 *            Output Stream
 	 * @param message
 	 *            The NODE_INFO message to be handled
+	 * @param services
+	 *            Reference to all node services
 	 * @throws IOException
 	 *             Error while serializing myNodeMessage
 	 */
 	private void handleNodeInfo(final OutputStream out,
-			final NodeMessage message) throws IOException {
-		String newId = netManager.registerNeighbour(new BTNeighbour(this,
-				message.getSender()));
-		assert newId != null;
-
-		// Property[] properties = new Property[7];
-		// properties[0] = new Property("type", new SetPropertyValue(
-		// "#neighbour"));
-		// properties[1] = new Property("where", new SetPropertyValue(newId));
-		// properties[2] = new Property("latitude", new SetPropertyValue(""
-		// + message.getLatitude()));
-		// properties[3] = new Property("longitude", new SetPropertyValue(""
-		// + message.getLongitude()));
-		// properties[4] = new Property("orientation1", new SetPropertyValue(""
-		// + message.getOrientation()[0]));
-		// properties[5] = new Property("orientation2", new SetPropertyValue(""
-		// + message.getOrientation()[1]));
-		// properties[6] = new Property("orientation3", new SetPropertyValue(""
-		// + message.Orientation()[2]));
-		// Content contentLoc = new JavaLsaContent(properties);
-		//
-		// SpaceOperation op2 = new SpaceOperation(SpaceOperationType.Inject,
-		// null, new Lsa(null, contentLoc), null, "system");
-		// ReactionManager.getInstance().queueOperation(op2, null);
+			final NodeMessage message, final NodeServices services)
+			throws IOException {
+		neighbourRegistration(message, services);
 
 		ObjectOutputStream oos = new ObjectOutputStream(out);
 		oos.writeObject(myNodeMessage);
+	}
+
+	/**
+	 * <p>
+	 * Registers neighbour's information in NeighboursTable and LSA-space.
+	 * </p>
+	 * 
+	 * @param message
+	 *            The NODE_INFO message to be handled
+	 */
+	void neighbourRegistration(final NodeMessage message) {
+		neighbourRegistration(message, NodeServicesImpl.getInstance());
+	}
+			
+	/**
+	 * <p>
+	 * Registers neighbour's information in NeighboursTable and LSA-space.
+	 * </p>
+	 * 
+	 * @param message
+	 *            The NODE_INFO message to be handled
+	 * @param services
+	 *            Reference to all node services
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	private void neighbourRegistration(final NodeMessage message,
+			final NodeServices services) {
+		String newId = netManager.registerNeighbour(new BTNeighbour(this,
+				message.getSender()));
+
+		final LSAspaceCore space = services.getLSAspace();
+		final LSACompiler lsaComp = services.getLSACompiler();
+		final CompiledLSA nInfoLSA = lsaComp.create();
+
+		nInfoLSA.assertProperty(URI.create(TYPE_PROP_URI),
+				URI.create(NEIGHB_INDIV_URI));
+		nInfoLSA.assertProperty(URI.create(WHERE_PROP_URI), newId);
+		nInfoLSA.assertProperty(URI.create(LNG_PROP_URI),
+				"" + message.getLongitude());
+		nInfoLSA.assertProperty(URI.create(LAT_PROP_URI),
+				"" + message.getLatitude());
+		nInfoLSA.assertProperty(URI.create(OR1_PROP_URI),
+				"" + message.getOrientation()[0]);
+		nInfoLSA.assertProperty(URI.create(OR2_PROP_URI),
+				"" + message.getOrientation()[1]);
+		nInfoLSA.assertProperty(URI.create(OR3_PROP_URI),
+				"" + message.getOrientation()[2]);
+
+		space.beginWrite();
+		try {
+			space.injectCompiled(nInfoLSA);
+		} catch (SAPEREException ex) {
+			error("Cannot inject Node Info", ex);
+		} finally {
+			space.done();
+		}
 	}
 
 	/**
@@ -289,10 +368,25 @@ public final class BluetoothManager extends InternalAgent {
 	 * 
 	 * @param message
 	 *            The DIFFUSE Message
+	 * @param services
+	 *            Reference to all node services
 	 */
-	private void handleDiffuse(final NodeMessage message) {
-		// doInject(message.getOperation().getLsa(), "system");
-		spy("received diffusion " + message.getOperation().getLSAid());
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	private void handleDiffuse(final NodeMessage message,
+			final NodeServices services) {
+		final LSAspaceCore space = services.getLSAspace();
+		final LSACompiler lsaComp = services.getLSACompiler();
+
+		space.beginWrite();
+		try {
+			space.injectCompiled(lsaComp.parse(message.getOperation().getLSA(),
+					RDFFormat.RDF_XML));
+			spy("Received diffusion " + message.getOperation().getLSAid());
+		} catch (SAPEREException e) {
+			error("Cannot receive diffusion", e);
+		} finally {
+			space.done();
+		}
 	}
 
 	/**

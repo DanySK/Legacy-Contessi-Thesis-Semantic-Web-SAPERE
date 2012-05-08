@@ -3,6 +3,7 @@ package it.apice.sapere.api.space.core;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.LSAspace;
+import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
 import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.observation.SpaceObserver;
@@ -158,4 +159,18 @@ public interface LSAspaceCore<RDFStmtIterType> extends LSAspace {
 	 */
 	void removeSpaceObserver(SpaceObserver obs);
 
+	/* === BEHAVIOUR CUSTOMIZATION === */
+
+	/**
+	 * <p>
+	 * Retrieves a reference to the internal strategy pipeline.
+	 * </p>
+	 * <p>
+	 * This pipeline should be used for extension purposes, in order to install
+	 * custom components that manipulates LSA before executing primitives.
+	 * </p>
+	 * 
+	 * @return The custom strategy pipeline
+	 */
+	CustomStrategyPipeline<RDFStmtIterType> getCustomStrategyPipeline();
 }

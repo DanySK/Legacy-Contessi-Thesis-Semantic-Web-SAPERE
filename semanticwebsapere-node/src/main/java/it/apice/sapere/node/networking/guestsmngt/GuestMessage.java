@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Messages exchanged between guests and GuestsAgent.
+ * Messages exchanged between guests and GuestsHandlerAgent.
  * </p>
  * <p>
  * In order to provide a better integration with RDF-based part the LSA

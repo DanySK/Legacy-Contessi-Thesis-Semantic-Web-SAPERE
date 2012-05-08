@@ -5,41 +5,41 @@ import java.io.Serializable;
 /**
  * <p>
  * Enumeration for the identification of messages between guests and
- * GuestsAgent.
+ * GuestsHandlerAgent.
  * </p>
  * 
  * @author Michele Morgagni
  * 
  */
 public enum GuestMessageType implements Serializable {
-	/**  INJECT message type. */
+	/** INJECT message type. */
 	INJECT,
 
-	/**  Re inject message type. */
+	/** Re inject message type. */
 	RE_INJECT,
 
-	/**  Move Away message type. */
-	MOVE_AWAY,
-
-	/**  UPDATE message type. */
+	/** UPDATE message type. */
 	UPDATE,
 
-	/**  Refresh message type. */
-	REFRESH,
-
-	/**  OO message type. */
-	OBSERVE_ONCE,
-
-	/**  OM message type. */
-	OBSERVE,
-
-	/**  READ message type. */
+	/** READ message type. */
 	READ,
 
-	/**  Cancel registration message type. */
+	/** Refresh message type. */
+	REFRESH,
+
+	/** Move Away message type. */
+	MOVE_AWAY,
+
+	/** One time observation message type. */
+	OBSERVE_ONCE,
+
+	/** Permanent observation message type. */
+	OBSERVE,
+
+	/** Cancel registration message type. */
 	CANCEL_SUBSCRIPTION,
 
-	/**  Notify message type. */
+	/** Notify message type. */
 	NOTIFY;
 
 }

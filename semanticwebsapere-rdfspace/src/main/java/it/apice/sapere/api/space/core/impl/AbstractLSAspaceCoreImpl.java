@@ -9,6 +9,9 @@ import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
+import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
+import it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl;
 import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.match.MutableMatchResult;
@@ -34,6 +37,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.hp.hpl.jena.query.DatasetFactory;
+import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
@@ -67,8 +71,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa";
 
 	/** LSA-id pattern. */
-	private static final transient Pattern LSA_ID_PATTERN = Pattern
-			.compile("(" + LSA_PREFIX + "\\w+-\\w+)");
+	private static final transient Pattern LSA_ID_PATTERN = Pattern.compile("("
+			+ LSA_PREFIX + "\\w+-\\w+)");
 
 	/** The rdf:type. */
 	private static final transient String RDF_TYPE = "http://"
@@ -95,12 +99,19 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Resource representing the LSA owl:Class. */
 	private final transient Resource lsaClass;
 
+	/**
+	 * Optimization map: stores every parsed spqrql query in order to avoid
+	 * re-parsing.
+	 */
+	private final transient Map<String, Query> parsedSparqlQueries = 
+			new HashMap<String, Query>();
+
 	/** rdf:type property. */
 	private final transient Property rdfTypeProp;
 
 	/** Provides thread-safety. */
-	private final transient ReadWriteLock mutex = 
-			new ReentrantReadWriteLock(true);
+	private final transient ReadWriteLock mutex = new ReentrantReadWriteLock(
+			true);
 
 	/** Read/Write flag. */
 	private transient boolean isWriting = false;
@@ -113,6 +124,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** Current node-id. */
 	private final transient String nodeId;
+
+	/** Custom strategies application pipeline. */
+	private final transient 
+		CustomStrategyPipeline<StmtIterator> customStrategyPline;
 
 	/**
 	 * <p>
@@ -168,6 +183,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		compiler = lsaCompiler;
 		converter = new Jena2SAPEREConverter(lsaFactory);
 		nodeId = lsaFactory.getNodeID();
+
+		customStrategyPline = new CustomStrategyPipelineImpl<StmtIterator>();
 	}
 
 	/**
@@ -491,8 +508,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
 			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] {}, 
-						type));
+				obs.eventOccurred(new SpaceEventImpl(msg, type));
 			}
 		}
 	}
@@ -505,16 +521,40 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @param msg
 	 *            Description of the event
 	 * @param id
-	 *            LSA-id of the involved LSA
+	 *            The LSA-id of the involved LSA
 	 * @param type
 	 *            Event type
 	 */
-	private void notifySpaceOperation(final String msg, final LSAid id,
+	private void notifySpaceOperation(final String msg,
+			final LSAid id, 
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
 			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id },
-						type));
+				obs.eventOccurred(new SpaceEventImpl(msg,
+						new LSAid[] { id }, type));
+			}
+		}
+	}
+
+	/**
+	 * <p>
+	 * Notifies Space observers of an internal event.
+	 * </p>
+	 * 
+	 * @param msg
+	 *            Description of the event
+	 * @param lsa
+	 *            The involved LSA
+	 * @param type
+	 *            Event type
+	 */
+	private void notifySpaceOperation(final String msg,
+			final CompiledLSA<StmtIterator> lsa, 
+			final SpaceOperationType type) {
+		if (notificationsEnabled) {
+			for (SpaceObserver obs : listeners) {
+				obs.eventOccurred(new SpaceEventImpl(msg,
+						new CompiledLSA[] { lsa }, type));
 			}
 		}
 	}
@@ -601,6 +641,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
+			checkInjectAgainstCustomStrategy(lsa);
+
 			if (checkExistencePreCondition(lsa.getLSAid())) {
 				throw new SAPEREException("Duplicate LSA: " + lsa.getLSAid());
 			}
@@ -610,7 +652,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			// Notification
 			final String msg = String
 					.format("LSA injected: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa.getLSAid(),
+			notifySpaceOperation(msg, lsa,
 					SpaceOperationType.AGENT_INJECT);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_INJECT);
@@ -623,6 +665,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 	}
 
+	/**
+	 * <p>
+	 * Checks custom strategies constraints on INJECT.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be checked
+	 * @throws SAPEREException
+	 *             Operation aborted
+	 */
+	private void checkInjectAgainstCustomStrategy(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
+		CompiledLSA<StmtIterator> cLsa = lsa;
+		for (CustomStrategyPipelineStep<StmtIterator> step : customStrategyPline
+				.getSteps()) {
+			try {
+				cLsa = step.handleInject(cLsa);
+			} catch (SAPEREException e) {
+				throw new SAPEREException("Operation abored", e);
+			}
+		}
+	}
+
 	@Override
 	public final CompiledLSA<StmtIterator> readCompiled(final LSAid lsaId)
 			throws SAPEREException {
@@ -632,6 +697,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireReadLock();
 		try {
+			checkReadAgainstCustomStrategy(lsaId);
+
 			if (!checkExistencePreCondition(lsaId)) {
 				throw new SAPEREException("LSA not present in LSA-space: "
 						+ lsaId);
@@ -650,6 +717,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 	}
 
+	/**
+	 * <p>
+	 * Checks custom strategies constraints on READ.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The LSA-id to be checked
+	 * @throws SAPEREException
+	 *             Operation aborted
+	 */
+	private void checkReadAgainstCustomStrategy(final LSAid lsaId)
+			throws SAPEREException {
+		LSAid cLsaId = lsaId;
+		for (CustomStrategyPipelineStep<StmtIterator> step : customStrategyPline
+				.getSteps()) {
+			try {
+				cLsaId = step.handleRead(cLsaId);
+			} catch (SAPEREException e) {
+				throw new SAPEREException("Operation abored", e);
+			}
+		}
+	}
+
 	@Override
 	public final LSAspace removeCompiled(final CompiledLSA<StmtIterator> lsa)
 			throws SAPEREException {
@@ -659,6 +749,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
+			checkRemoveAgainstCustomStrategy(lsa);
+
 			if (!checkExistencePreCondition(lsa.getLSAid())) {
 				throw new SAPEREException("LSA not present in LSA-space: "
 						+ lsa.getLSAid());
@@ -668,7 +760,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			// Notification
 			final String msg = String.format("LSA removed: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa.getLSAid(),
+			notifySpaceOperation(msg, lsa,
 					SpaceOperationType.AGENT_REMOVE);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_REMOVE);
@@ -681,6 +773,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 	}
 
+	/**
+	 * <p>
+	 * Checks custom strategies constraints on REMOVE.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be checked
+	 * @throws SAPEREException
+	 *             Operation aborted
+	 */
+	private void checkRemoveAgainstCustomStrategy(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
+		CompiledLSA<StmtIterator> cLsa = lsa;
+		for (CustomStrategyPipelineStep<StmtIterator> step : customStrategyPline
+				.getSteps()) {
+			try {
+				cLsa = step.handleRemove(cLsa);
+			} catch (SAPEREException e) {
+				throw new SAPEREException("Operation abored", e);
+			}
+		}
+	}
+
 	@Override
 	public final LSAspace updateCompiled(final CompiledLSA<StmtIterator> lsa)
 			throws SAPEREException {
@@ -690,6 +805,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
+			checkUpdateAgainstCustomStrategy(lsa);
+
 			if (!checkExistencePreCondition(lsa.getLSAid())) {
 				throw new SAPEREException("LSA not present in LSA-space: "
 						+ lsa.getLSAid());
@@ -702,7 +819,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			// Notification
 			final String msg = String.format("LSA updated: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa.getLSAid(),
+			notifySpaceOperation(msg, lsa,
 					SpaceOperationType.AGENT_UPDATE);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_UPDATE);
@@ -712,6 +829,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new SAPEREException("Cannot update", ex);
 		} finally {
 			releaseLock();
+		}
+	}
+
+	/**
+	 * <p>
+	 * Checks custom strategies constraints on UPDATE.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The LSA to be checked
+	 * @throws SAPEREException
+	 *             Operation aborted
+	 */
+	private void checkUpdateAgainstCustomStrategy(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
+		CompiledLSA<StmtIterator> cLsa = lsa;
+		for (CustomStrategyPipelineStep<StmtIterator> step : customStrategyPline
+				.getSteps()) {
+			try {
+				cLsa = step.handleUpdate(cLsa);
+			} catch (SAPEREException e) {
+				throw new SAPEREException("Operation abored", e);
+			}
 		}
 	}
 
@@ -817,8 +957,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @return Query's result set
 	 */
 	private ResultSet execQuery(final Model aModel, final String query) {
-		return QueryExecutionFactory.create(QueryFactory.create(query), aModel)
-				.execSelect();
+		// Flyweight pattern on queries: Map<String, Query> (optimization)
+		Query qObj = parsedSparqlQueries.get(query);
+		if (qObj == null) {
+			qObj = QueryFactory.create(query);
+			parsedSparqlQueries.put(query, qObj);
+		}
+
+		return QueryExecutionFactory.create(qObj, aModel).execSelect();
 	}
 
 	/**
@@ -852,5 +998,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				}
 			}
 		}
+	}
+
+	@Override
+	public final CustomStrategyPipeline<StmtIterator> 
+			getCustomStrategyPipeline() {
+		return customStrategyPline;
 	}
 }

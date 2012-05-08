@@ -9,6 +9,10 @@ import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.node.networking.NetworkManager;
+import it.apice.sapere.node.networking.bluetooth.BluetoothManagerAgent;
+import it.apice.sapere.node.networking.guestsmngt.GuestsHandlerAgent;
+import it.apice.sapere.node.networking.obsnotifications.NotifierAgent;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -83,6 +87,12 @@ public class SAPERENodeActivator implements BundleActivator {
 		// TODO Implement it! (REGISTRATION)
 		log("Registering SAPEREAgents Factory..");
 		registerSAPEREAgentsFactory(context);
+
+		// TODO Temporary: find a way to register the two types of agents to the
+		// platform, in order to obtain references
+		NotifierAgent.getInstance().start();
+		BluetoothManagerAgent.getInstance(NetworkManager.getInstance()).start();
+		GuestsHandlerAgent.getInstance().start();
 
 		log("Ready.");
 	}

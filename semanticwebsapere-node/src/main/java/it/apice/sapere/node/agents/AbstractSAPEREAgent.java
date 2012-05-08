@@ -1,18 +1,18 @@
 package it.apice.sapere.node.agents;
 
+import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.Message;
-import it.apice.sapere.node.networking.Subscriber;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.concurrent.PriorityBlockingQueue;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-
-
 /**
  * <p>
- * Class that represent an internal agent of the system.
+ * Class that represent an agent of the system.
  * </p>
  * 
  * <p>
@@ -29,8 +29,8 @@ import org.apache.commons.logging.LogFactory;
  * @author Paolo Contessi
  * 
  */
-public abstract class InternalAgent extends Thread implements SAPEREAgent,
-		Subscriber {
+public abstract class AbstractSAPEREAgent extends Thread 
+		implements SAPEREAgent {
 
 	/** Initial queue capacity. */
 	private static final transient int QUEUE_CAPACITY = 100;
@@ -41,6 +41,9 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	/** Agent id. */
 	private final String id;
 
+	/** Agent URI. */
+	private final URI agentURI;
+
 	/** Running flag. */
 	private transient volatile boolean running = true;
 
@@ -50,12 +53,21 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 * @param agentId
 	 *            identifier for this agent
 	 */
-	public InternalAgent(final String agentId) {
+	public AbstractSAPEREAgent(final String agentId) {
 		if (agentId == null || agentId.equals("")) {
 			throw new IllegalArgumentException("Invalid agent-id provided");
 		}
 
 		id = agentId;
+		try {
+			agentURI = new URI(NodeServicesImpl.getInstance().getLSAFactory()
+					.getNodeID().replace("#", "/").concat("agents#")
+					.concat(agentId));
+		} catch (URISyntaxException ex) {
+			throw new IllegalArgumentException("Cannot create "
+					+ "an agent URI", ex);
+		}
+
 		input = new PriorityBlockingQueue<Message>(QUEUE_CAPACITY);
 	}
 
@@ -78,7 +90,7 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 *            the string to be sent
 	 */
 	protected final void spy(final String s) {
-		final Log logger = LogFactory.getLog(InternalAgent.class);
+		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
 		synchronized (logger) {
 			logger.debug("[Agent::" + id + "] " + s);
 		}
@@ -93,7 +105,7 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 *            the string to be sent
 	 */
 	protected final void info(final String s) {
-		final Log logger = LogFactory.getLog(InternalAgent.class);
+		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
 		synchronized (logger) {
 			logger.info("[Agent::" + id + "] " + s);
 		}
@@ -110,7 +122,7 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 *            Cause of the warning
 	 */
 	protected final void warn(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(InternalAgent.class);
+		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
 		synchronized (logger) {
 			logger.warn("[Agent::" + id + "] " + s, cause);
 		}
@@ -127,7 +139,7 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 *            Cause of the error
 	 */
 	protected final void error(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(InternalAgent.class);
+		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
 		synchronized (logger) {
 			logger.error("[Agent::" + id + "] " + s, cause);
 		}
@@ -144,7 +156,7 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 *            Cause of the fatal
 	 */
 	protected final void fatal(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(InternalAgent.class);
+		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
 		synchronized (logger) {
 			logger.fatal("[Agent::" + id + "] " + s, cause);
 		}
@@ -159,8 +171,13 @@ public abstract class InternalAgent extends Thread implements SAPEREAgent,
 	 * 
 	 * @return the agent identifier
 	 */
-	public final String getAgentId() {
+	public final String getLocalAgentId() {
 		return id;
+	}
+
+	@Override
+	public final URI getAgentURI() {
+		return agentURI;
 	}
 
 	/**

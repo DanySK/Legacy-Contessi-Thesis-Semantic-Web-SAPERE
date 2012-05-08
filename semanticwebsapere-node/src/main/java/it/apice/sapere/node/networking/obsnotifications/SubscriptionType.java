@@ -7,10 +7,7 @@ package it.apice.sapere.node.networking.obsnotifications;
  * 
  */
 public enum SubscriptionType {
-	
-	/** READ subscription type. */
-	READ, 
-	
+
 	/** One subscription type. */
 	ONE_TIME_SUBSCRIPTION, 
 	

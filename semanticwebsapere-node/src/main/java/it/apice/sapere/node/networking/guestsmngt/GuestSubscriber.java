@@ -42,13 +42,13 @@ public class GuestSubscriber implements Subscriber {
 
 	/**
 	 * <p>
-	 * Sends the message using GuestsAgent.
+	 * Sends the message using GuestsHandlerAgent.
 	 * </p>
 	 * 
 	 * @param note
 	 *            the message to send (notification)
 	 */
 	public final void sendMessage(final Message note) {
-		GuestsAgent.getInstance().sendMessageToGuest(note, destination);
+		GuestsHandlerAgent.getInstance().sendMessageToGuest(note, destination);
 	}
 }

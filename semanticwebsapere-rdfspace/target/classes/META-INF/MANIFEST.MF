@@ -8,7 +8,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1336134146395
+Bnd-LastModified: 1336484980554
 Bundle-ManifestVersion: 2
 Bundle-Activator: it.apice.sapere.space.internal.RDFSpaceActivator
 Bundle-Description: This module provides an implementation of LSA-spac
@@ -19,9 +19,9 @@ Import-Package: com.hp.hpl.jena.datatypes.xsd,com.hp.hpl.jena.ontology
  i.ecolaws.compilers,it.apice.sapere.api.ecolaws.scheduling,it.apice.s
  apere.api.lsas,it.apice.sapere.api.lsas.values,it.apice.sapere.api.ls
  as.visitor,it.apice.sapere.api.space,it.apice.sapere.api.space.core,i
- t.apice.sapere.api.space.match,it.apice.sapere.api.space.observation,
- org.apache.commons.logging,org.mindswap.pellet.jena,org.osgi.framewor
- k;version="1.6"
+ t.apice.sapere.api.space.core.strategy,it.apice.sapere.api.space.matc
+ h,it.apice.sapere.api.space.observation,org.apache.commons.logging,or
+ g.mindswap.pellet.jena,org.osgi.framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-rdfspace
 Bundle-DocURL: http://apice.unibo.it/
 
