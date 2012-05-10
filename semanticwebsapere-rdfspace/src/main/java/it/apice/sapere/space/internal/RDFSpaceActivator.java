@@ -11,7 +11,6 @@ import it.apice.sapere.space.impl.LSAspaceImpl;
 
 import java.util.Hashtable;
 
-import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -211,7 +210,7 @@ public class RDFSpaceActivator implements BundleActivator {
 			lsaCompilerServiceReg.unregister();
 			log("LSA Compiler UNREGISTERED.");
 		}
-		
+
 		if (elCompilerServiceReg != null) {
 			elCompilerServiceReg.unregister();
 			log("Eco-law Compiler UNREGISTERED.");
@@ -238,7 +237,6 @@ public class RDFSpaceActivator implements BundleActivator {
 	 *            The message to be logged
 	 */
 	private void log(final String msg) {
-		LogFactory.getLog(RDFSpaceActivator.class).info(
-				"rdf-space> " + msg);
+		System.out.println("rdf-space> " + msg);
 	}
 }

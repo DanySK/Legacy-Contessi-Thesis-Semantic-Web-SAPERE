@@ -8,16 +8,19 @@ import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
-import it.apice.sapere.node.agents.SAPEREAgentsFactory;
-import it.apice.sapere.node.networking.NetworkManager;
-import it.apice.sapere.node.networking.bluetooth.BluetoothManagerAgent;
-import it.apice.sapere.node.networking.guestsmngt.GuestsHandlerAgent;
-import it.apice.sapere.node.networking.obsnotifications.NotifierAgent;
+import it.apice.sapere.management.DefaultReactionsScheduler;
+import it.apice.sapere.management.ReactionManager;
+import it.apice.sapere.management.impl.ReactionManagerImpl;
+import it.apice.sapere.management.impl.ReactionManagerLogger;
+import it.apice.sapere.node.LoggerFactory;
+import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
+import it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent;
+import it.apice.sapere.node.networking.impl.NetworkManager;
+import it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -32,6 +35,10 @@ import org.osgi.framework.ServiceRegistration;
  * 
  */
 public class SAPERENodeActivator implements BundleActivator {
+
+	/** Console Log level System property Key. */
+	private static final transient String CONSOLE_LOG_LEVEL = "sapere"
+			+ ".console.level";
 
 	/** LSA Factory service. */
 	private transient PrivilegedLSAFactory sysLsaFactory;
@@ -62,39 +69,82 @@ public class SAPERENodeActivator implements BundleActivator {
 	private final transient List<ServiceReference<?>> refs = 
 			new LinkedList<ServiceReference<?>>();
 
+	/** Reference to eco-laws scheduler. */
+	private transient ReactionManager rManager;
+
 	@Override
 	public final void start(final BundleContext context) throws Exception {
-		log("Initializing...");
+		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL));
+
+		log("---------------------------------------------------------------");
+		log("SAPERE-node (Self-Aware Pervasive Service Ecosystems)");
+		log("---------------------------------------------------------------");
+		log("");
 
 		log("Looking for services:");
 		initLSAFactory(context);
-		log(" - LSA Factory");
+		log("   + LSA Factory");
 		initLSACompiler(context);
-		assert lsaCompiler != null;
-		log(" - LSA Compiler");
+		log("   + LSA Compiler");
 		initLSAParser(context);
-		log(" - LSA Parser");
+		log("   + LSA Parser");
 		initELFactory(context);
-		log(" - Eco-law Factory");
+		log("   + Eco-law Factory");
 		initELCompiler(context);
-		assert lawCompiler != null;
-		log(" - Eco-law Compiler");
+		log("   + Eco-law Compiler");
 		initFFactory(context);
-		log(" - Eco-law's Formula Factory");
+		log("   + Eco-law's Formula Factory");
 		initLSAspace(context);
-		log(" - LSA-space");
+		log("   + LSA-space");
 
-		// TODO Implement it! (REGISTRATION)
-		log("Registering SAPEREAgents Factory..");
-		registerSAPEREAgentsFactory(context);
+		log("");
+		log("Configuring connectivity:");
 
-		// TODO Temporary: find a way to register the two types of agents to the
-		// platform, in order to obtain references
+		// Node Services getter initialization
+		NodeServicesImpl.init(sysLsaFactory, lsaCompiler, lsaParser,
+				lawFactory, lawCompiler, fFactory, sysSpace);
+
+		// Reaction manager initialization
+		rManager = new ReactionManagerImpl(new DefaultReactionsScheduler(),
+				lawCompiler);
+		rManager.addReactionManagerObserver(
+				new ReactionManagerLogger(rManager));
+		rManager.spawn();
+
+		// Reaction manager registration
+		NodeServicesImpl.registerReactionManager(rManager);
+
+		// System Agents startups
+
 		NotifierAgent.getInstance().start();
-		BluetoothManagerAgent.getInstance(NetworkManager.getInstance()).start();
-		GuestsHandlerAgent.getInstance().start();
+		log("   + Remote observation enabled");
 
-		log("Ready.");
+		try {
+			GuestsHandlerAgent.getInstance().start();
+			log("   + TCP/IP communication supported");
+		} catch (Exception ex) {
+			log("   - TCP/IP communication NOT supported", ex);
+		}
+
+		try {
+			BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
+					.start();
+			log("   + Bluetooth communication supported");
+		} catch (IllegalStateException ex) {
+			log("   - Bluetooth communication NOT supported", ex.getCause());
+		}
+
+		log("");
+		log("Publishing services:");
+		registerSAPEREAgentsFactory(context);
+		log("   + Log Facility");
+
+		log("");
+		log("---------------------------------------------------------------");
+		log("READY (id = sapere:" + sysLsaFactory.getNodeID().split("#")[1] 
+				+ ")");
+		log("---------------------------------------------------------------");
+		log("");
 	}
 
 	/**
@@ -106,9 +156,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerSAPEREAgentsFactory(final BundleContext context) {
-		regs.add(context.registerService(SAPEREAgentsFactory.class,
-				new SAPEREAgentsFactoryImpl(sysLsaFactory, lsaParser,
-						lawFactory, fFactory, sysSpace), null));
+		regs.add(context.registerService(LoggerFactory.class,
+				LoggerFactoryImpl.getInstance(), null));
 	}
 
 	/**
@@ -272,23 +321,26 @@ public class SAPERENodeActivator implements BundleActivator {
 
 	@Override
 	public final void stop(final BundleContext context) throws Exception {
-		log("Shutting down...");
+		log("Shutting down:");
 
 		// Release imported services
 		for (ServiceReference<?> ref : refs) {
 			context.ungetService(ref);
 		}
 		refs.clear();
-		log("Services RELEASED");
+		log("   - Imported services RELEASED");
 
 		// Cancel registered services
 		for (ServiceRegistration<?> reg : regs) {
 			reg.unregister();
 		}
 		regs.clear();
-		log("Published services UNREGISTERED");
+		log("   - Published services UNREGISTERED");
 
-		log("Bye bye.");
+		log("");
+		log("---------------------------------------------------------------");
+		log("TERMINATED");
+		log("---------------------------------------------------------------");
 	}
 
 	/**
@@ -300,6 +352,22 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            The message to be logged
 	 */
 	private void log(final String msg) {
-		LogFactory.getLog(SAPERENodeActivator.class).info("node> " + msg);
+		LoggerFactoryImpl.getInstance().getLogger(this).info("node> " + msg);
+	}
+
+	/**
+	 * <p>
+	 * Logs a message (warning).
+	 * </p>
+	 * 
+	 * @param msg
+	 *            The message to be logged
+	 * @param cause
+	 *            Reason of the notification
+	 */
+	private void log(final String msg, final Throwable cause) {
+		LoggerFactoryImpl.getInstance().getLogger(this)
+				.warn(String.format("node> %s (reason: %s)", msg, 
+						cause.getMessage()));
 	}
 }

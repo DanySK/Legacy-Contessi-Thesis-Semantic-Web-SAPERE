@@ -1,7 +1,10 @@
 package it.apice.sapere.api.space.core.impl;
 
+import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.match.MatchingEcolawTemplate;
+
+import java.util.Arrays;
 
 /**
  * <p>
@@ -28,6 +31,9 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 	/** Eco-law's label. */
 	private final String label;
 
+	/** The source of the compilation. */
+	private final transient Ecolaw original;
+
 	/**
 	 * <p>
 	 * Builds a new {@link CompiledEcolawImpl}.
@@ -42,7 +48,47 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 	 */
 	public CompiledEcolawImpl(final String mQuery,
 			final MatchingEcolawTemplate uQuery, final String rate) {
-		this(mQuery, uQuery, rate, null);
+		this(mQuery, uQuery, rate, (String) null);
+	}
+
+	/**
+	 * <p>
+	 * Builds a new {@link CompiledEcolawImpl}.
+	 * </p>
+	 * 
+	 * @param mQuery
+	 *            The query for matching phase
+	 * @param uQuery
+	 *            The query template for update phase
+	 * @param rate
+	 *            The rate variable name, or the rate value
+	 * @param originalLaw
+	 *            The eco-law which has been compiled
+	 */
+	public CompiledEcolawImpl(final String mQuery,
+			final MatchingEcolawTemplate uQuery, final String rate,
+			final Ecolaw originalLaw) {
+		if (mQuery == null) {
+			throw new IllegalArgumentException(
+					"Invalid matching query provided");
+		}
+
+		if (uQuery == null) {
+			throw new IllegalArgumentException(
+					"Invalid update query template provided");
+		}
+
+		if (rate == null) {
+			throw new IllegalArgumentException(
+					"Invalid rate variable name provided");
+		}
+
+		sparql = mQuery;
+		sparulTempl = uQuery;
+		vars = sparulTempl.variablesNames();
+		rateVar = rate;
+		original = originalLaw;
+		label = original.getLabel();
 	}
 
 	/**
@@ -81,6 +127,7 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 		sparulTempl = uQuery;
 		vars = sparulTempl.variablesNames();
 		rateVar = rate;
+		original = null;
 		if (lLabel != null) {
 			label = "<" + lLabel + ">";
 		} else {
@@ -118,14 +165,23 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 		final int prime = 31;
 		int result = 1;
 		result *= prime;
+		
+		if (rateVar != null) {
+			result += rateVar.hashCode();
+		}
+
+		result *= prime;
 		if (sparql != null) {
 			result += sparql.hashCode();
 		}
-
+		
 		result *= prime;
 		if (sparulTempl != null) {
 			result += sparulTempl.hashCode();
 		}
+
+		result *= prime;
+		result += Arrays.hashCode(vars);
 
 		return result;
 	}
@@ -142,6 +198,13 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 			return false;
 		}
 		CompiledEcolawImpl other = (CompiledEcolawImpl) obj;
+		if (rateVar == null) {
+			if (other.rateVar != null) {
+				return false;
+			}
+		} else if (!rateVar.equals(other.rateVar)) {
+			return false;
+		}
 		if (sparql == null) {
 			if (other.sparql != null) {
 				return false;
@@ -154,6 +217,9 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 				return false;
 			}
 		} else if (!sparulTempl.equals(other.sparulTempl)) {
+			return false;
+		}
+		if (!Arrays.equals(vars, other.vars)) {
 			return false;
 		}
 		return true;
@@ -173,5 +239,10 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 	@Override
 	public final String getLabel() {
 		return label;
+	}
+
+	@Override
+	public final Ecolaw getCompilationSource() {
+		return original;
 	}
 }

@@ -23,7 +23,7 @@ public class PropertyNameImpl implements PropertyName {
 			"http://www.w3.org/2000/01/rdf-schema#",
 			"http://www.w3.org/2001/XMLSchema#",
 			"http://www.w3.org/2002/07/owl#",
-			"http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#"};
+			"http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl"};
 
 	/** Property name. */
 	private final URI id;

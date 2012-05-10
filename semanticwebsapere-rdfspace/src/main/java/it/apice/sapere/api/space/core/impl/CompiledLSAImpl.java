@@ -1,12 +1,12 @@
 package it.apice.sapere.api.space.core.impl;
 
-import java.io.IOException;
-import java.io.StringWriter;
-import java.net.URI;
-
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.core.CompiledLSA;
+
+import java.io.IOException;
+import java.io.StringWriter;
+import java.net.URI;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;

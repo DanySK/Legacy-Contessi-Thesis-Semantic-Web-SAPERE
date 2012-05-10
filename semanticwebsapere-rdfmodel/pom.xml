@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.1.0</version>
+		<version>${swsapere.vers}</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-rdfmodel</artifactId>
@@ -14,25 +14,33 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-testplan</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-requirements</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>xml-apis</groupId>
 			<artifactId>xml-apis</artifactId>
 			<version>2.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>commons-logging</artifactId>
 		</dependency>
 	</dependencies>
 

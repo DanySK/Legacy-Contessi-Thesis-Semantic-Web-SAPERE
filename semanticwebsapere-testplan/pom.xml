@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.1.0</version>
+		<version>${swsapere.vers}</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-testplan</artifactId>
@@ -21,67 +21,23 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-requirements</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>antlr</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>arq-extra</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>arq</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>aterm-java</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>commons-logging</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>concurrent</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>icu4j</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>iri</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>jena</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>pellet-full</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>relaxngDatatype</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>xercesImpl</artifactId> -->
-<!-- 		</dependency> -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mindswap.pellet</groupId> -->
-<!-- 			<artifactId>xsdlib</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement></dependencyManagement>

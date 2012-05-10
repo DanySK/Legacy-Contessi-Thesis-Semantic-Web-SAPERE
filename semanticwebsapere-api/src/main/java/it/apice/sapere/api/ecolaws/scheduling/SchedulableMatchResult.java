@@ -1,6 +1,8 @@
 package it.apice.sapere.api.ecolaws.scheduling;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.match.MatchResult;
+import it.apice.sapere.api.space.match.MatchingEcolaw;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,4 +39,16 @@ public interface SchedulableMatchResult extends MatchResult {
 	 * @return Scheduling time (in <code>tu</code> unit of measure)
 	 */
 	long getSchedulingTime(long currentTime, TimeUnit tu);
+
+	/**
+	 * <p>
+	 * Binds the eco-law with proposed bindings and retrieves the resulting
+	 * {@link MatchingEcolaw}.
+	 * </p>
+	 * 
+	 * @return A {@link MatchingEcolaw} to be applied
+	 * @throws SAPEREException
+	 *             Cannot complete the binding
+	 */
+	MatchingEcolaw bind() throws SAPEREException;
 }

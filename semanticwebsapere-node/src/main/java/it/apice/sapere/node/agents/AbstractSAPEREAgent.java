@@ -1,14 +1,14 @@
 package it.apice.sapere.node.agents;
 
+import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
-import it.apice.sapere.node.networking.Message;
+import it.apice.sapere.node.networking.impl.Message;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.PriorityBlockingQueue;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 /**
  * <p>
@@ -54,11 +54,15 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            identifier for this agent
 	 */
 	public AbstractSAPEREAgent(final String agentId) {
+		super(agentId);
+
 		if (agentId == null || agentId.equals("")) {
 			throw new IllegalArgumentException("Invalid agent-id provided");
 		}
 
 		id = agentId;
+		spy("intializing...");
+		
 		try {
 			agentURI = new URI(NodeServicesImpl.getInstance().getLSAFactory()
 					.getNodeID().replace("#", "/").concat("agents#")
@@ -90,9 +94,9 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            the string to be sent
 	 */
 	protected final void spy(final String s) {
-		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
+		final Logger logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.debug("[Agent::" + id + "] " + s);
+			logger.debug(id + "> " + s);
 		}
 	}
 
@@ -105,9 +109,9 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            the string to be sent
 	 */
 	protected final void info(final String s) {
-		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
+		final Logger logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.info("[Agent::" + id + "] " + s);
+			logger.info(id + "> " + s);
 		}
 	}
 
@@ -122,9 +126,9 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            Cause of the warning
 	 */
 	protected final void warn(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
+		final Logger logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.warn("[Agent::" + id + "] " + s, cause);
+			logger.warn(id + "> " + s, cause);
 		}
 	}
 
@@ -139,9 +143,9 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            Cause of the error
 	 */
 	protected final void error(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
+		final Logger logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.error("[Agent::" + id + "] " + s, cause);
+			logger.error(id + "> " + s, cause);
 		}
 	}
 
@@ -156,21 +160,15 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 *            Cause of the fatal
 	 */
 	protected final void fatal(final String s, final Throwable cause) {
-		final Log logger = LogFactory.getLog(AbstractSAPEREAgent.class);
+		final Logger logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.fatal("[Agent::" + id + "] " + s, cause);
+			logger.fatal(id + "> " + s, cause);
 		}
 
 		kill();
 	}
 
-	/**
-	 * <p>
-	 * Getter for the agent identifier.
-	 * </p>
-	 * 
-	 * @return the agent identifier
-	 */
+	@Override
 	public final String getLocalAgentId() {
 		return id;
 	}

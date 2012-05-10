@@ -22,7 +22,7 @@ public class EcolawCompilerImpl implements EcolawCompiler {
 	public final CompiledEcolaw compile(final Ecolaw law) {
 		return create(EcolawToSPARQL.convert(law),
 				EcolawToUpdTemplate.convert(law), law.getRate().getRateValue()
-						.toString());
+						.toString(), law);
 	}
 
 	@Override
@@ -43,10 +43,13 @@ public class EcolawCompilerImpl implements EcolawCompiler {
 	 *            The query template for update phase
 	 * @param rate
 	 *            The rate variable name ("?&ltname;&gt;"), or the rate value
+	 * @param law
+	 *            Source eco-law
 	 * @return The compiled eco-law
 	 */
 	private CompiledEcolaw create(final String mQuery,
-			final MatchingEcolawTemplate uQuery, final String rate) {
-		return new CompiledEcolawImpl(mQuery, uQuery, rate);
+			final MatchingEcolawTemplate uQuery, final String rate,
+			final Ecolaw law) {
+		return new CompiledEcolawImpl(mQuery, uQuery, rate, law);
 	}
 }

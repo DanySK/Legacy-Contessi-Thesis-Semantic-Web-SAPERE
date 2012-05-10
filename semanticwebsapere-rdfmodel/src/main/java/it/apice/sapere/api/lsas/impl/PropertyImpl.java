@@ -35,12 +35,37 @@ public class PropertyImpl implements Property {
 	 *            The name of the property
 	 */
 	public PropertyImpl(final PropertyName aName) {
+		this(aName, null);
+	}
+
+	/**
+	 * <p>
+	 * Builds a new PropertyImpl.
+	 * </p>
+	 * 
+	 * @param aName
+	 *            The name of the property
+	 * @param initValues
+	 *            Values that the property initially has
+	 */
+	public PropertyImpl(final PropertyName aName,
+			final PropertyValue<?, ?>[] initValues) {
 		if (aName == null) {
 			throw new IllegalArgumentException("Invalid name");
 		}
 
 		name = aName;
 		values = new HashSet<PropertyValue<?, ?>>();
+		if (initValues != null) {
+			for (PropertyValue<?, ?> val : initValues) {
+				if (val == null) {
+					throw new IllegalArgumentException(
+							"Cannot init with a null value");
+				}
+
+				values.add(val);
+			}
+		}
 	}
 
 	/**
@@ -172,7 +197,7 @@ public class PropertyImpl implements Property {
 			if (other.values != null) {
 				return false;
 			}
-			
+
 		} else if (!values.equals(other.values)) {
 			return false;
 		}
@@ -183,7 +208,7 @@ public class PropertyImpl implements Property {
 	public final String toString() {
 		final StringBuilder builder = new StringBuilder();
 		builder.append(name.toString()).append(" := (");
-		
+
 		int count = 0;
 		for (PropertyValue<?, ?> val : values) {
 			builder.append(val);

@@ -1,5 +1,6 @@
 package it.apice.sapere.api.space.core;
 
+import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.space.match.MatchingEcolawTemplate;
 
 /**
@@ -66,4 +67,14 @@ public interface CompiledEcolaw {
 	 * @return An update query template
 	 */
 	MatchingEcolawTemplate getUpdateQueryTemplate();
+
+	/**
+	 * <p>
+	 * Retrieves the eco-law that originated this compiled one.
+	 * </p>
+	 * 
+	 * @return The source of the compilation, or <code>null</code> if created
+	 *         from scratch (not compiled)
+	 */
+	Ecolaw getCompilationSource();
 }

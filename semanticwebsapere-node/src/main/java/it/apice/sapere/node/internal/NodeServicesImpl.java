@@ -7,6 +7,9 @@ import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.management.ReactionManager;
+import it.apice.sapere.node.agents.NodeServices;
+import it.apice.sapere.node.agents.UserNodeServices;
 
 /**
  * <p>
@@ -14,7 +17,7 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
  * </p>
  * 
  * @author Paolo Contessi
- *
+ * 
  */
 public final class NodeServicesImpl implements NodeServices {
 
@@ -39,8 +42,14 @@ public final class NodeServicesImpl implements NodeServices {
 	/** LSA-space service. */
 	private final transient LSAspaceCore<?> lsaSpace;
 
+	/** Run-time reference to the {@link ReactionManager}. */
+	private static transient ReactionManager rManager;
+
 	/** Singleton instance. */
 	private static transient NodeServicesImpl instance;
+
+	/** Singleton instance of the user version. */
+	private static transient UserNodeServicesImpl usrInstance;
 
 	/**
 	 * <p>
@@ -116,7 +125,7 @@ public final class NodeServicesImpl implements NodeServices {
 	 * <p>
 	 * Singleton method.
 	 * </p>
-	 *
+	 * 
 	 * @return Global reference to {@link NodeServices}
 	 */
 	public static NodeServices getInstance() {
@@ -125,6 +134,21 @@ public final class NodeServicesImpl implements NodeServices {
 		}
 
 		return instance;
+	}
+
+	/**
+	 * <p>
+	 * Singleton method.
+	 * </p>
+	 * 
+	 * @return Global reference to {@link UserNodeServices}
+	 */
+	public static UserNodeServices getUserInstance() {
+		if (usrInstance == null) {
+			usrInstance = new UserNodeServicesImpl(getInstance());
+		}
+
+		return usrInstance;
 	}
 
 	@Override
@@ -160,5 +184,26 @@ public final class NodeServicesImpl implements NodeServices {
 	@Override
 	public LSAspaceCore<?> getLSAspace() {
 		return lsaSpace;
+	}
+
+	@Override
+	public ReactionManager getReactionManager() {
+		return rManager;
+	}
+
+	/**
+	 * <p>
+	 * Registers a runtime reference to the {@link ReactionManager}.
+	 * </p>
+	 * 
+	 * @param manager
+	 *            {@link ReactionManager} instance.
+	 */
+	public static void registerReactionManager(final ReactionManager manager) {
+		if (manager == null) {
+			throw new IllegalArgumentException("");
+		}
+
+		rManager = manager;
 	}
 }

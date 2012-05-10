@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.1.0</version>
+		<version>${swsapere.vers}</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-requirements</artifactId>
@@ -77,15 +77,18 @@
 			<groupId>org.mindswap.pellet</groupId>
 			<artifactId>xsdlib</artifactId>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>xml-apis</groupId> -->
-		<!-- <artifactId>xml-apis</artifactId> -->
-		<!-- <version>2.0.2</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.apache.xmlcommons</groupId>
 			<artifactId>com.springsource.org.apache.xmlcommons</artifactId>
 			<version>1.3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>commons-logging</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -100,6 +103,7 @@
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>semanticwebsapere-requirements</Bundle-SymbolicName>
+
 						<Export-Package>*</Export-Package>
 						<Import-Package>!*</Import-Package>
 						<Embed-Dependency>*</Embed-Dependency>

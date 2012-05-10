@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>semanticwebsapere</artifactId>
 		<groupId>it.apice.sapere</groupId>
-		<version>0.1.0</version>
+		<version>${swsapere.vers}</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>semanticwebsapere-node</artifactId>
@@ -19,12 +19,8 @@
 		<dependency>
 			<groupId>it.apice.sapere</groupId>
 			<artifactId>semanticwebsapere-api</artifactId>
-			<version>0.1.0</version>
+			<version>${swsapere.vers}</version>
 			<type>bundle</type>
-		</dependency>
-		<dependency>
-			<groupId>org.mindswap.pellet</groupId>
-			<artifactId>commons-logging</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.osgi</groupId>
@@ -33,6 +29,14 @@
 		<dependency>
 			<groupId>net.sf.bluecove</groupId>
 			<artifactId>bluecove</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mindswap.pellet</groupId>
+			<artifactId>commons-logging</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -47,6 +51,10 @@
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>semanticwebsapere-node</Bundle-SymbolicName>
+						<Bundle-Activator>it.apice.sapere.node.internal.SAPERENodeActivator</Bundle-Activator>
+
+						<Import-Package>!javax.bluetooth,!javax.microedition.io,!javax.obex,!com.ibm.oti.*,!com.intel.bluetooth.*,!com.sun.cdc.io.*,*</Import-Package>
+						<Embed-Dependency>bluecove;scope=compile;version=2.1.0</Embed-Dependency>
 					</instructions>
 				</configuration>
 			</plugin>

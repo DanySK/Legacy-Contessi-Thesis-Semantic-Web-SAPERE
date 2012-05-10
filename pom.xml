@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<properties>
+		<swsapere.vers>0.1.0</swsapere.vers>
+	</properties>
+	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.apice.sapere</groupId>
 	<artifactId>semanticwebsapere</artifactId>
-	<version>0.1.0</version>
+	<version>${swsapere.vers}</version>
 	<packaging>pom</packaging>
 	<name>Semantic Web SAPERE</name>
 	<description>This project reflects the work produced during the development of semanticwebsapere thesis. See http://apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere for more details.</description>
@@ -16,6 +20,8 @@
 		<module>semanticwebsapere-rdfspace</module>
 
 		<module>semanticwebsapere-node</module>
+
+		<module>semanticwebsapere-integrationtests</module>
 	</modules>
 
 	<organization>
@@ -184,6 +190,11 @@
 				<groupId>net.sf.bluecove</groupId>
 				<artifactId>bluecove</artifactId>
 				<version>2.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.16</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -1,6 +1,6 @@
 package it.apice.sapere.node.agents;
 
-import it.apice.sapere.node.networking.Subscriber;
+import it.apice.sapere.node.networking.impl.Subscriber;
 
 import java.net.URI;
 
@@ -36,6 +36,15 @@ public interface SAPEREAgent extends Subscriber {
 	 * @return The Agent's URI
 	 */
 	URI getAgentURI();
+
+	/**
+	 * <p>
+	 * Getter for the agent identifier.
+	 * </p>
+	 * 
+	 * @return the agent identifier
+	 */
+	String getLocalAgentId();
 
 	/**
 	 * <p>

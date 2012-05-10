@@ -13,7 +13,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1336468780421
+Bnd-LastModified: 1336646576005
 Bundle-ManifestVersion: 2
 Bundle-Activator: it.apice.sapere.api.internal.RDFModelActivator
 Bundle-Description: This project provides an implementation of the SAP
@@ -25,7 +25,7 @@ Import-Package: com.hp.hpl.jena.datatypes.xsd,com.hp.hpl.jena.query,co
  aws.terms,it.apice.sapere.api.ecolaws.terms.observers,it.apice.sapere
  .api.ecolaws.visitor,it.apice.sapere.api.lsas,it.apice.sapere.api.lsa
  s.values,it.apice.sapere.api.lsas.visitor,it.apice.sapere.api.space.m
- atch,org.apache.commons.logging,org.osgi.framework;version="1.6"
+ atch,org.osgi.framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-rdfmodel
 Bundle-DocURL: http://apice.unibo.it/
 

@@ -11,7 +11,6 @@ import it.apice.sapere.api.impl.LSAParserImpl;
 
 import java.util.Hashtable;
 
-import org.apache.commons.logging.LogFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -182,6 +181,6 @@ public class RDFModelActivator implements BundleActivator {
 	 *            The message to be logged
 	 */
 	private void log(final String msg) {
-		LogFactory.getLog(RDFModelActivator.class).info("rdf-model> " + msg);
+		System.out.println("rdf-model> " + msg);
 	}
 }

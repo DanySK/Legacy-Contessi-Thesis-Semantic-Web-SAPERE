@@ -1,51 +1,37 @@
 Manifest-Version: 1.0
 Export-Package: it.apice.sapere.management;uses:="it.apice.sapere.api.
- space,it.apice.sapere.api.space.match,it.apice.sapere.api.space.core,
- it.apice.sapere.api.ecolaws,it.apice.sapere.api.space.observation,it.
- apice.sapere.api,it.apice.sapere.node.agents",it.apice.sapere.node.ag
- ents;uses:="it.apice.sapere.node.networking,org.apache.commons.loggin
- g,it.apice.sapere.api",it.apice.sapere.node.networking.bluetooth;uses
- :="javax.bluetooth,it.apice.sapere.node.networking,org.apache.commons
- .logging,javax.microedition.io,it.apice.sapere.api.space,it.apice.sap
- ere.api.space.core,it.apice.sapere.node.networking.utils,it.apice.sap
- ere.node.agents,it.apice.sapere.api,it.apice.sapere.api.lsas",it.apic
- e.sapere.node.networking.guestsmngt;uses:="it.apice.sapere.api.space.
- core,it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.sapere.nod
- e.networking,it.apice.sapere.node.agents,org.apache.commons.logging,i
- t.apice.sapere.api.space,it.apice.sapere.node.networking.utils,it.api
- ce.sapere.node.networking.obsnotifications,it.apice.sapere.api.space.
- observation",it.apice.sapere.node.networking;uses:="it.apice.sapere.n
- ode.networking.utils",it.apice.sapere.node.networking.obsnotification
- s;uses:="it.apice.sapere.node.networking,it.apice.sapere.api.space.co
- re,it.apice.sapere.api.space.observation,it.apice.sapere.api,it.apice
- .sapere.api.lsas,it.apice.sapere.node.networking.guestsmngt,it.apice.
- sapere.node.agents",it.apice.sapere.node.networking.utils;uses:="it.a
- pice.sapere.node.networking.obsnotifications,it.apice.sapere.node.net
- working,org.apache.commons.logging,it.apice.sapere.node.networking.gu
- estsmngt,it.apice.sapere.api.lsas,it.apice.sapere.api.space.core,it.a
- pice.sapere.api.space.observation,it.apice.sapere.api"
+ ecolaws.scheduling,it.apice.sapere.api.space.match,it.apice.sapere.ap
+ i.space.core,it.apice.sapere.api.space.observation,it.apice.sapere.ap
+ i,it.apice.sapere.api.ecolaws,it.apice.sapere.node.agents",it.apice.s
+ apere.node.agents;uses:="it.apice.sapere.node,org.apache.log4j,it.api
+ ce.sapere.api,it.apice.sapere.management,it.apice.sapere.api.space.co
+ re,it.apice.sapere.api.ecolaws.formulas,it.apice.sapere.api.space",it
+ .apice.sapere.node;uses:="org.apache.log4j,org.osgi.framework,it.apic
+ e.sapere.node.agents"
+Ignore-Package: com.ibm.oti.connection,com.ibm.oti.vm,com.sun.cdc.io
+Bundle-ClassPath: .,bluecove-2.1.0.jar
 Built-By: conteit
-Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
+Tool: Bnd-0.0.357
 Bundle-Name: SAPERE Node
 Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1336489836853
+Bnd-LastModified: 1336646570165
+Bundle-Activator: it.apice.sapere.node.internal.SAPERENodeActivator
 Bundle-ManifestVersion: 2
 Bundle-Description: This bundle provides basic structure of SAPERE nod
  e.
+Embed-Dependency: bluecove;scope=compile;version=2.1.0
 Import-Package: it.apice.sapere.api,it.apice.sapere.api.ecolaws,it.api
- ce.sapere.api.ecolaws.formulas,it.apice.sapere.api.lsas,it.apice.sape
- re.api.space,it.apice.sapere.api.space.core,it.apice.sapere.api.space
- .match,it.apice.sapere.api.space.observation,it.apice.sapere.manageme
- nt,it.apice.sapere.node.agents,it.apice.sapere.node.networking,it.api
- ce.sapere.node.networking.bluetooth,it.apice.sapere.node.networking.g
- uestsmngt,it.apice.sapere.node.networking.obsnotifications,it.apice.s
- apere.node.networking.utils,javax.bluetooth,javax.microedition.io,org
- .apache.commons.logging,org.osgi.framework;version="1.6"
+ ce.sapere.api.ecolaws.formulas,it.apice.sapere.api.ecolaws.scheduling
+ ,it.apice.sapere.api.lsas,it.apice.sapere.api.space,it.apice.sapere.a
+ pi.space.core,it.apice.sapere.api.space.match,it.apice.sapere.api.spa
+ ce.observation,it.apice.sapere.management,it.apice.sapere.node,it.api
+ ce.sapere.node.agents,org.apache.log4j,org.osgi.framework;version="1.
+ 6"
 Bundle-SymbolicName: semanticwebsapere-node
 Bundle-DocURL: http://apice.unibo.it/
 

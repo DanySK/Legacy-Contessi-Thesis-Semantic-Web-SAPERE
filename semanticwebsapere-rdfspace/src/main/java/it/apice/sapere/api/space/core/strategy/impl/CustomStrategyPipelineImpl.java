@@ -1,7 +1,7 @@
 package it.apice.sapere.api.space.core.strategy.impl;
 
-import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
+import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
 
 import java.util.ArrayList;
 import java.util.List;
