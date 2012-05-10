@@ -6,7 +6,7 @@ import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.AbstractSystemAgent;
+import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;

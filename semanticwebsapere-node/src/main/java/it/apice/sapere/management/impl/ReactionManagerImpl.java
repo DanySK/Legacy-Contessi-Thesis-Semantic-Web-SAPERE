@@ -13,8 +13,8 @@ import it.apice.sapere.management.AbortException;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.ReactionManagerObserver;
 import it.apice.sapere.management.ReactionsScheduler;
-import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.NodeServices;
+import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
 
 import java.util.LinkedList;
 import java.util.List;

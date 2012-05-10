@@ -81,6 +81,28 @@ public interface CompiledLSA<RDFStmtIterType> {
 
 	/**
 	 * <p>
+	 * Reads a property value, considering it a literal.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 * @return The property values
+	 */
+	String[] readLiteralProperty(URI propURI);
+
+	/**
+	 * <p>
+	 * Reads a property value, considering it a URI.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 * @return The property values
+	 */
+	URI[] readURIProperty(URI propURI);
+
+	/**
+	 * <p>
 	 * Removes all information about the specified property from this compiled
 	 * LSA.
 	 * </p>

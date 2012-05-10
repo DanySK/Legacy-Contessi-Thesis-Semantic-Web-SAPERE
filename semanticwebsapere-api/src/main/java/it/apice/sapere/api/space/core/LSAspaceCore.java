@@ -6,6 +6,7 @@ import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
 import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
+import it.apice.sapere.api.space.observation.LSAObserver;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 
 /**
@@ -28,7 +29,7 @@ import it.apice.sapere.api.space.observation.SpaceObserver;
  * @param <RDFStmtIterType>
  *            The class that represents an iterator over RDF Statements
  */
-public interface LSAspaceCore<RDFStmtIterType> extends LSAspace {
+public interface LSAspaceCore<RDFStmtIterType> {
 
 	/* === LSA HANDLING === */
 
@@ -173,4 +174,65 @@ public interface LSAspaceCore<RDFStmtIterType> extends LSAspace {
 	 * @return The custom strategy pipeline
 	 */
 	CustomStrategyPipeline<RDFStmtIterType> getCustomStrategyPipeline();
+
+	/**
+	 * <p>
+	 * Starts observing the specified LSA.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The LSA-id of the LSA to be observed
+	 * @param obs
+	 *            The entity that will observe the LSA
+	 * @return The LSAspace itself for further operations
+	 * @throws SAPEREException
+	 *             Permission denied
+	 */
+	LSAspace observe(LSAid lsaId, LSAObserver obs) throws SAPEREException;
+
+	/**
+	 * <p>
+	 * Stop observing the specified LSA.
+	 * </p>
+	 * <p>
+	 * If <code>obs</code> isn't actually observing the LSA then the request is
+	 * dropped silently.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The id of the LSA to ignore
+	 * @return The LSAspace itself for further operations
+	 * @param obs
+	 *            The entity that is observing the LSA
+	 */
+	LSAspace ignore(LSAid lsaId, LSAObserver obs);
+
+	/* === THREAD-SAFETY SUPPORT === */
+
+	/**
+	 * <p>
+	 * Gets lock for READ procedures.
+	 * </p>
+	 * <p>
+	 * In order to release the lock call <code>done()</code>.
+	 * </p>
+	 */
+	void beginRead();
+
+	/**
+	 * <p>
+	 * Gets lock for WRITE procedures.
+	 * </p>
+	 * <p>
+	 * In order to release the lock call <code>done()</code>.
+	 * </p>
+	 */
+	void beginWrite();
+
+	/**
+	 * <p>
+	 * Releases the acquired lock.
+	 * </p>
+	 */
+	void done();
 }

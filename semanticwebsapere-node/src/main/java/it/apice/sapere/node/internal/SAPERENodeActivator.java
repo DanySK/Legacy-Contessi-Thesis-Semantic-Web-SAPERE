@@ -8,11 +8,16 @@ import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
 import it.apice.sapere.management.DefaultReactionsScheduler;
 import it.apice.sapere.management.ReactionManager;
+import it.apice.sapere.management.impl.DiffusionHandler;
 import it.apice.sapere.management.impl.ReactionManagerImpl;
 import it.apice.sapere.management.impl.ReactionManagerLogger;
+import it.apice.sapere.management.impl.SynthPropsHandler;
 import it.apice.sapere.node.LoggerFactory;
+import it.apice.sapere.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl;
 import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
 import it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent;
 import it.apice.sapere.node.networking.impl.NetworkManager;
@@ -41,7 +46,7 @@ public class SAPERENodeActivator implements BundleActivator {
 			+ ".console.level";
 
 	/** LSA Factory service. */
-	private transient PrivilegedLSAFactory sysLsaFactory;
+	private transient PrivilegedLSAFactory lsaFactory;
 
 	/** LSA Compiler service. */
 	private transient LSACompiler<?> lsaCompiler;
@@ -59,7 +64,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	private transient FormulaFactory fFactory;
 
 	/** LSA-space service. */
-	private transient LSAspaceCore<?> sysSpace;
+	private transient LSAspaceCore<?> lsaSpace;
 
 	/** List of published registrations. */
 	private final transient List<ServiceRegistration<?>> regs = 
@@ -72,15 +77,20 @@ public class SAPERENodeActivator implements BundleActivator {
 	/** Reference to eco-laws scheduler. */
 	private transient ReactionManager rManager;
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public final void start(final BundleContext context) throws Exception {
 		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL));
 
+		/* === WELCOME MESSAGE === */
+		
 		log("---------------------------------------------------------------");
 		log("SAPERE-node (Self-Aware Pervasive Service Ecosystems)");
 		log("---------------------------------------------------------------");
 		log("");
 
+		/* === OSGi SERVICES IMPORTATION === */
+		
 		log("Looking for services:");
 		initLSAFactory(context);
 		log("   + LSA Factory");
@@ -97,24 +107,14 @@ public class SAPERENodeActivator implements BundleActivator {
 		initLSAspace(context);
 		log("   + LSA-space");
 
+		/* === CONNECTIVITY DAEMONS === */
+
 		log("");
 		log("Configuring connectivity:");
 
 		// Node Services getter initialization
-		NodeServicesImpl.init(sysLsaFactory, lsaCompiler, lsaParser,
-				lawFactory, lawCompiler, fFactory, sysSpace);
-
-		// Reaction manager initialization
-		rManager = new ReactionManagerImpl(new DefaultReactionsScheduler(),
-				lawCompiler);
-		rManager.addReactionManagerObserver(
-				new ReactionManagerLogger(rManager));
-		rManager.spawn();
-
-		// Reaction manager registration
-		NodeServicesImpl.registerReactionManager(rManager);
-
-		// System Agents startups
+		NodeServicesImpl.init(lsaFactory, lsaCompiler, lsaParser, lawFactory,
+				lawCompiler, fFactory, lsaSpace);
 
 		NotifierAgent.getInstance().start();
 		log("   + Remote observation enabled");
@@ -134,15 +134,43 @@ public class SAPERENodeActivator implements BundleActivator {
 			log("   - Bluetooth communication NOT supported", ex.getCause());
 		}
 
+		/* === (CUSTOM) COMPONENTS CREATION === */
+		
+		log("");
+		log("Components/Agents creation:");
+		
+		final CustomStrategyPipelineStep syntPropsHdl = new SynthPropsHandler();
+		lsaSpace.getCustomStrategyPipeline()
+				.addStepAtTheBeginning(syntPropsHdl);
+		log("   + Synthetic Properties handler");
+
+		lsaSpace.addSpaceObserver(new DiffusionHandler());
+		log("   + Diffusion handler");
+
+		// Reaction manager initialization
+		rManager = new ReactionManagerImpl(new DefaultReactionsScheduler(),
+				lawCompiler);
+		rManager.addReactionManagerObserver(
+				new ReactionManagerLogger(rManager));
+		rManager.spawn();
+
+		// Reaction manager registration
+		NodeServicesImpl.registerReactionManager(rManager);
+		log("   + Reaction Manager (eco-law scheduler)");
+
+		/* === OSGi SERVICES PUBLICATION === */
+
 		log("");
 		log("Publishing services:");
-		registerSAPEREAgentsFactory(context);
+
+		registerLogFactory(context);
 		log("   + Log Facility");
+		registerSAPEREAgentsFactory(context);
+		log("   + SAPERE Agents Factory");
 
 		log("");
 		log("---------------------------------------------------------------");
-		log("READY (id = sapere:" + sysLsaFactory.getNodeID().split("#")[1] 
-				+ ")");
+		log("READY (id = sapere:" + lsaFactory.getNodeID().split("#")[1] + ")");
 		log("---------------------------------------------------------------");
 		log("");
 	}
@@ -156,6 +184,19 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerSAPEREAgentsFactory(final BundleContext context) {
+		regs.add(context.registerService(SAPEREAgentsFactory.class,
+				SAPEREAgentsFactoryImpl.getInstance(), null));
+	}
+
+	/**
+	 * <p>
+	 * Registers the Log Factory service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 */
+	private void registerLogFactory(final BundleContext context) {
 		regs.add(context.registerService(LoggerFactory.class,
 				LoggerFactoryImpl.getInstance(), null));
 	}
@@ -178,7 +219,7 @@ public class SAPERENodeActivator implements BundleActivator {
 			throw new SAPEREException("Cannot find \"LSA Factory\" service");
 		}
 
-		sysLsaFactory = context.getService(ref);
+		lsaFactory = context.getService(ref);
 		refs.add(ref);
 	}
 
@@ -315,7 +356,7 @@ public class SAPERENodeActivator implements BundleActivator {
 			throw new SAPEREException("Cannot find \"LSA-space\" service");
 		}
 
-		sysSpace = context.getService(ref);
+		lsaSpace = context.getService(ref);
 		refs.add(ref);
 	}
 
@@ -366,8 +407,10 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Reason of the notification
 	 */
 	private void log(final String msg, final Throwable cause) {
-		LoggerFactoryImpl.getInstance().getLogger(this)
-				.warn(String.format("node> %s (reason: %s)", msg, 
+		LoggerFactoryImpl
+				.getInstance()
+				.getLogger(this)
+				.warn(String.format("node> %s (reason: %s)", msg,
 						cause.getMessage()));
 	}
 }

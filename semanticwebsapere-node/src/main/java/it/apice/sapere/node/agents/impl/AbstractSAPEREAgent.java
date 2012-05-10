@@ -1,5 +1,6 @@
-package it.apice.sapere.node.agents;
+package it.apice.sapere.node.agents.impl;
 
+import it.apice.sapere.node.agents.SAPEREAgent;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.impl.Message;
@@ -62,7 +63,7 @@ public abstract class AbstractSAPEREAgent extends Thread
 
 		id = agentId;
 		spy("intializing...");
-		
+
 		try {
 			agentURI = new URI(NodeServicesImpl.getInstance().getLSAFactory()
 					.getNodeID().replace("#", "/").concat("agents#")
@@ -212,7 +213,7 @@ public abstract class AbstractSAPEREAgent extends Thread
 		try {
 			execute();
 		} catch (Exception ex) {
-			error("Unhandled Exception occurred. Terminating..", ex);
+			fatal("Unhandled Exception occurred. Terminating..", ex);
 		}
 		spy("terminated");
 	}
@@ -221,6 +222,9 @@ public abstract class AbstractSAPEREAgent extends Thread
 	 * <p>
 	 * Contains Agent's business logic to be executed.
 	 * </p>
+	 * 
+	 * @throws Exception
+	 *             Uncaught exception
 	 */
-	protected abstract void execute();
+	protected abstract void execute() throws Exception;
 }

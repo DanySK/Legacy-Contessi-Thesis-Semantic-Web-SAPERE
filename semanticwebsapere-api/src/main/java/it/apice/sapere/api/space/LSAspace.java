@@ -34,7 +34,8 @@ public interface LSAspace extends OntologyHandler {
 	 *            The LSA to be inserted
 	 * @return The LSAspace itself for further operations
 	 * @throws SAPEREException
-	 *             An LSA with the same LSA-id has already been inserted
+	 *             An LSA with the same LSA-id has already been inserted,
+	 *             permission denied
 	 */
 	LSAspace inject(LSA lsa) throws SAPEREException;
 
@@ -47,8 +48,8 @@ public interface LSAspace extends OntologyHandler {
 	 *            The LSA-id of the requested LSA
 	 * @return The LSA the caller requested
 	 * @throws SAPEREException
-	 *             The requested LSA does not exists in this LSA-space or
-	 *             parsing errors
+	 *             The requested LSA does not exists in this LSA-space, parsing
+	 *             errors, permission denied
 	 */
 	LSA read(LSAid lsaId) throws SAPEREException;
 
@@ -61,7 +62,7 @@ public interface LSAspace extends OntologyHandler {
 	 *            The LSA to be removed
 	 * @return The LSAspace itself for further operations
 	 * @throws SAPEREException
-	 *             The LSA is not in the LSA-space
+	 *             The LSA is not in the LSA-space, Permission denied
 	 */
 	LSAspace remove(LSA lsa) throws SAPEREException;
 
@@ -85,7 +86,7 @@ public interface LSAspace extends OntologyHandler {
 	 *            The LSA to be removed
 	 * @return The LSAspace itself for further operations
 	 * @throws SAPEREException
-	 *             The LSA is not in the LSA-space
+	 *             The LSA is not in the LSA-space, permission denied
 	 */
 	LSAspace update(LSA lsa) throws SAPEREException;
 
@@ -99,8 +100,10 @@ public interface LSAspace extends OntologyHandler {
 	 * @param obs
 	 *            The entity that will observe the LSA
 	 * @return The LSAspace itself for further operations
+	 * @throws SAPEREException
+	 *             Permission denied
 	 */
-	LSAspace observe(LSAid lsaId, LSAObserver obs);
+	LSAspace observe(LSAid lsaId, LSAObserver obs) throws SAPEREException;
 
 	/**
 	 * <p>

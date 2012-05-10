@@ -9,7 +9,6 @@ import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.UserNodeServices;
 
 /**
  * <p>
@@ -47,9 +46,6 @@ public final class NodeServicesImpl implements NodeServices {
 
 	/** Singleton instance. */
 	private static transient NodeServicesImpl instance;
-
-	/** Singleton instance of the user version. */
-	private static transient UserNodeServicesImpl usrInstance;
 
 	/**
 	 * <p>
@@ -134,21 +130,6 @@ public final class NodeServicesImpl implements NodeServices {
 		}
 
 		return instance;
-	}
-
-	/**
-	 * <p>
-	 * Singleton method.
-	 * </p>
-	 * 
-	 * @return Global reference to {@link UserNodeServices}
-	 */
-	public static UserNodeServices getUserInstance() {
-		if (usrInstance == null) {
-			usrInstance = new UserNodeServicesImpl(getInstance());
-		}
-
-		return usrInstance;
 	}
 
 	@Override

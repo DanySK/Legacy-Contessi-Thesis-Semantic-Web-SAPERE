@@ -239,15 +239,15 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		model.leaveCriticalSection();
 	}
 
-	@Override
-	public final LSAspace inject(final LSA lsa) throws SAPEREException {
-		if (lsa == null) {
-			throw new IllegalArgumentException("Invalid LSA");
-		}
-
-		injectCompiled(compile(lsa));
-		return this;
-	}
+//	@Override
+//	public final LSAspace inject(final LSA lsa) throws SAPEREException {
+//		if (lsa == null) {
+//			throw new IllegalArgumentException("Invalid LSA");
+//		}
+//
+//		injectCompiled(compile(lsa));
+//		return this;
+//	}
 
 	/**
 	 * <p>
@@ -262,34 +262,34 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		return lsaExist(model.createResource(lsaId.toString()));
 	}
 
-	@Override
-	public final LSA read(final LSAid lsaId) throws SAPEREException {
-		if (lsaId == null) {
-			throw new IllegalArgumentException("Invalid LSA-id");
-		}
+//	@Override
+//	public final LSA read(final LSAid lsaId) throws SAPEREException {
+//		if (lsaId == null) {
+//			throw new IllegalArgumentException("Invalid LSA-id");
+//		}
+//
+//		return retrieveLSA(readCompiled(lsaId));
+//	}
 
-		return retrieveLSA(readCompiled(lsaId));
-	}
-
-	@Override
-	public final LSAspace remove(final LSA lsa) throws SAPEREException {
-		if (lsa == null) {
-			throw new IllegalArgumentException("Invalid LSA");
-		}
-
-		removeCompiled(compile(lsa));
-		return this;
-	}
-
-	@Override
-	public final LSAspace update(final LSA lsa) throws SAPEREException {
-		if (lsa == null) {
-			throw new IllegalArgumentException("Invalid LSA");
-		}
-
-		updateCompiled(compile(lsa));
-		return this;
-	}
+//	@Override
+//	public final LSAspace remove(final LSA lsa) throws SAPEREException {
+//		if (lsa == null) {
+//			throw new IllegalArgumentException("Invalid LSA");
+//		}
+//
+//		removeCompiled(compile(lsa));
+//		return this;
+//	}
+//
+//	@Override
+//	public final LSAspace update(final LSA lsa) throws SAPEREException {
+//		if (lsa == null) {
+//			throw new IllegalArgumentException("Invalid LSA");
+//		}
+//
+//		updateCompiled(compile(lsa));
+//		return this;
+//	}
 
 	@Override
 	public final LSAspace observe(final LSAid lsaId, final LSAObserver obs) {

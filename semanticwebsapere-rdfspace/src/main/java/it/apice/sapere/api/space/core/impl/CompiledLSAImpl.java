@@ -7,9 +7,13 @@ import it.apice.sapere.api.space.core.CompiledLSA;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.net.URI;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.RDFNode;
+import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
@@ -125,6 +129,36 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	public final void clearProperty(final URI propURI) {
 		model.remove(model.getResource(lsaId.getId().toString())
 				.listProperties(model.createProperty(propURI.toString())));
+	}
+
+	@Override
+	public final String[] readLiteralProperty(final URI propURI) {
+		final List<String> res = new LinkedList<String>();
+		final StmtIterator iter = model.getResource(lsaId.getId().toString())
+				.listProperties(model.createProperty(propURI.toString()));
+		while (iter.hasNext()) {
+			final RDFNode val = ((Statement) iter.next()).getObject();
+			if (val.isLiteral()) {
+				res.add(val.asNode().getLiteralValue().toString());
+			}
+		}
+
+		return res.toArray(new String[res.size()]);
+	}
+
+	@Override
+	public final URI[] readURIProperty(final URI propURI) {
+		final List<URI> res = new LinkedList<URI>();
+		final StmtIterator iter = model.getResource(lsaId.getId().toString())
+				.listProperties(model.createProperty(propURI.toString()));
+		while (iter.hasNext()) {
+			final RDFNode val = ((Statement) iter.next()).getObject();
+			if (!val.isLiteral()) {
+				res.add(URI.create(val.asNode().getURI()));
+			}
+		}
+
+		return res.toArray(new URI[res.size()]);
 	}
 
 }

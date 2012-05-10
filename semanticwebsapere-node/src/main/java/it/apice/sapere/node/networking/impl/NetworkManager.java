@@ -14,9 +14,6 @@ public final class NetworkManager {
 	/** Table of all neighbours. */
 	private final transient NeighboursTable table;
 
-	// /** Bluetooth manager. */
-	// private final transient BluetoothManagerAgent btManager;
-
 	/** Singleton instance. */
 	private static NetworkManager instance;
 
@@ -42,7 +39,6 @@ public final class NetworkManager {
 	 */
 	private NetworkManager() {
 		table = new NeighboursTable();
-		// btManager = BluetoothManagerAgent.getInstance(this);
 	}
 
 	/**
@@ -56,8 +52,12 @@ public final class NetworkManager {
 	 *            the diffusion message
 	 */
 	public void doDiffuse(final String neighbourId, final NodeMessage message) {
-		LoggerFactoryImpl.getInstance().getLogger(NetworkManager.class)
-				.info("Sending DIFFUSE message to " + neighbourId);
+		LoggerFactoryImpl
+				.getInstance()
+				.getLogger(NetworkManager.class)
+				.debug(String.format(
+						"Sending DIFFUSE message to %s (LSA-id: %s)",
+						neighbourId, message.getOperation().getLSAid()));
 		table.sendMessage(neighbourId, message);
 	}
 
@@ -72,7 +72,7 @@ public final class NetworkManager {
 	 */
 	public String registerNeighbour(final Neighbour neighbour) {
 		LoggerFactoryImpl.getInstance().getLogger(NetworkManager.class)
-		.info("Registering neighbour: " + neighbour.getId());
+				.info("Registering neighbour: " + neighbour.getId());
 		return table.addNeighbour(neighbour);
 	}
 

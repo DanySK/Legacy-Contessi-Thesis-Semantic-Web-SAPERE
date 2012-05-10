@@ -2,6 +2,8 @@ package it.apice.sapere.node;
 
 import static org.junit.Assert.assertNotNull;
 
+import it.apice.sapere.node.agents.SAPEREAgentsFactory;
+
 import java.io.IOException;
 
 import javax.inject.Inject;
@@ -61,16 +63,38 @@ public class TestSAPEREnode {
 
 	/**
 	 * <p>
-	 * Stupid test.
+	 * Tests the availability of SAPERE-node published services.
+	 * </p>
+	 * <p>
+	 * If all tests pass then the SAPERE-node implementation is working.
 	 * </p>
 	 * 
 	 * @throws IOException
 	 *             Error while reading
 	 */
 	@Test
-	public final void testFoo() throws IOException {
-		final ServiceReference<LoggerFactory> ref = context
+	public final void testLoggerFactoryAvailablity() throws IOException {
+		final ServiceReference<?> ref = context
 				.getServiceReference(LoggerFactory.class);
+		assertNotNull(ref);
+		assertNotNull(context.getService(ref));
+	}
+	
+	/**
+	 * <p>
+	 * Tests the availability of SAPERE-node published services.
+	 * </p>
+	 * <p>
+	 * If all tests pass then the SAPERE-node implementation is working.
+	 * </p>
+	 * 
+	 * @throws IOException
+	 *             Error while reading
+	 */
+	@Test
+	public final void testSAPEREAgentsFactoryAvailablity() throws IOException {
+		final ServiceReference<?> ref = context
+				.getServiceReference(SAPEREAgentsFactory.class);
 		assertNotNull(ref);
 		assertNotNull(context.getService(ref));
 	}
