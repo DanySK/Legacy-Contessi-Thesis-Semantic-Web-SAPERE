@@ -48,6 +48,7 @@ public class GuestSubscriber implements Subscriber {
 	 * @param note
 	 *            the message to send (notification)
 	 */
+	@SuppressWarnings("deprecation")
 	public final void sendMessage(final Message note) {
 		GuestsHandlerAgent.getInstance().sendMessageToGuest(note, destination);
 	}

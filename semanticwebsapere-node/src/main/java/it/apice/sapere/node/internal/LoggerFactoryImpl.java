@@ -1,5 +1,6 @@
 package it.apice.sapere.node.internal;
 
+import it.apice.sapere.node.LogUtils;
 import it.apice.sapere.node.LoggerFactory;
 import it.apice.sapere.node.agents.SAPEREAgent;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 import org.apache.log4j.Appender;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.RollingFileAppender;
@@ -72,6 +74,8 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 
 		level = lLevel;
 		deep = deepDebug;
+		
+		LogManager.resetConfiguration();
 	}
 
 	/**
@@ -139,18 +143,18 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	}
 
 	@Override
-	public Logger getLogger(final SAPEREAgent agent) {
+	public LogUtils getLogger(final SAPEREAgent agent) {
 		return retrieveLogger(agent.getClass(), agent.getLocalAgentId());
 	}
 
 	@Override
-	public Logger getLogger(final BundleActivator bActiv) {
+	public LogUtils getLogger(final BundleActivator bActiv) {
 		return retrieveLogger(bActiv.getClass(), bActiv.getClass()
 				.getSimpleName());
 	}
 
 	@Override
-	public Logger getLogger(final Class<?> clazz) {
+	public LogUtils getLogger(final Class<?> clazz) {
 		return retrieveLogger(clazz, clazz.getSimpleName());
 	}
 
@@ -165,7 +169,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 *            Requestor name
 	 * @return A {@link Logger} reference
 	 */
-	private Logger retrieveLogger(final Class<?> reqClass, 
+	private LogUtils retrieveLogger(final Class<?> reqClass, 
 			final String reqName) {
 		final Logger logger = Logger.getLogger(reqClass);
 		if (!inited.contains(logger)) {
@@ -178,7 +182,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 			}
 		}
 
-		return logger;
+		return new LogUtilsImpl(logger, reqName);
 	}
 
 	/**
@@ -213,7 +217,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 *            FATAL, OFF
 	 */
 	public static void init(final String consoleLevel) {
-		init(consoleLevel, true);
+		init(consoleLevel, false);
 	}
 
 	/**

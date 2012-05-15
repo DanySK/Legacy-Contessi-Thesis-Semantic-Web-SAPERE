@@ -5,8 +5,8 @@ import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;
@@ -353,7 +353,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			space.injectCompiled(nInfoLSA);
+			space.inject(nInfoLSA);
 		} catch (SAPEREException ex) {
 			error("Cannot inject Node Info", ex);
 		} finally {
@@ -379,7 +379,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			space.injectCompiled(lsaComp.parse(message.getOperation().getLSA(),
+			space.inject(lsaComp.parse(message.getOperation().getLSA(),
 					RDFFormat.RDF_XML));
 			spy("Received diffusion " + message.getOperation().getLSAid());
 		} catch (SAPEREException e) {

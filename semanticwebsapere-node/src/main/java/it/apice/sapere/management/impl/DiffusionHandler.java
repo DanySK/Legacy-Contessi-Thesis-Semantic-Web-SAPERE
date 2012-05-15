@@ -1,5 +1,7 @@
 package it.apice.sapere.management.impl;
 
+import java.net.URI;
+
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.core.CompiledLSA;
@@ -28,6 +30,18 @@ import it.apice.sapere.node.networking.utils.impl.SpaceOperation;
  */
 public class DiffusionHandler implements SpaceObserver {
 
+	/** SAPERE namespace. */
+	private static final transient String SAPERE_NS = "http://"
+			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#";
+
+	/** LSA's location property URI. */
+	private static final transient URI LOCATION_PROP = URI.create(SAPERE_NS
+			+ "location");
+
+	/** Local location property value URI. */
+	private static final transient URI LOCAL_VAL = URI.create(SAPERE_NS
+			+ "local");
+
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
 		for (String rdfLsa : ev.getLSAContent(RDFFormat.RDF_XML)) {
@@ -45,12 +59,12 @@ public class DiffusionHandler implements SpaceObserver {
 				// provided (not 0, 0, new float[0])
 				LoggerFactoryImpl.getInstance()
 						.getLogger(DiffusionHandler.class)
-						.info("DIFFUSE " + lsa.getLSAid());
+						.log("DIFFUSE " + lsa.getLSAid());
 			} catch (SAPEREException ex) {
 				LoggerFactoryImpl
 						.getInstance()
 						.getLogger(DiffusionHandler.class)
-						.debug(String.format(
+						.spy(String.format(
 								"LSA <%s> does not need to be diffused",
 								lsa.getLSAid()));
 			} catch (Exception ex) {
@@ -74,8 +88,12 @@ public class DiffusionHandler implements SpaceObserver {
 	 */
 	private String getLSALocation(final CompiledLSA<?> lsa)
 			throws SAPEREException {
-		assert lsa != null;
-		throw new UnsupportedOperationException("Not implemented yet");
+		final URI loc = lsa.readURIProperty(LOCATION_PROP)[0];
+		if (loc.equals(LOCAL_VAL)) {
+			throw new SAPEREException("Should not diffuse");
+		}
+
+		return loc.toString();
 	}
 
 }

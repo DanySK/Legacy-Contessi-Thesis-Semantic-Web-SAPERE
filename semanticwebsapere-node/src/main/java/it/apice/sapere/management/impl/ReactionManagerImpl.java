@@ -13,8 +13,8 @@ import it.apice.sapere.management.AbortException;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.ReactionManagerObserver;
 import it.apice.sapere.management.ReactionsScheduler;
+import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -104,7 +104,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 		mutex.lock();
 		try {
 			laws.remove(law);
-			
+
 			if (laws.isEmpty()) {
 				wakeUpTime = Long.MAX_VALUE;
 			}
@@ -183,19 +183,22 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				}
 
 				if (!abortScheduling) {
+					space.beginWrite();
 					try {
 						// If time has come applies the eco-law
 						space.apply(next);
 						notifyLawApplied(next, System.currentTimeMillis());
 					} catch (SAPEREException e) {
 						error("Error while scheduling an eco-law", e);
+					} finally {
+						space.done();
 					}
 				}
 
 				// Find next scheduling
 				findNextScheduling(space);
 			} catch (InterruptedException ex) {
-				spy("Interrupted");
+				spy("interrupted");
 			} finally {
 				mutex.unlock();
 			}
@@ -230,8 +233,14 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 		long bestTime = Long.MAX_VALUE;
 		for (CompiledEcolaw law : laws) {
 			try {
-				final SchedulableMatchResult[] results = scheduler.eval(space
-						.match(law));
+				final SchedulableMatchResult[] results;
+				space.beginRead();
+				try {
+					results = scheduler.eval(space.match(law));
+				} finally {
+					space.done();
+				}
+
 				final long now = System.currentTimeMillis();
 
 				for (SchedulableMatchResult res : results) {

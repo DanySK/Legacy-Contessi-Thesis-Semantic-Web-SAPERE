@@ -142,7 +142,7 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 
 	@Override
 	public final String[] variablesNames() {
-		return vars;
+		return Arrays.copyOf(vars, vars.length);
 	}
 
 	@Override

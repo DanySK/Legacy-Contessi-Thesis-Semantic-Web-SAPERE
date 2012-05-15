@@ -173,11 +173,11 @@ public final class EcolawToSPARQL implements EcolawVisitor {
 
 		if (var.getFormula() instanceof IsFormula) {
 			// BIND rule
-			query.append(String.format("\tBIND( %s AS ?%s)\n", var.getFormula()
+			query.append(String.format("\tBIND( %s AS ?%s)%n", var.getFormula()
 					.getRightOp(), var.getVarName()));
 		} else {
 			// FILTER rule
-			query.append(String.format("\tFILTER(%s)\n", var.getFormula()
+			query.append(String.format("\tFILTER(%s)%n", var.getFormula()
 					.getStringRepr()));
 		}
 

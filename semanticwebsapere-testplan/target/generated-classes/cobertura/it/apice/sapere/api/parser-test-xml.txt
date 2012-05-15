@@ -1,0 +1,22 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:sapere="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#"
+    xmlns:ex="http://www.example.org#" > 
+  <rdf:Description rdf:about="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa1432">
+    <ex:interest>travelling</ex:interest>
+    <ex:interest>sport</ex:interest>
+    <ex:interest>music</ex:interest>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</foaf:age>
+    <sapere:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-05-31T10:45:39Z</sapere:time>
+    <sapere:type rdf:resource="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#person"/>
+    <rdf:type rdf:resource="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa2543">
+    <sapere:time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-05-31T16:05:00Z</sapere:time>
+    <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">25</foaf:age>
+    <sapere:type rdf:resource="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#person"/>
+    <rdf:type rdf:resource="http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA"/>
+  </rdf:Description>
+</rdf:RDF>

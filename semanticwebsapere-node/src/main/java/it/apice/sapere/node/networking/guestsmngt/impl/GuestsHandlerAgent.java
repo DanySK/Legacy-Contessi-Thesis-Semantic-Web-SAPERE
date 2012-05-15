@@ -7,9 +7,9 @@ import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
+import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.impl.AbstractSAPEREAgent;
-import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
+import it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.networking.impl.Message;
 import it.apice.sapere.node.networking.impl.Subscriber;
@@ -34,19 +34,20 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Michele Morgagni
  * 
  */
-public final class GuestsHandlerAgent extends AbstractSAPEREAgent {
+@Deprecated
+public final class GuestsHandlerAgent extends AbstractSAPEREAgentImpl {
 
 	/** The PORT of the server. */
 	private static final transient int PORT = 4444;
 
 	/** Server socket. */
-	private ServerSocket server;
+	private final transient ServerSocket server;
 
 	/** Localization map. */
-	private HashMap<String, String> locMap;
+	private final transient HashMap<String, String> locMap;
 
 	/** MAC-IP map. */
-	private HashMap<String, String> ipMap;
+	private final transient HashMap<String, String> ipMap;
 
 	/** Singleton instance. */
 	private static transient GuestsHandlerAgent instance;
@@ -60,7 +61,7 @@ public final class GuestsHandlerAgent extends AbstractSAPEREAgent {
 	 */
 	public static GuestsHandlerAgent getInstance() {
 		if (instance == null) {
-			instance = new GuestsHandlerAgent("guests_handler");
+			instance = new GuestsHandlerAgent();
 		}
 
 		return instance;
@@ -70,12 +71,9 @@ public final class GuestsHandlerAgent extends AbstractSAPEREAgent {
 	 * <p>
 	 * Creates a new {@link GuestsHandlerAgent}.
 	 * </p>
-	 * 
-	 * @param myId
-	 *            the identifier of the agent
 	 */
-	private GuestsHandlerAgent(final String myId) {
-		super(myId);
+	private GuestsHandlerAgent() {
+		super("guests_handler");
 
 		locMap = new HashMap<String, String>();
 		ipMap = new HashMap<String, String>();
@@ -85,6 +83,7 @@ public final class GuestsHandlerAgent extends AbstractSAPEREAgent {
 			spy("TCP/IP address: " + server.getLocalSocketAddress());
 		} catch (Exception ex) {
 			error("Cannot connect GuestsHandlerAgent to network", ex);
+			throw new IllegalStateException("Cannot connect to network", ex);
 		}
 
 	}
@@ -144,9 +143,9 @@ class RequestHandler extends AbstractSystemAgent {
 	private static final transient String SIGNAL_PROP_URI = SYNT_PROPS_PREFIX
 			+ "signal";
 
-	/** Localization individual URI (as String). */
+	/** Location individual URI (as String). */
 	private static final transient String LOCAL_INDIV_URI = SYNT_PROPS_PREFIX
-			+ "localization";
+			+ "location";
 
 	/** Orientation 1 property URI (as String). */
 	private static final transient String OR1_PROP_URI = SYNT_PROPS_PREFIX
@@ -273,6 +272,7 @@ class RequestHandler extends AbstractSystemAgent {
 	 * @param message
 	 *            The message to be handled
 	 */
+	@SuppressWarnings("deprecation")
 	private void handleCancelSubscription(final GuestMessage message) {
 		spy("CANCEL REGISTRATION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
@@ -291,6 +291,7 @@ class RequestHandler extends AbstractSystemAgent {
 	 * @param message
 	 *            The message to be handled
 	 */
+	@SuppressWarnings("deprecation")
 	private void handleSubscription(final GuestMessage message) {
 		spy("OBSERVE PERMANENT_SUBSCRIPTION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
@@ -310,6 +311,7 @@ class RequestHandler extends AbstractSystemAgent {
 	 * @param message
 	 *            The message to be handled
 	 */
+	@SuppressWarnings("deprecation")
 	private void handleOnceSubscription(final GuestMessage message) {
 		spy("OBSERVE ONE_TIME_SUBSCRIPTION Id: " + message.getId() + " from "
 				+ message.getMacAddress());
@@ -343,7 +345,7 @@ class RequestHandler extends AbstractSystemAgent {
 
 		space.beginRead();
 		try {
-			final CompiledLSA<?> lsa = space.readCompiled(message.getId());
+			final CompiledLSA<?> lsa = space.read(message.getId());
 			requestor.sendMessage(new Notification(
 					SpaceOperationType.AGENT_READ, lsa));
 
@@ -373,7 +375,7 @@ class RequestHandler extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			services.getLSAspace().updateCompiled(lsa);
+			services.getLSAspace().update(lsa);
 
 			if (!CommunicationUtils.sendString("ack", socket)) {
 				spy("Error on ack sending");
@@ -402,7 +404,7 @@ class RequestHandler extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			services.getLSAspace().updateCompiled(lsa);
+			services.getLSAspace().update(lsa);
 
 			if (!CommunicationUtils.sendString("ack", socket)) {
 				spy("Error on ack sending");
@@ -429,13 +431,13 @@ class RequestHandler extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			final CompiledLSA lsa1 = space.readCompiled(message.getId());
-			space.removeCompiled(lsa1);
+			final CompiledLSA lsa1 = space.read(message.getId());
+			space.remove(lsa1);
 
 			final String idLoc = locMap.get(message.getId().toString());
-			final CompiledLSA lsa2 = space.readCompiled(services
+			final CompiledLSA lsa2 = space.read(services
 					.getLSAFactory().createLSAid(URI.create(idLoc)));
-			space.removeCompiled(lsa2);
+			space.remove(lsa2);
 		} catch (SAPEREException e) {
 			error("Cannot move guest", e);
 		} finally {
@@ -469,19 +471,19 @@ class RequestHandler extends AbstractSystemAgent {
 		try {
 			// Removing what there was before (avoiding duplicate LSA-id)
 			try {
-				final CompiledLSA readLsa = space.readCompiled(locLsa
+				final CompiledLSA readLsa = space.read(locLsa
 						.getLSAid());
-				space.removeCompiled(readLsa);
+				space.remove(readLsa);
 			} catch (SAPEREException e) {
 				spy("Re-injecting something that is not in the space");
 			}
 
-			space.injectCompiled(locLsa);
+			space.inject(locLsa);
 
 			final CompiledLSA recvLsa = services.getLSACompiler().parse(
 					message.getLSA(), RDFFormat.RDF_XML);
 			recvLsa.assertProperty(URI.create(POS_PROP_URI), idLoc.getId());
-			space.injectCompiled(recvLsa);
+			space.inject(recvLsa);
 
 			final LSAid recvId = recvLsa.getLSAid();
 			locMap.put(recvId.toString(), idLoc.toString());
@@ -514,12 +516,12 @@ class RequestHandler extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			space.injectCompiled(locLsa);
+			space.inject(locLsa);
 
 			final CompiledLSA recvLsa = services.getLSACompiler().parse(
 					message.getLSA(), RDFFormat.RDF_XML);
 			recvLsa.assertProperty(URI.create(POS_PROP_URI), idLoc.getId());
-			space.injectCompiled(recvLsa);
+			space.inject(recvLsa);
 
 			final LSAid recvId = recvLsa.getLSAid();
 			locMap.put(recvId.toString(), idLoc.toString());

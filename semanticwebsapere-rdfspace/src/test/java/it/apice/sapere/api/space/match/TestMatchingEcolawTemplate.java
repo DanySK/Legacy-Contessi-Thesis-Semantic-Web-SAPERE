@@ -1,7 +1,6 @@
 package it.apice.sapere.api.space.match;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
-import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
@@ -18,8 +17,6 @@ import it.apice.sapere.api.lsas.values.LongValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 import it.apice.sapere.api.lsas.values.SDescValue;
 import it.apice.sapere.api.lsas.values.URIValue;
-import it.apice.sapere.api.space.core.CompiledLSA;
-import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.impl.CompiledEcolawImpl;
 import it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl;
@@ -113,27 +110,7 @@ public class TestMatchingEcolawTemplate extends
 	 * @return An LSA-space
 	 */
 	private LSAspaceCore<StmtIterator> createDummySpace() {
-		return new LSAspaceImpl(new LSACompiler<StmtIterator>() {
-
-			@Override
-			public CompiledLSA<StmtIterator> parse(final String rdf,
-					final RDFFormat format) {
-				// Foo implementation, not relevant
-				return null;
-			}
-
-			@Override
-			public CompiledLSA<StmtIterator> compile(final LSA lsa) {
-				// Foo implementation, not relevant
-				return null;
-			}
-
-			@Override
-			public CompiledLSA<StmtIterator> create() {
-				// Foo implementation, not relevant
-				return null;
-			}
-		}, new PrivilegedLSAFactory() {
+		return new LSAspaceImpl(new PrivilegedLSAFactory() {
 
 			@Override
 			public String getNodeID() {

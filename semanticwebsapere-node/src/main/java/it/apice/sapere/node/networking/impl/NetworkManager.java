@@ -55,7 +55,7 @@ public final class NetworkManager {
 		LoggerFactoryImpl
 				.getInstance()
 				.getLogger(NetworkManager.class)
-				.debug(String.format(
+				.spy(String.format(
 						"Sending DIFFUSE message to %s (LSA-id: %s)",
 						neighbourId, message.getOperation().getLSAid()));
 		table.sendMessage(neighbourId, message);
@@ -72,7 +72,7 @@ public final class NetworkManager {
 	 */
 	public String registerNeighbour(final Neighbour neighbour) {
 		LoggerFactoryImpl.getInstance().getLogger(NetworkManager.class)
-				.info("Registering neighbour: " + neighbour.getId());
+				.log("Registering neighbour: " + neighbour.getId());
 		return table.addNeighbour(neighbour);
 	}
 

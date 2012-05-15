@@ -2,7 +2,7 @@ package it.apice.sapere.api.space.core;
 
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSAid;
-import it.apice.sapere.api.space.LSAspace;
+import it.apice.sapere.api.space.OntologyHandler;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
 import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
@@ -29,7 +29,7 @@ import it.apice.sapere.api.space.observation.SpaceObserver;
  * @param <RDFStmtIterType>
  *            The class that represents an iterator over RDF Statements
  */
-public interface LSAspaceCore<RDFStmtIterType> {
+public interface LSAspaceCore<RDFStmtIterType> extends OntologyHandler {
 
 	/* === LSA HANDLING === */
 
@@ -44,7 +44,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @throws SAPEREException
 	 *             An LSA with the same LSA-id has already been inserted
 	 */
-	LSAspace injectCompiled(CompiledLSA<RDFStmtIterType> lsa)
+	LSAspaceCore<RDFStmtIterType> inject(CompiledLSA<RDFStmtIterType> lsa)
 			throws SAPEREException;
 
 	/**
@@ -59,8 +59,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 *             The requested LSA does not exists in this LSA-space or
 	 *             parsing errors
 	 */
-	CompiledLSA<RDFStmtIterType> readCompiled(LSAid lsaId)
-			throws SAPEREException;
+	CompiledLSA<RDFStmtIterType> read(LSAid lsaId) throws SAPEREException;
 
 	/**
 	 * <p>
@@ -73,7 +72,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @throws SAPEREException
 	 *             The LSA is not in the LSA-space
 	 */
-	LSAspace removeCompiled(CompiledLSA<RDFStmtIterType> lsa)
+	LSAspaceCore<RDFStmtIterType> remove(CompiledLSA<RDFStmtIterType> lsa)
 			throws SAPEREException;
 
 	/**
@@ -98,7 +97,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @throws SAPEREException
 	 *             The LSA is not in the LSA-space
 	 */
-	LSAspace updateCompiled(CompiledLSA<RDFStmtIterType> lsa)
+	LSAspaceCore<RDFStmtIterType> update(CompiledLSA<RDFStmtIterType> lsa)
 			throws SAPEREException;
 
 	/**
@@ -108,7 +107,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * 
 	 * @return The LSAspace itself for further operations
 	 */
-	LSAspace clear();
+	LSAspaceCore<RDFStmtIterType> clear();
 
 	/* === ECOLAWS HANDLING === */
 
@@ -136,7 +135,8 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @throws SAPEREException
 	 *             Cannot apply the eco-law
 	 */
-	LSAspace apply(MatchingEcolaw law) throws SAPEREException;
+	LSAspaceCore<RDFStmtIterType> apply(MatchingEcolaw law)
+			throws SAPEREException;
 
 	/* === LSA-SPACE OBSERVATION === */
 
@@ -188,7 +188,8 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @throws SAPEREException
 	 *             Permission denied
 	 */
-	LSAspace observe(LSAid lsaId, LSAObserver obs) throws SAPEREException;
+	LSAspaceCore<RDFStmtIterType> observe(LSAid lsaId, LSAObserver obs)
+			throws SAPEREException;
 
 	/**
 	 * <p>
@@ -205,7 +206,7 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * @param obs
 	 *            The entity that is observing the LSA
 	 */
-	LSAspace ignore(LSAid lsaId, LSAObserver obs);
+	LSAspaceCore<RDFStmtIterType> ignore(LSAid lsaId, LSAObserver obs);
 
 	/* === THREAD-SAFETY SUPPORT === */
 
@@ -216,8 +217,10 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * <p>
 	 * In order to release the lock call <code>done()</code>.
 	 * </p>
+	 * 
+	 * @return The LSA-space itself
 	 */
-	void beginRead();
+	LSAspaceCore<RDFStmtIterType> beginRead();
 
 	/**
 	 * <p>
@@ -226,8 +229,10 @@ public interface LSAspaceCore<RDFStmtIterType> {
 	 * <p>
 	 * In order to release the lock call <code>done()</code>.
 	 * </p>
+	 * 
+	 * @return The LSA-space itself
 	 */
-	void beginWrite();
+	LSAspaceCore<RDFStmtIterType> beginWrite();
 
 	/**
 	 * <p>

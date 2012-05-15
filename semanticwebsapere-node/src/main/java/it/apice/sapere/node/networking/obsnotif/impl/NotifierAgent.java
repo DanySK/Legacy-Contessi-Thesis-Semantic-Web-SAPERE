@@ -5,9 +5,9 @@ import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
+import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.NodeServices;
-import it.apice.sapere.node.agents.impl.AbstractSAPEREAgent;
-import it.apice.sapere.node.agents.impl.AbstractSystemAgent;
+import it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber;
 import it.apice.sapere.node.networking.impl.Message;
@@ -28,6 +28,7 @@ import java.util.Hashtable;
  * @author Unknown
  * @author Paolo Contessi
  */
+@Deprecated
 public final class NotifierAgent extends AbstractSystemAgent 
 		implements SpaceObserver {
 
@@ -65,12 +66,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 
 	@Override
 	protected void behaviour(final NodeServices services) {
-		services.getLSAspace().beginWrite();
-		try {
-			services.getLSAspace().addSpaceObserver(this);
-		} finally {
-			services.getLSAspace().done();
-		}
+		services.getLSAspace().addSpaceObserver(this);
 
 		while (isRunning()) {
 			try {
@@ -82,7 +78,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 					manageNotification((Notification) note);
 				}
 			} catch (InterruptedException e) {
-				spy("Interrupted");
+				spy("interrupted");
 			}
 		}
 	}
@@ -126,8 +122,9 @@ public final class NotifierAgent extends AbstractSystemAgent
 		if (res1 != null) {
 			for (int i = 0; i < res1.size(); i++) {
 				Subscriber e = res1.get(i);
-				if (e instanceof AbstractSAPEREAgent
-						&& sub.getSubscriber() instanceof AbstractSAPEREAgent) {
+				if (e instanceof AbstractSAPEREAgentImpl
+						&& sub.getSubscriber() 
+						instanceof AbstractSAPEREAgentImpl) {
 					res1.remove(sub.getSubscriber());
 				} else {
 					if (e instanceof GuestSubscriber
@@ -143,8 +140,9 @@ public final class NotifierAgent extends AbstractSystemAgent
 		if (res2 != null) {
 			for (int i = 0; i < res1.size(); i++) {
 				Subscriber e = res1.get(i);
-				if (e instanceof AbstractSAPEREAgent
-						&& sub.getSubscriber() instanceof AbstractSAPEREAgent) {
+				if (e instanceof AbstractSAPEREAgentImpl
+						&& sub.getSubscriber() 
+						instanceof AbstractSAPEREAgentImpl) {
 					res2.remove(sub.getSubscriber());
 				} else {
 					if (e instanceof GuestSubscriber

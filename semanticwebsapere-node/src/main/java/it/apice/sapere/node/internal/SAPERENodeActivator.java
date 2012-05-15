@@ -19,10 +19,9 @@ import it.apice.sapere.node.LoggerFactory;
 import it.apice.sapere.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl;
 import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
-import it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent;
 import it.apice.sapere.node.networking.impl.NetworkManager;
-import it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent;
 
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -83,14 +82,14 @@ public class SAPERENodeActivator implements BundleActivator {
 		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL));
 
 		/* === WELCOME MESSAGE === */
-		
+
 		log("---------------------------------------------------------------");
 		log("SAPERE-node (Self-Aware Pervasive Service Ecosystems)");
 		log("---------------------------------------------------------------");
 		log("");
 
 		/* === OSGi SERVICES IMPORTATION === */
-		
+
 		log("Looking for services:");
 		initLSAFactory(context);
 		log("   + LSA Factory");
@@ -116,15 +115,15 @@ public class SAPERENodeActivator implements BundleActivator {
 		NodeServicesImpl.init(lsaFactory, lsaCompiler, lsaParser, lawFactory,
 				lawCompiler, fFactory, lsaSpace);
 
-		NotifierAgent.getInstance().start();
-		log("   + Remote observation enabled");
-
-		try {
-			GuestsHandlerAgent.getInstance().start();
-			log("   + TCP/IP communication supported");
-		} catch (Exception ex) {
-			log("   - TCP/IP communication NOT supported", ex);
-		}
+//		NotifierAgent.getInstance().start();
+//		log("   + \"Remote\" observation enabled");
+//
+//		try {
+//			GuestsHandlerAgent.getInstance().start();
+//			log("   + TCP/IP communication supported");
+//		} catch (Exception ex) {
+//			log("   - TCP/IP communication NOT supported", ex);
+//		}
 
 		try {
 			BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
@@ -135,10 +134,10 @@ public class SAPERENodeActivator implements BundleActivator {
 		}
 
 		/* === (CUSTOM) COMPONENTS CREATION === */
-		
+
 		log("");
 		log("Components/Agents creation:");
-		
+
 		final CustomStrategyPipelineStep syntPropsHdl = new SynthPropsHandler();
 		lsaSpace.getCustomStrategyPipeline()
 				.addStepAtTheBeginning(syntPropsHdl);
@@ -184,6 +183,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerSAPEREAgentsFactory(final BundleContext context) {
+		// SAPEREAgentsFactoryImpl
+		// .defineAccessPolicyClass(DefaultAccessPolicy.class);
 		regs.add(context.registerService(SAPEREAgentsFactory.class,
 				SAPEREAgentsFactoryImpl.getInstance(), null));
 	}
@@ -358,12 +359,28 @@ public class SAPERENodeActivator implements BundleActivator {
 
 		lsaSpace = context.getService(ref);
 		refs.add(ref);
+
+		try {
+			lsaSpace.loadOntology(getClass()
+					.getResource("sapere-model.owl").toURI());
+		} catch (URISyntaxException e) {
+			log("Unable to load SAPERE ontology", e);
+		}
 	}
 
 	@Override
 	public final void stop(final BundleContext context) throws Exception {
+		log("");
 		log("Shutting down:");
 
+		log("   - Killing agents");
+		SAPEREAgentsFactoryImpl.getInstance().killAll();
+		rManager.kill();
+		BluetoothManagerAgent.getInstance(NetworkManager.getInstance()).kill();
+//		GuestsHandlerAgent.getInstance().kill();
+//		NotifierAgent.getInstance().kill();
+		
+		
 		// Release imported services
 		for (ServiceReference<?> ref : refs) {
 			context.ungetService(ref);
@@ -393,7 +410,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            The message to be logged
 	 */
 	private void log(final String msg) {
-		LoggerFactoryImpl.getInstance().getLogger(this).info("node> " + msg);
+		LoggerFactoryImpl.getInstance().getLogger(this).log(msg);
 	}
 
 	/**
@@ -410,7 +427,7 @@ public class SAPERENodeActivator implements BundleActivator {
 		LoggerFactoryImpl
 				.getInstance()
 				.getLogger(this)
-				.warn(String.format("node> %s (reason: %s)", msg,
-						cause.getMessage()));
+				.warn(String.format("%s (reason: %s)", msg,
+						cause.getMessage()), null);
 	}
 }

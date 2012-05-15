@@ -24,15 +24,15 @@
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../it/apice/sapere/api/ecolaws/impl/ASAPRateImpl.html">ASAPRateImpl</a> <strong class="jxr_keyword">extends</strong> AbstractRateImpl&lt;Double&gt; <strong class="jxr_keyword">implements</strong>
 <a class="jxr_linenumber" name="15" href="#15">15</a>  		Rate&lt;Double&gt; {
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
-<a class="jxr_linenumber" name="17" href="#17">17</a>  	@Override
-<a class="jxr_linenumber" name="18" href="#18">18</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> getNextOccurrence(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> score,
-<a class="jxr_linenumber" name="19" href="#19">19</a>  			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> currentTime) {
-<a class="jxr_linenumber" name="20" href="#20">20</a>  		<strong class="jxr_keyword">return</strong> currentTime;
-<a class="jxr_linenumber" name="21" href="#21">21</a>  	}
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_comment">//	@Override</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_comment">//	public final long getNextOccurrence(final double score,</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_comment">//			final long currentTime) {</em>
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_comment">//		return currentTime;</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_comment">//	}</em>
 <a class="jxr_linenumber" name="22" href="#22">22</a>  
 <a class="jxr_linenumber" name="23" href="#23">23</a>  	@Override
 <a class="jxr_linenumber" name="24" href="#24">24</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> Double getRateValue() {
-<a class="jxr_linenumber" name="25" href="#25">25</a>  		<strong class="jxr_keyword">return</strong> 0.0;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  		<strong class="jxr_keyword">return</strong> Double.POSITIVE_INFINITY;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  	}
 <a class="jxr_linenumber" name="27" href="#27">27</a>  
 <a class="jxr_linenumber" name="28" href="#28">28</a>  	@Override

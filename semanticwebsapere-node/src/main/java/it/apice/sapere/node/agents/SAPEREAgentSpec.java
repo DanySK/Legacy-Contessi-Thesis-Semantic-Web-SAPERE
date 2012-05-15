@@ -2,8 +2,7 @@ package it.apice.sapere.node.agents;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.space.LSAspace;
-
-import org.apache.log4j.Logger;
+import it.apice.sapere.node.LogUtils;
 
 /**
  * <p>
@@ -31,6 +30,6 @@ public interface SAPEREAgentSpec {
 	 *             Each uncaught exception occurred in the agent main-cycle.
 	 *             Causes agent termination
 	 */
-	void behaviour(LSAFactory factory, LSAspace space, Logger out)
+	void behaviour(LSAFactory factory, LSAspace space, LogUtils out)
 			throws Exception;
 }

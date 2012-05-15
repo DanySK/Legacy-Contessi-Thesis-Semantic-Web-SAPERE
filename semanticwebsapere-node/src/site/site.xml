@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Semantic Web SAPERE">
+	<bannerLeft>
+		<name>SemanticWebSAPERE - Node</name>
+		<src>/images/logo.png</src>
+	</bannerLeft>
+	<bannerRight>
+		<name>Maven</name>
+		<src>http://maven.apache.org/images/maven-logo-2.gif</src>
+		<href>http://maven.apache.org</href>
+	</bannerRight>
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-stylus-skin</artifactId>
+	</skin>
+	<publishDate format="dd MMM yyyy" position="left" />
+	<body>
+		<links>
+			<item name="SAPERE Project" href="http://www.sapere-project.eu" />
+			<item name="APICe Lab" href="http://www.apice.unibo.it/" />
+			<item name="Thesis space" href="http://www.apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere/" />
+			<item name="Contact" href="mailto:paolo.contessi@studio.unibo.it/" />
+		</links>
+        
+        <menu name="Project Workflow">
+        	
+        </menu>
+        
+        <menu ref="reports"/>
+
+        <menu ref="parent"/> 
+        <menu ref="modules"/> 
+	</body>
+</project>

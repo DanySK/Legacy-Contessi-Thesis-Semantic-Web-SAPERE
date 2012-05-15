@@ -4,6 +4,8 @@ import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
+import it.apice.sapere.api.space.core.CompiledLSA;
+import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.LSAEvent;
 import it.apice.sapere.api.space.observation.LSAObserver;
@@ -45,21 +47,30 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 	/**
 	 * <p>
-	 * Creates a new SAPEREFactory.
+	 * Creates a new LSAFactory.
 	 * </p>
 	 * 
-	 * @return A reference to a SAPEREFactory
+	 * @return A reference to a LSAFactory
 	 */
 	protected abstract LSAFactory createFactory();
 
 	/**
 	 * <p>
-	 * Creates a new Extended SAPEREFactory.
+	 * Creates a new Extended PrivilegedLSAFactory.
 	 * </p>
 	 * 
-	 * @return A reference to an ExtSAPEREFactory
+	 * @return A reference to an PrivilegedLSAFactory
 	 */
 	protected abstract PrivilegedLSAFactory createPrivilegedFactory();
+
+	/**
+	 * <p>
+	 * Creates a new Extended LSACompiler.
+	 * </p>
+	 * 
+	 * @return A reference to an LSACompiler
+	 */
+	protected abstract LSACompiler<RDFStmtIterType> createLSACompiler();
 
 	/**
 	 * <p>
@@ -103,9 +114,11 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 		try {
 			final LSA lsa = createFactory().createLSA();
-			space.inject(lsa);
+			final CompiledLSA<RDFStmtIterType> cLsa = createLSACompiler()
+					.compile(lsa);
+			space.inject(cLsa);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
-			space.inject(lsa);
+			space.inject(cLsa);
 			fail("Double insertion should be avoided and notified");
 		} catch (Exception ex) {
 			assertTrue(ex instanceof SAPEREException);
@@ -149,7 +162,8 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 		}
 
 		try {
-			space.remove(createFactory().createLSA());
+			space.remove(createLSACompiler().compile(
+					createFactory().createLSA()));
 			fail("Should not accept to remove "
 					+ "something that is not in the space");
 		} catch (Exception ex) {
@@ -172,7 +186,8 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 		}
 
 		try {
-			space.update(createFactory().createLSA());
+			space.update(createLSACompiler().compile(
+					createFactory().createLSA()));
 			fail("Should not accept to update "
 					+ "something that is not in the space");
 		} catch (Exception ex) {
@@ -204,7 +219,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 		try {
 			final LSA lsa = createFactory().createLSA();
-			space.inject(lsa);
+			space.inject(createLSACompiler().compile(lsa));
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to register a NULL observer");
@@ -238,7 +253,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 		try {
 			final LSA lsa = createFactory().createLSA();
-			space.inject(lsa);
+			space.inject(createLSACompiler().compile(lsa));
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			space.observe(lsa.getLSAId(), null);
 			fail("Should not accept to unregister a NULL observer");
@@ -261,6 +276,9 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 	public final void testScenario() throws Exception {
 		try {
 			final LSA lsa = createFactory().createLSA();
+			CompiledLSA<RDFStmtIterType> cLsa = createLSACompiler()
+					.compile(lsa);
+
 			final LSAObserver scObs = createScenarioObserver(lsa);
 
 			assertTrue(sObs.noEventOccurred());
@@ -271,19 +289,19 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 
 			// 2. Inject and read the same LSA
-			final LSA rLsa = space.inject(lsa).read(lsa.getLSAId());
+			final CompiledLSA<RDFStmtIterType> rLsa = space.inject(cLsa).read(
+					lsa.getLSAId());
 
 			// (added to ignore additions from the reasoner)
 			try {
-			rLsa.getSemanticDescription().removeProperty(
-					createFactory().createProperty(
-							new URI("http://www.w3.org/2002/07/owl#sameAs")));
+				rLsa.clearProperty(new URI(
+						"http://www.w3.org/2002/07/owl#sameAs"));
 			} catch (Exception ex) {
 				// No reasoner used
 				assertTrue(ex instanceof IllegalArgumentException);
 			}
 
-			assertEquals(lsa, rLsa);
+			assertEquals(cLsa, rLsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_INJECT));
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_READ));
@@ -293,12 +311,15 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 					createFactory().createProperty(
 							new URI("http://localhost:8080/sapere#prop"),
 							createFactory().createPropertyValue(Boolean.TRUE)));
-			space.update(lsa);
+
+			cLsa = createLSACompiler().compile(lsa);
+
+			space.update(cLsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_UPDATE));
 
 			// 4. Remove the LSA
-			space.remove(lsa);
+			space.remove(cLsa);
 
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_REMOVE));
 

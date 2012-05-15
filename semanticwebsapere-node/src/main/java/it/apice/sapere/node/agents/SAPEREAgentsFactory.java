@@ -47,4 +47,32 @@ public interface SAPEREAgentsFactory {
 	 *             Invalid agentId
 	 */
 	SAPEREAgent getAgent(String agentLocalId) throws SAPEREException;
+
+	/**
+	 * <p>
+	 * Creates an agent like
+	 * {@link SAPEREAgentsFactory#createAgent(String, SAPEREAgentSpec)}, but
+	 * with FULL ACCESS TO NODE SERVICES.
+	 * </p>
+	 * <p>
+	 * THIS METHOD SHOULD BE HIDDEN WHEN LSA MODEL SUPPORT IS PROVIDED.
+	 * </p>
+	 * 
+	 * @param agentLocalId
+	 *            The local name of the agent (a URI fragment)
+	 * @param spec
+	 *            The agent behaviour specification
+	 * @return The {@link SAPEREAgent}, linked to the node
+	 * @throws SAPEREException
+	 *             Invalid agentId
+	 */
+	SAPEREAgent createSysAgent(String agentLocalId,
+			final SAPERESysAgentSpec spec) throws SAPEREException;
+
+	/**
+	 * <p>
+	 * Kills all {@link SAPEREAgent}s.
+	 * </p>
+	 */
+	void killAll();
 }

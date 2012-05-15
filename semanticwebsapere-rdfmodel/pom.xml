@@ -34,14 +34,6 @@
 			<artifactId>xml-apis</artifactId>
 			<version>2.0.2</version>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mindswap.pellet</groupId>
-			<artifactId>commons-logging</artifactId>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement></dependencyManagement>
@@ -63,6 +55,22 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.4.0</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<!-- Optional directory to put findbugs xdoc xml report -->
+					<xmlOutputDirectory>target/site</xmlOutputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
 	<name>SAPERE RDF-based model</name>
 	<description>This project provides an implementation of the SAPERE API, which concerns with RDF-based LSAs</description>
 </project>

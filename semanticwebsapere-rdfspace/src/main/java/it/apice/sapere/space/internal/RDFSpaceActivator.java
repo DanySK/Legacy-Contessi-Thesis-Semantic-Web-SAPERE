@@ -49,10 +49,10 @@ public class RDFSpaceActivator implements BundleActivator {
 
 		final PrivilegedLSAFactory fact = retrieveLSAFactoryService(context);
 
-		final LSACompiler<StmtIterator> comp = registerLSACompiler(context,
-				fact);
+		registerLSACompiler(context, fact);
 		registerEcolawCompiler(context);
-		registerLSAspace(context, comp, fact);
+
+		registerLSAspace(context, fact);
 	}
 
 	/**
@@ -118,18 +118,15 @@ public class RDFSpaceActivator implements BundleActivator {
 	 * 
 	 * @param context
 	 *            Bundle Context
-	 * @param comp
-	 *            The {@link LSACompiler}
 	 * @param fact
 	 *            The {@link PrivilegedLSAFactory}
 	 */
 	private void registerLSAspace(final BundleContext context,
-			final LSACompiler<StmtIterator> comp,
 			final PrivilegedLSAFactory fact) {
-		lsaSpaceServiceReg = context.registerService(LSAspaceCore.class
-				.getName(), new LSAspaceImpl(comp, fact,
-				getReasoningLevel(System.getProperty(REASONING_LEVEL))),
-				declareSpaceProps());
+		lsaSpaceServiceReg = context.registerService(
+				LSAspaceCore.class.getName(),
+				new LSAspaceImpl(fact, getReasoningLevel(System
+						.getProperty(REASONING_LEVEL))), declareSpaceProps());
 
 		if (lsaSpaceServiceReg != null) {
 			log("LSA-space REGISTERED.");

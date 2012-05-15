@@ -4,9 +4,8 @@ import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.ReactionManagerObserver;
+import it.apice.sapere.node.LogUtils;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
-
-import org.apache.log4j.Logger;
 
 /**
  * <p>
@@ -20,7 +19,7 @@ import org.apache.log4j.Logger;
 public class ReactionManagerLogger implements ReactionManagerObserver {
 
 	/** Logger reference. */
-	private final transient Logger logger;
+	private final transient LogUtils logger;
 
 	/**
 	 * <p>
@@ -36,23 +35,24 @@ public class ReactionManagerLogger implements ReactionManagerObserver {
 
 	@Override
 	public final void ecolawAdded(final CompiledEcolaw law) {
-		logger.info("reaction_manager$ Eco-law " + law.getLabel() + " ADDED");
+		logger.log("reaction_manager$ Eco-law " + law.getLabel() + " ADDED\n" 
+				+ law.toString());
 	}
 
 	@Override
 	public final void ecolawRemoved(final CompiledEcolaw law) {
-		logger.info("reaction_manager$ Eco-law " + law.getLabel() + " REMOVED");
+		logger.log("reaction_manager$ Eco-law " + law.getLabel() + " REMOVED");
 	}
 
 	@Override
 	public final void ecolawEnabled(final MatchingEcolaw law, final long time) {
-		logger.info("reaction_manager$ Eco-law " + law.getLabel()
+		logger.log("reaction_manager$ Eco-law " + law.getLabel()
 				+ " chosen as next");
 	}
 
 	@Override
 	public final void ecolawApplied(final MatchingEcolaw law, final long time) {
-		logger.info("reaction_manager$ Eco-law " + law.getLabel()
+		logger.log("reaction_manager$ Eco-law " + law.getLabel()
 				+ " applied, looking for next");
 	}
 

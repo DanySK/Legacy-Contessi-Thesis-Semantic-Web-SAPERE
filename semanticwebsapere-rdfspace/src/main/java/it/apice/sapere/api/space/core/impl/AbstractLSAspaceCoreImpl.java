@@ -4,10 +4,8 @@ import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
-import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.CompiledLSA;
-import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
@@ -90,9 +88,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** RDF Graph Store (the real one). */
 	private final transient GraphStore modelGraph;
 
-	/** Reference to an LSACompiler. */
-	private final transient LSACompiler<StmtIterator> compiler;
-
 	/** Reference to a Jena2SAPEREConverter. */
 	private final transient Jena2SAPEREConverter converter;
 
@@ -103,8 +98,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * Optimization map: stores every parsed spqrql query in order to avoid
 	 * re-parsing.
 	 */
-	private final transient Map<String, Query> parsedSparqlQueries = 
-			new HashMap<String, Query>();
+	private final transient 
+		Map<String, Query> parsedSparqlQueries = new HashMap<String, Query>();
 
 	/** rdf:type property. */
 	private final transient Property rdfTypeProp;
@@ -134,15 +129,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
 	 * </p>
 	 * 
-	 * @param lsaCompiler
-	 *            Reference to a {@link LSACompiler}
 	 * @param lsaFactory
 	 *            Reference to a {@link PrivilegedLSAFactory}
 	 */
 	public AbstractLSAspaceCoreImpl(
-			final LSACompiler<StmtIterator> lsaCompiler,
 			final PrivilegedLSAFactory lsaFactory) {
-		this(lsaCompiler, lsaFactory, ReasoningLevel.NONE);
+		this(lsaFactory, ReasoningLevel.NONE);
 	}
 
 	/**
@@ -150,20 +142,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * Builds a new {@link AbstractLSAspaceCoreImpl}.
 	 * </p>
 	 * 
-	 * @param lsaCompiler
-	 *            Reference to a {@link LSACompiler}
 	 * @param lsaFactory
 	 *            Reference to a {@link PrivilegedLSAFactory}
 	 * @param rLevel
 	 *            The {@link ReasoningLevel}
 	 */
-	public AbstractLSAspaceCoreImpl(
-			final LSACompiler<StmtIterator> lsaCompiler,
-			final PrivilegedLSAFactory lsaFactory, 
+	public AbstractLSAspaceCoreImpl(final PrivilegedLSAFactory lsaFactory, 
 			final ReasoningLevel rLevel) {
-		if (lsaCompiler == null) {
-			throw new IllegalArgumentException("Invalid LSACompiler provided");
-		}
 
 		if (lsaFactory == null) {
 			throw new IllegalArgumentException("Invalid LSAFactory provided");
@@ -180,7 +165,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		// Other stuff initialization
 		rdfTypeProp = model.createProperty(RDF_TYPE);
-		compiler = lsaCompiler;
 		converter = new Jena2SAPEREConverter(lsaFactory);
 		nodeId = lsaFactory.getNodeID();
 
@@ -239,16 +223,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		model.leaveCriticalSection();
 	}
 
-//	@Override
-//	public final LSAspace inject(final LSA lsa) throws SAPEREException {
-//		if (lsa == null) {
-//			throw new IllegalArgumentException("Invalid LSA");
-//		}
-//
-//		injectCompiled(compile(lsa));
-//		return this;
-//	}
-
 	/**
 	 * <p>
 	 * Checks if LSA exists in the model.
@@ -262,37 +236,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		return lsaExist(model.createResource(lsaId.toString()));
 	}
 
-//	@Override
-//	public final LSA read(final LSAid lsaId) throws SAPEREException {
-//		if (lsaId == null) {
-//			throw new IllegalArgumentException("Invalid LSA-id");
-//		}
-//
-//		return retrieveLSA(readCompiled(lsaId));
-//	}
-
-//	@Override
-//	public final LSAspace remove(final LSA lsa) throws SAPEREException {
-//		if (lsa == null) {
-//			throw new IllegalArgumentException("Invalid LSA");
-//		}
-//
-//		removeCompiled(compile(lsa));
-//		return this;
-//	}
-//
-//	@Override
-//	public final LSAspace update(final LSA lsa) throws SAPEREException {
-//		if (lsa == null) {
-//			throw new IllegalArgumentException("Invalid LSA");
-//		}
-//
-//		updateCompiled(compile(lsa));
-//		return this;
-//	}
-
 	@Override
-	public final LSAspace observe(final LSAid lsaId, final LSAObserver obs) {
+	public final LSAspaceCore<StmtIterator> observe(final LSAid lsaId,
+			final LSAObserver obs) {
 		if (lsaId == null) {
 			throw new IllegalArgumentException("Invalid LSA-id");
 		}
@@ -324,7 +270,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace ignore(final LSAid lsaId, final LSAObserver obs) {
+	public final LSAspaceCore<StmtIterator> ignore(final LSAid lsaId,
+			final LSAObserver obs) {
 		if (lsaId == null) {
 			throw new IllegalArgumentException("Invalid LSA-id");
 		}
@@ -352,7 +299,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace clear() {
+	public final LSAspaceCore<StmtIterator> clear() {
 		acquireWriteLock();
 		try {
 			model.removeAll();
@@ -423,7 +370,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace apply(final MatchingEcolaw law)
+	public final LSAspaceCore<StmtIterator> apply(final MatchingEcolaw law)
 			throws SAPEREException {
 		if (law == null) {
 			throw new IllegalArgumentException(
@@ -525,13 +472,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @param type
 	 *            Event type
 	 */
-	private void notifySpaceOperation(final String msg,
-			final LSAid id, 
+	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
 			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg,
-						new LSAid[] { id }, type));
+				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id },
+						type));
 			}
 		}
 	}
@@ -612,15 +558,19 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final void beginRead() {
+	public final LSAspaceCore<StmtIterator> beginRead() {
 		mutex.readLock().lock();
 		isWriting = false;
+
+		return this;
 	}
 
 	@Override
-	public final void beginWrite() {
+	public final LSAspaceCore<StmtIterator> beginWrite() {
 		mutex.writeLock().lock();
 		isWriting = true;
+
+		return this;
 	}
 
 	@Override
@@ -633,8 +583,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace injectCompiled(final CompiledLSA<StmtIterator> lsa)
-			throws SAPEREException {
+	public final LSAspaceCore<StmtIterator> inject(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
 		}
@@ -652,8 +602,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			// Notification
 			final String msg = String
 					.format("LSA injected: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa,
-					SpaceOperationType.AGENT_INJECT);
+			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_INJECT);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_INJECT);
 
@@ -689,7 +638,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final CompiledLSA<StmtIterator> readCompiled(final LSAid lsaId)
+	public final CompiledLSA<StmtIterator> read(final LSAid lsaId)
 			throws SAPEREException {
 		if (lsaId == null) {
 			throw new IllegalArgumentException("Invalid LSA-id provided");
@@ -741,8 +690,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace removeCompiled(final CompiledLSA<StmtIterator> lsa)
-			throws SAPEREException {
+	public final LSAspaceCore<StmtIterator> remove(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
 		}
@@ -760,8 +709,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			// Notification
 			final String msg = String.format("LSA removed: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa,
-					SpaceOperationType.AGENT_REMOVE);
+			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_REMOVE);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_REMOVE);
 
@@ -797,8 +745,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final LSAspace updateCompiled(final CompiledLSA<StmtIterator> lsa)
-			throws SAPEREException {
+	public final LSAspaceCore<StmtIterator> update(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
 		if (lsa == null) {
 			throw new IllegalArgumentException("Invalid compiled LSA provided");
 		}
@@ -813,14 +761,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 
 			disableNotifications();
-			removeCompiled(readCompiled(lsa.getLSAid()));
-			injectCompiled(lsa);
+			remove(read(lsa.getLSAid()));
+			inject(lsa);
 			enableNotifications();
 
 			// Notification
 			final String msg = String.format("LSA updated: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa,
-					SpaceOperationType.AGENT_UPDATE);
+			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_UPDATE);
 			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_UPDATE);
 
@@ -930,19 +877,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	@Override
 	public final URI[] getLoadedOntologies() {
 		return loadedOntos.toArray(new URI[loadedOntos.size()]);
-	}
-
-	/**
-	 * <p>
-	 * Compiles the LSA.
-	 * </p>
-	 * 
-	 * @param lsa
-	 *            The LSA to be compiled
-	 * @return A CompiledLSA
-	 */
-	private CompiledLSA<StmtIterator> compile(final LSA lsa) {
-		return compiler.compile(lsa);
 	}
 
 	/**

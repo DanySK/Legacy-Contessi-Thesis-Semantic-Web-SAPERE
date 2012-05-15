@@ -2,6 +2,7 @@ package it.apice.sapere.space;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.PrivilegedLSAFactory;
+import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 
 import javax.inject.Inject;
@@ -35,6 +36,10 @@ public class TestLSAspace extends AbstractTestLSAspaceCore<StmtIterator> {
 	/** Reference to the LSAspace to be tested. */
 	@Inject
 	private LSAspaceCore<StmtIterator> lsaSpace;
+
+	/** Reference to the LSAspace to be tested. */
+	@Inject
+	private LSACompiler<StmtIterator> lsaCompiler;
 
 	/**
 	 * <p>
@@ -72,6 +77,11 @@ public class TestLSAspace extends AbstractTestLSAspaceCore<StmtIterator> {
 	@Override
 	protected final LSAspaceCore<StmtIterator> createSpace() {
 		return lsaSpace;
+	}
+
+	@Override
+	protected final LSACompiler<StmtIterator> createLSACompiler() {
+		return lsaCompiler;
 	}
 
 }

@@ -161,4 +161,47 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 		return res.toArray(new URI[res.size()]);
 	}
 
+	@Override
+	public final int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result *= prime;
+		if (lsaId != null) {
+			result += lsaId.hashCode();
+		}
+		
+		result *= prime;
+		result += toString(RDFFormat.RDF_XML).hashCode();
+
+		return result;
+	}
+
+	@Override
+	public final boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		CompiledLSAImpl other = (CompiledLSAImpl) obj;
+		if (lsaId == null) {
+			if (other.lsaId != null) {
+				return false;
+			}
+		} else if (!lsaId.equals(other.lsaId)) {
+			return false;
+		}
+		String content = toString(RDFFormat.RDF_XML);
+		String oContent = other.toString(RDFFormat.RDF_XML);
+		if (!content.equals(oContent)) {
+			return false;
+		}
+
+		return true;
+	}
+
 }

@@ -2,7 +2,6 @@ package it.apice.sapere.node;
 
 import it.apice.sapere.node.agents.SAPEREAgent;
 
-import org.apache.log4j.Logger;
 import org.osgi.framework.BundleActivator;
 
 /**
@@ -22,9 +21,9 @@ public interface LoggerFactory {
 	 * 
 	 * @param agent
 	 *            The agent that will use it
-	 * @return A {@link Logger} reference
+	 * @return A {@link LogUtils} reference
 	 */
-	Logger getLogger(final SAPEREAgent agent);
+	LogUtils getLogger(final SAPEREAgent agent);
 
 	/**
 	 * <p>
@@ -33,9 +32,9 @@ public interface LoggerFactory {
 	 * 
 	 * @param bActiv
 	 *            A {@link BundleActivator}
-	 * @return A {@link Logger} reference
+	 * @return A {@link LogUtils} reference
 	 */
-	Logger getLogger(final BundleActivator bActiv);
+	LogUtils getLogger(final BundleActivator bActiv);
 	
 	/**
 	 * <p>
@@ -44,7 +43,7 @@ public interface LoggerFactory {
 	 * 
 	 * @param clazz
 	 *            A {@link Class}
-	 * @return A {@link Logger} reference
+	 * @return A {@link LogUtils} reference
 	 */
-	Logger getLogger(final Class<?> clazz);
+	LogUtils getLogger(final Class<?> clazz);
 }
