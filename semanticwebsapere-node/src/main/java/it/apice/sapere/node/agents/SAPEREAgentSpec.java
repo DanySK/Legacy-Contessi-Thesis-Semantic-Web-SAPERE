@@ -26,10 +26,12 @@ public interface SAPEREAgentSpec {
 	 * @param out
 	 *            Reference to logging facility (should be used in place of
 	 *            System.out and System.err)
+	 * @param me
+	 *            Reference to the agent itself
 	 * @throws Exception
 	 *             Each uncaught exception occurred in the agent main-cycle.
 	 *             Causes agent termination
 	 */
-	void behaviour(LSAFactory factory, LSAspace space, LogUtils out)
-			throws Exception;
+	void behaviour(LSAFactory factory, LSAspace space, LogUtils out,
+			SAPEREAgent me) throws Exception;
 }

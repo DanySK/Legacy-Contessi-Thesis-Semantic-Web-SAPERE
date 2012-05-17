@@ -56,7 +56,7 @@ public class UserAgentImpl extends AbstractSAPEREAgentImpl {
 	@Override
 	protected final void execute() throws Exception {
 		spec.behaviour(NodeServicesImpl.getInstance().getLSAFactory(), sap,
-				LoggerFactoryImpl.getInstance().getLogger(this));
+				LoggerFactoryImpl.getInstance().getLogger(this), this);
 	}
 
 }

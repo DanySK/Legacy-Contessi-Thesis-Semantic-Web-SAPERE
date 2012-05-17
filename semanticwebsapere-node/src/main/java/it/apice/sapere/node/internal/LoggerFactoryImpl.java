@@ -28,10 +28,10 @@ import org.osgi.framework.BundleActivator;
 public final class LoggerFactoryImpl implements LoggerFactory {
 
 	/** Maximum number of log file backups. */
-	private static final int NUMBER_OF_LOG_BACKUPS = 1;
+	private static final int NUMBER_OF_LOG_BACKUPS = 2;
 
 	/** The maximum size of the log file. */
-	private static final String LOG_FILE_SIZE = "4096KB";
+	private static final String LOG_FILE_SIZE = "8192KB";
 
 	/** Pattern used for each Console's log entry. */
 	private static final transient String CONSOLE_PATTERN = "%-5p $%m%n";
@@ -74,7 +74,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 
 		level = lLevel;
 		deep = deepDebug;
-		
+
 		LogManager.resetConfiguration();
 	}
 
@@ -133,8 +133,8 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		}
 
 		final RollingFileAppender app = new RollingFileAppender(
-				new PatternLayout(pattern), String.format("logs/sapere-%s.log",
-						agentId));
+				new PatternLayout(pattern), String.format(
+						"sapere-logs/sapere-%s.log", agentId));
 		app.setMaxBackupIndex(NUMBER_OF_LOG_BACKUPS);
 		app.setMaxFileSize(LOG_FILE_SIZE);
 		app.setThreshold(Level.ALL);
@@ -169,7 +169,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 *            Requestor name
 	 * @return A {@link Logger} reference
 	 */
-	private LogUtils retrieveLogger(final Class<?> reqClass, 
+	private LogUtils retrieveLogger(final Class<?> reqClass,
 			final String reqName) {
 		final Logger logger = Logger.getLogger(reqClass);
 		if (!inited.contains(logger)) {
@@ -177,7 +177,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 				initLogger(logger, reqName);
 				inited.add(logger);
 			} catch (IOException e) {
-				throw new IllegalStateException("Cannot " 
+				throw new IllegalStateException("Cannot "
 						+ "initialize log file", e);
 			}
 		}

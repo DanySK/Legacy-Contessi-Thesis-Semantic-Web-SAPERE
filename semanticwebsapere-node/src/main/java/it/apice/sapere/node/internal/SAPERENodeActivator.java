@@ -115,17 +115,18 @@ public class SAPERENodeActivator implements BundleActivator {
 		NodeServicesImpl.init(lsaFactory, lsaCompiler, lsaParser, lawFactory,
 				lawCompiler, fFactory, lsaSpace);
 
-//		NotifierAgent.getInstance().start();
-//		log("   + \"Remote\" observation enabled");
-//
-//		try {
-//			GuestsHandlerAgent.getInstance().start();
-//			log("   + TCP/IP communication supported");
-//		} catch (Exception ex) {
-//			log("   - TCP/IP communication NOT supported", ex);
-//		}
+		// NotifierAgent.getInstance().start();
+		// log("   + \"Remote\" observation enabled");
+		//
+		// try {
+		// GuestsHandlerAgent.getInstance().start();
+		// log("   + TCP/IP communication supported");
+		// } catch (Exception ex) {
+		// log("   - TCP/IP communication NOT supported", ex);
+		// }
 
 		try {
+			System.setProperty("bluecove.debug.log4j", "false");
 			BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
 					.start();
 			log("   + Bluetooth communication supported");
@@ -147,10 +148,12 @@ public class SAPERENodeActivator implements BundleActivator {
 		log("   + Diffusion handler");
 
 		// Reaction manager initialization
-		rManager = new ReactionManagerImpl(new DefaultReactionsScheduler(),
-				lawCompiler);
+		final ReactionManagerImpl rMng = new ReactionManagerImpl(
+				new DefaultReactionsScheduler(), lawCompiler);
+		rManager = rMng;
 		rManager.addReactionManagerObserver(
 				new ReactionManagerLogger(rManager));
+		lsaSpace.addSpaceObserver(rMng);
 		rManager.spawn();
 
 		// Reaction manager registration
@@ -166,6 +169,8 @@ public class SAPERENodeActivator implements BundleActivator {
 		log("   + Log Facility");
 		registerSAPEREAgentsFactory(context);
 		log("   + SAPERE Agents Factory");
+		registerReactionManager(context);
+		log("   + Reaction Manager");
 
 		log("");
 		log("---------------------------------------------------------------");
@@ -200,6 +205,19 @@ public class SAPERENodeActivator implements BundleActivator {
 	private void registerLogFactory(final BundleContext context) {
 		regs.add(context.registerService(LoggerFactory.class,
 				LoggerFactoryImpl.getInstance(), null));
+	}
+
+	/**
+	 * <p>
+	 * Registers the Reaction Manager service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 */
+	private void registerReactionManager(final BundleContext context) {
+		regs.add(context.registerService(ReactionManager.class, 
+				rManager, null));
 	}
 
 	/**
@@ -361,8 +379,8 @@ public class SAPERENodeActivator implements BundleActivator {
 		refs.add(ref);
 
 		try {
-			lsaSpace.loadOntology(getClass()
-					.getResource("sapere-model.owl").toURI());
+			lsaSpace.loadOntology(getClass().getResource("sapere-model.owl")
+					.toURI());
 		} catch (URISyntaxException e) {
 			log("Unable to load SAPERE ontology", e);
 		}
@@ -377,10 +395,9 @@ public class SAPERENodeActivator implements BundleActivator {
 		SAPEREAgentsFactoryImpl.getInstance().killAll();
 		rManager.kill();
 		BluetoothManagerAgent.getInstance(NetworkManager.getInstance()).kill();
-//		GuestsHandlerAgent.getInstance().kill();
-//		NotifierAgent.getInstance().kill();
-		
-		
+		// GuestsHandlerAgent.getInstance().kill();
+		// NotifierAgent.getInstance().kill();
+
 		// Release imported services
 		for (ServiceReference<?> ref : refs) {
 			context.ungetService(ref);
@@ -427,7 +444,7 @@ public class SAPERENodeActivator implements BundleActivator {
 		LoggerFactoryImpl
 				.getInstance()
 				.getLogger(this)
-				.warn(String.format("%s (reason: %s)", msg,
-						cause.getMessage()), null);
+				.warn(String.format("%s (reason: %s)", msg, cause.getMessage()),
+						null);
 	}
 }

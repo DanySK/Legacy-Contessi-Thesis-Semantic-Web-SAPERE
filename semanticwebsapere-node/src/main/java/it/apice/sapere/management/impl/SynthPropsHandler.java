@@ -47,9 +47,9 @@ public class SynthPropsHandler implements CustomStrategyPipelineStep {
 
 		final Calendar now = Calendar.getInstance();
 		lsa.clearProperty(CREATION_TIME_PROP);
-		lsa.assertProperty(CREATION_TIME_PROP, now.toString());
+		lsa.assertProperty(CREATION_TIME_PROP, now.getTime().toString());
 		lsa.clearProperty(LAST_MOD_PROP);
-		lsa.assertProperty(LAST_MOD_PROP, now.toString());
+		lsa.assertProperty(LAST_MOD_PROP, now.getTime().toString());
 
 		return lsa;
 	}

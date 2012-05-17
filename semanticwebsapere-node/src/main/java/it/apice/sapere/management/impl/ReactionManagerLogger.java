@@ -30,29 +30,30 @@ public class ReactionManagerLogger implements ReactionManagerObserver {
 	 *            The manager that will be observed
 	 */
 	public ReactionManagerLogger(final ReactionManager manager) {
-		logger = LoggerFactoryImpl.getInstance().getLogger(manager);
+		assert manager != null;
+		logger = LoggerFactoryImpl.getInstance().getLogger(getClass());
 	}
 
 	@Override
 	public final void ecolawAdded(final CompiledEcolaw law) {
-		logger.log("reaction_manager$ Eco-law " + law.getLabel() + " ADDED\n" 
+		logger.log("reaction_manager$ Eco-law" + law.getLabel() + " ADDED\n" 
 				+ law.toString());
 	}
 
 	@Override
 	public final void ecolawRemoved(final CompiledEcolaw law) {
-		logger.log("reaction_manager$ Eco-law " + law.getLabel() + " REMOVED");
+		logger.log("reaction_manager$ Eco-law" + law.getLabel() + " REMOVED");
 	}
 
 	@Override
 	public final void ecolawEnabled(final MatchingEcolaw law, final long time) {
-		logger.log("reaction_manager$ Eco-law " + law.getLabel()
+		logger.spy("reaction_manager$ Eco-law" + law.getLabel()
 				+ " chosen as next");
 	}
 
 	@Override
 	public final void ecolawApplied(final MatchingEcolaw law, final long time) {
-		logger.log("reaction_manager$ Eco-law " + law.getLabel()
+		logger.spy("reaction_manager$ Eco-law" + law.getLabel()
 				+ " applied, looking for next");
 	}
 

@@ -29,13 +29,13 @@ import java.util.Set;
 public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 
 	/** Reference to the LSA-space. */
-	private final transient LSAspaceCore/*<StmtIterator>*/ space;
+	private final transient LSAspaceCore/* <StmtIterator> */space;
 
 	/** Reference to the requestor. */
 	private transient SAPEREAgent agent;
 
 	/** Reference to a LSA Compiler. */
-	private final transient LSACompiler/*<StmtIterator>*/ compiler;
+	private final transient LSACompiler/* <StmtIterator> */compiler;
 
 	/** Reference to a LSA Parser. */
 	private final transient LSAParser parser;
@@ -52,8 +52,8 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 	 * @param lsaParser
 	 *            Reference to a LSA Parser
 	 */
-	public AbstractAccessPolicy(final LSAspaceCore/*<StmtIterator>*/ spaceRef,
-			final LSACompiler/*<StmtIterator>*/ lsaCompiler,
+	public AbstractAccessPolicy(final LSAspaceCore/* <StmtIterator> */spaceRef,
+			final LSACompiler/* <StmtIterator> */lsaCompiler,
 			final LSAParser lsaParser) {
 		if (spaceRef == null) {
 			throw new IllegalArgumentException(
@@ -88,17 +88,27 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 
 	@Override
 	public final void loadOntology(final URI ontoURI) throws SAPEREException {
-		space.loadOntology(ontoURI);
-		LoggerFactoryImpl
-				.getInstance()
-				.getLogger(AbstractAccessPolicy.class)
-				.spy(String.format("%s loads ontology (%s)",
-						agent.getLocalAgentId(), ontoURI));
+		space.beginWrite();
+		try {
+			space.loadOntology(ontoURI);
+			LoggerFactoryImpl
+					.getInstance()
+					.getLogger(AbstractAccessPolicy.class)
+					.spy(String.format("%s loads ontology (%s)",
+							agent.getLocalAgentId(), ontoURI));
+		} finally {
+			space.done();
+		}
 	}
 
 	@Override
 	public final URI[] getLoadedOntologies() {
-		return space.getLoadedOntologies();
+		space.beginRead();
+		try {
+			return space.getLoadedOntologies();
+		} finally {
+			space.done();
+		}
 	}
 
 	@Override
@@ -145,7 +155,7 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 		LoggerFactoryImpl
 				.getInstance()
 				.getLogger(AbstractAccessPolicy.class)
-				.spy(String.format("%s requests READ",
+				.spy(String.format("%s requests READ", 
 						agent.getLocalAgentId()));
 		checkReadPermissions(lsaId, agent);
 

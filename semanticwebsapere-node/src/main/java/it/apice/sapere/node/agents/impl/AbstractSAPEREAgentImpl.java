@@ -45,7 +45,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	private final URI agentURI;
 
 	/** Running flag. */
-	private transient volatile boolean running = true;
+	private volatile boolean running = true;
 
 	/**
 	 * Creates a new Agent with the specified identifier.
@@ -96,7 +96,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	protected final void spy(final String s) {
 		final LogUtils logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.spy(id + "> " + s);
+			logger.spy(s);
 		}
 	}
 
@@ -111,7 +111,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	protected final void info(final String s) {
 		final LogUtils logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.log(id + "> " + s);
+			logger.log(s);
 		}
 	}
 
@@ -128,7 +128,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	protected final void warn(final String s, final Throwable cause) {
 		final LogUtils logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.warn(id + "> " + s, cause);
+			logger.warn(s, cause);
 		}
 	}
 
@@ -145,7 +145,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	protected final void error(final String s, final Throwable cause) {
 		final LogUtils logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.error(id + "> " + s, cause);
+			logger.error(s, cause);
 		}
 	}
 
@@ -162,7 +162,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	protected final void fatal(final String s, final Throwable cause) {
 		final LogUtils logger = LoggerFactoryImpl.getInstance().getLogger(this);
 		synchronized (logger) {
-			logger.fatal(id + "> " + s, cause);
+			logger.fatal(s, cause);
 		}
 
 		kill();

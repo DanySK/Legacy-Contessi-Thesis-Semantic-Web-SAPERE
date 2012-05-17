@@ -43,6 +43,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.update.GraphStore;
@@ -70,7 +71,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** LSA-id pattern. */
 	private static final transient Pattern LSA_ID_PATTERN = Pattern.compile("("
-			+ LSA_PREFIX + "\\w+-\\w+)");
+			+ LSA_PREFIX + "\\d+-\\w+)");
 
 	/** The rdf:type. */
 	private static final transient String RDF_TYPE = "http://"
@@ -98,8 +99,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * Optimization map: stores every parsed spqrql query in order to avoid
 	 * re-parsing.
 	 */
-	private final transient 
-		Map<String, Query> parsedSparqlQueries = new HashMap<String, Query>();
+	private final transient Map<String, Query> parsedSparqlQueries = 
+			new HashMap<String, Query>();
 
 	/** rdf:type property. */
 	private final transient Property rdfTypeProp;
@@ -132,8 +133,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @param lsaFactory
 	 *            Reference to a {@link PrivilegedLSAFactory}
 	 */
-	public AbstractLSAspaceCoreImpl(
-			final PrivilegedLSAFactory lsaFactory) {
+	public AbstractLSAspaceCoreImpl(final PrivilegedLSAFactory lsaFactory) {
 		this(lsaFactory, ReasoningLevel.NONE);
 	}
 
@@ -147,7 +147,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @param rLevel
 	 *            The {@link ReasoningLevel}
 	 */
-	public AbstractLSAspaceCoreImpl(final PrivilegedLSAFactory lsaFactory, 
+	public AbstractLSAspaceCoreImpl(final PrivilegedLSAFactory lsaFactory,
 			final ReasoningLevel rLevel) {
 
 		if (lsaFactory == null) {
@@ -330,8 +330,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				final MutableMatchResult match = new MutableMatchResultImpl(
 						this, law);
 				for (String varName : law.variablesNames()) {
-					match.register(varName,
-							extractValue(sol.getResource(varName)), 1.0);
+					match.register(varName, 
+							extractValue(sol.get(varName)), 1.0);
 				}
 
 				// 3. Return them for evaluation
@@ -365,7 +365,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 *            The resource whose value should be extracted
 	 * @return A String representation of the Resource's value
 	 */
-	private String extractValue(final Resource res) {
+	private String extractValue(final RDFNode res) {
+		if (res.isLiteral()) {
+			return String.format("\"%s\"", res.asNode().getLiteralValue()
+					.toString());
+		} else if (res.isResource()) {
+			return String.format("<%s>", res.asNode().getURI());
+		}
+
 		return res.toString();
 	}
 
@@ -414,12 +421,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private LSA[] retrieveUpdatedLSAs(final MatchingEcolaw law)
 			throws Exception {
 		final List<LSA> res = new LinkedList<LSA>();
+		System.out.println("Looking for LSA-ids: " + law.getUpdateQuery());
 		final Matcher matcher = LSA_ID_PATTERN.matcher(law.getUpdateQuery());
 		while (matcher.find()) {
 			String sLsaId = matcher.group(1);
 			res.add(converter.parseLSA(model.getResource(sLsaId), model));
 		}
 
+		System.out.println("Found LSA-ids: " + res.size());
 		return res.toArray(new LSA[res.size()]);
 	}
 
@@ -935,8 +944,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	@Override
-	public final CustomStrategyPipeline<StmtIterator> 
-			getCustomStrategyPipeline() {
+	public final 
+			CustomStrategyPipeline<StmtIterator> getCustomStrategyPipeline() {
 		return customStrategyPline;
 	}
 }

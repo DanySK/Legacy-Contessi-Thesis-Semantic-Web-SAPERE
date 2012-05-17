@@ -59,9 +59,6 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 	/** Condition variable on scheduling events. */
 	private final transient Condition schedulingEvent = mutex.newCondition();
 
-	/** Flag that indicate that programmed eco-law should be verified. */
-	private transient boolean abortScheduling;
-
 	/** The internal scheduler. */
 	private final transient ReactionsScheduler scheduler;
 
@@ -103,14 +100,10 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 	public final ReactionManager addEcolaw(final CompiledEcolaw law) {
 		mutex.lock();
 		try {
-			laws.remove(law);
-
-			if (laws.isEmpty()) {
-				wakeUpTime = Long.MAX_VALUE;
-			}
+			laws.add(law);
 
 			// If a law is added than scheduling should be revised
-			abortScheduling = true;
+			// spy("ADD :: aborting");
 			schedulingEvent.signal();
 
 			notifyLawAdded(law);
@@ -134,8 +127,13 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 			// If the scheduled law is removed than scheduling should be revised
 			if (law.equals(next)) {
-				abortScheduling = true;
+				// abortScheduling = true;
+				// spy("REMOVE :: aborting");
 				schedulingEvent.signal();
+			}
+
+			if (laws.isEmpty()) {
+				wakeUpTime = Long.MAX_VALUE;
 			}
 
 			notifyLawRemoved(law);
@@ -170,24 +168,32 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 		final LSAspaceCore<?> space = services.getLSAspace();
 
 		while (isRunning()) {
+			boolean abortScheduling = false;
 			mutex.lock();
 			try {
-
 				// Wait for the scheduling time or abortion due to
 				// scheduling pre-conditions modification
-				while ((!abortScheduling && wakeUpTime > System
-						.currentTimeMillis())) {
-					schedulingEvent.await(
+				while (!abortScheduling
+						&& wakeUpTime > System.currentTimeMillis()) {
+					// spy("Waiting for an event..");
+
+					// Waiting
+					abortScheduling = schedulingEvent.await(
 							wakeUpTime - System.currentTimeMillis(),
 							TimeUnit.MILLISECONDS);
 				}
 
+				// spy("Proceeding.. (abort=" + abortScheduling + ")");
+
 				if (!abortScheduling) {
 					space.beginWrite();
 					try {
+						// spy("Applying..");
 						// If time has come applies the eco-law
+						// info(next.toString());
 						space.apply(next);
 						notifyLawApplied(next, System.currentTimeMillis());
+						spy(space.toString());
 					} catch (SAPEREException e) {
 						error("Error while scheduling an eco-law", e);
 					} finally {
@@ -237,6 +243,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				space.beginRead();
 				try {
 					results = scheduler.eval(space.match(law));
+					spy(String.format("%d match(es) found.", results.length));
 				} finally {
 					space.done();
 				}
@@ -261,17 +268,19 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 		try {
 			if (best == null) {
-				throw new IllegalStateException();
+				next = null;
+				wakeUpTime = Long.MAX_VALUE;
+				// spy("No eco-law chosen for scheduling");
+			} else {
+				info("match-results: " + best);
+				next = best.bind();
+				wakeUpTime = bestTime;
+				// spy("Next Eco-law application @ " + wakeUpTime + " ms");
+				notifyLawEnabled(next, wakeUpTime);
 			}
-
-			next = best.bind();
-			notifyLawEnabled(next, wakeUpTime);
 		} catch (SAPEREException e) {
 			fatal("Cannot schedule next eco-law", e);
-		} catch (IllegalStateException e) {
-			fatal("No eco-law chosen for scheduling", e);
 		}
-
 	}
 
 	/**
@@ -340,11 +349,12 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
+		spy("Something happened in the LSA-space!");
 		mutex.lock();
 		try {
 			checkDependencies(ev, next);
 		} catch (AbortException e) {
-			abortScheduling = true;
+			// spy("EVENT :: aborting");
 			schedulingEvent.signal();
 		} finally {
 			mutex.unlock();

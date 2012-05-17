@@ -22,9 +22,12 @@ public interface SAPERESysAgentSpec {
 	 * @param out
 	 *            Reference to logging facility (should be used in place of
 	 *            System.out and System.err)
+	 * @param me
+	 *            Reference to the agent itself
 	 * @throws Exception
 	 *             Each uncaught exception occurred in the agent main-cycle.
 	 *             Causes agent termination
 	 */
-	void behaviour(NodeServices services, LogUtils out) throws Exception;
+	void behaviour(NodeServices services, LogUtils out, SAPEREAgent me)
+			throws Exception;
 }
