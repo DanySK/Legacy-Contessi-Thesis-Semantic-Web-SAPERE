@@ -6,8 +6,8 @@ import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.match.MatchingEcolawTemplate;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -80,7 +80,7 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	 * @return The list of variables
 	 */
 	private String[] initVariablesArray() {
-		final List<String> res = new LinkedList<String>();
+		final Set<String> res = new HashSet<String>();
 		final Matcher matcher = VARNAME_PATTERN.matcher(template);
 
 		while (matcher.find()) {

@@ -65,7 +65,7 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 
 		try {
 			agentURI = new URI(NodeServicesImpl.getInstance().getLSAFactory()
-					.getNodeID().replace("#", "/").concat("agents#")
+					.getNodeID().replace("#", "/").concat("/agents#")
 					.concat(agentId));
 		} catch (URISyntaxException ex) {
 			throw new IllegalArgumentException("Cannot create "

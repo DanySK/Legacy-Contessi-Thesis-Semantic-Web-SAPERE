@@ -123,7 +123,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** Custom strategies application pipeline. */
 	private final transient 
-		CustomStrategyPipeline<StmtIterator> customStrategyPline;
+			CustomStrategyPipeline<StmtIterator> customStrategyPline;
 
 	/**
 	 * <p>
@@ -420,12 +420,15 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private LSA[] retrieveUpdatedLSAs(final MatchingEcolaw law)
 			throws Exception {
+		final Set<String> ids = new HashSet<String>();
 		final List<LSA> res = new LinkedList<LSA>();
 		System.out.println("Looking for LSA-ids: " + law.getUpdateQuery());
 		final Matcher matcher = LSA_ID_PATTERN.matcher(law.getUpdateQuery());
 		while (matcher.find()) {
 			String sLsaId = matcher.group(1);
-			res.add(converter.parseLSA(model.getResource(sLsaId), model));
+			if (ids.add(sLsaId)) {
+				res.add(converter.parseLSA(model.getResource(sLsaId), model));
+			}
 		}
 
 		System.out.println("Found LSA-ids: " + res.size());

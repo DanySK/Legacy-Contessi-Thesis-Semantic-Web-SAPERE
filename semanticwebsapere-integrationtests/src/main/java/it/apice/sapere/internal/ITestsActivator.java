@@ -41,6 +41,10 @@ public class ITestsActivator implements BundleActivator {
 	private static final transient URI STATE_URI = URI
 			.create("http://www.example.org/scenario#state");
 
+	/** Type property URI. */
+	private static final transient URI TYPE_URI = URI
+			.create("http://www.example.org/scenario#type");
+
 	/** Reference to logger. */
 	private LogUtils log;
 
@@ -109,7 +113,12 @@ public class ITestsActivator implements BundleActivator {
 	 * @return A SPARQL Query
 	 */
 	private String getQuery() {
-		return "SELECT DISTINCT * WHERE { ?res <" + CONTENT_URI + "> ?movie }";
+		return String.format("SELECT DISTINCT * WHERE { "
+				+ "?res <%s> ?movie; <%s> \"resource\". "
+				+ "?disp <%s> \"display\"; <%s> \"ready\". "
+				+ "OPTIONAL {?disp <%s> ?disp_movie} "
+				+ "FILTER(!BOUND(?disp_movie) || (?disp_movie!=?movie)). }",
+				CONTENT_URI, TYPE_URI, TYPE_URI, STATE_URI, CONTENT_URI);
 	}
 
 	/**
@@ -120,14 +129,16 @@ public class ITestsActivator implements BundleActivator {
 	 * @return A SPARUL Query Template
 	 */
 	private String getUpdateTemplate() {
-		return "DELETE { ?disp <" + STATE_URI + "> \"ready\". ?disp <"
-				+ TIME_URI + "> ?t. ?disp <" + CONTENT_URI
-				+ "> ?cont. } WHERE { ?disp <" + STATE_URI
-				+ "> \"ready\". ?disp <" + TIME_URI + "> ?t. ?disp <"
-				+ CONTENT_URI + "> ?cont. } " + "INSERT { ?disp <" + STATE_URI
-				+ "> \"on\". ?disp <" + TIME_URI + "> \"0\". ?disp <"
-				+ CONTENT_URI + "> !movie. } WHERE { ?disp <" + STATE_URI
-				+ "> \"ready\". }";
+		return String.format("DELETE { !disp "
+				+ "<%s> \"ready\"^^<http://www.w3.org/2001/XMLSchema#string>; "
+				//+ "<%s> ?t; <%s> ?disp_movie } WHERE { "
+				//+ "!disp <%s> ?t; <%s> ?disp_movie }" 
+				+ "} INSERT { !disp "
+				+ "<%s> \"on\"^^<http://www.w3.org/2001/XMLSchema#string>; "
+				+ "<%s> \"0\"^^<http://www.w3.org/2001/XMLSchema#int>; "
+				+ "<%s> !movie. } ", STATE_URI, //TIME_URI, CONTENT_URI,
+				//TIME_URI, CONTENT_URI, 
+				STATE_URI, TIME_URI, CONTENT_URI);
 	}
 
 	/**

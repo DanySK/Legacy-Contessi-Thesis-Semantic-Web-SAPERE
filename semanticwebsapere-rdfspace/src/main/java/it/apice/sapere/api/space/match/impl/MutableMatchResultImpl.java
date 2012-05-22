@@ -106,7 +106,7 @@ public class MutableMatchResultImpl implements MutableMatchResult {
 		try {
 			if (assignments.containsKey(varName)) {
 				throw new SAPEREException("Variable binding clash (var="
-						+ varName + ")");
+						+ varName + "; bindings= " + assignments + ")");
 			}
 			assignments.put(varName, value);
 			scores.put(varName, score);

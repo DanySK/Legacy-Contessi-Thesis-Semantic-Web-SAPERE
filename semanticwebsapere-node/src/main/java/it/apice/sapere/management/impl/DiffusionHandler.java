@@ -44,6 +44,10 @@ public class DiffusionHandler implements SpaceObserver {
 
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
+		if (!ev.getOperationType().equals(SpaceOperationType.SYSTEM_ACTION)) {
+			return;
+		}
+
 		for (String rdfLsa : ev.getLSAContent(RDFFormat.RDF_XML)) {
 			final CompiledLSA<?> lsa = NodeServicesImpl.getInstance()
 					.getLSACompiler().parse(rdfLsa, RDFFormat.RDF_XML);
@@ -55,8 +59,7 @@ public class DiffusionHandler implements SpaceObserver {
 								new SpaceOperation(
 										SpaceOperationType.SYSTEM_DIFFUSE, lsa,
 										"system"), 0, 0, new float[0]));
-				// TODO find if latitude, longitude and orientation can be
-				// provided (not 0, 0, new float[0])
+				// TODO remove the LSA from the space
 				LoggerFactoryImpl.getInstance()
 						.getLogger(DiffusionHandler.class)
 						.log("DIFFUSE " + lsa.getLSAid());

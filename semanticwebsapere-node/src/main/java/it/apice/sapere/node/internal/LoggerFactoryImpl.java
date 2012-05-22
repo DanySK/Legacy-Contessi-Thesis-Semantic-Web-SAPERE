@@ -171,7 +171,12 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 */
 	private LogUtils retrieveLogger(final Class<?> reqClass,
 			final String reqName) {
-		final Logger logger = Logger.getLogger(reqClass);
+		Logger logger = Logger.getLogger(reqClass);
+		if (!reqClass.getSimpleName().equals(reqName)) {
+			logger = Logger.getLogger(String.format("%s::%s",
+					reqClass.getCanonicalName(), reqName));
+		}
+
 		if (!inited.contains(logger)) {
 			try {
 				initLogger(logger, reqName);

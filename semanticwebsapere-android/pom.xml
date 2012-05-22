@@ -4,7 +4,7 @@
     <parent>
         <artifactId>semanticwebsapere</artifactId>
         <groupId>it.apice.sapere</groupId>
-        <version>${swsapere.vers}</version>
+        <version>0.1.0</version>
     </parent>
     <artifactId>semanticwebsapere-android</artifactId>
     <packaging>apk</packaging>
@@ -23,6 +23,7 @@
             <version>${platform.version}</version>
             <scope>provided</scope>
         </dependency>
+        
     </dependencies>
 
     <build>

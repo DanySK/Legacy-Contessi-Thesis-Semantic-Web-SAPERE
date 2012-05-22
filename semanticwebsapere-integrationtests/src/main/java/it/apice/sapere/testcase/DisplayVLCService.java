@@ -1,7 +1,6 @@
 package it.apice.sapere.testcase;
 
 import it.apice.sapere.api.LSAFactory;
-import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.PropertyValue;
@@ -36,7 +35,7 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 	private static final int SLEEP_TIME = 2 * MS_IN_S;
 
 	/** The folder in which the movie should be found. */
-	private static final String FOLDER_PATH = "~";
+	private static final String FOLDER_PATH = "/Users/conteit";
 
 	/** Type property URI. */
 	private static final transient URI TYPE_URI = URI
@@ -70,35 +69,35 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 	/** Content property. */
 	private transient PropertyName contentProp;
 
-	/** Time property. */
-	private transient PropertyName timeProp;
-
-	/** Paused state value. */
-	private transient PropertyValue<?, ?> pausedStateVal;
-
-	/** Reference to the LSA-space. */
-	private transient LSAspace lsaSpace;
-
-	/** Reference to the LSA Factory. */
-	private transient LSAFactory lsaFactory;
-
-	/** Starting time for the video. */
-	private transient double startingTime;
-
-	/** When playback has been started. */
-	private transient long startCounting;
+//	/** Time property. */
+//	private transient PropertyName timeProp;
+//
+//	/** Paused state value. */
+//	private transient PropertyValue<?, ?> pausedStateVal;
+//
+//	/** Reference to the LSA-space. */
+//	private transient LSAspace lsaSpace;
+//
+//	/** Reference to the LSA Factory. */
+//	private transient LSAFactory lsaFactory;
+//
+//	/** Starting time for the video. */
+//	private transient double startingTime;
+//
+//	/** When playback has been started. */
+//	private transient long startCounting;
 
 	@Override
 	public final void behaviour(final LSAFactory factory, final LSAspace space,
 			final LogUtils out, final SAPEREAgent me) throws Exception {
 		stdOut = out;
-		lsaSpace = space;
-		lsaFactory = factory;
+//		lsaSpace = space;
+//		lsaFactory = factory;
 
 		stateProp = factory.createPropertyName(STATE_URI);
 		contentProp = factory.createPropertyName(CONTENT_URI);
-		timeProp = factory.createPropertyName(TIME_URI);
-		pausedStateVal = factory.createPropertyValue("paused");
+//		timeProp = factory.createPropertyName(TIME_URI);
+//		pausedStateVal = factory.createPropertyValue("paused");
 
 		out.log("Creating status LSA..");
 		statusLsa = factory.createLSA();
@@ -136,6 +135,7 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 		stdOut.log("Event occurred on Status LSA");
 
 		statusLsa = ev.getLSA();
+//		stdOut.spy("notified LSA: " + statusLsa);
 		try {
 			updateDisplay();
 		} catch (Exception ex) {
@@ -147,53 +147,64 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 	 * <p>
 	 * Updates the display according to the new status.
 	 * </p>
+	 * 
+	 * @return True if updated
 	 */
-	private void updateDisplay() {
+	private boolean updateDisplay() {
 		final PropertyValue<?, ?> status = statusLsa.getSemanticDescription()
 				.get(stateProp).values()[0];
-		final PropertyValue<?, ?> time = statusLsa.getSemanticDescription()
-				.get(timeProp).values()[0];
+//		final PropertyValue<?, ?> time = statusLsa.getSemanticDescription()
+//				.get(timeProp).values()[0];
 		final String content = statusLsa.getSemanticDescription()
 				.get(contentProp).values()[0].getValue().toString();
 
-		if (status.equals("on")) {
+//		stdOut.spy(String.format("status: %s; time: %s; content: %s;", status,
+//				time, content));
+
+		if (status.toString().equals("on")) {
+//			stdOut.spy("Activating..");
 			try {
-				startingTime = Double.parseDouble(time.getValue().toString()
-						.trim());
-				startCounting = System.currentTimeMillis();
-				Runtime.getRuntime().exec(
-						String.format(
-								// "cvlc --no-video-title-show --fullscreen "
-								// + "--start-time=%s %s/%s", time,
-								"/Applications/VLC.app/Contents/MacOS/VLC "
-										+ "--no-video-title-show --play %s/%s",
-								FOLDER_PATH, content));
+//				startingTime = Double.parseDouble(time.getValue().toString()
+//						.trim());
+//				startCounting = System.currentTimeMillis();
+				final String cmd = String.format(
+						"/Applications/VLC.app/Contents/MacOS/VLC "
+								+ "%s/%s",
+						FOLDER_PATH, content);
+				stdOut.log("Playing.. " + cmd);
+				Runtime.getRuntime().exec(cmd);
+
+				return true;
 			} catch (IOException e) {
 				stdOut.error("Cannot update display", e);
 			}
-		} else if (status.equals("idle")) {
-			try {
-				Runtime.getRuntime().exec("killall vlc");
-			} catch (IOException e) {
-				stdOut.error("Cannot update display", e);
-			}
-
-			final double timeViewed = startingTime + 1.0
-					* ((System.currentTimeMillis() - startCounting) / MS_IN_S);
-
-			statusLsa.getSemanticDescription().get(stateProp)
-					.changeValue(status, pausedStateVal);
-			statusLsa
-					.getSemanticDescription()
-					.get(timeProp)
-					.changeValue(time,
-							lsaFactory.createPropertyValue(timeViewed));
-
-			try {
-				lsaSpace.update(statusLsa);
-			} catch (SAPEREException e) {
-				stdOut.error("Cannot update status in LSA-space", e);
-			}
+//		} else if (status.toString().equals("idle")) {
+//			stdOut.spy("Stopping..");
+//			try {
+//				Runtime.getRuntime().exec("killall vlc");
+//			} catch (IOException e) {
+//				stdOut.error("Cannot update display", e);
+//			}
+//
+//			final double timeViewed = startingTime + 1.0
+//					* ((System.currentTimeMillis() - startCounting) / MS_IN_S);
+//
+//			statusLsa.getSemanticDescription().get(stateProp)
+//					.changeValue(status, pausedStateVal);
+//			statusLsa
+//					.getSemanticDescription()
+//					.get(timeProp)
+//					.changeValue(time,
+//							lsaFactory.createPropertyValue(timeViewed));
+//
+//			try {
+//				lsaSpace.update(statusLsa);
+//				return true;
+//			} catch (SAPEREException e) {
+//				stdOut.error("Cannot update status in LSA-space", e);
+//			}
 		}
+
+		return false;
 	}
 }

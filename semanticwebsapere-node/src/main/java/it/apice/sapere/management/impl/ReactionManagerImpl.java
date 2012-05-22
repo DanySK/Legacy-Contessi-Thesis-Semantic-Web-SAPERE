@@ -193,7 +193,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 						// info(next.toString());
 						space.apply(next);
 						notifyLawApplied(next, System.currentTimeMillis());
-						spy(space.toString());
+						// spy(space.toString());
 					} catch (SAPEREException e) {
 						error("Error while scheduling an eco-law", e);
 					} finally {
@@ -349,7 +349,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
-		spy("Something happened in the LSA-space!");
+		// spy("Something happened in the LSA-space!");
 		mutex.lock();
 		try {
 			checkDependencies(ev, next);
