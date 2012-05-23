@@ -45,10 +45,11 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.update.GraphStore;
 import com.hp.hpl.jena.update.GraphStoreFactory;
-import com.hp.hpl.jena.update.UpdateFactory;
+import com.hp.hpl.jena.update.UpdateAction;
 
 /**
  * <p>
@@ -422,7 +423,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throws Exception {
 		final Set<String> ids = new HashSet<String>();
 		final List<LSA> res = new LinkedList<LSA>();
-		System.out.println("Looking for LSA-ids: " + law.getUpdateQuery());
+//		System.out.println("Looking for LSA-ids: " + law.getUpdateQuery());
 		final Matcher matcher = LSA_ID_PATTERN.matcher(law.getUpdateQuery());
 		while (matcher.find()) {
 			String sLsaId = matcher.group(1);
@@ -431,7 +432,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 		}
 
-		System.out.println("Found LSA-ids: " + res.size());
+//		System.out.println("Found LSA-ids: " + res.size());
 		return res.toArray(new LSA[res.size()]);
 	}
 
@@ -665,8 +666,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsaId);
 			}
 
-			final CompiledLSAImpl res = new CompiledLSAImpl(lsaId, model
-					.createResource(lsaId.toString()).listProperties());
+			final CompiledLSAImpl res = new CompiledLSAImpl(lsaId,
+					extractLSAData(lsaId));
 			notifySpaceOperation(String.format("LSA read: %s", lsaId), lsaId,
 					SpaceOperationType.AGENT_READ);
 
@@ -675,6 +676,51 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new SAPEREException("Cannot retrieve LSA: " + lsaId, e);
 		} finally {
 			releaseLock();
+		}
+	}
+
+	/**
+	 * <p>
+	 * Extracts all data related to the LSA-id that has been provided.
+	 * </p>
+	 * <p>
+	 * The method gets all the properties relative to the LSA-id and explores
+	 * all (sub) blank-nodes.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The id of the LSA to be extracted
+	 * @return An interator over all information
+	 */
+	private StmtIterator extractLSAData(final LSAid lsaId) {
+		final Model data = ModelFactory.createDefaultModel();
+		extractLSAData(model.createResource(lsaId.toString()), data);
+		return data.listStatements();
+	}
+
+	/**
+	 * <p>
+	 * Explores the provided subject in order to extract data.
+	 * </p>
+	 * 
+	 * @param subject
+	 *            The resource to be explored
+	 * @param res
+	 *            The model in which all information should be collected in
+	 *            order to be returned
+	 */
+	private void extractLSAData(final Resource subject, final Model res) {
+		final List<Statement> stmts = subject.listProperties().toList();
+		if (stmts != null) {
+			res.add(stmts);
+
+			for (Statement stm : stmts) {
+				final RDFNode obj = stm.getObject();
+
+				if (obj.isResource() && obj.isAnon()) {
+					extractLSAData(obj.asResource(), res);
+				}
+			}
 		}
 	}
 
@@ -860,6 +906,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 
 			for (LSA lsa : res) {
+				// Returns the first LSA in the set
 				return lsa;
 			}
 		} catch (Exception e) {
@@ -925,7 +972,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void execUpdateQuery(final GraphStore aGraphStore,
 			final String query) {
-		UpdateFactory.create(query).exec(aGraphStore);
+		UpdateAction.parseExecute(query, aGraphStore);
 	}
 
 	@Override

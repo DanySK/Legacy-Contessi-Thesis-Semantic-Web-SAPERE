@@ -48,8 +48,8 @@ public final class CommunicationUtils {
 			return msg;
 
 		} catch (Exception e) {
-			System.out.println("Exception in communicationUtils: " + e);
-			e.printStackTrace();
+			LoggerFactoryImpl.getInstance().getLogger(CommunicationUtils.class)
+					.warn("Exception in communicationUtils", e);
 		}
 
 		return null;
@@ -75,8 +75,8 @@ public final class CommunicationUtils {
 			oos.writeObject(s);
 			return true;
 		} catch (Exception e) {
-			System.out.println("Exception in sendString: " + e);
-			e.printStackTrace();
+			LoggerFactoryImpl.getInstance().getLogger(CommunicationUtils.class)
+					.warn("Exception in sendString: ", e);
 		}
 		return false;
 	}

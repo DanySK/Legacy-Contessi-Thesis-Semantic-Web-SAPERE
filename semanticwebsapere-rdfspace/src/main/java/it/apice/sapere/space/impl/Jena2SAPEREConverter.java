@@ -22,11 +22,12 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
-
+import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
  * <p>
- * Utilty class which provides translation from Jena to SAPERE model.
+ * Utility class which provides translation from Jena to SAPERE model.
  * </p>
  * 
  * @author Paolo Contessi
@@ -74,7 +75,7 @@ public class Jena2SAPEREConverter {
 				model.createProperty(RDF_TYPE_PROP),
 				model.createResource(LSA_CLASS));
 		while (iter.hasNext()) {
-			res.add(parseLSA((Resource) iter.next(), model));
+			res.add(parseLSA(iter.next(), model));
 		}
 
 		return res;
@@ -121,10 +122,8 @@ public class Jena2SAPEREConverter {
 			final Resource res, final Model model) throws Exception {
 		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
 		while (iter.hasNext()) {
-			final Resource curr = ((QuerySolution) iter.next())
-					.getResource(propVar());
-			if (!curr.getURI().equals(
-					"http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
+			final Resource curr = iter.next().getResource(propVar());
+			if (!curr.getURI().equals(RDF_TYPE_PROP)) {
 				sdesc.addProperty(parseProperty(model, res, curr.getURI()));
 			}
 		}
@@ -247,13 +246,45 @@ public class Jena2SAPEREConverter {
 	 */
 	private it.apice.sapere.api.lsas.Property parseProperty(final Model model,
 			final Resource res, final String propURI) throws Exception {
+		if (res.isAnon()) {
+			return factory.createProperty(new URI(propURI),
+					extractAnonValues(model, res, propURI));
+		}
+
 		return factory.createProperty(new URI(propURI),
-				parseValues(model, res, propURI));
+				extractResValues(model, res, propURI));
 	}
 
 	/**
 	 * <p>
-	 * Parses all LSA's property values.
+	 * Parses all LSA's property values of a Blank Node.
+	 * </p>
+	 * 
+	 * @param bnode
+	 *            The Blank Node
+	 * @param model
+	 *            The model on which work
+	 * @param propURI
+	 *            The property in RDF
+	 * @return The list of property values
+	 * @throws Exception
+	 *             Cannot parse values
+	 */
+	private PropertyValue<?, ?>[] extractAnonValues(final Model model,
+			final Resource bnode, final String propURI) throws Exception {
+		final Set<PropertyValue<?, ?>> res = new HashSet<PropertyValue<?, ?>>();
+		final StmtIterator iter = bnode.listProperties(model
+				.createProperty(propURI));
+		while (iter.hasNext()) {
+			parseValue(model, res, iter.next().getObject());
+		}
+
+		return res.toArray(new PropertyValue<?, ?>[res.size()]);
+	}
+
+	/**
+	 * <p>
+	 * Parses all LSA's property values of a named Resource.
 	 * </p>
 	 * 
 	 * @param lsa
@@ -266,7 +297,7 @@ public class Jena2SAPEREConverter {
 	 * @throws Exception
 	 *             Cannot parse values
 	 */
-	private PropertyValue<?, ?>[] parseValues(final Model model,
+	private PropertyValue<?, ?>[] extractResValues(final Model model,
 			final Resource lsa, final String propURI) throws Exception {
 		final Set<PropertyValue<?, ?>> res = new HashSet<PropertyValue<?, ?>>();
 		final ResultSet iter = execQuery(model,
@@ -275,21 +306,50 @@ public class Jena2SAPEREConverter {
 			final QuerySolution curr = (QuerySolution) iter.next();
 			final RDFNode rVal = curr.get(objVar());
 
-			if (rVal.isAnon()) { // Check if there's a Blank Node (nesting)
-				final SDescValue sdv = factory.createNestingPropertyValue();
-				populateLSA(sdv.getValue(), (Resource) rVal.as(Resource.class),
-						model);
-				res.add(sdv);
-			} else if (rVal.isURIResource()) { // Checks if the object is a URI
-				res.add(factory.createPropertyValue(
-						new URI(((Resource) rVal.as(Resource.class))
-						.getURI())));
-			} else if (rVal.isLiteral()) { // Checks if the object is a Literal
-				res.add(parseLiteral((Literal) rVal.as(Literal.class)));
-			}
+			parseValue(model, res, rVal);
 		}
 
 		return res.toArray(new PropertyValue<?, ?>[res.size()]);
+	}
+
+	/**
+	 * <p>
+	 * Parses a value.
+	 * </p>
+	 * 
+	 * @param model
+	 *            The RDF Graph
+	 * @param res
+	 *            The set of already parsed values
+	 * @param rVal
+	 *            The property value node
+	 * @throws Exception
+	 *             Something went wrong
+	 */
+	private void parseValue(final Model model,
+			final Set<PropertyValue<?, ?>> res, final RDFNode rVal)
+			throws Exception {
+		// Check if there's a Blank Node (nesting)
+		if (rVal.isResource() && rVal.isAnon()) {
+			final SDescValue sdv = factory.createNestingPropertyValue();
+			final StmtIterator bnodeIter = rVal.asResource().listProperties();
+			while (bnodeIter.hasNext()) {
+				final Statement stmt = bnodeIter.next();
+				final Resource prop = stmt.getPredicate();
+				if (!prop.getURI().equals(RDF_TYPE_PROP)) {
+					sdv.getValue().addProperty(
+							parseProperty(model, rVal.asResource(),
+									prop.getURI()));
+				}
+			}
+
+			res.add(sdv);
+		} else if (rVal.isURIResource()) { // Checks if the object is a URI
+			res.add(factory.createPropertyValue(new URI(((Resource) rVal
+					.as(Resource.class)).getURI())));
+		} else if (rVal.isLiteral()) { // Checks if the object is a Literal
+			res.add(parseLiteral((Literal) rVal.as(Literal.class)));
+		}
 	}
 
 	/**
@@ -336,5 +396,4 @@ public class Jena2SAPEREConverter {
 
 		return factory.createPropertyValue(literal.getString());
 	}
-
 }

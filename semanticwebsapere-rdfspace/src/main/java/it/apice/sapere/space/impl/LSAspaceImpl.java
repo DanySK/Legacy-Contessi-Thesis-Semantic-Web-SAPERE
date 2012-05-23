@@ -9,6 +9,7 @@ import org.mindswap.pellet.jena.PelletReasonerFactory;
 import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.reasoner.Reasoner;
 
 /**
  * <p>
@@ -49,8 +50,13 @@ public class LSAspaceImpl extends AbstractLSAspaceCoreImpl {
 	@Override
 	protected final Model initRDFGraphModel(final ReasoningLevel level) {
 		if (level.equals(ReasoningLevel.OWL_DL)) {
-			return ModelFactory
-					.createOntologyModel(PelletReasonerFactory.THE_SPEC);
+			Reasoner reasoner = PelletReasonerFactory.theInstance().create();
+			Model infModel = ModelFactory.createInfModel(reasoner,
+					ModelFactory.createDefaultModel());
+			return ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM,
+					infModel);
+			// return ModelFactory
+			// .createOntologyModel(PelletReasonerFactory.THE_SPEC);
 		} else if (level.equals(ReasoningLevel.RDFS_INF)) {
 			return ModelFactory
 					.createOntologyModel(OntModelSpec.OWL_DL_MEM_RDFS_INF);

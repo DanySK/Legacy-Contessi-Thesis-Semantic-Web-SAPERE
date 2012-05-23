@@ -190,7 +190,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 					try {
 						// spy("Applying..");
 						// If time has come applies the eco-law
-						// info(next.toString());
+						info(next.toString());
 						space.apply(next);
 						notifyLawApplied(next, System.currentTimeMillis());
 						// spy(space.toString());
@@ -243,7 +243,8 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				space.beginRead();
 				try {
 					results = scheduler.eval(space.match(law));
-					spy(String.format("%d match(es) found.", results.length));
+					// spy(String.format("%d match(es) found.",
+					// results.length));
 				} finally {
 					space.done();
 				}
@@ -272,7 +273,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				wakeUpTime = Long.MAX_VALUE;
 				// spy("No eco-law chosen for scheduling");
 			} else {
-				info("match-results: " + best);
+				// info("match-results: " + best);
 				next = best.bind();
 				wakeUpTime = bestTime;
 				// spy("Next Eco-law application @ " + wakeUpTime + " ms");

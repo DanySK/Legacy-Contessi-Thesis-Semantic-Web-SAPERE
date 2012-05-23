@@ -5,6 +5,7 @@ import java.net.URI;
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.core.CompiledLSA;
+import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
@@ -42,24 +43,51 @@ public class DiffusionHandler implements SpaceObserver {
 	private static final transient URI LOCAL_VAL = URI.create(SAPERE_NS
 			+ "local");
 
+	/** Reference to monitored LSA-space. */
+	@SuppressWarnings("rawtypes")
+	private final transient LSAspaceCore space;
+
+	/**
+	 * <p>
+	 * Builds a new {@link DiffusionHandler}.
+	 * </p>
+	 * 
+	 * @param lsaSpace
+	 *            Reference to monitored LSA-space
+	 */
+	public DiffusionHandler(final LSAspaceCore<?> lsaSpace) {
+		if (lsaSpace == null) {
+			throw new IllegalArgumentException("Invalid LSA-space provided");
+		}
+
+		space = lsaSpace;
+	}
+
+	@SuppressWarnings("unchecked")
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
+		// Checks only events caused by an eco-law application (because it is
+		// the only way to change a synthetic property
 		if (!ev.getOperationType().equals(SpaceOperationType.SYSTEM_ACTION)) {
 			return;
 		}
 
 		for (String rdfLsa : ev.getLSAContent(RDFFormat.RDF_XML)) {
-			final CompiledLSA<?> lsa = NodeServicesImpl.getInstance()
+			@SuppressWarnings("rawtypes")
+			final CompiledLSA lsa = NodeServicesImpl.getInstance()
 					.getLSACompiler().parse(rdfLsa, RDFFormat.RDF_XML);
 
 			try {
+				// Enact diffusion (only if required)
 				NetworkManager.getInstance().doDiffuse(
 						getLSALocation(lsa),
 						new NodeMessage(NodeMessageType.DIFFUSE, null,
 								new SpaceOperation(
 										SpaceOperationType.SYSTEM_DIFFUSE, lsa,
 										"system"), 0, 0, new float[0]));
-				// TODO remove the LSA from the space
+
+				// Remove diffused LSA from the LSA-space
+				space.remove(lsa);
 				LoggerFactoryImpl.getInstance()
 						.getLogger(DiffusionHandler.class)
 						.log("DIFFUSE " + lsa.getLSAid());

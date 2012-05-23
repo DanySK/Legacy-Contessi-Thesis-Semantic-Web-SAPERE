@@ -1,7 +1,5 @@
 package it.apice.sapere.internal;
 
-import java.net.URI;
-
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.management.ReactionManager;
@@ -10,6 +8,8 @@ import it.apice.sapere.node.LoggerFactory;
 import it.apice.sapere.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.testcase.DisplayVLCService;
 import it.apice.sapere.testcase.ResVLCIniter;
+
+import java.net.URI;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -30,20 +30,8 @@ public class ITestsActivator implements BundleActivator {
 	private static final int SLEEP_TIME = 2000;
 
 	/** Content property URI. */
-	private static final transient URI CONTENT_URI = URI
-			.create("http://www.example.org/scenario#content");
-
-	/** Time property URI. */
-	private static final transient URI TIME_URI = URI
-			.create("http://www.example.org/scenario#time");
-
-	/** State property URI. */
-	private static final transient URI STATE_URI = URI
-			.create("http://www.example.org/scenario#state");
-
-	/** Type property URI. */
-	private static final transient URI TYPE_URI = URI
-			.create("http://www.example.org/scenario#type");
+	private static final transient URI NS_URI = URI
+			.create("http://www.example.org/scenario#");
 
 	/** Reference to logger. */
 	private LogUtils log;
@@ -113,12 +101,10 @@ public class ITestsActivator implements BundleActivator {
 	 * @return A SPARQL Query
 	 */
 	private String getQuery() {
-		return String.format("SELECT DISTINCT * WHERE { "
-				+ "?res <%s> ?movie; <%s> \"resource\". "
-				+ "?disp <%s> \"display\"; <%s> \"ready\". "
-				+ "OPTIONAL {?disp <%s> ?disp_movie} "
-				+ "FILTER(!BOUND(?disp_movie) || (?disp_movie!=?movie)). }",
-				CONTENT_URI, TYPE_URI, TYPE_URI, STATE_URI, CONTENT_URI);
+		return String.format("PREFIX ex: <%s> SELECT DISTINCT * WHERE { "
+				+ "?disp ex:type \"display\"; ex:state \"ready\" ."
+				+ "FILTER NOT EXISTS { ?disp ex:content ?disp_movie . }"
+				+ "?res ex:type \"resource\"; ex:content ?movie . }", NS_URI);
 	}
 
 	/**
@@ -129,16 +115,10 @@ public class ITestsActivator implements BundleActivator {
 	 * @return A SPARUL Query Template
 	 */
 	private String getUpdateTemplate() {
-		return String.format("DELETE { !disp "
-				+ "<%s> \"ready\"^^<http://www.w3.org/2001/XMLSchema#string>; "
-				//+ "<%s> ?t; <%s> ?disp_movie } WHERE { "
-				//+ "!disp <%s> ?t; <%s> ?disp_movie }" 
-				+ "} INSERT { !disp "
-				+ "<%s> \"on\"^^<http://www.w3.org/2001/XMLSchema#string>; "
-				+ "<%s> \"0\"^^<http://www.w3.org/2001/XMLSchema#int>; "
-				+ "<%s> !movie. } ", STATE_URI, //TIME_URI, CONTENT_URI,
-				//TIME_URI, CONTENT_URI, 
-				STATE_URI, TIME_URI, CONTENT_URI);
+		return String.format("PREFIX ex: <%s> MODIFY DELETE {"
+				+ "!disp ex:state \"ready\" . } "
+				+ "INSERT { !disp ex:content !movie; "
+				+ "ex:state \"on\" . } WHERE { }", NS_URI);
 	}
 
 	/**
@@ -169,10 +149,25 @@ public class ITestsActivator implements BundleActivator {
 	//
 	// @Override
 	// public void behaviour(final LSAFactory factory,
-	// final LSAspace space, final LogUtils out) throws Exception {
-	// out.log("Hello World!");
+	// final LSAspace space, final LogUtils out,
+	// final SAPEREAgent me) throws Exception {
+	// final LSA lsa = factory.createLSA();
 	//
-	// out.log("Bye bye.");
+	// lsa.getSemanticDescription().addProperty(
+	// factory.createProperty(
+	// URI.create("http://www.example.org#prop"),
+	// factory.createPropertyValue(true)));
+	// final SDescValue v = factory.createNestingPropertyValue();
+	// v.getValue().addProperty(
+	// factory.createProperty(
+	// URI.create("http://www.example.org#innerProp"),
+	// factory.createPropertyValue("ciao")));
+	// lsa.getSemanticDescription().addProperty(
+	// factory.createProperty(
+	// URI.create("http://www.example.org#bnode"), v));
+	//
+	// space.inject(lsa);
+	// out.log(space.read(lsa.getLSAId()).toString());
 	// }
 	// };
 	// }

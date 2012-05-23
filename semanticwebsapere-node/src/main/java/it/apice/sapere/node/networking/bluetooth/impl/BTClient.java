@@ -185,8 +185,8 @@ public class BTClient {
 				}
 			}
 		} catch (Exception ex) {
-			System.out.println("Exception in connectToService: " + ex);
-			ex.printStackTrace();
+			LoggerFactoryImpl.getInstance().getLogger(getClass())
+					.warn("Exception in connectToService", ex);
 		} finally {
 			if (is != null) {
 				try {
@@ -252,12 +252,13 @@ public class BTClient {
 						}
 					}
 				} else {
-					System.out.println("Failed to launch discovery");
+					LoggerFactoryImpl.getInstance().getLogger(getClass())
+							.warn("Failed to launch discovery", null);
 				}
 			}
 		} catch (Exception ex) {
-			System.out.println("Exception in findServices: " + ex);
-			ex.printStackTrace();
+			LoggerFactoryImpl.getInstance().getLogger(getClass())
+					.warn("Exception in findServices: ", ex);
 		}
 	}
 

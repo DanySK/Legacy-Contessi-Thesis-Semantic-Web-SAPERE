@@ -1,6 +1,5 @@
 package it.apice.sapere.node.android;
 
-import it.apice.sapere.api.avoid.RDFModelServices;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -90,11 +89,11 @@ public class HelloAndroidActivity extends Activity {
 	private void startNode() throws Exception {
 		log("Starting SAPERE-node..");
 		
-		try {
-			RDFModelServices.getInstance();
-		} catch (Exception ex) {
-			warn("Cannot init node", ex);
-		}
+//		try {
+//			RDFModelServices.getInstance();
+//		} catch (Exception ex) {
+//			warn("Cannot init node", ex);
+//		}
 	}
 
 	/**

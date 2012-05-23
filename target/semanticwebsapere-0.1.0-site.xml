@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Semantic Web SAPERE">
+	<bannerLeft>
+		<name>SemanticWebSAPERE</name>
+		<src>/images/logo.png</src>
+	</bannerLeft>
+	<bannerRight>
+		<name>Maven</name>
+		<src>http://maven.apache.org/images/maven-logo-2.gif</src>
+		<href>http://maven.apache.org</href>
+	</bannerRight>
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-stylus-skin</artifactId>
+	</skin>
+	<publishDate format="dd MMM yyyy" position="left" />
+	<body>
+		<links>
+			<item name="SAPERE Project" href="http://www.sapere-project.eu" />
+			<item name="APICe Lab" href="http://www.apice.unibo.it/" />
+			<item name="Thesis space" href="http://www.apice.unibo.it/xwiki/bin/view/Theses/semanticwebsapere/" />
+			<item name="Contact" href="mailto:paolo.contessi@studio.unibo.it/" />
+		</links>
+        
+        <menu name="Project Workflow">
+        	<item name="Introduction" href="project-summary.html" />
+        	<item name="Requirements" href="workflow/requirements.html" />
+        	<item name="Tech Reference" href="workflow/tech-ref.html" collapse="true" >
+        		<item name="Semantic Web Technologies" href="workflow/tech-ref/sw-tech.html" collapse="true">
+        			<item name="RDF" href="workflow/tech-ref/rdf-spec.html" />
+        			<item name="RDF Schema" href="workflow/tech-ref/rdfs-spec.html" />
+        			<item name="OWL" href="workflow/tech-ref/owl-spec.html" />
+        			<item name="SPARQL" href="workflow/tech-ref/sparql-spec.html" />
+        			<item name="Jena" href="workflow/tech-ref/jena-framework.html" />
+        			<item name="Pellet" href="workflow/tech-ref/pellet-reasoner.html" />
+        		</item>
+        		<item name="Actual saperenode implementation" href="workflow/tech-ref/actual-saperenode.html" />
+        	</item>
+        	<item name="Analysis" href="workflow/analysis.html" collapse="true">
+        		<item name="LSA Model" href="workflow/analysis/lsa-model.html" />
+        		<item name="Ecolaw Model" href="workflow/analysis/ecolaw-model.html" />
+        	</item>
+        </menu>
+        
+        <menu ref="reports"/>
+
+        <menu ref="parent"/> 
+        <menu ref="modules"/> 
+	</body>
+</project>

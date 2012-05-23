@@ -256,8 +256,8 @@ class RequestHandler extends AbstractSystemAgent {
 				}
 			}
 		} catch (Exception ex) {
-			System.out.println("Exception on RequestHandler: " + ex);
-			ex.printStackTrace();
+			LoggerFactoryImpl.getInstance().getLogger(RequestHandler.class)
+			.warn("Exception on RequestHandler ", ex);
 		} finally {
 			try {
 				socket.close();

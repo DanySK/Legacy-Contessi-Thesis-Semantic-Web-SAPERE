@@ -114,8 +114,9 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	@Override
 	public final void assertProperty(final URI propURI, 
 			final String propValue) {
-		model.addLiteral(model.createResource(lsaId.getId().toString()),
-				model.createProperty(propURI.toString()), propValue);
+		model.add(model.createResource(lsaId.getId().toString()),
+				model.createProperty(propURI.toString()),
+				model.createLiteral(propValue));
 	}
 
 	@Override
@@ -169,7 +170,7 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 		if (lsaId != null) {
 			result += lsaId.hashCode();
 		}
-		
+
 		result *= prime;
 		result += toString(RDFFormat.RDF_XML).hashCode();
 

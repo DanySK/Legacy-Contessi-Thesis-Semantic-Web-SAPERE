@@ -31,11 +31,11 @@ public class SDescValueImpl extends
 
 	@Override
 	public final String toString() {
-		final StringBuilder builder = new StringBuilder(" [\n");
+		final StringBuilder builder = new StringBuilder("[\n");
 		for (Property prop : getValue().properties()) {
 			builder.append("\t\t").append(prop.toString()).append(";\n");
 		}
 		
-		return builder.append("\t]\n").toString();
+		return builder.append("\t]").toString();
 	}
 }

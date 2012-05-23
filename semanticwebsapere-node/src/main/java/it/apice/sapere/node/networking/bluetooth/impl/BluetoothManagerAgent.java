@@ -126,8 +126,8 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 	/** Map of all instances per {@link NetworkManager}. */
 	private static final transient 
-		Map<NetworkManager, BluetoothManagerAgent> INSTANCES = 
-			new HashMap<NetworkManager, BluetoothManagerAgent>();
+			Map<NetworkManager, BluetoothManagerAgent> INSTANCES = 
+				new HashMap<NetworkManager, BluetoothManagerAgent>();
 
 	/**
 	 * <p>
@@ -165,7 +165,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 		try {
 			localDevice = LocalDevice.getLocalDevice();
-			
+
 			myNodeMessage = new NodeMessage(NodeMessageType.NODE_INFO,
 					localDevice.getBluetoothAddress(), null, DUMMY_LATITUDE,
 					DUMMY_LONGITUDE, new float[] { DUMMY_ORIENTATION_X,
@@ -217,8 +217,8 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 		try {
 			String address = localDevice.getBluetoothAddress();
 			String name = localDevice.getFriendlyName();
-			System.out.println("Bluetooth device: " + name
-					+ "\nBluetooth address: " + address);
+			spy(String.format("Using Bluetooth device: %s (%s)", name, 
+					address));
 
 			StreamConnectionNotifier service = null;
 
@@ -316,7 +316,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 	void neighbourRegistration(final NodeMessage message) {
 		neighbourRegistration(message, NodeServicesImpl.getInstance());
 	}
-			
+
 	/**
 	 * <p>
 	 * Registers neighbour's information in NeighboursTable and LSA-space.

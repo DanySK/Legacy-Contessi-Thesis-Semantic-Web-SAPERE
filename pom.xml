@@ -24,7 +24,7 @@
 		<module>semanticwebsapere-integrationtests</module>
 
 
-		
+
 	</modules>
 
 	<organization>
@@ -73,13 +73,13 @@
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-core</artifactId>
-				<version>0.9.20</version>
+				<version>1.0.3</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
-				<version>0.9.20</version>
+				<version>1.0.3</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
@@ -91,25 +91,25 @@
 			<dependency>
 				<groupId>org.ops4j.pax.url</groupId>
 				<artifactId>pax-url-aether</artifactId>
-				<version>1.4.0.RC1</version>
+				<version>1.4.0</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-link-mvn</artifactId>
-				<version>2.4.0.RC1</version>
+				<version>2.4.0</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-junit4</artifactId>
-				<version>2.4.0.RC1</version>
+				<version>2.4.0</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.ops4j.pax.exam</groupId>
 				<artifactId>pax-exam-container-native</artifactId>
-				<version>2.4.0.RC1</version>
+				<version>2.4.0</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
@@ -131,63 +131,8 @@
 			</dependency>
 			<dependency>
 				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>arq-extra</artifactId>
-				<version>2.6.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>arq</artifactId>
-				<version>2.6.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>aterm-java</artifactId>
-				<version>1.6.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
 				<artifactId>commons-logging</artifactId>
 				<version>1.1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>concurrent</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>icu4j</artifactId>
-				<version>3.4.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>iri</artifactId>
-				<version>2.6.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>jena</artifactId>
-				<version>2.6.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>pellet-full</artifactId>
-				<version>2.3.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>relaxngDatatype</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>xercesImpl</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mindswap.pellet</groupId>
-				<artifactId>xsdlib</artifactId>
-				<version>1.0.0</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sf.bluecove</groupId>
@@ -199,6 +144,17 @@
 				<artifactId>log4j</artifactId>
 				<version>1.2.16</version>
 			</dependency>
+			<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena</artifactId>
+			<version>2.7.0-incubating</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.clarkparsia.pellet</groupId>
+			<artifactId>pellet</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 		</dependencies>
 	</dependencyManagement>
 

@@ -38,10 +38,10 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../it/apice/sapere/node/internal/LoggerFactoryImpl.html">LoggerFactoryImpl</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../it/apice/sapere/node/LoggerFactory.html">LoggerFactory</a> {
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Maximum number of log file backups. */</em>
-<a class="jxr_linenumber" name="31" href="#31">31</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> NUMBER_OF_LOG_BACKUPS = 1;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> NUMBER_OF_LOG_BACKUPS = 2;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  
 <a class="jxr_linenumber" name="33" href="#33">33</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> The maximum size of the log file. */</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String LOG_FILE_SIZE = <span class="jxr_string">"4096KB"</span>;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String LOG_FILE_SIZE = <span class="jxr_string">"8192KB"</span>;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  
 <a class="jxr_linenumber" name="36" href="#36">36</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Pattern used for each Console's log entry. */</em>
 <a class="jxr_linenumber" name="37" href="#37">37</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> String CONSOLE_PATTERN = <span class="jxr_string">"%-5p $%m%n"</span>;
@@ -84,7 +84,7 @@
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
 <a class="jxr_linenumber" name="75" href="#75">75</a>  		level = lLevel;
 <a class="jxr_linenumber" name="76" href="#76">76</a>  		deep = deepDebug;
-<a class="jxr_linenumber" name="77" href="#77">77</a>  		
+<a class="jxr_linenumber" name="77" href="#77">77</a>  
 <a class="jxr_linenumber" name="78" href="#78">78</a>  		LogManager.resetConfiguration();
 <a class="jxr_linenumber" name="79" href="#79">79</a>  	}
 <a class="jxr_linenumber" name="80" href="#80">80</a>  
@@ -143,8 +143,8 @@
 <a class="jxr_linenumber" name="133" href="#133">133</a> 		}
 <a class="jxr_linenumber" name="134" href="#134">134</a> 
 <a class="jxr_linenumber" name="135" href="#135">135</a> 		<strong class="jxr_keyword">final</strong> RollingFileAppender app = <strong class="jxr_keyword">new</strong> RollingFileAppender(
-<a class="jxr_linenumber" name="136" href="#136">136</a> 				<strong class="jxr_keyword">new</strong> PatternLayout(pattern), String.format(<span class="jxr_string">"logs/sapere-%s.log"</span>,
-<a class="jxr_linenumber" name="137" href="#137">137</a> 						agentId));
+<a class="jxr_linenumber" name="136" href="#136">136</a> 				<strong class="jxr_keyword">new</strong> PatternLayout(pattern), String.format(
+<a class="jxr_linenumber" name="137" href="#137">137</a> 						<span class="jxr_string">"sapere-logs/sapere-%s.log"</span>, agentId));
 <a class="jxr_linenumber" name="138" href="#138">138</a> 		app.setMaxBackupIndex(NUMBER_OF_LOG_BACKUPS);
 <a class="jxr_linenumber" name="139" href="#139">139</a> 		app.setMaxFileSize(LOG_FILE_SIZE);
 <a class="jxr_linenumber" name="140" href="#140">140</a> 		app.setThreshold(Level.ALL);
@@ -179,73 +179,78 @@
 <a class="jxr_linenumber" name="169" href="#169">169</a> <em class="jxr_javadoccomment">	 *            Requestor name</em>
 <a class="jxr_linenumber" name="170" href="#170">170</a> <em class="jxr_javadoccomment">	 * @return A {@link Logger} reference</em>
 <a class="jxr_linenumber" name="171" href="#171">171</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="172" href="#172">172</a> 	<strong class="jxr_keyword">private</strong> <a href="../../../../../it/apice/sapere/node/LogUtils.html">LogUtils</a> retrieveLogger(<strong class="jxr_keyword">final</strong> Class&lt;?&gt; reqClass, 
+<a class="jxr_linenumber" name="172" href="#172">172</a> 	<strong class="jxr_keyword">private</strong> <a href="../../../../../it/apice/sapere/node/LogUtils.html">LogUtils</a> retrieveLogger(<strong class="jxr_keyword">final</strong> Class&lt;?&gt; reqClass,
 <a class="jxr_linenumber" name="173" href="#173">173</a> 			<strong class="jxr_keyword">final</strong> String reqName) {
-<a class="jxr_linenumber" name="174" href="#174">174</a> 		<strong class="jxr_keyword">final</strong> Logger logger = Logger.getLogger(reqClass);
-<a class="jxr_linenumber" name="175" href="#175">175</a> 		<strong class="jxr_keyword">if</strong> (!inited.contains(logger)) {
-<a class="jxr_linenumber" name="176" href="#176">176</a> 			<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="177" href="#177">177</a> 				initLogger(logger, reqName);
-<a class="jxr_linenumber" name="178" href="#178">178</a> 				inited.add(logger);
-<a class="jxr_linenumber" name="179" href="#179">179</a> 			} <strong class="jxr_keyword">catch</strong> (IOException e) {
-<a class="jxr_linenumber" name="180" href="#180">180</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Cannot "</span> 
-<a class="jxr_linenumber" name="181" href="#181">181</a> 						+ <span class="jxr_string">"initialize log file"</span>, e);
-<a class="jxr_linenumber" name="182" href="#182">182</a> 			}
-<a class="jxr_linenumber" name="183" href="#183">183</a> 		}
-<a class="jxr_linenumber" name="184" href="#184">184</a> 
-<a class="jxr_linenumber" name="185" href="#185">185</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/node/internal/LogUtilsImpl.html">LogUtilsImpl</a>(logger, reqName);
-<a class="jxr_linenumber" name="186" href="#186">186</a> 	}
-<a class="jxr_linenumber" name="187" href="#187">187</a> 
-<a class="jxr_linenumber" name="188" href="#188">188</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="189" href="#189">189</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">	 * Initializes the facility.</em>
-<a class="jxr_linenumber" name="191" href="#191">191</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="192" href="#192">192</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="193" href="#193">193</a> <em class="jxr_javadoccomment">	 * @param consoleLevel</em>
-<a class="jxr_linenumber" name="194" href="#194">194</a> <em class="jxr_javadoccomment">	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,</em>
-<a class="jxr_linenumber" name="195" href="#195">195</a> <em class="jxr_javadoccomment">	 *            FATAL, OFF</em>
-<a class="jxr_linenumber" name="196" href="#196">196</a> <em class="jxr_javadoccomment">	 * @param deepDebug</em>
-<a class="jxr_linenumber" name="197" href="#197">197</a> <em class="jxr_javadoccomment">	 *            True if detailed info should be displayed (extremely slower),</em>
-<a class="jxr_linenumber" name="198" href="#198">198</a> <em class="jxr_javadoccomment">	 *            false otherwise</em>
-<a class="jxr_linenumber" name="199" href="#199">199</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="200" href="#200">200</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> init(<strong class="jxr_keyword">final</strong> String consoleLevel, 
-<a class="jxr_linenumber" name="201" href="#201">201</a> 			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> deepDebug) {
-<a class="jxr_linenumber" name="202" href="#202">202</a> 		<strong class="jxr_keyword">if</strong> (instance != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="203" href="#203">203</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Already initialized"</span>);
-<a class="jxr_linenumber" name="204" href="#204">204</a> 		}
-<a class="jxr_linenumber" name="205" href="#205">205</a> 
-<a class="jxr_linenumber" name="206" href="#206">206</a> 		instance = <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/node/internal/LoggerFactoryImpl.html">LoggerFactoryImpl</a>(
-<a class="jxr_linenumber" name="207" href="#207">207</a> 				Level.toLevel(consoleLevel, Level.INFO), deepDebug);
-<a class="jxr_linenumber" name="208" href="#208">208</a> 	}
-<a class="jxr_linenumber" name="209" href="#209">209</a> 
-<a class="jxr_linenumber" name="210" href="#210">210</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="211" href="#211">211</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a> <em class="jxr_javadoccomment">	 * Initializes the facility (slowest version).</em>
-<a class="jxr_linenumber" name="213" href="#213">213</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="214" href="#214">214</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="215" href="#215">215</a> <em class="jxr_javadoccomment">	 * @param consoleLevel</em>
-<a class="jxr_linenumber" name="216" href="#216">216</a> <em class="jxr_javadoccomment">	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,</em>
-<a class="jxr_linenumber" name="217" href="#217">217</a> <em class="jxr_javadoccomment">	 *            FATAL, OFF</em>
-<a class="jxr_linenumber" name="218" href="#218">218</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="219" href="#219">219</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> init(<strong class="jxr_keyword">final</strong> String consoleLevel) {
-<a class="jxr_linenumber" name="220" href="#220">220</a> 		init(consoleLevel, false);
-<a class="jxr_linenumber" name="221" href="#221">221</a> 	}
-<a class="jxr_linenumber" name="222" href="#222">222</a> 
-<a class="jxr_linenumber" name="223" href="#223">223</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">	 * Singleton method.</em>
-<a class="jxr_linenumber" name="226" href="#226">226</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="227" href="#227">227</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="228" href="#228">228</a> <em class="jxr_javadoccomment">	 * @return The singleton instance</em>
-<a class="jxr_linenumber" name="229" href="#229">229</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="230" href="#230">230</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../it/apice/sapere/node/LoggerFactory.html">LoggerFactory</a> getInstance() {
-<a class="jxr_linenumber" name="231" href="#231">231</a> 		<strong class="jxr_keyword">if</strong> (instance == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="232" href="#232">232</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Should be initialized first"</span>);
-<a class="jxr_linenumber" name="233" href="#233">233</a> 		}
-<a class="jxr_linenumber" name="234" href="#234">234</a> 
-<a class="jxr_linenumber" name="235" href="#235">235</a> 		<strong class="jxr_keyword">return</strong> instance;
-<a class="jxr_linenumber" name="236" href="#236">236</a> 	}
-<a class="jxr_linenumber" name="237" href="#237">237</a> 
-<a class="jxr_linenumber" name="238" href="#238">238</a> }
+<a class="jxr_linenumber" name="174" href="#174">174</a> 		Logger logger = Logger.getLogger(reqClass);
+<a class="jxr_linenumber" name="175" href="#175">175</a> 		<strong class="jxr_keyword">if</strong> (!reqClass.getSimpleName().equals(reqName)) {
+<a class="jxr_linenumber" name="176" href="#176">176</a> 			logger = Logger.getLogger(String.format(<span class="jxr_string">"%s::%s"</span>,
+<a class="jxr_linenumber" name="177" href="#177">177</a> 					reqClass.getCanonicalName(), reqName));
+<a class="jxr_linenumber" name="178" href="#178">178</a> 		}
+<a class="jxr_linenumber" name="179" href="#179">179</a> 
+<a class="jxr_linenumber" name="180" href="#180">180</a> 		<strong class="jxr_keyword">if</strong> (!inited.contains(logger)) {
+<a class="jxr_linenumber" name="181" href="#181">181</a> 			<strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="182" href="#182">182</a> 				initLogger(logger, reqName);
+<a class="jxr_linenumber" name="183" href="#183">183</a> 				inited.add(logger);
+<a class="jxr_linenumber" name="184" href="#184">184</a> 			} <strong class="jxr_keyword">catch</strong> (IOException e) {
+<a class="jxr_linenumber" name="185" href="#185">185</a> 				<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Cannot "</span>
+<a class="jxr_linenumber" name="186" href="#186">186</a> 						+ <span class="jxr_string">"initialize log file"</span>, e);
+<a class="jxr_linenumber" name="187" href="#187">187</a> 			}
+<a class="jxr_linenumber" name="188" href="#188">188</a> 		}
+<a class="jxr_linenumber" name="189" href="#189">189</a> 
+<a class="jxr_linenumber" name="190" href="#190">190</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/node/internal/LogUtilsImpl.html">LogUtilsImpl</a>(logger, reqName);
+<a class="jxr_linenumber" name="191" href="#191">191</a> 	}
+<a class="jxr_linenumber" name="192" href="#192">192</a> 
+<a class="jxr_linenumber" name="193" href="#193">193</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="194" href="#194">194</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="195" href="#195">195</a> <em class="jxr_javadoccomment">	 * Initializes the facility.</em>
+<a class="jxr_linenumber" name="196" href="#196">196</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="197" href="#197">197</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="198" href="#198">198</a> <em class="jxr_javadoccomment">	 * @param consoleLevel</em>
+<a class="jxr_linenumber" name="199" href="#199">199</a> <em class="jxr_javadoccomment">	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,</em>
+<a class="jxr_linenumber" name="200" href="#200">200</a> <em class="jxr_javadoccomment">	 *            FATAL, OFF</em>
+<a class="jxr_linenumber" name="201" href="#201">201</a> <em class="jxr_javadoccomment">	 * @param deepDebug</em>
+<a class="jxr_linenumber" name="202" href="#202">202</a> <em class="jxr_javadoccomment">	 *            True if detailed info should be displayed (extremely slower),</em>
+<a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">	 *            false otherwise</em>
+<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="205" href="#205">205</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> init(<strong class="jxr_keyword">final</strong> String consoleLevel, 
+<a class="jxr_linenumber" name="206" href="#206">206</a> 			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> deepDebug) {
+<a class="jxr_linenumber" name="207" href="#207">207</a> 		<strong class="jxr_keyword">if</strong> (instance != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="208" href="#208">208</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Already initialized"</span>);
+<a class="jxr_linenumber" name="209" href="#209">209</a> 		}
+<a class="jxr_linenumber" name="210" href="#210">210</a> 
+<a class="jxr_linenumber" name="211" href="#211">211</a> 		instance = <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/node/internal/LoggerFactoryImpl.html">LoggerFactoryImpl</a>(
+<a class="jxr_linenumber" name="212" href="#212">212</a> 				Level.toLevel(consoleLevel, Level.INFO), deepDebug);
+<a class="jxr_linenumber" name="213" href="#213">213</a> 	}
+<a class="jxr_linenumber" name="214" href="#214">214</a> 
+<a class="jxr_linenumber" name="215" href="#215">215</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="216" href="#216">216</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="217" href="#217">217</a> <em class="jxr_javadoccomment">	 * Initializes the facility (slowest version).</em>
+<a class="jxr_linenumber" name="218" href="#218">218</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="219" href="#219">219</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="220" href="#220">220</a> <em class="jxr_javadoccomment">	 * @param consoleLevel</em>
+<a class="jxr_linenumber" name="221" href="#221">221</a> <em class="jxr_javadoccomment">	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,</em>
+<a class="jxr_linenumber" name="222" href="#222">222</a> <em class="jxr_javadoccomment">	 *            FATAL, OFF</em>
+<a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="224" href="#224">224</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> init(<strong class="jxr_keyword">final</strong> String consoleLevel) {
+<a class="jxr_linenumber" name="225" href="#225">225</a> 		init(consoleLevel, false);
+<a class="jxr_linenumber" name="226" href="#226">226</a> 	}
+<a class="jxr_linenumber" name="227" href="#227">227</a> 
+<a class="jxr_linenumber" name="228" href="#228">228</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="229" href="#229">229</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="230" href="#230">230</a> <em class="jxr_javadoccomment">	 * Singleton method.</em>
+<a class="jxr_linenumber" name="231" href="#231">231</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="232" href="#232">232</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="233" href="#233">233</a> <em class="jxr_javadoccomment">	 * @return The singleton instance</em>
+<a class="jxr_linenumber" name="234" href="#234">234</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="235" href="#235">235</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../it/apice/sapere/node/LoggerFactory.html">LoggerFactory</a> getInstance() {
+<a class="jxr_linenumber" name="236" href="#236">236</a> 		<strong class="jxr_keyword">if</strong> (instance == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="237" href="#237">237</a> 			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalStateException(<span class="jxr_string">"Should be initialized first"</span>);
+<a class="jxr_linenumber" name="238" href="#238">238</a> 		}
+<a class="jxr_linenumber" name="239" href="#239">239</a> 
+<a class="jxr_linenumber" name="240" href="#240">240</a> 		<strong class="jxr_keyword">return</strong> instance;
+<a class="jxr_linenumber" name="241" href="#241">241</a> 	}
+<a class="jxr_linenumber" name="242" href="#242">242</a> 
+<a class="jxr_linenumber" name="243" href="#243">243</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
