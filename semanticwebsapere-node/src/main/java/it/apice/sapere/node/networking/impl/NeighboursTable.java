@@ -40,7 +40,7 @@ public final class NeighboursTable {
 	 * @return the id assigned to the neighbour just inserted
 	 */
 	public synchronized String addNeighbour(final Neighbour neighbour) {
-		String newId = "neighbour" + currentId++;
+		final String newId = "neighbour" + currentId++;
 		map.put(newId, neighbour);
 		return newId;
 
@@ -59,7 +59,7 @@ public final class NeighboursTable {
 	 */
 	public boolean sendMessage(final String neighbourId,
 			final NodeMessage message) {
-		Neighbour neighbour = map.get(neighbourId);
+		final Neighbour neighbour = map.get(neighbourId);
 		if (neighbour == null) {
 			return false;
 		}

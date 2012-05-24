@@ -8,52 +8,41 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.agents.SAPEREAgent
-	c60873 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPEREAgent.html">
+	c62106 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.avoid.SAPEREnodeServices
-	c60883 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./avoid/SAPEREnodeServices.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> SAPEREnodeServices </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.avoid </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl
-	c60887 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LoggerFactoryImpl.html">
+	c62119 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LoggerFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LoggerFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.LoggerFactory
-	c60889 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactory.html">
+	c62121 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LoggerFactory </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.internal.LoggerFactoryImpl implements it.apice.sapere.node.LoggerFactory
-	c60889:p -> c60887:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.node.avoid.SAPEREnodeServices NAVASSOC it.apice.sapere.node.LoggerFactory
-	c60883:p -> c60889:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.avoid.SAPEREnodeServices DEPEND it.apice.sapere.node.LoggerFactory
-	c60883:p -> c60889:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62121:p -> c62119:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LoggerFactory
-	c60887:p -> c60889:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62119:p -> c62121:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.osgi.framework.BundleActivator
-	c60887:p -> c60913:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62119:p -> c62146:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c60887:p -> c60873:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62119:p -> c62106:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND org.osgi.framework.BundleActivator
-	c60889:p -> c60913:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62121:p -> c62146:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c60889:p -> c60873:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62121:p -> c62106:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.osgi.framework.BundleActivator
-	c60913 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
+	c62146 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleActivator </td></tr>

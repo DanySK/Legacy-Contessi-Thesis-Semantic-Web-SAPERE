@@ -115,13 +115,13 @@ public final class NotifierAgent extends AbstractSystemAgent
 	 *            A {@link SubscriptionRequest}
 	 */
 	private void handleCancelSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res1 = mtsubscribers.get(sub.getLSAid()
+		final ArrayList<Subscriber> res1 = mtsubscribers.get(sub.getLSAid()
 				.toString());
-		ArrayList<Subscriber> res2 = otsubscribers.get(sub.getLSAid()
+		final ArrayList<Subscriber> res2 = otsubscribers.get(sub.getLSAid()
 				.toString());
 		if (res1 != null) {
 			for (int i = 0; i < res1.size(); i++) {
-				Subscriber e = res1.get(i);
+				final Subscriber e = res1.get(i);
 				if (e instanceof AbstractSAPEREAgentImpl
 						&& sub.getSubscriber() 
 						instanceof AbstractSAPEREAgentImpl) {
@@ -139,7 +139,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 		}
 		if (res2 != null) {
 			for (int i = 0; i < res1.size(); i++) {
-				Subscriber e = res1.get(i);
+				final Subscriber e = res1.get(i);
 				if (e instanceof AbstractSAPEREAgentImpl
 						&& sub.getSubscriber() 
 						instanceof AbstractSAPEREAgentImpl) {
@@ -164,12 +164,12 @@ public final class NotifierAgent extends AbstractSystemAgent
 	 *            A {@link SubscriptionRequest}
 	 */
 	private void handleSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res = mtsubscribers
+		final ArrayList<Subscriber> res = mtsubscribers
 				.get(sub.getLSAid().toString());
 		if (res != null) {
 			res.add(sub.getSubscriber());
 		} else {
-			ArrayList<Subscriber> list = new ArrayList<Subscriber>();
+			final ArrayList<Subscriber> list = new ArrayList<Subscriber>();
 			list.add(sub.getSubscriber());
 			mtsubscribers.put(sub.getLSAid().toString(), list);
 		}
@@ -182,12 +182,12 @@ public final class NotifierAgent extends AbstractSystemAgent
 	 *            A {@link SubscriptionRequest}
 	 */
 	private void handleOneTimeSubscription(final SubscriptionRequest sub) {
-		ArrayList<Subscriber> res = otsubscribers
+		final ArrayList<Subscriber> res = otsubscribers
 				.get(sub.getLSAid().toString());
 		if (res != null) {
 			res.add(sub.getSubscriber());
 		} else {
-			ArrayList<Subscriber> list = new ArrayList<Subscriber>();
+			final ArrayList<Subscriber> list = new ArrayList<Subscriber>();
 			list.add(sub.getSubscriber());
 			otsubscribers.put(sub.getLSAid().toString(), list);
 		}
@@ -205,15 +205,15 @@ public final class NotifierAgent extends AbstractSystemAgent
 	 */
 	private void manageNotification(final Notification notify) {
 		spy("notification received: " + notify);
-		LSAid lsaId = notify.getSubjectLSAid();
-		ArrayList<Subscriber> notificables = mtsubscribers
+		final LSAid lsaId = notify.getSubjectLSAid();
+		final ArrayList<Subscriber> notificables = mtsubscribers
 				.get(lsaId.toString());
 
 		if (!(notificables == null || notificables.size() == 0)) {
 			spy("found subscribers...");
 			for (Subscriber n : notificables) {
 				if (notify.getType() == SpaceOperationType.AGENT_UPDATE) {
-					Notification newNote = new Notification(notify);
+					final Notification newNote = new Notification(notify);
 					try {
 						n.sendMessage(newNote);
 					} catch (Exception e) {
@@ -229,7 +229,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 			}
 		}
 
-		ArrayList<Subscriber> otnotificables = otsubscribers.get(lsaId
+		final ArrayList<Subscriber> otnotificables = otsubscribers.get(lsaId
 				.toString());
 
 		if (otnotificables == null || otnotificables.size() == 0) {
@@ -239,7 +239,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 		spy("found one-time subscribers...");
 		for (Subscriber n : otnotificables) {
 			if (notify.getType() == SpaceOperationType.AGENT_UPDATE) {
-				Notification newNote = new Notification(notify);
+				final Notification newNote = new Notification(notify);
 				try {
 					n.sendMessage(newNote);
 				} catch (Exception e) {
@@ -265,7 +265,7 @@ public final class NotifierAgent extends AbstractSystemAgent
 	 * </p>
 	 */
 	private void printSubscribersList() {
-		StringBuilder builder = new StringBuilder();
+		final StringBuilder builder = new StringBuilder();
 		builder.append("NotifierAgent [subscribers=");
 		builder.append(mtsubscribers);
 		builder.append(", one-time-subscribers=");

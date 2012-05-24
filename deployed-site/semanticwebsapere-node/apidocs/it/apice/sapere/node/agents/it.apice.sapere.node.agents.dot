@@ -8,62 +8,62 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.agents.SAPERESysAgentSpec
-	c164 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPERESysAgentSpec.html">
+	c161 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPERESysAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPERESysAgentSpec </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec
-	c165 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentSpec.html">
+	c162 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentSpec </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.SAPEREAgentsFactory
-	c166 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentsFactory.html">
+	c163 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentsFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentsFactory </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.SAPEREAgent
-	c167 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgent.html">
+	c164 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.NodeServices
-	c168 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeServices.html">
+	c165 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c169 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspaceAccessPolicy.html">
+	c166 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspaceAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceAccessPolicy </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c170 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSystemAgent.html">
+	c167 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy
-	c171 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAccessPolicy.html">
+	c168 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractAccessPolicy </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.agents.AbstractAccessPolicy implements it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c169:p -> c171:p [dir=back,arrowtail=empty,style=dashed];
+	c166:p -> c168:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.node.agents.SAPEREAgent
-	c171:p -> c167:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c168:p -> c164:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

@@ -154,7 +154,8 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		MatchingEcolawTemplateImpl other = (MatchingEcolawTemplateImpl) obj;
+		final MatchingEcolawTemplateImpl other = 
+				(MatchingEcolawTemplateImpl) obj;
 		if (template == null) {
 			if (other.template != null) {
 				return false;

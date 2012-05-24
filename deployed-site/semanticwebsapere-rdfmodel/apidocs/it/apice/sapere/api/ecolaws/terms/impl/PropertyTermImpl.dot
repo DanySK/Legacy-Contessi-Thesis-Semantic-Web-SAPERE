@@ -35,10 +35,10 @@ digraph G {
 	c2731:p -> c2766:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c2731:p -> c2766:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>
-	c2733:p -> c2767:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c2733:p -> c2766:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>
+	c2733:p -> c2767:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c2736:p -> c2766:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>

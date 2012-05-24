@@ -97,7 +97,7 @@ public class LSAImpl implements LSA {
 			return false;
 		}
 
-		LSAImpl other = (LSAImpl) obj;
+		final LSAImpl other = (LSAImpl) obj;
 		if (content == null) {
 			if (other.content != null) {
 				return false;

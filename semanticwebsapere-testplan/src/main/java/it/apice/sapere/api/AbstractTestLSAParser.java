@@ -179,7 +179,7 @@ public abstract class AbstractTestLSAParser extends AbstractLSAModelTest {
 		final LSA lsa = createPrivilegedFactory().createLSA(
 				createPrivilegedFactory().createLSAid(sapereURI("lsa2543")));
 
-		Calendar cal = Calendar.getInstance();
+		final Calendar cal = Calendar.getInstance();
 		cal.set(LSA2543_TIME_YEAR, LSA2543_TIME_MONTH, LSA2543_TIME_DAY,
 				LSA2543_TIME_HOUR, LSA2543_TIME_MIN, LSA2543_TIME_SEC);
 		cal.set(Calendar.MILLISECOND, 0);
@@ -215,7 +215,7 @@ public abstract class AbstractTestLSAParser extends AbstractLSAModelTest {
 		final LSA lsa = createPrivilegedFactory().createLSA(
 				createPrivilegedFactory().createLSAid(sapereURI("lsa1432")));
 
-		Calendar cal = Calendar.getInstance();
+		final Calendar cal = Calendar.getInstance();
 		cal.set(LSA1432_TIME_YEAR, LSA1432_TIME_MONTH, LSA1432_TIME_DAY,
 				LSA1432_TIME_HOUR, LSA1432_TIME_MIN, LSA1432_TIME_SEC);
 		cal.set(Calendar.MILLISECOND, 0);

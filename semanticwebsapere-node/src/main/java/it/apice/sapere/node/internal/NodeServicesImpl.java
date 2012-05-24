@@ -7,6 +7,7 @@ import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.node.agents.NodeServices;
 
@@ -41,6 +42,9 @@ public final class NodeServicesImpl implements NodeServices {
 	/** LSA-space service. */
 	private final transient LSAspaceCore<?> lsaSpace;
 
+	/** Match Functions Customization service. */
+	private transient MatchFunctRegistry mFunctReg;
+
 	/** Run-time reference to the {@link ReactionManager}. */
 	private static transient ReactionManager rManager;
 
@@ -66,13 +70,16 @@ public final class NodeServicesImpl implements NodeServices {
 	 *            Reference to Formula Factory
 	 * @param lsaSpaceRef
 	 *            Reference to LSA-space
+	 * @param functReg
+	 *            Reference to Match Functions Registry
 	 */
 	private NodeServicesImpl(final PrivilegedLSAFactory lsaFactoryRef,
 			final LSACompiler<?> lsaCompilerRef, final LSAParser lsaParserRef,
 			final EcolawFactory lawFactoryRef,
 			final EcolawCompiler lawCompilerRef,
-			final FormulaFactory fFactoryRef, 
-			final LSAspaceCore<?> lsaSpaceRef) {
+			final FormulaFactory fFactoryRef,
+			final LSAspaceCore<?> lsaSpaceRef, 
+			final MatchFunctRegistry functReg) {
 		sysLsaFactory = lsaFactoryRef;
 		lsaCompiler = lsaCompilerRef;
 		lsaParser = lsaParserRef;
@@ -80,6 +87,7 @@ public final class NodeServicesImpl implements NodeServices {
 		lawCompiler = lawCompilerRef;
 		fFactory = fFactoryRef;
 		lsaSpace = lsaSpaceRef;
+		mFunctReg = functReg;
 	}
 
 	/**
@@ -101,20 +109,23 @@ public final class NodeServicesImpl implements NodeServices {
 	 *            Reference to Formula Factory
 	 * @param lsaSpaceRef
 	 *            Reference to LSA-space
+	 * @param functReg
+	 *            Reference to Match Functions Registry
 	 */
 	public static void init(final PrivilegedLSAFactory lsaFactoryRef,
 			final LSACompiler<?> lsaCompilerRef, final LSAParser lsaParserRef,
 			final EcolawFactory lawFactoryRef,
 			final EcolawCompiler lawCompilerRef,
-			final FormulaFactory fFactoryRef, 
-			final LSAspaceCore<?> lsaSpaceRef) {
+			final FormulaFactory fFactoryRef,
+			final LSAspaceCore<?> lsaSpaceRef, 
+			final MatchFunctRegistry functReg) {
 		if (instance != null) {
 			throw new IllegalStateException("Already initialized");
 		}
 
 		instance = new NodeServicesImpl(lsaFactoryRef, lsaCompilerRef,
 				lsaParserRef, lawFactoryRef, lawCompilerRef, fFactoryRef,
-				lsaSpaceRef);
+				lsaSpaceRef, functReg);
 	}
 
 	/**
@@ -172,6 +183,11 @@ public final class NodeServicesImpl implements NodeServices {
 		return rManager;
 	}
 
+	@Override
+	public MatchFunctRegistry getCustomFunctionRegistry() {
+		return mFunctReg;
+	}
+
 	/**
 	 * <p>
 	 * Registers a runtime reference to the {@link ReactionManager}.
@@ -187,4 +203,5 @@ public final class NodeServicesImpl implements NodeServices {
 
 		rManager = manager;
 	}
+
 }

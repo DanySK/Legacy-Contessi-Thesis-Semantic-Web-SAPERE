@@ -8,55 +8,55 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.networking.impl.Subscriber
-	c11537 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Subscriber.html">
+	c11869 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Subscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Subscriber </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessageType
-	c11538 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeMessageType.html">
+	c11870 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeMessageType.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> NodeMessageType </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessage
-	c11539 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeMessage.html">
+	c11871 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NodeMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NodeMessage </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NetworkManager
-	c11540 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NetworkManager.html">
+	c11872 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NetworkManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NetworkManager </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NeighboursTable
-	c11541 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NeighboursTable.html">
+	c11873 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NeighboursTable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NeighboursTable </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.Neighbour
-	c11542 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Neighbour.html">
+	c11874 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Neighbour.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Neighbour </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.Message
-	c11543 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Message.html">
+	c11875 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Message.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> Message </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessage NAVASSOC it.apice.sapere.node.networking.impl.NodeMessageType
-	c11539:p -> c11538:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c11871:p -> c11870:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.impl.NetworkManager NAVASSOC it.apice.sapere.node.networking.impl.NeighboursTable
-	c11540:p -> c11541:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c11872:p -> c11873:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.impl.NeighboursTable NAVASSOC it.apice.sapere.node.networking.impl.Neighbour
-	c11541:p -> c11542:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c11873:p -> c11874:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

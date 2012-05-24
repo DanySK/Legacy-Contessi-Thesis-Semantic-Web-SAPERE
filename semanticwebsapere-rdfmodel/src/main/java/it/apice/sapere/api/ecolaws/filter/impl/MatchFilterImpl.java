@@ -136,7 +136,7 @@ public class MatchFilterImpl implements MatchFilter {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		MatchFilterImpl other = (MatchFilterImpl) obj;
+		final MatchFilterImpl other = (MatchFilterImpl) obj;
 		if (left == null) {
 			if (other.left != null) {
 				return false;

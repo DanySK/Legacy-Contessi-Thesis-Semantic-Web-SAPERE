@@ -42,9 +42,9 @@ public final class CommunicationUtils {
 	public static GuestMessage receiveMessage(final Socket socket) {
 
 		try {
-			InputStream in = socket.getInputStream();
-			ObjectInputStream ois = new ObjectInputStream(in);
-			GuestMessage msg = (GuestMessage) ois.readObject();
+			final InputStream in = socket.getInputStream();
+			final ObjectInputStream ois = new ObjectInputStream(in);
+			final GuestMessage msg = (GuestMessage) ois.readObject();
 			return msg;
 
 		} catch (Exception e) {
@@ -70,7 +70,7 @@ public final class CommunicationUtils {
 	public static boolean sendString(final String s, final Socket socket) {
 
 		try {
-			ObjectOutputStream oos = new ObjectOutputStream(
+			final ObjectOutputStream oos = new ObjectOutputStream(
 					socket.getOutputStream());
 			oos.writeObject(s);
 			return true;
@@ -95,12 +95,12 @@ public final class CommunicationUtils {
 	public static boolean sendMessage(final Message mess, final Socket socket) {
 		try {
 			if (mess instanceof Notification) {
-				Notification notif = (Notification) mess;
-				GuestMessage message = new GuestMessage(
+				final Notification notif = (Notification) mess;
+				final GuestMessage message = new GuestMessage(
 						GuestMessageType.NOTIFY, notif.getSubjectLSAid(),
 						notif.getLSA(), 0, null, null);
 
-				ObjectOutputStream oos = new ObjectOutputStream(
+				final ObjectOutputStream oos = new ObjectOutputStream(
 						socket.getOutputStream());
 				oos.writeObject(message);
 

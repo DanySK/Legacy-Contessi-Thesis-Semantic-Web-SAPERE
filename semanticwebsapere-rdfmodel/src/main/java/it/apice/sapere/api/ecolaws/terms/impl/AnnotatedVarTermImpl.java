@@ -140,6 +140,7 @@ public class AnnotatedVarTermImpl<Type> extends VarTermImpl<Type> implements
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
+		final
 		AnnotatedVarTermImpl other = (AnnotatedVarTermImpl) obj;
 		if (formula == null) {
 			if (other.formula != null) {

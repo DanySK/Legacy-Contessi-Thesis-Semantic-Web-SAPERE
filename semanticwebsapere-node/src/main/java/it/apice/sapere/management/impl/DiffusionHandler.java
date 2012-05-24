@@ -76,6 +76,8 @@ public class DiffusionHandler implements SpaceObserver {
 			@SuppressWarnings("rawtypes")
 			final CompiledLSA lsa = NodeServicesImpl.getInstance()
 					.getLSACompiler().parse(rdfLsa, RDFFormat.RDF_XML);
+			LoggerFactoryImpl.getInstance().getLogger(DiffusionHandler.class)
+					.spy("CHECKING LSA for DIFFUSION:\n" + lsa.toString());
 
 			try {
 				// Enact diffusion (only if required)
@@ -84,7 +86,7 @@ public class DiffusionHandler implements SpaceObserver {
 						new NodeMessage(NodeMessageType.DIFFUSE, null,
 								new SpaceOperation(
 										SpaceOperationType.SYSTEM_DIFFUSE, lsa,
-										"system"), 0, 0, new float[0]));
+										"system"), 0, 0, new Float[0]));
 
 				// Remove diffused LSA from the LSA-space
 				space.remove(lsa);

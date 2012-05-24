@@ -168,7 +168,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 			myNodeMessage = new NodeMessage(NodeMessageType.NODE_INFO,
 					localDevice.getBluetoothAddress(), null, DUMMY_LATITUDE,
-					DUMMY_LONGITUDE, new float[] { DUMMY_ORIENTATION_X,
+					DUMMY_LONGITUDE, new Float[] { DUMMY_ORIENTATION_X,
 							DUMMY_ORIENTATION_Y, DUMMY_ORIENTATION_Z });
 		} catch (Exception ex) {
 			fatal("Cannot retrieve local Bluetooth device", ex);
@@ -215,8 +215,8 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 		btClient = new BTClient(myNodeMessage);
 
 		try {
-			String address = localDevice.getBluetoothAddress();
-			String name = localDevice.getFriendlyName();
+			final String address = localDevice.getBluetoothAddress();
+			final String name = localDevice.getFriendlyName();
 			spy(String.format("Using Bluetooth device: %s (%s)", name, 
 					address));
 
@@ -241,8 +241,8 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 					in = connection.openInputStream();
 					out = connection.openOutputStream();
 
-					ObjectInputStream ois = new ObjectInputStream(in);
-					NodeMessage message = (NodeMessage) ois.readObject();
+					final ObjectInputStream ois = new ObjectInputStream(in);
+					final NodeMessage message = (NodeMessage) ois.readObject();
 
 					switch (message.getType()) {
 					case DIFFUSE:
@@ -301,7 +301,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 			throws IOException {
 		neighbourRegistration(message, services);
 
-		ObjectOutputStream oos = new ObjectOutputStream(out);
+		final ObjectOutputStream oos = new ObjectOutputStream(out);
 		oos.writeObject(myNodeMessage);
 	}
 
@@ -330,7 +330,7 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void neighbourRegistration(final NodeMessage message,
 			final NodeServices services) {
-		String newId = netManager.registerNeighbour(new BTNeighbour(this,
+		final String newId = netManager.registerNeighbour(new BTNeighbour(this,
 				message.getSender()));
 
 		final LSAspaceCore space = services.getLSAspace();

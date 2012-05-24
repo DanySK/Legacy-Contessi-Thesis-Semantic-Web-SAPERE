@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.agents.SAPEREAgent
-	c2067 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgent.html">
+	c1981 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
@@ -16,59 +16,59 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c2070 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../AbstractSystemAgent.html">
+	c1984 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.UserAgentImpl
-	c2072 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UserAgentImpl.html">
+	c1986 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UserAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> UserAgentImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SysAgentImpl
-	c2073 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SysAgentImpl.html">
+	c1987 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SysAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SysAgentImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c2076 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSAPEREAgentImpl.html">
+	c1990 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSAPEREAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSAPEREAgentImpl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent
-	c2088 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../networking/guestsmngt/impl/GuestsHandlerAgent.html">
+	c2001 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../networking/guestsmngt/impl/GuestsHandlerAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestsHandlerAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.guestsmngt.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.Message
-	c2097 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../networking/impl/Message.html">
+	c2010 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../networking/impl/Message.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> Message </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.agents.AbstractSystemAgent extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c2076:p -> c2070:p [dir=back,arrowtail=empty];
+	c1990:p -> c1984:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.impl.UserAgentImpl extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c2076:p -> c2072:p [dir=back,arrowtail=empty];
+	c1990:p -> c1986:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.impl.SysAgentImpl extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c2076:p -> c2073:p [dir=back,arrowtail=empty];
+	c1990:p -> c1987:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl implements it.apice.sapere.node.agents.SAPEREAgent
-	c2067:p -> c2076:p [dir=back,arrowtail=empty,style=dashed];
+	c1981:p -> c1990:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c2076:p -> c2088:p [dir=back,arrowtail=empty];
+	c1990:p -> c2001:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl NAVASSOC it.apice.sapere.node.networking.impl.Message
-	c2076:p -> c2097:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c1990:p -> c2010:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl DEPEND it.apice.sapere.node.networking.impl.Message
-	c2076:p -> c2097:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c1990:p -> c2010:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent DEPEND it.apice.sapere.node.networking.impl.Message
-	c2088:p -> c2097:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c2001:p -> c2010:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

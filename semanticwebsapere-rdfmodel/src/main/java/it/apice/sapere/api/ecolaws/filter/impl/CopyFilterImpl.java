@@ -115,7 +115,7 @@ public abstract class CopyFilterImpl implements CopyFilter {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		CopyFilterImpl other = (CopyFilterImpl) obj;
+		final CopyFilterImpl other = (CopyFilterImpl) obj;
 		if (copyOpString == null) {
 			if (other.copyOpString != null) {
 				return false;

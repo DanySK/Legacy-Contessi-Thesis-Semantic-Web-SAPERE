@@ -185,7 +185,7 @@ public class PropertyImpl implements Property {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		PropertyImpl other = (PropertyImpl) obj;
+		final PropertyImpl other = (PropertyImpl) obj;
 		if (name == null) {
 			if (other.name != null) {
 				return false;

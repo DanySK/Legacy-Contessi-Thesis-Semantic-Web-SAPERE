@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.agents.SAPEREAgent
-	c2859 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../agents/SAPEREAgent.html">
+	c2709 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../agents/SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
@@ -16,33 +16,33 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber
-	c2879 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../guestsmngt/impl/GuestSubscriber.html">
+	c2728 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../guestsmngt/impl/GuestSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestSubscriber </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.guestsmngt.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.Subscriber
-	c2883 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Subscriber.html">
+	c2732 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Subscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Subscriber </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest
-	c2891 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../obsnotif/impl/SubscriptionRequest.html">
+	c2740 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../obsnotif/impl/SubscriptionRequest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SubscriptionRequest </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.obsnotif.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.agents.SAPEREAgent implements it.apice.sapere.node.networking.impl.Subscriber
-	c2883:p -> c2859:p [dir=back,arrowtail=empty,style=dashed];
+	c2732:p -> c2709:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber implements it.apice.sapere.node.networking.impl.Subscriber
-	c2883:p -> c2879:p [dir=back,arrowtail=empty,style=dashed];
+	c2732:p -> c2728:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.node.networking.impl.Subscriber
-	c2891:p -> c2883:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c2740:p -> c2732:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest DEPEND it.apice.sapere.node.networking.impl.Subscriber
-	c2891:p -> c2883:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c2740:p -> c2732:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

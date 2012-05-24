@@ -8,70 +8,70 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.filters.OpFilter
-	c481 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./OpFilter.html">
+	c485 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./OpFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> OpFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.MatchFilter
-	c482 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchFilter.html">
+	c486 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.HasNotFilter
-	c483 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./HasNotFilter.html">
+	c487 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./HasNotFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> HasNotFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.HasFilter
-	c484 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./HasFilter.html">
+	c488 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./HasFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> HasFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.ExtendsFilter
-	c485 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExtendsFilter.html">
+	c489 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExtendsFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ExtendsFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.CopyFilter
-	c486 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./CopyFilter.html">
+	c490 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./CopyFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CopyFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.ClonesFilter
-	c487 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ClonesFilter.html">
+	c491 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ClonesFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ClonesFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.AssignFilter
-	c488 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AssignFilter.html">
+	c492 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AssignFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> AssignFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.filters.HasNotFilter implements it.apice.sapere.api.ecolaws.filters.OpFilter
-	c481:p -> c483:p [dir=back,arrowtail=empty,style=dashed];
+	c485:p -> c487:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.filters.HasFilter implements it.apice.sapere.api.ecolaws.filters.OpFilter
-	c481:p -> c484:p [dir=back,arrowtail=empty,style=dashed];
+	c485:p -> c488:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.filters.ExtendsFilter implements it.apice.sapere.api.ecolaws.filters.CopyFilter
-	c486:p -> c485:p [dir=back,arrowtail=empty,style=dashed];
+	c490:p -> c489:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.filters.ClonesFilter implements it.apice.sapere.api.ecolaws.filters.CopyFilter
-	c486:p -> c487:p [dir=back,arrowtail=empty,style=dashed];
+	c490:p -> c491:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.filters.AssignFilter implements it.apice.sapere.api.ecolaws.filters.OpFilter
-	c481:p -> c488:p [dir=back,arrowtail=empty,style=dashed];
+	c485:p -> c492:p [dir=back,arrowtail=empty,style=dashed];
 }
 

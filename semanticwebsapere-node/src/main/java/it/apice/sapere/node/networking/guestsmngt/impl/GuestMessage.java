@@ -35,10 +35,10 @@ public class GuestMessage implements Serializable {
 	private final String serLsa;
 
 	/** Signal power field. */
-	private final int signal;
+	private final Integer signal;
 
 	/** Orientation field. */
-	private final float[] orientation;
+	private final Float[] orientation;
 
 	/** MAC Address. */
 	private final String macAddress;
@@ -60,7 +60,7 @@ public class GuestMessage implements Serializable {
 	 *            The macAddress of the mobile device
 	 */
 	public GuestMessage(final GuestMessageType aType, final CompiledLSA<?> lsa,
-			final int aSignal, final float[] anOrientation,
+			final int aSignal, final Float[] anOrientation,
 			final String aMacAddress) {
 		this(aType, lsa.getLSAid(), lsa.toString(RDFFormat.RDF_XML), aSignal,
 				anOrientation, aMacAddress);
@@ -86,7 +86,7 @@ public class GuestMessage implements Serializable {
 	 */
 	public GuestMessage(final GuestMessageType aType, final LSAid lsaId,
 			final String serializedLSA, final int aSignal,
-			final float[] anOrientation, final String aMacAddress) {
+			final Float[] anOrientation, final String aMacAddress) {
 		type = aType;
 		id = lsaId;
 		serLsa = serializedLSA;
@@ -147,7 +147,7 @@ public class GuestMessage implements Serializable {
 	 * 
 	 * @return The orientation
 	 */
-	public final float[] getOrientation() {
+	public final Float[] getOrientation() {
 		return orientation;
 	}
 

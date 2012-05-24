@@ -188,7 +188,7 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		CompiledLSAImpl other = (CompiledLSAImpl) obj;
+		final CompiledLSAImpl other = (CompiledLSAImpl) obj;
 		if (lsaId == null) {
 			if (other.lsaId != null) {
 				return false;
@@ -196,8 +196,8 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 		} else if (!lsaId.equals(other.lsaId)) {
 			return false;
 		}
-		String content = toString(RDFFormat.RDF_XML);
-		String oContent = other.toString(RDFFormat.RDF_XML);
+		final String content = toString(RDFFormat.RDF_XML);
+		final String oContent = other.toString(RDFFormat.RDF_XML);
 		if (!content.equals(oContent)) {
 			return false;
 		}

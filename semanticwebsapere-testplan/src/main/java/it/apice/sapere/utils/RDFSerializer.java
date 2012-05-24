@@ -72,7 +72,7 @@ public final class RDFSerializer {
 			return;
 		}
 
-		Model rdfModel = ModelFactory.createDefaultModel();
+		final Model rdfModel = ModelFactory.createDefaultModel();
 		rdfModel.read(inputStream, null, inputFileFormat);
 		rdfModel.write(outputStream, outputFileFormat);
 

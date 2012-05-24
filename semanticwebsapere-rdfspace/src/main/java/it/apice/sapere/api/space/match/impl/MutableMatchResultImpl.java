@@ -170,7 +170,7 @@ public class MutableMatchResultImpl implements MutableMatchResult {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		MutableMatchResultImpl other = (MutableMatchResultImpl) obj;
+		final MutableMatchResultImpl other = (MutableMatchResultImpl) obj;
 		if (assignments == null) {
 			if (other.assignments != null) {
 				return false;

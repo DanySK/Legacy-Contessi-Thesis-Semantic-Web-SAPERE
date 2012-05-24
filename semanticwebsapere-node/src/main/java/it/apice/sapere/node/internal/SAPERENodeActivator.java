@@ -9,6 +9,7 @@ import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
+import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
 import it.apice.sapere.management.DefaultReactionsScheduler;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.impl.DiffusionHandler;
@@ -42,7 +43,11 @@ public class SAPERENodeActivator implements BundleActivator {
 
 	/** Console Log level System property Key. */
 	private static final transient String CONSOLE_LOG_LEVEL = "sapere"
-			+ ".console.level";
+			+ ".log.console.level";
+	
+	/** File Log level System property Key. */
+	private static final transient String FILE_LOG_LEVEL = "sapere"
+			+ ".log.file.level";
 
 	/** LSA Factory service. */
 	private transient PrivilegedLSAFactory lsaFactory;
@@ -65,6 +70,9 @@ public class SAPERENodeActivator implements BundleActivator {
 	/** LSA-space service. */
 	private transient LSAspaceCore<?> lsaSpace;
 
+	/** Match Functions Customization service. */
+	private transient MatchFunctRegistry mFunctRegistry;
+
 	/** List of published registrations. */
 	private final transient List<ServiceRegistration<?>> regs = 
 			new LinkedList<ServiceRegistration<?>>();
@@ -79,7 +87,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public final void start(final BundleContext context) throws Exception {
-		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL));
+		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL), 
+				context.getProperty(FILE_LOG_LEVEL));
 
 		/* === WELCOME MESSAGE === */
 
@@ -105,6 +114,8 @@ public class SAPERENodeActivator implements BundleActivator {
 		log("   + Eco-law's Formula Factory");
 		initLSAspace(context);
 		log("   + LSA-space");
+		initMFunctCust(context);
+		log("   + Match Functions Customization");
 
 		/* === CONNECTIVITY DAEMONS === */
 
@@ -113,7 +124,7 @@ public class SAPERENodeActivator implements BundleActivator {
 
 		// Node Services getter initialization
 		NodeServicesImpl.init(lsaFactory, lsaCompiler, lsaParser, lawFactory,
-				lawCompiler, fFactory, lsaSpace);
+				lawCompiler, fFactory, lsaSpace, mFunctRegistry);
 
 		// NotifierAgent.getInstance().start();
 		// log("   + \"Remote\" observation enabled");
@@ -216,8 +227,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerReactionManager(final BundleContext context) {
-		regs.add(context.registerService(ReactionManager.class, 
-				rManager, null));
+		regs.add(context.registerService(ReactionManager.class, rManager, 
+				null));
 	}
 
 	/**
@@ -239,6 +250,29 @@ public class SAPERENodeActivator implements BundleActivator {
 		}
 
 		lsaFactory = context.getService(ref);
+		refs.add(ref);
+	}
+
+	/**
+	 * <p>
+	 * Initializes the Match Function Customization service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle context
+	 * @throws SAPEREException
+	 *             Cannot find the service
+	 */
+	private void initMFunctCust(final BundleContext context)
+			throws SAPEREException {
+		final ServiceReference<MatchFunctRegistry> ref = context
+				.getServiceReference(MatchFunctRegistry.class);
+		if (ref == null) {
+			throw new SAPEREException(
+					"Cannot find \"Match Function Customization\" service");
+		}
+
+		mFunctRegistry = context.getService(ref);
 		refs.add(ref);
 	}
 

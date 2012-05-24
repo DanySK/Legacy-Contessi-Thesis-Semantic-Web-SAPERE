@@ -44,8 +44,11 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	private static final transient String EASY_FILE_PATTERN = "%d"
 			+ "{yyyy-MM-dd HH:mm:ss.SSS} %5p %c@%t $%m%n";
 
-	/** Console Log level. */
-	private final transient Level level;
+	/** Console Log dispLevel. */
+	private final transient Level dispLevel;
+
+	/** File Log dispLevel. */
+	private final transient Level fileLevel;
 
 	/** Deep = slower. */
 	private final transient boolean deep;
@@ -61,18 +64,26 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 * Builds a new {@link LoggerFactoryImpl}.
 	 * </p>
 	 * 
-	 * @param lLevel
-	 *            Console Log level
+	 * @param dLevel
+	 *            Console Log dispLevel
+	 * @param fLevel
+	 *            File Log dispLevel
 	 * @param deepDebug
 	 *            True if detailed info should be displayed (extremely slower),
 	 *            false otherwise
 	 */
-	private LoggerFactoryImpl(final Level lLevel, final boolean deepDebug) {
-		if (lLevel == null) {
-			throw new IllegalArgumentException("Invalid logger level");
+	private LoggerFactoryImpl(final Level dLevel, final Level fLevel,
+			final boolean deepDebug) {
+		if (dLevel == null) {
+			throw new IllegalArgumentException("Invalid logger dispLevel");
 		}
 
-		level = lLevel;
+		if (fLevel == null) {
+			throw new IllegalArgumentException("Invalid logger fileLevel");
+		}
+
+		dispLevel = dLevel;
+		fileLevel = fLevel;
 		deep = deepDebug;
 
 		LogManager.resetConfiguration();
@@ -95,8 +106,13 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		logger.setLevel(Level.ALL);
 		logger.removeAllAppenders();
 
-		logger.addAppender(initConsoleAppender());
-		logger.addAppender(initFileAppender(agentId));
+		if (dispLevel.isGreaterOrEqual(Level.OFF)) {
+			logger.addAppender(initConsoleAppender());
+		}
+
+		if (fileLevel.isGreaterOrEqual(Level.OFF)) {
+			logger.addAppender(initFileAppender(agentId));
+		}
 	}
 
 	/**
@@ -110,7 +126,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		final ConsoleAppender app = new ConsoleAppender(new PatternLayout(
 				CONSOLE_PATTERN));
 		app.setTarget("System.out");
-		app.setThreshold(level);
+		app.setThreshold(dispLevel);
 
 		return app;
 	}
@@ -137,7 +153,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 						"sapere-logs/sapere-%s.log", agentId));
 		app.setMaxBackupIndex(NUMBER_OF_LOG_BACKUPS);
 		app.setMaxFileSize(LOG_FILE_SIZE);
-		app.setThreshold(Level.ALL);
+		app.setThreshold(fileLevel);
 
 		return app;
 	}
@@ -196,33 +212,20 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	 * </p>
 	 * 
 	 * @param consoleLevel
-	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,
+	 *            Console log dispLevel: ALL, TRACE, DEBUG, INFO, WARN, ERROR,
 	 *            FATAL, OFF
-	 * @param deepDebug
-	 *            True if detailed info should be displayed (extremely slower),
-	 *            false otherwise
+	 * @param fileLevel
+	 *            Console log dispLevel: ALL, TRACE, DEBUG, INFO, WARN, ERROR,
+	 *            FATAL, OFF
 	 */
-	public static void init(final String consoleLevel, 
-			final boolean deepDebug) {
+	public static void init(final String consoleLevel, final String fileLevel) {
 		if (instance != null) {
 			throw new IllegalStateException("Already initialized");
 		}
 
 		instance = new LoggerFactoryImpl(
-				Level.toLevel(consoleLevel, Level.INFO), deepDebug);
-	}
-
-	/**
-	 * <p>
-	 * Initializes the facility (slowest version).
-	 * </p>
-	 * 
-	 * @param consoleLevel
-	 *            Console log level: ALL, TRACE, DEBUG, INFO, WARN, ERROR,
-	 *            FATAL, OFF
-	 */
-	public static void init(final String consoleLevel) {
-		init(consoleLevel, false);
+				Level.toLevel(consoleLevel, Level.INFO), Level.toLevel(
+						fileLevel, Level.ALL), false);
 	}
 
 	/**

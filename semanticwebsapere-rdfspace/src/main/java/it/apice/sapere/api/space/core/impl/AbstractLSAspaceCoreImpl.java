@@ -395,9 +395,17 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				msg.append(" ").append(law.getLabel());
 			}
 
-			notifySpaceOperation(msg.toString(),
+			final String[] uIds = retrieveUpdatedLSAids(law);
+			final List<CompiledLSA<StmtIterator>> uLsas = 
+				new LinkedList<CompiledLSA<StmtIterator>>();
+			for (String id : uIds) {
+				uLsas.add(new CompiledLSAImpl(converter.getFactory()
+						.createLSAid(URI.create(id)), extractLSAData(id)));
+			}
+
+			notifySpaceOperation(msg.toString(), uLsas,
 					SpaceOperationType.SYSTEM_ACTION);
-			notifyLSAObservers(msg.toString(), retrieveUpdatedLSAs(law),
+			notifyLSAObservers(msg.toString(), uLsas,
 					SpaceOperationType.SYSTEM_ACTION);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot apply eco-law", ex);
@@ -419,21 +427,16 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * @throws Exception
 	 *             Cannot retrieve wanted LSA for notification
 	 */
-	private LSA[] retrieveUpdatedLSAs(final MatchingEcolaw law)
+	private String[] retrieveUpdatedLSAids(final MatchingEcolaw law)
 			throws Exception {
 		final Set<String> ids = new HashSet<String>();
-		final List<LSA> res = new LinkedList<LSA>();
-//		System.out.println("Looking for LSA-ids: " + law.getUpdateQuery());
 		final Matcher matcher = LSA_ID_PATTERN.matcher(law.getUpdateQuery());
 		while (matcher.find()) {
-			String sLsaId = matcher.group(1);
-			if (ids.add(sLsaId)) {
-				res.add(converter.parseLSA(model.getResource(sLsaId), model));
-			}
+			final String sLsaId = matcher.group(1);
+			ids.add(sLsaId);
 		}
 
-//		System.out.println("Found LSA-ids: " + res.size());
-		return res.toArray(new LSA[res.size()]);
+		return ids.toArray(new String[ids.size()]);
 	}
 
 	@Override
@@ -502,6 +505,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * 
 	 * @param msg
 	 *            Description of the event
+	 * @param lsas
+	 *            The involved LSAs
+	 * @param type
+	 *            Event type
+	 */
+	private void notifySpaceOperation(final String msg,
+			final List<CompiledLSA<StmtIterator>> lsas,
+			final SpaceOperationType type) {
+		if (notificationsEnabled) {
+			for (SpaceObserver obs : listeners) {
+				obs.eventOccurred(new SpaceEventImpl(msg, lsas
+						.toArray(new CompiledLSA<?>[lsas.size()]), type));
+			}
+		}
+	}
+
+	/**
+	 * <p>
+	 * Notifies Space observers of an internal event.
+	 * </p>
+	 * 
+	 * @param msg
+	 *            Description of the event
 	 * @param lsa
 	 *            The involved LSA
 	 * @param type
@@ -555,15 +581,18 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 *            Actual LSAs status
 	 * @param type
 	 *            Event type
+	 * @throws SAPEREException Cannot parse LSA
 	 */
-	private void notifyLSAObservers(final String msg, final LSA[] lsas,
-			final SpaceOperationType type) {
+	private void notifyLSAObservers(final String msg,
+			final List<CompiledLSA<StmtIterator>> lsas,
+			final SpaceOperationType type) throws SAPEREException {
 		if (notificationsEnabled) {
-			for (LSA lsa : lsas) {
-				final List<LSAObserver> obss = observers.get(lsa.getLSAId());
+			for (CompiledLSA<StmtIterator> cLsa : lsas) {
+				final List<LSAObserver> obss = observers.get(cLsa.getLSAid());
 				if (obss != null) {
 					for (LSAObserver obs : obss) {
-						obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+						obs.eventOccurred(new LSAEventImpl(msg,
+								retrieveLSA(cLsa), type));
 					}
 				}
 			}
@@ -677,6 +706,25 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		} finally {
 			releaseLock();
 		}
+	}
+
+	/**
+	 * <p>
+	 * Extracts all data related to the LSA-id that has been provided.
+	 * </p>
+	 * <p>
+	 * The method gets all the properties relative to the LSA-id and explores
+	 * all (sub) blank-nodes.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The id of the LSA to be extracted (as a String)
+	 * @return An interator over all information
+	 */
+	private StmtIterator extractLSAData(final String lsaId) {
+		final Model data = ModelFactory.createDefaultModel();
+		extractLSAData(model.createResource(lsaId), data);
+		return data.listStatements();
 	}
 
 	/**

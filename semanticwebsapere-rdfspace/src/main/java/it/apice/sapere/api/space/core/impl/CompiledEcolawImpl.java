@@ -197,7 +197,7 @@ public class CompiledEcolawImpl implements CompiledEcolaw {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		CompiledEcolawImpl other = (CompiledEcolawImpl) obj;
+		final CompiledEcolawImpl other = (CompiledEcolawImpl) obj;
 		if (rateVar == null) {
 			if (other.rateVar != null) {
 				return false;

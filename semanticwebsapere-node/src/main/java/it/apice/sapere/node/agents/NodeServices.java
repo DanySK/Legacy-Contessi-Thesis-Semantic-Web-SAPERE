@@ -7,6 +7,7 @@ import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
 import it.apice.sapere.management.ReactionManager;
 
 /**
@@ -91,5 +92,13 @@ public interface NodeServices {
 	 * @return Reference to the Reaction Manager
 	 */
 	ReactionManager getReactionManager();
-	
+
+	/**
+	 * <p>
+	 * Retrieves a reference to the registry of custom function that should be
+	 * used during match (and apply) phases.
+	 * 
+	 * @return Reference to Match Functions Registry Service
+	 */
+	MatchFunctRegistry getCustomFunctionRegistry();
 }

@@ -8,31 +8,31 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T>
-	c394 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CustomStrategyPipelineImpl.html">
+	c463 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CustomStrategyPipelineImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> CustomStrategyPipelineImpl&lt;T&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> implements it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c405:p -> c394:p [dir=back,arrowtail=empty,style=dashed];
+	c476:p -> c463:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> NAVASSOC it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c463:p -> c477:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c394:p -> c406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c463:p -> c477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c406 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/strategy/CustomStrategyPipelineStep.html">
+	c477 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/strategy/CustomStrategyPipelineStep.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CustomStrategyPipelineStep&lt;T&gt; </td></tr>
@@ -40,7 +40,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c405 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/strategy/CustomStrategyPipeline.html">
+	c476 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/strategy/CustomStrategyPipeline.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CustomStrategyPipeline&lt;T&gt; </td></tr>

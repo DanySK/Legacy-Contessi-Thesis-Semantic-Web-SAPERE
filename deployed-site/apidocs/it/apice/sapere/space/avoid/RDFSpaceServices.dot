@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52420 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
+	c53812 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c52421 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
+	c53813 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSACompiler&lt;RDFStmtIterType&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.EcolawCompiler
-	c52422 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/EcolawCompiler.html">
+	c53814 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/EcolawCompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawCompiler </td></tr>
@@ -32,40 +32,31 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.avoid.RDFModelServices
-	c52441 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/avoid/RDFModelServices.html">
+	c53833 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/avoid/RDFModelServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RDFModelServices </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.avoid </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.avoid.RDFSpaceServices
-	c52509 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./RDFSpaceServices.html">
+	c53903 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./RDFSpaceServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RDFSpaceServices </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.avoid.SAPEREnodeServices
-	c52539 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../node/avoid/SAPEREnodeServices.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> SAPEREnodeServices </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.avoid </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.space.avoid.RDFSpaceServices extends it.apice.sapere.api.avoid.RDFModelServices
-	c52441:p -> c52509:p [dir=back,arrowtail=empty];
-	//it.apice.sapere.node.avoid.SAPEREnodeServices extends it.apice.sapere.space.avoid.RDFSpaceServices
-	c52509:p -> c52539:p [dir=back,arrowtail=empty];
+	c53833:p -> c53903:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.space.avoid.RDFSpaceServices NAVASSOC it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52509:p -> c52420:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c53903:p -> c53812:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.avoid.RDFSpaceServices NAVASSOC it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c52509:p -> c52421:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c53903:p -> c53813:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.avoid.RDFSpaceServices NAVASSOC it.apice.sapere.api.space.core.EcolawCompiler
-	c52509:p -> c52422:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52509:p -> c52420:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c52509:p -> c52421:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c53903:p -> c53814:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
-	c52509:p -> c52422:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c53903:p -> c53814:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c53903:p -> c53813:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c53903:p -> c53812:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

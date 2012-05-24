@@ -8,28 +8,28 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTNeighbour
-	c63896 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../bluetooth/impl/BTNeighbour.html">
+	c65154 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../bluetooth/impl/BTNeighbour.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BTNeighbour </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.bluetooth.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NeighboursTable
-	c63907 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NeighboursTable.html">
+	c65165 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NeighboursTable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NeighboursTable </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.Neighbour
-	c63908 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Neighbour.html">
+	c65166 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Neighbour.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Neighbour </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.bluetooth.impl.BTNeighbour implements it.apice.sapere.node.networking.impl.Neighbour
-	c63908:p -> c63896:p [dir=back,arrowtail=empty,style=dashed];
+	c65166:p -> c65154:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.networking.impl.NeighboursTable NAVASSOC it.apice.sapere.node.networking.impl.Neighbour
-	c63907:p -> c63908:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c65165:p -> c65166:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

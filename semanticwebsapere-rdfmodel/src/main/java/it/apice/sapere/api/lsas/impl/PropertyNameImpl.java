@@ -78,7 +78,7 @@ public class PropertyNameImpl implements PropertyName {
 			return false;
 		}
 
-		PropertyNameImpl other = (PropertyNameImpl) obj;
+		final PropertyNameImpl other = (PropertyNameImpl) obj;
 		if (id == null) {
 			if (other.id != null) {
 				return false;

@@ -25,13 +25,13 @@ public class NodeMessage implements Serializable {
 	private final SpaceOperation operation;
 
 	/** Geo-localization: latitude. */
-	private final double latitude;
+	private final Double latitude;
 
 	/** Geo-localization: longitude. */
-	private final double longitude;
+	private final Double longitude;
 
 	/** Geo-localization: orientation. */
-	private final float[] orientation;
+	private final Float[] orientation;
 
 	/** Who sent the message. */
 	private final String sender;
@@ -56,7 +56,7 @@ public class NodeMessage implements Serializable {
 	 */
 	public NodeMessage(final NodeMessageType aType, final String aSender,
 			final SpaceOperation anOp, final double lat, final double lng,
-			final float[] anOrientation) {
+			final Float[] anOrientation) {
 		type = aType;
 		sender = aSender;
 		operation = anOp;
@@ -96,7 +96,7 @@ public class NodeMessage implements Serializable {
 	/**
 	 * @return the orientation
 	 */
-	public final float[] getOrientation() {
+	public final Float[] getOrientation() {
 		return orientation;
 	}
 

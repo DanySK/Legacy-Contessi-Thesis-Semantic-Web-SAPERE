@@ -112,7 +112,7 @@ public class SemanticDescriptionImpl implements SemanticDescription {
 			return false;
 		}
 
-		SemanticDescriptionImpl other = (SemanticDescriptionImpl) obj;
+		final SemanticDescriptionImpl other = (SemanticDescriptionImpl) obj;
 		if (properties == null) {
 			if (other.properties != null) {
 				return false;

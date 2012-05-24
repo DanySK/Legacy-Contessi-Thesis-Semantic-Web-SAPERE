@@ -146,6 +146,7 @@ public class PropertyValueImpl<Type extends Comparable<Type>, CompType>
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
+		final
 		PropertyValueImpl other = (PropertyValueImpl) obj;
 		if (langCode == null) {
 			if (other.langCode != null) {

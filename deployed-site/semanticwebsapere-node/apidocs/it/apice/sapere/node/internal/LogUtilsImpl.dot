@@ -8,13 +8,13 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.internal.LogUtilsImpl
-	c2303 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtilsImpl.html">
+	c2163 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtilsImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LogUtilsImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.LogUtils
-	c2305 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LogUtils.html">
+	c2165 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
@@ -22,11 +22,11 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.internal.LogUtilsImpl implements it.apice.sapere.node.LogUtils
-	c2305:p -> c2303:p [dir=back,arrowtail=empty,style=dashed];
+	c2165:p -> c2163:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.internal.LogUtilsImpl NAVASSOC org.apache.log4j.Logger
-	c2303:p -> c2327:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c2163:p -> c2187:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// org.apache.log4j.Logger
-	c2327 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Logger.html">
+	c2187 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Logger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Logger </td></tr>
 			<tr><td><font point-size="7.0"> org.apache.log4j </font></td></tr>

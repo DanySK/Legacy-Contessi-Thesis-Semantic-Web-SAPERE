@@ -256,7 +256,7 @@ public class EcolawImpl implements Ecolaw {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		EcolawImpl other = (EcolawImpl) obj;
+		final EcolawImpl other = (EcolawImpl) obj;
 		if (label == null) {
 			if (other.label != null) {
 				return false;

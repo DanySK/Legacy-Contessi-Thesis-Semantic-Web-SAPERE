@@ -7,6 +7,8 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.impl.EcolawCompilerImpl;
 import it.apice.sapere.api.space.core.impl.LSACompilerImpl;
 import it.apice.sapere.api.space.core.impl.ReasoningLevel;
+import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
+import it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl;
 import it.apice.sapere.space.impl.LSAspaceImpl;
 
 import java.util.Hashtable;
@@ -40,9 +42,12 @@ public class RDFSpaceActivator implements BundleActivator {
 	/** Eco-law Compiler Service registration. */
 	private transient ServiceRegistration<?> elCompilerServiceReg;
 
+	/** Match Function Customization Service registration. */
+	private transient ServiceRegistration<?> customFunctionServiceReg;
+
 	/** Reference to LSA Factory service. */
 	private transient ServiceReference<PrivilegedLSAFactory> lsaFactoryRef;
-
+	
 	@Override
 	public final void start(final BundleContext context) throws Exception {
 		log("Starting up..");
@@ -53,6 +58,7 @@ public class RDFSpaceActivator implements BundleActivator {
 		registerEcolawCompiler(context);
 
 		registerLSAspace(context, fact);
+		registerCustomFunctions(context);
 	}
 
 	/**
@@ -68,6 +74,29 @@ public class RDFSpaceActivator implements BundleActivator {
 				new EcolawCompilerImpl(), declareCompilersProps());
 
 		log("Eco-law Compiler REGISTERED.");
+	}
+
+	/**
+	 * <p>
+	 * Registers the Match Functions Customization service.
+	 * </p>
+	 * 
+	 * @param context
+	 *            Bundle Context
+	 * @return A direct reference to the service implementation
+	 */
+	private MatchFunctRegistry registerCustomFunctions(
+			final BundleContext context) {
+		customFunctionServiceReg = context.registerService(
+				MatchFunctRegistry.class,
+				MatchFunctRegistryImpl.getInstance(),
+				null);
+
+		if (customFunctionServiceReg != null) {
+			log("Match Functions Customization REGISTERED.");
+		}
+
+		return MatchFunctRegistryImpl.getInstance();
 	}
 
 	/**
@@ -211,6 +240,11 @@ public class RDFSpaceActivator implements BundleActivator {
 		if (elCompilerServiceReg != null) {
 			elCompilerServiceReg.unregister();
 			log("Eco-law Compiler UNREGISTERED.");
+		}
+		
+		if (customFunctionServiceReg != null) {
+			customFunctionServiceReg.unregister();
+			log("Match Function Customization UNREGISTERED.");
 		}
 
 		if (lsaSpaceServiceReg != null) {

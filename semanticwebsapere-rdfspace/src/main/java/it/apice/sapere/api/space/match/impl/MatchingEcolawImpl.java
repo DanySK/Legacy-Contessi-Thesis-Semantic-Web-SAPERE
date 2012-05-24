@@ -102,7 +102,7 @@ public class MatchingEcolawImpl implements MatchingEcolaw {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		MatchingEcolawImpl other = (MatchingEcolawImpl) obj;
+		final MatchingEcolawImpl other = (MatchingEcolawImpl) obj;
 		if (query == null) {
 			if (other.query != null) {
 				return false;

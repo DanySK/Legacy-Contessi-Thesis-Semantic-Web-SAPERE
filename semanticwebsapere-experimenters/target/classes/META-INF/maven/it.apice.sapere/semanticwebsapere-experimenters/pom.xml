@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>semanticwebsapere</artifactId>
+    <groupId>it.apice.sapere</groupId>
+    <version>${swsapere.vers}</version>
+    <relativePath>..</relativePath>
+  </parent>
+  <artifactId>semanticwebsapere-experimenters</artifactId>
+  <name>SAPERE Experimenters</name>
+  <description>This project encloses a set of utilities that can be used in order to experiment the behaviour of semantic web parts.</description>
+  
+  <dependencies>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.clarkparsia.pellet</groupId>
+			<artifactId>pellet</artifactId>
+		</dependency>
+	</dependencies>
+
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<inherited>true</inherited>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

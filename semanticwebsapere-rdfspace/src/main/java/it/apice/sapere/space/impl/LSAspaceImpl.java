@@ -50,13 +50,12 @@ public class LSAspaceImpl extends AbstractLSAspaceCoreImpl {
 	@Override
 	protected final Model initRDFGraphModel(final ReasoningLevel level) {
 		if (level.equals(ReasoningLevel.OWL_DL)) {
-			Reasoner reasoner = PelletReasonerFactory.theInstance().create();
-			Model infModel = ModelFactory.createInfModel(reasoner,
+			final Reasoner reasoner = PelletReasonerFactory.theInstance()
+					.create();
+			final Model infModel = ModelFactory.createInfModel(reasoner,
 					ModelFactory.createDefaultModel());
 			return ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM,
 					infModel);
-			// return ModelFactory
-			// .createOntologyModel(PelletReasonerFactory.THE_SPEC);
 		} else if (level.equals(ReasoningLevel.RDFS_INF)) {
 			return ModelFactory
 					.createOntologyModel(OntModelSpec.OWL_DL_MEM_RDFS_INF);

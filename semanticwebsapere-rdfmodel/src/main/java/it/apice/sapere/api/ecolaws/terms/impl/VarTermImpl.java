@@ -214,6 +214,7 @@ public class VarTermImpl<Type> extends AbstractTerm<Type> implements
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
+		final
 		VarTermImpl other = (VarTermImpl) obj;
 		if (name == null) {
 			if (other.name != null) {

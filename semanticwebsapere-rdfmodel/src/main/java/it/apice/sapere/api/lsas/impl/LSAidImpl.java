@@ -60,7 +60,7 @@ public class LSAidImpl implements LSAid {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		LSAidImpl other = (LSAidImpl) obj;
+		final LSAidImpl other = (LSAidImpl) obj;
 		if (id == null) {
 			if (other.id != null) {
 				return false;

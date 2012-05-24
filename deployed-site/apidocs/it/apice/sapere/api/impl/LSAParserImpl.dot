@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.RDFFormat
-	c45401 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../RDFFormat.html">
+	c46265 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../RDFFormat.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> RDFFormat </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.LSAParser
-	c45403 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAParser.html">
+	c46267 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAParser.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAParser </td></tr>
@@ -24,23 +24,23 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.internal.Jena2SAPEREConverter
-	c45443 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../internal/Jena2SAPEREConverter.html">
+	c46307 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../internal/Jena2SAPEREConverter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Jena2SAPEREConverter </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.LSAParserImpl
-	c45535 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAParserImpl.html">
+	c46399 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAParserImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAParserImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.impl.LSAParserImpl implements it.apice.sapere.api.LSAParser
-	c45403:p -> c45535:p [dir=back,arrowtail=empty,style=dashed];
+	c46267:p -> c46399:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.impl.LSAParserImpl NAVASSOC it.apice.sapere.api.internal.Jena2SAPEREConverter
-	c45535:p -> c45443:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46399:p -> c46307:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.impl.LSAParserImpl DEPEND it.apice.sapere.api.RDFFormat
-	c45535:p -> c45401:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46399:p -> c46265:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

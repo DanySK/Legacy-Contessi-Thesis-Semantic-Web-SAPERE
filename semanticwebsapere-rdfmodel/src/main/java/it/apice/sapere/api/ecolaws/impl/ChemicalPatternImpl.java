@@ -201,6 +201,7 @@ public abstract class ChemicalPatternImpl<ExtenderType> implements
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
+		final
 		ChemicalPatternImpl other = (ChemicalPatternImpl) obj;
 		if (filters == null) {
 			if (other.filters != null) {

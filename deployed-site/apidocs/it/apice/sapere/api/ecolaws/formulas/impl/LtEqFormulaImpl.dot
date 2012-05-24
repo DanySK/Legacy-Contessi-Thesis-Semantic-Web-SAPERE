@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
-	c39415 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LtEqFormula.html">
+	c40227 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LtEqFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LtEqFormula&lt;Type&gt; </td></tr>
@@ -16,17 +16,17 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.LtEqFormulaImpl<Type extends java.lang.Comparable<Type>>
-	c39499 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LtEqFormulaImpl.html">
+	c40311 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LtEqFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> LtEqFormulaImpl&lt;Type extends Comparable&lt;Type&gt;&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.formulas.impl.LtEqFormulaImpl<Type extends java.lang.Comparable<Type>> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c39615:p -> c39499:p [dir=back,arrowtail=empty];
+	c40429:p -> c40311:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.formulas.impl.LtEqFormulaImpl<Type extends java.lang.Comparable<Type>> implements it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
-	c39415:p -> c39499:p [dir=back,arrowtail=empty,style=dashed];
+	c40227:p -> c40311:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c39615 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/impl/AbstractFormulaImpl.html">
+	c40429 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/impl/AbstractFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractFormulaImpl&lt;Type&gt; </font></td></tr>
 		</table></td></tr>

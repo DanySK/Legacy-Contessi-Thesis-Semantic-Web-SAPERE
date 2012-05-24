@@ -145,7 +145,7 @@ public abstract class OpFilterImpl implements OpFilter {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		OpFilterImpl other = (OpFilterImpl) obj;
+		final OpFilterImpl other = (OpFilterImpl) obj;
 		if (left == null) {
 			if (other.left != null) {
 				return false;

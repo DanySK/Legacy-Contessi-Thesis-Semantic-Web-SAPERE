@@ -8,31 +8,31 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionType
-	c11775 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionType.html">
+	c12109 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionType.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> SubscriptionType </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest
-	c11776 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionRequest.html">
+	c12110 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionRequest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SubscriptionRequest </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent
-	c11777 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NotifierAgent.html">
+	c12111 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./NotifierAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NotifierAgent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification
-	c11778 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Notification.html">
+	c12112 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Notification.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Notification </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.node.networking.obsnotif.impl.SubscriptionType
-	c11776:p -> c11775:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c12110:p -> c12109:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

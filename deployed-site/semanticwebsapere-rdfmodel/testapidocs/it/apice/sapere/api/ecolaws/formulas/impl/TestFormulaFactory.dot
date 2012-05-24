@@ -19,10 +19,10 @@ digraph G {
 	c290:p -> c313:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.formulas.impl.TestFormulaFactory NAVASSOC it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c290:p -> c314:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.ecolaws.formulas.impl.TestFormulaFactory DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c290:p -> c313:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.TestFormulaFactory DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c290:p -> c314:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.TestFormulaFactory DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c290:p -> c313:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.TestFormulaFactory DEPEND it.apice.sapere.api.LSAFactory
 	c290:p -> c329:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.PrivilegedLSAFactory

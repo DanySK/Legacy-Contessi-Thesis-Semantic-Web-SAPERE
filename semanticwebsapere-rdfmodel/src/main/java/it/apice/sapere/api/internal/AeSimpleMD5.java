@@ -52,7 +52,7 @@ public final class AeSimpleMD5 {
 	 * @return Hex string
 	 */
 	private static String convertToHex(final byte[] data) {
-		StringBuffer buf = new StringBuffer();
+		final StringBuffer buf = new StringBuffer();
 		for (int i = 0; i < data.length; i++) {
 			int halfbyte = (data[i] >>> NUM_4) & NUM_0X0F;
 			int twoHalfs = 0;

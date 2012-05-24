@@ -92,7 +92,7 @@ public final class GuestsHandlerAgent extends AbstractSAPEREAgentImpl {
 	protected void execute() {
 		while (isRunning()) {
 			try {
-				Socket socket = server.accept();
+				final Socket socket = server.accept();
 				spy("Connection accepted from: " + socket.getInetAddress());
 				new RequestHandler(locMap, ipMap, socket).start();
 			} catch (Exception ex) {
@@ -114,7 +114,7 @@ public final class GuestsHandlerAgent extends AbstractSAPEREAgentImpl {
 	 */
 	public void sendMessageToGuest(final Message note, 
 			final String destination) {
-		String destIp = ipMap.get(destination);
+		final String destIp = ipMap.get(destination);
 		spy("Sending a notification to ip: " + destIp);
 		new SendMessageThread(note, destIp).start();
 	}
@@ -213,10 +213,12 @@ class RequestHandler extends AbstractSystemAgent {
 	@Override
 	protected final void behaviour(final NodeServices services) {
 		try {
-			GuestMessage message = CommunicationUtils.receiveMessage(socket);
+			final GuestMessage message = CommunicationUtils
+					.receiveMessage(socket);
 
 			if (message != null) {
-				String ipAddress = socket.getInetAddress().getHostAddress();
+				final String ipAddress = socket.getInetAddress()
+						.getHostAddress();
 				ipMap.put(message.getMacAddress(), ipAddress);
 
 				switch (message.getType()) {

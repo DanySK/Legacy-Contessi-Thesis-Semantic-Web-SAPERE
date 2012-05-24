@@ -60,6 +60,17 @@ public class Jena2SAPEREConverter {
 
 	/**
 	 * <p>
+	 * Retrieves a reference to the (Privileged) LSA Factory.
+	 * </p>
+	 *
+	 * @return Reference to the factory
+	 */
+	public final PrivilegedLSAFactory getFactory() {
+		return factory;
+	}
+
+	/**
+	 * <p>
 	 * Extracts LSAs from a model and parses them.
 	 * </p>
 	 * 

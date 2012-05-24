@@ -77,6 +77,8 @@
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.4.0</version>
 				<configuration>
+					<effort>Default</effort>
+          			<threshold>15</threshold>
 					<xmlOutput>true</xmlOutput>
 					<!-- Optional directory to put findbugs xdoc xml report -->
 					<xmlOutputDirectory>target/site</xmlOutputDirectory>

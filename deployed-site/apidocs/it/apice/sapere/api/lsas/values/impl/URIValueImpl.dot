@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.URIValue
-	c47312 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../URIValue.html">
+	c48192 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../URIValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> URIValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.URIValueImpl
-	c47391 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./URIValueImpl.html">
+	c48271 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./URIValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> URIValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c47393 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c48273 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.URIValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.net.URI, it.apice.sapere.api.lsas.values.URIValue>
-	c47393:p -> c47391:p [dir=back,arrowtail=empty];
+	c48273:p -> c48271:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.URIValueImpl implements it.apice.sapere.api.lsas.values.URIValue
-	c47312:p -> c47391:p [dir=back,arrowtail=empty,style=dashed];
+	c48192:p -> c48271:p [dir=back,arrowtail=empty,style=dashed];
 }
 

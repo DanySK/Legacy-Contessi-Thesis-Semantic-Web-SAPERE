@@ -176,7 +176,7 @@ public class MarkovianRateImpl extends AbstractRateImpl<DoubleValue> implements
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		MarkovianRateImpl other = (MarkovianRateImpl) obj;
+		final MarkovianRateImpl other = (MarkovianRateImpl) obj;
 		if (rate == null) {
 			if (other.rate != null) {
 				return false;

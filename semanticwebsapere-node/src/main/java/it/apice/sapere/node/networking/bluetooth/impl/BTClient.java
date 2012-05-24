@@ -109,7 +109,7 @@ public class BTClient {
 				final ServiceRecord[] servRecord) {
 			for (int i = 0; i < servRecord.length; i++) {
 
-				DataElement serviceName = servRecord[i]
+				final DataElement serviceName = servRecord[i]
 						.getAttributeValue(VAL_0X0100);
 				if (serviceName != null
 						&& ("" + serviceName).contains("ServerBT")) {
@@ -159,7 +159,7 @@ public class BTClient {
 	public final void contactService(final ServiceRecord service,
 			final NodeMessage message) {
 
-		String url = service.getConnectionURL(
+		final String url = service.getConnectionURL(
 				ServiceRecord.NOAUTHENTICATE_NOENCRYPT, true);
 		StreamConnection connection = null;
 		InputStream is = null;
@@ -170,17 +170,22 @@ public class BTClient {
 			is = connection.openInputStream();
 			os = connection.openOutputStream();
 
-			ObjectOutputStream oos = new ObjectOutputStream(os);
+			final ObjectOutputStream oos = new ObjectOutputStream(os);
 			oos.writeObject(message);
 
 			if (message.getType() == NodeMessageType.NODE_INFO) {
-				ObjectInputStream ois = new ObjectInputStream(is);
+				final ObjectInputStream ois = new ObjectInputStream(is);
 				try {
-					NodeMessage messageRec = (NodeMessage) ois.readObject();
+					final NodeMessage messageRec = 
+							(NodeMessage) ois.readObject();
 					btManager.neighbourRegistration(messageRec);
 				} finally {
 					if (ois != null) {
 						ois.close();
+					}
+					
+					if (oos != null) {
+						oos.close();
 					}
 				}
 			}
@@ -229,7 +234,7 @@ public class BTClient {
 			services = new ArrayList<ServiceRecord>();
 			synchronized (inquiryCompletedEvent) {
 
-				boolean started = discoveryAgent.startInquiry(
+				final boolean started = discoveryAgent.startInquiry(
 						DiscoveryAgent.GIAC, listener);
 				if (started) {
 					while (!isInqCompleted) {

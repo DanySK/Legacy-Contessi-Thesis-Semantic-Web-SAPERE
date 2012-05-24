@@ -90,7 +90,7 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 		temp = Double.doubleToLongBits(time);
 		res = prime * res + (int) (temp ^ (temp >>> NUM_32));
 		res *= prime;
-		if (this.result == null) {
+		if (this.result != null) {
 			res += result.hashCode();
 		}
 
@@ -108,7 +108,8 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		SchedulableMatchResultImpl other = (SchedulableMatchResultImpl) obj;
+		final SchedulableMatchResultImpl other = 
+				(SchedulableMatchResultImpl) obj;
 		if (Double.doubleToLongBits(time) != Double
 				.doubleToLongBits(other.time)) {
 			return false;
