@@ -42,9 +42,9 @@ digraph G {
 	c66336:p -> c66206:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification NAVASSOC it.apice.sapere.api.lsas.LSAid
 	c66336:p -> c66169:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.networking.obsnotif.impl.Notification DEPEND it.apice.sapere.api.lsas.LSAid
-	c66336:p -> c66169:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
 	c66336:p -> c66206:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.networking.obsnotif.impl.Notification DEPEND it.apice.sapere.api.lsas.LSAid
+	c66336:p -> c66169:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

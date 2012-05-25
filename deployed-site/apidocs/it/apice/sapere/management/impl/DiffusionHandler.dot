@@ -51,9 +51,9 @@ digraph G {
 	c57658:p -> c57551:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
 	c57551:p -> c57566:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
-	c57658:p -> c57567:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c57658:p -> c57554:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
+	c57658:p -> c57567:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

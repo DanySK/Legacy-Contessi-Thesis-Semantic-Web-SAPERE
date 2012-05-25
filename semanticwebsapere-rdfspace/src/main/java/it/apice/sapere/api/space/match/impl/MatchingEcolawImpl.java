@@ -1,7 +1,7 @@
 package it.apice.sapere.api.space.match.impl;
 
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.space.core.LSAspaceCore;
+import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 
 /**
@@ -14,15 +14,12 @@ import it.apice.sapere.api.space.match.MatchingEcolaw;
  */
 public class MatchingEcolawImpl implements MatchingEcolaw {
 
-	/** Reference to the (local) LSA-space. */
-	private final transient LSAspaceCore<?> space;
+	/** Reference to applied bindings. */
+	private final transient MatchResult mResult;
 
 	/** The concrete query. */
 	private final String query;
 
-	/** Eco-law's label. */
-	private final String label;
-
 	/**
 	 * <p>
 	 * Builds a new {@link MatchingEcolawImpl}.
@@ -30,48 +27,25 @@ public class MatchingEcolawImpl implements MatchingEcolaw {
 	 * 
 	 * @param aQuery
 	 *            The concrete query to be applied
-	 * @param lsaSpace
-	 *            The LSA-space we're working on
+	 * @param bindings
+	 *            Applied bindings
 	 */
-	public MatchingEcolawImpl(final String aQuery,
-			final LSAspaceCore<?> lsaSpace) {
-		this(aQuery, lsaSpace, null);
-	}
-
-	/**
-	 * <p>
-	 * Builds a new {@link MatchingEcolawImpl}.
-	 * </p>
-	 * 
-	 * @param aQuery
-	 *            The concrete query to be applied
-	 * @param lsaSpace
-	 *            The LSA-space we're working on
-	 * @param lLabel
-	 *            Eco-law's label
-	 */
-	public MatchingEcolawImpl(final String aQuery,
-			final LSAspaceCore<?> lsaSpace, final String lLabel) {
+	public MatchingEcolawImpl(final String aQuery, final MatchResult bindings) {
 		if (aQuery == null) {
 			throw new IllegalArgumentException("Invalid query provided");
 		}
 
-		if (lsaSpace == null) {
+		if (bindings == null) {
 			throw new IllegalArgumentException("Invalid bindings provided");
 		}
 
 		query = aQuery;
-		space = lsaSpace;
-		if (lLabel == null) {
-			label = "";
-		} else {
-			label = lLabel;
-		}
+		mResult = bindings;
 	}
 
 	@Override
 	public final void apply() throws SAPEREException {
-		space.apply(this);
+		mResult.getLSAspace().apply(this);
 	}
 
 	@Override
@@ -120,6 +94,11 @@ public class MatchingEcolawImpl implements MatchingEcolaw {
 
 	@Override
 	public final String getLabel() {
-		return label;
+		return mResult.getRelCompiledEcolaw().getLabel();
+	}
+
+	@Override
+	public MatchResult getAppliedMatch() {
+		return mResult;
 	}
 }

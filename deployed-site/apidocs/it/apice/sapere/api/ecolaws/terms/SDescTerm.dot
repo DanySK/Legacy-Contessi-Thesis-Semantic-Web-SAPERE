@@ -110,10 +110,10 @@ digraph G {
 	c22730:p -> c22746:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.SDescTerm DEPEND it.apice.sapere.api.lsas.LSAid
 	c22746:p -> c22765:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.SDescTerm
-	c22811:p -> c22746:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.AnnotatedVarTerm<Type>
 	c22811:p -> c22751:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.SDescTerm
+	c22811:p -> c22746:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.CopyFilterImpl DEPEND it.apice.sapere.api.ecolaws.terms.SDescTerm
 	c22817:p -> c22746:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ChemicalPatternImpl<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.ChemicalPattern<ExtenderType>

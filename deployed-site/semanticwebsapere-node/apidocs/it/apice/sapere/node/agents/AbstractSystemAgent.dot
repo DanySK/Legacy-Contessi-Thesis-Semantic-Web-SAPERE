@@ -8,46 +8,46 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.management.impl.ReactionManagerImpl
-	c1666 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/impl/ReactionManagerImpl.html">
+	c1668 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/impl/ReactionManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c1674 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSystemAgent.html">
+	c1676 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c1680 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractSAPEREAgentImpl.html">
+	c1682 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractSAPEREAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSAPEREAgentImpl </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent
-	c1689 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/bluetooth/impl/BluetoothManagerAgent.html">
+	c1691 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/bluetooth/impl/BluetoothManagerAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BluetoothManagerAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.bluetooth.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent
-	c1703 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/obsnotif/impl/NotifierAgent.html">
+	c1705 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/obsnotif/impl/NotifierAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NotifierAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.obsnotif.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.management.impl.ReactionManagerImpl extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c1674:p -> c1666:p [dir=back,arrowtail=empty];
+	c1676:p -> c1668:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.AbstractSystemAgent extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c1680:p -> c1674:p [dir=back,arrowtail=empty];
+	c1682:p -> c1676:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c1674:p -> c1689:p [dir=back,arrowtail=empty];
+	c1676:p -> c1691:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c1674:p -> c1703:p [dir=back,arrowtail=empty];
+	c1676:p -> c1705:p [dir=back,arrowtail=empty];
 }
 

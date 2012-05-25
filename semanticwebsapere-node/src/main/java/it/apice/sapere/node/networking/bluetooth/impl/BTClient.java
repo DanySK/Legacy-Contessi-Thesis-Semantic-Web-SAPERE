@@ -165,12 +165,13 @@ public class BTClient {
 		InputStream is = null;
 		OutputStream os = null;
 
+		ObjectOutputStream oos = null;
 		try {
 			connection = (StreamConnection) Connector.open(url);
 			is = connection.openInputStream();
 			os = connection.openOutputStream();
 
-			final ObjectOutputStream oos = new ObjectOutputStream(os);
+			oos = new ObjectOutputStream(os);
 			oos.writeObject(message);
 
 			if (message.getType() == NodeMessageType.NODE_INFO) {
@@ -182,10 +183,6 @@ public class BTClient {
 				} finally {
 					if (ois != null) {
 						ois.close();
-					}
-					
-					if (oos != null) {
-						oos.close();
 					}
 				}
 			}
@@ -199,6 +196,15 @@ public class BTClient {
 				} catch (Exception ex) {
 					LoggerFactoryImpl.getInstance().getLogger(BTClient.class)
 							.warn("Cannot close input stream", ex);
+				}
+			}
+
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (Exception ex) {
+					LoggerFactoryImpl.getInstance().getLogger(BTClient.class)
+							.warn("Cannot object output stream", ex);
 				}
 			}
 

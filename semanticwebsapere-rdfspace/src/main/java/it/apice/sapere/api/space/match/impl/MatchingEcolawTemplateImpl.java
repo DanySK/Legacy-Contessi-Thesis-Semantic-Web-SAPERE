@@ -34,6 +34,9 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	/** Eco-law's label. */
 	private final String label;
 
+	/** Plain SPARUL query. */
+	private final String plainQuery;
+
 	/**
 	 * <p>
 	 * Builds a new {@link MatchingEcolawTemplateImpl}.
@@ -64,6 +67,7 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 
 		template = queryTemplate;
 		vars = initVariablesArray();
+		plainQuery = extractQuery();
 		if (lLabel == null) {
 			label = "";
 		} else {
@@ -93,8 +97,7 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	@Override
 	public final MatchingEcolaw bind(final MatchResult bindings)
 			throws SAPEREException {
-		return new MatchingEcolawImpl(applyTemplate(bindings),
-				bindings.getLSAspace());
+		return new MatchingEcolawImpl(applyTemplate(bindings), bindings);
 	}
 
 	/**
@@ -117,6 +120,27 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 			final String varName = repl.group(1);
 			repl.appendReplacement(buff,
 					Matcher.quoteReplacement(bindings.lookup(varName)));
+		}
+
+		repl.appendTail(buff);
+		return buff.toString();
+	}
+
+	/**
+	 * <p>
+	 * Computes the SPARUL query with all unbound variables.
+	 * </p>
+	 * 
+	 * @return The concrete query
+	 */
+	private String extractQuery() {
+		final Matcher repl = VARNAME_PATTERN.matcher(template);
+		final StringBuffer buff = new StringBuffer(template.length());
+
+		while (repl.find()) {
+			final String varName = repl.group(1);
+			repl.appendReplacement(buff,
+					Matcher.quoteReplacement("?" + varName));
 		}
 
 		repl.appendTail(buff);
@@ -177,5 +201,10 @@ public class MatchingEcolawTemplateImpl implements MatchingEcolawTemplate {
 	@Override
 	public final String getLabel() {
 		return label;
+	}
+
+	@Override
+	public String getPlainQuery() {
+		return plainQuery;
 	}
 }

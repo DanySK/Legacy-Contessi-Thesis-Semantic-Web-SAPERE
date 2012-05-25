@@ -35,13 +35,13 @@
 <a class="jxr_linenumber" name="25" href="#25">25</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/utils/impl/SpaceOperation.html">SpaceOperation</a> operation;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  
 <a class="jxr_linenumber" name="27" href="#27">27</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Geo-localization: latitude. */</em>
-<a class="jxr_linenumber" name="28" href="#28">28</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> latitude;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Double latitude;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Geo-localization: longitude. */</em>
-<a class="jxr_linenumber" name="31" href="#31">31</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> longitude;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Double longitude;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  
 <a class="jxr_linenumber" name="33" href="#33">33</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Geo-localization: orientation. */</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] orientation;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Float[] orientation;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  
 <a class="jxr_linenumber" name="36" href="#36">36</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Who sent the message. */</em>
 <a class="jxr_linenumber" name="37" href="#37">37</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String sender;
@@ -66,7 +66,7 @@
 <a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="57" href="#57">57</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/impl/NodeMessageType.html">NodeMessageType</a> aType, <strong class="jxr_keyword">final</strong> String aSender,
 <a class="jxr_linenumber" name="58" href="#58">58</a>  			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/utils/impl/SpaceOperation.html">SpaceOperation</a> anOp, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> lat, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> lng,
-<a class="jxr_linenumber" name="59" href="#59">59</a>  			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] anOrientation) {
+<a class="jxr_linenumber" name="59" href="#59">59</a>  			<strong class="jxr_keyword">final</strong> Float[] anOrientation) {
 <a class="jxr_linenumber" name="60" href="#60">60</a>  		type = aType;
 <a class="jxr_linenumber" name="61" href="#61">61</a>  		sender = aSender;
 <a class="jxr_linenumber" name="62" href="#62">62</a>  		operation = anOp;
@@ -106,7 +106,7 @@
 <a class="jxr_linenumber" name="96" href="#96">96</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="97" href="#97">97</a>  <em class="jxr_javadoccomment">	 * @return the orientation</em>
 <a class="jxr_linenumber" name="98" href="#98">98</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="99" href="#99">99</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] getOrientation() {
+<a class="jxr_linenumber" name="99" href="#99">99</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> Float[] getOrientation() {
 <a class="jxr_linenumber" name="100" href="#100">100</a> 		<strong class="jxr_keyword">return</strong> orientation;
 <a class="jxr_linenumber" name="101" href="#101">101</a> 	}
 <a class="jxr_linenumber" name="102" href="#102">102</a> 

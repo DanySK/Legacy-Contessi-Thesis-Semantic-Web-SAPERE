@@ -52,10 +52,10 @@ digraph G {
 	c53903:p -> c53813:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.avoid.RDFSpaceServices NAVASSOC it.apice.sapere.api.space.core.EcolawCompiler
 	c53903:p -> c53814:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
-	c53903:p -> c53814:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c53903:p -> c53813:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
+	c53903:p -> c53814:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
 	c53903:p -> c53812:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

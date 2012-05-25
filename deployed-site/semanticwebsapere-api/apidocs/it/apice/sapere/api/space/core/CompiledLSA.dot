@@ -38,22 +38,22 @@ digraph G {
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.strategy </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
-	c5845:p -> c5786:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
 	c5845:p -> c5828:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
+	c5845:p -> c5786:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.lsas.LSAid
 	c5847:p -> c5828:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T> DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c5847:p -> c5845:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

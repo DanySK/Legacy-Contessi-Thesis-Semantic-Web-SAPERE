@@ -49,13 +49,13 @@ digraph G {
 	c57185:p -> c57190:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger NAVASSOC it.apice.sapere.node.LogUtils
 	c57190:p -> c57210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c57185:p -> c57098:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c57185:p -> c57089:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c57190:p -> c57098:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
+	c57185:p -> c57098:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c57190:p -> c57089:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
+	c57190:p -> c57098:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

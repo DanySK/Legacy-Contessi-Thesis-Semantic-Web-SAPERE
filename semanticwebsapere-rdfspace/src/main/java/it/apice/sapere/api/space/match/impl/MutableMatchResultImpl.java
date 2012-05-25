@@ -200,6 +200,5 @@ public class MutableMatchResultImpl implements MutableMatchResult {
 		return "MatchResult [assignments=" + assignments
 				+ ", scores=" + scores + ", law=" + law + "]";
 	}
-
 	
 }

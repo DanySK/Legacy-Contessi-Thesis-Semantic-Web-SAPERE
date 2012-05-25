@@ -31,7 +31,12 @@ import com.hp.hpl.jena.rdf.model.StmtIterator;
 public class RDFSpaceActivator implements BundleActivator {
 
 	/** Reasoning level Property name. */
-	private static final transient String REASONING_LEVEL = "reasoningLevel";
+	private static final transient String REASONING_LEVEL = "sapere"
+			+ ".space.reasoner";
+
+	/** LSA-space Optimization System property Key. */
+	private static final transient String LSA_SPACE_OPTIM = "sapere"
+			+ ".space.optimization";
 
 	/** LSA-space Service registration. */
 	private transient ServiceRegistration<?> lsaSpaceServiceReg;
@@ -47,7 +52,7 @@ public class RDFSpaceActivator implements BundleActivator {
 
 	/** Reference to LSA Factory service. */
 	private transient ServiceReference<PrivilegedLSAFactory> lsaFactoryRef;
-	
+
 	@Override
 	public final void start(final BundleContext context) throws Exception {
 		log("Starting up..");
@@ -88,8 +93,7 @@ public class RDFSpaceActivator implements BundleActivator {
 	private MatchFunctRegistry registerCustomFunctions(
 			final BundleContext context) {
 		customFunctionServiceReg = context.registerService(
-				MatchFunctRegistry.class,
-				MatchFunctRegistryImpl.getInstance(),
+				MatchFunctRegistry.class, MatchFunctRegistryImpl.getInstance(),
 				null);
 
 		if (customFunctionServiceReg != null) {
@@ -152,11 +156,17 @@ public class RDFSpaceActivator implements BundleActivator {
 	 */
 	private void registerLSAspace(final BundleContext context,
 			final PrivilegedLSAFactory fact) {
+		final String optEn = System.getProperty(LSA_SPACE_OPTIM);
+		if (optEn != null) {
+			LSAspaceImpl.setOptimizationEnabled(Boolean.parseBoolean(optEn));
+		}
+
 		lsaSpaceServiceReg = context.registerService(
 				LSAspaceCore.class.getName(),
 				new LSAspaceImpl(fact, getReasoningLevel(System
 						.getProperty(REASONING_LEVEL))), declareSpaceProps());
 
+		log("Optimization enabled: " + LSAspaceImpl.getOptimizationEnabled());
 		if (lsaSpaceServiceReg != null) {
 			log("LSA-space REGISTERED.");
 		}
@@ -241,7 +251,7 @@ public class RDFSpaceActivator implements BundleActivator {
 			elCompilerServiceReg.unregister();
 			log("Eco-law Compiler UNREGISTERED.");
 		}
-		
+
 		if (customFunctionServiceReg != null) {
 			customFunctionServiceReg.unregister();
 			log("Match Function Customization UNREGISTERED.");

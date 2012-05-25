@@ -45,4 +45,13 @@ public interface MatchingEcolawTemplate {
 	 * @return A list of all variables names
 	 */
 	String[] variablesNames();
+
+	/**
+	 * <p>
+	 * Retrieves the corresponding query in which all variables are unbound.
+	 * </p>
+	 * 
+	 * @return A plain SPARUL query
+	 */
+	String getPlainQuery();
 }

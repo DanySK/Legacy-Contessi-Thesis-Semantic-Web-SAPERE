@@ -27,9 +27,9 @@ digraph G {
 			<tr><td> CommunicationUtils </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils DEPEND it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage
-	c66804:p -> c66791:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils DEPEND it.apice.sapere.node.networking.impl.Message
 	c66804:p -> c66798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils DEPEND it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage
+	c66804:p -> c66791:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

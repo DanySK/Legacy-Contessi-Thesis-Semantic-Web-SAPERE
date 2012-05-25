@@ -62,7 +62,7 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment">	 * @return Hex string</em>
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String convertToHex(<strong class="jxr_keyword">final</strong> byte[] data) {
-<a class="jxr_linenumber" name="55" href="#55">55</a>  		StringBuffer buf = <strong class="jxr_keyword">new</strong> StringBuffer();
+<a class="jxr_linenumber" name="55" href="#55">55</a>  		<strong class="jxr_keyword">final</strong> StringBuffer buf = <strong class="jxr_keyword">new</strong> StringBuffer();
 <a class="jxr_linenumber" name="56" href="#56">56</a>  		<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; data.length; i++) {
 <a class="jxr_linenumber" name="57" href="#57">57</a>  			<strong class="jxr_keyword">int</strong> halfbyte = (data[i] &gt;&gt;&gt; NUM_4) &amp; NUM_0X0F;
 <a class="jxr_linenumber" name="58" href="#58">58</a>  			<strong class="jxr_keyword">int</strong> twoHalfs = 0;

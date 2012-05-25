@@ -164,30 +164,31 @@
 <a class="jxr_linenumber" name="154" href="#154">154</a> 		<strong class="jxr_keyword">if</strong> (getClass() != obj.getClass()) {
 <a class="jxr_linenumber" name="155" href="#155">155</a> 			<strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="156" href="#156">156</a> 		}
-<a class="jxr_linenumber" name="157" href="#157">157</a> 		MatchingEcolawTemplateImpl other = (MatchingEcolawTemplateImpl) obj;
-<a class="jxr_linenumber" name="158" href="#158">158</a> 		<strong class="jxr_keyword">if</strong> (template == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="159" href="#159">159</a> 			<strong class="jxr_keyword">if</strong> (other.template != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="160" href="#160">160</a> 				<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="161" href="#161">161</a> 			}
-<a class="jxr_linenumber" name="162" href="#162">162</a> 		} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (!template.equals(other.template)) {
-<a class="jxr_linenumber" name="163" href="#163">163</a> 			<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="164" href="#164">164</a> 		}
-<a class="jxr_linenumber" name="165" href="#165">165</a> 		<strong class="jxr_keyword">if</strong> (!Arrays.equals(vars, other.vars)) {
-<a class="jxr_linenumber" name="166" href="#166">166</a> 			<strong class="jxr_keyword">return</strong> false;
-<a class="jxr_linenumber" name="167" href="#167">167</a> 		}
-<a class="jxr_linenumber" name="168" href="#168">168</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="169" href="#169">169</a> 	}
-<a class="jxr_linenumber" name="170" href="#170">170</a> 
-<a class="jxr_linenumber" name="171" href="#171">171</a> 	@Override
-<a class="jxr_linenumber" name="172" href="#172">172</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String toString() {
-<a class="jxr_linenumber" name="173" href="#173">173</a> 		<strong class="jxr_keyword">return</strong> template;
-<a class="jxr_linenumber" name="174" href="#174">174</a> 	}
-<a class="jxr_linenumber" name="175" href="#175">175</a> 
-<a class="jxr_linenumber" name="176" href="#176">176</a> 	@Override
-<a class="jxr_linenumber" name="177" href="#177">177</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String getLabel() {
-<a class="jxr_linenumber" name="178" href="#178">178</a> 		<strong class="jxr_keyword">return</strong> label;
-<a class="jxr_linenumber" name="179" href="#179">179</a> 	}
-<a class="jxr_linenumber" name="180" href="#180">180</a> }
+<a class="jxr_linenumber" name="157" href="#157">157</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/match/impl/MatchingEcolawTemplateImpl.html">MatchingEcolawTemplateImpl</a> other = 
+<a class="jxr_linenumber" name="158" href="#158">158</a> 				(<a href="../../../../../../../it/apice/sapere/api/space/match/impl/MatchingEcolawTemplateImpl.html">MatchingEcolawTemplateImpl</a>) obj;
+<a class="jxr_linenumber" name="159" href="#159">159</a> 		<strong class="jxr_keyword">if</strong> (template == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="160" href="#160">160</a> 			<strong class="jxr_keyword">if</strong> (other.template != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="161" href="#161">161</a> 				<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="162" href="#162">162</a> 			}
+<a class="jxr_linenumber" name="163" href="#163">163</a> 		} <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (!template.equals(other.template)) {
+<a class="jxr_linenumber" name="164" href="#164">164</a> 			<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="165" href="#165">165</a> 		}
+<a class="jxr_linenumber" name="166" href="#166">166</a> 		<strong class="jxr_keyword">if</strong> (!Arrays.equals(vars, other.vars)) {
+<a class="jxr_linenumber" name="167" href="#167">167</a> 			<strong class="jxr_keyword">return</strong> false;
+<a class="jxr_linenumber" name="168" href="#168">168</a> 		}
+<a class="jxr_linenumber" name="169" href="#169">169</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="170" href="#170">170</a> 	}
+<a class="jxr_linenumber" name="171" href="#171">171</a> 
+<a class="jxr_linenumber" name="172" href="#172">172</a> 	@Override
+<a class="jxr_linenumber" name="173" href="#173">173</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String toString() {
+<a class="jxr_linenumber" name="174" href="#174">174</a> 		<strong class="jxr_keyword">return</strong> template;
+<a class="jxr_linenumber" name="175" href="#175">175</a> 	}
+<a class="jxr_linenumber" name="176" href="#176">176</a> 
+<a class="jxr_linenumber" name="177" href="#177">177</a> 	@Override
+<a class="jxr_linenumber" name="178" href="#178">178</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> String getLabel() {
+<a class="jxr_linenumber" name="179" href="#179">179</a> 		<strong class="jxr_keyword">return</strong> label;
+<a class="jxr_linenumber" name="180" href="#180">180</a> 	}
+<a class="jxr_linenumber" name="181" href="#181">181</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

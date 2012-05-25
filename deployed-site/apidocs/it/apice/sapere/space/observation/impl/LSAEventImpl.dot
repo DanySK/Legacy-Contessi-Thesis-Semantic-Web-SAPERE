@@ -45,9 +45,9 @@ digraph G {
 	c55084:p -> c55002:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.observation.LSAEvent DEPEND it.apice.sapere.api.lsas.LSA
 	c55006:p -> c54966:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.observation.impl.LSAEventImpl DEPEND it.apice.sapere.api.lsas.LSA
-	c55084:p -> c54966:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
 	c55084:p -> c55002:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.observation.impl.LSAEventImpl DEPEND it.apice.sapere.api.lsas.LSA
+	c55084:p -> c54966:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

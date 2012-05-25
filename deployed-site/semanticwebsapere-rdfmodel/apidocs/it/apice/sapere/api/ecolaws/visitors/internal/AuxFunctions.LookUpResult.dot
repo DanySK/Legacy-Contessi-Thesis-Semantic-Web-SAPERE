@@ -19,10 +19,10 @@ digraph G {
 	c3317:p -> c3341:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult NAVASSOC it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c3317:p -> c3342:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c3317:p -> c3341:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c3317:p -> c3342:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
+	c3317:p -> c3341:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c3317:p -> c3340:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.PatternNameTerm

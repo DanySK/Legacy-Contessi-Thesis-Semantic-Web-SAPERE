@@ -40,4 +40,14 @@ public interface MatchingEcolaw {
 	 * @return An update query
 	 */
 	String getUpdateQuery();
+
+	/**
+	 * <p>
+	 * Retrieves the match outcome that has been applied in order to obtain this
+	 * law.
+	 * </p>
+	 * 
+	 * @return The applied {@link MatchResult}
+	 */
+	MatchResult getAppliedMatch();
 }

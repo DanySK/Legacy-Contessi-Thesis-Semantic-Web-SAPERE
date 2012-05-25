@@ -57,9 +57,9 @@ digraph G {
 	c42885:p -> c42777:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ASAPRateImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
 	c42888:p -> c42777:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c42889:p -> c42777:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c42889:p -> c42810:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
+	c42889:p -> c42777:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

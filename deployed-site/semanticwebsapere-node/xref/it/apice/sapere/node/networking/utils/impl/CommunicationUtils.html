@@ -52,9 +52,9 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> receiveMessage(<strong class="jxr_keyword">final</strong> Socket socket) {
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="45" href="#45">45</a>  			InputStream in = socket.getInputStream();
-<a class="jxr_linenumber" name="46" href="#46">46</a>  			ObjectInputStream ois = <strong class="jxr_keyword">new</strong> ObjectInputStream(in);
-<a class="jxr_linenumber" name="47" href="#47">47</a>  			GuestMessage msg = (GuestMessage) ois.readObject();
+<a class="jxr_linenumber" name="45" href="#45">45</a>  			<strong class="jxr_keyword">final</strong> InputStream in = socket.getInputStream();
+<a class="jxr_linenumber" name="46" href="#46">46</a>  			<strong class="jxr_keyword">final</strong> ObjectInputStream ois = <strong class="jxr_keyword">new</strong> ObjectInputStream(in);
+<a class="jxr_linenumber" name="47" href="#47">47</a>  			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> msg = (GuestMessage) ois.readObject();
 <a class="jxr_linenumber" name="48" href="#48">48</a>  			<strong class="jxr_keyword">return</strong> msg;
 <a class="jxr_linenumber" name="49" href="#49">49</a>  
 <a class="jxr_linenumber" name="50" href="#50">50</a>  		} <strong class="jxr_keyword">catch</strong> (Exception e) {
@@ -80,7 +80,7 @@
 <a class="jxr_linenumber" name="70" href="#70">70</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> sendString(<strong class="jxr_keyword">final</strong> String s, <strong class="jxr_keyword">final</strong> Socket socket) {
 <a class="jxr_linenumber" name="71" href="#71">71</a>  
 <a class="jxr_linenumber" name="72" href="#72">72</a>  		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="73" href="#73">73</a>  			ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(
+<a class="jxr_linenumber" name="73" href="#73">73</a>  			<strong class="jxr_keyword">final</strong> ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(
 <a class="jxr_linenumber" name="74" href="#74">74</a>  					socket.getOutputStream());
 <a class="jxr_linenumber" name="75" href="#75">75</a>  			oos.writeObject(s);
 <a class="jxr_linenumber" name="76" href="#76">76</a>  			<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
@@ -105,12 +105,12 @@
 <a class="jxr_linenumber" name="95" href="#95">95</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> sendMessage(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> mess, <strong class="jxr_keyword">final</strong> Socket socket) {
 <a class="jxr_linenumber" name="96" href="#96">96</a>  		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="97" href="#97">97</a>  			<strong class="jxr_keyword">if</strong> (mess instanceof Notification) {
-<a class="jxr_linenumber" name="98" href="#98">98</a>  				Notification notif = (Notification) mess;
-<a class="jxr_linenumber" name="99" href="#99">99</a>  				GuestMessage message = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a>(
+<a class="jxr_linenumber" name="98" href="#98">98</a>  				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/obsnotif/impl/Notification.html">Notification</a> notif = (Notification) mess;
+<a class="jxr_linenumber" name="99" href="#99">99</a>  				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a>(
 <a class="jxr_linenumber" name="100" href="#100">100</a> 						GuestMessageType.NOTIFY, notif.getSubjectLSAid(),
 <a class="jxr_linenumber" name="101" href="#101">101</a> 						notif.getLSA(), 0, <strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="102" href="#102">102</a> 
-<a class="jxr_linenumber" name="103" href="#103">103</a> 				ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(
+<a class="jxr_linenumber" name="103" href="#103">103</a> 				<strong class="jxr_keyword">final</strong> ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(
 <a class="jxr_linenumber" name="104" href="#104">104</a> 						socket.getOutputStream());
 <a class="jxr_linenumber" name="105" href="#105">105</a> 				oos.writeObject(message);
 <a class="jxr_linenumber" name="106" href="#106">106</a> 

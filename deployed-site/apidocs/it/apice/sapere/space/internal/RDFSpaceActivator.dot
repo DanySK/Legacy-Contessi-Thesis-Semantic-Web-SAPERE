@@ -57,16 +57,16 @@ digraph G {
 	c54612:p -> c54670:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceReference<S>
 	c54612:p -> c54671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c54612:p -> c54519:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
-	c54612:p -> c54604:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
-	c54612:p -> c54596:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c54612:p -> c54444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND org.osgi.framework.BundleContext
 	c54612:p -> c54672:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
+	c54612:p -> c54596:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
+	c54612:p -> c54604:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c54612:p -> c54444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c54612:p -> c54519:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.osgi.framework.ServiceRegistration<S>
 	c54670 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceRegistration.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

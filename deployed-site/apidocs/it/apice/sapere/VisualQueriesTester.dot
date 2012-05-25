@@ -17,10 +17,10 @@ digraph G {
 	c67742:p -> c67743:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.VisualQueriesTester NAVASSOC com.hp.hpl.jena.update.GraphStore
 	c67742:p -> c67744:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.VisualQueriesTester DEPEND com.hp.hpl.jena.query.Query
-	c67742:p -> c67745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.VisualQueriesTester DEPEND com.hp.hpl.jena.rdf.model.Model
 	c67742:p -> c67743:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.VisualQueriesTester DEPEND com.hp.hpl.jena.query.Query
+	c67742:p -> c67745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.VisualQueriesTester DEPEND com.hp.hpl.jena.query.ResultSet
 	c67742:p -> c67746:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.VisualQueriesTester DEPEND com.hp.hpl.jena.update.UpdateRequest

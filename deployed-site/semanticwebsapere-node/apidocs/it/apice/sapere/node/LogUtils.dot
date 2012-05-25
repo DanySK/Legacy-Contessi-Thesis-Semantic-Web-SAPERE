@@ -8,14 +8,14 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.management.impl.ReactionManagerLogger
-	c2250 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../management/impl/ReactionManagerLogger.html">
+	c2252 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../management/impl/ReactionManagerLogger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerLogger </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.SAPERESysAgentSpec
-	c2253 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPERESysAgentSpec.html">
+	c2255 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPERESysAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPERESysAgentSpec </td></tr>
@@ -23,7 +23,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec
-	c2254 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPEREAgentSpec.html">
+	c2256 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./agents/SAPEREAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentSpec </td></tr>
@@ -31,35 +31,35 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.internal.LogUtilsImpl
-	c2268 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LogUtilsImpl.html">
+	c2270 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LogUtilsImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LogUtilsImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl
-	c2269 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LoggerFactoryImpl.html">
+	c2271 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./internal/LoggerFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LoggerFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.LogUtils
-	c2270 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtils.html">
+	c2272 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.internal.LogUtilsImpl implements it.apice.sapere.node.LogUtils
-	c2270:p -> c2268:p [dir=back,arrowtail=empty,style=dashed];
+	c2272:p -> c2270:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger NAVASSOC it.apice.sapere.node.LogUtils
-	c2250:p -> c2270:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c2252:p -> c2272:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.agents.SAPERESysAgentSpec DEPEND it.apice.sapere.node.LogUtils
-	c2253:p -> c2270:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c2255:p -> c2272:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.node.LogUtils
-	c2254:p -> c2270:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c2256:p -> c2272:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LogUtils
-	c2269:p -> c2270:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c2271:p -> c2272:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

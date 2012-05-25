@@ -50,6 +50,9 @@ import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.update.GraphStore;
 import com.hp.hpl.jena.update.GraphStoreFactory;
 import com.hp.hpl.jena.update.UpdateAction;
+import com.hp.hpl.jena.update.UpdateExecutionFactory;
+import com.hp.hpl.jena.update.UpdateFactory;
+import com.hp.hpl.jena.update.UpdateRequest;
 
 /**
  * <p>
@@ -78,12 +81,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private static final transient String RDF_TYPE = "http://"
 			+ "www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
-	/** SpaceObservers list. */
-	private final transient List<SpaceObserver> listeners;
-
-	/** LSAs observations map. */
-	private final transient Map<LSAid, List<LSAObserver>> observers;
-
 	/** RDF Graph Store (model). */
 	private final transient Model model;
 
@@ -96,28 +93,24 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Resource representing the LSA owl:Class. */
 	private final transient Resource lsaClass;
 
-	/**
-	 * Optimization map: stores every parsed spqrql query in order to avoid
-	 * re-parsing.
-	 */
-	private final transient Map<String, Query> parsedSparqlQueries = 
-			new HashMap<String, Query>();
-
 	/** rdf:type property. */
 	private final transient Property rdfTypeProp;
 
-	/** Provides thread-safety. */
-	private final transient ReadWriteLock mutex = new ReentrantReadWriteLock(
-			true);
+	/** Set of loaded ontologies. */
+	private final Set<URI> loadedOntos = new HashSet<URI>();
 
-	/** Read/Write flag. */
-	private transient boolean isWriting = false;
+	/* === OBSERVATION (begin) === */
 
 	/** Notification enabled flag. */
 	private transient boolean notificationsEnabled = true;
 
-	/** Set of loaded ontologies. */
-	private final Set<URI> loadedOntos = new HashSet<URI>();
+	/** SpaceObservers list. */
+	private final transient List<SpaceObserver> listeners;
+
+	/** LSAs observations map. */
+	private final transient Map<LSAid, List<LSAObserver>> observers;
+
+	/* ==== OBSERVATION (end) ==== */
 
 	/** Current node-id. */
 	private final transient String nodeId;
@@ -125,6 +118,42 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	/** Custom strategies application pipeline. */
 	private final transient 
 			CustomStrategyPipeline<StmtIterator> customStrategyPline;
+
+	/* === OPTIMIZATION STUFFS (begin) === */
+
+	/** Default optimization policy. */
+	private static final transient boolean DEFAULT_OPT_ENABLED = true;
+
+	/** Let optimization be enabled (or not) in future LSA-space instances. */
+	private static transient boolean enableOptimization = DEFAULT_OPT_ENABLED;
+	
+	/** Optimization enabled flag. */
+	private final transient boolean optEnabled = enableOptimization;
+
+	/** Stores every parsed SPARQL query (avoid re-parsing). */
+	private final transient Map<String, Query> parsedSparqlQueries = 
+			new HashMap<String, Query>();
+
+	/** Stores every parsed SPARUL query (avoid re-parsing). */
+	private final transient Map<String, UpdateRequest> parsedSparulQueries = 
+			new HashMap<String, UpdateRequest>();
+
+	/** Map of each SPARUL Query to the applicable results (so bindings). */
+	private final transient Map<String, List<MatchResult>> queryResults = 
+			new HashMap<String, List<MatchResult>>();
+
+	/** Map of each {@link MatchResult} to the related {@link QuerySolution}. */
+	private final transient Map<MatchResult, QuerySolution> relBindings = 
+			new HashMap<MatchResult, QuerySolution>();
+
+	/* ==== OPTIMIZATION STUFFS (end) ==== */
+
+	/** Provides thread-safety. */
+	private final transient ReadWriteLock mutex = new ReentrantReadWriteLock(
+			true);
+
+	/** Read/Write flag. */
+	private transient boolean isWriting = false;
 
 	/**
 	 * <p>
@@ -319,6 +348,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		final List<MatchResult> res = new LinkedList<MatchResult>();
+		if (optEnabled) {
+			clearCache(law);
+		}
 
 		acquireReadLock();
 		try {
@@ -330,9 +362,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				// 2. Extract bindings
 				final MutableMatchResult match = new MutableMatchResultImpl(
 						this, law);
-				for (String varName : law.variablesNames()) {
-					match.register(varName, 
-							extractValue(sol.get(varName)), 1.0);
+				for (String vName : law.variablesNames()) {
+					match.register(vName, extractValue(sol.get(vName)), 1.0);
+				}
+
+				// 2b. Registers bindings for optimization
+				if (optEnabled) {
+					cacheBindings(law, match, sol);
 				}
 
 				// 3. Return them for evaluation
@@ -355,6 +391,64 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		}
 
 		return res.toArray(new MatchResult[res.size()]);
+	}
+
+	/**
+	 * <p>
+	 * Optimization enforcer: saves the binding under the hood, for appliance.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The involved eco-law
+	 * @param match
+	 *            The actual match
+	 * @param bindings
+	 *            The related binding (QuerySolution)
+	 */
+	private void cacheBindings(final CompiledEcolaw law,
+			final MutableMatchResult match, final QuerySolution bindings) {
+		final String key = law.getUpdateQueryTemplate().getPlainQuery();
+		List<MatchResult> res = queryResults.get(key);
+		if (res == null) {
+			res = new LinkedList<MatchResult>();
+			queryResults.put(key, res);
+		}
+
+		res.add(match);
+		relBindings.put(match, bindings);
+	}
+
+	/**
+	 * <p>
+	 * Optimization enforcer: clears stored bindings in order to free memory.
+	 * </p>
+	 * 
+	 * @param law
+	 *            The involved law
+	 */
+	private void clearCache(final CompiledEcolaw law) {
+		final List<MatchResult> res = queryResults.get(law
+				.getUpdateQueryTemplate().getPlainQuery());
+		if (res != null) {
+			for (MatchResult mres : res) {
+				relBindings.remove(mres);
+			}
+
+			res.clear();
+		}
+	}
+
+	/**
+	 * <p>
+	 * Retrieves the cached binding and clears it.
+	 * </p>
+	 * 
+	 * @param key
+	 *            Cache key (plain SPARUL cache)
+	 * @return The Binding
+	 */
+	private QuerySolution retrieveBindings(final String key) {
+		return relBindings.remove(key);
 	}
 
 	/**
@@ -387,7 +481,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
-			execUpdateQuery(modelGraph, law.getUpdateQuery());
+			execUpdateQuery(modelGraph, law);
 
 			// Notification
 			final StringBuilder msg = new StringBuilder("Applying eco-law");
@@ -397,7 +491,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			final String[] uIds = retrieveUpdatedLSAids(law);
 			final List<CompiledLSA<StmtIterator>> uLsas = 
-				new LinkedList<CompiledLSA<StmtIterator>>();
+					new LinkedList<CompiledLSA<StmtIterator>>();
 			for (String id : uIds) {
 				uLsas.add(new CompiledLSAImpl(converter.getFactory()
 						.createLSAid(URI.create(id)), extractLSAData(id)));
@@ -581,7 +675,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 *            Actual LSAs status
 	 * @param type
 	 *            Event type
-	 * @throws SAPEREException Cannot parse LSA
+	 * @throws SAPEREException
+	 *             Cannot parse LSA
 	 */
 	private void notifyLSAObservers(final String msg,
 			final List<CompiledLSA<StmtIterator>> lsas,
@@ -1015,12 +1110,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * 
 	 * @param aGraphStore
 	 *            The queried model's graph store
-	 * @param query
-	 *            The update query to be executed
+	 * @param law
+	 *            The ecolaw to be applied
 	 */
 	private void execUpdateQuery(final GraphStore aGraphStore,
-			final String query) {
-		UpdateAction.parseExecute(query, aGraphStore);
+			final MatchingEcolaw law) {
+		if (optEnabled) {
+			final String query = law.getAppliedMatch().getRelCompiledEcolaw()
+					.getUpdateQueryTemplate().getPlainQuery();
+			UpdateRequest uReq = parsedSparulQueries.get(query);
+			if (uReq == null) {
+				uReq = UpdateFactory.create(query);
+				parsedSparulQueries.put(query, uReq);
+			}
+
+			final QuerySolution bindings = retrieveBindings(query);
+			if (bindings != null) {
+				UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
+						.execute();
+				return;
+			}
+		}
+
+		UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
 	}
 
 	@Override
@@ -1045,5 +1157,29 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	public final 
 			CustomStrategyPipeline<StmtIterator> getCustomStrategyPipeline() {
 		return customStrategyPline;
+	}
+	
+	/**
+	 * <p>
+	 * Lets the optimization be enabled (or not) when the LSA-space will 
+	 * be created.
+	 * </p>
+	 *  
+	 * @param en True = will enabled, False = will disable 
+	 */
+	public static void setOptimizationEnabled(final boolean en) {
+		enableOptimization = en;
+	}
+	
+	/**
+	 * <p>
+	 * Checks if optimization is enabled (Future instances will 
+	 * use optimization).
+	 * </p>
+	 *
+	 * @return True if enabled, false otherwise
+	 */
+	public static boolean getOptimizationEnabled() {
+		return enableOptimization;
 	}
 }

@@ -87,18 +87,18 @@ digraph G {
 	c38204:p -> c38141:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.Filter DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c38114:p -> c38145:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.filters.OpFilter DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c38117:p -> c38139:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filters.OpFilter DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c38117:p -> c38141:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c38204:p -> c38139:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.filters.OpFilter DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
+	c38117:p -> c38139:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c38204:p -> c38145:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter
-	c38204:p -> c38114:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
+	c38204:p -> c38139:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c38204:p -> c38141:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.filter.impl.OpFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter
+	c38204:p -> c38114:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.HasNotFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter
 	c38206:p -> c38114:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.HasFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter

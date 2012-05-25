@@ -97,10 +97,10 @@ digraph G {
 	c67508:p -> c67334:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.testcase.DisplayVLCService NAVASSOC it.apice.sapere.api.lsas.PropertyName
 	c67508:p -> c67334:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.LSA
-	c67287:p -> c67337:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.PropertyName
 	c67287:p -> c67334:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.LSA
+	c67287:p -> c67337:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.space.observation.LSAObserver
 	c67367:p -> c67376:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.lsas.LSA
@@ -113,15 +113,15 @@ digraph G {
 	c67468:p -> c67367:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.node.LogUtils
 	c67468:p -> c67484:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.node.agents.SAPEREAgent
+	c67508:p -> c67470:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.LSAFactory
 	c67508:p -> c67287:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.space.LSAspace
 	c67508:p -> c67367:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.space.observation.LSAEvent
-	c67508:p -> c67377:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.node.LogUtils
 	c67508:p -> c67484:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c67508:p -> c67470:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.space.observation.LSAEvent
+	c67508:p -> c67377:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

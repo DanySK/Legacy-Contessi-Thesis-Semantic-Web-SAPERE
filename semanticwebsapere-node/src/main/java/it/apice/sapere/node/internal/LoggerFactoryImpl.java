@@ -106,11 +106,11 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		logger.setLevel(Level.ALL);
 		logger.removeAllAppenders();
 
-		if (dispLevel.isGreaterOrEqual(Level.OFF)) {
+		if (!dispLevel.equals(Level.OFF)) {
 			logger.addAppender(initConsoleAppender());
 		}
 
-		if (fileLevel.isGreaterOrEqual(Level.OFF)) {
+		if (!fileLevel.equals(Level.OFF)) {
 			logger.addAppender(initFileAppender(agentId));
 		}
 	}

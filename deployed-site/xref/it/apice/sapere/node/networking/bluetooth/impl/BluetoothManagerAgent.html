@@ -178,7 +178,7 @@
 <a class="jxr_linenumber" name="168" href="#168">168</a> 
 <a class="jxr_linenumber" name="169" href="#169">169</a> 			myNodeMessage = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a>(NodeMessageType.NODE_INFO,
 <a class="jxr_linenumber" name="170" href="#170">170</a> 					localDevice.getBluetoothAddress(), <strong class="jxr_keyword">null</strong>, DUMMY_LATITUDE,
-<a class="jxr_linenumber" name="171" href="#171">171</a> 					DUMMY_LONGITUDE, <strong class="jxr_keyword">new</strong> <strong class="jxr_keyword">float</strong>[] { DUMMY_ORIENTATION_X,
+<a class="jxr_linenumber" name="171" href="#171">171</a> 					DUMMY_LONGITUDE, <strong class="jxr_keyword">new</strong> Float[] { DUMMY_ORIENTATION_X,
 <a class="jxr_linenumber" name="172" href="#172">172</a> 							DUMMY_ORIENTATION_Y, DUMMY_ORIENTATION_Z });
 <a class="jxr_linenumber" name="173" href="#173">173</a> 		} <strong class="jxr_keyword">catch</strong> (Exception ex) {
 <a class="jxr_linenumber" name="174" href="#174">174</a> 			fatal(<span class="jxr_string">"Cannot retrieve local Bluetooth device"</span>, ex);
@@ -225,8 +225,8 @@
 <a class="jxr_linenumber" name="215" href="#215">215</a> 		btClient = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/bluetooth/impl/BTClient.html">BTClient</a>(myNodeMessage);
 <a class="jxr_linenumber" name="216" href="#216">216</a> 
 <a class="jxr_linenumber" name="217" href="#217">217</a> 		<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="218" href="#218">218</a> 			String address = localDevice.getBluetoothAddress();
-<a class="jxr_linenumber" name="219" href="#219">219</a> 			String name = localDevice.getFriendlyName();
+<a class="jxr_linenumber" name="218" href="#218">218</a> 			<strong class="jxr_keyword">final</strong> String address = localDevice.getBluetoothAddress();
+<a class="jxr_linenumber" name="219" href="#219">219</a> 			<strong class="jxr_keyword">final</strong> String name = localDevice.getFriendlyName();
 <a class="jxr_linenumber" name="220" href="#220">220</a> 			spy(String.format(<span class="jxr_string">"Using Bluetooth device: %s (%s)"</span>, name, 
 <a class="jxr_linenumber" name="221" href="#221">221</a> 					address));
 <a class="jxr_linenumber" name="222" href="#222">222</a> 
@@ -251,8 +251,8 @@
 <a class="jxr_linenumber" name="241" href="#241">241</a> 					in = connection.openInputStream();
 <a class="jxr_linenumber" name="242" href="#242">242</a> 					out = connection.openOutputStream();
 <a class="jxr_linenumber" name="243" href="#243">243</a> 
-<a class="jxr_linenumber" name="244" href="#244">244</a> 					ObjectInputStream ois = <strong class="jxr_keyword">new</strong> ObjectInputStream(in);
-<a class="jxr_linenumber" name="245" href="#245">245</a> 					NodeMessage message = (NodeMessage) ois.readObject();
+<a class="jxr_linenumber" name="244" href="#244">244</a> 					<strong class="jxr_keyword">final</strong> ObjectInputStream ois = <strong class="jxr_keyword">new</strong> ObjectInputStream(in);
+<a class="jxr_linenumber" name="245" href="#245">245</a> 					<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message = (NodeMessage) ois.readObject();
 <a class="jxr_linenumber" name="246" href="#246">246</a> 
 <a class="jxr_linenumber" name="247" href="#247">247</a> 					<strong class="jxr_keyword">switch</strong> (message.getType()) {
 <a class="jxr_linenumber" name="248" href="#248">248</a> 					<strong class="jxr_keyword">case</strong> DIFFUSE:
@@ -311,7 +311,7 @@
 <a class="jxr_linenumber" name="301" href="#301">301</a> 			<strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="302" href="#302">302</a> 		neighbourRegistration(message, services);
 <a class="jxr_linenumber" name="303" href="#303">303</a> 
-<a class="jxr_linenumber" name="304" href="#304">304</a> 		ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(out);
+<a class="jxr_linenumber" name="304" href="#304">304</a> 		<strong class="jxr_keyword">final</strong> ObjectOutputStream oos = <strong class="jxr_keyword">new</strong> ObjectOutputStream(out);
 <a class="jxr_linenumber" name="305" href="#305">305</a> 		oos.writeObject(myNodeMessage);
 <a class="jxr_linenumber" name="306" href="#306">306</a> 	}
 <a class="jxr_linenumber" name="307" href="#307">307</a> 
@@ -340,7 +340,7 @@
 <a class="jxr_linenumber" name="330" href="#330">330</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="331" href="#331">331</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> neighbourRegistration(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message,
 <a class="jxr_linenumber" name="332" href="#332">332</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
-<a class="jxr_linenumber" name="333" href="#333">333</a> 		String newId = netManager.registerNeighbour(<strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/bluetooth/impl/BTNeighbour.html">BTNeighbour</a>(<strong class="jxr_keyword">this</strong>,
+<a class="jxr_linenumber" name="333" href="#333">333</a> 		<strong class="jxr_keyword">final</strong> String newId = netManager.registerNeighbour(<strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/bluetooth/impl/BTNeighbour.html">BTNeighbour</a>(<strong class="jxr_keyword">this</strong>,
 <a class="jxr_linenumber" name="334" href="#334">334</a> 				message.getSender()));
 <a class="jxr_linenumber" name="335" href="#335">335</a> 
 <a class="jxr_linenumber" name="336" href="#336">336</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();

@@ -45,10 +45,10 @@
 <a class="jxr_linenumber" name="35" href="#35">35</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String serLsa;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
 <a class="jxr_linenumber" name="37" href="#37">37</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Signal power field. */</em>
-<a class="jxr_linenumber" name="38" href="#38">38</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> signal;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Integer signal;
 <a class="jxr_linenumber" name="39" href="#39">39</a>  
 <a class="jxr_linenumber" name="40" href="#40">40</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Orientation field. */</em>
-<a class="jxr_linenumber" name="41" href="#41">41</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] orientation;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Float[] orientation;
 <a class="jxr_linenumber" name="42" href="#42">42</a>  
 <a class="jxr_linenumber" name="43" href="#43">43</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> MAC Address. */</em>
 <a class="jxr_linenumber" name="44" href="#44">44</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String macAddress;
@@ -70,7 +70,7 @@
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <em class="jxr_javadoccomment">	 *            The macAddress of the mobile device</em>
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessageType.html">GuestMessageType</a> aType, <strong class="jxr_keyword">final</strong> CompiledLSA&lt;?&gt; lsa,
-<a class="jxr_linenumber" name="63" href="#63">63</a>  			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> aSignal, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] anOrientation,
+<a class="jxr_linenumber" name="63" href="#63">63</a>  			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> aSignal, <strong class="jxr_keyword">final</strong> Float[] anOrientation,
 <a class="jxr_linenumber" name="64" href="#64">64</a>  			<strong class="jxr_keyword">final</strong> String aMacAddress) {
 <a class="jxr_linenumber" name="65" href="#65">65</a>  		<strong class="jxr_keyword">this</strong>(aType, lsa.getLSAid(), lsa.toString(RDFFormat.RDF_XML), aSignal,
 <a class="jxr_linenumber" name="66" href="#66">66</a>  				anOrientation, aMacAddress);
@@ -96,7 +96,7 @@
 <a class="jxr_linenumber" name="86" href="#86">86</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="87" href="#87">87</a>  	<strong class="jxr_keyword">public</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessageType.html">GuestMessageType</a> aType, <strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/lsas/LSAid.html">LSAid</a> lsaId,
 <a class="jxr_linenumber" name="88" href="#88">88</a>  			<strong class="jxr_keyword">final</strong> String serializedLSA, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> aSignal,
-<a class="jxr_linenumber" name="89" href="#89">89</a>  			<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] anOrientation, <strong class="jxr_keyword">final</strong> String aMacAddress) {
+<a class="jxr_linenumber" name="89" href="#89">89</a>  			<strong class="jxr_keyword">final</strong> Float[] anOrientation, <strong class="jxr_keyword">final</strong> String aMacAddress) {
 <a class="jxr_linenumber" name="90" href="#90">90</a>  		type = aType;
 <a class="jxr_linenumber" name="91" href="#91">91</a>  		id = lsaId;
 <a class="jxr_linenumber" name="92" href="#92">92</a>  		serLsa = serializedLSA;
@@ -157,7 +157,7 @@
 <a class="jxr_linenumber" name="147" href="#147">147</a> <em class="jxr_javadoccomment">	 * </em>
 <a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">	 * @return The orientation</em>
 <a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="150" href="#150">150</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">float</strong>[] getOrientation() {
+<a class="jxr_linenumber" name="150" href="#150">150</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> Float[] getOrientation() {
 <a class="jxr_linenumber" name="151" href="#151">151</a> 		<strong class="jxr_keyword">return</strong> orientation;
 <a class="jxr_linenumber" name="152" href="#152">152</a> 	}
 <a class="jxr_linenumber" name="153" href="#153">153</a> 

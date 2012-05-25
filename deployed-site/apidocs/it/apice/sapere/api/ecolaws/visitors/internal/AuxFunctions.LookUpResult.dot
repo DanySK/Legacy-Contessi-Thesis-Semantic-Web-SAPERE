@@ -43,11 +43,11 @@ digraph G {
 	c46165:p -> c46066:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult NAVASSOC it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c46165:p -> c46068:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
-	c46165:p -> c46067:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c46165:p -> c46066:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
 	c46165:p -> c46068:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PropertyTerm
+	c46165:p -> c46066:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
+	c46165:p -> c46067:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

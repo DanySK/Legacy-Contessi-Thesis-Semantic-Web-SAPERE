@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">	 * @return the id assigned to the neighbour just inserted</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="42" href="#42">42</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> String addNeighbour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/impl/Neighbour.html">Neighbour</a> neighbour) {
-<a class="jxr_linenumber" name="43" href="#43">43</a>  		String newId = <span class="jxr_string">"neighbour"</span> + currentId++;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  		<strong class="jxr_keyword">final</strong> String newId = <span class="jxr_string">"neighbour"</span> + currentId++;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  		map.put(newId, neighbour);
 <a class="jxr_linenumber" name="45" href="#45">45</a>  		<strong class="jxr_keyword">return</strong> newId;
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="60" href="#60">60</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> sendMessage(<strong class="jxr_keyword">final</strong> String neighbourId,
 <a class="jxr_linenumber" name="61" href="#61">61</a>  			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message) {
-<a class="jxr_linenumber" name="62" href="#62">62</a>  		Neighbour neighbour = map.get(neighbourId);
+<a class="jxr_linenumber" name="62" href="#62">62</a>  		<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/networking/impl/Neighbour.html">Neighbour</a> neighbour = map.get(neighbourId);
 <a class="jxr_linenumber" name="63" href="#63">63</a>  		<strong class="jxr_keyword">if</strong> (neighbour == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="64" href="#64">64</a>  			<strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="65" href="#65">65</a>  		}
