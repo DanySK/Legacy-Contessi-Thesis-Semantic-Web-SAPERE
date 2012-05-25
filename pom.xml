@@ -18,14 +18,11 @@
 		<module>semanticwebsapere-testplan</module>
 		<module>semanticwebsapere-rdfmodel</module>
 		<module>semanticwebsapere-rdfspace</module>
-
 		<module>semanticwebsapere-node</module>
-
 		<module>semanticwebsapere-integrationtests</module>
-
-
-
 		<module>semanticwebsapere-experimenters</module>
+		<module>semanticwebsapere-pellet</module>
+		
 	</modules>
 
 	<organization>
@@ -152,8 +149,9 @@
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>com.clarkparsia.pellet</groupId>
-			<artifactId>pellet</artifactId>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-pellet</artifactId>
+			<type>jar</type>
 			<version>2.3.0</version>
 		</dependency>
 		</dependencies>

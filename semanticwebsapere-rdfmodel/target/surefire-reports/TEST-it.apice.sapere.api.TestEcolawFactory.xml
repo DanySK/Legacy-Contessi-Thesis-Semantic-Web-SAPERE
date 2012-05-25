@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.041" errors="0" skipped="0" tests="13" name="it.apice.sapere.api.TestEcolawFactory">
+<testsuite failures="0" time="0.018" errors="0" skipped="0" tests="13" name="it.apice.sapere.api.TestEcolawFactory">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -64,17 +64,17 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.019" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedEcolaws"/>
-  <testcase time="0.001" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedProducts"/>
-  <testcase time="0.001" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedReactants"/>
-  <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedPatternNameTerm"/>
-  <testcase time="0.001" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedRates"/>
-  <testcase time="0.004" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarTerms"/>
+  <testcase time="0.001" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedEcolaws"/>
+  <testcase time="0.002" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedProducts"/>
+  <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedReactants"/>
+  <testcase time="0.001" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedPatternNameTerm"/>
+  <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testUnwantedRates"/>
+  <testcase time="0.003" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarTerms"/>
   <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testGroundTerms"/>
-  <testcase time="0.006" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarPropertyTerms"/>
+  <testcase time="0.005" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarPropertyTerms"/>
   <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarListTerms"/>
   <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testVarSDescTerms"/>
   <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testCreation"/>
-  <testcase time="0.009" classname="it.apice.sapere.api.TestEcolawFactory" name="testYOUNGEST"/>
-  <testcase time="0" classname="it.apice.sapere.api.TestEcolawFactory" name="testBONDPV"/>
+  <testcase time="0.003" classname="it.apice.sapere.api.TestEcolawFactory" name="testYOUNGEST"/>
+  <testcase time="0.003" classname="it.apice.sapere.api.TestEcolawFactory" name="testBONDPV"/>
 </testsuite>

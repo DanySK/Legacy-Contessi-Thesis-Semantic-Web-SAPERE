@@ -190,7 +190,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 					try {
 						// spy("Applying..");
 						// If time has come applies the eco-law
-						info(next.toString());
+						// info(next.toString());
 						space.apply(next);
 						notifyLawApplied(next, System.currentTimeMillis());
 						// spy(space.toString());
