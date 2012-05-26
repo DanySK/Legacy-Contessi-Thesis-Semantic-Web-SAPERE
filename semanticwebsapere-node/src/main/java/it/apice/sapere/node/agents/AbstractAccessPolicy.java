@@ -359,6 +359,12 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 
 	@Override
 	public final void done() {
+		LoggerFactoryImpl
+		.getInstance()
+		.getLogger(AbstractAccessPolicy.class)
+		.spy(String.format("%s is completing transaction",
+				agent.getLocalAgentId()));
+
 		space.done();
 
 		LoggerFactoryImpl

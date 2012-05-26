@@ -126,7 +126,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** Let optimization be enabled (or not) in future LSA-space instances. */
 	private static transient boolean enableOptimization = DEFAULT_OPT_ENABLED;
-	
+
 	/** Optimization enabled flag. */
 	private final transient boolean optEnabled = enableOptimization;
 
@@ -712,10 +712,14 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	@Override
 	public final void done() {
-		if (isWriting) {
-			mutex.writeLock().unlock();
-		} else {
-			mutex.readLock().unlock();
+		try {
+			if (isWriting) {
+				mutex.writeLock().unlock();
+			} else {
+				mutex.readLock().unlock();
+			}
+		} catch (IllegalMonitorStateException ex) {
+			assert ex != null;
 		}
 	}
 
@@ -1158,25 +1162,26 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			CustomStrategyPipeline<StmtIterator> getCustomStrategyPipeline() {
 		return customStrategyPline;
 	}
-	
+
 	/**
 	 * <p>
-	 * Lets the optimization be enabled (or not) when the LSA-space will 
-	 * be created.
+	 * Lets the optimization be enabled (or not) when the LSA-space will be
+	 * created.
 	 * </p>
-	 *  
-	 * @param en True = will enabled, False = will disable 
+	 * 
+	 * @param en
+	 *            True = will enabled, False = will disable
 	 */
 	public static void setOptimizationEnabled(final boolean en) {
 		enableOptimization = en;
 	}
-	
+
 	/**
 	 * <p>
-	 * Checks if optimization is enabled (Future instances will 
-	 * use optimization).
+	 * Checks if optimization is enabled (Future instances will use
+	 * optimization).
 	 * </p>
-	 *
+	 * 
 	 * @return True if enabled, false otherwise
 	 */
 	public static boolean getOptimizationEnabled() {

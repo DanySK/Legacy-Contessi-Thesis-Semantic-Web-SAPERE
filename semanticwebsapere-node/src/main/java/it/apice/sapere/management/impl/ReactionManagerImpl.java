@@ -350,12 +350,12 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
-		// spy("Something happened in the LSA-space!");
+		spy("Something happened in the LSA-space!");
 		mutex.lock();
 		try {
 			checkDependencies(ev, next);
 		} catch (AbortException e) {
-			// spy("EVENT :: aborting");
+			spy("EVENT :: aborting");
 			schedulingEvent.signal();
 		} finally {
 			mutex.unlock();
@@ -376,7 +376,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 	 * @throws AbortException
 	 *             Next reaction should be re-scheduled
 	 */
-	protected final void checkDependencies(final SpaceEvent ev,
+	private void checkDependencies(final SpaceEvent ev,
 			final MatchingEcolaw law) throws AbortException {
 		scheduler.checkDependencies(ev, law);
 	}

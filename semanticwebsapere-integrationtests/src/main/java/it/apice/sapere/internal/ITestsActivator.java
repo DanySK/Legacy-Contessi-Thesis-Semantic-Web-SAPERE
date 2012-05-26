@@ -1,11 +1,19 @@
 package it.apice.sapere.internal;
 
+import it.apice.sapere.api.LSAFactory;
+import it.apice.sapere.api.lsas.LSA;
+import it.apice.sapere.api.lsas.values.SDescValue;
+import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.node.LogUtils;
 import it.apice.sapere.node.LoggerFactory;
+import it.apice.sapere.node.agents.NodeServices;
+import it.apice.sapere.node.agents.SAPEREAgent;
+import it.apice.sapere.node.agents.SAPEREAgentSpec;
 import it.apice.sapere.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.node.agents.SAPERESysAgentSpec;
 import it.apice.sapere.testcase.DisplayVLCService;
 import it.apice.sapere.testcase.ResVLCIniter;
 
@@ -45,9 +53,6 @@ public class ITestsActivator implements BundleActivator {
 			log = context.getService(lRef).getLogger(getClass());
 		}
 
-		// log.warn("THIS IS AN INTEGRATION TESTS BUNDLE. "
-		// + "IT SHOULD NOT BE DEPLOYED WITH THE APPLICATION.", null);
-
 		final ServiceReference<ReactionManager> ref = context
 				.getServiceReference(ReactionManager.class);
 		if (ref != null) {
@@ -69,10 +74,10 @@ public class ITestsActivator implements BundleActivator {
 				.getServiceReference(SAPEREAgentsFactory.class);
 		if (ref2 != null) {
 			final SAPEREAgentsFactory fact = context.getService(ref2);
-			// fact.createAgent("test_agent", getSpec()).spawn();
-			// Thread.sleep(SLEEP_TIME);
-			// fact.createSysAgent("test_sys_agent", getSysSpec()).spawn();
-			// Thread.sleep(2 * SLEEP_TIME);
+			fact.createAgent("test_agent", getSpec()).spawn();
+			Thread.sleep(SLEEP_TIME);
+			fact.createSysAgent("test_sys_agent", getSysSpec()).spawn();
+			Thread.sleep(2 * SLEEP_TIME);
 
 			fact.createAgent("display", new DisplayVLCService()).spawn();
 			fact.createAgent("scenario_initer", new ResVLCIniter()).spawn();
@@ -137,58 +142,65 @@ public class ITestsActivator implements BundleActivator {
 
 	}
 
-	// /**
-	// * <p>
-	// * Retrieves an agent specification.
-	// * </p>
-	// *
-	// * @return A {@link SAPEREAgentSpec}
-	// */
-	// private SAPEREAgentSpec getSpec() {
-	// return new SAPEREAgentSpec() {
-	//
-	// @Override
-	// public void behaviour(final LSAFactory factory,
-	// final LSAspace space, final LogUtils out,
-	// final SAPEREAgent me) throws Exception {
-	// final LSA lsa = factory.createLSA();
-	//
-	// lsa.getSemanticDescription().addProperty(
-	// factory.createProperty(
-	// URI.create("http://www.example.org#prop"),
-	// factory.createPropertyValue(true)));
-	// final SDescValue v = factory.createNestingPropertyValue();
-	// v.getValue().addProperty(
-	// factory.createProperty(
-	// URI.create("http://www.example.org#innerProp"),
-	// factory.createPropertyValue("ciao")));
-	// lsa.getSemanticDescription().addProperty(
-	// factory.createProperty(
-	// URI.create("http://www.example.org#bnode"), v));
-	//
-	// space.inject(lsa);
-	// out.log(space.read(lsa.getLSAId()).toString());
-	// }
-	// };
-	// }
-	//
-	// /**
-	// * <p>
-	// * Retrieves a system agent specification.
-	// * </p>
-	// *
-	// * @return A {@link SAPEREAgentSpec}
-	// */
-	// private SAPERESysAgentSpec getSysSpec() {
-	// return new SAPERESysAgentSpec() {
-	//
-	// @Override
-	// public void behaviour(final NodeServices services,
-	// final LogUtils out) throws Exception {
-	// out.log("Hello World!");
-	//
-	// out.log("Bye bye.");
-	// }
-	// };
-	// }
+	/**
+	 * <p>
+	 * Retrieves an agent specification.
+	 * </p>
+	 * 
+	 * @return A {@link SAPEREAgentSpec}
+	 */
+	private SAPEREAgentSpec getSpec() {
+		return new SAPEREAgentSpec() {
+
+			@Override
+			public void behaviour(final LSAFactory factory,
+					final LSAspace space, final LogUtils out,
+					final SAPEREAgent me) throws Exception {
+				out.log("Testing Multi-Level LSA..");
+
+				final LSA lsa = factory.createLSA();
+
+				lsa.getSemanticDescription().addProperty(
+						factory.createProperty(
+								URI.create("http://www.example.org#prop"),
+								factory.createPropertyValue(true)));
+				final SDescValue v = factory.createNestingPropertyValue();
+				v.getValue().addProperty(
+						factory.createProperty(
+								URI.create("http://www.example.org#innerProp"),
+								factory.createPropertyValue("ciao")));
+				lsa.getSemanticDescription().addProperty(
+						factory.createProperty(
+								URI.create("http://www.example.org#bnode"), v));
+
+				space.beginWrite();
+				try {
+					space.inject(lsa);
+					out.log(space.read(lsa.getLSAId()).toString());
+				} finally {
+					space.done();
+				}
+				
+				out.log("Done.");
+			}
+		};
+	}
+
+	/**
+	 * <p>
+	 * Retrieves a system agent specification.
+	 * </p>
+	 * 
+	 * @return A {@link SAPEREAgentSpec}
+	 */
+	private SAPERESysAgentSpec getSysSpec() {
+		return new SAPERESysAgentSpec() {
+
+			@Override
+			public void behaviour(final NodeServices services,
+					final LogUtils out, final SAPEREAgent me) throws Exception {
+				out.log("Hello World!");
+			}
+		};
+	}
 }
