@@ -29,8 +29,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -148,12 +148,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/* ==== OPTIMIZATION STUFFS (end) ==== */
 
-	/** Provides thread-safety. */
-	private final transient ReadWriteLock mutex = new ReentrantReadWriteLock(
-			true);
+	/** LSA Observers list mutex. */
+	private final transient Lock lsaObsMutex = new ReentrantLock();
 
-	/** Read/Write flag. */
-	private transient boolean isWriting = false;
+	/** Space Observers list mutex. */
+	private final transient Lock spaceObsMutex = new ReentrantLock();
 
 	/**
 	 * <p>
@@ -277,7 +276,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new IllegalArgumentException("Invalid LSAObserver");
 		}
 
-		acquireWriteLock();
+		lsaObsMutex.lock();
 		try {
 			if (!observers.containsKey(lsaId)) {
 				observers.put(lsaId, new LinkedList<LSAObserver>());
@@ -295,7 +294,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			return this;
 		} finally {
-			releaseLock();
+			lsaObsMutex.unlock();
 		}
 	}
 
@@ -310,7 +309,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new IllegalArgumentException("Invalid LSAObserver");
 		}
 
-		acquireWriteLock();
+		lsaObsMutex.lock();
 		try {
 			final List<LSAObserver> list = observers.get(lsaId);
 			if (list != null) {
@@ -324,7 +323,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 			return this;
 		} finally {
-			releaseLock();
+			lsaObsMutex.unlock();
 		}
 	}
 
@@ -539,7 +538,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new IllegalArgumentException("Invalid space observer");
 		}
 
-		listeners.add(obs);
+		spaceObsMutex.lock();
+		try {
+			listeners.add(obs);
+		} finally {
+			spaceObsMutex.unlock();
+		}
 	}
 
 	@Override
@@ -548,7 +552,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new IllegalArgumentException("Invalid space observer");
 		}
 
-		listeners.remove(obs);
+		spaceObsMutex.lock();
+		try {
+			listeners.remove(obs);
+		} finally {
+			spaceObsMutex.unlock();
+		}
 	}
 
 	/**
@@ -564,9 +573,20 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg, type));
-			}
+			new Thread() {
+
+				@Override
+				public void run() {
+					spaceObsMutex.lock();
+					try {
+						for (SpaceObserver obs : listeners) {
+							obs.eventOccurred(new SpaceEventImpl(msg, type));
+						}
+					} finally {
+						spaceObsMutex.unlock();
+					}
+				}
+			} .start();
 		}
 	}
 
@@ -585,10 +605,21 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg, new LSAid[] { id },
-						type));
-			}
+			new Thread() {
+
+				@Override
+				public void run() {
+					spaceObsMutex.lock();
+					try {
+						for (SpaceObserver obs : listeners) {
+							obs.eventOccurred(new SpaceEventImpl(msg,
+									new LSAid[] { id }, type));
+						}
+					} finally {
+						spaceObsMutex.unlock();
+					}
+				}
+			} .start();
 		}
 	}
 
@@ -608,10 +639,22 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg, lsas
-						.toArray(new CompiledLSA<?>[lsas.size()]), type));
-			}
+			new Thread() {
+
+				@Override
+				public void run() {
+					spaceObsMutex.lock();
+					try {
+						for (SpaceObserver obs : listeners) {
+							obs.eventOccurred(new SpaceEventImpl(msg, lsas
+									.toArray(new CompiledLSA<?>[lsas.size()]),
+									type));
+						}
+					} finally {
+						spaceObsMutex.unlock();
+					}
+				}
+			} .start();
 		}
 	}
 
@@ -631,10 +674,21 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final CompiledLSA<StmtIterator> lsa, 
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			for (SpaceObserver obs : listeners) {
-				obs.eventOccurred(new SpaceEventImpl(msg,
-						new CompiledLSA[] { lsa }, type));
-			}
+			new Thread() {
+
+				@Override
+				public void run() {
+					spaceObsMutex.lock();
+					try {
+						for (SpaceObserver obs : listeners) {
+							obs.eventOccurred(new SpaceEventImpl(msg,
+									new CompiledLSA[] { lsa }, type));
+						}
+					} finally {
+						spaceObsMutex.unlock();
+					}
+				}
+			} .start();
 		}
 	}
 
@@ -654,12 +708,25 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifyLSAObservers(final String msg, final LSA lsa,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			final List<LSAObserver> obss = observers.get(lsa.getLSAId());
-			if (obss != null) {
-				for (LSAObserver obs : obss) {
-					obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
+			new Thread() {
+
+				@Override
+				public void run() {
+					lsaObsMutex.lock();
+					try {
+						final List<LSAObserver> obss = observers.get(lsa
+								.getLSAId());
+						if (obss != null) {
+							for (LSAObserver obs : obss) {
+								obs.eventOccurred(new LSAEventImpl(msg, lsa,
+										type));
+							}
+						}
+					} finally {
+						lsaObsMutex.unlock();
+					}
 				}
-			}
+			} .start();
 		}
 	}
 
@@ -683,44 +750,26 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final SpaceOperationType type) throws SAPEREException {
 		if (notificationsEnabled) {
 			for (CompiledLSA<StmtIterator> cLsa : lsas) {
-				final List<LSAObserver> obss = observers.get(cLsa.getLSAid());
-				if (obss != null) {
-					for (LSAObserver obs : obss) {
-						obs.eventOccurred(new LSAEventImpl(msg,
-								retrieveLSA(cLsa), type));
-					}
-				}
+				notifyLSAObservers(msg, retrieveLSA(cLsa), type);
 			}
 		}
 	}
 
 	@Override
 	public final LSAspaceCore<StmtIterator> beginRead() {
-		mutex.readLock().lock();
-		isWriting = false;
-
+		System.err.println("§§§ BEGIN (READ)");
 		return this;
 	}
 
 	@Override
 	public final LSAspaceCore<StmtIterator> beginWrite() {
-		mutex.writeLock().lock();
-		isWriting = true;
-
+		System.err.println("§§§ BEGIN (WRITE)");
 		return this;
 	}
 
 	@Override
 	public final void done() {
-		try {
-			if (isWriting) {
-				mutex.writeLock().unlock();
-			} else {
-				mutex.readLock().unlock();
-			}
-		} catch (IllegalMonitorStateException ex) {
-			assert ex != null;
-		}
+		System.err.println("§§§ END");
 	}
 
 	@Override

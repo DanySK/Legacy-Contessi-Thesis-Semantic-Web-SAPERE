@@ -211,6 +211,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 		try {
 			space.observe(createFactory().createLSAid(), lObs);
+			Thread.sleep(1000);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
 			fail("Should accept to observe "
@@ -246,6 +247,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 		try {
 			space.ignore(createFactory().createLSAid(), lObs);
+			Thread.sleep(1000);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 		} catch (Exception ex) {
 			fail("Ignoring something not observed could be dropped silently");
@@ -286,6 +288,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 			// 1. Register observer
 			space.observe(lsa.getLSAId(), scObs);
 
+			Thread.sleep(1000);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 
 			// 2. Inject and read the same LSA
@@ -326,6 +329,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 			// 5. Ignore the LSA
 			space.ignore(lsa.getLSAId(), scObs);
 
+			Thread.sleep(1000);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
 			assertTrue(sObs.noEventOccurred());
 		} catch (SAPEREException e) {
