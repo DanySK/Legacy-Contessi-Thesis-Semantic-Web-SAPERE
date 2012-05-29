@@ -212,16 +212,16 @@ digraph G {
 	c16318:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor NAVASSOC it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c16319:p -> c16220:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c16193:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c16193:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.Term<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16194:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.Term<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16194:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.Term<Type>
+	c16193:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.Term<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c16194:p -> c16229:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.Term<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16194:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.Term<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16194:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filters.MatchFilter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16202:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filters.MatchFilter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
@@ -232,18 +232,18 @@ digraph G {
 	c16286:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
+	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
+	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
+	c16287:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c16287:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c16287:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
-	c16287:p -> c16220:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c16287:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.MatchFilterImpl DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c16289:p -> c16229:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.MatchFilterImpl DEPEND it.apice.sapere.api.ecolaws.Term<Type>
@@ -260,14 +260,14 @@ digraph G {
 	c16309:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.ValueTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16310:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16311:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16311:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c16311:p -> c16229:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16311:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16311:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16311:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16311:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl DEPEND it.apice.sapere.api.ecolaws.Term<Type>
@@ -280,12 +280,12 @@ digraph G {
 	c16316:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c16317:p -> c16229:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16317:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c16317:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16317:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16317:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c16317:p -> c16228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.observers.impl.PropagationObserverImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c16318:p -> c16194:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.observers.impl.PropagationObserverImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>

@@ -7,16 +7,16 @@
 digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c53343 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../core/LSAspaceCore.html">
+	// it.apice.sapere.api.space.match.MatchResult
+	c53358 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
-			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core </font></td></tr>
+			<tr><td> MatchResult </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolaw
-	c53356 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolaw.html">
+	c53360 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolaw </td></tr>
@@ -24,16 +24,16 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.impl.MatchingEcolawImpl
-	c53432 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchingEcolawImpl.html">
+	c53436 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchingEcolawImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MatchingEcolawImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.impl.MatchingEcolawImpl implements it.apice.sapere.api.space.match.MatchingEcolaw
-	c53356:p -> c53432:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.space.match.impl.MatchingEcolawImpl NAVASSOC it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c53432:p -> c53343:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c53343:p -> c53356:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c53360:p -> c53436:p [dir=back,arrowtail=empty,style=dashed];
+	// it.apice.sapere.api.space.match.impl.MatchingEcolawImpl NAVASSOC it.apice.sapere.api.space.match.MatchResult
+	c53436:p -> c53358:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.api.space.match.impl.MatchingEcolawImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c53436:p -> c53358:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

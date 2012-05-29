@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.IntegerValue
-	c49596 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../IntegerValue.html">
+	c49598 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../IntegerValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> IntegerValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c49671 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c49673 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.IntegerValueImpl
-	c49675 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IntegerValueImpl.html">
+	c49677 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IntegerValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> IntegerValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.IntegerValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.lang.Integer, it.apice.sapere.api.lsas.values.IntegerValue>
-	c49671:p -> c49675:p [dir=back,arrowtail=empty];
+	c49673:p -> c49677:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.IntegerValueImpl implements it.apice.sapere.api.lsas.values.IntegerValue
-	c49596:p -> c49675:p [dir=back,arrowtail=empty,style=dashed];
+	c49598:p -> c49677:p [dir=back,arrowtail=empty,style=dashed];
 }
 

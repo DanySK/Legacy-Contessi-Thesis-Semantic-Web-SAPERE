@@ -2,7 +2,7 @@ PREFIX  ex:   <http://www.example.org#>
 PREFIX  sapere: <http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#>
 
 INSERT DATA {
-  ex:test ex:bnode _:b0 .
+  ex:test ex:bnode [] .
 } ;
 
 INSERT {

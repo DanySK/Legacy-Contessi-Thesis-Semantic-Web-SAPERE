@@ -7,8 +7,24 @@
 digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
+	// it.apice.sapere.node.agents.SAPERESysAgentSpec
+	c67003 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../node/agents/SAPERESysAgentSpec.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;interface&raquo; </td></tr>
+			<tr><td> SAPERESysAgentSpec </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.node.agents.SAPEREAgentSpec
+	c67004 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../node/agents/SAPEREAgentSpec.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;interface&raquo; </td></tr>
+			<tr><td> SAPEREAgentSpec </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.LogUtils
-	c67016 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../node/LogUtils.html">
+	c67020 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../node/LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
@@ -16,19 +32,27 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.internal.ITestsActivator
-	c67038 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ITestsActivator.html">
+	c67042 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ITestsActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ITestsActivator </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.internal.ITestsActivator implements org.osgi.framework.BundleActivator
-	c67042:p -> c67038:p [dir=back,arrowtail=empty,style=dashed];
+	c67046:p -> c67042:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.internal.ITestsActivator NAVASSOC it.apice.sapere.node.LogUtils
-	c67038:p -> c67016:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c67042:p -> c67020:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.node.agents.SAPERESysAgentSpec DEPEND it.apice.sapere.node.LogUtils
+	c67003:p -> c67020:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.node.LogUtils
+	c67004:p -> c67020:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.internal.ITestsActivator DEPEND org.osgi.framework.BundleContext
-	c67038:p -> c67043:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c67042:p -> c67047:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.internal.ITestsActivator DEPEND it.apice.sapere.node.agents.SAPERESysAgentSpec
+	c67042:p -> c67003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.internal.ITestsActivator DEPEND it.apice.sapere.node.agents.SAPEREAgentSpec
+	c67042:p -> c67004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.osgi.framework.BundleContext
-	c67043 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
+	c67047 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleContext </td></tr>
@@ -36,7 +60,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.BundleActivator
-	c67042 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
+	c67046 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleActivator </td></tr>

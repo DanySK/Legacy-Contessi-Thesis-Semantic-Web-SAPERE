@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.BooleanValue
-	c50532 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../BooleanValue.html">
+	c50534 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../BooleanValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BooleanValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c50603 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c50605 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.BooleanValueImpl
-	c50611 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./BooleanValueImpl.html">
+	c50613 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./BooleanValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BooleanValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.BooleanValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.lang.Boolean, it.apice.sapere.api.lsas.values.BooleanValue>
-	c50603:p -> c50611:p [dir=back,arrowtail=empty];
+	c50605:p -> c50613:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.BooleanValueImpl implements it.apice.sapere.api.lsas.values.BooleanValue
-	c50532:p -> c50611:p [dir=back,arrowtail=empty,style=dashed];
+	c50534:p -> c50613:p [dir=back,arrowtail=empty,style=dashed];
 }
 

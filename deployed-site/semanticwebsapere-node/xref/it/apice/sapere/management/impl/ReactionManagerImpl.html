@@ -200,7 +200,7 @@
 <a class="jxr_linenumber" name="190" href="#190">190</a> 					<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="191" href="#191">191</a> 						<em class="jxr_comment">// spy("Applying..");</em>
 <a class="jxr_linenumber" name="192" href="#192">192</a> 						<em class="jxr_comment">// If time has come applies the eco-law</em>
-<a class="jxr_linenumber" name="193" href="#193">193</a> 						info(next.toString());
+<a class="jxr_linenumber" name="193" href="#193">193</a> 						<em class="jxr_comment">// info(next.toString());</em>
 <a class="jxr_linenumber" name="194" href="#194">194</a> 						space.apply(next);
 <a class="jxr_linenumber" name="195" href="#195">195</a> 						notifyLawApplied(next, System.currentTimeMillis());
 <a class="jxr_linenumber" name="196" href="#196">196</a> 						<em class="jxr_comment">// spy(space.toString());</em>
@@ -360,12 +360,12 @@
 <a class="jxr_linenumber" name="350" href="#350">350</a> 
 <a class="jxr_linenumber" name="351" href="#351">351</a> 	@Override
 <a class="jxr_linenumber" name="352" href="#352">352</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> eventOccurred(<strong class="jxr_keyword">final</strong> SpaceEvent ev) {
-<a class="jxr_linenumber" name="353" href="#353">353</a> 		<em class="jxr_comment">// spy("Something happened in the LSA-space!");</em>
+<a class="jxr_linenumber" name="353" href="#353">353</a> 		spy(<span class="jxr_string">"Something happened in the LSA-space!"</span>);
 <a class="jxr_linenumber" name="354" href="#354">354</a> 		mutex.lock();
 <a class="jxr_linenumber" name="355" href="#355">355</a> 		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="356" href="#356">356</a> 			checkDependencies(ev, next);
 <a class="jxr_linenumber" name="357" href="#357">357</a> 		} <strong class="jxr_keyword">catch</strong> (AbortException e) {
-<a class="jxr_linenumber" name="358" href="#358">358</a> 			<em class="jxr_comment">// spy("EVENT :: aborting");</em>
+<a class="jxr_linenumber" name="358" href="#358">358</a> 			spy(<span class="jxr_string">"EVENT :: aborting"</span>);
 <a class="jxr_linenumber" name="359" href="#359">359</a> 			schedulingEvent.signal();
 <a class="jxr_linenumber" name="360" href="#360">360</a> 		} <strong class="jxr_keyword">finally</strong> {
 <a class="jxr_linenumber" name="361" href="#361">361</a> 			mutex.unlock();
@@ -386,7 +386,7 @@
 <a class="jxr_linenumber" name="376" href="#376">376</a> <em class="jxr_javadoccomment">	 * @throws AbortException</em>
 <a class="jxr_linenumber" name="377" href="#377">377</a> <em class="jxr_javadoccomment">	 *             Next reaction should be re-scheduled</em>
 <a class="jxr_linenumber" name="378" href="#378">378</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="379" href="#379">379</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> checkDependencies(<strong class="jxr_keyword">final</strong> SpaceEvent ev,
+<a class="jxr_linenumber" name="379" href="#379">379</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> checkDependencies(<strong class="jxr_keyword">final</strong> SpaceEvent ev,
 <a class="jxr_linenumber" name="380" href="#380">380</a> 			<strong class="jxr_keyword">final</strong> MatchingEcolaw law) <strong class="jxr_keyword">throws</strong> AbortException {
 <a class="jxr_linenumber" name="381" href="#381">381</a> 		scheduler.checkDependencies(ev, law);
 <a class="jxr_linenumber" name="382" href="#382">382</a> 	}

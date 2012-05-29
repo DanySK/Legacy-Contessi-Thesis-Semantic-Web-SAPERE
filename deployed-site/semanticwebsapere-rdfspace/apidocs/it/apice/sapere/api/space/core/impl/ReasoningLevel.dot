@@ -15,22 +15,22 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.impl.LSAspaceImpl
-	c262 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/impl/LSAspaceImpl.html">
+	c263 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/impl/LSAspaceImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAspaceImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.internal.RDFSpaceActivator
-	c272 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/internal/RDFSpaceActivator.html">
+	c273 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/internal/RDFSpaceActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RDFSpaceActivator </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.impl.LSAspaceImpl DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
-	c262:p -> c192:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c263:p -> c192:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
-	c272:p -> c192:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c273:p -> c192:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

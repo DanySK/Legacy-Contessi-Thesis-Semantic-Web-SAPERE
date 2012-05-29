@@ -11,7 +11,6 @@ import java.util.Set;
 import org.apache.log4j.Appender;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.RollingFileAppender;
@@ -86,7 +85,7 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		fileLevel = fLevel;
 		deep = deepDebug;
 
-		LogManager.resetConfiguration();
+		//LogManager.resetConfiguration();
 	}
 
 	/**

@@ -95,10 +95,10 @@ digraph G {
 	c23302:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult NAVASSOC it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c23312:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
-	c23183:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c23183:p -> c23210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
+	c23183:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.ChemicalPattern<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c23190:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
@@ -107,10 +107,10 @@ digraph G {
 	c23277:p -> c23210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
 	c23277:p -> c23210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.impl.ChemicalPatternImpl<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
-	c23296:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ChemicalPatternImpl<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.ChemicalPattern<ExtenderType>
 	c23296:p -> c23190:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.impl.ChemicalPatternImpl<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
+	c23296:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c23312:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>

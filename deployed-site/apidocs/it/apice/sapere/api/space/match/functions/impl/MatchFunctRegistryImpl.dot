@@ -8,13 +8,13 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl
-	c52494 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchFunctRegistryImpl.html">
+	c52498 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchFunctRegistryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MatchFunctRegistryImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.functions.MatchFunctRegistry
-	c52495 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchFunctRegistry.html">
+	c52499 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchFunctRegistry.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchFunctRegistry </td></tr>
@@ -22,15 +22,15 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl implements it.apice.sapere.api.space.match.functions.MatchFunctRegistry
-	c52495:p -> c52494:p [dir=back,arrowtail=empty,style=dashed];
+	c52499:p -> c52498:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND com.hp.hpl.jena.sparql.function.FunctionFactory
-	c52494:p -> c52560:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52498:p -> c52564:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
-	c52494:p -> c52495:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52498:p -> c52499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.functions.MatchFunctRegistry DEPEND com.hp.hpl.jena.sparql.function.FunctionFactory
-	c52495:p -> c52560:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52499:p -> c52564:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.sparql.function.FunctionFactory
-	c52560 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/function/FunctionFactory.html">
+	c52564 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/function/FunctionFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> FunctionFactory </td></tr>

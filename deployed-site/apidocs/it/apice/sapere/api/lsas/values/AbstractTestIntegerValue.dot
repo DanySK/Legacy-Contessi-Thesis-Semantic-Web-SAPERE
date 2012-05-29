@@ -8,18 +8,18 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.AbstractTestPropertyValue<ValueType extends java.lang.Comparable<ValueType>, CompType>
-	c28604 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPropertyValue.html">
+	c28606 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPropertyValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestPropertyValue&lt;ValueType extends Comparable&lt;ValueType&gt;, CompType&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.AbstractTestIntegerValue
-	c28607 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestIntegerValue.html">
+	c28609 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestIntegerValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestIntegerValue </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.AbstractTestIntegerValue extends it.apice.sapere.api.lsas.values.AbstractTestPropertyValue<java.lang.Integer, it.apice.sapere.api.lsas.values.IntegerValue>
-	c28604:p -> c28607:p [dir=back,arrowtail=empty];
+	c28606:p -> c28609:p [dir=back,arrowtail=empty];
 }
 

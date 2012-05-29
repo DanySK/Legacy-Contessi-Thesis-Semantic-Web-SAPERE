@@ -21,14 +21,14 @@ digraph G {
 	c787:p -> c982:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.avoid.RDFModelServices NAVASSOC it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c787:p -> c983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.EcolawFactory
-	c787:p -> c982:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c787:p -> c980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.LSAParser
 	c787:p -> c981:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c787:p -> c983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c787:p -> c980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.EcolawFactory
+	c787:p -> c982:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAParser
 	c981 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/LSAParser.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

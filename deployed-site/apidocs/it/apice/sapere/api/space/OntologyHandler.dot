@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c34216 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./core/LSAspaceCore.html">
+	c34218 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -16,22 +16,22 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.OntologyHandler
-	c34223 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OntologyHandler.html">
+	c34225 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OntologyHandler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> OntologyHandler </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.LSAspace
-	c34224 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspace.html">
+	c34226 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspace.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspace </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> implements it.apice.sapere.api.space.OntologyHandler
-	c34223:p -> c34216:p [dir=back,arrowtail=empty,style=dashed];
+	c34225:p -> c34218:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.space.LSAspace implements it.apice.sapere.api.space.OntologyHandler
-	c34223:p -> c34224:p [dir=back,arrowtail=empty,style=dashed];
+	c34225:p -> c34226:p [dir=back,arrowtail=empty,style=dashed];
 }
 
