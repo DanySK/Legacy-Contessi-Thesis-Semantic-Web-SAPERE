@@ -1,0 +1,38 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>zip</format>
+    <format>tar.gz</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>target/generated-resources/appassembler/jsw/queries-experimenter/repo</directory>
+      <outputDirectory>repo</outputDirectory>
+      <excludes>
+        <exclude>*.war</exclude>
+        <exclude>*.zip</exclude>
+        <exclude>maven-metadata-appassembler.xml</exclude>
+      </excludes>
+      <fileMode>0755</fileMode>
+    </fileSet>
+    <fileSet>
+      <directory>target/generated-resources/appassembler/jsw/queries-experimenter/bin</directory>
+      <outputDirectory>bin</outputDirectory>
+      <includes>   
+         <include>queries-experimenter</include>           
+      </includes>
+      <fileMode>0755</fileMode>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+    <fileSet>
+      <directory>target/generated-resources/appassembler/jsw/queries-experimenter/bin</directory>
+      <outputDirectory>bin</outputDirectory>
+      <includes>        
+        <include>queries-experimenter.bat</include>
+      </includes>
+      <fileMode>0755</fileMode>
+      <lineEnding>dos</lineEnding>
+    </fileSet>
+  </fileSets>
+</assembly>
+
