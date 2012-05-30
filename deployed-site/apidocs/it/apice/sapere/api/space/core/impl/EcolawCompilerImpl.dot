@@ -49,15 +49,15 @@ digraph G {
 	c51238:p -> c51316:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.core.EcolawCompiler DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c51238:p -> c51171:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c51240:p -> c51248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c51240:p -> c51171:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c51316:p -> c51248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
+	c51240:p -> c51248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c51316:p -> c51171:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c51316:p -> c51240:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
+	c51316:p -> c51248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

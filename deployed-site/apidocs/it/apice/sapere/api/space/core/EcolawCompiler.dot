@@ -83,10 +83,10 @@ digraph G {
 	c33133:p -> c32988:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
 	c33144:p -> c33055:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.node.agents.NodeServices
-	c33159:p -> c33165:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c33159:p -> c32988:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.node.agents.NodeServices
+	c33159:p -> c33165:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
 	c33165:p -> c33055:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.EcolawCompiler

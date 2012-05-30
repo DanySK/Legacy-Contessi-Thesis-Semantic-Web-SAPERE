@@ -33,10 +33,10 @@ digraph G {
 	c62125:p -> c62123:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.osgi.framework.BundleActivator
 	c62123:p -> c62150:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c62123:p -> c62110:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LoggerFactory
 	c62123:p -> c62125:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
+	c62123:p -> c62110:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND org.osgi.framework.BundleActivator
 	c62125:p -> c62150:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND it.apice.sapere.node.agents.SAPEREAgent

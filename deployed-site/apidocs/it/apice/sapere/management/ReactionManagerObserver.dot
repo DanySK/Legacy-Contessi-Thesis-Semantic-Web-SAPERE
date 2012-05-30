@@ -73,13 +73,13 @@ digraph G {
 	c56029:p -> c55937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c56029:p -> c55928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c56030:p -> c55928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.management.ReactionManagerObserver
-	c56030:p -> c56024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c56030:p -> c55937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c56030:p -> c55928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c56030:p -> c55928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.management.ReactionManagerObserver
+	c56030:p -> c56024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -113,9 +113,9 @@ digraph G {
 	c23296:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions.LookUpResult DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c23312:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
-	c23315:p -> c23210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.PatternNameTerm
 	c23315:p -> c23214:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.VarTerm<Type>
+	c23315:p -> c23210:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -13,6 +13,7 @@ import it.apice.sapere.node.agents.SAPEREAgentSpec;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.concurrent.Semaphore;
 
 /**
  * <p>
@@ -27,12 +28,6 @@ import java.net.URI;
  * 
  */
 public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
-
-	/** Number of milliseconds in a second. */
-	private static final int MS_IN_S = 1000;
-
-	/** Time before behaviour starts. */
-	private static final int SLEEP_TIME = 2 * MS_IN_S;
 
 	/** The folder in which the movie should be found. */
 	private static final String FOLDER_PATH = "/Users/conteit";
@@ -123,7 +118,7 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 
 		while (me.isRunning()) {
 			try {
-				Thread.sleep(SLEEP_TIME);
+				new Semaphore(0).acquire();
 			} catch (InterruptedException ex) {
 				assert ex != null;
 			}

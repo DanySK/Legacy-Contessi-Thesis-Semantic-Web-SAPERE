@@ -149,106 +149,106 @@ digraph G {
 	c52020:p -> c52093:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl NAVASSOC com.hp.hpl.jena.query.QuerySolution
 	c52020:p -> c52094:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchResult
-	c51937:p -> c51948:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c51937:p -> c51943:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.LSAObserver
-	c51937:p -> c51954:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
-	c51937:p -> c51952:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
 	c51937:p -> c51914:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
+	c51937:p -> c51952:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchResult
+	c51937:p -> c51948:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.LSAObserver
+	c51937:p -> c51954:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
+	c51937:p -> c51943:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c51937:p -> c51950:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
 	c51940:p -> c51914:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.MatchResult DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c51948:p -> c51941:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.StmtIterator
-	c52020:p -> c52095:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.LSAObserver
-	c52020:p -> c51954:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c52020:p -> c51941:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.SpaceObserver
-	c52020:p -> c51952:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.Resource
-	c52020:p -> c52090:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.lsas.LSAid
-	c52020:p -> c51914:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c52020:p -> c51950:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MutableMatchResult
+	c52020:p -> c51947:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
 	c52020:p -> c51948:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c52020:p -> c51943:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
 	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c52020:p -> c51951:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
 	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.query.QuerySolution
 	c52020:p -> c52094:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MutableMatchResult
-	c52020:p -> c51947:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.RDFNode
-	c52020:p -> c52096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.LSAObserver
+	c52020:p -> c51954:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.Resource
+	c52020:p -> c52090:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
+	c52020:p -> c51950:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.query.ResultSet
-	c52020:p -> c52097:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52020:p -> c52095:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.Model
 	c52020:p -> c52088:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c52020:p -> c51941:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.lsas.LSA
+	c52020:p -> c51915:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.RDFNode
+	c52020:p -> c52096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.lsas.LSAid
+	c52020:p -> c51914:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
+	c52020:p -> c51943:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.StmtIterator
+	c52020:p -> c52097:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.SpaceObserver
+	c52020:p -> c51952:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
+	c52020:p -> c51951:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.update.GraphStore
 	c52020:p -> c52089:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
 	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.lsas.LSA
-	c52020:p -> c51915:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c52020:p -> c51940:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c52020:p -> c51937:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.LSAspaceImpl DEPEND com.hp.hpl.jena.rdf.model.Model
 	c52029:p -> c52088:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Resource
-	c52030:p -> c52090:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.RDFNode
-	c52030:p -> c52096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.ResultSet
-	c52030:p -> c52097:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Model
-	c52030:p -> c52088:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.LSA
-	c52030:p -> c51915:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.Query
 	c52030:p -> c52092:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Resource
+	c52030:p -> c52090:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Model
+	c52030:p -> c52088:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.ResultSet
+	c52030:p -> c52095:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.LSA
+	c52030:p -> c51915:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.RDFNode
+	c52030:p -> c52096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.query.QuerySolution
 	c52094 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/query/QuerySolution.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
@@ -273,7 +273,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.query.ResultSet
-	c52097 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/query/ResultSet.html">
+	c52095 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/query/ResultSet.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ResultSet </td></tr>
@@ -320,7 +320,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.rdf.model.StmtIterator
-	c52095 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/StmtIterator.html">
+	c52097 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/StmtIterator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> StmtIterator </td></tr>

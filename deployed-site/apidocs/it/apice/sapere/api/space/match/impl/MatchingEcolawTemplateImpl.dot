@@ -39,9 +39,9 @@ digraph G {
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl implements it.apice.sapere.api.space.match.MatchingEcolawTemplate
 	c53126:p -> c53202:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c53202:p -> c53125:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c53202:p -> c53127:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c53202:p -> c53125:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -57,12 +57,12 @@ digraph G {
 	c47017:p -> c47040:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
 	c47103:p -> c47040:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.PropertyName
+	c47103:p -> c47016:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.Property
 	c47103:p -> c47017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
 	c47103:p -> c47015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.PropertyName
-	c47103:p -> c47016:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.Property
 	c47103:p -> c47017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

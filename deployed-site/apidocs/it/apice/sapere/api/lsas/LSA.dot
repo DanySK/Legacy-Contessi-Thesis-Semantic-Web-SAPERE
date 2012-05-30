@@ -209,14 +209,14 @@ digraph G {
 	c27469:p -> c27439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.observation.LSAEvent DEPEND it.apice.sapere.api.lsas.LSA
 	c27479:p -> c27439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c27480:p -> c27462:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.LSAFactory
 	c27480:p -> c27389:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
-	c27480:p -> c27439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c27480:p -> c27387:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
+	c27480:p -> c27439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c27480:p -> c27462:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.LSA
 	c27521:p -> c27439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.lsas.LSA

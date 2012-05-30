@@ -58,10 +58,10 @@ digraph G {
 	c52768:p -> c52733:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.internal.NodeServicesImpl NAVASSOC it.apice.sapere.api.space.match.functions.MatchFunctRegistry
 	c52769:p -> c52733:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND com.hp.hpl.jena.sparql.function.FunctionFactory
-	c52732:p -> c52798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
 	c52732:p -> c52733:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND com.hp.hpl.jena.sparql.function.FunctionFactory
+	c52732:p -> c52798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.functions.MatchFunctRegistry DEPEND com.hp.hpl.jena.sparql.function.FunctionFactory
 	c52733:p -> c52798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry

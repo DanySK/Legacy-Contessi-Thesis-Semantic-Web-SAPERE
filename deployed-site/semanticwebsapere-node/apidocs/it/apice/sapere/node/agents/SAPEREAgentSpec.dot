@@ -38,12 +38,12 @@ digraph G {
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.UserAgentImpl NAVASSOC it.apice.sapere.node.agents.SAPEREAgentSpec
 	c1397:p -> c1390:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.node.LogUtils
+	c1390:p -> c1406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.api.LSAFactory
 	c1390:p -> c1440:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.api.space.LSAspace
 	c1390:p -> c1441:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.node.LogUtils
-	c1390:p -> c1406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgentSpec
 	c1399:p -> c1390:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.LSAspace

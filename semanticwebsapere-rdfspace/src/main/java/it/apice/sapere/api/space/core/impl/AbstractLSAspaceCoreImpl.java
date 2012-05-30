@@ -231,7 +231,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireReadLock() {
-		model.enterCriticalSection(true/* Model.READ */);
+		model.enterCriticalSection(Model.READ);
 	}
 
 	/**
@@ -240,7 +240,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireWriteLock() {
-		model.enterCriticalSection(false/* Model.WRITE */);
+		model.enterCriticalSection(Model.WRITE);
 	}
 
 	/**
@@ -757,19 +757,19 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	@Override
 	public final LSAspaceCore<StmtIterator> beginRead() {
-		System.err.println("§§§ BEGIN (READ)");
+		// System.err.println("§§§ BEGIN (READ)");
 		return this;
 	}
 
 	@Override
 	public final LSAspaceCore<StmtIterator> beginWrite() {
-		System.err.println("§§§ BEGIN (WRITE)");
+		// System.err.println("§§§ BEGIN (WRITE)");
 		return this;
 	}
 
 	@Override
 	public final void done() {
-		System.err.println("§§§ END");
+		// System.err.println("§§§ END");
 	}
 
 	@Override
@@ -1153,6 +1153,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			parsedSparqlQueries.put(query, qObj);
 		}
 
+		assert qObj.isSelectType();
 		return QueryExecutionFactory.create(qObj, aModel).execSelect();
 	}
 
@@ -1181,11 +1182,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			if (bindings != null) {
 				UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
 						.execute();
-				return;
 			}
+		} else {
+			UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
 		}
-
-		UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
 	}
 
 	@Override

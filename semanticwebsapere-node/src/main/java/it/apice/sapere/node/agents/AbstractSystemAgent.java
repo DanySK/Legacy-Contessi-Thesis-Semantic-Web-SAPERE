@@ -41,5 +41,4 @@ public abstract class AbstractSystemAgent extends AbstractSAPEREAgentImpl {
 	 *            Reference to all available services
 	 */
 	protected abstract void behaviour(final NodeServices services);
-
 }

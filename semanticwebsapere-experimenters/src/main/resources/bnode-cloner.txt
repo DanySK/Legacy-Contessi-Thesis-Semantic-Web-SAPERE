@@ -1,10 +1,15 @@
+# =============================== 
+# Blank-nodes CLONER (1-level)
+# ===============================
 PREFIX  ex:   <http://www.example.org#>
 PREFIX  sapere: <http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#>
 
+# 1. Insert an empty blank-node
 INSERT DATA {
   ex:test ex:bnode [] .
 } ;
 
+# 2. Copy each property from a blank-node to the other
 INSERT {
   ?t_bnode ?prop ?value .
 }

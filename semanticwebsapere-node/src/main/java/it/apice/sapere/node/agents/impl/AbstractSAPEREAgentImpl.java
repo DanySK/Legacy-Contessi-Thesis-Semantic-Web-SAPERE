@@ -9,6 +9,7 @@ import it.apice.sapere.node.networking.impl.Message;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.Semaphore;
 
 /**
  * <p>
@@ -226,4 +227,17 @@ public abstract class AbstractSAPEREAgentImpl extends Thread
 	 *             Uncaught exception
 	 */
 	protected abstract void execute() throws Exception;
+	
+	/**
+	 * <p>
+	 * Suspends the thread until someone terminates it.
+	 * </p>
+	 */
+	protected void waitTermination() {
+		try {
+			new Semaphore(0).acquire();
+		} catch (InterruptedException e) {
+			spy("awaked for termination");
+		}
+	}
 }

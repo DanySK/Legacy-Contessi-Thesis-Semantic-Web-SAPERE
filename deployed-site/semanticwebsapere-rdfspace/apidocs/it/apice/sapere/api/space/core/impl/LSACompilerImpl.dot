@@ -19,18 +19,26 @@ digraph G {
 	c301:p -> c320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND com.hp.hpl.jena.rdf.model.Model
 	c301:p -> c321:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c301:p -> c322:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c301:p -> c322:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSA
-	c301:p -> c323:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c301:p -> c322:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.RDFFormat
+	c301:p -> c323:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSAid
 	c301:p -> c324:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.RDFFormat
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c301:p -> c325:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c301:p -> c325:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c301:p -> c325:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.RDFFormat
+	c323 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/RDFFormat.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;enumeration&raquo; </td></tr>
+			<tr><td> RDFFormat </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.rdf.model.Model
 	c321 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/Model.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
@@ -39,28 +47,20 @@ digraph G {
 			<tr><td><font point-size="7.0"> com.hp.hpl.jena.rdf.model </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.RDFFormat
-	c325 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/RDFFormat.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> &laquo;enumeration&raquo; </td></tr>
-			<tr><td> RDFFormat </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.api </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c322 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/CompiledLSA.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> &laquo;interface&raquo; </td></tr>
-			<tr><td> CompiledLSA&lt;RDFStmtIterType&gt; </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.PrivilegedLSAFactory
 	c320 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/PrivilegedLSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PrivilegedLSAFactory </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c325 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/CompiledLSA.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;interface&raquo; </td></tr>
+			<tr><td> CompiledLSA&lt;RDFStmtIterType&gt; </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
@@ -72,7 +72,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.LSA
-	c323 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/lsas/LSA.html">
+	c322 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/lsas/LSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSA </td></tr>

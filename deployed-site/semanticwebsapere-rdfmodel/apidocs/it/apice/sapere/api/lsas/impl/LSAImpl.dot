@@ -19,14 +19,14 @@ digraph G {
 	c4027:p -> c4041:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.lsas.impl.LSAImpl NAVASSOC it.apice.sapere.api.lsas.SemanticDescription
 	c4027:p -> c4042:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c4027:p -> c4042:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
 	c4027:p -> c4043:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.LSAid
-	c4027:p -> c4041:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.LSA
 	c4027:p -> c4040:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
+	c4027:p -> c4042:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.LSAid
+	c4027:p -> c4041:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.LSA
 	c4040 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/lsas/LSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

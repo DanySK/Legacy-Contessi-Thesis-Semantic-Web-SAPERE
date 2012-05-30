@@ -72,14 +72,14 @@ digraph G {
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> implements it.apice.sapere.api.space.OntologyHandler
 	c5624:p -> c5617:p [dir=back,arrowtail=empty,style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
+	c5617:p -> c5631:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
+	c5617:p -> c5603:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.LSAObserver
 	c5617:p -> c5633:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c5617:p -> c5629:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
-	c5617:p -> c5603:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
-	c5617:p -> c5631:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.match.MatchResult
 	c5617:p -> c5627:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>

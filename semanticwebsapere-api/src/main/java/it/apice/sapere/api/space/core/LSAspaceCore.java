@@ -208,7 +208,7 @@ public interface LSAspaceCore<RDFStmtIterType> extends OntologyHandler {
 	 */
 	LSAspaceCore<RDFStmtIterType> ignore(LSAid lsaId, LSAObserver obs);
 
-	/* === THREAD-SAFETY SUPPORT === */
+	/* === RESERVATION SUPPORT === */
 
 	/**
 	 * <p>

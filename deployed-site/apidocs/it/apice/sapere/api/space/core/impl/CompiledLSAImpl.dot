@@ -47,10 +47,10 @@ digraph G {
 	c51472:p -> c51446:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
 	c51472:p -> c51394:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.CompiledLSAImpl DEPEND com.hp.hpl.jena.rdf.model.StmtIterator
-	c51550:p -> c51621:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledLSAImpl DEPEND it.apice.sapere.api.lsas.LSAid
 	c51550:p -> c51446:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.CompiledLSAImpl DEPEND com.hp.hpl.jena.rdf.model.StmtIterator
+	c51550:p -> c51621:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledLSAImpl DEPEND it.apice.sapere.api.RDFFormat
 	c51550:p -> c51394:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.rdf.model.Model

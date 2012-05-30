@@ -22,7 +22,7 @@
 		<module>semanticwebsapere-integrationtests</module>
 		<module>semanticwebsapere-experimenters</module>
 		<module>semanticwebsapere-pellet</module>
-		
+
 	</modules>
 
 	<organization>
@@ -143,17 +143,17 @@
 				<version>1.2.16</version>
 			</dependency>
 			<dependency>
-			<groupId>org.apache.jena</groupId>
-			<artifactId>apache-jena</artifactId>
-			<version>2.7.0-incubating</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>it.apice.sapere</groupId>
-			<artifactId>semanticwebsapere-pellet</artifactId>
-			<type>jar</type>
-			<version>2.3.0</version>
-		</dependency>
+				<groupId>org.apache.jena</groupId>
+				<artifactId>apache-jena</artifactId>
+				<version>2.7.0-incubating</version>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>it.apice.sapere</groupId>
+				<artifactId>semanticwebsapere-pellet</artifactId>
+				<type>jar</type>
+				<version>2.3.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -231,6 +231,7 @@
 					<sourceEncoding>UTF-8</sourceEncoding>
 					<outputEncoding>UTF-8</outputEncoding>
 					<targetJdk>1.6</targetJdk>
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -240,6 +241,7 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<configLocation>checkstyle.xml</configLocation>
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -260,6 +262,7 @@
 						-nodefontpackagesize 7
 					</additionalparam>
 					<encoding>UTF-8</encoding>
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -267,6 +270,7 @@
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.12</version>
 				<configuration>
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -276,11 +280,15 @@
 				<configuration>
 					<outputEncoding>UTF-8</outputEncoding>
 					<inputEncoding>UTF-8</inputEncoding>
+					<aggregate>true</aggregate>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
 				<version>2.4</version>
 			</plugin>
 			<plugin>

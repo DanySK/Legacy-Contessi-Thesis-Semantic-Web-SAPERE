@@ -99,18 +99,18 @@ digraph G {
 	c32941:p -> c32821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.internal.NodeServicesImpl NAVASSOC it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c32942:p -> c32821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
-	c32821:p -> c32798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
 	c32821:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c32839:p -> c32821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
+	c32821:p -> c32798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
 	c32839:p -> c32798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSA
-	c32899:p -> c32798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c32839:p -> c32821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.RDFFormat
 	c32899:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSA
+	c32899:p -> c32798:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.avoid.RDFSpaceServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c32911:p -> c32821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>

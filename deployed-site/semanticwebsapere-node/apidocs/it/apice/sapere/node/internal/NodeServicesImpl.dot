@@ -47,48 +47,48 @@ digraph G {
 	c2106:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.internal.NodeServicesImpl NAVASSOC it.apice.sapere.api.space.match.functions.MatchFunctRegistry
 	c2106:p -> c2138:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
-	c2096:p -> c2138:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
-	c2096:p -> c2136:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
-	c2096:p -> c2135:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c2096:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.management.ReactionManager
 	c2096:p -> c2085:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.EcolawFactory
-	c2096:p -> c2134:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
+	c2096:p -> c2136:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.LSAParser
 	c2096:p -> c2133:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c2096:p -> c2132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c2096:p -> c2131:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c2106:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.node.agents.NodeServices
-	c2106:p -> c2096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c2096:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.EcolawCompiler
+	c2096:p -> c2135:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c2096:p -> c2132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.EcolawFactory
+	c2096:p -> c2134:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.NodeServices DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
+	c2096:p -> c2138:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c2106:p -> c2132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c2106:p -> c2131:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.management.ReactionManager
+	c2106:p -> c2085:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.LSAParser
+	c2106:p -> c2133:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry
 	c2106:p -> c2138:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
+	c2106:p -> c2132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c2106:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c2106:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c2106:p -> c2131:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c2106:p -> c2136:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.EcolawCompiler
 	c2106:p -> c2135:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.management.ReactionManager
-	c2106:p -> c2085:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.EcolawFactory
 	c2106:p -> c2134:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c2106:p -> c2137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.LSAParser
-	c2106:p -> c2133:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c2106:p -> c2132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.node.agents.NodeServices
+	c2106:p -> c2096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAParser
 	c2133 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/LSAParser.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

@@ -51,6 +51,14 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 	private static final transient String SYNT_PROPS_PREFIX = "http://"
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#";
 
+	/** LSA's location property URI. */
+	private static final transient URI LOCATION_PROP = URI.create(
+			SYNT_PROPS_PREFIX + "location");
+
+	/** Local location property value URI. */
+	private static final transient URI LOCAL_VAL = URI.create(SYNT_PROPS_PREFIX
+			+ "local");
+
 	/** Type property URI (as String). */
 	private static final transient String TYPE_PROP_URI = SYNT_PROPS_PREFIX
 			+ "type";
@@ -379,8 +387,12 @@ public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 		space.beginWrite();
 		try {
-			space.inject(lsaComp.parse(message.getOperation().getLSA(),
-					RDFFormat.RDF_XML));
+			final CompiledLSA<?> lsa = lsaComp.parse(message.getOperation()
+					.getLSA(), RDFFormat.RDF_XML);
+			lsa.clearProperty(LOCATION_PROP);
+			lsa.assertProperty(LOCATION_PROP, LOCAL_VAL);
+
+			space.inject(lsa);
 			spy("Received diffusion " + message.getOperation().getLSAid());
 		} catch (SAPEREException e) {
 			error("Cannot receive diffusion", e);

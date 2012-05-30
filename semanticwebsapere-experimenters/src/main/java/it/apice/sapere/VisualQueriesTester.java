@@ -105,7 +105,7 @@ public class VisualQueriesTester extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualQueriesTester() {
-		setTitle("Queries Tester");
+		setTitle("Queries Experimenter");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 817, 436);
 		contentPane = new JPanel();

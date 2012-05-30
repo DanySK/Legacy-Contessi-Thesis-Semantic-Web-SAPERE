@@ -157,10 +157,10 @@ digraph G {
 	c15274:p -> c15285:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.LSAFactory
 	c15326:p -> c15235:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
-	c15326:p -> c15285:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c15326:p -> c15233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.AbstractTestLSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
+	c15326:p -> c15285:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c15328:p -> c15233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.LSAid

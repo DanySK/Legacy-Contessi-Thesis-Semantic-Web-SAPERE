@@ -71,12 +71,10 @@ digraph G {
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl implements it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c41169:p -> c41253:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
-	c41253:p -> c41165:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtEqFormula<Type>
+	c41253:p -> c41168:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
 	c41253:p -> c41163:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtFormula<Type>
-	c41253:p -> c41164:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtFormula<Type>
 	c41253:p -> c41167:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
@@ -85,10 +83,12 @@ digraph G {
 	c41253:p -> c41163:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
 	c41253:p -> c41163:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtFormula<Type>
+	c41253:p -> c41164:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
+	c41253:p -> c41165:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
 	c41253:p -> c41163:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtEqFormula<Type>
-	c41253:p -> c41168:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
 	c41253:p -> c41166:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

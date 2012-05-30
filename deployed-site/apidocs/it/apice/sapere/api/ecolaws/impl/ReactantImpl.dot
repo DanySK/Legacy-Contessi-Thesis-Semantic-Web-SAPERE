@@ -55,10 +55,10 @@ digraph G {
 	c41385:p -> c41414:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitor.EcolawVisitor DEPEND it.apice.sapere.api.ecolaws.Reactant
 	c41414:p -> c41380:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.impl.ReactantImpl DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c41487:p -> c41414:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ReactantImpl DEPEND it.apice.sapere.api.ecolaws.ChemicalPattern<ExtenderType>
 	c41487:p -> c41385:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.impl.ReactantImpl DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
+	c41487:p -> c41414:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ChemicalPatternImpl<ExtenderType> DEPEND it.apice.sapere.api.ecolaws.ChemicalPattern<ExtenderType>
 	c41491:p -> c41385:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

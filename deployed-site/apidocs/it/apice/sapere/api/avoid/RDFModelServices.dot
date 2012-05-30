@@ -62,13 +62,13 @@ digraph G {
 	c37504:p -> c37412:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.avoid.RDFModelServices NAVASSOC it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c37504:p -> c37436:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.LSAParser
-	c37504:p -> c37410:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.EcolawFactory
-	c37504:p -> c37412:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c37504:p -> c37436:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c37504:p -> c37409:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.LSAParser
+	c37504:p -> c37410:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.avoid.RDFModelServices DEPEND it.apice.sapere.api.EcolawFactory
+	c37504:p -> c37412:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

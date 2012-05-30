@@ -86,38 +86,38 @@ digraph G {
 	c54259:p -> c54273:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.Resource
 	c54366:p -> c54435:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.RDFNode
-	c54366:p -> c54437:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.query.ResultSet
-	c54366:p -> c54438:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c54366:p -> c54437:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.Model
 	c54366:p -> c54434:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.lsas.LSA
 	c54366:p -> c54261:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Literal
-	c54376:p -> c54439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c54376:p -> c54257:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND com.hp.hpl.jena.rdf.model.RDFNode
+	c54366:p -> c54438:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
 	c54376:p -> c54273:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Literal
+	c54376:p -> c54439:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.Query
+	c54376:p -> c54436:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.PrivilegedLSAFactory
 	c54376:p -> c54209:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Resource
 	c54376:p -> c54435:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.RDFNode
-	c54376:p -> c54437:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c54376:p -> c54273:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.ResultSet
-	c54376:p -> c54438:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
 	c54376:p -> c54273:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.Model
 	c54376:p -> c54434:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.ResultSet
+	c54376:p -> c54437:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.LSA
 	c54376:p -> c54261:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.query.Query
-	c54376:p -> c54436:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.SemanticDescription
+	c54376:p -> c54257:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c54376:p -> c54273:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND com.hp.hpl.jena.rdf.model.RDFNode
+	c54376:p -> c54438:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.Property
 	c54376:p -> c54259:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.query.Query
@@ -136,7 +136,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.query.ResultSet
-	c54438 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/query/ResultSet.html">
+	c54437 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/query/ResultSet.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ResultSet </td></tr>
@@ -152,7 +152,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.rdf.model.RDFNode
-	c54437 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/RDFNode.html">
+	c54438 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/RDFNode.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> RDFNode </td></tr>

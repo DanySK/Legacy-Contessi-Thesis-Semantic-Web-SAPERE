@@ -38,10 +38,10 @@ digraph G {
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c5921:p -> c5871:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
 	c5921:p -> c5928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.ecolaws.Ecolaw
+	c5921:p -> c5871:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.MatchResult DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
 	c5927:p -> c5921:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }

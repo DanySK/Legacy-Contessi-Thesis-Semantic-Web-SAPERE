@@ -45,20 +45,20 @@ digraph G {
 	c61653:p -> c61680:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl NAVASSOC org.apache.log4j.Logger
 	c61653:p -> c61681:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.osgi.framework.BundleActivator
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.apache.log4j.Appender
 	c61653:p -> c61682:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.apache.log4j.Logger
 	c61653:p -> c61681:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c61653:p -> c61640:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LoggerFactory
-	c61653:p -> c61655:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.osgi.framework.BundleActivator
+	c61653:p -> c61683:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LogUtils
 	c61653:p -> c61654:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND org.apache.log4j.Appender
-	c61653:p -> c61683:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LoggerFactory
+	c61653:p -> c61655:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
+	c61653:p -> c61640:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND org.osgi.framework.BundleActivator
-	c61655:p -> c61682:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c61655:p -> c61683:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND it.apice.sapere.node.agents.SAPEREAgent
 	c61655:p -> c61640:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.apache.log4j.Level
@@ -76,7 +76,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.BundleActivator
-	c61682 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
+	c61683 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleActivator </td></tr>
@@ -84,7 +84,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.apache.log4j.Appender
-	c61683 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Appender.html">
+	c61682 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Appender.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Appender </td></tr>

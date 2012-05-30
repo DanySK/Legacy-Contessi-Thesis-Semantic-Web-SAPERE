@@ -104,10 +104,10 @@ digraph G {
 	c34459:p -> c34429:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.api.space.LSAspace
 	c34560:p -> c34459:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.LSAspace
-	c34566:p -> c34459:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.lsas.LSAid
 	c34566:p -> c34428:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.LSAspace
+	c34566:p -> c34459:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.observation.LSAObserver
 	c34566:p -> c34468:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.lsas.LSA

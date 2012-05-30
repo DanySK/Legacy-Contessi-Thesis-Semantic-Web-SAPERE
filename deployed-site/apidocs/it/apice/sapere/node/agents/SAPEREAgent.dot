@@ -104,10 +104,10 @@ digraph G {
 	c58605:p -> c58598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.node.agents.SAPEREAgent
 	c58606:p -> c58598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c58611:p -> c58598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.LoggerFactory
 	c58611:p -> c58613:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.internal.LoggerFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
+	c58611:p -> c58598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.LoggerFactory DEPEND it.apice.sapere.node.agents.SAPEREAgent
 	c58613:p -> c58598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.testcase.ResVLCIniter DEPEND it.apice.sapere.node.agents.SAPEREAgent

@@ -51,9 +51,9 @@ digraph G {
 	c32049:p -> c32119:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
 	c32049:p -> c32111:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.BooleanValue
-	c32181:p -> c32119:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
 	c32181:p -> c32111:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.BooleanValue
+	c32181:p -> c32119:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

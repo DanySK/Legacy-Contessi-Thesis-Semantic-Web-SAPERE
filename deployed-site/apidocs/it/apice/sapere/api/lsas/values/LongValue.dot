@@ -51,9 +51,9 @@ digraph G {
 	c30651:p -> c30715:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
 	c30651:p -> c30713:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30783:p -> c30713:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LongValue
 	c30783:p -> c30715:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c30783:p -> c30713:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -29,14 +29,14 @@ digraph G {
 	c2977:p -> c3013:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.VarTermImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c2977:p -> c3013:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c2985:p -> c3014:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
+	c2985:p -> c3014:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
 	c2985:p -> c3015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
 	c2985:p -> c3013:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c2985:p -> c3014:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.AbstractTerm<Type> DEPEND it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
-	c2985:p -> c3014:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.observers.BindingObserver<Type>
 	c3014 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/terms/observers/BindingObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

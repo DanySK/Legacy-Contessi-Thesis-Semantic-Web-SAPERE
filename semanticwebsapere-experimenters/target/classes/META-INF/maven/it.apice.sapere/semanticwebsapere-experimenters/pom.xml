@@ -1,16 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>semanticwebsapere</artifactId>
-    <groupId>it.apice.sapere</groupId>
-    <version>${swsapere.vers}</version>
-    <relativePath>..</relativePath>
-  </parent>
-  <artifactId>semanticwebsapere-experimenters</artifactId>
-  <name>SAPERE Experimenters</name>
-  <description>This project encloses a set of utilities that can be used in order to experiment the behaviour of semantic web parts.</description>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>semanticwebsapere</artifactId>
+		<groupId>it.apice.sapere</groupId>
+		<version>${swsapere.vers}</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>semanticwebsapere-experimenters</artifactId>
+	<name>SAPERE Experimenters</name>
+	<description>This project encloses a set of utilities that can be used in order to experiment the behaviour of semantic web parts.</description>
+
+	<dependencies>
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena</artifactId>
@@ -22,7 +23,7 @@
 		</dependency>
 	</dependencies>
 
-  <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -35,6 +36,81 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>1.2.2</version>
+				<configuration>
+					<programs>
+						<program>
+							<mainClass>it.apice.sapere.VisualQueriesTester</mainClass>
+							<name>queries-experimenter</name>
+						</program>
+					</programs>
+					<repositoryLayout>flat</repositoryLayout>
+					<assembleDirectory>${project.build.directory}/generated-resources/appassembler/jsw/queries-experimenter</assembleDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>assemble</goal>
+							<goal>create-repository</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptor>src/main/assembly/bin.xml</descriptor>
+				</configuration>
+			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.1,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>

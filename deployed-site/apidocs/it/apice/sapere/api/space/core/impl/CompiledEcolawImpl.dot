@@ -43,13 +43,13 @@ digraph G {
 	c51786:p -> c51716:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl NAVASSOC it.apice.sapere.api.ecolaws.Ecolaw
 	c51786:p -> c51639:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c51708:p -> c51716:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c51708:p -> c51639:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c51786:p -> c51716:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
+	c51708:p -> c51716:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
 	c51786:p -> c51639:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
+	c51786:p -> c51716:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

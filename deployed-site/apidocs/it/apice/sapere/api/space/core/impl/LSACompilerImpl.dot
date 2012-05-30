@@ -69,28 +69,28 @@ digraph G {
 	c50928:p -> c50979:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.PrivilegedLSAFactory DEPEND it.apice.sapere.api.lsas.LSA
 	c50928:p -> c50980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
-	c51003:p -> c50980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
 	c51003:p -> c50927:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
+	c51003:p -> c50980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
 	c51005:p -> c50979:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
 	c51005:p -> c50927:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSAid
 	c51081:p -> c50979:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c51081:p -> c51005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.RDFFormat
+	c51081:p -> c50927:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND com.hp.hpl.jena.rdf.model.Model
 	c51081:p -> c51153:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c51081:p -> c51005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c51081:p -> c51005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.lsas.LSA
 	c51081:p -> c50980:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
 	c51081:p -> c51005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c51081:p -> c51005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.LSACompilerImpl DEPEND it.apice.sapere.api.RDFFormat
-	c51081:p -> c50927:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.rdf.model.Model
 	c51153 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/rdf/model/Model.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

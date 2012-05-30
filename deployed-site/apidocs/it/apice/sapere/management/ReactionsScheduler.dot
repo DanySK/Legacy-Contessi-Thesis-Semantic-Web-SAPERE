@@ -80,37 +80,37 @@ digraph G {
 	c55797:p -> c55790:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c55646:p -> c55704:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
-	c55790:p -> c55707:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
 	c55790:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
+	c55790:p -> c55707:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
+	c55790:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
+	c55790:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c55790:p -> c55704:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
 	c55790:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
-	c55790:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.ReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
-	c55790:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c55791:p -> c55704:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
-	c55793:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
 	c55793:p -> c55707:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
-	c55793:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
 	c55793:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c55793:p -> c55704:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult
 	c55793:p -> c55646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.management.ReactionManagerObserver
-	c55797:p -> c55791:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
+	c55793:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
+	c55793:p -> c55702:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.observation.SpaceEvent
 	c55797:p -> c55707:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
 	c55797:p -> c55704:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.management.ReactionManagerObserver
+	c55797:p -> c55791:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

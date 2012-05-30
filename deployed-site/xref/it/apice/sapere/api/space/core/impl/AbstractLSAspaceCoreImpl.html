@@ -241,7 +241,7 @@
 <a class="jxr_linenumber" name="231" href="#231">231</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
 <a class="jxr_linenumber" name="232" href="#232">232</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="233" href="#233">233</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> acquireReadLock() {
-<a class="jxr_linenumber" name="234" href="#234">234</a> 		model.enterCriticalSection(<strong class="jxr_keyword">true</strong><em class="jxr_comment">/*<em class="jxr_comment"> Model.READ */</em>);</em>
+<a class="jxr_linenumber" name="234" href="#234">234</a> 		model.enterCriticalSection(Model.READ);
 <a class="jxr_linenumber" name="235" href="#235">235</a> 	}
 <a class="jxr_linenumber" name="236" href="#236">236</a> 
 <a class="jxr_linenumber" name="237" href="#237">237</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -250,7 +250,7 @@
 <a class="jxr_linenumber" name="240" href="#240">240</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
 <a class="jxr_linenumber" name="241" href="#241">241</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="242" href="#242">242</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> acquireWriteLock() {
-<a class="jxr_linenumber" name="243" href="#243">243</a> 		model.enterCriticalSection(false<em class="jxr_comment">/*<em class="jxr_comment"> Model.WRITE */</em>);</em>
+<a class="jxr_linenumber" name="243" href="#243">243</a> 		model.enterCriticalSection(Model.WRITE);
 <a class="jxr_linenumber" name="244" href="#244">244</a> 	}
 <a class="jxr_linenumber" name="245" href="#245">245</a> 
 <a class="jxr_linenumber" name="246" href="#246">246</a> 	<em class="jxr_javadoccomment">/**</em>
@@ -767,19 +767,19 @@
 <a class="jxr_linenumber" name="757" href="#757">757</a> 
 <a class="jxr_linenumber" name="758" href="#758">758</a> 	@Override
 <a class="jxr_linenumber" name="759" href="#759">759</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> LSAspaceCore&lt;StmtIterator&gt; beginRead() {
-<a class="jxr_linenumber" name="760" href="#760">760</a> 		System.err.println(<span class="jxr_string">"§§§ BEGIN (READ)"</span>);
+<a class="jxr_linenumber" name="760" href="#760">760</a> 		<em class="jxr_comment">// System.err.println("§§§ BEGIN (READ)");</em>
 <a class="jxr_linenumber" name="761" href="#761">761</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="762" href="#762">762</a> 	}
 <a class="jxr_linenumber" name="763" href="#763">763</a> 
 <a class="jxr_linenumber" name="764" href="#764">764</a> 	@Override
 <a class="jxr_linenumber" name="765" href="#765">765</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> LSAspaceCore&lt;StmtIterator&gt; beginWrite() {
-<a class="jxr_linenumber" name="766" href="#766">766</a> 		System.err.println(<span class="jxr_string">"§§§ BEGIN (WRITE)"</span>);
+<a class="jxr_linenumber" name="766" href="#766">766</a> 		<em class="jxr_comment">// System.err.println("§§§ BEGIN (WRITE)");</em>
 <a class="jxr_linenumber" name="767" href="#767">767</a> 		<strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="768" href="#768">768</a> 	}
 <a class="jxr_linenumber" name="769" href="#769">769</a> 
 <a class="jxr_linenumber" name="770" href="#770">770</a> 	@Override
 <a class="jxr_linenumber" name="771" href="#771">771</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> done() {
-<a class="jxr_linenumber" name="772" href="#772">772</a> 		System.err.println(<span class="jxr_string">"§§§ END"</span>);
+<a class="jxr_linenumber" name="772" href="#772">772</a> 		<em class="jxr_comment">// System.err.println("§§§ END");</em>
 <a class="jxr_linenumber" name="773" href="#773">773</a> 	}
 <a class="jxr_linenumber" name="774" href="#774">774</a> 
 <a class="jxr_linenumber" name="775" href="#775">775</a> 	@Override
@@ -1163,39 +1163,39 @@
 <a class="jxr_linenumber" name="1153" href="#1153">1153</a> 			parsedSparqlQueries.put(query, qObj);
 <a class="jxr_linenumber" name="1154" href="#1154">1154</a> 		}
 <a class="jxr_linenumber" name="1155" href="#1155">1155</a> 
-<a class="jxr_linenumber" name="1156" href="#1156">1156</a> 		<strong class="jxr_keyword">return</strong> QueryExecutionFactory.create(qObj, aModel).execSelect();
-<a class="jxr_linenumber" name="1157" href="#1157">1157</a> 	}
-<a class="jxr_linenumber" name="1158" href="#1158">1158</a> 
-<a class="jxr_linenumber" name="1159" href="#1159">1159</a> 	<em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="1160" href="#1160">1160</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
-<a class="jxr_linenumber" name="1161" href="#1161">1161</a> <em class="jxr_javadoccomment">	 * Executes a SPARQL Update query on provided model.</em>
-<a class="jxr_linenumber" name="1162" href="#1162">1162</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
-<a class="jxr_linenumber" name="1163" href="#1163">1163</a> <em class="jxr_javadoccomment">	 * </em>
-<a class="jxr_linenumber" name="1164" href="#1164">1164</a> <em class="jxr_javadoccomment">	 * @param aGraphStore</em>
-<a class="jxr_linenumber" name="1165" href="#1165">1165</a> <em class="jxr_javadoccomment">	 *            The queried model's graph store</em>
-<a class="jxr_linenumber" name="1166" href="#1166">1166</a> <em class="jxr_javadoccomment">	 * @param law</em>
-<a class="jxr_linenumber" name="1167" href="#1167">1167</a> <em class="jxr_javadoccomment">	 *            The ecolaw to be applied</em>
-<a class="jxr_linenumber" name="1168" href="#1168">1168</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="1169" href="#1169">1169</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> execUpdateQuery(<strong class="jxr_keyword">final</strong> GraphStore aGraphStore,
-<a class="jxr_linenumber" name="1170" href="#1170">1170</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/match/MatchingEcolaw.html">MatchingEcolaw</a> law) {
-<a class="jxr_linenumber" name="1171" href="#1171">1171</a> 		<strong class="jxr_keyword">if</strong> (optEnabled) {
-<a class="jxr_linenumber" name="1172" href="#1172">1172</a> 			<strong class="jxr_keyword">final</strong> String query = law.getAppliedMatch().getRelCompiledEcolaw()
-<a class="jxr_linenumber" name="1173" href="#1173">1173</a> 					.getUpdateQueryTemplate().getPlainQuery();
-<a class="jxr_linenumber" name="1174" href="#1174">1174</a> 			UpdateRequest uReq = parsedSparulQueries.get(query);
-<a class="jxr_linenumber" name="1175" href="#1175">1175</a> 			<strong class="jxr_keyword">if</strong> (uReq == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="1176" href="#1176">1176</a> 				uReq = UpdateFactory.create(query);
-<a class="jxr_linenumber" name="1177" href="#1177">1177</a> 				parsedSparulQueries.put(query, uReq);
-<a class="jxr_linenumber" name="1178" href="#1178">1178</a> 			}
-<a class="jxr_linenumber" name="1179" href="#1179">1179</a> 
-<a class="jxr_linenumber" name="1180" href="#1180">1180</a> 			<strong class="jxr_keyword">final</strong> QuerySolution bindings = retrieveBindings(query);
-<a class="jxr_linenumber" name="1181" href="#1181">1181</a> 			<strong class="jxr_keyword">if</strong> (bindings != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="1182" href="#1182">1182</a> 				UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
-<a class="jxr_linenumber" name="1183" href="#1183">1183</a> 						.execute();
-<a class="jxr_linenumber" name="1184" href="#1184">1184</a> 				<strong class="jxr_keyword">return</strong>;
+<a class="jxr_linenumber" name="1156" href="#1156">1156</a> 		assert qObj.isSelectType();
+<a class="jxr_linenumber" name="1157" href="#1157">1157</a> 		<strong class="jxr_keyword">return</strong> QueryExecutionFactory.create(qObj, aModel).execSelect();
+<a class="jxr_linenumber" name="1158" href="#1158">1158</a> 	}
+<a class="jxr_linenumber" name="1159" href="#1159">1159</a> 
+<a class="jxr_linenumber" name="1160" href="#1160">1160</a> 	<em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="1161" href="#1161">1161</a> <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="1162" href="#1162">1162</a> <em class="jxr_javadoccomment">	 * Executes a SPARQL Update query on provided model.</em>
+<a class="jxr_linenumber" name="1163" href="#1163">1163</a> <em class="jxr_javadoccomment">	 * &lt;/p&gt;</em>
+<a class="jxr_linenumber" name="1164" href="#1164">1164</a> <em class="jxr_javadoccomment">	 * </em>
+<a class="jxr_linenumber" name="1165" href="#1165">1165</a> <em class="jxr_javadoccomment">	 * @param aGraphStore</em>
+<a class="jxr_linenumber" name="1166" href="#1166">1166</a> <em class="jxr_javadoccomment">	 *            The queried model's graph store</em>
+<a class="jxr_linenumber" name="1167" href="#1167">1167</a> <em class="jxr_javadoccomment">	 * @param law</em>
+<a class="jxr_linenumber" name="1168" href="#1168">1168</a> <em class="jxr_javadoccomment">	 *            The ecolaw to be applied</em>
+<a class="jxr_linenumber" name="1169" href="#1169">1169</a> <em class="jxr_javadoccomment">	 */</em>
+<a class="jxr_linenumber" name="1170" href="#1170">1170</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> execUpdateQuery(<strong class="jxr_keyword">final</strong> GraphStore aGraphStore,
+<a class="jxr_linenumber" name="1171" href="#1171">1171</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/match/MatchingEcolaw.html">MatchingEcolaw</a> law) {
+<a class="jxr_linenumber" name="1172" href="#1172">1172</a> 		<strong class="jxr_keyword">if</strong> (optEnabled) {
+<a class="jxr_linenumber" name="1173" href="#1173">1173</a> 			<strong class="jxr_keyword">final</strong> String query = law.getAppliedMatch().getRelCompiledEcolaw()
+<a class="jxr_linenumber" name="1174" href="#1174">1174</a> 					.getUpdateQueryTemplate().getPlainQuery();
+<a class="jxr_linenumber" name="1175" href="#1175">1175</a> 			UpdateRequest uReq = parsedSparulQueries.get(query);
+<a class="jxr_linenumber" name="1176" href="#1176">1176</a> 			<strong class="jxr_keyword">if</strong> (uReq == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="1177" href="#1177">1177</a> 				uReq = UpdateFactory.create(query);
+<a class="jxr_linenumber" name="1178" href="#1178">1178</a> 				parsedSparulQueries.put(query, uReq);
+<a class="jxr_linenumber" name="1179" href="#1179">1179</a> 			}
+<a class="jxr_linenumber" name="1180" href="#1180">1180</a> 
+<a class="jxr_linenumber" name="1181" href="#1181">1181</a> 			<strong class="jxr_keyword">final</strong> QuerySolution bindings = retrieveBindings(query);
+<a class="jxr_linenumber" name="1182" href="#1182">1182</a> 			<strong class="jxr_keyword">if</strong> (bindings != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="1183" href="#1183">1183</a> 				UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
+<a class="jxr_linenumber" name="1184" href="#1184">1184</a> 						.execute();
 <a class="jxr_linenumber" name="1185" href="#1185">1185</a> 			}
-<a class="jxr_linenumber" name="1186" href="#1186">1186</a> 		}
-<a class="jxr_linenumber" name="1187" href="#1187">1187</a> 
-<a class="jxr_linenumber" name="1188" href="#1188">1188</a> 		UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
+<a class="jxr_linenumber" name="1186" href="#1186">1186</a> 		} <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="1187" href="#1187">1187</a> 			UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
+<a class="jxr_linenumber" name="1188" href="#1188">1188</a> 		}
 <a class="jxr_linenumber" name="1189" href="#1189">1189</a> 	}
 <a class="jxr_linenumber" name="1190" href="#1190">1190</a> 
 <a class="jxr_linenumber" name="1191" href="#1191">1191</a> 	@Override

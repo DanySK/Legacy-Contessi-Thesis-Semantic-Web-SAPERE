@@ -65,15 +65,15 @@ digraph G {
 	c54762:p -> c54736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.RDFFormat
 	c54762:p -> c54684:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.observation.SpaceEvent DEPEND it.apice.sapere.api.RDFFormat
-	c54775:p -> c54684:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.observation.SpaceEvent DEPEND it.apice.sapere.api.lsas.LSAid
 	c54775:p -> c54736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.observation.SpaceEvent DEPEND it.apice.sapere.api.RDFFormat
+	c54775:p -> c54684:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.observation.impl.SpaceEventImpl DEPEND it.apice.sapere.api.RDFFormat
+	c54854:p -> c54684:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.SpaceEventImpl DEPEND it.apice.sapere.api.lsas.LSAid
 	c54854:p -> c54736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.SpaceEventImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
 	c54854:p -> c54773:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.observation.impl.SpaceEventImpl DEPEND it.apice.sapere.api.RDFFormat
-	c54854:p -> c54684:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

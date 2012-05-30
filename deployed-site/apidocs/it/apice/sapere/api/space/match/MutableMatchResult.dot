@@ -39,9 +39,9 @@ digraph G {
 	c34929:p -> c34928:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.space.match.impl.MutableMatchResultImpl implements it.apice.sapere.api.space.match.MutableMatchResult
 	c34928:p -> c35005:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c35001:p -> c34929:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MutableMatchResult
 	c35001:p -> c34928:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c35001:p -> c34929:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

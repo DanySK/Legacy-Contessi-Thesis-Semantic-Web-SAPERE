@@ -15,28 +15,28 @@ digraph G {
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl implements it.apice.sapere.api.ecolaws.formulas.FormulaFactory
 	c2002:p -> c1958:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtEqFormula<Type>
-	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtFormula<Type>
-	c1958:p -> c2005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtFormula<Type>
+	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
+	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
+	c1958:p -> c2005:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
 	c1958:p -> c2006:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
+	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
+	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.GtEqFormula<Type>
 	c1958:p -> c2007:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c1958:p -> c2003:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
+	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.LtFormula<Type>
 	c1958:p -> c2008:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
+	c1958:p -> c2004:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.GtEqFormula<Type>
-	c2004 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/GtEqFormula.html">
+	c2007 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/GtEqFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> GtEqFormula&lt;Type&gt; </td></tr>
@@ -44,7 +44,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.GtFormula<Type>
-	c2006 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/GtFormula.html">
+	c2003 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/GtFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> GtFormula&lt;Type&gt; </td></tr>
@@ -52,7 +52,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
-	c2007 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/IsFormula.html">
+	c2005 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/IsFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> IsFormula&lt;Type&gt; </td></tr>
@@ -60,7 +60,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.RightOperand<Type>
-	c2003 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/RightOperand.html">
+	c2004 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/RightOperand.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> RightOperand&lt;Type&gt; </td></tr>
@@ -68,7 +68,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.LtEqFormula<Type>
-	c2008 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/LtEqFormula.html">
+	c2006 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/LtEqFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LtEqFormula&lt;Type&gt; </td></tr>
@@ -84,7 +84,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.LtFormula<Type>
-	c2005 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/LtFormula.html">
+	c2008 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/LtFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LtFormula&lt;Type&gt; </td></tr>
