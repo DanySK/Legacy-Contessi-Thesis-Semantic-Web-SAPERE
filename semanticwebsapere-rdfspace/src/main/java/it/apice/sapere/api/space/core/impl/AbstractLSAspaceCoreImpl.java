@@ -382,7 +382,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 
 			notifySpaceOperation(msg.toString(),
-					SpaceOperationType.SYSTEM_ACTION);
+					SpaceOperationType.SYSTEM_MATCH);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot complete match process", ex);
 		} finally {
@@ -443,10 +443,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 * 
 	 * @param key
-	 *            Cache key (plain SPARUL cache)
+	 *            Cache key (the matchresult)
 	 * @return The Binding
 	 */
-	private QuerySolution retrieveBindings(final String key) {
+	private QuerySolution retrieveBindings(final MatchResult key) {
 		return relBindings.remove(key);
 	}
 
@@ -497,9 +497,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 
 			notifySpaceOperation(msg.toString(), uLsas,
-					SpaceOperationType.SYSTEM_ACTION);
+					SpaceOperationType.SYSTEM_APPLY);
 			notifyLSAObservers(msg.toString(), uLsas,
-					SpaceOperationType.SYSTEM_ACTION);
+					SpaceOperationType.SYSTEM_APPLY);
 		} catch (Exception ex) {
 			throw new SAPEREException("Cannot apply eco-law", ex);
 		} finally {
@@ -1178,11 +1178,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				parsedSparulQueries.put(query, uReq);
 			}
 
-			final QuerySolution bindings = retrieveBindings(query);
-			if (bindings != null) {
-				UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
-						.execute();
-			}
+			final QuerySolution bindings = retrieveBindings(
+					law.getAppliedMatch());
+			
+			assert bindings != null;
+			UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
+					.execute();
 		} else {
 			UpdateAction.parseExecute(law.getUpdateQuery(), aGraphStore);
 		}

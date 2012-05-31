@@ -20,9 +20,6 @@ import java.util.concurrent.TimeUnit;
 public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 		Comparable<SchedulableMatchResult> {
 
-	/** Shift quantification (for hash computation). */
-	private static final transient int NUM_32 = 32;
-
 	/** Seconds to Millieconds conversion constant. */
 	private static final transient double S_TO_MS = 1000;
 
@@ -84,44 +81,12 @@ public class SchedulableMatchResultImpl implements SchedulableMatchResult,
 
 	@Override
 	public final int hashCode() {
-		final int prime = 31;
-		int res = 1;
-		long temp;
-		temp = Double.doubleToLongBits(time);
-		res = prime * res + (int) (temp ^ (temp >>> NUM_32));
-		res *= prime;
-		if (this.result != null) {
-			res += result.hashCode();
-		}
-
-		return res;
+		return result.hashCode();
 	}
 
 	@Override
 	public final boolean equals(final Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final SchedulableMatchResultImpl other = 
-				(SchedulableMatchResultImpl) obj;
-		if (Double.doubleToLongBits(time) != Double
-				.doubleToLongBits(other.time)) {
-			return false;
-		}
-		if (result == null) {
-			if (other.result != null) {
-				return false;
-			}
-		} else if (!result.equals(other.result)) {
-			return false;
-		}
-		return true;
+		return result.equals(obj);
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
+import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.management.AbortException;
 import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.ReactionManagerObserver;
@@ -350,12 +351,18 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
+		if (ev.getOperationType().equals(SpaceOperationType.SYSTEM_MATCH)
+				|| ev.getOperationType().equals(
+						SpaceOperationType.AGENT_READ)) {
+			return;
+		}
+
 		spy("Something happened in the LSA-space!");
 		mutex.lock();
 		try {
 			checkDependencies(ev, next);
 		} catch (AbortException e) {
-			spy("EVENT :: aborting");
+			// spy("EVENT :: aborting");
 			schedulingEvent.signal();
 		} finally {
 			mutex.unlock();
@@ -376,8 +383,9 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 	 * @throws AbortException
 	 *             Next reaction should be re-scheduled
 	 */
-	private void checkDependencies(final SpaceEvent ev,
-			final MatchingEcolaw law) throws AbortException {
+	private void checkDependencies(final SpaceEvent ev, 
+			final MatchingEcolaw law)
+			throws AbortException {
 		scheduler.checkDependencies(ev, law);
 	}
 }

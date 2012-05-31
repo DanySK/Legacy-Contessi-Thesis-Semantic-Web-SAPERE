@@ -29,5 +29,11 @@ public enum SpaceOperationType {
 	SYSTEM_ACTION,
 
 	/** The system found an LSA to be diffused. */
-	SYSTEM_DIFFUSE;
+	SYSTEM_DIFFUSE,
+	
+	/** The system found a match for an eco-law. */
+	SYSTEM_MATCH,
+	
+	/** The system applied an eco-law. */
+	SYSTEM_APPLY;
 }
