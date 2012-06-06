@@ -59,9 +59,7 @@
 				<configuration>
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
-						<Bundle-SymbolicName>semanticwebsapere-intergrationtests</Bundle-SymbolicName>
-
-						<Bundle-Activator>it.apice.sapere.internal.ITestsActivator</Bundle-Activator>
+						<Bundle-SymbolicName>semanticwebsapere-profiling</Bundle-SymbolicName>
 					</instructions>
 				</configuration>
 			</plugin>
@@ -69,6 +67,5 @@
 	</build>
 
 	<name>SAPERE LSA-space Profiling</name>
-	<description>This project contains a set of case studies meant to be used in order to profile 
-	the LSA-space and make some considerations about each component performances</description>
+	<description>This project contains a set of case studies meant to be used in order to profile the LSA-space and make some considerations about each component performances</description>
 </project>

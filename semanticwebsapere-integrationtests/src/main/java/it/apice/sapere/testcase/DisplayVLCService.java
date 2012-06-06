@@ -1,12 +1,13 @@
 package it.apice.sapere.testcase;
 
 import it.apice.sapere.api.LSAFactory;
+import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.PropertyValue;
-import it.apice.sapere.api.node.LogUtils;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
 import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
+import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.observation.LSAEvent;
 import it.apice.sapere.api.space.observation.LSAObserver;
@@ -83,7 +84,8 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 //	private transient long startCounting;
 
 	@Override
-	public final void behaviour(final LSAFactory factory, final LSAspace space,
+	public final void behaviour(final LSAFactory factory,
+			final LSAParser parser, final LSAspace space,
 			final LogUtils out, final SAPEREAgent me) throws Exception {
 		stdOut = out;
 //		lsaSpace = space;

@@ -1,8 +1,8 @@
 package it.apice.sapere.node.agents.impl;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.node.agents.LSAspaceAccessPolicy;
 import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 
 /**
@@ -55,7 +55,8 @@ public class UserAgentImpl extends AbstractSAPEREAgentImpl {
 
 	@Override
 	protected final void execute() throws Exception {
-		spec.behaviour(NodeServicesImpl.getInstance().getLSAFactory(), sap,
+		spec.behaviour(NodeServicesImpl.getInstance().getLSAFactory(),
+				NodeServicesImpl.getInstance().getLSAParser(), sap,
 				LoggerFactoryImpl.getInstance().getLogger(this), this);
 	}
 

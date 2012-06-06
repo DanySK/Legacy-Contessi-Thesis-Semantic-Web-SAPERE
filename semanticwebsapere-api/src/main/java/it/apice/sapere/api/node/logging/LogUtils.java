@@ -1,4 +1,4 @@
-package it.apice.sapere.api.node;
+package it.apice.sapere.api.node.logging;
 
 /**
  * <p>

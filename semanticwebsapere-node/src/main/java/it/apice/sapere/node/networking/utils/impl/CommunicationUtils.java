@@ -1,7 +1,7 @@
 package it.apice.sapere.node.networking.utils.impl;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.node.agents.networking.Message;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage;
 import it.apice.sapere.node.networking.guestsmngt.impl.GuestMessageType;
 import it.apice.sapere.node.networking.obsnotif.impl.Notification;

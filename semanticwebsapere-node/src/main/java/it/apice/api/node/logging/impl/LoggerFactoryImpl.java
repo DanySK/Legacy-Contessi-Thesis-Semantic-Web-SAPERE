@@ -1,8 +1,8 @@
-package it.apice.sapere.node.internal;
+package it.apice.api.node.logging.impl;
 
-import it.apice.sapere.api.node.LogUtils;
-import it.apice.sapere.api.node.LoggerFactory;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.logging.LogUtils;
+import it.apice.sapere.api.node.logging.LoggerFactory;
 
 import java.io.IOException;
 import java.util.HashSet;

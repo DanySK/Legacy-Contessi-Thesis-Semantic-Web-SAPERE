@@ -1,11 +1,11 @@
 package it.apice.sapere.management.impl;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.management.ReactionManagerObserver;
-import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.match.MatchingEcolaw;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
 
 /**
  * <p>

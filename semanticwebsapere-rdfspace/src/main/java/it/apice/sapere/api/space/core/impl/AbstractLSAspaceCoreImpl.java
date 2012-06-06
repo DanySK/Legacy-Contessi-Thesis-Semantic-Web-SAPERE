@@ -17,7 +17,7 @@ import it.apice.sapere.api.space.match.impl.MutableMatchResultImpl;
 import it.apice.sapere.api.space.observation.LSAObserver;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
-import it.apice.sapere.space.impl.Jena2SAPEREConverter;
+import it.apice.sapere.api.utils.Jena2SAPEREConverter;
 import it.apice.sapere.space.observation.impl.LSAEventImpl;
 import it.apice.sapere.space.observation.impl.SpaceEventImpl;
 

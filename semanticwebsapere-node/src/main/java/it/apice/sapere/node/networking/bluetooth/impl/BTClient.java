@@ -1,6 +1,6 @@
 package it.apice.sapere.node.networking.bluetooth.impl;
 
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;
 import it.apice.sapere.node.networking.impl.NodeMessageType;

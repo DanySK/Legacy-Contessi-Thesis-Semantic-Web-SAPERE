@@ -1,6 +1,6 @@
 package it.apice.sapere.node.networking.impl;
 
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 
 /**
  * The class represent the entity which manage the communcations between nodes.

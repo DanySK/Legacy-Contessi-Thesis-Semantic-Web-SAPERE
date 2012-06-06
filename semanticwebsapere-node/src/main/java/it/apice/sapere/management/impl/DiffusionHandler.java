@@ -1,5 +1,6 @@
 package it.apice.sapere.management.impl;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.core.CompiledLSA;
@@ -7,7 +8,6 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;

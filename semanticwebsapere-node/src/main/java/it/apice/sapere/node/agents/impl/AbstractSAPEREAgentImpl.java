@@ -1,9 +1,9 @@
 package it.apice.sapere.node.agents.impl;
 
-import it.apice.sapere.api.node.LogUtils;
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
 import it.apice.sapere.api.node.agents.networking.Message;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
+import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 
 import java.net.URI;

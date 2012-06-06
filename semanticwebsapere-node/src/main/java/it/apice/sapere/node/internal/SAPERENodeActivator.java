@@ -1,13 +1,14 @@
 package it.apice.sapere.node.internal;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.EcolawFactory;
 import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
 import it.apice.sapere.api.management.ReactionManager;
-import it.apice.sapere.api.node.LoggerFactory;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.node.logging.LoggerFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;

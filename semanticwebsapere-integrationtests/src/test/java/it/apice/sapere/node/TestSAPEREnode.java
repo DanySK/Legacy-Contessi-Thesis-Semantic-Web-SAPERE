@@ -1,8 +1,8 @@
 package it.apice.sapere.node;
 
 import static org.junit.Assert.assertNotNull;
-import it.apice.sapere.api.node.LoggerFactory;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.node.logging.LoggerFactory;
 
 import java.io.IOException;
 
@@ -80,7 +80,7 @@ public class TestSAPEREnode {
 		assertNotNull(ref);
 		assertNotNull(context.getService(ref));
 		Assert.assertTrue(true);
-	
+
 		final ServiceReference<SAPEREAgentsFactory> ref2 = context
 				.getServiceReference(SAPEREAgentsFactory.class);
 		assertNotNull(ref2);

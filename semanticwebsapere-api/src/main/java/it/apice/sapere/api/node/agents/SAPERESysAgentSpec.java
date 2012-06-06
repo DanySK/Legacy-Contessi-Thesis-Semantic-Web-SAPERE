@@ -1,7 +1,7 @@
 package it.apice.sapere.api.node.agents;
 
-import it.apice.sapere.api.node.LogUtils;
 import it.apice.sapere.api.node.NodeServices;
+import it.apice.sapere.api.node.logging.LogUtils;
 
 
 /**

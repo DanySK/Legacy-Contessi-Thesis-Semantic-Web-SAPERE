@@ -1,9 +1,9 @@
 package it.apice.sapere.internal;
 
 import it.apice.sapere.api.management.ReactionManager;
-import it.apice.sapere.api.node.LogUtils;
-import it.apice.sapere.api.node.LoggerFactory;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.node.logging.LogUtils;
+import it.apice.sapere.api.node.logging.LoggerFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.testcase.DisplayVLCService;

@@ -2166,3 +2166,139 @@
 2012-06-05 11:00:01.093  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
 2012-06-05 11:00:01.094  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Shutting down:
 2012-06-05 11:00:01.094  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Killing agents
+2012-06-06 15:56:33.225  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 15:56:33.330  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> SAPERE-node (Self-Aware Pervasive Service Ecosystems)
+2012-06-06 15:56:33.331  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 15:56:33.332  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.333  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Looking for services:
+2012-06-06 15:56:33.335  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Factory
+2012-06-06 15:56:33.335  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Compiler
+2012-06-06 15:56:33.335  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Parser
+2012-06-06 15:56:33.336  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Factory
+2012-06-06 15:56:33.336  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Compiler
+2012-06-06 15:56:33.337  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law's Formula Factory
+2012-06-06 15:56:33.443  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA-space
+2012-06-06 15:56:33.443  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Match Functions Customization
+2012-06-06 15:56:33.444  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.444  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Configuring connectivity:
+2012-06-06 15:56:33.579  WARN it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Bluetooth communication NOT supported (reason: BlueCove library bluecove not available)
+2012-06-06 15:56:33.579  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.579  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Components/Agents creation:
+2012-06-06 15:56:33.580  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Synthetic Properties handler
+2012-06-06 15:56:33.581  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Diffusion handler
+2012-06-06 15:56:33.621  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager (eco-law scheduler)
+2012-06-06 15:56:33.622  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.622  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Publishing services:
+2012-06-06 15:56:33.626  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Log Facility
+2012-06-06 15:56:33.637  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + SAPERE Agents Factory
+2012-06-06 15:56:33.637  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager
+2012-06-06 15:56:33.637  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.638  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 15:56:33.638  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> READY (id = sapere:node1D22F0CE-92A8-4B17-A4C1-CC0776D0FBA1)
+2012-06-06 15:56:33.638  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 15:56:33.638  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.744  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 15:56:33.744  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Shutting down:
+2012-06-06 15:56:33.744  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Killing agents
+2012-06-06 16:02:52.017  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:02:52.036  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> SAPERE-node (Self-Aware Pervasive Service Ecosystems)
+2012-06-06 16:02:52.037  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:02:52.037  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.037  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Looking for services:
+2012-06-06 16:02:52.038  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Factory
+2012-06-06 16:02:52.038  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Compiler
+2012-06-06 16:02:52.038  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Parser
+2012-06-06 16:02:52.038  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Factory
+2012-06-06 16:02:52.039  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Compiler
+2012-06-06 16:02:52.039  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law's Formula Factory
+2012-06-06 16:02:52.107  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA-space
+2012-06-06 16:02:52.107  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Match Functions Customization
+2012-06-06 16:02:52.107  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.107  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Configuring connectivity:
+2012-06-06 16:02:52.208  WARN it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Bluetooth communication NOT supported (reason: BlueCove library bluecove not available)
+2012-06-06 16:02:52.209  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.209  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Components/Agents creation:
+2012-06-06 16:02:52.209  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Synthetic Properties handler
+2012-06-06 16:02:52.210  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Diffusion handler
+2012-06-06 16:02:52.240  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager (eco-law scheduler)
+2012-06-06 16:02:52.240  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.240  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Publishing services:
+2012-06-06 16:02:52.241  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Log Facility
+2012-06-06 16:02:52.243  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + SAPERE Agents Factory
+2012-06-06 16:02:52.243  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager
+2012-06-06 16:02:52.243  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.244  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:02:52.244  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> READY (id = sapere:node434BFFF1-24F4-42EF-BE35-D1E03C5F0DF1)
+2012-06-06 16:02:52.244  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:02:52.244  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.382  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:02:52.382  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Shutting down:
+2012-06-06 16:02:52.382  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Killing agents
+2012-06-06 16:10:54.338  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:10:54.376  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> SAPERE-node (Self-Aware Pervasive Service Ecosystems)
+2012-06-06 16:10:54.377  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:10:54.377  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.377  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Looking for services:
+2012-06-06 16:10:54.378  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Factory
+2012-06-06 16:10:54.438  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Compiler
+2012-06-06 16:10:54.438  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Parser
+2012-06-06 16:10:54.438  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Factory
+2012-06-06 16:10:54.439  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Compiler
+2012-06-06 16:10:54.439  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law's Formula Factory
+2012-06-06 16:10:54.532  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA-space
+2012-06-06 16:10:54.533  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Match Functions Customization
+2012-06-06 16:10:54.533  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.533  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Configuring connectivity:
+2012-06-06 16:10:54.646  WARN it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Bluetooth communication NOT supported (reason: BlueCove library bluecove not available)
+2012-06-06 16:10:54.646  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.646  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Components/Agents creation:
+2012-06-06 16:10:54.647  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Synthetic Properties handler
+2012-06-06 16:10:54.648  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Diffusion handler
+2012-06-06 16:10:54.701  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager (eco-law scheduler)
+2012-06-06 16:10:54.702  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.703  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Publishing services:
+2012-06-06 16:10:54.703  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Log Facility
+2012-06-06 16:10:54.705  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + SAPERE Agents Factory
+2012-06-06 16:10:54.705  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager
+2012-06-06 16:10:54.705  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.705  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:10:54.706  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> READY (id = sapere:node8BBE8838-01DE-40F3-A6A3-150B7832EE25)
+2012-06-06 16:10:54.706  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:10:54.706  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.902  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:10:54.902  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Shutting down:
+2012-06-06 16:10:54.902  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Killing agents
+2012-06-06 16:50:09.938  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:50:09.973  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> SAPERE-node (Self-Aware Pervasive Service Ecosystems)
+2012-06-06 16:50:09.974  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:50:09.974  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:09.974  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Looking for services:
+2012-06-06 16:50:09.975  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Factory
+2012-06-06 16:50:09.975  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Compiler
+2012-06-06 16:50:09.975  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA Parser
+2012-06-06 16:50:09.975  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Factory
+2012-06-06 16:50:09.975  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law Compiler
+2012-06-06 16:50:09.976  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Eco-law's Formula Factory
+2012-06-06 16:50:10.019  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + LSA-space
+2012-06-06 16:50:10.020  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Match Functions Customization
+2012-06-06 16:50:10.020  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.020  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Configuring connectivity:
+2012-06-06 16:50:10.137  WARN it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Bluetooth communication NOT supported (reason: BlueCove library bluecove not available)
+2012-06-06 16:50:10.137  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.137  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Components/Agents creation:
+2012-06-06 16:50:10.138  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Synthetic Properties handler
+2012-06-06 16:50:10.139  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Diffusion handler
+2012-06-06 16:50:10.176  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager (eco-law scheduler)
+2012-06-06 16:50:10.178  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.178  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Publishing services:
+2012-06-06 16:50:10.179  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Log Facility
+2012-06-06 16:50:10.182  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + SAPERE Agents Factory
+2012-06-06 16:50:10.182  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    + Reaction Manager
+2012-06-06 16:50:10.182  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.183  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:50:10.183  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> READY (id = sapere:node4F87ED2E-421A-49BA-9C9D-55E6F4165A39)
+2012-06-06 16:50:10.183  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> ---------------------------------------------------------------
+2012-06-06 16:50:10.184  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.219  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> 
+2012-06-06 16:50:10.219  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator> Shutting down:
+2012-06-06 16:50:10.219  INFO it.apice.sapere.node.internal.SAPERENodeActivator@FelixStartLevel $SAPERENodeActivator>    - Killing agents

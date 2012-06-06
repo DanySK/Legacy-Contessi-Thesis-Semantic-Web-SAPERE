@@ -1,7 +1,8 @@
 package it.apice.sapere.api.node.agents;
 
 import it.apice.sapere.api.LSAFactory;
-import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.LSAParser;
+import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.api.space.LSAspace;
 
 /**
@@ -21,6 +22,8 @@ public interface SAPEREAgentSpec {
 	 * 
 	 * @param factory
 	 *            Reference to LSA Factory
+	 * @param parser
+	 *            Reference to LSA Parser
 	 * @param space
 	 *            LSA-space Access Point
 	 * @param out
@@ -32,6 +35,6 @@ public interface SAPEREAgentSpec {
 	 *             Each uncaught exception occurred in the agent main-cycle.
 	 *             Causes agent termination
 	 */
-	void behaviour(LSAFactory factory, LSAspace space, LogUtils out,
-			SAPEREAgent me) throws Exception;
+	void behaviour(LSAFactory factory, LSAParser parser, LSAspace space,
+			LogUtils out, SAPEREAgent me) throws Exception;
 }

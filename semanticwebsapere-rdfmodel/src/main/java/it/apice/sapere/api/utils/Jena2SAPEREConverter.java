@@ -1,4 +1,4 @@
-package it.apice.sapere.api.internal;
+package it.apice.sapere.api.utils;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.lsas.LSA;

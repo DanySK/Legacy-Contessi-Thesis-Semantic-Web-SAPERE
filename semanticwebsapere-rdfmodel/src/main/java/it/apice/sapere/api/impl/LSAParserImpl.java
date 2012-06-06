@@ -4,8 +4,8 @@ import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
-import it.apice.sapere.api.internal.Jena2SAPEREConverter;
 import it.apice.sapere.api.lsas.LSA;
+import it.apice.sapere.api.utils.Jena2SAPEREConverter;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,10 @@
 Manifest-Version: 1.0
+Export-Package: it.apice.sapere.profiling.agents;uses:="it.apice.saper
+ e.api.node.logging,it.apice.sapere.api.space,it.apice.sapere.api.node
+ .agents,it.apice.sapere.profiling.utils,it.apice.sapere.api,it.apice.
+ sapere.api.lsas,it.apice.sapere.api.space.core,it.apice.sapere.api.no
+ de",it.apice.sapere.profiling.utils;uses:="it.apice.sapere.api,it.api
+ ce.sapere.api.lsas"
 Built-By: conteit
 Tool: Bnd-0.0.357
 Bundle-Category: sapere-project
@@ -8,13 +14,15 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_31
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1338990730863
+Bnd-LastModified: 1338996647546
 Bundle-ManifestVersion: 2
-Bundle-Activator: it.apice.sapere.internal.ITestsActivator
 Bundle-Description: This project contains a set of case studies meant 
- to be used in order to profile 	the LSA-space and make some considera
- tions about each component performances
-Import-Package: it.apice.sapere.internal
-Bundle-SymbolicName: semanticwebsapere-intergrationtests
+ to be used in order to profile the LSA-space and make some considerat
+ ions about each component performances
+Import-Package: it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.
+ sapere.api.node,it.apice.sapere.api.node.agents,it.apice.sapere.api.n
+ ode.logging,it.apice.sapere.api.space,it.apice.sapere.api.space.core,
+ it.apice.sapere.profiling.agents,it.apice.sapere.profiling.utils
+Bundle-SymbolicName: semanticwebsapere-profiling
 Bundle-DocURL: http://apice.unibo.it/
 

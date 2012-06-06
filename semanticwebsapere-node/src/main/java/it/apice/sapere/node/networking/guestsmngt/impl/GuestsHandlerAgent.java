@@ -1,5 +1,6 @@
 package it.apice.sapere.node.networking.guestsmngt.impl;
 
+import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
@@ -12,7 +13,6 @@ import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.node.agents.AbstractSystemAgent;
 import it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
-import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.networking.obsnotif.impl.Notification;
 import it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent;
 import it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest;

@@ -1,8 +1,8 @@
-package it.apice.sapere.node.internal;
+package it.apice.api.node.logging.impl;
 
 import org.apache.log4j.Logger;
 
-import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.node.logging.LogUtils;
 
 /**
  * <p>
