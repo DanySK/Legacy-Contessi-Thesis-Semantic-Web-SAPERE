@@ -1,10 +1,10 @@
 package it.apice.sapere.node.agents.impl;
 
-import it.apice.sapere.node.LogUtils;
-import it.apice.sapere.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.agents.networking.Message;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
-import it.apice.sapere.node.networking.impl.Message;
 
 import java.net.URI;
 import java.net.URISyntaxException;

@@ -2,7 +2,7 @@ package it.apice.sapere.node.internal;
 
 import org.apache.log4j.Logger;
 
-import it.apice.sapere.node.LogUtils;
+import it.apice.sapere.api.node.LogUtils;
 
 /**
  * <p>

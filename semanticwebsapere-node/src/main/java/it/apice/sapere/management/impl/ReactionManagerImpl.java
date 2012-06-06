@@ -3,6 +3,11 @@ package it.apice.sapere.management.impl;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult;
+import it.apice.sapere.api.management.AbortException;
+import it.apice.sapere.api.management.ReactionManager;
+import it.apice.sapere.api.management.ReactionManagerObserver;
+import it.apice.sapere.api.management.ReactionsScheduler;
+import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
@@ -10,12 +15,7 @@ import it.apice.sapere.api.space.match.MatchingEcolaw;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
-import it.apice.sapere.management.AbortException;
-import it.apice.sapere.management.ReactionManager;
-import it.apice.sapere.management.ReactionManagerObserver;
-import it.apice.sapere.management.ReactionsScheduler;
 import it.apice.sapere.node.agents.AbstractSystemAgent;
-import it.apice.sapere.node.agents.NodeServices;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -388,4 +388,5 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 			throws AbortException {
 		scheduler.checkDependencies(ev, law);
 	}
+
 }

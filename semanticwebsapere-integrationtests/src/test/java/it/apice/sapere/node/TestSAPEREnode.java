@@ -1,7 +1,8 @@
 package it.apice.sapere.node;
 
 import static org.junit.Assert.assertNotNull;
-import it.apice.sapere.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.node.LoggerFactory;
+import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 
 import java.io.IOException;
 

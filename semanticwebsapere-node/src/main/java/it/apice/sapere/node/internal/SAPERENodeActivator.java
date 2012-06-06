@@ -5,19 +5,19 @@ import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
+import it.apice.sapere.api.management.ReactionManager;
+import it.apice.sapere.api.node.LoggerFactory;
+import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
 import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
 import it.apice.sapere.management.DefaultReactionsScheduler;
-import it.apice.sapere.management.ReactionManager;
 import it.apice.sapere.management.impl.DiffusionHandler;
 import it.apice.sapere.management.impl.ReactionManagerImpl;
 import it.apice.sapere.management.impl.ReactionManagerLogger;
 import it.apice.sapere.management.impl.SynthPropsHandler;
-import it.apice.sapere.node.LoggerFactory;
-import it.apice.sapere.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl;
 import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
 import it.apice.sapere.node.networking.impl.NetworkManager;
@@ -30,6 +30,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
+
+import com.hp.hpl.jena.sparql.function.Function;
 
 /**
  * <p>
@@ -71,7 +73,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	private transient LSAspaceCore<?> lsaSpace;
 
 	/** Match Functions Customization service. */
-	private transient MatchFunctRegistry mFunctRegistry;
+	private transient MatchFunctRegistry<Function> mFunctRegistry;
 
 	/** List of published registrations. */
 	private final transient List<ServiceRegistration<?>> regs = 
@@ -263,6 +265,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	 * @throws SAPEREException
 	 *             Cannot find the service
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void initMFunctCust(final BundleContext context)
 			throws SAPEREException {
 		final ServiceReference<MatchFunctRegistry> ref = context
@@ -461,7 +464,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            The message to be logged
 	 */
 	private void log(final String msg) {
-		LoggerFactoryImpl.getInstance().getLogger(this).log(msg);
+		LoggerFactoryImpl.getInstance().getLogger(getClass()).log(msg);
 	}
 
 	/**
@@ -477,7 +480,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	private void log(final String msg, final Throwable cause) {
 		LoggerFactoryImpl
 				.getInstance()
-				.getLogger(this)
+				.getLogger(getClass())
 				.warn(String.format("%s (reason: %s)", msg, cause.getMessage()),
 						null);
 	}

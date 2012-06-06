@@ -2,14 +2,14 @@ package it.apice.sapere.node.agents.impl;
 
 import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.SAPEREException;
+import it.apice.sapere.api.node.agents.LSAspaceAccessPolicy;
+import it.apice.sapere.api.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
+import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.node.agents.SAPERESysAgentSpec;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.node.agents.AbstractAccessPolicy;
-import it.apice.sapere.node.agents.LSAspaceAccessPolicy;
-import it.apice.sapere.node.agents.SAPEREAgent;
-import it.apice.sapere.node.agents.SAPEREAgentSpec;
-import it.apice.sapere.node.agents.SAPEREAgentsFactory;
-import it.apice.sapere.node.agents.SAPERESysAgentSpec;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 

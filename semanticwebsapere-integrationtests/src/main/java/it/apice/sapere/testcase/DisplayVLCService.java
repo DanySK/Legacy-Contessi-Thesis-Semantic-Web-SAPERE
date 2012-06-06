@@ -4,12 +4,12 @@ import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.PropertyValue;
+import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
 import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.observation.LSAEvent;
 import it.apice.sapere.api.space.observation.LSAObserver;
-import it.apice.sapere.node.LogUtils;
-import it.apice.sapere.node.agents.SAPEREAgent;
-import it.apice.sapere.node.agents.SAPEREAgentSpec;
 
 import java.io.IOException;
 import java.net.URI;

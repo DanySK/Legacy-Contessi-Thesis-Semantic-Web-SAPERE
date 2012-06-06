@@ -1,7 +1,5 @@
 package it.apice.sapere.management.impl;
 
-import java.net.URI;
-
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.space.core.CompiledLSA;
@@ -15,6 +13,8 @@ import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;
 import it.apice.sapere.node.networking.impl.NodeMessageType;
 import it.apice.sapere.node.networking.utils.impl.SpaceOperation;
+
+import java.net.URI;
 
 /**
  * <p>

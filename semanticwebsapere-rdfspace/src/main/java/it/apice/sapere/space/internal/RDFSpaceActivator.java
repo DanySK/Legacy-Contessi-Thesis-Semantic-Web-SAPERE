@@ -8,6 +8,7 @@ import it.apice.sapere.api.space.core.impl.EcolawCompilerImpl;
 import it.apice.sapere.api.space.core.impl.LSACompilerImpl;
 import it.apice.sapere.api.space.core.impl.ReasoningLevel;
 import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
+import it.apice.sapere.api.space.match.functions.impl.GenLSAidFunctImpl;
 import it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl;
 import it.apice.sapere.space.impl.LSAspaceImpl;
 
@@ -19,6 +20,7 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
 import com.hp.hpl.jena.rdf.model.StmtIterator;
+import com.hp.hpl.jena.sparql.function.Function;
 
 /**
  * <p>
@@ -90,11 +92,15 @@ public class RDFSpaceActivator implements BundleActivator {
 	 *            Bundle Context
 	 * @return A direct reference to the service implementation
 	 */
-	private MatchFunctRegistry registerCustomFunctions(
+	private MatchFunctRegistry<Function> registerCustomFunctions(
 			final BundleContext context) {
 		customFunctionServiceReg = context.registerService(
 				MatchFunctRegistry.class, MatchFunctRegistryImpl.getInstance(),
 				null);
+
+		MatchFunctRegistryImpl.getInstance().register(
+				MatchFunctRegistryImpl.getInstance().buildFunctionURI(
+						"generateLSA-id"), GenLSAidFunctImpl.class);
 
 		if (customFunctionServiceReg != null) {
 			log("Match Functions Customization REGISTERED.");

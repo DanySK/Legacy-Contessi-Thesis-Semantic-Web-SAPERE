@@ -4,6 +4,8 @@ import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulingFunction;
 import it.apice.sapere.api.ecolaws.scheduling.impl.SchedulingFunctionImpl;
+import it.apice.sapere.api.management.AbortException;
+import it.apice.sapere.api.management.ReactionsScheduler;
 import it.apice.sapere.api.space.core.CompiledEcolaw;
 import it.apice.sapere.api.space.match.MatchResult;
 import it.apice.sapere.api.space.match.MatchingEcolaw;

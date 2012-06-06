@@ -1,7 +1,7 @@
 package it.apice.sapere.node.agents.impl;
 
-import it.apice.sapere.node.agents.LSAspaceAccessPolicy;
-import it.apice.sapere.node.agents.SAPERESysAgentSpec;
+import it.apice.sapere.api.node.agents.LSAspaceAccessPolicy;
+import it.apice.sapere.api.node.agents.SAPERESysAgentSpec;
 import it.apice.sapere.node.internal.LoggerFactoryImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 

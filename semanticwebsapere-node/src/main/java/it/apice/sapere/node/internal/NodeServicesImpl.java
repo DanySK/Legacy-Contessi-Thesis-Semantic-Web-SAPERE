@@ -4,12 +4,14 @@ import it.apice.sapere.api.EcolawFactory;
 import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.PrivilegedLSAFactory;
 import it.apice.sapere.api.ecolaws.formulas.FormulaFactory;
+import it.apice.sapere.api.management.ReactionManager;
+import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
-import it.apice.sapere.management.ReactionManager;
-import it.apice.sapere.node.agents.NodeServices;
+
+import com.hp.hpl.jena.sparql.function.Function;
 
 /**
  * <p>
@@ -43,7 +45,7 @@ public final class NodeServicesImpl implements NodeServices {
 	private final transient LSAspaceCore<?> lsaSpace;
 
 	/** Match Functions Customization service. */
-	private transient MatchFunctRegistry mFunctReg;
+	private transient MatchFunctRegistry<Function> mFunctReg;
 
 	/** Run-time reference to the {@link ReactionManager}. */
 	private static transient ReactionManager rManager;
@@ -79,7 +81,7 @@ public final class NodeServicesImpl implements NodeServices {
 			final EcolawCompiler lawCompilerRef,
 			final FormulaFactory fFactoryRef,
 			final LSAspaceCore<?> lsaSpaceRef, 
-			final MatchFunctRegistry functReg) {
+			final MatchFunctRegistry<Function> functReg) {
 		sysLsaFactory = lsaFactoryRef;
 		lsaCompiler = lsaCompilerRef;
 		lsaParser = lsaParserRef;
@@ -118,7 +120,7 @@ public final class NodeServicesImpl implements NodeServices {
 			final EcolawCompiler lawCompilerRef,
 			final FormulaFactory fFactoryRef,
 			final LSAspaceCore<?> lsaSpaceRef, 
-			final MatchFunctRegistry functReg) {
+			final MatchFunctRegistry<Function> functReg) {
 		if (instance != null) {
 			throw new IllegalStateException("Already initialized");
 		}
@@ -184,7 +186,7 @@ public final class NodeServicesImpl implements NodeServices {
 	}
 
 	@Override
-	public MatchFunctRegistry getCustomFunctionRegistry() {
+	public MatchFunctRegistry<Function> getCustomFunctionRegistry() {
 		return mFunctReg;
 	}
 

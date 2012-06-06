@@ -2,9 +2,9 @@ package it.apice.sapere.node.networking.obsnotif.impl;
 
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
+import it.apice.sapere.api.node.agents.networking.Message;
 import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
-import it.apice.sapere.node.networking.impl.Message;
 
 import java.io.Serializable;
 

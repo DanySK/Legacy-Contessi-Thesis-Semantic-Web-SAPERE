@@ -1,8 +1,8 @@
 package it.apice.sapere.node.internal;
 
-import it.apice.sapere.node.LogUtils;
-import it.apice.sapere.node.LoggerFactory;
-import it.apice.sapere.node.agents.SAPEREAgent;
+import it.apice.sapere.api.node.LogUtils;
+import it.apice.sapere.api.node.LoggerFactory;
+import it.apice.sapere.api.node.agents.SAPEREAgent;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -14,7 +14,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.apache.log4j.RollingFileAppender;
-import org.osgi.framework.BundleActivator;
 
 /**
  * <p>
@@ -160,12 +159,6 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 	@Override
 	public LogUtils getLogger(final SAPEREAgent agent) {
 		return retrieveLogger(agent.getClass(), agent.getLocalAgentId());
-	}
-
-	@Override
-	public LogUtils getLogger(final BundleActivator bActiv) {
-		return retrieveLogger(bActiv.getClass(), bActiv.getClass()
-				.getSimpleName());
 	}
 
 	@Override

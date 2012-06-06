@@ -2,16 +2,16 @@ package it.apice.sapere.node.networking.obsnotif.impl;
 
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSAid;
+import it.apice.sapere.api.node.NodeServices;
+import it.apice.sapere.api.node.agents.networking.Message;
+import it.apice.sapere.api.node.agents.networking.Subscriber;
 import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.node.agents.AbstractSystemAgent;
-import it.apice.sapere.node.agents.NodeServices;
 import it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 import it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber;
-import it.apice.sapere.node.networking.impl.Message;
-import it.apice.sapere.node.networking.impl.Subscriber;
 
 import java.util.ArrayList;
 import java.util.Hashtable;

@@ -1,5 +1,6 @@
 package it.apice.sapere.node.agents;
 
+import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
 import it.apice.sapere.node.internal.NodeServicesImpl;
 
