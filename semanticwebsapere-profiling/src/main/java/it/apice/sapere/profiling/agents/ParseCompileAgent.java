@@ -1,5 +1,6 @@
 package it.apice.sapere.profiling.agents;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
@@ -42,9 +43,15 @@ public class ParseCompileAgent implements SAPERESysAgentSpec {
 	@Override
 	public void behaviour(final NodeServices services, final LogUtils out,
 			final SAPEREAgent me) throws Exception {
+		out.log(String.format("Parse-Compile profiling with data from \"%s\"..",
+				source));
+
 		for (LSA lsa : Utils.parseInfo(services.getLSAParser(), source)) {
-			services.getLSACompiler().compile(lsa);
+			services.getLSACompiler().parse(
+					services.getLSACompiler().compile(lsa)
+							.toString(RDFFormat.RDF_XML), RDFFormat.RDF_XML);
 		}
 
+		out.log("Done. Parse-Compile profiling completed");
 	}
 }

@@ -1,4 +1,4 @@
-package it.apice.sapere.profiling.agents;
+package it.apice.sapere.profiling.utils.agents;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.LSAParser;
@@ -11,6 +11,9 @@ import it.apice.sapere.profiling.utils.Utils;
 
 import java.io.File;
 import java.util.Set;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * <p>
@@ -25,6 +28,15 @@ public class FillerAgent implements SAPEREAgentSpec {
 
 	/** Source of data. */
 	private final transient File source;
+
+	/** Mutual exclusion lock. */
+	private final transient Lock mutex = new ReentrantLock();
+
+	/** Condition on which threads suspend. */
+	private final transient Condition taskCompleted = mutex.newCondition();
+
+	/** Flag which registers the completion of the task. */
+	private transient boolean done = false;
 
 	/**
 	 * <p>
@@ -55,5 +67,40 @@ public class FillerAgent implements SAPEREAgentSpec {
 		}
 
 		out.log("Done. LSA-space filled");
+		notifyCompletion();
+	}
+
+	/**
+	 * <p>
+	 * Notifies suspended threads that the task has been completed.
+	 * </p>
+	 */
+	private void notifyCompletion() {
+		mutex.lock();
+		try {
+			done = true;
+			taskCompleted.signalAll();
+		} finally {
+			mutex.unlock();
+		}
+	}
+
+	/**
+	 * <p>
+	 * Suspends the caller until this agent completed its task.
+	 * </p>
+	 * 
+	 * @throws InterruptedException
+	 *             User called <code>interrupt()</code>
+	 */
+	public void waitCompletion() throws InterruptedException {
+		mutex.lock();
+		try {
+			while (!done) {
+				taskCompleted.await();
+			}
+		} finally {
+			mutex.unlock();
+		}
 	}
 }

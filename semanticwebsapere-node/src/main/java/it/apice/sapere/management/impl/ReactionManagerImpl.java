@@ -32,6 +32,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * </p>
  * 
  * @author Paolo Contessi
+ * @author Marco Santarelli
+ * @author Matteo Desanti
  * 
  */
 public class ReactionManagerImpl extends AbstractSystemAgent implements

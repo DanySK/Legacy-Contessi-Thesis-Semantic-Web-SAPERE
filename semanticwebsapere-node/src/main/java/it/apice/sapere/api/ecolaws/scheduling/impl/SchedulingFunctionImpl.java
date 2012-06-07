@@ -20,6 +20,7 @@ import java.util.Random;
  * @author Matteo Desanti
  * 
  * @author Paolo Contessi
+ * @author Danilo Pianini
  * 
  */
 public class SchedulingFunctionImpl implements SchedulingFunction {

@@ -29,6 +29,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
@@ -109,6 +111,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** LSAs observations map. */
 	private final transient Map<LSAid, List<LSAObserver>> observers;
+	
+	/** Threads which notifies observers (one per type). */
+	private final transient ExecutorService asapExec = 
+			Executors.newFixedThreadPool(2);
 
 	/* ==== OBSERVATION (end) ==== */
 
@@ -573,7 +579,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			new Thread() {
+			asapExec.execute(new Runnable() {
 
 				@Override
 				public void run() {
@@ -586,7 +592,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						spaceObsMutex.unlock();
 					}
 				}
-			} .start();
+			});
 		}
 	}
 
@@ -605,7 +611,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			new Thread() {
+			asapExec.execute(new Runnable() {
 
 				@Override
 				public void run() {
@@ -619,7 +625,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						spaceObsMutex.unlock();
 					}
 				}
-			} .start();
+			});
 		}
 	}
 
@@ -639,7 +645,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			new Thread() {
+			asapExec.execute(new Runnable() {
 
 				@Override
 				public void run() {
@@ -654,7 +660,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						spaceObsMutex.unlock();
 					}
 				}
-			} .start();
+			});
 		}
 	}
 
@@ -674,7 +680,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final CompiledLSA<StmtIterator> lsa, 
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			new Thread() {
+			asapExec.execute(new Runnable() {
 
 				@Override
 				public void run() {
@@ -688,7 +694,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						spaceObsMutex.unlock();
 					}
 				}
-			} .start();
+			});
 		}
 	}
 
@@ -708,7 +714,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifyLSAObservers(final String msg, final LSA lsa,
 			final SpaceOperationType type) {
 		if (notificationsEnabled) {
-			new Thread() {
+			asapExec.execute(new Runnable() {
 
 				@Override
 				public void run() {
@@ -726,7 +732,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						lsaObsMutex.unlock();
 					}
 				}
-			} .start();
+			});
 		}
 	}
 
@@ -822,7 +828,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			try {
 				cLsa = step.handleInject(cLsa);
 			} catch (SAPEREException e) {
-				throw new SAPEREException("Operation abored", e);
+				throw new SAPEREException("Operation aborted", e);
 			}
 		}
 	}
@@ -938,7 +944,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			try {
 				cLsaId = step.handleRead(cLsaId);
 			} catch (SAPEREException e) {
-				throw new SAPEREException("Operation abored", e);
+				throw new SAPEREException("Operation aborted", e);
 			}
 		}
 	}
@@ -993,7 +999,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			try {
 				cLsa = step.handleRemove(cLsa);
 			} catch (SAPEREException e) {
-				throw new SAPEREException("Operation abored", e);
+				throw new SAPEREException("Operation aborted", e);
 			}
 		}
 	}
@@ -1051,7 +1057,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			try {
 				cLsa = step.handleUpdate(cLsa);
 			} catch (SAPEREException e) {
-				throw new SAPEREException("Operation abored", e);
+				throw new SAPEREException("Operation aborted", e);
 			}
 		}
 	}
@@ -1118,6 +1124,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new IllegalArgumentException("Invalid URI provided");
 		}
 
+		acquireWriteLock();
 		try {
 			if (loadedOntos.add(ontoURI)) {
 				model.read(ontoURI.toString());
@@ -1126,6 +1133,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			throw new SAPEREException(
 					"Unable to retrieve and load the ontology at "
 							+ ontoURI.toString(), ex);
+		} finally {
+			releaseLock();
 		}
 	}
 

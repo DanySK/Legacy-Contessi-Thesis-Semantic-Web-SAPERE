@@ -47,6 +47,11 @@
 			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.tools.btrace</groupId>
+			<artifactId>btrace-client</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 	
 	<build>

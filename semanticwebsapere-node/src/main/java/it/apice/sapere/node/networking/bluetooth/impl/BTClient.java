@@ -33,6 +33,7 @@ import javax.microedition.io.StreamConnection;
  * </p>
  * 
  * @author Paolo Contessi
+ * @author Michele Morgagni
  */
 public class BTClient {
 
