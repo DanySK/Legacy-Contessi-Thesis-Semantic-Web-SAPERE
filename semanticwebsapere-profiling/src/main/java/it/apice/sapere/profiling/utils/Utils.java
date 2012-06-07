@@ -6,6 +6,7 @@ import it.apice.sapere.api.lsas.LSA;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.util.Set;
 
 /**
@@ -24,7 +25,7 @@ public final class Utils {
 	 * </p>
 	 */
 	private Utils() {
-		
+
 	}
 
 	/**
@@ -51,5 +52,26 @@ public final class Utils {
 				in.close();
 			}
 		}
+	}
+
+	/**
+	 * <p>
+	 * Prints RDF prefixes in the provided writer.
+	 * </p>
+	 * 
+	 * @param out
+	 *            Destination
+	 */
+	public static void printPrefixes(final PrintWriter out) {
+		out.println("@prefix rdf:\t<http://www.w3.org/1999/02/"
+				+ "22-rdf-syntax-ns#> .");
+		out.println("@prefix rdfs:\t<http://www.w3.org/2000/01/"
+				+ "rdf-schema#> .");
+		out.println("@prefix owl:\t<http://www.w3.org/2002/07/owl#> .");
+		out.println("@prefix xsd:\t<http://www.w3.org/2001/XMLSchema#> .");
+		out.println("@prefix ex:\t<http://www.example.org#> .");
+		out.println("@prefix sapere:\t<http://www.sapere-project.eu/"
+				+ "ontologies/2012/0/sapere-model.owl#> .");
+		out.println("");
 	}
 }

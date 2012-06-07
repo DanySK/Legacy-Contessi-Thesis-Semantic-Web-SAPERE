@@ -18,10 +18,10 @@ public class StaticLSAsGenerator {
 	private final transient File _dest;
 
 	/** Max number of properties per LSA. */
-	private final transient int _propsDepth;
+	private final transient int _propsDep;
 
 	/** Max number of values per LSA's property. */
-	private final transient int _valPerPropDepth;
+	private final transient int _valPerProp;
 
 	/** Max number of values per LSA's property. */
 	private final transient int _numLSAs;
@@ -60,8 +60,8 @@ public class StaticLSAsGenerator {
 		}
 
 		_dest = new File(dest);
-		_propsDepth = propsDepth;
-		_valPerPropDepth = valPerPropDepth;
+		_propsDep = propsDepth;
+		_valPerProp = valPerPropDepth;
 		_numLSAs = numLSAs;
 	}
 
@@ -71,11 +71,15 @@ public class StaticLSAsGenerator {
 	 */
 	public static void main(final String[] args) {
 		try {
+			if (args.length < 4) {
+				throw new Exception();
+			}
+
 			new StaticLSAsGenerator(args[0], Integer.parseInt(args[1]),
 					Integer.parseInt(args[2]), Integer.parseInt(args[3]))
 					.execute();
 		} catch (Exception ex) {
-			System.err.println("Needed 4 parameters: "
+			System.err.println("4 needed parameters: "
 					+ "<filename> <props-depth> <val-per-prop-depth> "
 					+ "<num-of-lsas>");
 		}
@@ -88,20 +92,20 @@ public class StaticLSAsGenerator {
 	 */
 	public void execute() {
 		System.out.println("==========================================");
-		System.out.println("LSAs Generator");
+		System.out.println("Static LSAs Generator");
 		System.out.println("==========================================");
-		System.out.println(String.format("Destination: %s",
+		System.out.println(String.format("Destination file: %s",
 				_dest.getAbsolutePath()));
 		System.out
-				.println(String.format("Max num properties: %d", _propsDepth));
+				.println(String.format("Max num properties: %d", _propsDep));
 		System.out.println(String
-				.format("Max num values: %d", _valPerPropDepth));
+				.format("Max num values: %d", _valPerProp));
 		System.out.println(String
 				.format("#LSAs: %d", _numLSAs));
 		System.out.println("------------------------------------------");
-		System.out.println("\nRunning..");
+		System.out.println("\nRunning (static)..");
 
-		produce();
+		generate();
 
 		System.out.println("Done.");
 	}
@@ -111,27 +115,17 @@ public class StaticLSAsGenerator {
 	 * Generates the file.
 	 * </p>
 	 */
-	private void produce() {
+	private void generate() {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(_dest);
-
-			out.println("@prefix rdf:\t<http://www.w3.org/1999/02/"
-					+ "22-rdf-syntax-ns#> .");
-			out.println("@prefix rdfs:\t<http://www.w3.org/2000/01/"
-					+ "rdf-schema#> .");
-			out.println("@prefix owl:\t<http://www.w3.org/2002/07/owl#> .");
-			out.println("@prefix xsd:\t<http://www.w3.org/2001/XMLSchema#> .");
-			out.println("@prefix ex:\t<http://www.example.org#> .");
-			out.println("@prefix sapere:\t<http://www.sapere-project.eu/"
-					+ "ontologies/2012/0/sapere-model.owl#> .");
-			out.println("");
+			Utils.printPrefixes(out);
 
 			for (int l = 0; l < _numLSAs; l++) {
 				out.printf("sapere:lsa%d\n\t a sapere:LSA ", l);
 
-				for (int i = 1; i <= _propsDepth; i++) {
-					for (int j = 1; j <= _valPerPropDepth; j++) {
+				for (int i = 1; i <= _propsDep; i++) {
+					for (int j = 1; j <= _valPerProp; j++) {
 						out.printf(";\n\t ex:prop%d \"val%d-%d\" ", i, l, j);
 					}
 				}

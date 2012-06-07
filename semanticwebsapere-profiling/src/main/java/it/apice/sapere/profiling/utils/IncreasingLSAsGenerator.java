@@ -76,7 +76,7 @@ public class IncreasingLSAsGenerator {
 	 */
 	public void execute() {
 		System.out.println("==========================================");
-		System.out.println("LSAs Generator");
+		System.out.println("Increasing LSAs Generator");
 		System.out.println("==========================================");
 		System.out.println(String.format("Destination: %s",
 				_dest.getAbsolutePath()));
@@ -101,17 +101,7 @@ public class IncreasingLSAsGenerator {
 		PrintWriter out = null;
 		try {
 			out = new PrintWriter(_dest);
-
-			out.println("@prefix rdf:\t<http://www.w3.org/1999/02/"
-					+ "22-rdf-syntax-ns#> .");
-			out.println("@prefix rdfs:\t<http://www.w3.org/2000/01/"
-					+ "rdf-schema#> .");
-			out.println("@prefix owl:\t<http://www.w3.org/2002/07/owl#> .");
-			out.println("@prefix xsd:\t<http://www.w3.org/2001/XMLSchema#> .");
-			out.println("@prefix ex:\t<http://www.example.org#> .");
-			out.println("@prefix sapere:\t<http://www.sapere-project.eu/"
-					+ "ontologies/2012/0/sapere-model.owl#> .");
-			out.println("");
+			Utils.printPrefixes(out);
 
 			for (int numProps = 0; numProps <= _propsDepth; numProps++) {
 				int lb = 0;

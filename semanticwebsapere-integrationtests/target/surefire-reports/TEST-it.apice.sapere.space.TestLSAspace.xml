@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="35.705" errors="0" skipped="0" tests="7" name="it.apice.sapere.space.TestLSAspace">
+<testsuite failures="0" time="58.746" errors="0" skipped="0" tests="7" name="it.apice.sapere.space.TestLSAspace">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -64,11 +64,11 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="4.137" classname="it.apice.sapere.space.TestLSAspace" name="testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="5.996" classname="it.apice.sapere.space.TestLSAspace" name="testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="6.743" classname="it.apice.sapere.space.TestLSAspace" name="testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="3.564" classname="it.apice.sapere.space.TestLSAspace" name="testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="3.466" classname="it.apice.sapere.space.TestLSAspace" name="testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="6.02" classname="it.apice.sapere.space.TestLSAspace" name="testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
-  <testcase time="5.779" classname="it.apice.sapere.space.TestLSAspace" name="testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@6c28ca1c"/>
+  <testcase time="14.709" classname="it.apice.sapere.space.TestLSAspace" name="testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="7.855" classname="it.apice.sapere.space.TestLSAspace" name="testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="7.777" classname="it.apice.sapere.space.TestLSAspace" name="testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="6.699" classname="it.apice.sapere.space.TestLSAspace" name="testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="6.209" classname="it.apice.sapere.space.TestLSAspace" name="testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="5.685" classname="it.apice.sapere.space.TestLSAspace" name="testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
+  <testcase time="9.812" classname="it.apice.sapere.space.TestLSAspace" name="testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@2c164804"/>
 </testsuite>
