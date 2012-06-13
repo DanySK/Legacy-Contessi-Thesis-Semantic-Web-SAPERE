@@ -1,0 +1,18 @@
+PREFIX  ex:   <http://www.example.org/profile#>
+PREFIX  xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+# ---------------------------------------
+# Increments a value stored in an LSA.
+# ---------------------------------------
+
+MODIFY
+DELETE {
+  ?lsa ex:prop ?value .
+}
+INSERT {
+  ?lsa ex:prop ?newval .
+}
+WHERE
+  { ?lsa ex:prop ?value
+    BIND(( xsd:integer(?value) + 1 ) AS ?newval)
+  }

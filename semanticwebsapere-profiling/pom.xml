@@ -47,13 +47,13 @@
 			<version>${swsapere.vers}</version>
 			<type>bundle</type>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.tools.btrace</groupId>
-			<artifactId>btrace-client</artifactId>
-			<version>1.2</version>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.sun.tools.btrace</groupId> -->
+		<!-- <artifactId>btrace-client</artifactId> -->
+		<!-- <version>1.2</version> -->
+		<!-- </dependency> -->
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -65,6 +65,11 @@
 					<instructions>
 						<Bundle-Category>sapere-project</Bundle-Category>
 						<Bundle-SymbolicName>semanticwebsapere-profiling</Bundle-SymbolicName>
+
+						<Bundle-Activator>it.apice.sapere.profiling.internal.SAPEREProfilingActivator</Bundle-Activator>
+
+						<!-- <Import-Package>!com.sun.btrace.*,!com.sun.management.*,*</Import-Package> -->
+						<!-- <Embed-Dependency>btrace-client;scope=compile;version=1.2</Embed-Dependency> -->
 					</instructions>
 				</configuration>
 			</plugin>

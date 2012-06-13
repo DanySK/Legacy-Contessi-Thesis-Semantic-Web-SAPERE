@@ -6,6 +6,7 @@ import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
 import it.apice.sapere.api.node.agents.SAPERESysAgentSpec;
 import it.apice.sapere.api.node.logging.LogUtils;
+import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.profiling.utils.Utils;
 
 import java.io.File;
@@ -43,13 +44,14 @@ public class ParseCompileAgent implements SAPERESysAgentSpec {
 	@Override
 	public void behaviour(final NodeServices services, final LogUtils out,
 			final SAPEREAgent me) throws Exception {
-		out.log(String.format("Parse-Compile profiling with data from \"%s\"..",
-				source));
+		out.log(String.format(
+				"Parse-Compile profiling with data from \"%s\"..", source));
 
 		for (LSA lsa : Utils.parseInfo(services.getLSAParser(), source)) {
-			services.getLSACompiler().parse(
-					services.getLSACompiler().compile(lsa)
-							.toString(RDFFormat.RDF_XML), RDFFormat.RDF_XML);
+			@SuppressWarnings("rawtypes")
+			final CompiledLSA cLsa = services.getLSACompiler().compile(lsa);
+			services.getLSACompiler().parse(cLsa.toString(RDFFormat.RDF_XML),
+					RDFFormat.RDF_XML);
 		}
 
 		out.log("Done. Parse-Compile profiling completed");

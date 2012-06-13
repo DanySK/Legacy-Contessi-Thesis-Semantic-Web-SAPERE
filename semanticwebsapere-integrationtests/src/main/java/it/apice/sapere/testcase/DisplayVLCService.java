@@ -136,7 +136,7 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 		try {
 			updateDisplay();
 		} catch (Exception ex) {
-			stdOut.warn("Event dropped", ex);
+			stdOut.log("Event dropped");
 		}
 	}
 

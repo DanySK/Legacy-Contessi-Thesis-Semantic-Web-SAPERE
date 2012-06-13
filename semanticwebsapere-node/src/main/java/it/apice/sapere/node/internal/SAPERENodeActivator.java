@@ -417,6 +417,7 @@ public class SAPERENodeActivator implements BundleActivator {
 		refs.add(ref);
 
 		try {
+			// Loading SAPERE ontology
 			lsaSpace.loadOntology(getClass().getResource("sapere-model.owl")
 					.toURI());
 		} catch (URISyntaxException e) {
