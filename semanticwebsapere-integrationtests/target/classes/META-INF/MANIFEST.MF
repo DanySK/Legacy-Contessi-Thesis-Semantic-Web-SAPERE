@@ -1,8 +1,11 @@
 Manifest-Version: 1.0
-Export-Package: it.apice.sapere.testcase;uses:="it.apice.sapere.api.no
- de.logging,it.apice.sapere.api.node.agents,it.apice.sapere.api.lsas.v
- alues,it.apice.sapere.api.space,it.apice.sapere.api.space.observation
- ,it.apice.sapere.api,it.apice.sapere.api.lsas"
+Export-Package: it.apice.sapere.testcase;uses:="it.apice.sapere.testca
+ se.utils,it.apice.sapere.api.node.logging,it.apice.sapere.api.space,i
+ t.apice.sapere.api.node.agents,it.apice.sapere.api.lsas.values,it.api
+ ce.sapere.api.space.observation,it.apice.sapere.api,it.apice.sapere.a
+ pi.lsas",it.apice.sapere.testcase.utils;uses:="javax.swing",vlcj.tuto
+ rial1;uses:="it.apice.sapere.testcase.utils,javax.swing"
+Bundle-ClassPath: .,vlcj-2.1.0.jar,jna-3.4.0.jar,platform-3.4.0.jar
 Built-By: conteit
 Bundle-Category: sapere-project
 Tool: Bnd-0.0.357
@@ -10,17 +13,22 @@ Bundle-Name: SAPERE Integration Tests
 Created-By: Apache Maven Bundle Plugin
 Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
-Build-Jdk: 1.6.0_31
+Build-Jdk: 1.6.0_33
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1339529541311
-Bundle-ManifestVersion: 2
+Bnd-LastModified: 1339945884971
+Embed-Transitive: true
 Bundle-Activator: it.apice.sapere.internal.ITestsActivator
+Bundle-ManifestVersion: 2
 Bundle-Description: Contains all integration tests
+Embed-Dependency: vlcj;version=2.1.0,jna;version=3.4.0,platform;versio
+ n=3.4.0
 Import-Package: it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.
  sapere.api.lsas.values,it.apice.sapere.api.management,it.apice.sapere
  .api.node.agents,it.apice.sapere.api.node.logging,it.apice.sapere.api
  .space,it.apice.sapere.api.space.core,it.apice.sapere.api.space.obser
- vation,it.apice.sapere.testcase,org.osgi.framework;version="1.6"
+ vation,it.apice.sapere.testcase,it.apice.sapere.testcase.utils,javax.
+ imageio,javax.swing,javax.swing.event,javax.swing.filechooser,javax.s
+ wing.text,org.osgi.framework;version="1.6",vlcj.tutorial1
 Bundle-SymbolicName: semanticwebsapere-intergrationtests
 Bundle-DocURL: http://apice.unibo.it/
 

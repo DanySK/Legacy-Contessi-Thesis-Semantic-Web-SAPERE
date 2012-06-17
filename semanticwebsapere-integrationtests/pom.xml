@@ -103,6 +103,21 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>uk.co.caprica</groupId>
+			<artifactId>vlcj</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>platform</artifactId>
+			<version>3.4.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -118,6 +133,9 @@
 						<Bundle-SymbolicName>semanticwebsapere-intergrationtests</Bundle-SymbolicName>
 
 						<Bundle-Activator>it.apice.sapere.internal.ITestsActivator</Bundle-Activator>
+						<Import-Package>!uk.co.caprica.*,!com.sun.jna.*,*</Import-Package>
+						<Embed-Dependency>vlcj;version=2.1.0,jna;version=3.4.0,platform;version=3.4.0</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
 					</instructions>
 				</configuration>
 			</plugin>

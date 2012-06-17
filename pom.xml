@@ -25,7 +25,8 @@
 
 		<module>semanticwebsapere-full-jar</module>
 		<module>semanticwebsapere-profiling</module>
-		
+
+		<module>semanticwebsapere-demo</module>
 	</modules>
 
 	<organization>
@@ -56,6 +57,11 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		<repository> 
+		<id>caprica</id>
+		<name>Caprica Software</name>
+		<url>http://www.capricasoftware.co.uk/repo</url> 
+	</repository>
 	</repositories>
 
 	<dependencyManagement>

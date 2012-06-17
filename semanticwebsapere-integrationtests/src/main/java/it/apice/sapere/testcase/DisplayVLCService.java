@@ -11,8 +11,8 @@ import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.api.space.LSAspace;
 import it.apice.sapere.api.space.observation.LSAEvent;
 import it.apice.sapere.api.space.observation.LSAObserver;
+import it.apice.sapere.testcase.utils.DisplayFrame;
 
-import java.io.IOException;
 import java.net.URI;
 import java.util.concurrent.Semaphore;
 
@@ -83,6 +83,24 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 //	/** When playback has been started. */
 //	private transient long startCounting;
 
+	/** Reference to the {@link DisplayFrame}. */
+	private transient DisplayFrame player;
+
+	/**
+	 * <p>
+	 * Builds a new {@link DisplayVLCService}.
+	 * </p>
+	 * 
+	 * @param frame The display frame (player)
+	 */
+	public DisplayVLCService(final DisplayFrame frame) {
+		if (frame == null) {
+			throw new IllegalArgumentException("Invalid frame provided");
+		}
+
+		player = frame;
+	}
+	
 	@Override
 	public final void behaviour(final LSAFactory factory,
 			final LSAParser parser, final LSAspace space,
@@ -125,6 +143,8 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 				assert ex != null;
 			}
 		}
+		
+		player.dispose();
 	}
 
 	@Override
@@ -160,21 +180,28 @@ public class DisplayVLCService implements SAPEREAgentSpec, LSAObserver {
 
 		if (status.toString().equals("on")) {
 //			stdOut.spy("Activating..");
-			try {
+//			try {
 //				startingTime = Double.parseDouble(time.getValue().toString()
 //						.trim());
 //				startCounting = System.currentTimeMillis();
-				final String cmd = String.format(
-						"/Applications/VLC.app/Contents/MacOS/VLC "
-								+ "%s/%s",
-						FOLDER_PATH, content);
-				stdOut.log("Playing.. " + cmd);
-				Runtime.getRuntime().exec(cmd);
-
-				return true;
-			} catch (IOException e) {
-				stdOut.error("Cannot update display", e);
-			}
+//				final String cmd = String.format(
+//						"/Applications/VLC.app/Contents/MacOS/VLC "
+//								+ "%s/%s",
+//						FOLDER_PATH, content);
+//				stdOut.log("Playing.. " + cmd);
+//				Runtime.getRuntime().exec(cmd);
+			
+				final String mrl = String.format("%s/%s", FOLDER_PATH, content);
+				stdOut.log("Playing.. " + mrl);
+				try {
+					player.displayMedia(mrl);					
+					return true;
+				} catch (Exception ex) {
+					stdOut.error("Cannot play video", ex);
+				}
+//			} catch (IOException e) {
+//				stdOut.error("Cannot update display", e);
+//			}
 //		} else if (status.toString().equals("idle")) {
 //			stdOut.spy("Stopping..");
 //			try {

@@ -10,6 +10,7 @@ import java.net.URI;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDateTime;
 import com.hp.hpl.jena.query.Query;
@@ -43,6 +44,14 @@ public class Jena2SAPEREConverter {
 	private static final transient String LSA_CLASS = "http://"
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#LSA";
 
+	/** A SAPERE LSA-id prefix. */
+	private static final transient String LSA_PREFIX = "http://"
+			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#lsa";
+
+	/** LSA-id pattern. */
+	private static final transient Pattern LSA_ID_PATTERN = Pattern.compile("("
+			+ LSA_PREFIX + "\\w+-\\w+)");
+
 	/** SAPERE Model Factory. */
 	private transient PrivilegedLSAFactory factory;
 
@@ -62,7 +71,7 @@ public class Jena2SAPEREConverter {
 	 * <p>
 	 * Retrieves a reference to the (Privileged) LSA Factory.
 	 * </p>
-	 *
+	 * 
 	 * @return Reference to the factory
 	 */
 	public final PrivilegedLSAFactory getFactory() {
@@ -356,11 +365,28 @@ public class Jena2SAPEREConverter {
 
 			res.add(sdv);
 		} else if (rVal.isURIResource()) { // Checks if the object is a URI
-			res.add(factory.createPropertyValue(new URI(((Resource) rVal
-					.as(Resource.class)).getURI())));
+			final URI uri = new URI(rVal.asResource().getURI());
+			if (checkIsLSA(uri)) {
+				res.add(factory.createPropertyValue(factory.createLSAid(uri)));
+			} else {
+				res.add(factory.createPropertyValue(uri));
+			}
 		} else if (rVal.isLiteral()) { // Checks if the object is a Literal
 			res.add(parseLiteral((Literal) rVal.as(Literal.class)));
 		}
+	}
+
+	/**
+	 * <p>
+	 * Checks if the URI is an LSA-id.
+	 * </p>
+	 * 
+	 * @param uri
+	 *            The URI to be checked
+	 * @return True if is an LSA-id, false otherwise
+	 */
+	private boolean checkIsLSA(final URI uri) {
+		return LSA_ID_PATTERN.matcher(uri.toString()).matches();
 	}
 
 	/**

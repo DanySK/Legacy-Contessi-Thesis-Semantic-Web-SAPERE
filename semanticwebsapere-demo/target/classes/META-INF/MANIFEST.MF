@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Built-By: conteit
+Tool: Bnd-0.0.357
+Bundle-Category: sapere-project
+Bundle-Name: SAPERE demo
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
+ di di Bologna
+Build-Jdk: 1.6.0_33
+Bundle-Version: 0.1.0
+Bnd-LastModified: 1339945885852
+Bundle-ManifestVersion: 2
+Bundle-Activator: it.apice.sapere.demo.internal.DemoActivator
+Bundle-Description: This project contains a demo scenario for the new 
+ (semantic-enabled) SAPERE node
+Import-Package: com.hp.hpl.jena.sparql.expr,com.hp.hpl.jena.sparql.fun
+ ction,it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.sapere.ap
+ i.lsas.values,it.apice.sapere.api.management,it.apice.sapere.api.node
+ .agents,it.apice.sapere.api.node.logging,it.apice.sapere.api.space,it
+ .apice.sapere.api.space.core,it.apice.sapere.api.space.match.function
+ s,it.apice.sapere.api.space.observation,javax.swing,javax.swing.borde
+ r,org.osgi.framework;version="1.6"
+Bundle-SymbolicName: semanticwebsapere-demo
+Bundle-DocURL: http://apice.unibo.it/
+

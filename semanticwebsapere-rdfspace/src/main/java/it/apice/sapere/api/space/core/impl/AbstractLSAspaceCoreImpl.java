@@ -77,7 +77,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** LSA-id pattern. */
 	private static final transient Pattern LSA_ID_PATTERN = Pattern.compile("("
-			+ LSA_PREFIX + "\\d+-\\w+)");
+			+ LSA_PREFIX + "\\w+-\\w+)");
 
 	/** The rdf:type. */
 	private static final transient String RDF_TYPE = "http://"

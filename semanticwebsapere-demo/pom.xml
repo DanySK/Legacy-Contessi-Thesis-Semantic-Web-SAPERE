@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>semanticwebsapere</artifactId>
+		<groupId>it.apice.sapere</groupId>
+		<version>${swsapere.vers}</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>semanticwebsapere-demo</artifactId>
+	<packaging>bundle</packaging>
+	<name>SAPERE demo</name>
+	<description>This project contains a demo scenario for the new (semantic-enabled) SAPERE node</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.apice.sapere</groupId>
+			<artifactId>semanticwebsapere-node</artifactId>
+			<version>${swsapere.vers}</version>
+			<type>bundle</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.1.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Category>sapere-project</Bundle-Category>
+						<Bundle-SymbolicName>semanticwebsapere-demo</Bundle-SymbolicName>
+
+						<Bundle-Activator>it.apice.sapere.demo.internal.DemoActivator</Bundle-Activator>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

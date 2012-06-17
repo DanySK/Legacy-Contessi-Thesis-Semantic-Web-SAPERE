@@ -8,6 +8,7 @@ import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.testcase.DisplayVLCService;
 import it.apice.sapere.testcase.ResVLCIniter;
+import it.apice.sapere.testcase.utils.DisplayFrame;
 
 import java.net.URI;
 
@@ -39,6 +40,8 @@ public class ITestsActivator implements BundleActivator {
 	@SuppressWarnings("rawtypes")
 	@Override
 	public final void start(final BundleContext context) throws Exception {
+		final DisplayFrame frame = new DisplayFrame();
+		frame.setVisible(true);
 		final ServiceReference<LoggerFactory> lRef = context
 				.getServiceReference(LoggerFactory.class);
 		if (lRef != null) {
@@ -71,7 +74,7 @@ public class ITestsActivator implements BundleActivator {
 			// fact.createSysAgent("test_sys_agent", getSysSpec()).spawn();
 			// Thread.sleep(2 * SLEEP_TIME);
 
-			fact.createAgent("display", new DisplayVLCService()).spawn();
+			fact.createAgent("display", new DisplayVLCService(frame)).spawn();
 			fact.createAgent("scenario_initer", new ResVLCIniter()).spawn();
 			context.ungetService(ref2);
 		}

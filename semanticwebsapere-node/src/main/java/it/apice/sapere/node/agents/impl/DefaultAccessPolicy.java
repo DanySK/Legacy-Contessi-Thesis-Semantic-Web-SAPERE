@@ -103,7 +103,8 @@ public class DefaultAccessPolicy extends AbstractAccessPolicy {
 	 */
 	private void checkIfIsOwner(final CompiledLSA lsa,
 			final SAPEREAgent requestor) throws SAPEREException {
-		if (!lsa.readURIProperty(CREATOR_PROP)[0].equals(requestor
+		final URI[] uris = lsa.readURIProperty(CREATOR_PROP);
+		if (uris.length > 0 && !uris[0].equals(requestor
 				.getAgentURI())) {
 			throw new SAPEREException("Operation not allowed");
 		}
