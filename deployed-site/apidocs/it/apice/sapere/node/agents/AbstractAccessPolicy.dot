@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.LSAParser
-	c59354 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/LSAParser.html">
+	c64053 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/LSAParser.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAParser </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.LSAid
-	c59404 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/lsas/LSAid.html">
+	c64102 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/lsas/LSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAid </td></tr>
@@ -24,15 +24,31 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.LSA
-	c59405 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/lsas/LSA.html">
+	c64103 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/lsas/LSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSA </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.api.node.agents.SAPEREAgent
+	c64132 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/agents/SAPEREAgent.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;interface&raquo; </td></tr>
+			<tr><td> SAPEREAgent </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64133 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/agents/LSAspaceAccessPolicy.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> &laquo;interface&raquo; </td></tr>
+			<tr><td> LSAspaceAccessPolicy </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c59427 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
+	c64139 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -40,7 +56,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c59428 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
+	c64140 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSACompiler&lt;RDFStmtIterType&gt; </td></tr>
@@ -48,7 +64,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59430 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledLSA.html">
+	c64142 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledLSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CompiledLSA&lt;RDFStmtIterType&gt; </td></tr>
@@ -56,7 +72,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.LSAspace
-	c59435 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/LSAspace.html">
+	c64147 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/LSAspace.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspace </td></tr>
@@ -64,93 +80,81 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.LSAObserver
-	c59444 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/LSAObserver.html">
+	c64157 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/LSAObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAObserver </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.observation </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.SAPEREAgent
-	c59538 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgent.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> &laquo;interface&raquo; </td></tr>
-			<tr><td> SAPEREAgent </td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c59540 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspaceAccessPolicy.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> &laquo;interface&raquo; </td></tr>
-			<tr><td> LSAspaceAccessPolicy </td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy
-	c59542 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractAccessPolicy.html">
+	c64245 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractAccessPolicy </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy
-	c59546 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/DefaultAccessPolicy.html">
+	c64249 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/DefaultAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DefaultAccessPolicy </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	//it.apice.sapere.node.agents.LSAspaceAccessPolicy implements it.apice.sapere.api.space.LSAspace
-	c59435:p -> c59540:p [dir=back,arrowtail=empty,style=dashed];
-	//it.apice.sapere.node.agents.AbstractAccessPolicy implements it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c59540:p -> c59542:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.api.node.agents.LSAspaceAccessPolicy implements it.apice.sapere.api.space.LSAspace
+	c64147:p -> c64133:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.node.agents.AbstractAccessPolicy implements it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64133:p -> c64245:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.node.agents.impl.DefaultAccessPolicy extends it.apice.sapere.node.agents.AbstractAccessPolicy
-	c59542:p -> c59546:p [dir=back,arrowtail=empty];
+	c64245:p -> c64249:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c59542:p -> c59427:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.node.agents.SAPEREAgent
-	c59542:p -> c59538:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c64245:p -> c64139:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.api.node.agents.SAPEREAgent
+	c64245:p -> c64132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c59542:p -> c59428:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c64245:p -> c64140:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy NAVASSOC it.apice.sapere.api.LSAParser
-	c59542:p -> c59354:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c64245:p -> c64053:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
-	c59427:p -> c59404:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64139:p -> c64102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.LSAObserver
-	c59427:p -> c59444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64139:p -> c64157:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSA
-	c59428:p -> c59405:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64140:p -> c64103:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType> DEPEND it.apice.sapere.api.lsas.LSAid
-	c59430:p -> c59404:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.lsas.LSAid
-	c59435:p -> c59404:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64142:p -> c64102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.space.observation.LSAObserver
-	c59435:p -> c59444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64147:p -> c64157:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.lsas.LSAid
+	c64147:p -> c64102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.LSAspace DEPEND it.apice.sapere.api.lsas.LSA
-	c59435:p -> c59405:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.lsas.LSAid
-	c59542:p -> c59404:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64147:p -> c64103:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c64245:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.LSAspace
-	c59542:p -> c59435:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64245:p -> c64147:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.observation.LSAObserver
-	c59542:p -> c59444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64245:p -> c64157:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.lsas.LSAid
+	c64245:p -> c64102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59542:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59542:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59542:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64245:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.lsas.LSA
-	c59542:p -> c59405:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64245:p -> c64103:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
+	c64245:p -> c64132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.AbstractAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c64245:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59546:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64249:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.lsas.LSAid
-	c59546:p -> c59404:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64249:p -> c64102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59546:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64249:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59546:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64249:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
+	c64249:p -> c64132:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c59546:p -> c59430:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c59546:p -> c59538:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c64249:p -> c64142:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

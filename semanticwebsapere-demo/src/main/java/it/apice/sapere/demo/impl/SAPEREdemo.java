@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
  * </p>
  * 
  * @author Paolo Contessi
- *
+ * 
  */
 public class SAPEREdemo {
 
@@ -41,12 +41,13 @@ public class SAPEREdemo {
 		_fact = factory;
 		frame = new MainFrame();
 	}
-	
+
 	/**
 	 * <p>
 	 * Launches the business logic.
 	 * </p>
-	 * @throws Exception 
+	 * 
+	 * @throws Exception Unexpected situation
 	 */
 	public void execute() throws Exception {
 		final Display disp1 = new Display(10.0D, 22.0D);
@@ -58,18 +59,18 @@ public class SAPEREdemo {
 		_fact.createAgent("alice_agent", new PersonAgent(alicePerson)).spawn();
 
 		_fact.createAgent("disp1_agent", new DisplayAgent(disp1)).spawn();
-		_fact.createAgent("disp2_agent", new DisplayAgent(disp1)).spawn();
+		_fact.createAgent("disp2_agent", new DisplayAgent(disp2)).spawn();
 
 		SwingUtilities.invokeLater(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				frame.register(disp1);
 				frame.register(disp2);
-				
+
 				frame.register(bobPerson);
 				frame.register(alicePerson);
-				
+
 				frame.setVisible(true);
 			}
 		});

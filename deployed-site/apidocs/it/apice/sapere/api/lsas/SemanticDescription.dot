@@ -8,29 +8,22 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.EcolawFactory
-	c26454 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../EcolawFactory.html">
+	c28816 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../EcolawFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawFactory </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter
-	c26492 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../internal/Jena2SAPEREConverter.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> Jena2SAPEREConverter </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.api.internal </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.SemanticDescription
-	c26499 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SemanticDescription.html">
+	c28860 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SemanticDescription.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SemanticDescription </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c26524 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitor/LSAVisitor.html">
+	c28885 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitor/LSAVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAVisitor </td></tr>
@@ -38,67 +31,65 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl
-	c26586 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/EcolawFactoryImpl.html">
+	c28961 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/EcolawFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl
-	c26587 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/SemanticDescriptionImpl.html">
+	c28962 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/SemanticDescriptionImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SemanticDescriptionImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.impl.LSAImpl
-	c26590 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/LSAImpl.html">
+	c28965 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/LSAImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter
+	c28978 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../utils/Jena2SAPEREConverter.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> Jena2SAPEREConverter </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.utils </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl
-	c26615 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../lsas/visitors/impl/ToJenaVisitorImpl.html">
+	c28991 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../lsas/visitors/impl/ToJenaVisitorImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ToJenaVisitorImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.lsas.visitors.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter
-	c26618 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../space/impl/Jena2SAPEREConverter.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> Jena2SAPEREConverter </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.space.impl </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.impl.EcolawFactoryImpl implements it.apice.sapere.api.EcolawFactory
-	c26454:p -> c26586:p [dir=back,arrowtail=empty,style=dashed];
+	c28816:p -> c28961:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl implements it.apice.sapere.api.lsas.SemanticDescription
-	c26499:p -> c26587:p [dir=back,arrowtail=empty,style=dashed];
+	c28860:p -> c28962:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl implements it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c26524:p -> c26615:p [dir=back,arrowtail=empty,style=dashed];
+	c28885:p -> c28991:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAImpl NAVASSOC it.apice.sapere.api.lsas.SemanticDescription
-	c26590:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c28965:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26454:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26492:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28816:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.SemanticDescription DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c26499:p -> c26524:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28860:p -> c28885:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26586:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c26587:p -> c26524:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28961:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26587:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c26590:p -> c26524:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28962:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.SemanticDescriptionImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
+	c28962:p -> c28885:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26590:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28965:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.LSAImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
+	c28965:p -> c28885:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.SemanticDescription
+	c28978:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26615:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.SemanticDescription
-	c26618:p -> c26499:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c28991:p -> c28860:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52185 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../CustomStrategyPipelineStep.html">
+	c59069 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../CustomStrategyPipelineStep.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CustomStrategyPipelineStep&lt;T&gt; </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c52186 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../CustomStrategyPipeline.html">
+	c59070 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../CustomStrategyPipeline.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CustomStrategyPipeline&lt;T&gt; </td></tr>
@@ -24,28 +24,28 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T>
-	c52264 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CustomStrategyPipelineImpl.html">
+	c59149 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CustomStrategyPipelineImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> CustomStrategyPipelineImpl&lt;T&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> implements it.apice.sapere.api.space.core.strategy.CustomStrategyPipeline<T>
-	c52186:p -> c52264:p [dir=back,arrowtail=empty,style=dashed];
+	c59070:p -> c59149:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> NAVASSOC it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.strategy.impl.CustomStrategyPipelineImpl<T> DEPEND it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep<T>
-	c52264:p -> c52185:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c59149:p -> c59069:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

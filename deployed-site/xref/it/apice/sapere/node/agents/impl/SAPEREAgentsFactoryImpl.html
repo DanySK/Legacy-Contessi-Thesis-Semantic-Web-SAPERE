@@ -10,17 +10,17 @@
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> it.apice.sapere.node.agents.impl;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.LSAParser;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSACompiler;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractAccessPolicy;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.LSAspaceAccessPolicy;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.SAPEREAgent;
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.SAPEREAgentSpec;
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.SAPEREAgentsFactory;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.SAPERESysAgentSpec;
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.LoggerFactoryImpl;
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.api.node.logging.impl.LoggerFactoryImpl;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.LSAParser;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.LSAspaceAccessPolicy;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.SAPEREAgent;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.SAPEREAgentSpec;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.SAPERESysAgentSpec;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSACompiler;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractAccessPolicy;
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.NodeServicesImpl;
 <a class="jxr_linenumber" name="15" href="#15">15</a>  
 <a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> java.lang.reflect.Constructor;
@@ -35,7 +35,7 @@
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment"> * @author Paolo Contessi</em>
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <em class="jxr_javadoccomment"> * </em>
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../it/apice/sapere/node/agents/impl/SAPEREAgentsFactoryImpl.html">SAPEREAgentsFactoryImpl</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPEREAgentsFactory.html">SAPEREAgentsFactory</a> {
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../it/apice/sapere/node/agents/impl/SAPEREAgentsFactoryImpl.html">SAPEREAgentsFactoryImpl</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPEREAgentsFactory.html">SAPEREAgentsFactory</a> {
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Map of all local SAPEREAgents by name. */</em>
 <a class="jxr_linenumber" name="31" href="#31">31</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> Map&lt;String, SAPEREAgent&gt; localAgents = 
@@ -50,8 +50,8 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  			DefaultAccessPolicy.<strong class="jxr_keyword">class</strong>;
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
 <a class="jxr_linenumber" name="42" href="#42">42</a>  	@Override
-<a class="jxr_linenumber" name="43" href="#43">43</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPEREAgent.html">SAPEREAgent</a> createAgent(<strong class="jxr_keyword">final</strong> String agentLocalId,
-<a class="jxr_linenumber" name="44" href="#44">44</a>  			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPEREAgentSpec.html">SAPEREAgentSpec</a> spec) <strong class="jxr_keyword">throws</strong> SAPEREException {
+<a class="jxr_linenumber" name="43" href="#43">43</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPEREAgent.html">SAPEREAgent</a> createAgent(<strong class="jxr_keyword">final</strong> String agentLocalId,
+<a class="jxr_linenumber" name="44" href="#44">44</a>  			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPEREAgentSpec.html">SAPEREAgentSpec</a> spec) <strong class="jxr_keyword">throws</strong> SAPEREException {
 <a class="jxr_linenumber" name="45" href="#45">45</a>  		SAPEREAgent agent = getAgent(agentLocalId);
 <a class="jxr_linenumber" name="46" href="#46">46</a>  		<strong class="jxr_keyword">if</strong> (agent == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="47" href="#47">47</a>  			agent = <strong class="jxr_keyword">new</strong> <a href="../../../../../../it/apice/sapere/node/agents/impl/UserAgentImpl.html">UserAgentImpl</a>(agentLocalId, spec, 
@@ -71,7 +71,7 @@
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <em class="jxr_javadoccomment">	 * @throws SAPEREException</em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment">	 *             Unable to instantiate</em>
 <a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="64" href="#64">64</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../../../../it/apice/sapere/node/agents/LSAspaceAccessPolicy.html">LSAspaceAccessPolicy</a> obtainPolicyEnforcer() <strong class="jxr_keyword">throws</strong> SAPEREException {
+<a class="jxr_linenumber" name="64" href="#64">64</a>  	<strong class="jxr_keyword">private</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/LSAspaceAccessPolicy.html">LSAspaceAccessPolicy</a> obtainPolicyEnforcer() <strong class="jxr_keyword">throws</strong> SAPEREException {
 <a class="jxr_linenumber" name="65" href="#65">65</a>  		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="66" href="#66">66</a>  			<strong class="jxr_keyword">return</strong> getConstructor().newInstance(
 <a class="jxr_linenumber" name="67" href="#67">67</a>  					NodeServicesImpl.getInstance().getLSAspace(),
@@ -83,7 +83,7 @@
 <a class="jxr_linenumber" name="73" href="#73">73</a>  	}
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
 <a class="jxr_linenumber" name="75" href="#75">75</a>  	@Override
-<a class="jxr_linenumber" name="76" href="#76">76</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPEREAgent.html">SAPEREAgent</a> getAgent(<strong class="jxr_keyword">final</strong> String agentLocalId)
+<a class="jxr_linenumber" name="76" href="#76">76</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPEREAgent.html">SAPEREAgent</a> getAgent(<strong class="jxr_keyword">final</strong> String agentLocalId)
 <a class="jxr_linenumber" name="77" href="#77">77</a>  			<strong class="jxr_keyword">throws</strong> <a href="../../../../../../it/apice/sapere/api/SAPEREException.html">SAPEREException</a> {
 <a class="jxr_linenumber" name="78" href="#78">78</a>  		<strong class="jxr_keyword">if</strong> (isLocalIdInvalid(agentLocalId)) {
 <a class="jxr_linenumber" name="79" href="#79">79</a>  			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../it/apice/sapere/api/SAPEREException.html">SAPEREException</a>(<span class="jxr_string">"Invalid agent local ID provided"</span>);
@@ -161,8 +161,8 @@
 <a class="jxr_linenumber" name="151" href="#151">151</a> 	}
 <a class="jxr_linenumber" name="152" href="#152">152</a> 
 <a class="jxr_linenumber" name="153" href="#153">153</a> 	@Override
-<a class="jxr_linenumber" name="154" href="#154">154</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPEREAgent.html">SAPEREAgent</a> createSysAgent(<strong class="jxr_keyword">final</strong> String agentLocalId,
-<a class="jxr_linenumber" name="155" href="#155">155</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/node/agents/SAPERESysAgentSpec.html">SAPERESysAgentSpec</a> spec) <strong class="jxr_keyword">throws</strong> SAPEREException {
+<a class="jxr_linenumber" name="154" href="#154">154</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPEREAgent.html">SAPEREAgent</a> createSysAgent(<strong class="jxr_keyword">final</strong> String agentLocalId,
+<a class="jxr_linenumber" name="155" href="#155">155</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../it/apice/sapere/api/node/agents/SAPERESysAgentSpec.html">SAPERESysAgentSpec</a> spec) <strong class="jxr_keyword">throws</strong> SAPEREException {
 <a class="jxr_linenumber" name="156" href="#156">156</a> 		SAPEREAgent agent = getAgent(agentLocalId);
 <a class="jxr_linenumber" name="157" href="#157">157</a> 		<strong class="jxr_keyword">if</strong> (agent == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="158" href="#158">158</a> 			agent = <strong class="jxr_keyword">new</strong> <a href="../../../../../../it/apice/sapere/node/agents/impl/SysAgentImpl.html">SysAgentImpl</a>(agentLocalId, spec, 

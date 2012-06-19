@@ -1,6 +1,7 @@
 package it.apice.sapere.demo.objs.impl;
 
 import it.apice.sapere.demo.rendering.impl.Renderable;
+import it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -198,5 +199,10 @@ public class Person implements Renderable {
 	@Override
 	public boolean hits(final double x, final double y) {
 		return Point2D.distance(getX(), getY(), x, y) <= SIZE / 2;
+	}
+	
+	@Override
+	public void setSurface(final RenderablePanel surface) {
+		surface.repaint();
 	}
 }

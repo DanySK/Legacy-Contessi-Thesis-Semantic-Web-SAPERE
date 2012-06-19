@@ -8,14 +8,14 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
-	c20874 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IsFormula.html">
+	c23291 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IsFormula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> IsFormula&lt;Type&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.Formula<Type>
-	c20886 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../terms/Formula.html">
+	c23303 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../terms/Formula.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Formula&lt;Type&gt; </td></tr>
@@ -23,24 +23,24 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.IsFormulaImpl<Type>
-	c20958 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/IsFormulaImpl.html">
+	c23388 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/IsFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> IsFormulaImpl&lt;Type&gt; </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.formulas.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl
-	c20961 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/FormulaFactoryImpl.html">
+	c23391 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/FormulaFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> FormulaFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.formulas.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.formulas.IsFormula<Type> implements it.apice.sapere.api.ecolaws.terms.Formula<Type>
-	c20886:p -> c20874:p [dir=back,arrowtail=empty,style=dashed];
+	c23303:p -> c23291:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.formulas.impl.IsFormulaImpl<Type> implements it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
-	c20874:p -> c20958:p [dir=back,arrowtail=empty,style=dashed];
+	c23291:p -> c23388:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl DEPEND it.apice.sapere.api.ecolaws.formulas.IsFormula<Type>
-	c20961:p -> c20874:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23391:p -> c23291:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

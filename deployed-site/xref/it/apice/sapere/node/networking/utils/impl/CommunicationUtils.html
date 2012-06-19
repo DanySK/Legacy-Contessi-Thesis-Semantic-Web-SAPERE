@@ -10,10 +10,10 @@
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> it.apice.sapere.node.networking.utils.impl;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.LoggerFactoryImpl;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestMessageType;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.Message;
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.api.node.logging.impl.LoggerFactoryImpl;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.networking.Message;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestMessageType;
 <a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.obsnotif.impl.Notification;
 <a class="jxr_linenumber" name="8" href="#8">8</a>   
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> java.io.InputStream;
@@ -102,7 +102,7 @@
 <a class="jxr_linenumber" name="92" href="#92">92</a>  <em class="jxr_javadoccomment">	 *            the socket used for communicate with guest</em>
 <a class="jxr_linenumber" name="93" href="#93">93</a>  <em class="jxr_javadoccomment">	 * @return true if success</em>
 <a class="jxr_linenumber" name="94" href="#94">94</a>  <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="95" href="#95">95</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> sendMessage(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> mess, <strong class="jxr_keyword">final</strong> Socket socket) {
+<a class="jxr_linenumber" name="95" href="#95">95</a>  	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> sendMessage(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Message.html">Message</a> mess, <strong class="jxr_keyword">final</strong> Socket socket) {
 <a class="jxr_linenumber" name="96" href="#96">96</a>  		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="97" href="#97">97</a>  			<strong class="jxr_keyword">if</strong> (mess instanceof Notification) {
 <a class="jxr_linenumber" name="98" href="#98">98</a>  				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/obsnotif/impl/Notification.html">Notification</a> notif = (Notification) mess;

@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.Term<Type>
-	c43942 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Term.html">
+	c50286 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Term.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Term&lt;Type&gt; </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>
-	c43969 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../ValueTerm.html">
+	c50313 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../ValueTerm.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ValueTerm&lt;Type&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c43971 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../PropertyTerm.html">
+	c50315 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../PropertyTerm.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PropertyTerm </td></tr>
@@ -32,38 +32,38 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter
-	c44059 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./URItoPNameConverter.html">
+	c50416 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./URItoPNameConverter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> URItoPNameConverter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl
-	c44061 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./PropertyTermImpl.html">
+	c50418 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./PropertyTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyTermImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<Type>
-	c44064 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AnnotatedVarTermImpl.html">
+	c50421 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AnnotatedVarTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> AnnotatedVarTermImpl&lt;Type&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl extends it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<it.apice.sapere.api.lsas.PropertyName>
-	c44064:p -> c44061:p [dir=back,arrowtail=empty];
+	c50421:p -> c50418:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl implements it.apice.sapere.api.ecolaws.terms.PropertyTerm
-	c43971:p -> c44061:p [dir=back,arrowtail=empty,style=dashed];
+	c50315:p -> c50418:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter NAVASSOC it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl
-	c44059:p -> c44061:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c50416:p -> c50418:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c44059:p -> c43942:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c50416:p -> c50286:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.URItoPNameConverter DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c44059:p -> c43942:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>
-	c44061:p -> c43969:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c50416:p -> c50286:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c44061:p -> c43942:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c50418:p -> c50286:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.PropertyTermImpl DEPEND it.apice.sapere.api.ecolaws.terms.ValueTerm<Type>
+	c50418:p -> c50313:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c44064:p -> c43942:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c50421:p -> c50286:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

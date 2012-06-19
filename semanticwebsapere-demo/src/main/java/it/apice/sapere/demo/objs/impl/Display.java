@@ -1,5 +1,6 @@
 package it.apice.sapere.demo.objs.impl;
 
+import it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel;
 import it.apice.sapere.demo.rendering.impl.Renderable;
 
 import java.awt.Color;
@@ -47,6 +48,9 @@ public class Display implements Renderable {
 
 	/** Names which greetings are directed to. */
 	private String names = "Alfa, Beta, Gamma, Delta, ...";
+
+	/** The surface on which this will be displayed. */
+	private transient RenderablePanel _surface;
 
 	/**
 	 * <p>
@@ -148,6 +152,7 @@ public class Display implements Renderable {
 	 */
 	public void turnOff() {
 		isOn = false;
+		refreshDisplay();
 	}
 
 	/**
@@ -161,6 +166,7 @@ public class Display implements Renderable {
 	public void showGreetings(final String name) {
 		isOn = name != null && name.length() > 0;
 		names = name;
+		refreshDisplay();
 	}
 
 	@Override
@@ -243,6 +249,17 @@ public class Display implements Renderable {
 
 		return lines.toArray(new String[lines.size()]);
 	}
+	
+	/**
+	 * <p>
+	 * Causes display surface refresh.
+	 * </p>
+	 */
+	private void refreshDisplay() {
+		if (_surface != null) {
+			_surface.repaint();
+		}
+	}
 
 	@Override
 	public void moveTo(final double x, final double y) {
@@ -252,5 +269,11 @@ public class Display implements Renderable {
 	@Override
 	public boolean hits(final double x, final double y) {
 		return false;
+	}
+
+	@Override
+	public void setSurface(final RenderablePanel surface) {
+		_surface = surface;
+		surface.repaint();
 	}
 }

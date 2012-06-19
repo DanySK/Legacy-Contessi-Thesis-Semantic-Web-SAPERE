@@ -75,6 +75,24 @@ public interface CompiledLSA<RDFStmtIterType> {
 	 * @param propURI
 	 *            The URI of the property
 	 * @param propValue
+	 *            The value of the property (a DateTime literal)
+	 * @param <T>
+	 *            The type of the literal
+	 */
+	<T> void assertTypedProperty(URI propURI, T propValue);
+
+	/**
+	 * <p>
+	 * Adds a property to this compiled LSA.
+	 * </p>
+	 * <p>
+	 * THIS METHOD SHOULD BE USED ONLY BY THE MIDDLEWARE, IN ORDER TO HANDLE
+	 * SYNTHETIC PROPERTIES AND LOW-LEVEL ASPECTS.
+	 * </p>
+	 * 
+	 * @param propURI
+	 *            The URI of the property
+	 * @param propValue
 	 *            The value of the property (a URI)
 	 */
 	void assertProperty(URI propURI, URI propValue);

@@ -58,9 +58,9 @@ public class DisplayLSAObserver implements LSAObserver {
 					ids.add(((LSAidValue) val).getValue());
 				}
 			}
-
-			evQueue.offer(ids);
 		}
+		
+		evQueue.offer(ids);
 	}
 
 	/**

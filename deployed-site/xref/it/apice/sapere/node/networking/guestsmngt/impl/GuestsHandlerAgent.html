@@ -10,19 +10,19 @@
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> it.apice.sapere.node.networking.guestsmngt.impl;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.PrivilegedLSAFactory;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.RDFFormat;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.LSAid;
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.CompiledLSA;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceOperationType;
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.NodeServices;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.LoggerFactoryImpl;
-<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.Message;
-<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.Subscriber;
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.api.node.logging.impl.LoggerFactoryImpl;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.PrivilegedLSAFactory;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.RDFFormat;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.LSAid;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.NodeServices;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.networking.Message;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.networking.Subscriber;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.CompiledLSA;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceOperationType;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
 <a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.obsnotif.impl.Notification;
 <a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent;
 <a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest;
@@ -122,7 +122,7 @@
 <a class="jxr_linenumber" name="112" href="#112">112</a> <em class="jxr_javadoccomment">	 * @param destination</em>
 <a class="jxr_linenumber" name="113" href="#113">113</a> <em class="jxr_javadoccomment">	 *            the identifier of the destination guest</em>
 <a class="jxr_linenumber" name="114" href="#114">114</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="115" href="#115">115</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> sendMessageToGuest(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> note, 
+<a class="jxr_linenumber" name="115" href="#115">115</a> 	<strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> sendMessageToGuest(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Message.html">Message</a> note, 
 <a class="jxr_linenumber" name="116" href="#116">116</a> 			<strong class="jxr_keyword">final</strong> String destination) {
 <a class="jxr_linenumber" name="117" href="#117">117</a> 		<strong class="jxr_keyword">final</strong> String destIp = ipMap.get(destination);
 <a class="jxr_linenumber" name="118" href="#118">118</a> 		spy(<span class="jxr_string">"Sending a notification to ip: "</span> + destIp);
@@ -221,7 +221,7 @@
 <a class="jxr_linenumber" name="211" href="#211">211</a> 	}
 <a class="jxr_linenumber" name="212" href="#212">212</a> 
 <a class="jxr_linenumber" name="213" href="#213">213</a> 	@Override
-<a class="jxr_linenumber" name="214" href="#214">214</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="214" href="#214">214</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="215" href="#215">215</a> 		<strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="216" href="#216">216</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message = <a href="../../../../../../../it/apice/sapere/node/networking/utils/impl/CommunicationUtils.html">CommunicationUtils</a>
 <a class="jxr_linenumber" name="217" href="#217">217</a> 					.receiveMessage(socket);
@@ -347,12 +347,12 @@
 <a class="jxr_linenumber" name="337" href="#337">337</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="338" href="#338">338</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span> })
 <a class="jxr_linenumber" name="339" href="#339">339</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleRead(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="340" href="#340">340</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="340" href="#340">340</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="341" href="#341">341</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();
 <a class="jxr_linenumber" name="342" href="#342">342</a> 		spy(<span class="jxr_string">"READ Id: "</span> + message.getId() + <span class="jxr_string">" , requestor: "</span>
 <a class="jxr_linenumber" name="343" href="#343">343</a> 				+ message.getMacAddress());
 <a class="jxr_linenumber" name="344" href="#344">344</a> 
-<a class="jxr_linenumber" name="345" href="#345">345</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Subscriber.html">Subscriber</a> requestor = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestSubscriber.html">GuestSubscriber</a>(
+<a class="jxr_linenumber" name="345" href="#345">345</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Subscriber.html">Subscriber</a> requestor = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestSubscriber.html">GuestSubscriber</a>(
 <a class="jxr_linenumber" name="346" href="#346">346</a> 				message.getMacAddress());
 <a class="jxr_linenumber" name="347" href="#347">347</a> 
 <a class="jxr_linenumber" name="348" href="#348">348</a> 		space.beginRead();
@@ -379,7 +379,7 @@
 <a class="jxr_linenumber" name="369" href="#369">369</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="370" href="#370">370</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="371" href="#371">371</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleRefresh(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="372" href="#372">372</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="372" href="#372">372</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="373" href="#373">373</a> 		spy(<span class="jxr_string">"REFRESH: localization of "</span> + message.getMacAddress());
 <a class="jxr_linenumber" name="374" href="#374">374</a> 
 <a class="jxr_linenumber" name="375" href="#375">375</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();
@@ -408,7 +408,7 @@
 <a class="jxr_linenumber" name="398" href="#398">398</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="399" href="#399">399</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="400" href="#400">400</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleUpdate(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="401" href="#401">401</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="401" href="#401">401</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="402" href="#402">402</a> 		spy(<span class="jxr_string">"UPDATE Id: "</span> + message.getId());
 <a class="jxr_linenumber" name="403" href="#403">403</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();
 <a class="jxr_linenumber" name="404" href="#404">404</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/CompiledLSA.html">CompiledLSA</a> lsa = services.getLSACompiler().parse(
@@ -436,7 +436,7 @@
 <a class="jxr_linenumber" name="426" href="#426">426</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="427" href="#427">427</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="428" href="#428">428</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleMove(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="429" href="#429">429</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="429" href="#429">429</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="430" href="#430">430</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();
 <a class="jxr_linenumber" name="431" href="#431">431</a> 
 <a class="jxr_linenumber" name="432" href="#432">432</a> 		spy(<span class="jxr_string">"MOVE Id: "</span> + message.getId());
@@ -471,7 +471,7 @@
 <a class="jxr_linenumber" name="461" href="#461">461</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="462" href="#462">462</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="463" href="#463">463</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleReInject(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="464" href="#464">464</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="464" href="#464">464</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="465" href="#465">465</a> 		spy(<span class="jxr_string">"RE-INJECT "</span>);
 <a class="jxr_linenumber" name="466" href="#466">466</a> 
 <a class="jxr_linenumber" name="467" href="#467">467</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/CompiledLSA.html">CompiledLSA</a> locLsa = createGuestInfoLSA(message, services);
@@ -518,7 +518,7 @@
 <a class="jxr_linenumber" name="508" href="#508">508</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="509" href="#509">509</a> 	@SuppressWarnings({ <span class="jxr_string">"unchecked"</span>, <span class="jxr_string">"rawtypes"</span> })
 <a class="jxr_linenumber" name="510" href="#510">510</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleInject(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="511" href="#511">511</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="511" href="#511">511</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="512" href="#512">512</a> 		spy(<span class="jxr_string">"INJECT :"</span> + message.getLSA());
 <a class="jxr_linenumber" name="513" href="#513">513</a> 
 <a class="jxr_linenumber" name="514" href="#514">514</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/CompiledLSA.html">CompiledLSA</a> locLsa = createGuestInfoLSA(message, services);
@@ -562,7 +562,7 @@
 <a class="jxr_linenumber" name="552" href="#552">552</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="553" href="#553">553</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span> })
 <a class="jxr_linenumber" name="554" href="#554">554</a> 	<strong class="jxr_keyword">private</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/CompiledLSA.html">CompiledLSA</a> createGuestInfoLSA(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestMessage.html">GuestMessage</a> message,
-<a class="jxr_linenumber" name="555" href="#555">555</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="555" href="#555">555</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="556" href="#556">556</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/PrivilegedLSAFactory.html">PrivilegedLSAFactory</a> fact = services.getLSAFactory();
 <a class="jxr_linenumber" name="557" href="#557">557</a> 
 <a class="jxr_linenumber" name="558" href="#558">558</a> 		LSAid idLoc = fact.createLSAid(URI.create(locMap.get(message.getId()
@@ -602,7 +602,7 @@
 <a class="jxr_linenumber" name="592" href="#592">592</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> <strong class="jxr_keyword">int</strong> SERVER_PORT = 5555;
 <a class="jxr_linenumber" name="593" href="#593">593</a> 
 <a class="jxr_linenumber" name="594" href="#594">594</a> 	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> The message to be sent. */</em>
-<a class="jxr_linenumber" name="595" href="#595">595</a> 	<strong class="jxr_keyword">private</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> message;
+<a class="jxr_linenumber" name="595" href="#595">595</a> 	<strong class="jxr_keyword">private</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Message.html">Message</a> message;
 <a class="jxr_linenumber" name="596" href="#596">596</a> 
 <a class="jxr_linenumber" name="597" href="#597">597</a> 	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> The destination. */</em>
 <a class="jxr_linenumber" name="598" href="#598">598</a> 	<strong class="jxr_keyword">private</strong> String destination;
@@ -617,7 +617,7 @@
 <a class="jxr_linenumber" name="607" href="#607">607</a> <em class="jxr_javadoccomment">	 * @param aDestination</em>
 <a class="jxr_linenumber" name="608" href="#608">608</a> <em class="jxr_javadoccomment">	 *            the ip address of the destination guest</em>
 <a class="jxr_linenumber" name="609" href="#609">609</a> <em class="jxr_javadoccomment">	 */</em>
-<a class="jxr_linenumber" name="610" href="#610">610</a> 	<strong class="jxr_keyword">public</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestsHandlerAgent.html">SendMessageThread</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> aMessage, 
+<a class="jxr_linenumber" name="610" href="#610">610</a> 	<strong class="jxr_keyword">public</strong> <a href="../../../../../../../it/apice/sapere/node/networking/guestsmngt/impl/GuestsHandlerAgent.html">SendMessageThread</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Message.html">Message</a> aMessage, 
 <a class="jxr_linenumber" name="611" href="#611">611</a> 			<strong class="jxr_keyword">final</strong> String aDestination) {
 <a class="jxr_linenumber" name="612" href="#612">612</a> 		message = aMessage;
 <a class="jxr_linenumber" name="613" href="#613">613</a> 		destination = aDestination;

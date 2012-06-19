@@ -26,7 +26,7 @@ public class DisplayAgent implements SAPEREAgentSpec {
 
 	/** Reference to Display model entity. */
 	private final transient Display _display;
-	
+
 	/** Example type property. */
 	private static final transient URI EX_TYPE = URI
 			.create("http://www.example.org/demo#type");
@@ -118,6 +118,7 @@ public class DisplayAgent implements SAPEREAgentSpec {
 					_display.turnOff();
 				}
 			} catch (InterruptedException ex) {
+				assert ex != null;
 				out.spy("Task completed");
 			}
 		}

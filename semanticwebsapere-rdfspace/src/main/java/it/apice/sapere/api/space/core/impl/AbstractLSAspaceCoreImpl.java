@@ -111,10 +111,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** LSAs observations map. */
 	private final transient Map<LSAid, List<LSAObserver>> observers;
-	
+
 	/** Threads which notifies observers (one per type). */
-	private final transient ExecutorService asapExec = 
-			Executors.newFixedThreadPool(2);
+	private final transient ExecutorService asapExec = Executors
+			.newFixedThreadPool(2);
 
 	/* ==== OBSERVATION (end) ==== */
 
@@ -141,7 +141,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			new HashMap<String, Query>();
 
 	/** Stores every parsed SPARUL query (avoid re-parsing). */
-	private final transient Map<String, UpdateRequest> parsedSparulQueries = 
+	private final transient Map<String, UpdateRequest> parsedSparulQueries =
 			new HashMap<String, UpdateRequest>();
 
 	/** Map of each SPARUL Query to the applicable results (so bindings). */
@@ -789,6 +789,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		try {
 			checkInjectAgainstCustomStrategy(lsa);
 
+			// Raises WARNING (Unsupported axiom): seems relative to some weird
+			// interaction between Jena and Pellet, which concerns namespaces
+			// and prefixes
 			if (checkExistencePreCondition(lsa.getLSAid())) {
 				throw new SAPEREException("Duplicate LSA: " + lsa.getLSAid());
 			}
@@ -1187,9 +1190,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				parsedSparulQueries.put(query, uReq);
 			}
 
-			final QuerySolution bindings = retrieveBindings(
-					law.getAppliedMatch());
-			
+			final QuerySolution bindings = retrieveBindings(law
+					.getAppliedMatch());
+
 			assert bindings != null;
 			UpdateExecutionFactory.create(uReq, aGraphStore, bindings)
 					.execute();

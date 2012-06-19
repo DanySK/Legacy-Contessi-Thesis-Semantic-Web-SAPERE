@@ -8,38 +8,38 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.agents.impl.UserAgentImpl
-	c10685 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UserAgentImpl.html">
+	c12254 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UserAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> UserAgentImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SysAgentImpl
-	c10686 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SysAgentImpl.html">
+	c12255 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SysAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SysAgentImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl
-	c10687 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentsFactoryImpl.html">
+	c12256 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SAPEREAgentsFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SAPEREAgentsFactoryImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.DefaultAccessPolicy
-	c10688 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DefaultAccessPolicy.html">
+	c12257 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DefaultAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DefaultAccessPolicy </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c10689 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSAPEREAgentImpl.html">
+	c12258 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSAPEREAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSAPEREAgentImpl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.agents.impl.UserAgentImpl extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c10689:p -> c10685:p [dir=back,arrowtail=empty];
+	c12258:p -> c12254:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.impl.SysAgentImpl extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c10689:p -> c10686:p [dir=back,arrowtail=empty];
+	c12258:p -> c12255:p [dir=back,arrowtail=empty];
 }
 

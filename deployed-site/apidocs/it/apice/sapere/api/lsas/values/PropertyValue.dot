@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.LSAFactory
-	c30185 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../LSAFactory.html">
+	c32675 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../LSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAFactory </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.EcolawFactory
-	c30186 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../EcolawFactory.html">
+	c32676 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../EcolawFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawFactory </td></tr>
@@ -24,22 +24,15 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30218 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/ListTerm.html">
+	c32708 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/ListTerm.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ListTerm&lt;Type extends it.apice.sapere.api.lsas.values.PropertyValue&lt;?, ?&gt;&gt; </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.terms </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter
-	c30224 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../internal/Jena2SAPEREConverter.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> Jena2SAPEREConverter </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.api.internal </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.Property
-	c30233 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../Property.html">
+	c32722 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../Property.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Property </td></tr>
@@ -47,84 +40,84 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.URIValue
-	c30245 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./URIValue.html">
+	c32734 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./URIValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> URIValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.SDescValue
-	c30246 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SDescValue.html">
+	c32735 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SDescValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SDescValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./PropertyValue.html">
+	c32736 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./PropertyValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PropertyValue&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.LSAidValue
-	c30248 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAidValue.html">
+	c32737 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAidValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAidValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.LongValue
-	c30249 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LongValue.html">
+	c32738 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LongValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LongValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.LiteralValue
-	c30250 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LiteralValue.html">
+	c32739 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LiteralValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LiteralValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.IntegerValue
-	c30251 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IntegerValue.html">
+	c32740 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IntegerValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> IntegerValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.FloatValue
-	c30252 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./FloatValue.html">
+	c32741 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./FloatValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> FloatValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.DoubleValue
-	c30253 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DoubleValue.html">
+	c32742 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DoubleValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> DoubleValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.DateTimeValue
-	c30254 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DateTimeValue.html">
+	c32743 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DateTimeValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> DateTimeValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.BooleanValue
-	c30255 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BooleanValue.html">
+	c32744 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BooleanValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BooleanValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30256 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitor/LSAVisitor.html">
+	c32745 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitor/LSAVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAVisitor </td></tr>
@@ -132,226 +125,218 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.ValueTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30303 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/impl/ValueTermImpl.html">
+	c32806 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/impl/ValueTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ValueTermImpl&lt;Type extends it.apice.sapere.api.lsas.values.PropertyValue&lt;?, ?&gt;&gt; </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.terms.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.ListTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30308 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/impl/ListTermImpl.html">
+	c32811 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/terms/impl/ListTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ListTermImpl&lt;Type extends it.apice.sapere.api.lsas.values.PropertyValue&lt;?, ?&gt;&gt; </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.terms.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.LSAFactoryImpl
-	c30317 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/LSAFactoryImpl.html">
+	c32820 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/LSAFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl
-	c30318 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/EcolawFactoryImpl.html">
+	c32821 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/EcolawFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.impl.PropertyImpl
-	c30321 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/PropertyImpl.html">
+	c32824 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/PropertyImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c30326 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/PropertyValueImpl.html">
+	c32829 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends java.lang.Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas.values.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter
+	c32838 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../utils/Jena2SAPEREConverter.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> Jena2SAPEREConverter </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.utils </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl
-	c30347 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../lsas/visitors/impl/ToJenaVisitorImpl.html">
+	c32851 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../lsas/visitors/impl/ToJenaVisitorImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ToJenaVisitorImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.lsas.visitors.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter
-	c30350 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/impl/Jena2SAPEREConverter.html">
-		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> Jena2SAPEREConverter </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.space.impl </font></td></tr>
-		</table></td></tr>
-		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.URIValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30245:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32734:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.SDescValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30246:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32735:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.LSAidValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30248:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32737:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.LongValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30249:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32738:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.LiteralValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30250:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32739:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.IntegerValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30251:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32740:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.FloatValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30252:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32741:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.DoubleValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30253:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32742:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.DateTimeValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30254:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32743:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.BooleanValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30255:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32744:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.terms.impl.ListTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> implements it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30218:p -> c30308:p [dir=back,arrowtail=empty,style=dashed];
+	c32708:p -> c32811:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.impl.EcolawFactoryImpl implements it.apice.sapere.api.EcolawFactory
-	c30186:p -> c30318:p [dir=back,arrowtail=empty,style=dashed];
+	c32676:p -> c32821:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.impl.PropertyImpl implements it.apice.sapere.api.lsas.Property
-	c30233:p -> c30321:p [dir=back,arrowtail=empty,style=dashed];
+	c32722:p -> c32824:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType> implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30247:p -> c30326:p [dir=back,arrowtail=empty,style=dashed];
+	c32736:p -> c32829:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl implements it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30256:p -> c30347:p [dir=back,arrowtail=empty,style=dashed];
+	c32745:p -> c32851:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.lsas.impl.PropertyImpl NAVASSOC it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LSAidValue
-	c30185:p -> c30248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LiteralValue
-	c30185:p -> c30250:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
-	c30185:p -> c30254:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.BooleanValue
-	c30185:p -> c30255:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.URIValue
-	c30185:p -> c30245:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.SDescValue
-	c30185:p -> c30246:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LongValue
-	c30185:p -> c30249:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.FloatValue
-	c30185:p -> c30252:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.DoubleValue
-	c30185:p -> c30253:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.IntegerValue
-	c30185:p -> c30251:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30185:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32675:p -> c32741:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.Property
-	c30185:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32675:p -> c32722:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LiteralValue
+	c32675:p -> c32739:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.IntegerValue
+	c32675:p -> c32740:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.SDescValue
+	c32675:p -> c32735:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
+	c32675:p -> c32743:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LongValue
+	c32675:p -> c32738:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.BooleanValue
+	c32675:p -> c32744:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.DoubleValue
+	c32675:p -> c32742:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.LSAidValue
+	c32675:p -> c32737:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32675:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.URIValue
+	c32675:p -> c32734:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
+	c32676:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30186:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30186:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32676:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30186:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32676:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30186:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32676:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30186:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32676:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30186:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32676:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30218:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30224:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30224:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30224:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.internal.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.Property
-	c30224:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32708:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32722:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30233:p -> c30256:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.Property DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30233:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32722:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType> DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30247:p -> c30256:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32736:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.ValueTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30303:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.terms.impl.ListTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30308:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32806:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.ListTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30308:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LSAidValue
-	c30317:p -> c30248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LiteralValue
-	c30317:p -> c30250:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
-	c30317:p -> c30254:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.BooleanValue
-	c30317:p -> c30255:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.URIValue
-	c30317:p -> c30245:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.SDescValue
-	c30317:p -> c30246:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LongValue
-	c30317:p -> c30249:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30317:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32811:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.terms.impl.ListTermImpl<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>> DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
+	c32811:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.FloatValue
-	c30317:p -> c30252:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DoubleValue
-	c30317:p -> c30253:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.IntegerValue
-	c30317:p -> c30251:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32820:p -> c32741:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.Property
-	c30317:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30318:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32820:p -> c32722:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32820:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LiteralValue
+	c32820:p -> c32739:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.IntegerValue
+	c32820:p -> c32740:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.SDescValue
+	c32820:p -> c32735:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
+	c32820:p -> c32743:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LongValue
+	c32820:p -> c32738:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.BooleanValue
+	c32820:p -> c32744:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DoubleValue
+	c32820:p -> c32742:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.LSAidValue
+	c32820:p -> c32737:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.URIValue
+	c32820:p -> c32734:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30318:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32821:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30318:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32821:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
+	c32821:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
+	c32821:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
+	c32821:p -> c32708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30318:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30318:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.terms.ListTerm<Type extends it.apice.sapere.api.lsas.values.PropertyValue<?, ?>>
-	c30318:p -> c30218:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30321:p -> c30256:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30321:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32821:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.Property
-	c30321:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32824:p -> c32722:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
+	c32824:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.impl.PropertyImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32824:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType> DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c30326:p -> c30256:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30347:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32829:p -> c32745:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.Property
+	c32838:p -> c32722:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32838:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32838:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.utils.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32838:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl DEPEND it.apice.sapere.api.lsas.Property
-	c30347:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30350:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30350:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c30350:p -> c30247:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.impl.Jena2SAPEREConverter DEPEND it.apice.sapere.api.lsas.Property
-	c30350:p -> c30233:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c32851:p -> c32722:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
+	c32851:p -> c32736:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

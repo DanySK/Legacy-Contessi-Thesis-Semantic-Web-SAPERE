@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.LiteralValue
-	c49364 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LiteralValue.html">
+	c55891 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LiteralValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LiteralValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c49440 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c55981 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.LiteralValueImpl
-	c49443 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LiteralValueImpl.html">
+	c55984 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LiteralValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LiteralValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.LiteralValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.lang.String, it.apice.sapere.api.lsas.values.LiteralValue>
-	c49440:p -> c49443:p [dir=back,arrowtail=empty];
+	c55981:p -> c55984:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.LiteralValueImpl implements it.apice.sapere.api.lsas.values.LiteralValue
-	c49364:p -> c49443:p [dir=back,arrowtail=empty,style=dashed];
+	c55891:p -> c55984:p [dir=back,arrowtail=empty,style=dashed];
 }
 

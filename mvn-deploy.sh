@@ -3,4 +3,4 @@
 export MAVEN_OPTS=-Xmx1024m
 
 echo Deploying SEMANTICWEBSAPERE Maven Project..
-~/apache-maven-3.0.4/bin/mvn clean deploy
+~/apache-maven-3.0.4/bin/mvn -Dcpd.skip=true clean deploy

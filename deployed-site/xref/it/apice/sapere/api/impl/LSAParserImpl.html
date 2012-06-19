@@ -14,8 +14,8 @@
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.PrivilegedLSAFactory;
 <a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.RDFFormat;
 <a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.internal.Jena2SAPEREConverter;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.LSA;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.LSA;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.utils.Jena2SAPEREConverter;
 <a class="jxr_linenumber" name="9" href="#9">9</a>   
 <a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
 <a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
@@ -42,7 +42,7 @@
 <a class="jxr_linenumber" name="32" href="#32">32</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> String BASE_URI = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  
 <a class="jxr_linenumber" name="34" href="#34">34</a>  	<em class="jxr_javadoccomment">/**</em><em class="jxr_javadoccomment"> Converter. */</em>
-<a class="jxr_linenumber" name="35" href="#35">35</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> <a href="../../../../../it/apice/sapere/api/internal/Jena2SAPEREConverter.html">Jena2SAPEREConverter</a> processor;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> <a href="../../../../../it/apice/sapere/api/utils/Jena2SAPEREConverter.html">Jena2SAPEREConverter</a> processor;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
 <a class="jxr_linenumber" name="37" href="#37">37</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment">	 * &lt;p&gt;</em>
@@ -57,7 +57,7 @@
 <a class="jxr_linenumber" name="47" href="#47">47</a>  			<strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Invalid factory"</span>);
 <a class="jxr_linenumber" name="48" href="#48">48</a>  		}
 <a class="jxr_linenumber" name="49" href="#49">49</a>  
-<a class="jxr_linenumber" name="50" href="#50">50</a>  		processor = <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/internal/Jena2SAPEREConverter.html">Jena2SAPEREConverter</a>(aFactory);
+<a class="jxr_linenumber" name="50" href="#50">50</a>  		processor = <strong class="jxr_keyword">new</strong> <a href="../../../../../it/apice/sapere/api/utils/Jena2SAPEREConverter.html">Jena2SAPEREConverter</a>(aFactory);
 <a class="jxr_linenumber" name="51" href="#51">51</a>  	}
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>  	@Override

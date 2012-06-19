@@ -127,6 +127,13 @@ public class CompiledLSAImpl implements CompiledLSA<StmtIterator> {
 	}
 
 	@Override
+	public <T> void assertTypedProperty(final URI propURI, final T propValue) {
+		model.add(model.createResource(lsaId.getId().toString()),
+				model.createProperty(propURI.toString()),
+				model.createTypedLiteral(propValue));
+	}
+	
+	@Override
 	public final void clearProperty(final URI propURI) {
 		model.remove(model.getResource(lsaId.getId().toString())
 				.listProperties(model.createProperty(propURI.toString())));

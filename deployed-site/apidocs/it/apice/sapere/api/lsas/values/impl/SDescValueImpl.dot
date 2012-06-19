@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.SDescValue
-	c48428 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SDescValue.html">
+	c54923 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SDescValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SDescValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.SDescValueImpl
-	c48507 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SDescValueImpl.html">
+	c55016 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SDescValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SDescValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c48508 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c55017 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.SDescValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<it.apice.sapere.api.lsas.SemanticDescription, it.apice.sapere.api.lsas.values.SDescValue>
-	c48508:p -> c48507:p [dir=back,arrowtail=empty];
+	c55017:p -> c55016:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.SDescValueImpl implements it.apice.sapere.api.lsas.values.SDescValue
-	c48428:p -> c48507:p [dir=back,arrowtail=empty,style=dashed];
+	c54923:p -> c55016:p [dir=back,arrowtail=empty,style=dashed];
 }
 

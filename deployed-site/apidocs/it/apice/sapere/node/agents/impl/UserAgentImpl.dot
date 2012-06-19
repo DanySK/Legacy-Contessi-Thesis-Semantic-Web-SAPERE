@@ -7,39 +7,39 @@
 digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
-	// it.apice.sapere.node.agents.SAPEREAgentSpec
-	c59769 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgentSpec.html">
+	// it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c64371 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/SAPEREAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentSpec </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c59773 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAspaceAccessPolicy.html">
+	// it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64374 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/LSAspaceAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceAccessPolicy </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.UserAgentImpl
-	c59776 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UserAgentImpl.html">
+	c64487 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UserAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> UserAgentImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c59780 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSAPEREAgentImpl.html">
+	c64491 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractSAPEREAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSAPEREAgentImpl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.agents.impl.UserAgentImpl extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c59780:p -> c59776:p [dir=back,arrowtail=empty];
-	// it.apice.sapere.node.agents.impl.UserAgentImpl NAVASSOC it.apice.sapere.node.agents.SAPEREAgentSpec
-	c59776:p -> c59769:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.agents.impl.UserAgentImpl NAVASSOC it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c59776:p -> c59773:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c64491:p -> c64487:p [dir=back,arrowtail=empty];
+	// it.apice.sapere.node.agents.impl.UserAgentImpl NAVASSOC it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c64487:p -> c64371:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.node.agents.impl.UserAgentImpl NAVASSOC it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64487:p -> c64374:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

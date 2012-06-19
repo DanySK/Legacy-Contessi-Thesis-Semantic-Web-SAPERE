@@ -1,5 +1,7 @@
 package it.apice.sapere.demo.rendering.impl;
 
+import it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel;
+
 import java.awt.Graphics2D;
 
 /**
@@ -46,4 +48,15 @@ public interface Renderable {
 	 * @return True if hits the object, false otherwise
 	 */
 	boolean hits(double x, double y);
+
+	/**
+	 * <p>
+	 * Let the {@link Renderable} know the surface on which it will be
+	 * displayed.
+	 * </p>
+	 * 
+	 * @param surface
+	 *            The surface
+	 */
+	void setSurface(RenderablePanel surface);
 }

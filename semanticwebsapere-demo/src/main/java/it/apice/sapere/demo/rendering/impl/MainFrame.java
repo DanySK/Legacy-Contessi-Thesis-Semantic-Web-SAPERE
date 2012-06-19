@@ -61,6 +61,7 @@ public class MainFrame extends JFrame {
 	 */
 	public void register(final Renderable obj) {
 		objs.add(obj);
+		obj.setSurface(contentPane);
 	}
 
 	/**
@@ -72,7 +73,7 @@ public class MainFrame extends JFrame {
 	 * @author Paolo Contessi
 	 * 
 	 */
-	private static class RenderablePanel extends JPanel {
+	public static class RenderablePanel extends JPanel {
 
 		/** Serialization ID. */
 		private static final long serialVersionUID = -4824976996368327770L;

@@ -86,25 +86,30 @@ public class PersonAgent implements SAPEREAgentSpec {
 		space.inject(myLsa);
 		myLsa = space.read(myLsa.getLSAId());
 
-		// Updating it each time a movement is made
-		while (me.isRunning()) {
-			final Location loc = _person.getNextMovement();
+		try {
+			// Updating it each time a movement is made
+			while (me.isRunning()) {
+				final Location loc = _person.getNextMovement();
 
-			out.log("Updating location in LSA-space");
-			final PropertyValue<?, ?> actualX = factory.createPropertyValue(loc
-					.getX());
-			final PropertyValue<?, ?> actualY = factory.createPropertyValue(loc
-					.getY());
+				out.log("Updating location in LSA-space");
+				final PropertyValue<?, ?> actualX = factory
+						.createPropertyValue(loc.getX());
+				final PropertyValue<?, ?> actualY = factory
+						.createPropertyValue(loc.getY());
 
-			myLsa.getSemanticDescription().get(locXProp)
-					.changeValue(lastKnownX, actualX);
-			myLsa.getSemanticDescription().get(locYProp)
-					.changeValue(lastKnownY, actualY);
+				myLsa.getSemanticDescription().get(locXProp)
+						.changeValue(lastKnownX, actualX);
+				myLsa.getSemanticDescription().get(locYProp)
+						.changeValue(lastKnownY, actualY);
 
-			space.update(myLsa);
+				space.update(myLsa);
 
-			lastKnownX = actualX;
-			lastKnownY = actualY;
+				lastKnownX = actualX;
+				lastKnownY = actualY;
+			}
+		} catch (InterruptedException ex) {
+			assert ex != null;
+			out.spy("Task completed");
 		}
 	}
 

@@ -39,6 +39,7 @@ public class SynthPropsHandler implements CustomStrategyPipelineStep {
 	private static final transient URI LOCAL_VAL = URI.create(SAPERE_NS
 			+ "local");
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public final CompiledLSA handleInject(final CompiledLSA lsa)
 			throws SAPEREException {
@@ -47,9 +48,9 @@ public class SynthPropsHandler implements CustomStrategyPipelineStep {
 
 		final Calendar now = Calendar.getInstance();
 		lsa.clearProperty(CREATION_TIME_PROP);
-		lsa.assertProperty(CREATION_TIME_PROP, now.getTime().toString());
+		lsa.assertTypedProperty(CREATION_TIME_PROP, now);
 		lsa.clearProperty(LAST_MOD_PROP);
-		lsa.assertProperty(LAST_MOD_PROP, now.getTime().toString());
+		lsa.assertTypedProperty(LAST_MOD_PROP, now);
 
 		return lsa;
 	}
@@ -65,11 +66,12 @@ public class SynthPropsHandler implements CustomStrategyPipelineStep {
 		return lsa;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public final CompiledLSA handleUpdate(final CompiledLSA lsa)
 			throws SAPEREException {
 		lsa.clearProperty(LAST_MOD_PROP);
-		lsa.assertProperty(LAST_MOD_PROP, Calendar.getInstance().toString());
+		lsa.assertTypedProperty(LAST_MOD_PROP, Calendar.getInstance());
 
 		return lsa;
 	}

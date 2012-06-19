@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.LSAid
-	c28137 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAid.html">
+	c30554 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAid </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.AbstractTestPropertyValue<ValueType extends java.lang.Comparable<ValueType>, CompType>
-	c28140 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPropertyValue.html">
+	c30557 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPropertyValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestPropertyValue&lt;ValueType extends Comparable&lt;ValueType&gt;, CompType&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.AbstractTestLSAidValue
-	c28141 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAidValue.html">
+	c30558 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAidValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestLSAidValue </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.AbstractTestLSAidValue extends it.apice.sapere.api.lsas.values.AbstractTestPropertyValue<it.apice.sapere.api.lsas.LSAid, it.apice.sapere.api.lsas.values.LSAidValue>
-	c28140:p -> c28141:p [dir=back,arrowtail=empty];
+	c30557:p -> c30558:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.api.lsas.values.AbstractTestLSAidValue DEPEND it.apice.sapere.api.lsas.LSAid
-	c28141:p -> c28137:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c30558:p -> c30554:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

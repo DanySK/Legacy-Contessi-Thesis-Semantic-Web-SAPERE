@@ -5,8 +5,10 @@ import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.Property;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.SemanticDescription;
+import it.apice.sapere.api.lsas.values.LSAidValue;
 import it.apice.sapere.api.lsas.values.PropertyValue;
 import it.apice.sapere.api.lsas.values.SDescValue;
+import it.apice.sapere.api.lsas.values.URIValue;
 import it.apice.sapere.api.lsas.visitor.LSAVisitor;
 
 import java.util.Calendar;
@@ -121,6 +123,15 @@ public class ToJenaVisitorImpl implements LSAVisitor {
 			// Pop root lsaResource and property [unstack]
 			lsaResource = tmpRes;
 			actualProp = tmpProp;
+		} else if (val instanceof LSAidValue) {
+			model.add(
+					lsaResource,
+					actualProp,
+					model.createResource(((LSAidValue) val).getValue().getId()
+							.toString()));
+		} else if (val instanceof URIValue) {
+			model.add(lsaResource, actualProp, model
+					.createResource(((URIValue) val).getValue().toString()));
 		} else { // Standard (flat) behaviour
 			Literal lit;
 			if (val.hasLocale()) {

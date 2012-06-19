@@ -12,16 +12,16 @@
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
 <a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.RDFFormat;
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.lsas.LSAid;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceEvent;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceObserver;
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceOperationType;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.NodeServices;
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.NodeServicesImpl;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber;
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.Message;
-<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.Subscriber;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.NodeServices;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.networking.Message;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.agents.networking.Subscriber;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceEvent;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceObserver;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.observation.SpaceOperationType;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.NodeServicesImpl;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber;
 <a class="jxr_linenumber" name="15" href="#15">15</a>  
 <a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> java.util.ArrayList;
 <a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">import</strong> java.util.Hashtable;
@@ -75,12 +75,12 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>  	}
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>  	@Override
-<a class="jxr_linenumber" name="68" href="#68">68</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="68" href="#68">68</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="69" href="#69">69</a>  		services.getLSAspace().addSpaceObserver(<strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>  		<strong class="jxr_keyword">while</strong> (isRunning()) {
 <a class="jxr_linenumber" name="72" href="#72">72</a>  			<strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="73" href="#73">73</a>  				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Message.html">Message</a> note = getInputQueue().take();
+<a class="jxr_linenumber" name="73" href="#73">73</a>  				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Message.html">Message</a> note = getInputQueue().take();
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
 <a class="jxr_linenumber" name="75" href="#75">75</a>  				<strong class="jxr_keyword">if</strong> (note instanceof SubscriptionRequest) {
 <a class="jxr_linenumber" name="76" href="#76">76</a>  					manageSubscription((SubscriptionRequest) note);
@@ -131,7 +131,7 @@
 <a class="jxr_linenumber" name="121" href="#121">121</a> 				.toString());
 <a class="jxr_linenumber" name="122" href="#122">122</a> 		<strong class="jxr_keyword">if</strong> (res1 != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="123" href="#123">123</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; res1.size(); i++) {
-<a class="jxr_linenumber" name="124" href="#124">124</a> 				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Subscriber.html">Subscriber</a> e = res1.get(i);
+<a class="jxr_linenumber" name="124" href="#124">124</a> 				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Subscriber.html">Subscriber</a> e = res1.get(i);
 <a class="jxr_linenumber" name="125" href="#125">125</a> 				<strong class="jxr_keyword">if</strong> (e instanceof AbstractSAPEREAgentImpl
 <a class="jxr_linenumber" name="126" href="#126">126</a> 						&amp;&amp; sub.getSubscriber() 
 <a class="jxr_linenumber" name="127" href="#127">127</a> 						instanceof <a href="../../../../../../../it/apice/sapere/node/agents/impl/AbstractSAPEREAgentImpl.html">AbstractSAPEREAgentImpl</a>) {
@@ -149,7 +149,7 @@
 <a class="jxr_linenumber" name="139" href="#139">139</a> 		}
 <a class="jxr_linenumber" name="140" href="#140">140</a> 		<strong class="jxr_keyword">if</strong> (res2 != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="141" href="#141">141</a> 			<strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; res1.size(); i++) {
-<a class="jxr_linenumber" name="142" href="#142">142</a> 				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/Subscriber.html">Subscriber</a> e = res1.get(i);
+<a class="jxr_linenumber" name="142" href="#142">142</a> 				<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/agents/networking/Subscriber.html">Subscriber</a> e = res1.get(i);
 <a class="jxr_linenumber" name="143" href="#143">143</a> 				<strong class="jxr_keyword">if</strong> (e instanceof AbstractSAPEREAgentImpl
 <a class="jxr_linenumber" name="144" href="#144">144</a> 						&amp;&amp; sub.getSubscriber() 
 <a class="jxr_linenumber" name="145" href="#145">145</a> 						instanceof <a href="../../../../../../../it/apice/sapere/node/agents/impl/AbstractSAPEREAgentImpl.html">AbstractSAPEREAgentImpl</a>) {

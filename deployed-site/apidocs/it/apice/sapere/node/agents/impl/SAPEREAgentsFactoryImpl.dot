@@ -7,63 +7,63 @@
 digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
-	// it.apice.sapere.node.agents.SAPERESysAgentSpec
-	c60234 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPERESysAgentSpec.html">
+	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec
+	c64852 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/SAPERESysAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPERESysAgentSpec </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.SAPEREAgentSpec
-	c60235 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgentSpec.html">
+	// it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c64853 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/SAPEREAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentSpec </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.SAPEREAgentsFactory
-	c60236 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgentsFactory.html">
+	// it.apice.sapere.api.node.agents.SAPEREAgentsFactory
+	c64854 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/SAPEREAgentsFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentsFactory </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.SAPEREAgent
-	c60237 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgent.html">
+	// it.apice.sapere.api.node.agents.SAPEREAgent
+	c64855 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c60239 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAspaceAccessPolicy.html">
+	// it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64856 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/node/agents/LSAspaceAccessPolicy.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceAccessPolicy </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl
-	c60244 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SAPEREAgentsFactoryImpl.html">
+	c64971 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SAPEREAgentsFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SAPEREAgentsFactoryImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	//it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl implements it.apice.sapere.node.agents.SAPEREAgentsFactory
-	c60236:p -> c60244:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl NAVASSOC it.apice.sapere.node.agents.SAPEREAgent
-	c60244:p -> c60237:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.node.agents.LSAspaceAccessPolicy
-	c60244:p -> c60239:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.node.agents.SAPERESysAgentSpec
-	c60244:p -> c60234:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgentSpec
-	c60244:p -> c60235:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.node.agents.SAPEREAgent
-	c60244:p -> c60237:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	//it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl implements it.apice.sapere.api.node.agents.SAPEREAgentsFactory
+	c64854:p -> c64971:p [dir=back,arrowtail=empty,style=dashed];
+	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl NAVASSOC it.apice.sapere.api.node.agents.SAPEREAgent
+	c64971:p -> c64855:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.api.node.agents.LSAspaceAccessPolicy
+	c64971:p -> c64856:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPERESysAgentSpec
+	c64971:p -> c64852:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c64971:p -> c64853:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
+	c64971:p -> c64855:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

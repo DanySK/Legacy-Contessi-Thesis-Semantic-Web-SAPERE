@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.LSA
-	c36760 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../lsas/LSA.html">
+	c43096 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../lsas/LSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSA </td></tr>
@@ -16,37 +16,35 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.LSAEvent
-	c36800 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAEvent.html">
+	c43151 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAEvent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAEvent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl
-	c36878 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/LSAEventImpl.html">
+	c43227 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/LSAEventImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAEventImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.observation.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
-	// it.apice.sapere.testcase.DisplayVLCService
-	c36931 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../testcase/DisplayVLCService.html">
+	// it.apice.sapere.demo.agents.impl.DisplayLSAObserver
+	c43266 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/DisplayLSAObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-			<tr><td> DisplayVLCService </td></tr>
-			<tr><td><font point-size="7.0"> it.apice.sapere.testcase </font></td></tr>
+			<tr><td> DisplayLSAObserver </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.demo.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.space.observation.impl.LSAEventImpl implements it.apice.sapere.api.space.observation.LSAEvent
-	c36800:p -> c36878:p [dir=back,arrowtail=empty,style=dashed];
+	c43151:p -> c43227:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl NAVASSOC it.apice.sapere.api.lsas.LSA
-	c36878:p -> c36760:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.testcase.DisplayVLCService NAVASSOC it.apice.sapere.api.lsas.LSA
-	c36931:p -> c36760:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c43227:p -> c43096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.observation.LSAEvent DEPEND it.apice.sapere.api.lsas.LSA
-	c36800:p -> c36760:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43151:p -> c43096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl DEPEND it.apice.sapere.api.lsas.LSA
-	c36878:p -> c36760:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.space.observation.LSAEvent
-	c36931:p -> c36800:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43227:p -> c43096:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.demo.agents.impl.DisplayLSAObserver DEPEND it.apice.sapere.api.space.observation.LSAEvent
+	c43266:p -> c43151:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

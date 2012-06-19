@@ -12,11 +12,11 @@
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
 <a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.RDFFormat;
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.SAPEREException;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.CompiledLSA;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSACompiler;
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.NodeServices;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.node.NodeServices;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.CompiledLSA;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSACompiler;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.api.space.core.LSAspaceCore;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> it.apice.sapere.node.agents.AbstractSystemAgent;
 <a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.internal.NodeServicesImpl;
 <a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.NetworkManager;
 <a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> it.apice.sapere.node.networking.impl.NodeMessage;
@@ -229,7 +229,7 @@
 <a class="jxr_linenumber" name="219" href="#219">219</a> 	}
 <a class="jxr_linenumber" name="220" href="#220">220</a> 
 <a class="jxr_linenumber" name="221" href="#221">221</a> 	@Override
-<a class="jxr_linenumber" name="222" href="#222">222</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="222" href="#222">222</a> 	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> behaviour(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="223" href="#223">223</a> 		btClient = <strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/bluetooth/impl/BTClient.html">BTClient</a>(myNodeMessage);
 <a class="jxr_linenumber" name="224" href="#224">224</a> 
 <a class="jxr_linenumber" name="225" href="#225">225</a> 		<strong class="jxr_keyword">try</strong> {
@@ -315,7 +315,7 @@
 <a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">	 *             Error while serializing myNodeMessage</em>
 <a class="jxr_linenumber" name="306" href="#306">306</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="307" href="#307">307</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleNodeInfo(<strong class="jxr_keyword">final</strong> OutputStream out,
-<a class="jxr_linenumber" name="308" href="#308">308</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message, <strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services)
+<a class="jxr_linenumber" name="308" href="#308">308</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message, <strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services)
 <a class="jxr_linenumber" name="309" href="#309">309</a> 			<strong class="jxr_keyword">throws</strong> IOException {
 <a class="jxr_linenumber" name="310" href="#310">310</a> 		neighbourRegistration(message, services);
 <a class="jxr_linenumber" name="311" href="#311">311</a> 
@@ -347,7 +347,7 @@
 <a class="jxr_linenumber" name="337" href="#337">337</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="338" href="#338">338</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="339" href="#339">339</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> neighbourRegistration(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message,
-<a class="jxr_linenumber" name="340" href="#340">340</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="340" href="#340">340</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="341" href="#341">341</a> 		<strong class="jxr_keyword">final</strong> String newId = netManager.registerNeighbour(<strong class="jxr_keyword">new</strong> <a href="../../../../../../../it/apice/sapere/node/networking/bluetooth/impl/BTNeighbour.html">BTNeighbour</a>(<strong class="jxr_keyword">this</strong>,
 <a class="jxr_linenumber" name="342" href="#342">342</a> 				message.getSender()));
 <a class="jxr_linenumber" name="343" href="#343">343</a> 
@@ -391,7 +391,7 @@
 <a class="jxr_linenumber" name="381" href="#381">381</a> <em class="jxr_javadoccomment">	 */</em>
 <a class="jxr_linenumber" name="382" href="#382">382</a> 	@SuppressWarnings({ <span class="jxr_string">"rawtypes"</span>, <span class="jxr_string">"unchecked"</span> })
 <a class="jxr_linenumber" name="383" href="#383">383</a> 	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> handleDiffuse(<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/networking/impl/NodeMessage.html">NodeMessage</a> message,
-<a class="jxr_linenumber" name="384" href="#384">384</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/node/agents/NodeServices.html">NodeServices</a> services) {
+<a class="jxr_linenumber" name="384" href="#384">384</a> 			<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/node/NodeServices.html">NodeServices</a> services) {
 <a class="jxr_linenumber" name="385" href="#385">385</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSAspaceCore.html">LSAspaceCore</a> space = services.getLSAspace();
 <a class="jxr_linenumber" name="386" href="#386">386</a> 		<strong class="jxr_keyword">final</strong> <a href="../../../../../../../it/apice/sapere/api/space/core/LSACompiler.html">LSACompiler</a> lsaComp = services.getLSACompiler();
 <a class="jxr_linenumber" name="387" href="#387">387</a> 
