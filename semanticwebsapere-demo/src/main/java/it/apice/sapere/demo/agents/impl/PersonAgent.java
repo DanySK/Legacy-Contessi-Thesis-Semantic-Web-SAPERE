@@ -4,6 +4,7 @@ import java.net.URI;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.LSAParser;
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.PropertyName;
 import it.apice.sapere.api.lsas.values.PropertyValue;
@@ -83,8 +84,16 @@ public class PersonAgent implements SAPEREAgentSpec {
 				.addProperty(factory.createProperty(LOC_Y, lastKnownY));
 
 		// Injecting personal LSA
-		space.inject(myLsa);
-		myLsa = space.read(myLsa.getLSAId());
+		boolean success = false;
+		while (!success) {
+			try {
+				space.inject(myLsa);
+				myLsa = space.read(myLsa.getLSAId());
+				success = true;
+			} catch (SAPEREException ex) {
+				success = false;
+			}
+		}
 
 		try {
 			// Updating it each time a movement is made

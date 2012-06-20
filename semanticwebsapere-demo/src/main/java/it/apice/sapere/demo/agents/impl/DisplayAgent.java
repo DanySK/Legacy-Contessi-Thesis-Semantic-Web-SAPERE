@@ -2,6 +2,7 @@ package it.apice.sapere.demo.agents.impl;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.LSAParser;
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
 import it.apice.sapere.api.lsas.PropertyName;
@@ -83,8 +84,16 @@ public class DisplayAgent implements SAPEREAgentSpec {
 								factory.createPropertyValue(_display.getY())));
 
 		// Injecting personal LSA
-		space.inject(myLsa);
-		myLsa = space.read(myLsa.getLSAId());
+		boolean success = false;
+		while (!success) {
+			try {
+				space.inject(myLsa);
+				myLsa = space.read(myLsa.getLSAId());
+				success = true;
+			} catch (SAPEREException ex) {
+				success = false;
+			}
+		}
 
 		final DisplayLSAObserver obs = new DisplayLSAObserver(
 				factory.createPropertyName(USER_LSA_ID));

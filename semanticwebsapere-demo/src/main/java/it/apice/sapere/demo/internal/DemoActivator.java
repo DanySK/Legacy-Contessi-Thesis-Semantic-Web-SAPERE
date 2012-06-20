@@ -1,8 +1,10 @@
 package it.apice.sapere.demo.internal;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
+import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
 import it.apice.sapere.demo.functions.impl.DistanceFunction;
 import it.apice.sapere.demo.impl.SAPEREdemo;
@@ -31,8 +33,8 @@ public class DemoActivator implements BundleActivator {
 
 	@Override
 	public void start(final BundleContext context) throws Exception {
-		final String onto = context.getProperty("ontologies");
-		final boolean useOnto = onto != null && onto.equals("on");
+		final String onto = context.getProperty("sapere.space.reasoner");
+		final boolean useOnto = onto != null && onto.equals("owl-dl");
 
 		factRef = context.getServiceReference(SAPEREAgentsFactory.class);
 		if (factRef != null) {
@@ -59,20 +61,22 @@ public class DemoActivator implements BundleActivator {
 			context.ungetService(ref);
 		}
 
-		// if (useOnto) {
-//		@SuppressWarnings("rawtypes")
-//		final ServiceReference<LSAspaceCore> sref = context
-//				.getServiceReference(LSAspaceCore.class);
-//		if (sref != null) {
-//			@SuppressWarnings("rawtypes")
-//			final LSAspaceCore space = context.getService(sref);
-//
-//			// space.loadOntology(getClass().getResource("demo.owl").toURI());
-//			System.out.println(space.toString());
-//
-//			context.ungetService(sref);
-//		}
-		// }
+		Thread.sleep(1000L);
+
+		if (useOnto) {
+			@SuppressWarnings("rawtypes")
+			final ServiceReference<LSAspaceCore> sref = context
+					.getServiceReference(LSAspaceCore.class);
+			if (sref != null) {
+				@SuppressWarnings("rawtypes")
+				final LSAspaceCore space = context.getService(sref);
+
+				space.loadOntology(getClass().getResource("demo.owl").toURI(),
+						RDFFormat.TURTLE);
+
+				context.ungetService(sref);
+			}
+		}
 
 		Thread.sleep(2000L);
 
@@ -92,7 +96,6 @@ public class DemoActivator implements BundleActivator {
 			context.ungetService(rref);
 		}
 	}
-	
 
 	/**
 	 * <p>

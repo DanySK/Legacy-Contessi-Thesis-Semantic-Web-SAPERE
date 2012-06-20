@@ -3,7 +3,5 @@
 @prefix ex: <http://www.example.org/demo#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-
-# Defines the ex:name property as equivalent to foaf:name.
-ex:name rdf:type rdf:Property.
-ex:name owl:equivalentProperty foaf:name.
+ex:name rdf:type rdf:Property ;
+	owl:equivalentProperty foaf:name.

@@ -30,6 +30,8 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * <p>
@@ -85,6 +87,9 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	/** Executor for network stuffs. */
 	private final transient ExecutorService exec = Executors
 			.newSingleThreadExecutor();
+
+	/** Mutual exclusion lock. */
+	private final transient Lock mutex = new ReentrantLock();
 
 	/** Singleton instance. */
 	private static final transient NetworkManagerImpl INSTANCE = 
@@ -146,15 +151,20 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	 * @return The destination address (IP:Port)
 	 */
 	private InetSocketAddress retrieveSockAddr(final Object to) {
-		if (to instanceof LSAid) {
-			return neighLIds.get(((LSAid) to).getId());
-		} else if (to instanceof URI) {
-			return neighbIds.get((URI) to);
-		} else if (to instanceof String) {
-			return neighbIds.get(to);
-		}
+		mutex.lock();
+		try {
+			if (to instanceof LSAid) {
+				return neighLIds.get(((LSAid) to).getId());
+			} else if (to instanceof URI) {
+				return neighbIds.get((URI) to);
+			} else if (to instanceof String) {
+				return neighbIds.get(to);
+			}
 
-		return neighbIds.get(URI.create(to.toString()));
+			return neighbIds.get(URI.create(to.toString()));
+		} finally {
+			mutex.unlock();
+		}
 	}
 
 	/**
@@ -191,26 +201,31 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	@Override
 	public boolean register(final String id, final InetSocketAddress addr)
 			throws SAPEREException {
-		if (neighbIds.put(id, addr) == null) {
-			final CompiledLSA neighbLSA = comp.create();
-			neighbLSA.assertProperty(URI.create(TYPE_PROP_URI),
-					URI.create(NEIGHB_INDIV_URI));
-			neighbLSA.assertProperty(URI.create(ID_PROP_URI), id);
+		mutex.lock();
+		try {
+			if (neighbIds.put(id, addr) == null) {
+				final CompiledLSA neighbLSA = comp.create();
+				neighbLSA.assertProperty(URI.create(TYPE_PROP_URI),
+						URI.create(NEIGHB_INDIV_URI));
+				neighbLSA.assertProperty(URI.create(ID_PROP_URI), id);
 
-			space.beginWrite();
-			try {
-				space.inject(neighbLSA);
-			} finally {
-				space.done();
+				space.beginWrite();
+				try {
+					space.inject(neighbLSA);
+				} finally {
+					space.done();
+				}
+
+				neighLIds.put(neighbLSA.getLSAid().getId(), addr);
+				spy(String.format("Registered: <%s, %s, %s>", id, addr,
+						neighbLSA.getLSAid()));
+				return true;
 			}
 
-			neighLIds.put(neighbLSA.getLSAid().getId(), addr);
-			spy(String.format("Registered: <%s, %s, %s>", id, addr,
-					neighbLSA.getLSAid()));
-			return true;
+			return false;
+		} finally {
+			mutex.unlock();
 		}
-
-		return false;
 	}
 
 	@Override
@@ -305,9 +320,12 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 					}
 				}
 			}
-		} catch (Exception ex) {
+		} catch (IOException ex) {
 			LoggerFactoryImpl.getInstance().getLogger(NetworkManagerImpl.class)
 					.error("Cannot open an incoming connection", ex);
+		} catch (ClassNotFoundException ex) {
+			LoggerFactoryImpl.getInstance().getLogger(NetworkManagerImpl.class)
+					.error("Cannot deserialize message", ex);
 		} finally {
 			if (sock != null) {
 				try {
@@ -351,6 +369,11 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 		} finally {
 			lsaSpace.done();
 		}
+	}
+
+	@Override
+	public int countNeighbours() {
+		return neighbIds.size();
 	}
 
 	/**

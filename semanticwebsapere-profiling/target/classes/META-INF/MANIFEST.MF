@@ -5,8 +5,8 @@ Export-Package: it.apice.sapere.profiling.agents;uses:="it.apice.saper
  ,it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.sapere.api.man
  agement",it.apice.sapere.profiling.utils;uses:="it.apice.sapere.api,i
  t.apice.sapere.api.lsas",it.apice.sapere.profiling.utils.agents;uses:
- ="it.apice.sapere.api.node.logging,it.apice.sapere.api.node.agents,it
- .apice.sapere.api.space,it.apice.sapere.profiling.utils,it.apice.sape
+ ="it.apice.sapere.api.node.logging,it.apice.sapere.api.space,it.apice
+ .sapere.api.node.agents,it.apice.sapere.profiling.utils,it.apice.sape
  re.api,it.apice.sapere.api.lsas"
 Built-By: conteit
 Bundle-Category: sapere-project
@@ -17,7 +17,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_33
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1340095456365
+Bnd-LastModified: 1340204471178
 Bundle-Activator: it.apice.sapere.profiling.internal.SAPEREProfilingAc
  tivator
 Bundle-ManifestVersion: 2

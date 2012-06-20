@@ -1,6 +1,7 @@
 package it.apice.sapere.api.space.core.impl;
 
 import it.apice.sapere.api.PrivilegedLSAFactory;
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
@@ -1123,6 +1124,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	@Override
 	public final void loadOntology(final URI ontoURI) throws SAPEREException {
+		loadOntology(ontoURI, RDFFormat.RDF_XML);
+	}
+	
+	@Override
+	public final void loadOntology(final URI ontoURI, final RDFFormat format) 
+			throws SAPEREException {
 		if (ontoURI == null) {
 			throw new IllegalArgumentException("Invalid URI provided");
 		}
@@ -1130,7 +1137,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		acquireWriteLock();
 		try {
 			if (loadedOntos.add(ontoURI)) {
-				model.read(ontoURI.toString());
+				model.read(ontoURI.toString(), format.toString());
 			}
 		} catch (Exception ex) {
 			throw new SAPEREException(

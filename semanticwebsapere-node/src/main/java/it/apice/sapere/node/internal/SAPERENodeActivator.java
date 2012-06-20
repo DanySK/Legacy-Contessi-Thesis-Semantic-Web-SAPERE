@@ -20,16 +20,12 @@ import it.apice.sapere.management.impl.ReactionManagerImpl;
 import it.apice.sapere.management.impl.ReactionManagerLogger;
 import it.apice.sapere.management.impl.SynthPropsHandler;
 import it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl;
-import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
-import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Properties;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -81,10 +77,12 @@ public class SAPERENodeActivator implements BundleActivator {
 	private transient MatchFunctRegistry<Function> mFunctRegistry;
 
 	/** List of published registrations. */
-	private final transient List<ServiceRegistration<?>> regs = new LinkedList<ServiceRegistration<?>>();
+	private final transient List<ServiceRegistration<?>> regs = 
+			new LinkedList<ServiceRegistration<?>>();
 
 	/** List of retrieved references. */
-	private final transient List<ServiceReference<?>> refs = new LinkedList<ServiceReference<?>>();
+	private final transient List<ServiceReference<?>> refs = 
+			new LinkedList<ServiceReference<?>>();
 
 	/** Reference to eco-laws scheduler. */
 	private transient ReactionManager rManager;
@@ -163,15 +161,16 @@ public class SAPERENodeActivator implements BundleActivator {
 			if (diffConfig != null) {
 				final File config = new File(diffConfig);
 
-				final Properties props = new Properties();
-				props.setProperty("other", "127.0.0.1:20021");
-				props.setProperty("other2", "127.0.0.1:20022");
-				props.storeToXML(new FileOutputStream(config),
-						"Diffusion configuration", "utf-8");
+				// final Properties props = new Properties();
+				// props.setProperty("other", "127.0.0.1:20021");
+				// props.setProperty("other2", "127.0.0.1:20022");
+				// props.storeToXML(new FileOutputStream(config),
+				// "Diffusion configuration", "utf-8");
 				NetworkManagerImpl.getInstance().loadTable(config);
 			}
 			log("   + LSA Relocator enabled (port: "
-					+ NetworkManagerImpl.getIncomingPort() + ")");
+					+ NetworkManagerImpl.getIncomingPort() + "; #neighbours: "
+					+ NetworkManagerImpl.getInstance().countNeighbours() + ")");
 		} catch (Exception ex) {
 			log("   - LSA Relocator NOT enabled", ex.getCause());
 		}
@@ -193,7 +192,8 @@ public class SAPERENodeActivator implements BundleActivator {
 		final ReactionManagerImpl rMng = new ReactionManagerImpl(
 				new DefaultReactionsScheduler(), lawCompiler);
 		rManager = rMng;
-		rManager.addReactionManagerObserver(new ReactionManagerLogger(rManager));
+		rManager.addReactionManagerObserver(
+				new ReactionManagerLogger(rManager));
 		lsaSpace.addSpaceObserver(rMng);
 		rManager.spawn();
 
@@ -257,7 +257,8 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerReactionManager(final BundleContext context) {
-		regs.add(context.registerService(ReactionManager.class, rManager, null));
+		regs.add(context.registerService(ReactionManager.class, rManager, 
+				null));
 	}
 
 	/**
@@ -459,7 +460,9 @@ public class SAPERENodeActivator implements BundleActivator {
 		log("   - Killing agents");
 		SAPEREAgentsFactoryImpl.getInstance().killAll();
 		rManager.kill();
-		BluetoothManagerAgent.getInstance(NetworkManager.getInstance()).kill();
+		NetworkManagerImpl.getInstance().kill();
+		// BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
+		// .kill();
 		// GuestsHandlerAgent.getInstance().kill();
 		// NotifierAgent.getInstance().kill();
 

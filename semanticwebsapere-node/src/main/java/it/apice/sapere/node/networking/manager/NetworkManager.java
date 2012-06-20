@@ -55,4 +55,13 @@ public interface NetworkManager {
 	 *            Configuration file
 	 */
 	void loadTable(File config);
+
+	/**
+	 * <p>
+	 * Retrieves the number of registered neighbours.
+	 * </p>
+	 * 
+	 * @return Number of neighbours
+	 */
+	int countNeighbours();
 }

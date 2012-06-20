@@ -90,9 +90,15 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 
 	@Override
 	public final void loadOntology(final URI ontoURI) throws SAPEREException {
+		loadOntology(ontoURI, RDFFormat.RDF_XML);
+	}
+	
+	@Override
+	public final void loadOntology(final URI ontoURI, final RDFFormat format) 
+			throws SAPEREException {
 		space.beginWrite();
 		try {
-			space.loadOntology(ontoURI);
+			space.loadOntology(ontoURI, format);
 			LoggerFactoryImpl
 					.getInstance()
 					.getLogger(AbstractAccessPolicy.class)
