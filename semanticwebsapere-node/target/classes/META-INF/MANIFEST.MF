@@ -6,7 +6,8 @@ Export-Package: it.apice.sapere.management;uses:="it.apice.sapere.api.
  it.apice.sapere.api.node.logging,it.apice.sapere.api.space,it.apice.s
  apere.api.node.agents,it.apice.sapere.api.space.core,it.apice.sapere.
  api.space.observation,it.apice.sapere.api,it.apice.sapere.api.lsas,it
- .apice.sapere.api.node"
+ .apice.sapere.api.node",it.apice.sapere.node.networking.manager;uses:
+ ="it.apice.sapere.api"
 Ignore-Package: com.ibm.oti.connection,com.ibm.oti.vm,com.sun.cdc.io
 Bundle-ClassPath: .,bluecove-2.1.0.jar
 Built-By: conteit
@@ -18,7 +19,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_33
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1340101546872
+Bnd-LastModified: 1340189205395
 Bundle-Activator: it.apice.sapere.node.internal.SAPERENodeActivator
 Bundle-ManifestVersion: 2
 Bundle-Description: This bundle provides basic structure of SAPERE nod
@@ -33,7 +34,8 @@ Import-Package: com.hp.hpl.jena.sparql.function,it.apice.sapere.api,it
  re,it.apice.sapere.api.space.core.strategy,it.apice.sapere.api.space.
  match,it.apice.sapere.api.space.match.functions,it.apice.sapere.api.s
  pace.observation,it.apice.sapere.management,it.apice.sapere.node.agen
- ts,org.apache.log4j,org.osgi.framework;version="1.6"
+ ts,it.apice.sapere.node.networking.manager,org.apache.log4j,org.osgi.
+ framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-node
 Bundle-DocURL: http://apice.unibo.it/
 

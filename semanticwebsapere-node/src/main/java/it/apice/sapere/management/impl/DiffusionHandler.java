@@ -9,9 +9,10 @@ import it.apice.sapere.api.space.observation.SpaceEvent;
 import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.node.internal.NodeServicesImpl;
-import it.apice.sapere.node.networking.impl.NetworkManager;
 import it.apice.sapere.node.networking.impl.NodeMessage;
 import it.apice.sapere.node.networking.impl.NodeMessageType;
+import it.apice.sapere.node.networking.manager.NetworkManager;
+import it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl;
 import it.apice.sapere.node.networking.utils.impl.SpaceOperation;
 
 import java.net.URI;
@@ -47,6 +48,9 @@ public class DiffusionHandler implements SpaceObserver {
 	@SuppressWarnings("rawtypes")
 	private final transient LSAspaceCore space;
 
+	/** Reference to {@link NetworkManager}. */
+	private final transient NetworkManager manager;
+
 	/**
 	 * <p>
 	 * Builds a new {@link DiffusionHandler}.
@@ -61,6 +65,7 @@ public class DiffusionHandler implements SpaceObserver {
 		}
 
 		space = lsaSpace;
+		manager = NetworkManagerImpl.getInstance();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -81,7 +86,7 @@ public class DiffusionHandler implements SpaceObserver {
 
 			try {
 				// Enact diffusion (only if required)
-				NetworkManager.getInstance().doDiffuse(
+				manager.diffuse(
 						getLSALocation(lsa),
 						new NodeMessage(NodeMessageType.DIFFUSE, null,
 								new SpaceOperation(

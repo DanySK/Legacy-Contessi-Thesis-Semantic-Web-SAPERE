@@ -22,10 +22,14 @@ import it.apice.sapere.management.impl.SynthPropsHandler;
 import it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl;
 import it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent;
 import it.apice.sapere.node.networking.impl.NetworkManager;
+import it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URISyntaxException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -47,7 +51,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	/** Console Log level System property Key. */
 	private static final transient String CONSOLE_LOG_LEVEL = "sapere"
 			+ ".log.console.level";
-	
+
 	/** File Log level System property Key. */
 	private static final transient String FILE_LOG_LEVEL = "sapere"
 			+ ".log.file.level";
@@ -77,12 +81,10 @@ public class SAPERENodeActivator implements BundleActivator {
 	private transient MatchFunctRegistry<Function> mFunctRegistry;
 
 	/** List of published registrations. */
-	private final transient List<ServiceRegistration<?>> regs = 
-			new LinkedList<ServiceRegistration<?>>();
+	private final transient List<ServiceRegistration<?>> regs = new LinkedList<ServiceRegistration<?>>();
 
 	/** List of retrieved references. */
-	private final transient List<ServiceReference<?>> refs = 
-			new LinkedList<ServiceReference<?>>();
+	private final transient List<ServiceReference<?>> refs = new LinkedList<ServiceReference<?>>();
 
 	/** Reference to eco-laws scheduler. */
 	private transient ReactionManager rManager;
@@ -90,7 +92,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public final void start(final BundleContext context) throws Exception {
-		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL), 
+		LoggerFactoryImpl.init(context.getProperty(CONSOLE_LOG_LEVEL),
 				context.getProperty(FILE_LOG_LEVEL));
 
 		/* === WELCOME MESSAGE === */
@@ -139,13 +141,39 @@ public class SAPERENodeActivator implements BundleActivator {
 		// log("   - TCP/IP communication NOT supported", ex);
 		// }
 
+		// try {
+		// System.setProperty("bluecove.debug.log4j", "false");
+		// BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
+		// .start();
+		// log("   + Bluetooth communication supported");
+		// } catch (IllegalStateException ex) {
+		// log("   - Bluetooth communication NOT supported", ex.getCause());
+		// }
+
 		try {
-			System.setProperty("bluecove.debug.log4j", "false");
-			BluetoothManagerAgent.getInstance(NetworkManager.getInstance())
-					.start();
-			log("   + Bluetooth communication supported");
-		} catch (IllegalStateException ex) {
-			log("   - Bluetooth communication NOT supported", ex.getCause());
+			final String dPort = context.getProperty("sapere.diffusion.port");
+			if (dPort != null) {
+				NetworkManagerImpl.setIncomingPort(Integer.parseInt(dPort));
+			}
+
+			NetworkManagerImpl.getInstance().start();
+
+			final String diffConfig = context
+					.getProperty("sapere.diffusion.config");
+			if (diffConfig != null) {
+				final File config = new File(diffConfig);
+
+				final Properties props = new Properties();
+				props.setProperty("other", "127.0.0.1:20021");
+				props.setProperty("other2", "127.0.0.1:20022");
+				props.storeToXML(new FileOutputStream(config),
+						"Diffusion configuration", "utf-8");
+				NetworkManagerImpl.getInstance().loadTable(config);
+			}
+			log("   + LSA Relocator enabled (port: "
+					+ NetworkManagerImpl.getIncomingPort() + ")");
+		} catch (Exception ex) {
+			log("   - LSA Relocator NOT enabled", ex.getCause());
 		}
 
 		/* === (CUSTOM) COMPONENTS CREATION === */
@@ -165,8 +193,7 @@ public class SAPERENodeActivator implements BundleActivator {
 		final ReactionManagerImpl rMng = new ReactionManagerImpl(
 				new DefaultReactionsScheduler(), lawCompiler);
 		rManager = rMng;
-		rManager.addReactionManagerObserver(
-				new ReactionManagerLogger(rManager));
+		rManager.addReactionManagerObserver(new ReactionManagerLogger(rManager));
 		lsaSpace.addSpaceObserver(rMng);
 		rManager.spawn();
 
@@ -230,8 +257,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerReactionManager(final BundleContext context) {
-		regs.add(context.registerService(ReactionManager.class, rManager, 
-				null));
+		regs.add(context.registerService(ReactionManager.class, rManager, null));
 	}
 
 	/**
