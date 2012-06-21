@@ -54,6 +54,7 @@ public class LSAspaceImpl extends AbstractLSAspaceCoreImpl {
 					.create();
 			final Model infModel = ModelFactory.createInfModel(reasoner,
 					ModelFactory.createDefaultModel());
+			setInfGraph(infModel.getGraph());
 			return ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM,
 					infModel);
 		} else if (level.equals(ReasoningLevel.RDFS_INF)) {

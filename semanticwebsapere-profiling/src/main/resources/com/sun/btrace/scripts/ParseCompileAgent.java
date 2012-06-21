@@ -107,18 +107,18 @@ public final class ParseCompileAgent {
 
 		// Update Beans
 		cDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(compileKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(compileKey)), " us");
 		cDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(compileKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(compileKey)), " us");
 		cDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(compileKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(compileKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 				.concat(BTraceUtils.Strings.concat(
 						BTraceUtils.Strings.concat("compile #",
 								BTraceUtils.str(cCounter++)), ":\t"),
-						BTraceUtils.str(durInNS)), " ns"));
+						BTraceUtils.str(durInNS)), " us"));
 	}
 
 	/**
@@ -143,17 +143,32 @@ public final class ParseCompileAgent {
 
 		// Update Beans
 		pDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(parseKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(parseKey)), " us");
 		pDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(parseKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(parseKey)), " us");
 		pDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(parseKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(parseKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 				.concat(BTraceUtils.Strings.concat(
 						BTraceUtils.Strings.concat("parse #",
 								BTraceUtils.str(pCounter++)), ":\t"),
-						BTraceUtils.str(durInNS)), " ns"));
+						BTraceUtils.str(durInNS)), " us"));
+	}
+	
+	/**
+	 * <p>
+	 * Prints properties.
+	 * </p>
+	 */
+	@OnEvent
+	public static void onEvent() {
+		BTraceUtils.println(cDurMin);
+		BTraceUtils.println(cDurAvg);
+		BTraceUtils.println(cDurMax);
+		BTraceUtils.println(pDurMin);
+		BTraceUtils.println(pDurAvg);
+		BTraceUtils.println(pDurMax);
 	}
 }

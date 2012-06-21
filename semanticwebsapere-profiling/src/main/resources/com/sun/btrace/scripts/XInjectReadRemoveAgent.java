@@ -142,11 +142,11 @@ public final class XInjectReadRemoveAgent {
 
 		// Update Beans
 		iDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(injectKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(injectKey)), " us");
 		iDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(injectKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(injectKey)), " us");
 		iDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(injectKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(injectKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
@@ -178,18 +178,18 @@ public final class XInjectReadRemoveAgent {
 
 		// Update Beans
 		rdDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(readKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(readKey)), " us");
 		rdDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(readKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(readKey)), " us");
 		rdDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(readKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(readKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("read #",
 										BTraceUtils.str(rdCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
 	}
 
 	/**
@@ -214,18 +214,18 @@ public final class XInjectReadRemoveAgent {
 
 		// Update Beans
 		uDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(updateKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(updateKey)), " us");
 		uDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(updateKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(updateKey)), " us");
 		uDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(updateKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(updateKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("update #",
 										BTraceUtils.str(uCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
 	}
 
 	/**
@@ -250,17 +250,38 @@ public final class XInjectReadRemoveAgent {
 
 		// Update Beans
 		rmDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(removeKey)), " ns");
+				BTraceUtils.str(minOpDur.getValueForKey(removeKey)), " us");
 		rmDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(removeKey)), " ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(removeKey)), " us");
 		rmDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(removeKey)), " ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(removeKey)), " us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("remove #",
 										BTraceUtils.str(rmCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
+	}
+	
+	/**
+	 * <p>
+	 * Prints properties.
+	 * </p>
+	 */
+	@OnEvent
+	public static void onEvent() {
+		BTraceUtils.println(iDurMin);
+		BTraceUtils.println(iDurAvg);
+		BTraceUtils.println(iDurMax);
+		BTraceUtils.println(rdDurMin);
+		BTraceUtils.println(rdDurAvg);
+		BTraceUtils.println(rdDurMax);
+		BTraceUtils.println(rmDurMin);
+		BTraceUtils.println(rmDurAvg);
+		BTraceUtils.println(rmDurMax);
+		BTraceUtils.println(uDurMin);
+		BTraceUtils.println(uDurAvg);
+		BTraceUtils.println(uDurMax);
 	}
 }

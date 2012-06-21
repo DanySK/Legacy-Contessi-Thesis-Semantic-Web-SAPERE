@@ -382,4 +382,8 @@ public abstract class AbstractAccessPolicy implements LSAspaceAccessPolicy {
 						agent.getLocalAgentId()));
 	}
 
+	@Override
+	public String toString() {
+		return space.toString();
+	}
 }

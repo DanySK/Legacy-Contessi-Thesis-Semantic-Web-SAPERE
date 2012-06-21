@@ -123,18 +123,18 @@ public final class MatchApplyFindAgent {
 
 		// Update Beans
 		mDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(matchKey)), "ns");
+				BTraceUtils.str(minOpDur.getValueForKey(matchKey)), "us");
 		mDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(matchKey)), "ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(matchKey)), "us");
 		mDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(matchKey)), "ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(matchKey)), "us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("match #",
 										BTraceUtils.str(mCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
 	}
 
 	/**
@@ -159,18 +159,18 @@ public final class MatchApplyFindAgent {
 
 		// Update Beans
 		aDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(applyKey)), "ns");
+				BTraceUtils.str(minOpDur.getValueForKey(applyKey)), "us");
 		aDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(applyKey)), "ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(applyKey)), "us");
 		aDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(applyKey)), "ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(applyKey)), "us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("apply #",
 										BTraceUtils.str(aCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
 	}
 
 	/**
@@ -195,18 +195,35 @@ public final class MatchApplyFindAgent {
 
 		// Update Beans
 		fnDurMin = BTraceUtils.Strings.concat(
-				BTraceUtils.str(minOpDur.getValueForKey(findKey)), "ns");
+				BTraceUtils.str(minOpDur.getValueForKey(findKey)), "us");
 		fnDurAvg = BTraceUtils.Strings.concat(
-				BTraceUtils.str(avgOpDur.getValueForKey(findKey)), "ns");
+				BTraceUtils.str(avgOpDur.getValueForKey(findKey)), "us");
 		fnDurMax = BTraceUtils.Strings.concat(
-				BTraceUtils.str(maxOpDur.getValueForKey(findKey)), "ns");
+				BTraceUtils.str(maxOpDur.getValueForKey(findKey)), "us");
 
 		// Print duration on console
 		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("findNext #",
 										BTraceUtils.str(fnCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " ns"));
+								BTraceUtils.str(durInNS)), " us"));
 	}
 
+	/**
+	 * <p>
+	 * Prints properties.
+	 * </p>
+	 */
+	@OnEvent
+	public static void onEvent() {
+		BTraceUtils.println(mDurMin);
+		BTraceUtils.println(mDurAvg);
+		BTraceUtils.println(mDurMax);
+		BTraceUtils.println(aDurMin);
+		BTraceUtils.println(aDurAvg);
+		BTraceUtils.println(aDurMax);
+		BTraceUtils.println(fnDurMin);
+		BTraceUtils.println(fnDurAvg);
+		BTraceUtils.println(fnDurMax);
+	}
 }

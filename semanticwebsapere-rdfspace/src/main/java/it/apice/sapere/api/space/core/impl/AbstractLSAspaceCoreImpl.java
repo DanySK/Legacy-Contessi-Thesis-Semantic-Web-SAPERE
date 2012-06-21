@@ -37,6 +37,9 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.mindswap.pellet.jena.PelletInfGraph;
+
+import com.hp.hpl.jena.graph.Graph;
 import com.hp.hpl.jena.query.DatasetFactory;
 import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -142,7 +145,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			new HashMap<String, Query>();
 
 	/** Stores every parsed SPARUL query (avoid re-parsing). */
-	private final transient Map<String, UpdateRequest> parsedSparulQueries =
+	private final transient Map<String, UpdateRequest> parsedSparulQueries = 
 			new HashMap<String, UpdateRequest>();
 
 	/** Map of each SPARUL Query to the applicable results (so bindings). */
@@ -160,6 +163,16 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/** Space Observers list mutex. */
 	private final transient Lock spaceObsMutex = new ReentrantLock();
+
+	/** Default Thread-Safety enforcement policy. */
+	public static final transient boolean DEFAULT_ENFORCE_THREAD_SAFETY = 
+			true;
+	
+	/** Flag that enables scheduled Pellet update. */
+	private transient boolean enforceThreadSafety = false;
+
+	/** Reference to Pellet inference graph. */
+	private transient PelletInfGraph infGraph;
 
 	/**
 	 * <p>
@@ -360,6 +373,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireReadLock();
 		try {
+			runPelletClassify();
+
 			// 1. Run query
 			final ResultSet iter = execQuery(model, law.getMatchQuery());
 
@@ -815,6 +830,32 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	}
 
 	/**
+	 * Runs the classifier of Pellet in order to update inferences (long run
+	 * operation).
+	 */
+	private void runPelletClassify() {
+		if (enforceThreadSafety && infGraph != null) {
+			// Explicit Pellet refresh (for thread-safety)
+			infGraph.classify();
+		}
+	}
+
+	/**
+	 * <p>
+	 * Registers the reference to the graph to be classified, if available.
+	 * </p>
+	 * 
+	 * @param g
+	 *            The graph to be classified by the reasoner (only Pellet
+	 *            supported)
+	 */
+	protected void setInfGraph(final Graph g) {
+		if (g instanceof PelletInfGraph) {
+			infGraph = ((PelletInfGraph) g);
+		}
+	}
+
+	/**
 	 * <p>
 	 * Checks custom strategies constraints on INJECT.
 	 * </p>
@@ -846,6 +887,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireReadLock();
 		try {
+			runPelletClassify();
 			checkReadAgainstCustomStrategy(lsaId);
 
 			if (!checkExistencePreCondition(lsaId)) {
@@ -1126,9 +1168,9 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	public final void loadOntology(final URI ontoURI) throws SAPEREException {
 		loadOntology(ontoURI, RDFFormat.RDF_XML);
 	}
-	
+
 	@Override
-	public final void loadOntology(final URI ontoURI, final RDFFormat format) 
+	public final void loadOntology(final URI ontoURI, final RDFFormat format)
 			throws SAPEREException {
 		if (ontoURI == null) {
 			throw new IllegalArgumentException("Invalid URI provided");
