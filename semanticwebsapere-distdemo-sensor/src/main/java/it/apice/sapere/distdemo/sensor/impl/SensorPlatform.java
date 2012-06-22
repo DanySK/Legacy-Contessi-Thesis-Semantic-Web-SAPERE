@@ -4,6 +4,7 @@ import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
+import it.apice.sapere.commons.DiffusionEcolaw;
 
 /**
  * <p>
@@ -89,55 +90,8 @@ public class SensorPlatform {
 	 * </p>
 	 */
 	private void setEcolaws() {
-		_manager.addEcolaw(_compiler.create(getMatchQuery(), getUpdateQuery(),
-				getRate()));
+		_manager.addEcolaw(DiffusionEcolaw.createASAPDiffusion(_compiler,
+				"analysis_node", "sensing:Observation"));
 	}
 
-	/**
-	 * <p>
-	 * Retrieves Match Query.
-	 * </p>
-	 * 
-	 * @return SPARQL Query
-	 */
-	private String getMatchQuery() {
-		return "PREFIX sapere: <http://www.sapere-project.eu/"
-				+ "ontologies/2012/0/sapere-model.owl#> "
-				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-				+ "PREFIX sensing: <http://www.sapere-project.eu/distdemo#> "
-				+ "SELECT DISTINCT * WHERE { "
-				+ "?observ rdf:type sensing:Observation; "
-				+ "sapere:location sapere:local. "
-				+ "?newloc sapere:type sapere:neighbour; "
-				+ "sapere:name \"analysis_node\" }";
-	}
-
-	/**
-	 * <p>
-	 * Retrieves Update Query.
-	 * </p>
-	 * 
-	 * @return SPARQL/Update Query
-	 */
-	private String getUpdateQuery() {
-		return "PREFIX sapere: <http://www.sapere-project.eu/"
-				+ "ontologies/2012/0/sapere-model.owl#> "
-				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-				+ "PREFIX sensing: <http://www.sapere-project.eu/distdemo#> "
-				+ "MODIFY DELETE { !observ sapere:location sapere:local. } "
-				+ "INSERT { !observ sapere:location !newloc } WHERE { "
-				+ "?observ rdf:type sensing:Observation; "
-				+ "sapere:location sapere:local. }";
-	}
-
-	/**
-	 * <p>
-	 * Retrieves Query Rate.
-	 * </p>
-	 * 
-	 * @return Scheduling Rate
-	 */
-	private String getRate() {
-		return "" + Double.MAX_VALUE;
-	}
 }

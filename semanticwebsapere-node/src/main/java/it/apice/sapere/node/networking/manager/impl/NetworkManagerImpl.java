@@ -1,6 +1,5 @@
 package it.apice.sapere.node.networking.manager.impl;
 
-import it.apice.api.node.logging.impl.LoggerFactoryImpl;
 import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSAid;
@@ -43,6 +42,9 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class NetworkManagerImpl extends AbstractSystemAgent implements
 		NetworkManager {
+	
+	/** Constants which requires cloning parsing procedure. */
+	private static final transient boolean CLONE = true;
 
 	/** Prefix for Synthetic Properties. */
 	private static final transient String SYNT_PROPS_PREFIX = "http://"
@@ -51,7 +53,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	/** LSA's location property URI. */
 	private static final transient URI LOCATION_PROP = URI
 			.create(SYNT_PROPS_PREFIX + "location");
-	
+
 	/** Diffusion source property URI. */
 	private static final transient URI DIFF_SOURCE_PROP = URI
 			.create(SYNT_PROPS_PREFIX + "source");
@@ -118,10 +120,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 			throw new IllegalArgumentException("Unknown neighbor");
 		}
 
-		LoggerFactoryImpl
-				.getInstance()
-				.getLogger(NetworkManager.class)
-				.spy(String.format(
+		spy(String.format(
 						"Sending DIFFUSE message to %s (LSA-id: %s; dest: %s)",
 						to, msg.getOperation().getLSAid(), dest));
 
@@ -132,9 +131,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 				try {
 					doDiffuse(dest, msg);
 				} catch (IOException e) {
-					LoggerFactoryImpl.getInstance()
-							.getLogger(NetworkManager.class)
-							.warn("Cannot complete diffusion", e);
+					warn("Cannot complete diffusion", e);
 				}
 			}
 		});
@@ -306,10 +303,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 						if (msg.getType().equals(NodeMessageType.DIFFUSE)) {
 							handleDiffusion(services, msg);
 						} else {
-							LoggerFactoryImpl
-									.getInstance()
-									.getLogger(NetworkManagerImpl.class)
-									.warn(String.format("Message DROPPED: "
+							warn(String.format("Message DROPPED: "
 											+ "unsupported type (%s)",
 											msg.getType()), null);
 						}
@@ -325,19 +319,15 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 				}
 			}
 		} catch (IOException ex) {
-			LoggerFactoryImpl.getInstance().getLogger(NetworkManagerImpl.class)
-					.error("Cannot open an incoming connection", ex);
+			error("Cannot open an incoming connection", ex);
 		} catch (ClassNotFoundException ex) {
-			LoggerFactoryImpl.getInstance().getLogger(NetworkManagerImpl.class)
-					.error("Cannot deserialize message", ex);
+			error("Cannot deserialize message", ex);
 		} finally {
 			if (sock != null) {
 				try {
 					sock.close();
 				} catch (IOException e) {
-					LoggerFactoryImpl.getInstance()
-							.getLogger(NetworkManagerImpl.class)
-							.error("Cannot close server socket", e);
+					error("Cannot close server socket", e);
 				}
 			}
 		}
@@ -362,16 +352,17 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 		lsaSpace.beginWrite();
 		try {
 			final CompiledLSA<?> lsa = lsaComp.parse(message.getOperation()
-					.getLSA(), RDFFormat.RDF_XML);
+					.getLSA(), RDFFormat.RDF_XML, CLONE);
 			lsa.clearProperty(LOCATION_PROP);
 			lsa.assertProperty(LOCATION_PROP, LOCAL_VAL);
 			lsa.assertProperty(DIFF_SOURCE_PROP,
 					URI.create(message.getSender()));
 
 			lsaSpace.inject(lsa);
-			spy("Received diffusion " + message.getOperation().getLSAid());
-		} catch (SAPEREException e) {
-			error("Cannot receive diffusion", e);
+			spy("Received diffusion " + message.getOperation().getLSAid() 
+					+ " --> " + lsa.getLSAid());
+		} catch (Exception e) {
+			error("Cannot handle diffusion", e);
 		} finally {
 			lsaSpace.done();
 		}

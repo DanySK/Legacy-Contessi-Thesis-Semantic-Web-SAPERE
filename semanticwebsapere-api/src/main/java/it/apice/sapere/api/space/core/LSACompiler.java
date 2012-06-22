@@ -43,10 +43,29 @@ public interface LSACompiler<RDFStmtIterType> {
 
 	/**
 	 * <p>
+	 * Parses provided string in order to extract a {@link CompiledLSA}.
+	 * </p>
+	 * 
+	 * @param rdf
+	 *            A String, in one of the supported RDF formats, which contains
+	 *            information about the LSA
+	 * @param format
+	 *            The format in which the String is written
+	 * @param makeCopy
+	 *            If true generates a fresh LSA-id for the returned
+	 *            {@link CompiledLSA}, so to obtain a copy
+	 * @return The corresponding compiled LSA
+	 */
+	CompiledLSA<RDFStmtIterType> parse(String rdf, RDFFormat format,
+			boolean makeCopy);
+
+	/**
+	 * <p>
 	 * Creates an empty {@link CompiledLSA}.
 	 * </p>
 	 * 
 	 * @return An empty {@link CompiledLSA}
 	 */
 	CompiledLSA<RDFStmtIterType> create();
+
 }

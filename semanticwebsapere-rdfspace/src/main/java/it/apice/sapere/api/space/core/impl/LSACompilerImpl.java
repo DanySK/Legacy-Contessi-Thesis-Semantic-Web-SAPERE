@@ -10,11 +10,13 @@ import it.apice.sapere.lsas.visitors.impl.ToJenaVisitorImpl;
 
 import java.io.StringReader;
 import java.net.URI;
+import java.util.List;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.rdf.model.StmtIterator;
 
 /**
@@ -73,6 +75,12 @@ public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 	@Override
 	public final CompiledLSA<StmtIterator> parse(final String rdf,
 			final RDFFormat format) {
+		return parse(rdf, format, false);
+	}
+
+	@Override
+	public final CompiledLSA<StmtIterator> parse(final String rdf,
+			final RDFFormat format, final boolean makeCopy) {
 		if (rdf == null) {
 			throw new IllegalArgumentException("Invalid rdf-string provided");
 		}
@@ -89,7 +97,37 @@ public class LSACompilerImpl implements LSACompiler<StmtIterator> {
 			reader.close();
 		}
 
-		return new CompiledLSAImpl(extractLSAid(tmp), tmp);
+		LSAid id = extractLSAid(tmp);
+		if (makeCopy) {
+			final LSAid newId = factory.createLSAid();
+			substituteId(id, newId, tmp);
+			id = newId;
+		}
+
+		return new CompiledLSAImpl(id, tmp);
+	}
+
+	/**
+	 * <p>
+	 * Changes the LSA-id resource, in the model, with the new one.
+	 * </p>
+	 * 
+	 * @param id
+	 *            The old LSA-id
+	 * @param newId
+	 *            The new LSA-id
+	 * @param tmp
+	 *            The model to be altered
+	 */
+	private void substituteId(final LSAid id, final LSAid newId, 
+			final Model tmp) {
+		final Resource newRes = tmp.createResource(newId.getId().toString());
+		final List<Statement> iter = tmp.createResource(id.getId().toString())
+				.listProperties().toList();
+		tmp.removeAll();
+		for (Statement stmt : iter) {
+			newRes.addProperty(stmt.getPredicate(), stmt.getObject());
+		}
 	}
 
 	/**

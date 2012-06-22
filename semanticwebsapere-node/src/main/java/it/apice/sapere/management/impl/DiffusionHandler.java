@@ -54,6 +54,9 @@ public class DiffusionHandler implements SpaceObserver {
 	/** Reference to {@link NetworkManager}. */
 	private final transient NetworkManager manager;
 
+	/** Flag which enables diffused LSA removal. */
+	private final transient boolean _shouldRemove;
+
 	/**
 	 * <p>
 	 * Builds a new {@link DiffusionHandler}.
@@ -63,9 +66,11 @@ public class DiffusionHandler implements SpaceObserver {
 	 *            Reference to monitored LSA-space
 	 * @param nodeId
 	 *            ID of this node
+	 * @param shouldRemove
+	 *            True in order to remove the diffused LSA, false otherwise
 	 */
-	public DiffusionHandler(final LSAspaceCore<?> lsaSpace, 
-			final String nodeId) {
+	public DiffusionHandler(final LSAspaceCore<?> lsaSpace,
+			final String nodeId, final boolean shouldRemove) {
 		if (lsaSpace == null) {
 			throw new IllegalArgumentException("Invalid LSA-space provided");
 		}
@@ -73,6 +78,7 @@ public class DiffusionHandler implements SpaceObserver {
 		space = lsaSpace;
 		senderId = nodeId;
 		manager = NetworkManagerImpl.getInstance();
+		_shouldRemove = shouldRemove;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -98,8 +104,11 @@ public class DiffusionHandler implements SpaceObserver {
 								SpaceOperationType.SYSTEM_DIFFUSE, lsa,
 								"system"), 0, 0, new Float[0]));
 
-				// Remove diffused LSA from the LSA-space
-				space.remove(lsa);
+				if (_shouldRemove) {
+					// Remove diffused LSA from the LSA-space
+					space.remove(lsa);
+				}
+
 				LoggerFactoryImpl.getInstance()
 						.getLogger(DiffusionHandler.class)
 						.log("DIFFUSE " + lsa.getLSAid());

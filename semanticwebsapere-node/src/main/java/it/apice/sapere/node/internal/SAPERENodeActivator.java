@@ -14,8 +14,8 @@ import it.apice.sapere.api.space.core.LSACompiler;
 import it.apice.sapere.api.space.core.LSAspaceCore;
 import it.apice.sapere.api.space.core.strategy.CustomStrategyPipelineStep;
 import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
+import it.apice.sapere.commons.DiffusionEcolaw;
 import it.apice.sapere.management.DefaultReactionsScheduler;
-import it.apice.sapere.management.impl.DiffusionHandler;
 import it.apice.sapere.management.impl.ReactionManagerImpl;
 import it.apice.sapere.management.impl.ReactionManagerLogger;
 import it.apice.sapere.management.impl.SynthPropsHandler;
@@ -185,8 +185,8 @@ public class SAPERENodeActivator implements BundleActivator {
 				.addStepAtTheBeginning(syntPropsHdl);
 		log("   + Synthetic Properties handler");
 
-		lsaSpace.addSpaceObserver(new DiffusionHandler(lsaSpace, 
-				lsaFactory.getNodeID()));
+		lsaSpace.addSpaceObserver(DiffusionEcolaw.getASAPDiffusionHandler(
+				lsaSpace, lsaFactory.getNodeID()));
 		log("   + Diffusion handler");
 
 		// Reaction manager initialization

@@ -178,7 +178,7 @@ public class TempSensor implements SAPEREAgentSpec {
 
 			out.log("Publishing temperature value (" + temp + ")..");
 			publishTemperature(factory, space, temp);
-			out.spy(space.toString());
+			// out.spy(space.toString());
 		} catch (Exception ex) {
 			out.error("failed", ex);
 		}
