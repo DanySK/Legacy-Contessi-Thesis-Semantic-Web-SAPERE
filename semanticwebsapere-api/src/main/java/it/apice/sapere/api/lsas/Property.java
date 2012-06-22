@@ -49,6 +49,18 @@ public interface Property {
 
 	/**
 	 * <p>
+	 * Adds the specified values to the statements of this property, after
+	 * removing all current values.
+	 * </p>
+	 * 
+	 * @param value
+	 *            The value to be added
+	 * @return A reference to the updated property
+	 */
+	Property clearAndAddValue(PropertyValue<?, ?> value);
+
+	/**
+	 * <p>
 	 * Removes the specified value from the statements of this property.
 	 * <p>
 	 * 
@@ -129,7 +141,7 @@ public interface Property {
 	 * <p>
 	 * Synthetic Properties cannot be modified by a user agent.
 	 * </p>
-	 *
+	 * 
 	 * @return True if synthetic, false otherwise
 	 */
 	boolean isSynthetic();

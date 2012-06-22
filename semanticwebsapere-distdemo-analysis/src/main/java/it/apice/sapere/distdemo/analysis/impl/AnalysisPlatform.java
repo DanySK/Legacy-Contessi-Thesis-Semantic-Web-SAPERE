@@ -3,6 +3,8 @@ package it.apice.sapere.distdemo.analysis.impl;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.space.core.EcolawCompiler;
+import it.apice.sapere.distdemo.analysis.AggregationEcolaw;
 
 /**
  * <p>
@@ -20,6 +22,9 @@ public class AnalysisPlatform {
 	/** Reference to Agents Factory. */
 	private final transient SAPEREAgentsFactory _factory;
 
+	/** Reference to Eco-law Compiler. */
+	private final transient EcolawCompiler _compiler;
+
 	/**
 	 * <p>
 	 * Builds a new {@link AnalysisPlatform}.
@@ -29,9 +34,12 @@ public class AnalysisPlatform {
 	 *            Reference to reaction manager
 	 * @param aFactory
 	 *            Reference to Agents Factory
+	 * @param eCompiler
+	 *            Reference to Eco-law Compiler
 	 */
 	public AnalysisPlatform(final ReactionManager manager,
-			final SAPEREAgentsFactory aFactory) {
+			final SAPEREAgentsFactory aFactory, 
+			final EcolawCompiler eCompiler) {
 		if (manager == null) {
 			throw new IllegalArgumentException("Invalid manager provided");
 		}
@@ -41,8 +49,14 @@ public class AnalysisPlatform {
 					"Invalid agents factory provided");
 		}
 
+		if (eCompiler == null) {
+			throw new IllegalArgumentException(
+					"Invalid eco-law compiler provided");
+		}
+
 		_manager = manager;
 		_factory = aFactory;
+		_compiler = eCompiler;
 	}
 
 	/**
@@ -76,7 +90,8 @@ public class AnalysisPlatform {
 	 * </p>
 	 */
 	private void setEcolaws() {
-		assert _manager != null;
+		_manager.addEcolaw(AggregationEcolaw.createASAPMaxAggregation(
+				_compiler, "sensing:Observation"));
 	}
 
 }

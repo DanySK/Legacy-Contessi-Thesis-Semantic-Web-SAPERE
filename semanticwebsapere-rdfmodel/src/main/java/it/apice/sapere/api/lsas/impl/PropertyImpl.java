@@ -230,4 +230,17 @@ public class PropertyImpl implements Property {
 	public final boolean isSynthetic() {
 		return name.isSynthetic();
 	}
+
+	@Override
+	public Property clearAndAddValue(final PropertyValue<?, ?> value) {
+		if (isSynthetic()) {
+			throw new IllegalStateException(
+					"Cannot modify a Synthetic Property");
+		}
+
+		values.clear();
+		values.add(value);
+		
+		return this;
+	}
 }

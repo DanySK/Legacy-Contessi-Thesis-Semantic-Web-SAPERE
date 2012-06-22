@@ -5,6 +5,8 @@ import it.apice.sapere.api.LSAParser;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.lsas.LSAid;
+import it.apice.sapere.api.lsas.PropertyName;
+import it.apice.sapere.api.lsas.values.PropertyValue;
 import it.apice.sapere.api.lsas.values.SDescValue;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
 import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
@@ -44,6 +46,12 @@ public class TempSensor implements SAPEREAgentSpec {
 	private static final transient String UCUM_NS = "http://"
 			+ "idi.fundacionctic.org/muo/ucum-instances.owl&level=DL#";
 
+	/** sensing:updateTime property name. */
+	private transient PropertyName updTimePropName;
+
+	/** sensing:value property name. */
+	private transient PropertyName valuePropName;
+
 	/** How many milliseconds should the sensor wait between sensing. */
 	private transient long actualWaitTime;
 
@@ -64,6 +72,9 @@ public class TempSensor implements SAPEREAgentSpec {
 
 	/** The LSA-id of the sensor (when inited). */
 	private transient LSAid sensorLSAid;
+
+	/** Observation LSA. */
+	private transient LSA obsLsa = null;
 
 	/**
 	 * <p>
@@ -186,7 +197,7 @@ public class TempSensor implements SAPEREAgentSpec {
 
 	/**
 	 * <p>
-	 * Injects observation LSA.
+	 * Injects observation LSA, then keeps it updated.
 	 * </p>
 	 * 
 	 * @param fact
@@ -196,31 +207,51 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * @param temp
 	 *            Actual temperature
 	 * @throws SAPEREException
-	 *             Cannot complete declaration (LSA-space interaction problems)
+	 *             Cannot complete (LSA-space interaction problems)
 	 */
 	private void publishTemperature(final LSAFactory fact,
 			final LSAspace space, final int temp) throws SAPEREException {
-		final LSA obsLsa = fact.createLSA();
+		final PropertyValue<?, ?> val = fact.createPropertyValue(temp);
+		final Date now = new Date();
 
-		obsLsa.getSemanticDescription()
-				.addProperty(
-						fact.createProperty(
-								URI.create(RDF_NS + "type"),
-								fact.createPropertyValue(URI.create(SENSING_NS
-										+ "Observation"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "updateTime"),
-								fact.createPropertyValue(new Date())))
-				.addProperty(
-						fact.createProperty(URI.create(SENSING_NS + "value"),
-								fact.createPropertyValue(temp)))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "observedBy"),
-								fact.createPropertyValue(sensorLSAid)));
+		if (obsLsa == null) {
+			obsLsa = fact.createLSA();
 
-		space.inject(obsLsa);
+			updTimePropName = fact.createPropertyName(URI.create(SENSING_NS
+					+ "updateTime"));
+			valuePropName = fact.createPropertyName(URI.create(SENSING_NS
+					+ "value"));
+
+			obsLsa.getSemanticDescription()
+					.addProperty(
+							fact.createProperty(
+									URI.create(RDF_NS + "type"),
+									fact.createPropertyValue(URI
+											.create(SENSING_NS + "Observation")
+											))).addProperty(
+							fact.createProperty(
+									URI.create(SENSING_NS + "startingTime"),
+									fact.createPropertyValue(now)))
+					.addProperty(
+							fact.createProperty(updTimePropName.getValue(),
+									fact.createPropertyValue(now)))
+					.addProperty(
+							fact.createProperty(
+									URI.create(SENSING_NS + "observedBy"),
+									fact.createPropertyValue(sensorLSAid)))
+					.addProperty(
+							fact.createProperty(valuePropName.getValue(), val));
+			space.inject(obsLsa);
+		} else {
+			obsLsa.getSemanticDescription().get(valuePropName)
+					.clearAndAddValue(val);
+			obsLsa.getSemanticDescription().get(updTimePropName)
+					.clearAndAddValue(fact.createPropertyValue(now));
+			space.update(obsLsa);
+		}
+
+		// Issue Tracked: #1
+		obsLsa = space.read(obsLsa.getLSAId());
 	}
 
 	/**

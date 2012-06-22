@@ -26,6 +26,28 @@ public final class DiffusionEcolaw {
 
 	/**
 	 * <p>
+	 * Retrieves an periodic diffusion eco-law.
+	 * </p>
+	 * 
+	 * @param compiler
+	 *            Reference to {@link EcolawCompiler}
+	 * @param toName
+	 *            Name of the node to which diffuse
+	 * @param type
+	 *            LSA's rdf:type to be diffused
+	 * @param rate
+	 *            Scheduling rate
+	 * @return The eco-law, compiled
+	 */
+	public static CompiledEcolaw createPeriodicDiffusion(
+			final EcolawCompiler compiler, final String toName,
+			final String type, final double rate) {
+		return compiler.create(getASAPMatchQuery(type, toName),
+				getASAPUpdateQuery(), "" + rate);
+	}
+
+	/**
+	 * <p>
 	 * Retrieves an ASAP diffusion eco-law.
 	 * </p>
 	 * 
@@ -107,8 +129,8 @@ public final class DiffusionEcolaw {
 	 *            Node identifier
 	 * @return An ASAP {@link DiffusionHandler}
 	 */
-	public static DiffusionHandler getASAPDiffusionHandler(
+	public static DiffusionHandler getDiffusionHandler(
 			final LSAspaceCore<?> lsaSpace, final String nodeId) {
-		return new DiffusionHandler(lsaSpace, nodeId, true);
+		return new DiffusionHandler(lsaSpace, nodeId, false);
 	}
 }

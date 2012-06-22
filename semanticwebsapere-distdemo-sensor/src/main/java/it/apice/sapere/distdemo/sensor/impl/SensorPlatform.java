@@ -90,8 +90,8 @@ public class SensorPlatform {
 	 * </p>
 	 */
 	private void setEcolaws() {
-		_manager.addEcolaw(DiffusionEcolaw.createASAPDiffusion(_compiler,
-				"analysis_node", "sensing:Observation"));
+		_manager.addEcolaw(DiffusionEcolaw.createPeriodicDiffusion(_compiler,
+				"analysis_node", "sensing:Observation", 1.0));
 	}
 
 }
