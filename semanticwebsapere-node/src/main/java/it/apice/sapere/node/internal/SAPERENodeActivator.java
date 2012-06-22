@@ -185,7 +185,8 @@ public class SAPERENodeActivator implements BundleActivator {
 				.addStepAtTheBeginning(syntPropsHdl);
 		log("   + Synthetic Properties handler");
 
-		lsaSpace.addSpaceObserver(new DiffusionHandler(lsaSpace));
+		lsaSpace.addSpaceObserver(new DiffusionHandler(lsaSpace, 
+				lsaFactory.getNodeID()));
 		log("   + Diffusion handler");
 
 		// Reaction manager initialization

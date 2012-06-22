@@ -73,7 +73,7 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * Default values are:
 	 * </p>
 	 * <ul>
-	 * <li>startingRate = 0.2</li>
+	 * <li>startingRate = 0.2 (5 sec)</li>
 	 * <li>incStep = 0.0 (no increment)</li>
 	 * <li>cyclesBeforeInc = 1</li>
 	 * </ul>
@@ -140,10 +140,12 @@ public class TempSensor implements SAPEREAgentSpec {
 
 		int counter = cycles;
 		while (me.isRunning()) {
-			counter--;
-			if (actualWaitTime > 1 && counter == 0) {
-				counter = cycles;
-				actualWaitTime -= timeDec;
+			if (cycles > 1) {
+				counter--;
+				if (actualWaitTime > 1 && counter == 0) {
+					counter = cycles;
+					actualWaitTime -= timeDec;
+				}
 			}
 
 			try {
@@ -176,6 +178,7 @@ public class TempSensor implements SAPEREAgentSpec {
 
 			out.log("Publishing temperature value (" + temp + ")..");
 			publishTemperature(factory, space, temp);
+			out.spy(space.toString());
 		} catch (Exception ex) {
 			out.error("failed", ex);
 		}
@@ -242,7 +245,6 @@ public class TempSensor implements SAPEREAgentSpec {
 			out.log("Publishing sensor..");
 			sensorLSAid = declareSensor(factory, space, stLsaId);
 			out.log("Sensor ready.");
-			out.spy(space.toString());
 		} catch (Exception ex) {
 			out.error("failed", ex);
 			throw ex;

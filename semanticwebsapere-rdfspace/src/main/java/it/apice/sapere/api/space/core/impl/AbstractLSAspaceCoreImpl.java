@@ -1253,11 +1253,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	@Override
 	public final String toString() {
 		final StringWriter strW = new StringWriter();
+		acquireReadLock();
 		try {
 			model.write(strW, "TURTLE");
 			return "===== SAPERE :: LSA-space (sapere:" + nodeId.split("#")[1]
 					+ ") =====\n" + strW.toString();
 		} finally {
+			releaseLock();
 			if (strW != null) {
 				try {
 					strW.close();

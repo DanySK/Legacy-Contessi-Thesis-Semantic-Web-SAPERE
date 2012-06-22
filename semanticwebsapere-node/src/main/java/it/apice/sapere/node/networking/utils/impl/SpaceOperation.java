@@ -6,6 +6,7 @@ import it.apice.sapere.api.space.core.CompiledLSA;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 
 import java.io.Serializable;
+import java.net.URI;
 
 /**
  * <p>
@@ -25,7 +26,7 @@ public class SpaceOperation implements Serializable {
 	private final String lsa;
 
 	/** The involved LSA-id. */
-	private final LSAid lsaId;
+	private final URI lsaId;
 
 	/** Operation type. */
 	private final SpaceOperationType type;
@@ -50,8 +51,8 @@ public class SpaceOperation implements Serializable {
 	 */
 	public SpaceOperation(final SpaceOperationType aType,
 			final CompiledLSA<?> aLsa, final String aReqId) {
-		this(aType, aLsa.getLSAid(), aLsa.toString(RDFFormat.RDF_XML), aReqId,
-				null);
+		this(aType, aLsa.getLSAid().getId(), aLsa.toString(RDFFormat.RDF_XML),
+				aReqId, null);
 	}
 
 	/**
@@ -71,8 +72,8 @@ public class SpaceOperation implements Serializable {
 	public SpaceOperation(final SpaceOperationType aType,
 			final CompiledLSA<?> aLsa, final String aReqId, 
 			final String ipDest) {
-		this(aType, aLsa.getLSAid(), aLsa.toString(RDFFormat.RDF_XML), aReqId,
-				ipDest);
+		this(aType, aLsa.getLSAid().getId(), aLsa.toString(RDFFormat.RDF_XML),
+				aReqId, ipDest);
 	}
 
 	/**
@@ -91,7 +92,7 @@ public class SpaceOperation implements Serializable {
 	 */
 	public SpaceOperation(final SpaceOperationType aType, final LSAid aLsaId,
 			final String aLsa, final String aReqId) {
-		this(aType, aLsaId, aLsa, aReqId, null);
+		this(aType, aLsaId.getId(), aLsa, aReqId, null);
 	}
 
 	/**
@@ -110,7 +111,7 @@ public class SpaceOperation implements Serializable {
 	 * @param ipDest
 	 *            IP address for a diffuse operation
 	 */
-	public SpaceOperation(final SpaceOperationType aType, final LSAid aLsaId,
+	public SpaceOperation(final SpaceOperationType aType, final URI aLsaId,
 			final String aLsa, final String aReqId, final String ipDest) {
 		type = aType;
 		lsaId = aLsaId;
@@ -137,7 +138,7 @@ public class SpaceOperation implements Serializable {
 	 * 
 	 * @return the LSA defined in this operation
 	 */
-	public final LSAid getLSAid() {
+	public final URI getLSAid() {
 		return lsaId;
 	}
 

@@ -2,6 +2,7 @@ package it.apice.sapere.distdemo.sensor.internal;
 
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
+import it.apice.sapere.api.space.core.EcolawCompiler;
 import it.apice.sapere.distdemo.sensor.impl.SensorPlatform;
 
 import java.util.LinkedList;
@@ -29,6 +30,7 @@ public class Activator implements BundleActivator {
 	public void start(final BundleContext context) throws Exception {
 		ReactionManager manager = null;
 		SAPEREAgentsFactory aFactory = null;
+		EcolawCompiler eCompiler = null;
 
 		final ServiceReference<ReactionManager> ref = context
 				.getServiceReference(ReactionManager.class);
@@ -37,7 +39,7 @@ public class Activator implements BundleActivator {
 			manager = context.getService(ref);
 			assert manager != null;
 		}
-		
+
 		final ServiceReference<SAPEREAgentsFactory> ref2 = context
 				.getServiceReference(SAPEREAgentsFactory.class);
 		if (ref2 != null) {
@@ -46,7 +48,16 @@ public class Activator implements BundleActivator {
 			assert aFactory != null;
 		}
 
-		final SensorPlatform bl = new SensorPlatform(manager, aFactory);
+		final ServiceReference<EcolawCompiler> ref3 = context
+				.getServiceReference(EcolawCompiler.class);
+		if (ref3 != null) {
+			services.add(ref3);
+			eCompiler = context.getService(ref3);
+			assert eCompiler != null;
+		}
+
+		final SensorPlatform bl = new SensorPlatform(manager, aFactory,
+				eCompiler);
 		bl.execute();
 	}
 

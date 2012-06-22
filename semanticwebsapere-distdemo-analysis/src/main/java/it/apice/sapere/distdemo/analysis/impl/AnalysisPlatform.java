@@ -1,5 +1,6 @@
 package it.apice.sapere.distdemo.analysis.impl;
 
+import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 
@@ -48,8 +49,11 @@ public class AnalysisPlatform {
 	 * <p>
 	 * Runs the business logic.
 	 * </p>
+	 * 
+	 * @throws SAPEREException
+	 *             Cannot run demo
 	 */
-	public void execute() {
+	public void execute() throws SAPEREException {
 		setEcolaws();
 		runAgents();
 	}
@@ -58,9 +62,12 @@ public class AnalysisPlatform {
 	 * <p>
 	 * Configures agents.
 	 * </p>
+	 * 
+	 * @throws SAPEREException
+	 *             Cannot spawn Agents
 	 */
-	private void runAgents() {
-		//_factory.createAgent("temp_sensor", new );
+	private void runAgents() throws SAPEREException {
+		_factory.createAgent("temp_analyzer", new TempAnalyzer()).spawn();
 	}
 
 	/**
@@ -69,8 +76,7 @@ public class AnalysisPlatform {
 	 * </p>
 	 */
 	private void setEcolaws() {
-		// TODO Auto-generated method stub
-		
+		assert _manager != null;
 	}
 
 }

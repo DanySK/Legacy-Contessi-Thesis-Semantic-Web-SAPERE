@@ -51,6 +51,10 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	/** LSA's location property URI. */
 	private static final transient URI LOCATION_PROP = URI
 			.create(SYNT_PROPS_PREFIX + "location");
+	
+	/** Diffusion source property URI. */
+	private static final transient URI DIFF_SOURCE_PROP = URI
+			.create(SYNT_PROPS_PREFIX + "source");
 
 	/** Local location property value URI. */
 	private static final transient URI LOCAL_VAL = URI.create(SYNT_PROPS_PREFIX
@@ -156,7 +160,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 			if (to instanceof LSAid) {
 				return neighLIds.get(((LSAid) to).getId());
 			} else if (to instanceof URI) {
-				return neighbIds.get((URI) to);
+				return neighLIds.get((URI) to);
 			} else if (to instanceof String) {
 				return neighbIds.get(to);
 			}
@@ -361,6 +365,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 					.getLSA(), RDFFormat.RDF_XML);
 			lsa.clearProperty(LOCATION_PROP);
 			lsa.assertProperty(LOCATION_PROP, LOCAL_VAL);
+			lsa.assertProperty(DIFF_SOURCE_PROP,
+					URI.create(message.getSender()));
 
 			lsaSpace.inject(lsa);
 			spy("Received diffusion " + message.getOperation().getLSAid());

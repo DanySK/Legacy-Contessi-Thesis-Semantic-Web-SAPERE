@@ -8,15 +8,17 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_33
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1340289002432
+Bnd-LastModified: 1340295308473
 Bundle-ManifestVersion: 2
 Bundle-Activator: it.apice.sapere.distdemo.analysis.internal.Activator
 Bundle-Description: This project models a part of the demo scenario: a
  n analysis platform where values diffused from sensor_node (sensor pl
  atform) are processed, aggregated, so to produce an high-level inform
  ation (situation) to be displayed to the user
-Import-Package: it.apice.sapere.api.management,it.apice.sapere.api.nod
- e.agents,org.osgi.framework;version="1.6"
+Import-Package: it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.
+ sapere.api.lsas.values,it.apice.sapere.api.management,it.apice.sapere
+ .api.node.agents,it.apice.sapere.api.node.logging,it.apice.sapere.api
+ .space,org.osgi.framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-distdemo-analysis
 Bundle-DocURL: http://apice.unibo.it/
 

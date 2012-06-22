@@ -44,6 +44,9 @@ public class DiffusionHandler implements SpaceObserver {
 	private static final transient URI LOCAL_VAL = URI.create(SAPERE_NS
 			+ "local");
 
+	/** Id of the node (used as sender id). */
+	private final transient String senderId;
+
 	/** Reference to monitored LSA-space. */
 	@SuppressWarnings("rawtypes")
 	private final transient LSAspaceCore space;
@@ -58,13 +61,17 @@ public class DiffusionHandler implements SpaceObserver {
 	 * 
 	 * @param lsaSpace
 	 *            Reference to monitored LSA-space
+	 * @param nodeId
+	 *            ID of this node
 	 */
-	public DiffusionHandler(final LSAspaceCore<?> lsaSpace) {
+	public DiffusionHandler(final LSAspaceCore<?> lsaSpace, 
+			final String nodeId) {
 		if (lsaSpace == null) {
 			throw new IllegalArgumentException("Invalid LSA-space provided");
 		}
 
 		space = lsaSpace;
+		senderId = nodeId;
 		manager = NetworkManagerImpl.getInstance();
 	}
 
@@ -73,7 +80,7 @@ public class DiffusionHandler implements SpaceObserver {
 	public final void eventOccurred(final SpaceEvent ev) {
 		// Checks only events caused by an eco-law application (because it is
 		// the only way to change a synthetic property
-		if (!ev.getOperationType().equals(SpaceOperationType.SYSTEM_ACTION)) {
+		if (!ev.getOperationType().equals(SpaceOperationType.SYSTEM_APPLY)) {
 			return;
 		}
 
@@ -86,12 +93,10 @@ public class DiffusionHandler implements SpaceObserver {
 
 			try {
 				// Enact diffusion (only if required)
-				manager.diffuse(
-						getLSALocation(lsa),
-						new NodeMessage(NodeMessageType.DIFFUSE, null,
-								new SpaceOperation(
-										SpaceOperationType.SYSTEM_DIFFUSE, lsa,
-										"system"), 0, 0, new Float[0]));
+				manager.diffuse(getLSALocation(lsa), new NodeMessage(
+						NodeMessageType.DIFFUSE, senderId, new SpaceOperation(
+								SpaceOperationType.SYSTEM_DIFFUSE, lsa,
+								"system"), 0, 0, new Float[0]));
 
 				// Remove diffused LSA from the LSA-space
 				space.remove(lsa);
@@ -124,14 +129,20 @@ public class DiffusionHandler implements SpaceObserver {
 	 * @throws SAPEREException
 	 *             No diffusion required
 	 */
-	private String getLSALocation(final CompiledLSA<?> lsa)
+	private URI getLSALocation(final CompiledLSA<?> lsa) 
 			throws SAPEREException {
-		final URI loc = lsa.readURIProperty(LOCATION_PROP)[0];
-		if (loc.equals(LOCAL_VAL)) {
-			throw new SAPEREException("Should not diffuse");
-		}
+		try {
+			final URI loc = lsa.readURIProperty(LOCATION_PROP)[0];
+			if (loc.equals(LOCAL_VAL)) {
+				throw new SAPEREException("Should not diffuse");
+			}
 
-		return loc.toString();
+			return loc;
+		} catch (Exception ex) {
+			throw new SAPEREException(
+					"This LSA DOES NOT CONTAIN LOCATION information! "
+							+ "Supposed to be local");
+		}
 	}
 
 }
