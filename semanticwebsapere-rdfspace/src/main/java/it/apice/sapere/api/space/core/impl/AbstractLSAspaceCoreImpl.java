@@ -107,9 +107,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/* === OBSERVATION (begin) === */
 
-	/** Handles nested disables. */
-	private transient int notEnCount = 0;
-
 	/** SpaceObservers list. */
 	private final transient List<SpaceObserver> listeners;
 
@@ -593,22 +590,20 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifySpaceOperation(final String msg,
 			final SpaceOperationType type) {
-		if (isNotificationsEnabled()) {
-			asapExec.execute(new Runnable() {
+		asapExec.execute(new Runnable() {
 
-				@Override
-				public void run() {
-					spaceObsMutex.lock();
-					try {
-						for (SpaceObserver obs : listeners) {
-							obs.eventOccurred(new SpaceEventImpl(msg, type));
-						}
-					} finally {
-						spaceObsMutex.unlock();
+			@Override
+			public void run() {
+				spaceObsMutex.lock();
+				try {
+					for (SpaceObserver obs : listeners) {
+						obs.eventOccurred(new SpaceEventImpl(msg, type));
 					}
+				} finally {
+					spaceObsMutex.unlock();
 				}
-			});
-		}
+			}
+		});
 	}
 
 	/**
@@ -625,23 +620,21 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
-		if (isNotificationsEnabled()) {
-			asapExec.execute(new Runnable() {
+		asapExec.execute(new Runnable() {
 
-				@Override
-				public void run() {
-					spaceObsMutex.lock();
-					try {
-						for (SpaceObserver obs : listeners) {
-							obs.eventOccurred(new SpaceEventImpl(msg,
-									new LSAid[] { id }, type));
-						}
-					} finally {
-						spaceObsMutex.unlock();
+			@Override
+			public void run() {
+				spaceObsMutex.lock();
+				try {
+					for (SpaceObserver obs : listeners) {
+						obs.eventOccurred(new SpaceEventImpl(msg,
+								new LSAid[] { id }, type));
 					}
+				} finally {
+					spaceObsMutex.unlock();
 				}
-			});
-		}
+			}
+		});
 	}
 
 	/**
@@ -659,24 +652,22 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) {
-		if (isNotificationsEnabled()) {
-			asapExec.execute(new Runnable() {
+		asapExec.execute(new Runnable() {
 
-				@Override
-				public void run() {
-					spaceObsMutex.lock();
-					try {
-						for (SpaceObserver obs : listeners) {
-							obs.eventOccurred(new SpaceEventImpl(msg, lsas
-									.toArray(new CompiledLSA<?>[lsas.size()]),
-									type));
-						}
-					} finally {
-						spaceObsMutex.unlock();
+			@Override
+			public void run() {
+				spaceObsMutex.lock();
+				try {
+					for (SpaceObserver obs : listeners) {
+						obs.eventOccurred(new SpaceEventImpl(msg, lsas
+								.toArray(new CompiledLSA<?>[lsas.size()]), 
+								type));
 					}
+				} finally {
+					spaceObsMutex.unlock();
 				}
-			});
-		}
+			}
+		});
 	}
 
 	/**
@@ -694,23 +685,21 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final CompiledLSA<StmtIterator> lsa, 
 			final SpaceOperationType type) {
-		if (isNotificationsEnabled()) {
-			asapExec.execute(new Runnable() {
+		asapExec.execute(new Runnable() {
 
-				@Override
-				public void run() {
-					spaceObsMutex.lock();
-					try {
-						for (SpaceObserver obs : listeners) {
-							obs.eventOccurred(new SpaceEventImpl(msg,
-									new CompiledLSA[] { lsa }, type));
-						}
-					} finally {
-						spaceObsMutex.unlock();
+			@Override
+			public void run() {
+				spaceObsMutex.lock();
+				try {
+					for (SpaceObserver obs : listeners) {
+						obs.eventOccurred(new SpaceEventImpl(msg,
+								new CompiledLSA[] { lsa }, type));
 					}
+				} finally {
+					spaceObsMutex.unlock();
 				}
-			});
-		}
+			}
+		});
 	}
 
 	/**
@@ -728,27 +717,24 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifyLSAObservers(final String msg, final LSA lsa,
 			final SpaceOperationType type) {
-		if (isNotificationsEnabled()) {
-			asapExec.execute(new Runnable() {
+		asapExec.execute(new Runnable() {
 
-				@Override
-				public void run() {
-					lsaObsMutex.lock();
-					try {
-						final List<LSAObserver> obss = observers.get(lsa
-								.getLSAId());
-						if (obss != null) {
-							for (LSAObserver obs : obss) {
-								obs.eventOccurred(new LSAEventImpl(msg, lsa,
-										type));
-							}
+			@Override
+			public void run() {
+				lsaObsMutex.lock();
+				try {
+					final List<LSAObserver> obss = 
+							observers.get(lsa.getLSAId());
+					if (obss != null) {
+						for (LSAObserver obs : obss) {
+							obs.eventOccurred(new LSAEventImpl(msg, lsa, type));
 						}
-					} finally {
-						lsaObsMutex.unlock();
 					}
+				} finally {
+					lsaObsMutex.unlock();
 				}
-			});
-		}
+			}
+		});
 	}
 
 	/**
@@ -769,10 +755,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifyLSAObservers(final String msg,
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) throws SAPEREException {
-		if (isNotificationsEnabled()) {
-			for (CompiledLSA<StmtIterator> cLsa : lsas) {
-				notifyLSAObservers(msg, retrieveLSA(cLsa), type);
-			}
+		for (CompiledLSA<StmtIterator> cLsa : lsas) {
+			notifyLSAObservers(msg, retrieveLSA(cLsa), type);
 		}
 	}
 
@@ -804,14 +788,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		try {
 			checkInjectAgainstCustomStrategy(lsa);
 
-			// Raises WARNING (Unsupported axiom): seems relative to some weird
-			// interaction between Jena and Pellet, which concerns namespaces
-			// and prefixes
-			if (checkExistencePreCondition(lsa.getLSAid())) {
-				throw new SAPEREException("Duplicate LSA: " + lsa.getLSAid());
-			}
-
-			model.add(lsa.getStatements());
+			doInject(lsa);
 
 			// Notification
 			final String msg = String
@@ -826,6 +803,30 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		} finally {
 			releaseLock();
 		}
+	}
+
+	/**
+	 * <p>
+	 * Executes the inject operation.
+	 * </p>
+	 * 
+	 * @param lsa
+	 *            The lsa to be injected
+	 * @return The injected LSA
+	 * @throws SAPEREException
+	 *             Cannot inject
+	 */
+	public CompiledLSA<StmtIterator> doInject(
+			final CompiledLSA<StmtIterator> lsa) throws SAPEREException {
+		// Raises WARNING (Unsupported axiom): seems relative to some weird
+		// interaction between Jena and Pellet, which concerns namespaces
+		// and prefixes
+		if (checkExistencePreCondition(lsa.getLSAid())) {
+			throw new SAPEREException("Duplicate LSA: " + lsa.getLSAid());
+		}
+
+		model.add(lsa.getStatements());
+		return lsa;
 	}
 
 	/**
@@ -889,13 +890,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			runPelletClassify();
 			checkReadAgainstCustomStrategy(lsaId);
 
-			if (!checkExistencePreCondition(lsaId)) {
-				throw new SAPEREException("LSA not present in LSA-space: "
-						+ lsaId);
-			}
+			final CompiledLSA<StmtIterator> res = doRead(lsaId);
 
-			final CompiledLSAImpl res = new CompiledLSAImpl(lsaId,
-					extractLSAData(lsaId));
 			notifySpaceOperation(String.format("LSA read: %s", lsaId), lsaId,
 					SpaceOperationType.AGENT_READ);
 
@@ -905,6 +901,26 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		} finally {
 			releaseLock();
 		}
+	}
+
+	/**
+	 * <p>
+	 * Executes the read operation.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The LSA-id to be searched
+	 * @return The read LSA
+	 * @throws SAPEREException
+	 *             Cannot read
+	 */
+	public CompiledLSA<StmtIterator> doRead(final LSAid lsaId)
+			throws SAPEREException {
+		if (!checkExistencePreCondition(lsaId)) {
+			throw new SAPEREException("LSA not present in LSA-space: " + lsaId);
+		}
+
+		return new CompiledLSAImpl(lsaId, extractLSAData(lsaId));
 	}
 
 	/**
@@ -1011,16 +1027,12 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsa.getLSAid());
 			}
 
-			disableNotifications();
-			final StmtIterator iter = read(lsa.getLSAid()).getStatements();
-			enableNotifications();
-
-			model.remove(iter);
+			final CompiledLSA<StmtIterator> rLsa = doRemove(lsa.getLSAid());
 
 			// Notification
 			final String msg = String.format("LSA removed: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_REMOVE);
-			notifyLSAObservers(msg, retrieveLSA(lsa),
+			notifySpaceOperation(msg, rLsa, SpaceOperationType.AGENT_REMOVE);
+			notifyLSAObservers(msg, retrieveLSA(rLsa),
 					SpaceOperationType.AGENT_REMOVE);
 
 			return this;
@@ -1029,6 +1041,24 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		} finally {
 			releaseLock();
 		}
+	}
+
+	/**
+	 * <p>
+	 * Executes the remove operation.
+	 * </p>
+	 * 
+	 * @param lsaId
+	 *            The LSA-id of the LSA to be removed
+	 * @return The removed LSA
+	 * @throws SAPEREException
+	 *             Cannot remove
+	 */
+	public CompiledLSA<StmtIterator> doRemove(final LSAid lsaId)
+			throws SAPEREException {
+		final CompiledLSA<StmtIterator> rLsa = doRead(lsaId);
+		model.remove(rLsa.getStatements());
+		return rLsa;
 	}
 
 	/**
@@ -1070,16 +1100,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsa.getLSAid());
 			}
 
-			disableNotifications();
-			remove(lsa);
-			inject(lsa);
-			enableNotifications();
+			doRemove(lsa.getLSAid());
+			doInject(lsa);
 
 			// Notification
-			final CompiledLSA<StmtIterator> newLsa = read(lsa.getLSAid());
 			final String msg = String.format("LSA updated: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, newLsa, SpaceOperationType.AGENT_UPDATE);
-			notifyLSAObservers(msg, retrieveLSA(newLsa),
+			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_UPDATE);
+			notifyLSAObservers(msg, retrieveLSA(lsa),
 					SpaceOperationType.AGENT_UPDATE);
 
 			return this;
@@ -1111,37 +1138,6 @@ public abstract class AbstractLSAspaceCoreImpl implements
 				throw new SAPEREException("Operation aborted", e);
 			}
 		}
-	}
-
-	/**
-	 * <p>
-	 * Disables notifications to (LSA|Space)Observers.
-	 * </p>
-	 */
-	private void disableNotifications() {
-		notEnCount++;
-	}
-
-	/**
-	 * <p>
-	 * Enables notifications to (LSA|Space)Observers.
-	 * </p>
-	 */
-	private void enableNotifications() {
-		if (notEnCount > 0) {
-			notEnCount--;
-		}
-	}
-
-	/**
-	 * <p>
-	 * Checks if should notify.
-	 * </p>
-	 * 
-	 * @return True if notifications are enabled, false otherwise
-	 */
-	private boolean isNotificationsEnabled() {
-		return notEnCount == 0;
 	}
 
 	/**
