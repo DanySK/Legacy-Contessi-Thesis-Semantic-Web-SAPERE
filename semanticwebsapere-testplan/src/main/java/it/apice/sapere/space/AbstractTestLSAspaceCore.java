@@ -331,7 +331,7 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 
 			Thread.sleep(1000);
 			assertTrue(sObs.checkFirstOcc(SpaceOperationType.AGENT_ACTION));
-			assertTrue(sObs.noEventOccurred());
+			assertTrue(sObs.toString(), sObs.noEventOccurred());
 		} catch (SAPEREException e) {
 			e.printStackTrace();
 			fail("Something went wrong during normal scenario "
@@ -484,6 +484,11 @@ public abstract class AbstractTestLSAspaceCore<RDFStmtIterType> extends
 		 */
 		public boolean noEventOccurred() {
 			return queue.isEmpty();
+		}
+		
+		@Override
+		public String toString() {
+			return queue.toString();
 		}
 	}
 }

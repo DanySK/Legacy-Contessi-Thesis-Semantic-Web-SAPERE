@@ -42,8 +42,8 @@ public final class DiffusionEcolaw {
 	public static CompiledEcolaw createPeriodicDiffusion(
 			final EcolawCompiler compiler, final String toName,
 			final String type, final double rate) {
-		return compiler.create(getASAPMatchQuery(type, toName),
-				getASAPUpdateQuery(), "" + rate);
+		return compiler.create(getMatchQuery(type, toName),
+				getUpdateQuery(), "" + rate);
 	}
 
 	/**
@@ -62,8 +62,8 @@ public final class DiffusionEcolaw {
 	public static CompiledEcolaw createASAPDiffusion(
 			final EcolawCompiler compiler, final String toName,
 			final String type) {
-		return compiler.create(getASAPMatchQuery(type, toName),
-				getASAPUpdateQuery(), getASAPRate());
+		return compiler.create(getMatchQuery(type, toName),
+				getUpdateQuery(), getASAPRate());
 	}
 
 	/**
@@ -77,14 +77,14 @@ public final class DiffusionEcolaw {
 	 *            Name of the node to which diffuse
 	 * @return SPARQL Query
 	 */
-	private static String getASAPMatchQuery(final String type,
+	private static String getMatchQuery(final String type,
 			final String toName) {
 		return "PREFIX sapere: <http://www.sapere-project.eu/"
 				+ "ontologies/2012/0/sapere-model.owl#> "
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
 				+ "PREFIX sensing: <http://www.sapere-project.eu/distdemo#> "
 				+ "SELECT DISTINCT * WHERE { " + "?observ rdf:type " + type
-				+ "; " + "sapere:location sapere:local. "
+				+ "; sapere:location sapere:local. "
 				+ "?newloc sapere:type sapere:neighbour; " + "sapere:name \""
 				+ toName + "\" }";
 	}
@@ -96,15 +96,13 @@ public final class DiffusionEcolaw {
 	 * 
 	 * @return SPARQL/Update Query
 	 */
-	private static String getASAPUpdateQuery() {
+	private static String getUpdateQuery() {
 		return "PREFIX sapere: <http://www.sapere-project.eu/"
 				+ "ontologies/2012/0/sapere-model.owl#> "
 				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
 				+ "PREFIX sensing: <http://www.sapere-project.eu/distdemo#> "
 				+ "MODIFY DELETE { !observ sapere:location sapere:local. } "
-				+ "INSERT { !observ sapere:location !newloc } WHERE { "
-				+ "?observ rdf:type sensing:Observation; "
-				+ "sapere:location sapere:local. }";
+				+ "INSERT { !observ sapere:location !newloc } WHERE { }";
 	}
 
 	/**

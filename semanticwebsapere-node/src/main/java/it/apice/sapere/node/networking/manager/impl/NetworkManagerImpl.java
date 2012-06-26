@@ -42,7 +42,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class NetworkManagerImpl extends AbstractSystemAgent implements
 		NetworkManager {
-	
+
 	/** Constants which requires cloning parsing procedure. */
 	private static final transient boolean CLONE = true;
 
@@ -50,17 +50,18 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	private static final transient String SYNT_PROPS_PREFIX = "http://"
 			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#";
 
-	/** LSA's location property URI. */
-	private static final transient URI LOCATION_PROP = URI
-			.create(SYNT_PROPS_PREFIX + "location");
+	// /** LSA's location property URI. */
+	// private static final transient URI LOCATION_PROP = URI
+	// .create(SYNT_PROPS_PREFIX + "location");
 
 	/** Diffusion source property URI. */
 	private static final transient URI DIFF_SOURCE_PROP = URI
 			.create(SYNT_PROPS_PREFIX + "source");
 
-	/** Local location property value URI. */
-	private static final transient URI LOCAL_VAL = URI.create(SYNT_PROPS_PREFIX
-			+ "local");
+	// /** Local location property value URI. */
+	// private static final transient URI LOCAL_VAL =
+	// URI.create(SYNT_PROPS_PREFIX
+	// + "local");
 
 	/** Friendly Id property URI (as String). */
 	private static final transient String ID_PROP_URI = SYNT_PROPS_PREFIX
@@ -83,12 +84,10 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	private transient LSACompiler comp;
 
 	/** Table of all reachable nodes, by friendly Ids. */
-	private final transient Map<String, InetSocketAddress> neighbIds = 
-			new HashMap<String, InetSocketAddress>();
+	private final transient Map<String, InetSocketAddress> neighbIds = new HashMap<String, InetSocketAddress>();
 
 	/** Table of all reachable nodes, by LSA-ids. */
-	private final transient Map<URI, InetSocketAddress> neighLIds = 
-			new HashMap<URI, InetSocketAddress>();
+	private final transient Map<URI, InetSocketAddress> neighLIds = new HashMap<URI, InetSocketAddress>();
 
 	/** Executor for network stuffs. */
 	private final transient ExecutorService exec = Executors
@@ -98,8 +97,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	private final transient Lock mutex = new ReentrantLock();
 
 	/** Singleton instance. */
-	private static final transient NetworkManagerImpl INSTANCE = 
-			new NetworkManagerImpl();
+	private static final transient NetworkManagerImpl INSTANCE = new NetworkManagerImpl();
 
 	/** The port on which diffusion server will listen (default=20020). */
 	private static transient int incomingPort = 20020;
@@ -121,8 +119,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 		}
 
 		spy(String.format(
-						"Sending DIFFUSE message to %s (LSA-id: %s; dest: %s)",
-						to, msg.getOperation().getLSAid(), dest));
+				"Sending DIFFUSE message to %s (LSA-id: %s; dest: %s)", to, msg
+						.getOperation().getLSAid(), dest));
 
 		exec.execute(new Runnable() {
 
@@ -188,6 +186,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 			sock.connect(dest);
 			out = new ObjectOutputStream(sock.getOutputStream());
 			out.writeObject(msg);
+		} catch (Exception ex) {
+			throw new IOException("Unreachable neighbour", ex);
 		} finally {
 			if (out != null) {
 				out.flush();
@@ -304,8 +304,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 							handleDiffusion(services, msg);
 						} else {
 							warn(String.format("Message DROPPED: "
-											+ "unsupported type (%s)",
-											msg.getType()), null);
+									+ "unsupported type (%s)", msg.getType()),
+									null);
 						}
 					}
 				} finally {
@@ -353,14 +353,13 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 		try {
 			final CompiledLSA<?> lsa = lsaComp.parse(message.getOperation()
 					.getLSA(), RDFFormat.RDF_XML, CLONE);
-			lsa.clearProperty(LOCATION_PROP);
-			lsa.assertProperty(LOCATION_PROP, LOCAL_VAL);
+
 			lsa.assertProperty(DIFF_SOURCE_PROP,
 					URI.create(message.getSender()));
 
-			lsaSpace.inject(lsa);
-			spy("Received diffusion " + message.getOperation().getLSAid() 
-					+ " --> " + lsa.getLSAid());
+			// lsaSpace.inject(lsa);
+			spy("Received diffusion " + message.getOperation().getLSAid()
+					+ " --> " + lsa.getLSAid() + "\n" + lsaSpace);
 		} catch (Exception e) {
 			error("Cannot handle diffusion", e);
 		} finally {

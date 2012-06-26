@@ -85,8 +85,10 @@ public class DiffusionHandler implements SpaceObserver {
 	@Override
 	public final void eventOccurred(final SpaceEvent ev) {
 		// Checks only events caused by an eco-law application (because it is
-		// the only way to change a synthetic property
-		if (!ev.getOperationType().equals(SpaceOperationType.SYSTEM_APPLY)) {
+		// the only way to change a synthetic property) or LSA update
+		if (!(ev.getOperationType().equals(SpaceOperationType.SYSTEM_APPLY) 
+				|| ev.getOperationType().equals(
+						SpaceOperationType.AGENT_UPDATE))) {
 			return;
 		}
 

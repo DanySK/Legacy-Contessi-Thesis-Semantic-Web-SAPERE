@@ -107,8 +107,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 	/* === OBSERVATION (begin) === */
 
-	/** Notification enabled flag. */
-	private transient boolean notificationsEnabled = true;
+	/** Handles nested disables. */
+	private transient int notEnCount = 0;
 
 	/** SpaceObservers list. */
 	private final transient List<SpaceObserver> listeners;
@@ -165,11 +165,10 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private final transient Lock spaceObsMutex = new ReentrantLock();
 
 	/** Default Thread-Safety enforcement policy. */
-	public static final transient boolean DEFAULT_ENFORCE_THREAD_SAFETY = 
-			true;
-	
+	public static final transient boolean DEFAULT_ENFORCE_THREAD_SAFETY = true;
+
 	/** Flag that enables scheduled Pellet update. */
-	private transient boolean enforceThreadSafety = false;
+	private transient boolean enforceThreadSafety = true;
 
 	/** Reference to Pellet inference graph. */
 	private transient PelletInfGraph infGraph;
@@ -594,7 +593,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifySpaceOperation(final String msg,
 			final SpaceOperationType type) {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			asapExec.execute(new Runnable() {
 
 				@Override
@@ -626,7 +625,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifySpaceOperation(final String msg, final LSAid id,
 			final SpaceOperationType type) {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			asapExec.execute(new Runnable() {
 
 				@Override
@@ -660,7 +659,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			asapExec.execute(new Runnable() {
 
 				@Override
@@ -695,7 +694,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifySpaceOperation(final String msg,
 			final CompiledLSA<StmtIterator> lsa, 
 			final SpaceOperationType type) {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			asapExec.execute(new Runnable() {
 
 				@Override
@@ -729,7 +728,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 */
 	private void notifyLSAObservers(final String msg, final LSA lsa,
 			final SpaceOperationType type) {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			asapExec.execute(new Runnable() {
 
 				@Override
@@ -770,7 +769,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	private void notifyLSAObservers(final String msg,
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) throws SAPEREException {
-		if (notificationsEnabled) {
+		if (isNotificationsEnabled()) {
 			for (CompiledLSA<StmtIterator> cLsa : lsas) {
 				notifyLSAObservers(msg, retrieveLSA(cLsa), type);
 			}
@@ -1004,6 +1003,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 
 		acquireWriteLock();
 		try {
+			// runPelletClassify();
 			checkRemoveAgainstCustomStrategy(lsa);
 
 			if (!checkExistencePreCondition(lsa.getLSAid())) {
@@ -1011,7 +1011,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 						+ lsa.getLSAid());
 			}
 
-			model.remove(lsa.getStatements());
+			disableNotifications();
+			final StmtIterator iter = read(lsa.getLSAid()).getStatements();
+			enableNotifications();
+
+			model.remove(iter);
 
 			// Notification
 			final String msg = String.format("LSA removed: %s", lsa.getLSAid());
@@ -1067,14 +1071,15 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			}
 
 			disableNotifications();
-			remove(read(lsa.getLSAid()));
+			remove(lsa);
 			inject(lsa);
 			enableNotifications();
 
 			// Notification
+			final CompiledLSA<StmtIterator> newLsa = read(lsa.getLSAid());
 			final String msg = String.format("LSA updated: %s", lsa.getLSAid());
-			notifySpaceOperation(msg, lsa, SpaceOperationType.AGENT_UPDATE);
-			notifyLSAObservers(msg, retrieveLSA(lsa),
+			notifySpaceOperation(msg, newLsa, SpaceOperationType.AGENT_UPDATE);
+			notifyLSAObservers(msg, retrieveLSA(newLsa),
 					SpaceOperationType.AGENT_UPDATE);
 
 			return this;
@@ -1114,7 +1119,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void disableNotifications() {
-		notificationsEnabled = false;
+		notEnCount++;
 	}
 
 	/**
@@ -1123,7 +1128,20 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void enableNotifications() {
-		notificationsEnabled = true;
+		if (notEnCount > 0) {
+			notEnCount--;
+		}
+	}
+
+	/**
+	 * <p>
+	 * Checks if should notify.
+	 * </p>
+	 * 
+	 * @return True if notifications are enabled, false otherwise
+	 */
+	private boolean isNotificationsEnabled() {
+		return notEnCount == 0;
 	}
 
 	/**
