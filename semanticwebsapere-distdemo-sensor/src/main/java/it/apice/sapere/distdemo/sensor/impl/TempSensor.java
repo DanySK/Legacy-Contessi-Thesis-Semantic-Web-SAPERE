@@ -243,6 +243,7 @@ public class TempSensor implements SAPEREAgentSpec {
 							fact.createProperty(valuePropName.getValue(), val));
 			space.inject(obsLsa);
 		} else {
+			// See Issue tracking: #1
 			obsLsa = space.read(obsLsa.getLSAId());
 			obsLsa.getSemanticDescription().get(valuePropName)
 					.clearAndAddValue(val);

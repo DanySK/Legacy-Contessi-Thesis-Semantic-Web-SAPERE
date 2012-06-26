@@ -84,10 +84,13 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	private transient LSACompiler comp;
 
 	/** Table of all reachable nodes, by friendly Ids. */
-	private final transient Map<String, InetSocketAddress> neighbIds = new HashMap<String, InetSocketAddress>();
+	private final transient Map<String, InetSocketAddress> neighbIds = 
+			new HashMap<String, InetSocketAddress>();
 
 	/** Table of all reachable nodes, by LSA-ids. */
-	private final transient Map<URI, InetSocketAddress> neighLIds = new HashMap<URI, InetSocketAddress>();
+	private final transient Map<URI, InetSocketAddress> neighLIds = 
+			
+			new HashMap<URI, InetSocketAddress>();
 
 	/** Executor for network stuffs. */
 	private final transient ExecutorService exec = Executors
@@ -97,7 +100,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 	private final transient Lock mutex = new ReentrantLock();
 
 	/** Singleton instance. */
-	private static final transient NetworkManagerImpl INSTANCE = new NetworkManagerImpl();
+	private static final transient NetworkManagerImpl INSTANCE = 
+			new NetworkManagerImpl();
 
 	/** The port on which diffusion server will listen (default=20020). */
 	private static transient int incomingPort = 20020;
@@ -357,8 +361,8 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 			lsa.assertProperty(DIFF_SOURCE_PROP,
 					URI.create(message.getSender()));
 
-			// lsaSpace.inject(lsa);
-			spy("Received diffusion " + message.getOperation().getLSAid()
+			lsaSpace.inject(lsa);
+			spy("Received diffusion: " + message.getOperation().getLSAid()
 					+ " --> " + lsa.getLSAid() + "\n");
 		} catch (Exception e) {
 			error("Cannot handle diffusion", e);

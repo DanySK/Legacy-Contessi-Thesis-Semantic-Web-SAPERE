@@ -3,14 +3,19 @@ package it.apice.sapere.distdemo.analysis.internal;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
+import it.apice.sapere.api.space.match.functions.MatchFunctRegistry;
+import it.apice.sapere.distdemo.analysis.SourceFunction;
 import it.apice.sapere.distdemo.analysis.impl.AnalysisPlatform;
 
+import java.net.URI;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+
+import com.hp.hpl.jena.sparql.function.Function;
 
 /**
  * <p>
@@ -31,6 +36,19 @@ public class Activator implements BundleActivator {
 		ReactionManager manager = null;
 		SAPEREAgentsFactory aFactory = null;
 		EcolawCompiler eCompiler = null;
+		
+		@SuppressWarnings("rawtypes")
+		final ServiceReference<MatchFunctRegistry> ref0 = context
+				.getServiceReference(MatchFunctRegistry.class);
+		if (ref0 != null) {
+			@SuppressWarnings("unchecked")
+			final MatchFunctRegistry<Function> mfr = context.getService(ref0);
+
+			mfr.register(URI.create("http://www.example.org/demo#distance"),
+					SourceFunction.class);
+
+			context.ungetService(ref0);
+		}
 
 		final ServiceReference<ReactionManager> ref = context
 				.getServiceReference(ReactionManager.class);

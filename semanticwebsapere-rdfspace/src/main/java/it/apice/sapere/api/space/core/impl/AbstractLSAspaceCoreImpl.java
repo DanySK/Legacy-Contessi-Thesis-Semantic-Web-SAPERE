@@ -247,7 +247,13 @@ public abstract class AbstractLSAspaceCoreImpl implements
 	 * </p>
 	 */
 	private void acquireReadLock() {
-		model.enterCriticalSection(Model.READ);
+		boolean type = Model.READ;
+		// Solves Issue #2 (see tracker)
+		if (infGraph != null) { // using Pellet 
+			type = Model.WRITE;
+		}
+
+		model.enterCriticalSection(type);
 	}
 
 	/**
@@ -723,8 +729,8 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			public void run() {
 				lsaObsMutex.lock();
 				try {
-					final List<LSAObserver> obss = 
-							observers.get(lsa.getLSAId());
+					final List<LSAObserver> obss = observers.get(
+							lsa.getLSAId());
 					if (obss != null) {
 						for (LSAObserver obs : obss) {
 							obs.eventOccurred(new LSAEventImpl(msg, lsa, type));

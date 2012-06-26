@@ -2,18 +2,19 @@ package it.apice.sapere.distdemo.analysis.impl;
 
 import it.apice.sapere.api.LSAFactory;
 import it.apice.sapere.api.LSAParser;
-import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.lsas.LSA;
-import it.apice.sapere.api.lsas.LSAid;
-import it.apice.sapere.api.lsas.values.SDescValue;
+import it.apice.sapere.api.lsas.PropertyName;
+import it.apice.sapere.api.lsas.SemanticDescription;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
 import it.apice.sapere.api.node.agents.SAPEREAgentSpec;
 import it.apice.sapere.api.node.logging.LogUtils;
 import it.apice.sapere.api.space.LSAspace;
+import it.apice.sapere.api.space.observation.LSAEvent;
+import it.apice.sapere.api.space.observation.LSAObserver;
 
 import java.net.URI;
 import java.util.Date;
-import java.util.Random;
+import java.util.concurrent.Semaphore;
 
 /**
  * <p>
@@ -28,220 +29,96 @@ import java.util.Random;
  */
 public class TempAnalyzer implements SAPEREAgentSpec {
 
+	/** SAPERE ontology namespace. */
+	private static final transient String SAPERE_NS = "http://"
+			+ "www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#";
+
 	/** Sensing ontology namespace. */
 	private static final transient String SENSING_NS = "http://"
 			+ "www.sapere-project.eu/distdemo#";
+
+	/** Situation ontology namespace. */
+	private static final transient String SITUATION_NS = "http://"
+			+ "www.sapere-project.eu/distdemo/analyzer#";
 
 	/** RDF namespace. */
 	private static final transient String RDF_NS = "http://"
 			+ "www.w3.org/1999/02/22-rdf-syntax-ns#";
 
-	/** XSD namespace. */
-	private static final transient String XSD_NS = "http://"
-			+ "www.w3.org/2001/XMLSchema#";
-
-	/** UCUM namespace. */
-	private static final transient String UCUM_NS = "http://"
-			+ "idi.fundacionctic.org/muo/ucum-instances.owl&level=DL#";
-
-	/** How many milliseconds should the sensor wait between sensing. */
-	private transient long actualWaitTime;
-
-	/** How many milliseconds should be subtracted to wait time. */
-	private final transient long timeDec;
-
-	/** How many cycles before dec. */
-	private final transient int cycles;
-
-	/** Random Number Generator (RNG). */
-	private final transient Random rng;
-
-	/** Random seed. */
-	private static final transient long SEED = 12345;
-
-	/** Temperature range: from 0 to (TEMP_RANGE - 1) celsius degrees. */
-	private static final transient int TEMP_RANGE = 50;
-
-	/** The LSA-id of the sensor (when inited). */
-	private transient LSAid sensorLSAid;
-
-	/**
-	 * <p>
-	 * Builds a new {@link TempAnalyzer}.
-	 * </p>
-	 * <p>
-	 * Default values are:
-	 * </p>
-	 * <ul>
-	 * <li>startingRate = 0.2</li>
-	 * <li>incStep = 0.0 (no increment)</li>
-	 * <li>cyclesBeforeInc = 1</li>
-	 * </ul>
-	 * 
-	 * @see TempAnalyzer#TempSensor(double, double, int)
-	 */
-	public TempAnalyzer() {
-		this(0.2, 0.0, 1);
-	}
-
-	/**
-	 * <p>
-	 * Builds a new {@link TempAnalyzer}.
-	 * </p>
-	 * 
-	 * @param startingRate
-	 *            Initial sensing rate (1/s)
-	 * @param incStep
-	 *            How much the rate should be incremented (1/s)
-	 * @param cyclesBeforeInc
-	 *            How many times the sensor should sense temperature at the
-	 *            current rate before incrementing the rate
-	 */
-	public TempAnalyzer(final double startingRate, final double incStep,
-			final int cyclesBeforeInc) {
-		if (startingRate <= 0.0) {
-			throw new IllegalArgumentException("Invalid startingRate provided");
-		}
-
-		if (incStep < 0.0) {
-			throw new IllegalArgumentException("Invalid incStep provided");
-		}
-
-		if (cyclesBeforeInc <= 0) {
-			throw new IllegalArgumentException(
-					"Invalid cyclesBeforeInc provided");
-		}
-
-		actualWaitTime = rateToMillis(startingRate);
-		timeDec = rateToMillis(startingRate);
-
-		cycles = cyclesBeforeInc;
-		rng = new Random(SEED);
-	}
-
-	/**
-	 * <p>
-	 * Converts rate (1/s) to milliseconds (ms).
-	 * </p>
-	 * 
-	 * @param rate
-	 *            Rate to be converted
-	 * @return Converted value (time, in ms)
-	 */
-	private long rateToMillis(final double rate) {
-		return Math.round(1.0 / rate * 1000L);
-	}
+	/** Provenance namespace. */
+	private static final transient String PROVENANCE_NS = "http://"
+			+ "www.sapere-project.eu/distdemo/provenance#";
 
 	@Override
 	public void behaviour(final LSAFactory factory, final LSAParser parser,
 			final LSAspace space, final LogUtils out, final SAPEREAgent me)
 			throws Exception {
-		init(factory, space, out);
+		init(factory, space, out, me.getAgentURI());
 
-		int counter = cycles;
 		while (me.isRunning()) {
-			counter--;
-			if (actualWaitTime > 1 && counter == 0) {
-				counter = cycles;
-				actualWaitTime -= timeDec;
-			}
-
 			try {
-				Thread.sleep(actualWaitTime);
+				new Semaphore(0).acquire();
 			} catch (InterruptedException ex) {
-				out.spy("interrupted while sleeping");
+				out.spy("interrupted by the user");
 			}
-
-			sense(factory, space, out);
 		}
 	}
 
 	/**
 	 * <p>
-	 * Handles sensing action.
-	 * </p>
-	 * 
-	 * @param factory
-	 *            Reference to LSAFactory
-	 * @param space
-	 *            Reference to LSA-space
-	 * @param out
-	 *            Reference to sysout
-	 */
-	private void sense(final LSAFactory factory, final LSAspace space,
-			final LogUtils out) {
-		try {
-			// Sensed temperature
-			final int temp = rng.nextInt(TEMP_RANGE);
-
-			out.log("Publishing temperature value (" + temp + ")..");
-			publishTemperature(factory, space, temp);
-		} catch (Exception ex) {
-			out.error("failed", ex);
-		}
-	}
-
-	/**
-	 * <p>
-	 * Injects observation LSA.
+	 * Handles initialization: enables eco-law and registers an observer for the
+	 * aggregated value.
 	 * </p>
 	 * 
 	 * @param fact
 	 *            Reference to LSAFactory
 	 * @param space
 	 *            Reference to LSA-space
-	 * @param temp
-	 *            Actual temperature
-	 * @throws SAPEREException
-	 *             Cannot complete declaration (LSA-space interaction problems)
-	 */
-	private void publishTemperature(final LSAFactory fact,
-			final LSAspace space, final int temp) throws SAPEREException {
-		final LSA obsLsa = fact.createLSA();
-
-		obsLsa.getSemanticDescription()
-				.addProperty(
-						fact.createProperty(
-								URI.create(RDF_NS + "type"),
-								fact.createPropertyValue(URI.create(SENSING_NS
-										+ "Observation"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "updateTime"),
-								fact.createPropertyValue(new Date())))
-				.addProperty(
-						fact.createProperty(URI.create(SENSING_NS + "value"),
-								fact.createPropertyValue(temp)))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "observedBy"),
-								fact.createPropertyValue(sensorLSAid)));
-
-		space.inject(obsLsa);
-	}
-
-	/**
-	 * <p>
-	 * Handles initialization: sensor information publication.
-	 * </p>
-	 * 
-	 * @param factory
-	 *            Reference to LSAFactory
-	 * @param space
-	 *            Reference to LSA-space
 	 * @param out
 	 *            Reference to sysout
+	 * @param meURI
+	 *            Agent's URI
 	 * @throws Exception
 	 *             Cannot init
 	 */
-	private void init(final LSAFactory factory, final LSAspace space,
-			final LogUtils out) throws Exception {
+	private void init(final LSAFactory fact, final LSAspace space,
+			final LogUtils out, final URI meURI) throws Exception {
 		try {
-			out.log("Declaring sensor type..");
-			final LSAid stLsaId = declareSensorType(factory, space);
-			out.log("Publishing sensor..");
-			sensorLSAid = declareSensor(factory, space, stLsaId);
-			out.log("Sensor ready.");
+			out.log("Defining situation..");
+			final LSA lsa = fact.createLSA();
+			lsa.getSemanticDescription()
+					.addProperty(
+							fact.createProperty(URI.create(RDF_NS + "type"),
+									fact.createPropertyValue(URI
+											.create(SITUATION_NS + "situation"
+													+ "WithConfidence"))))
+					.addProperty(
+							fact.createProperty(
+									URI.create(SENSING_NS + "confidence"),
+									fact.createPropertyValue(1.0)))
+					.addProperty(
+							fact.createProperty(
+									URI.create(SAPERE_NS + "updateTime"),
+									fact.createPropertyValue(new Date())))
+					.addProperty(
+							fact.createProperty(
+									URI.create(PROVENANCE_NS + "deriverdBy"),
+									fact.createPropertyValue(meURI)))
+					// .addProperty(
+					// fact.createProperty(URI.create(SITUATION_NS
+					// + "situation"), fact
+					// .createPropertyValue("N/A")));
+					.addProperty(
+							fact.createProperty(URI.create(SITUATION_NS
+									+ "label"), fact
+									.createPropertyValue("Max. temperature")));
+
+			space.inject(lsa);
+
+			out.log("Setting up observation..");
+			space.observe(lsa.getLSAId(), new AnalyzerObserver(fact, out));
+
+			out.log("Analyzer ready.");
 			out.spy(space.toString());
 		} catch (Exception ex) {
 			out.error("failed", ex);
@@ -251,92 +128,73 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 
 	/**
 	 * <p>
-	 * Injects SensorType LSA.
+	 * {@link LSAObserver} implementation, ad hoc for the demo analyzer.
 	 * </p>
 	 * 
-	 * @param fact
-	 *            Reference to LSAFactory
-	 * @param space
-	 *            Reference to LSA-space
-	 * @return The SensorType LSA-id
-	 * @throws SAPEREException
-	 *             Cannot complete declaration (LSA-space interaction problems)
-	 */
-	private LSAid declareSensorType(final LSAFactory fact, final LSAspace space)
-			throws SAPEREException {
-		final LSA stLsa = fact.createLSA();
-
-		final SDescValue techSpec = fact.createNestingPropertyValue();
-		techSpec.getValue()
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "manufacturer"),
-								fact.createPropertyValue("APICe Lab.", "it")))
-				.addProperty(
-						fact.createProperty(URI.create(SENSING_NS + "model"),
-								fact.createPropertyValue("BetaTemp", "it")))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "unitOfMeasurement"),
-								fact.createPropertyValue(URI.create(UCUM_NS
-										+ "celsius"))));
-
-		stLsa.getSemanticDescription()
-				.addProperty(
-						fact.createProperty(
-								URI.create(RDF_NS + "type"),
-								fact.createPropertyValue(URI.create(SENSING_NS
-										+ "SensorType"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "valueType"),
-								fact.createPropertyValue(URI.create(SENSING_NS
-										+ "numeric"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "contextDomain"),
-								fact.createPropertyValue(URI.create(XSD_NS
-										+ "integer"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS
-										+ "technicalSpecification"), techSpec));
-
-		space.inject(stLsa);
-		return stLsa.getLSAId();
-	}
-
-	/**
-	 * <p>
-	 * Injects Sensor LSA.
-	 * </p>
+	 * @author Paolo Contessi
 	 * 
-	 * @param fact
-	 *            Reference to LSAFactory
-	 * @param space
-	 *            Reference to LSA-space
-	 * @param stLsaId
-	 *            The SensorType LSA-id
-	 * @return The Sensor LSA-id
-	 * @throws SAPEREException
-	 *             Cannot complete declaration (LSA-space interaction problems)
 	 */
-	private LSAid declareSensor(final LSAFactory fact, final LSAspace space,
-			final LSAid stLsaId) throws SAPEREException {
-		final LSA sLsa = fact.createLSA();
-		sLsa.getSemanticDescription()
-				.addProperty(
-						fact.createProperty(
-								URI.create(RDF_NS + "type"),
-								fact.createPropertyValue(URI.create(SENSING_NS
-										+ "Sensor"))))
-				.addProperty(
-						fact.createProperty(
-								URI.create(SENSING_NS + "sensorType"),
-								fact.createPropertyValue(stLsaId)));
+	private static class AnalyzerObserver implements LSAObserver {
 
-		space.inject(sLsa);
-		return sLsa.getLSAId();
+		/** Reference to output. */
+		private final transient LogUtils out;
+
+		/** situation:label property name. */
+		private final transient PropertyName labelProp;
+
+		/** situation:situation property name (it's the value). */
+		private final transient PropertyName valueProp;
+
+		/** sapere:updateTime property name. */
+		private final transient PropertyName timeProp;
+
+		/** provenance:derivedFrom property name. */
+		private final transient PropertyName fromProp;
+
+		/**
+		 * <p>
+		 * Builds a new {@link AnalyzerObserver}.
+		 * </p>
+		 * 
+		 * @param fact
+		 *            Reference to Factory
+		 * @param log
+		 *            Reference to stdout
+		 */
+		public AnalyzerObserver(final LSAFactory fact, final LogUtils log) {
+			labelProp = fact.createPropertyName(URI.create(SITUATION_NS
+					+ "label"));
+			valueProp = fact.createPropertyName(URI.create(SITUATION_NS
+					+ "situation"));
+			timeProp = fact.createPropertyName(URI.create(SAPERE_NS
+					+ "updateTime"));
+			fromProp = fact.createPropertyName(URI.create(PROVENANCE_NS
+					+ "derivedFrom"));
+
+			out = log;
+		}
+
+		@Override
+		public void eventOccurred(final LSAEvent ev) {
+			final SemanticDescription sdesc = ev.getLSA()
+					.getSemanticDescription();
+
+			try {
+				final String label = sdesc.get(labelProp).values()[0]
+						.getValue().toString();
+				final String val = sdesc.get(valueProp).values()[0].getValue()
+						.toString();
+				final String time = sdesc.get(timeProp).values()[0].getValue()
+						.toString();
+				final String from = sdesc.get(fromProp).values()[0].getValue()
+						.toString();
+
+				out.log(String.format("%s = %s (updated on: %s; from: %s)",
+						label.toUpperCase(), val, time, from));
+			} catch (Exception ex) {
+				out.spy(String.format("event dropped (%s): %s",
+						ev.getOperationType(), ev.getLSA()));
+			}
+		}
 	}
-
 }

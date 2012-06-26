@@ -90,8 +90,12 @@ public class AnalysisPlatform {
 	 * </p>
 	 */
 	private void setEcolaws() {
-		_manager.addEcolaw(AggregationEcolaw.createASAPMaxAggregation(
-				_compiler, "sensing:Observation"));
+		_manager.addEcolaw(AggregationEcolaw.createASAPMaxAggregation1(
+				_compiler, "sensing:Observation",
+				"situation:situationWithConfidence"));
+		_manager.addEcolaw(AggregationEcolaw.createASAPMaxAggregation2(
+				_compiler, "sensing:Observation",
+				"situation:situationWithConfidence"));
 	}
 
 }
