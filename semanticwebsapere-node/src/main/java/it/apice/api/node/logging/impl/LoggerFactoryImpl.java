@@ -50,9 +50,6 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 
 	/** Deep = slower. */
 	private final transient boolean deep;
-	
-	/** A unique identifier, for the platform. */
-	private final transient long timeId;
 
 	/** Set of already inited loggers. */
 	private final transient Set<Logger> inited = new HashSet<Logger>();
@@ -86,7 +83,6 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 		dispLevel = dLevel;
 		fileLevel = fLevel;
 		deep = deepDebug;
-		timeId = System.currentTimeMillis();
 
 		// LogManager.resetConfiguration();
 	}
@@ -152,8 +148,8 @@ public final class LoggerFactoryImpl implements LoggerFactory {
 
 		final RollingFileAppender app = new RollingFileAppender(
 				new PatternLayout(pattern), String.format(
-						"sapere-logs/sapere%d-%s.log",
-						timeId, agentId));
+						"sapere-logs/sapere-%s.log",
+						agentId));
 		app.setMaxBackupIndex(NUMBER_OF_LOG_BACKUPS);
 		app.setMaxFileSize(LOG_FILE_SIZE);
 		app.setThreshold(fileLevel);

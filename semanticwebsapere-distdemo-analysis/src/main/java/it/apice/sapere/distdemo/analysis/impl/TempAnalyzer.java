@@ -53,7 +53,7 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 	public void behaviour(final LSAFactory factory, final LSAParser parser,
 			final LSAspace space, final LogUtils out, final SAPEREAgent me)
 			throws Exception {
-		init(factory, space, out, me.getAgentURI());
+		init(factory, space, out);
 
 		while (me.isRunning()) {
 			try {
@@ -76,13 +76,11 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 	 *            Reference to LSA-space
 	 * @param out
 	 *            Reference to sysout
-	 * @param meURI
-	 *            Agent's URI
 	 * @throws Exception
 	 *             Cannot init
 	 */
 	private void init(final LSAFactory fact, final LSAspace space,
-			final LogUtils out, final URI meURI) throws Exception {
+			final LogUtils out) throws Exception {
 		try {
 			out.log("Defining situation..");
 			final LSA lsa = fact.createLSA();
@@ -101,9 +99,10 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 									URI.create(SAPERE_NS + "updateTime"),
 									fact.createPropertyValue(new Date())))
 					.addProperty(
-							fact.createProperty(
-									URI.create(PROVENANCE_NS + "deriverdBy"),
-									fact.createPropertyValue(meURI)))
+							fact.createProperty(URI.create(PROVENANCE_NS
+									+ "deriverdBy"), fact
+									.createPropertyValue(URI.create(fact
+											.getNodeID()))))
 					.addProperty(
 							fact.createProperty(URI.create(SITUATION_NS
 									+ "label"), fact
@@ -143,8 +142,8 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 		/** sapere:updateTime property name. */
 		private final transient PropertyName timeProp;
 
-		/** provenance:derivedFrom property name. */
-		private final transient PropertyName fromProp;
+//		/** provenance:derivedFrom property name. */
+//		private final transient PropertyName fromProp;
 
 		/**
 		 * <p>
@@ -163,8 +162,8 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 					+ "situation"));
 			timeProp = fact.createPropertyName(URI.create(SAPERE_NS
 					+ "updateTime"));
-			fromProp = fact.createPropertyName(URI.create(PROVENANCE_NS
-					+ "derivedFrom"));
+//			fromProp = fact.createPropertyName(URI.create(PROVENANCE_NS
+//					+ "derivedFrom"));
 
 			out = log;
 		}
@@ -173,7 +172,7 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 		public void eventOccurred(final LSAEvent ev) {
 			final SemanticDescription sdesc = ev.getLSA()
 					.getSemanticDescription();
-			
+
 			out.spy("notified: " + ev.getLSA());
 
 			try {
@@ -183,11 +182,11 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 						.toString();
 				final String time = sdesc.get(timeProp).values()[0].getValue()
 						.toString();
-				final String from = sdesc.get(fromProp).values()[0].getValue()
-						.toString();
+//				final String from = sdesc.get(fromProp).values()[0].getValue()
+//						.toString();
 
-				out.log(String.format("%s = %s (updated on: %s; from: %s)",
-						label.toUpperCase(), val, time, from));
+				out.log(String.format("%s = %s (updated on: %s)",
+						label.toUpperCase(), val, time));
 			} catch (Exception ex) {
 				out.spy(String.format("event dropped (%s): %s",
 						ev.getOperationType(), ev.getLSA()));

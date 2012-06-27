@@ -11,7 +11,7 @@ Bundle-Vendor: APICe Lab, Alma Mater Studiorum - Università degli Stu
  di di Bologna
 Build-Jdk: 1.6.0_33
 Bundle-Version: 0.1.0
-Bnd-LastModified: 1340788344736
+Bnd-LastModified: 1340792235140
 Bundle-ManifestVersion: 2
 Bundle-Activator: it.apice.sapere.distdemo.analysis.internal.Activator
 Bundle-Description: This project models a part of the demo scenario: a
@@ -22,9 +22,8 @@ Import-Package: com.hp.hpl.jena.sparql.expr,com.hp.hpl.jena.sparql.fun
  ction,it.apice.sapere.api,it.apice.sapere.api.lsas,it.apice.sapere.ap
  i.lsas.values,it.apice.sapere.api.management,it.apice.sapere.api.node
  .agents,it.apice.sapere.api.node.logging,it.apice.sapere.api.space,it
- .apice.sapere.api.space.core,it.apice.sapere.api.space.match.function
- s,it.apice.sapere.api.space.observation,it.apice.sapere.distdemo.anal
- ysis,org.osgi.framework;version="1.6"
+ .apice.sapere.api.space.core,it.apice.sapere.api.space.observation,it
+ .apice.sapere.distdemo.analysis,org.osgi.framework;version="1.6"
 Bundle-SymbolicName: semanticwebsapere-distdemo-analysis
 Bundle-DocURL: http://apice.unibo.it/
 

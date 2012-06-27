@@ -135,7 +135,7 @@ public final class AggregationEcolaw {
 		builder.append("} WHERE { ");
 		appendObsSelect(builder);
 		builder.append("BIND(!obs_value AS ?max_value). ");
-		builder.append("BIND(!obs AS ?proven). ");
+//		builder.append("BIND(!obs AS ?proven). ");
 
 		builder.append("} ");
 
@@ -158,12 +158,13 @@ public final class AggregationEcolaw {
 		builder.append("sapere:updateTime !upd_time. ");
 
 		builder.append("} INSERT {");
+		appendInsert(builder);
 
 		builder.append("} WHERE {");
 		appendObsSelect(builder);
 		builder.append("BIND(afn:max(!situ_val, !obs_value) AS ?max_value). ");
-		builder.append("BIND(sapere:source(?max_value, "
-				+ "!obs_value, !obs, !source_obs) AS ?proven). ");
+//		builder.append("BIND(sapere:source(?max_value, "
+//				+ "!obs_value, !obs, !source_obs) AS ?proven). ");
 
 		builder.append("}");
 
@@ -182,7 +183,7 @@ public final class AggregationEcolaw {
 	private static StringBuilder appendInsert(final StringBuilder builder) {
 		builder.append("!situ situation:situation ?max_value; ");
 		builder.append("sapere:updateTime ?now; ");
-		builder.append("provenance:derivedFrom ?proven");
+//		builder.append("provenance:derivedFrom ?proven");
 
 		return builder;
 	}
@@ -280,7 +281,7 @@ public final class AggregationEcolaw {
 	 */
 	private static StringBuilder appendFilter(final StringBuilder builder) {
 		builder.append("?situ situation:situation ?situ_val; ");
-		builder.append("provenance:derivedFrom ?source_obs. ");
+//		builder.append("provenance:derivedFrom ?source_obs. ");
 
 		return builder;
 	}
