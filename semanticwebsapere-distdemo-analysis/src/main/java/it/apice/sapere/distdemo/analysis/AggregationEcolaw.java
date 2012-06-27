@@ -39,7 +39,7 @@ public final class AggregationEcolaw {
 			final EcolawCompiler compiler, final String aggregType,
 			final String destType) {
 		return compiler.create(getMatchQuery1(aggregType, destType),
-				getUpdateQuery1(), getASAPRate());
+				getUpdateQuery1(), getASAPRate(), "1-AGGR");
 	}
 
 	/**
@@ -60,7 +60,7 @@ public final class AggregationEcolaw {
 			final EcolawCompiler compiler, final String aggregType,
 			final String destType) {
 		return compiler.create(getMatchQuery2(aggregType, destType),
-				getUpdateQuery2(), getASAPRate());
+				getUpdateQuery2(), getASAPRate(), "2-AGGR");
 	}
 
 	/**

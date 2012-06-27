@@ -248,7 +248,8 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				space.beginRead();
 				try {
 					results = scheduler.eval(space.match(law));
-					spy(String.format("%d match(es) found.", results.length));
+					spy(String.format("%s: %d match(es) found.",
+							law.getLabel(), results.length));
 				} finally {
 					space.done();
 				}
@@ -360,7 +361,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 			return;
 		}
 
-		spy(String.format("event: %s >> %s", ev.getOperationType(), 
+		spy(String.format("event: %s >> %s", ev.getOperationType(),
 				Arrays.toString(ev.getLSAContent(RDFFormat.TURTLE))));
 		mutex.lock();
 		try {

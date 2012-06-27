@@ -4,7 +4,7 @@ import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.management.ReactionManager;
 import it.apice.sapere.api.node.agents.SAPEREAgentsFactory;
 import it.apice.sapere.api.space.core.EcolawCompiler;
-import it.apice.sapere.commons.DiffusionEcolaw;
+import it.apice.sapere.distdemo.sensor.DiffusionEcolaw;
 
 /**
  * <p>

@@ -32,6 +32,13 @@ public class EcolawCompilerImpl implements EcolawCompiler {
 				uQuery), rate);
 	}
 
+	@Override
+	public final CompiledEcolaw create(final String mQuery,
+			final String uQuery, final String rate, final String label) {
+		return new CompiledEcolawImpl(mQuery, new MatchingEcolawTemplateImpl(
+				uQuery), rate, label);
+	}
+
 	/**
 	 * <p>
 	 * Creates a {@link CompiledEcolaw}.
