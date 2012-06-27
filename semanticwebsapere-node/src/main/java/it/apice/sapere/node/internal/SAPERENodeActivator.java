@@ -245,6 +245,7 @@ public class SAPERENodeActivator implements BundleActivator {
 	 *            Bundle context
 	 */
 	private void registerLogFactory(final BundleContext context) {
+		
 		regs.add(context.registerService(LoggerFactory.class,
 				LoggerFactoryImpl.getInstance(), null));
 	}

@@ -1,5 +1,6 @@
 package it.apice.sapere.management.impl;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.SAPEREException;
 import it.apice.sapere.api.ecolaws.Ecolaw;
 import it.apice.sapere.api.ecolaws.scheduling.SchedulableMatchResult;
@@ -17,6 +18,7 @@ import it.apice.sapere.api.space.observation.SpaceObserver;
 import it.apice.sapere.api.space.observation.SpaceOperationType;
 import it.apice.sapere.node.agents.AbstractSystemAgent;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
@@ -178,7 +180,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				// scheduling pre-conditions modification
 				while (!abortScheduling
 						&& wakeUpTime > System.currentTimeMillis()) {
-					// spy("Waiting for an event..");
+					spy("Waiting for an event..");
 
 					// Waiting
 					abortScheduling = schedulingEvent.await(
@@ -186,12 +188,12 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 							TimeUnit.MILLISECONDS);
 				}
 
-				// spy("Proceeding.. (abort=" + abortScheduling + ")");
+				spy("Proceeding.. (abort=" + abortScheduling + ")");
 
 				if (!abortScheduling) {
 					space.beginWrite();
 					try {
-						// spy("Applying..");
+						spy("Applying..");
 						// If time has come applies the eco-law
 						// info(next.toString());
 						space.apply(next);
@@ -246,8 +248,7 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 				space.beginRead();
 				try {
 					results = scheduler.eval(space.match(law));
-					// spy(String.format("%d match(es) found.",
-					// results.length));
+					spy(String.format("%d match(es) found.", results.length));
 				} finally {
 					space.done();
 				}
@@ -359,7 +360,8 @@ public class ReactionManagerImpl extends AbstractSystemAgent implements
 			return;
 		}
 
-		spy("Something happened in the LSA-space!");
+		spy(String.format("event: %s >> %s", ev.getOperationType(), 
+				Arrays.toString(ev.getLSAContent(RDFFormat.TURTLE))));
 		mutex.lock();
 		try {
 			checkDependencies(ev, next);

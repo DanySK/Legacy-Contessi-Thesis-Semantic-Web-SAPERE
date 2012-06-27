@@ -65,7 +65,7 @@ public class TempSensor implements SAPEREAgentSpec {
 	private final transient Random rng;
 
 	/** Random seed. */
-	private static final transient long SEED = 12345;
+	private static final transient long SEED = 123456;
 
 	/** Temperature range: from 0 to (TEMP_RANGE - 1) celsius degrees. */
 	private static final transient int TEMP_RANGE = 50;
@@ -252,7 +252,7 @@ public class TempSensor implements SAPEREAgentSpec {
 			space.update(obsLsa);
 		}
 
-		// Issue Tracked: #1
+		// See Issue tracking: #1
 		obsLsa = space.read(obsLsa.getLSAId());
 	}
 

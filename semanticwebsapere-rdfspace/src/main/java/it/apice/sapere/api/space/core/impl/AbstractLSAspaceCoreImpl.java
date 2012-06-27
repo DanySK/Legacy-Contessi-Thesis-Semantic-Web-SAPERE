@@ -762,7 +762,11 @@ public abstract class AbstractLSAspaceCoreImpl implements
 			final List<CompiledLSA<StmtIterator>> lsas,
 			final SpaceOperationType type) throws SAPEREException {
 		for (CompiledLSA<StmtIterator> cLsa : lsas) {
-			notifyLSAObservers(msg, retrieveLSA(cLsa), type);
+			try {
+				notifyLSAObservers(msg, retrieveLSA(cLsa), type);
+			} catch (Exception ex) {
+				assert ex != null;
+			}
 		}
 	}
 

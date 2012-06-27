@@ -52,6 +52,9 @@ public class Jena2SAPEREConverter {
 	private static final transient Pattern LSA_ID_PATTERN = Pattern.compile("("
 			+ LSA_PREFIX + "\\w+-\\w+)");
 
+	/** Flag that registers rdf:type parsing. */
+	private transient boolean parsingRdfType;
+
 	/** SAPERE Model Factory. */
 	private transient PrivilegedLSAFactory factory;
 
@@ -94,6 +97,7 @@ public class Jena2SAPEREConverter {
 		final ResIterator iter = model.listSubjectsWithProperty(
 				model.createProperty(RDF_TYPE_PROP),
 				model.createResource(LSA_CLASS));
+
 		while (iter.hasNext()) {
 			res.add(parseLSA(iter.next(), model));
 		}
@@ -119,6 +123,7 @@ public class Jena2SAPEREConverter {
 		final LSA res = factory.createLSA(factory.createLSAid(new URI(lsa
 				.getURI())));
 
+		parsingRdfType = false;
 		populateLSA(res.getSemanticDescription(), lsa, model);
 
 		return res;
@@ -143,8 +148,11 @@ public class Jena2SAPEREConverter {
 		final ResultSet iter = execQuery(model, lsaPropsQuery(res));
 		while (iter.hasNext()) {
 			final Resource curr = iter.next().getResource(propVar());
-			if (!curr.getURI().equals(RDF_TYPE_PROP)) {
-				sdesc.addProperty(parseProperty(model, res, curr.getURI()));
+			parsingRdfType = curr.getURI().equals(RDF_TYPE_PROP);
+			final it.apice.sapere.api.lsas.Property lsaProp = parseProperty(
+					model, res, curr.getURI());
+			if (lsaProp != null) {
+				sdesc.addProperty(lsaProp);
 			}
 		}
 	}
@@ -266,13 +274,18 @@ public class Jena2SAPEREConverter {
 	 */
 	private it.apice.sapere.api.lsas.Property parseProperty(final Model model,
 			final Resource res, final String propURI) throws Exception {
+		PropertyValue<?, ?>[] vals = null;
 		if (res.isAnon()) {
-			return factory.createProperty(new URI(propURI),
-					extractAnonValues(model, res, propURI));
+			vals = extractAnonValues(model, res, propURI);
+		} else {
+			vals = extractResValues(model, res, propURI);
 		}
 
-		return factory.createProperty(new URI(propURI),
-				extractResValues(model, res, propURI));
+		if (vals.length == 0) {
+			return null;
+		}
+
+		return factory.createProperty(new URI(propURI), vals);
 	}
 
 	/**
@@ -357,15 +370,23 @@ public class Jena2SAPEREConverter {
 				final Statement stmt = bnodeIter.next();
 				final Resource prop = stmt.getPredicate();
 				if (!prop.getURI().equals(RDF_TYPE_PROP)) {
-					sdv.getValue().addProperty(
-							parseProperty(model, rVal.asResource(),
-									prop.getURI()));
+					final it.apice.sapere.api.lsas.Property lsaProp = 
+							parseProperty(model, rVal.asResource(), 
+									prop.getURI());
+					if (lsaProp != null) {
+						sdv.getValue().addProperty(lsaProp);
+					}
 				}
 			}
 
 			res.add(sdv);
 		} else if (rVal.isURIResource()) { // Checks if the object is a URI
-			final URI uri = new URI(rVal.asResource().getURI());
+			final String strUri = rVal.asResource().getURI();
+			final URI uri = new URI(strUri);
+			if (parsingRdfType && strUri.equals(LSA_CLASS)) {
+				return;
+			}
+
 			if (checkIsLSA(uri)) {
 				res.add(factory.createPropertyValue(factory.createLSAid(uri)));
 			} else {

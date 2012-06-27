@@ -104,10 +104,6 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 							fact.createProperty(
 									URI.create(PROVENANCE_NS + "deriverdBy"),
 									fact.createPropertyValue(meURI)))
-					// .addProperty(
-					// fact.createProperty(URI.create(SITUATION_NS
-					// + "situation"), fact
-					// .createPropertyValue("N/A")));
 					.addProperty(
 							fact.createProperty(URI.create(SITUATION_NS
 									+ "label"), fact
@@ -119,7 +115,6 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 			space.observe(lsa.getLSAId(), new AnalyzerObserver(fact, out));
 
 			out.log("Analyzer ready.");
-			out.spy(space.toString());
 		} catch (Exception ex) {
 			out.error("failed", ex);
 			throw ex;
@@ -178,6 +173,8 @@ public class TempAnalyzer implements SAPEREAgentSpec {
 		public void eventOccurred(final LSAEvent ev) {
 			final SemanticDescription sdesc = ev.getLSA()
 					.getSemanticDescription();
+			
+			out.spy("notified: " + ev.getLSA());
 
 			try {
 				final String label = sdesc.get(labelProp).values()[0]

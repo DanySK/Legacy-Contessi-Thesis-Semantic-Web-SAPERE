@@ -364,6 +364,7 @@ public class NetworkManagerImpl extends AbstractSystemAgent implements
 			lsaSpace.inject(lsa);
 			spy("Received diffusion: " + message.getOperation().getLSAid()
 					+ " --> " + lsa.getLSAid() + "\n");
+			spy("full-content: " + lsa);
 		} catch (Exception e) {
 			error("Cannot handle diffusion", e);
 		} finally {

@@ -93,38 +93,44 @@ public class DiffusionHandler implements SpaceObserver {
 		}
 
 		for (String rdfLsa : ev.getLSAContent(RDFFormat.RDF_XML)) {
-			@SuppressWarnings("rawtypes")
-			final CompiledLSA lsa = NodeServicesImpl.getInstance()
-					.getLSACompiler().parse(rdfLsa, RDFFormat.RDF_XML);
-			LoggerFactoryImpl.getInstance().getLogger(DiffusionHandler.class)
-					.spy("CHECKING LSA for DIFFUSION:\n" + lsa.toString());
-
 			try {
-				// Enact diffusion (only if required)
-				manager.diffuse(getLSALocation(lsa), new NodeMessage(
-						NodeMessageType.DIFFUSE, senderId, new SpaceOperation(
-								SpaceOperationType.SYSTEM_DIFFUSE, lsa,
-								"system"), 0, 0, new Float[0]));
+				@SuppressWarnings("rawtypes")
+				final CompiledLSA lsa = NodeServicesImpl.getInstance()
+						.getLSACompiler().parse(rdfLsa, RDFFormat.RDF_XML);
+				LoggerFactoryImpl.getInstance()
+						.getLogger(DiffusionHandler.class)
+						.spy("CHECKING LSA for DIFFUSION:\n" + lsa.toString());
 
-				if (_shouldRemove) {
-					// Remove diffused LSA from the LSA-space
-					space.remove(lsa);
+				try {
+					// Enact diffusion (only if required)
+					manager.diffuse(getLSALocation(lsa), new NodeMessage(
+							NodeMessageType.DIFFUSE, senderId,
+							new SpaceOperation(
+									SpaceOperationType.SYSTEM_DIFFUSE, lsa,
+									"system"), 0, 0, new Float[0]));
+
+					if (_shouldRemove) {
+						// Remove diffused LSA from the LSA-space
+						space.remove(lsa);
+					}
+
+					LoggerFactoryImpl.getInstance()
+							.getLogger(DiffusionHandler.class)
+							.log("DIFFUSE " + lsa.getLSAid());
+				} catch (SAPEREException ex) {
+					LoggerFactoryImpl
+							.getInstance()
+							.getLogger(DiffusionHandler.class)
+							.spy(String.format(
+									"LSA <%s> does not need to be diffused",
+									lsa.getLSAid()));
+				} catch (Exception ex) {
+					LoggerFactoryImpl.getInstance()
+							.getLogger(DiffusionHandler.class)
+							.error("DIFFUSE failed", ex);
 				}
-
-				LoggerFactoryImpl.getInstance()
-						.getLogger(DiffusionHandler.class)
-						.log("DIFFUSE " + lsa.getLSAid());
-			} catch (SAPEREException ex) {
-				LoggerFactoryImpl
-						.getInstance()
-						.getLogger(DiffusionHandler.class)
-						.spy(String.format(
-								"LSA <%s> does not need to be diffused",
-								lsa.getLSAid()));
 			} catch (Exception ex) {
-				LoggerFactoryImpl.getInstance()
-						.getLogger(DiffusionHandler.class)
-						.error("DIFFUSE failed", ex);
+				assert ex != null;
 			}
 		}
 	}
