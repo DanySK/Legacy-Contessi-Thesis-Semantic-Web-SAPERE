@@ -58,7 +58,7 @@ public class RDFSpaceActivator implements BundleActivator {
 	@Override
 	public final void start(final BundleContext context) throws Exception {
 		log("Starting up..");
-
+		
 		final PrivilegedLSAFactory fact = retrieveLSAFactoryService(context);
 
 		registerLSACompiler(context, fact);

@@ -847,6 +847,7 @@ public abstract class AbstractLSAspaceCoreImpl implements
 		if (enforceThreadSafety && infGraph != null) {
 			// Explicit Pellet refresh (for thread-safety)
 			infGraph.classify();
+			infGraph.realize();
 		}
 	}
 
