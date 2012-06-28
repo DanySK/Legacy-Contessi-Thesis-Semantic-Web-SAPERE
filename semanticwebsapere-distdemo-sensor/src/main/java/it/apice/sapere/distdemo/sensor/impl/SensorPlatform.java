@@ -81,7 +81,7 @@ public class SensorPlatform {
 	 *             Cannot spawn Agents
 	 */
 	private void runAgents() throws SAPEREException {
-		_factory.createAgent("temp_sensor", new TempSensor()).spawn();
+		_factory.createAgent("temp_sensor", new TempSensor(0.1, 2)).spawn();
 	}
 
 	/**

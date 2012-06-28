@@ -52,11 +52,11 @@ public class TempSensor implements SAPEREAgentSpec {
 	/** sensing:value property name. */
 	private transient PropertyName valuePropName;
 
-	/** How many milliseconds should the sensor wait between sensing. */
-	private transient long actualWaitTime;
+	/** Actual rate. */
+	private transient double rate;
 
-	/** How many milliseconds should be subtracted to wait time. */
-	private final transient long timeDec;
+	/** Rate increment. */
+	private final transient double step;
 
 	/** How many cycles before dec. */
 	private final transient int cycles;
@@ -99,6 +99,29 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * <p>
 	 * Builds a new {@link TempSensor}.
 	 * </p>
+	 * <p>
+	 * Default values are:
+	 * </p>
+	 * <ul>
+	 * <li>startingRate = 0.2 (5 sec)</li>
+	 * </ul>
+	 * 
+	 * @param incStep
+	 *            How much the rate should be incremented (1/s)
+	 * @param cyclesBeforeInc
+	 *            How many times the sensor should sense temperature at the
+	 *            current rate before incrementing the rate
+	 * 
+	 * @see TempSensor#TempSensor(double, double, int)
+	 */
+	public TempSensor(final double incStep, final int cyclesBeforeInc) {
+		this(0.2, incStep, cyclesBeforeInc);
+	}
+
+	/**
+	 * <p>
+	 * Builds a new {@link TempSensor}.
+	 * </p>
 	 * 
 	 * @param startingRate
 	 *            Initial sensing rate (1/s)
@@ -123,8 +146,8 @@ public class TempSensor implements SAPEREAgentSpec {
 					"Invalid cyclesBeforeInc provided");
 		}
 
-		actualWaitTime = rateToMillis(startingRate);
-		timeDec = rateToMillis(startingRate);
+		rate = startingRate;
+		step = incStep;
 
 		cycles = cyclesBeforeInc;
 		rng = new Random(SEED);
@@ -135,12 +158,17 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * Converts rate (1/s) to milliseconds (ms).
 	 * </p>
 	 * 
-	 * @param rate
+	 * @param aRate
 	 *            Rate to be converted
 	 * @return Converted value (time, in ms)
 	 */
-	private long rateToMillis(final double rate) {
-		return Math.round(1.0 / rate * 1000L);
+	private long rateToMillis(final double aRate) {
+		long millis = Math.round(1.0 / aRate * 1000L);
+		if (millis < 1) {
+			millis = 1;
+		}
+		
+		return millis;
 	}
 
 	@Override
@@ -151,21 +179,19 @@ public class TempSensor implements SAPEREAgentSpec {
 
 		int counter = cycles;
 		while (me.isRunning()) {
-			if (cycles > 1) {
-				counter--;
-				if (actualWaitTime > 1 && counter == 0) {
-					counter = cycles;
-					actualWaitTime -= timeDec;
-				}
+			if (cycles > 1 && step > 0.0 && counter == 0) {
+				counter = cycles;
+				rate += step;
 			}
 
 			try {
-				Thread.sleep(actualWaitTime);
+				Thread.sleep(rateToMillis(rate));
 			} catch (InterruptedException ex) {
 				out.spy("interrupted while sleeping");
 			}
 
 			sense(factory, space, out);
+			counter--;
 		}
 	}
 
@@ -187,7 +213,8 @@ public class TempSensor implements SAPEREAgentSpec {
 			// Sensed temperature
 			final int temp = rng.nextInt(TEMP_RANGE);
 
-			out.log("Publishing temperature value (" + temp + ")..");
+			out.log("Publishing temperature value (" + temp + "), next in "
+					+ rateToMillis(rate) + "ms..");
 			publishTemperature(factory, space, temp);
 			// out.spy(space.toString());
 		} catch (Exception ex) {
@@ -228,7 +255,8 @@ public class TempSensor implements SAPEREAgentSpec {
 									URI.create(RDF_NS + "type"),
 									fact.createPropertyValue(URI
 											.create(SENSING_NS + "Observation")
-											))).addProperty(
+											)))
+					.addProperty(
 							fact.createProperty(
 									URI.create(SENSING_NS + "startingTime"),
 									fact.createPropertyValue(now)))
