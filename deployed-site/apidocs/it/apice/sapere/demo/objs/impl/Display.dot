@@ -8,20 +8,20 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.demo.agents.impl.DisplayAgent
-	c72961 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../agents/impl/DisplayAgent.html">
+	c82701 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../agents/impl/DisplayAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DisplayAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.demo.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.objs.impl.Display
-	c72968 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Display.html">
+	c82708 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Display.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Display </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.rendering.impl.Renderable
-	c72969 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../rendering/impl/Renderable.html">
+	c82709 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../rendering/impl/Renderable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Renderable </td></tr>
@@ -29,23 +29,23 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel
-	c72971 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../rendering/impl/MainFrame.RenderablePanel.html">
+	c82711 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../rendering/impl/MainFrame.RenderablePanel.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RenderablePanel </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.demo.rendering.impl.MainFrame </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.demo.objs.impl.Display implements it.apice.sapere.demo.rendering.impl.Renderable
-	c72969:p -> c72968:p [dir=back,arrowtail=empty,style=dashed];
+	c82709:p -> c82708:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.demo.agents.impl.DisplayAgent NAVASSOC it.apice.sapere.demo.objs.impl.Display
-	c72961:p -> c72968:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c82701:p -> c82708:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.objs.impl.Display NAVASSOC it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel
-	c72968:p -> c72971:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c82708:p -> c82711:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel NAVASSOC it.apice.sapere.demo.rendering.impl.Renderable
-	c72971:p -> c72969:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c82711:p -> c82709:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel NAVASSOC it.apice.sapere.demo.rendering.impl.Renderable
-	c72971:p -> c72969:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c82711:p -> c82709:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.objs.impl.Display DEPEND it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel
-	c72968:p -> c72971:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c82708:p -> c82711:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

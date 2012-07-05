@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.match.MatchResult
-	c60042 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchResult.html">
+	c67114 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchResult </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c60043 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolawTemplate.html">
+	c67115 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolawTemplate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolawTemplate </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolaw
-	c60044 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolaw.html">
+	c67116 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../MatchingEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolaw </td></tr>
@@ -32,16 +32,16 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl
-	c60119 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchingEcolawTemplateImpl.html">
+	c67191 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchingEcolawTemplateImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MatchingEcolawTemplateImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl implements it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c60043:p -> c60119:p [dir=back,arrowtail=empty,style=dashed];
-	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c60119:p -> c60042:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c67115:p -> c67191:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c60119:p -> c60044:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c67191:p -> c67116:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.match.impl.MatchingEcolawTemplateImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c67191:p -> c67114:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

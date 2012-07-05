@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec
-	c37819 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPERESysAgentSpec.html">
+	c43417 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPERESysAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPERESysAgentSpec </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.agents.SAPEREAgentSpec
-	c37820 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPEREAgentSpec.html">
+	c43418 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPEREAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgentSpec </td></tr>
@@ -24,75 +24,130 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LogUtils
-	c37826 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtils.html">
+	c43424 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.api.node.logging.impl.LogUtilsImpl
-	c37925 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LogUtilsImpl.html">
+	c43523 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LogUtilsImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LogUtilsImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.api.node.logging.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl
-	c37926 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LoggerFactoryImpl.html">
+	c43524 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LoggerFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LoggerFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.api.node.logging.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.ReactionManagerLogger
-	c37931 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerLogger.html">
+	c43529 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerLogger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerLogger </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.internal.ITestsActivator
+	c43561 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../internal/ITestsActivator.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> ITestsActivator </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.internal </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.testcase.ResVLCIniter
+	c43562 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../testcase/ResVLCIniter.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> ResVLCIniter </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.testcase </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.testcase.DisplayVLCService
+	c43563 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../testcase/DisplayVLCService.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> DisplayVLCService </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.testcase </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.agents.impl.PersonAgent
-	c37961 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/PersonAgent.html">
+	c43566 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/PersonAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PersonAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.demo.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.agents.impl.FOAFPersonAgent
-	c37962 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/FOAFPersonAgent.html">
+	c43567 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/FOAFPersonAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> FOAFPersonAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.demo.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.agents.impl.DisplayAgent
-	c37964 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/DisplayAgent.html">
+	c43569 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../demo/agents/impl/DisplayAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DisplayAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.demo.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.distdemo.sensor.impl.TempSensor
+	c43581 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/sensor/impl/TempSensor.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> TempSensor </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.distdemo.sensor.impl </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.distdemo.analysis.impl.TempAnalyzer
+	c43586 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/analysis/impl/TempAnalyzer.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> TempAnalyzer </td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.distdemo.analysis.impl </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.api.node.logging.impl.LogUtilsImpl implements it.apice.sapere.api.node.logging.LogUtils
-	c37826:p -> c37925:p [dir=back,arrowtail=empty,style=dashed];
+	c43424:p -> c43523:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.testcase.ResVLCIniter implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c43418:p -> c43562:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.testcase.DisplayVLCService implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c43418:p -> c43563:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.demo.agents.impl.PersonAgent implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
-	c37820:p -> c37961:p [dir=back,arrowtail=empty,style=dashed];
+	c43418:p -> c43566:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.demo.agents.impl.FOAFPersonAgent implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
-	c37820:p -> c37962:p [dir=back,arrowtail=empty,style=dashed];
+	c43418:p -> c43567:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.demo.agents.impl.DisplayAgent implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
-	c37820:p -> c37964:p [dir=back,arrowtail=empty,style=dashed];
+	c43418:p -> c43569:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.distdemo.sensor.impl.TempSensor implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c43418:p -> c43581:p [dir=back,arrowtail=empty,style=dashed];
+	//it.apice.sapere.distdemo.analysis.impl.TempAnalyzer implements it.apice.sapere.api.node.agents.SAPEREAgentSpec
+	c43418:p -> c43586:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger NAVASSOC it.apice.sapere.api.node.logging.LogUtils
-	c37931:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c43529:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.internal.ITestsActivator NAVASSOC it.apice.sapere.api.node.logging.LogUtils
+	c43561:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.testcase.DisplayVLCService NAVASSOC it.apice.sapere.api.node.logging.LogUtils
+	c43563:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37819:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43417:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.node.agents.SAPEREAgentSpec DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37820:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43418:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37926:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43524:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.testcase.ResVLCIniter DEPEND it.apice.sapere.api.node.logging.LogUtils
+	c43562:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.testcase.DisplayVLCService DEPEND it.apice.sapere.api.node.logging.LogUtils
+	c43563:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.demo.agents.impl.PersonAgent DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37961:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43566:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.demo.agents.impl.FOAFPersonAgent DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37962:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43567:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.demo.agents.impl.DisplayAgent DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c37964:p -> c37826:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43569:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.distdemo.sensor.impl.TempSensor DEPEND it.apice.sapere.api.node.logging.LogUtils
+	c43581:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.distdemo.analysis.impl.TempAnalyzer DEPEND it.apice.sapere.api.node.logging.LogUtils
+	c43586:p -> c43424:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

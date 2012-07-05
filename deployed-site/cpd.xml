@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
-<duplication lines="63" tokens="325">
-<file line="54" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-demo/src/main/java/it/apice/sapere/demo/agents/impl/FOAFPersonAgent.java"/>
-<file line="54" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-demo/src/main/java/it/apice/sapere/demo/agents/impl/PersonAgent.java"/>
+<duplication lines="71" tokens="352">
+<file line="55" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-demo/src/main/java/it/apice/sapere/demo/agents/impl/FOAFPersonAgent.java"/>
+<file line="55" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-demo/src/main/java/it/apice/sapere/demo/agents/impl/PersonAgent.java"/>
 <codefragment>
 <![CDATA[
 	public FOAFPersonAgent(final Person person) {
@@ -37,8 +37,16 @@
 				.addProperty(factory.createProperty(LOC_Y, lastKnownY));
 
 		// Injecting personal LSA
-		space.inject(myLsa);
-		myLsa = space.read(myLsa.getLSAId());
+		boolean success = false;
+		while (!success) {
+			try {
+				space.inject(myLsa);
+				myLsa = space.read(myLsa.getLSAId());
+				success = true;
+			} catch (SAPEREException ex) {
+				success = false;
+			}
+		}
 
 		try {
 			// Updating it each time a movement is made
@@ -68,6 +76,65 @@
 	}
 
 }
+]]>
+</codefragment>
+</duplication>
+<duplication lines="51" tokens="177">
+<file line="23" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-distdemo-analysis/src/main/java/it/apice/sapere/distdemo/analysis/internal/Activator.java"/>
+<file line="23" path="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-distdemo-sensor/src/main/java/it/apice/sapere/distdemo/sensor/internal/Activator.java"/>
+<codefragment>
+<![CDATA[
+public class Activator implements BundleActivator {
+
+	/** List of service references. */
+	private final transient List<ServiceReference<?>> services = 
+			new LinkedList<ServiceReference<?>>();
+
+	@Override
+	public void start(final BundleContext context) throws Exception {
+		ReactionManager manager = null;
+		SAPEREAgentsFactory aFactory = null;
+		EcolawCompiler eCompiler = null;
+
+		// @SuppressWarnings("rawtypes")
+		// final ServiceReference<MatchFunctRegistry> ref0 = context
+		// .getServiceReference(MatchFunctRegistry.class);
+		// if (ref0 != null) {
+		// @SuppressWarnings("unchecked")
+		// final MatchFunctRegistry<Function> mfr = context.getService(ref0);
+		//
+		// mfr.register(URI.create("http://www.sapere-project.eu/"
+		// + "ontologies/2012/0/sapere-model.owl#source"),
+		// SourceFunction.class);
+		//
+		// context.ungetService(ref0);
+		// }
+
+		final ServiceReference<ReactionManager> ref = context
+				.getServiceReference(ReactionManager.class);
+		if (ref != null) {
+			services.add(ref);
+			manager = context.getService(ref);
+			assert manager != null;
+		}
+
+		final ServiceReference<SAPEREAgentsFactory> ref2 = context
+				.getServiceReference(SAPEREAgentsFactory.class);
+		if (ref2 != null) {
+			services.add(ref2);
+			aFactory = context.getService(ref2);
+			assert aFactory != null;
+		}
+
+		final ServiceReference<EcolawCompiler> ref3 = context
+				.getServiceReference(EcolawCompiler.class);
+		if (ref3 != null) {
+			services.add(ref3);
+			eCompiler = context.getService(ref3);
+			assert eCompiler != null;
+		}
+
+		final AnalysisPlatform bl = new AnalysisPlatform(manager, aFactory,
 ]]>
 </codefragment>
 </duplication>

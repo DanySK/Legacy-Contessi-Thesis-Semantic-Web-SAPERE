@@ -87,12 +87,34 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * <li>startingRate = 0.2 (5 sec)</li>
 	 * <li>incStep = 0.0 (no increment)</li>
 	 * <li>cyclesBeforeInc = 1</li>
+	 * <li>counter = 0</li>
 	 * </ul>
 	 * 
-	 * @see TempSensor#TempSensor(double, double, int)
+	 * @see TempSensor#TempSensor(double, double, int, int)
 	 */
 	public TempSensor() {
-		this(0.2, 0.0, 1);
+		this(0.2, 0.0, 1, 0);
+	}
+
+	/**
+	 * <p>
+	 * Builds a new {@link TempSensor}.
+	 * </p>
+	 * <p>
+	 * Default values are:
+	 * </p>
+	 * <ul>
+	 * <li>startingRate = 0.2 (5 sec)</li>
+	 * <li>incStep = 0.0 (no increment)</li>
+	 * <li>cyclesBeforeInc = 1</li>
+	 * </ul>
+	 * 
+	 * @see TempSensor#TempSensor(double, double, int, int)
+	 * @param counter
+	 *            Unique number of sensor, used for RNG's seed modification
+	 */
+	public TempSensor(final int counter) {
+		this(0.2, 0.0, 1, counter);
 	}
 
 	/**
@@ -111,11 +133,14 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * @param cyclesBeforeInc
 	 *            How many times the sensor should sense temperature at the
 	 *            current rate before incrementing the rate
+	 * @param counter
+	 *            Unique number of sensor, used for RNG's seed modification
 	 * 
 	 * @see TempSensor#TempSensor(double, double, int)
 	 */
-	public TempSensor(final double incStep, final int cyclesBeforeInc) {
-		this(0.2, incStep, cyclesBeforeInc);
+	public TempSensor(final double incStep, final int cyclesBeforeInc,
+			final int counter) {
+		this(0.2, incStep, cyclesBeforeInc, counter);
 	}
 
 	/**
@@ -130,9 +155,11 @@ public class TempSensor implements SAPEREAgentSpec {
 	 * @param cyclesBeforeInc
 	 *            How many times the sensor should sense temperature at the
 	 *            current rate before incrementing the rate
+	 * @param counter
+	 *            Unique number of sensor, used for RNG's seed modification
 	 */
 	public TempSensor(final double startingRate, final double incStep,
-			final int cyclesBeforeInc) {
+			final int cyclesBeforeInc, final int counter) {
 		if (startingRate <= 0.0) {
 			throw new IllegalArgumentException("Invalid startingRate provided");
 		}
@@ -150,7 +177,7 @@ public class TempSensor implements SAPEREAgentSpec {
 		step = incStep;
 
 		cycles = cyclesBeforeInc;
-		rng = new Random(SEED);
+		rng = new Random(SEED + counter);
 	}
 
 	/**
@@ -167,7 +194,7 @@ public class TempSensor implements SAPEREAgentSpec {
 		if (millis < 1) {
 			millis = 1;
 		}
-		
+
 		return millis;
 	}
 

@@ -8,53 +8,53 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.formulas.impl.LtFormulaImpl<Type extends java.lang.Comparable<Type>>
-	c6635 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LtFormulaImpl.html">
+	c7067 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LtFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> LtFormulaImpl&lt;Type extends Comparable&lt;Type&gt;&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.LtEqFormulaImpl<Type extends java.lang.Comparable<Type>>
-	c6636 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LtEqFormulaImpl.html">
+	c7068 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LtEqFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> LtEqFormulaImpl&lt;Type extends Comparable&lt;Type&gt;&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.IsFormulaImpl<Type>
-	c6637 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IsFormulaImpl.html">
+	c7069 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IsFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> IsFormulaImpl&lt;Type&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.GtFormulaImpl<Type extends java.lang.Comparable<Type>>
-	c6638 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GtFormulaImpl.html">
+	c7070 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GtFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> GtFormulaImpl&lt;Type extends Comparable&lt;Type&gt;&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.GtEqFormulaImpl<Type extends java.lang.Comparable<Type>>
-	c6639 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GtEqFormulaImpl.html">
+	c7071 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GtEqFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> GtEqFormulaImpl&lt;Type extends Comparable&lt;Type&gt;&gt; </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.formulas.impl.FormulaFactoryImpl
-	c6640 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./FormulaFactoryImpl.html">
+	c7072 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./FormulaFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> FormulaFactoryImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.formulas.impl.LtFormulaImpl<Type extends java.lang.Comparable<Type>> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749:p -> c6635:p [dir=back,arrowtail=empty];
+	c7197:p -> c7067:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.formulas.impl.LtEqFormulaImpl<Type extends java.lang.Comparable<Type>> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749:p -> c6636:p [dir=back,arrowtail=empty];
+	c7197:p -> c7068:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.formulas.impl.IsFormulaImpl<Type> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749:p -> c6637:p [dir=back,arrowtail=empty];
+	c7197:p -> c7069:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.formulas.impl.GtFormulaImpl<Type extends java.lang.Comparable<Type>> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749:p -> c6638:p [dir=back,arrowtail=empty];
+	c7197:p -> c7070:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.formulas.impl.GtEqFormulaImpl<Type extends java.lang.Comparable<Type>> extends it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749:p -> c6639:p [dir=back,arrowtail=empty];
+	c7197:p -> c7071:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.api.ecolaws.formulas.impl.AbstractFormulaImpl<Type>
-	c6749 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/impl/AbstractFormulaImpl.html">
+	c7197 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/ecolaws/formulas/impl/AbstractFormulaImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractFormulaImpl&lt;Type&gt; </font></td></tr>
 		</table></td></tr>

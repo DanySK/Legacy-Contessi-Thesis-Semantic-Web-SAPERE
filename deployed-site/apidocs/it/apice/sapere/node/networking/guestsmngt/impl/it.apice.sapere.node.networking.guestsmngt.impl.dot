@@ -8,31 +8,31 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber
-	c12988 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestSubscriber.html">
+	c13836 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestSubscriber </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestsHandlerAgent
-	c12989 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestsHandlerAgent.html">
+	c13837 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestsHandlerAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestsHandlerAgent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestMessageType
-	c12990 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestMessageType.html">
+	c13838 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestMessageType.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> GuestMessageType </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage
-	c12991 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestMessage.html">
+	c13839 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GuestMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestMessage </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage NAVASSOC it.apice.sapere.node.networking.guestsmngt.impl.GuestMessageType
-	c12991:p -> c12990:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c13839:p -> c13838:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

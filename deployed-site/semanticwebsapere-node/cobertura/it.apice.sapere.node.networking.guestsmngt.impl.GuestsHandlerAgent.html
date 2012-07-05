@@ -25,31 +25,31 @@
 <tr>  <td class="numLine">&nbsp;2</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;3</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.PrivilegedLSAFactory;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.api.node.logging.impl.LoggerFactoryImpl;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;4</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.RDFFormat;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.PrivilegedLSAFactory;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;5</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.SAPEREException;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.RDFFormat;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;6</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.lsas.LSAid;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.SAPEREException;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;7</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.core.CompiledLSA;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.lsas.LSAid;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;8</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.core.LSAspaceCore;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.node.NodeServices;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;9</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.observation.SpaceOperationType;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.node.agents.networking.Message;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;10</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.agents.AbstractSystemAgent;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.node.agents.networking.Subscriber;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;11</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.agents.NodeServices;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.core.CompiledLSA;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;12</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.core.LSAspaceCore;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;13</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.internal.LoggerFactoryImpl;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.api.space.observation.SpaceOperationType;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;14</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.networking.impl.Message;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.agents.AbstractSystemAgent;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;15</td>  <td class="nbHits">&nbsp;</td>
-  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.networking.impl.Subscriber;</pre></td></tr>
+  <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;16</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="keyword">import</span> it.apice.sapere.node.networking.obsnotif.impl.Notification;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;17</td>  <td class="nbHits">&nbsp;</td>
@@ -1093,6 +1093,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 30/05/12 10.47.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 03/07/12 10.30.</div>
 </body>
 </html>

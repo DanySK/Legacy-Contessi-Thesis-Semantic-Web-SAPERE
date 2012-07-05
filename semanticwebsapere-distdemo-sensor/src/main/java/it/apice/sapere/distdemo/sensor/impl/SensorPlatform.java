@@ -16,6 +16,9 @@ import it.apice.sapere.distdemo.sensor.DiffusionEcolaw;
  */
 public class SensorPlatform {
 
+	/** Number of sensor to be created. */
+	private final int sensorsCount;
+
 	/** Reference to reaction manager. */
 	private final transient ReactionManager _manager;
 
@@ -36,10 +39,12 @@ public class SensorPlatform {
 	 *            Reference to Agents Factory
 	 * @param eCompiler
 	 *            Reference to Eco-law Compiler
+	 * @param numSensors
+	 *            Number of platform's sensors
 	 */
 	public SensorPlatform(final ReactionManager manager,
-			final SAPEREAgentsFactory aFactory, 
-			final EcolawCompiler eCompiler) {
+			final SAPEREAgentsFactory aFactory, final EcolawCompiler eCompiler,
+			final int numSensors) {
 		if (manager == null) {
 			throw new IllegalArgumentException("Invalid manager provided");
 		}
@@ -52,6 +57,12 @@ public class SensorPlatform {
 		if (eCompiler == null) {
 			throw new IllegalArgumentException(
 					"Invalid eco-law compiler provided");
+		}
+
+		if (numSensors < 1) {
+			sensorsCount = 1;
+		} else {
+			sensorsCount = numSensors;
 		}
 
 		_manager = manager;
@@ -81,7 +92,25 @@ public class SensorPlatform {
 	 *             Cannot spawn Agents
 	 */
 	private void runAgents() throws SAPEREException {
-		_factory.createAgent("temp_sensor", new TempSensor(0.1, 2)).spawn();
+		long waitTime = 2500;
+		for (int counter = 0; counter < sensorsCount; counter++) {
+			TempSensor spec = null;
+			if (sensorsCount == 1) {
+				spec = new TempSensor(0.1, 2, 0);
+			} else {
+				spec = new TempSensor(0.0, 1, counter);
+			}
+
+			_factory.createAgent("temp_sensor" + counter, spec).spawn();
+			
+			try {
+				Thread.sleep(waitTime);
+			} catch (InterruptedException ex) {
+				assert ex != null;
+			}
+
+			waitTime /= 2;
+		}
 	}
 
 	/**

@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.LongValue
-	c55649 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LongValue.html">
+	c62431 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LongValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LongValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c55740 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c62522 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.LongValueImpl
-	c55742 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LongValueImpl.html">
+	c62524 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LongValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LongValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.LongValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.lang.Long, it.apice.sapere.api.lsas.values.LongValue>
-	c55740:p -> c55742:p [dir=back,arrowtail=empty];
+	c62522:p -> c62524:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.LongValueImpl implements it.apice.sapere.api.lsas.values.LongValue
-	c55649:p -> c55742:p [dir=back,arrowtail=empty,style=dashed];
+	c62431:p -> c62524:p [dir=back,arrowtail=empty,style=dashed];
 }
 
