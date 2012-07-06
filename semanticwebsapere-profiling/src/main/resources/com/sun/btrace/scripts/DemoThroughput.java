@@ -1,12 +1,10 @@
 package com.sun.btrace.scripts;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import com.sun.btrace.BTraceUtils;
-import com.sun.btrace.aggregation.Aggregation;
-import com.sun.btrace.aggregation.AggregationFunction;
-import com.sun.btrace.aggregation.AggregationKey;
 import com.sun.btrace.annotations.BTrace;
 import com.sun.btrace.annotations.OnMethod;
-import com.sun.btrace.annotations.Property;
 
 /**
  * <p>
@@ -22,16 +20,41 @@ public final class DemoThroughput {
 
 	/** Time at which last DIFFUSE receival occurred. */
 	private static long lastReceive = BTraceUtils.timeNanos();
+	//
+	// /** Time at which last AGGREGATION application occurred. */
+	// private static long lastApply = BTraceUtils.timeNanos();
+	//
+	// /** Actual period between two <code>handleDiffusion</code> calls. */
+	// private static long receivePeriod;
+	//
+	// /** Counter which verifies calls balancing. */
+	// private static int balancer = 0;
 
-	/** Time at which last AGGREGATION application occurred. */
-	private static long lastApply = BTraceUtils.timeNanos();
+	/** Counts DIFFUSE receival events. */
+	private static AtomicInteger receivedCounter = BTraceUtils
+			.newAtomicInteger();
 
-	/** Actual period between two <code>handleDiffusion</code> calls. */
-	private static long receivePeriod;
+	/** Counts AGGR apply events. */
+	private static AtomicInteger applyCounter = BTraceUtils.newAtomicInteger();
 
-	/** Counter which verifies calls balancing. */
-	private static int balancer = 0;
-	
+	/** Flag which enable/disable the test run. */
+	private static boolean testOn = true;
+
+	/** Flag which marks last iteration. */
+	private static boolean printStats = true;
+
+	/** Aggregator for minimum period. */
+	private static Aggregation minPeriod = BTraceUtils.Aggregations
+			.newAggregation(AggregationFunction.MINIMUM);
+
+	/** Aggregator for average period. */
+	private static Aggregation avgPeriod = BTraceUtils.Aggregations
+			.newAggregation(AggregationFunction.AVERAGE);
+
+	/** Aggregator for maximum period. */
+	private static Aggregation maxPeriod = BTraceUtils.Aggregations
+			.newAggregation(AggregationFunction.MAXIMUM);
+
 	/**
 	 * <p>
 	 * Constructor obfuscator.
@@ -50,11 +73,16 @@ public final class DemoThroughput {
 	clazz = "it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl", 
 	method = "handleDiffusion")
 	public static void onReceive() {
-		balancer++;
-		final long now = BTraceUtils.timeNanos();
+		testOn = BTraceUtils.incrementAndGet(receivedCounter) < 1000;
+		if (testOn) {
+			final long now = BTraceUtils.timeNanos();
+			final long receivePeriod = (now - lastReceive);
+			lastReceive = now;
 
-		receivePeriod = (now - lastReceive);
-		lastReceive = now;
+			BTraceUtils.Aggregations.addToAggregation(minPeriod, receivePeriod);
+			BTraceUtils.Aggregations.addToAggregation(avgPeriod, receivePeriod);
+			BTraceUtils.Aggregations.addToAggregation(maxPeriod, receivePeriod);
+		}
 	}
 
 	/**
@@ -63,23 +91,18 @@ public final class DemoThroughput {
 	 * </p>
 	 */
 	@OnMethod(
-		clazz = "it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl", 
-		method = "apply")
+	clazz = "it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl", 
+	method = "apply")
 	public static void onApply() {
-		balancer--;
-		final long now = BTraceUtils.timeNanos();
-
-		final long applyPeriod = (now - lastApply);
-		final long waitPeriod = (now - lastReceive);
-		lastApply = now;
-
-		BTraceUtils.println(
-				BTraceUtils.concat(
-						BTraceUtils.concat(BTraceUtils.concat(
-								BTraceUtils.concat(
-										BTraceUtils.str(receivePeriod / 1e6), ":"),
-								BTraceUtils.str(applyPeriod / 1e6)), BTraceUtils
-								.concat(":", BTraceUtils.str(waitPeriod / 1e6))),
-				BTraceUtils.concat(":", BTraceUtils.str(balancer * 1000))));
+		if (testOn) {
+			BTraceUtils.incrementAndGet(applyCounter);
+		} else if (printStats) {
+			printStats = false;
+			BTraceUtils.println(BTraceUtils.concat(BTraceUtils.str(BTraceUtils
+					.get(applyCounter))), " / 1000 elaborations");
+			BTraceUtils.printAggregation(minPeriod);
+			BTraceUtils.printAggregation(avgPeriod);
+			BTraceUtils.printAggregation(maxPeriod);
+		}
 	}
 }

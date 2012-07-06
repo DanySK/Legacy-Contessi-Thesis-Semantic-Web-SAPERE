@@ -56,16 +56,16 @@ public class Activator implements BundleActivator {
 			assert eCompiler != null;
 		}
 
-		int numSensors = 1;
-		final String numSensorsParam = context.getProperty(
-				"sapere.demo.numsensors");
-		if (numSensorsParam != null) {
-			final int val = Integer.parseInt(numSensorsParam);
-			numSensors = val;
+		long period = 1000L;
+		final String periodParam = context.getProperty(
+				"sapere.demo.period");
+		if (periodParam != null) {
+			final long val = Long.parseLong(periodParam);
+			period = val;
 		}
 		
 		final SensorPlatform bl = new SensorPlatform(manager, aFactory,
-				eCompiler, numSensors);
+				eCompiler, period);
 		bl.execute();
 	}
 
