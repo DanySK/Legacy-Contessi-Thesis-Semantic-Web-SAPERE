@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: it.apice.sapere.space.TestLSAspace
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 87.957 sec <<< FAILURE!
-testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.893 sec  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 99.291 sec <<< FAILURE!
+testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 13.774 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -52,7 +52,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.454 sec  <<< ERROR!
+testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 13.604 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -102,7 +102,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.596 sec  <<< ERROR!
+testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 15.678 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -152,7 +152,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.517 sec  <<< ERROR!
+testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 13.31 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -202,7 +202,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.479 sec  <<< ERROR!
+testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 13.192 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -252,7 +252,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.412 sec  <<< ERROR!
+testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 16.141 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
@@ -302,7 +302,7 @@ org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for ser
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe(it.apice.sapere.space.TestLSAspace)  Time elapsed: 12.508 sec  <<< ERROR!
+testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@4a6e0a9(it.apice.sapere.space.TestLSAspace)  Time elapsed: 13.528 sec  <<< ERROR!
 org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
 	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)

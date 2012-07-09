@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.PropertyName
-	c81287 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/lsas/PropertyName.html">
+	c82435 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/lsas/PropertyName.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PropertyName </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.LSAObserver
-	c81344 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/space/observation/LSAObserver.html">
+	c82492 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/space/observation/LSAObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAObserver </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.LSAEvent
-	c81345 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/space/observation/LSAEvent.html">
+	c82493 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../api/space/observation/LSAEvent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAEvent </td></tr>
@@ -32,16 +32,16 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.agents.impl.DisplayLSAObserver
-	c81468 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DisplayLSAObserver.html">
+	c82618 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DisplayLSAObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DisplayLSAObserver </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.demo.agents.impl.DisplayLSAObserver implements it.apice.sapere.api.space.observation.LSAObserver
-	c81344:p -> c81468:p [dir=back,arrowtail=empty,style=dashed];
+	c82492:p -> c82618:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.demo.agents.impl.DisplayLSAObserver NAVASSOC it.apice.sapere.api.lsas.PropertyName
-	c81468:p -> c81287:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c82618:p -> c82435:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.agents.impl.DisplayLSAObserver DEPEND it.apice.sapere.api.space.observation.LSAEvent
-	c81468:p -> c81345:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c82618:p -> c82493:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

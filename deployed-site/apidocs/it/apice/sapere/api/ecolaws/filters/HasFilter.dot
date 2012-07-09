@@ -8,57 +8,57 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25706 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./OpFilter.html">
+	c25904 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./OpFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> OpFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.HasFilter
-	c25709 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./HasFilter.html">
+	c25907 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./HasFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> HasFilter </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL
-	c25805 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../compilers/EcolawToSPARQL.html">
+	c26003 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../compilers/EcolawToSPARQL.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawToSPARQL </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.compilers </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filter.impl.HasFilterImpl
-	c25809 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../filter/impl/HasFilterImpl.html">
+	c26007 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../filter/impl/HasFilterImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> HasFilterImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.filter.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions
-	c25839 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitors/internal/AuxFunctions.html">
+	c26037 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitors/internal/AuxFunctions.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> AuxFunctions </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.visitors.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.filters.HasFilter implements it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25706:p -> c25709:p [dir=back,arrowtail=empty,style=dashed];
+	c25904:p -> c25907:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.filter.impl.HasFilterImpl implements it.apice.sapere.api.ecolaws.filters.HasFilter
-	c25709:p -> c25809:p [dir=back,arrowtail=empty,style=dashed];
+	c25907:p -> c26007:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL NAVASSOC it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25805:p -> c25706:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c26003:p -> c25904:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25805:p -> c25706:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c26003:p -> c25904:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.filters.HasFilter
-	c25805:p -> c25709:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c26003:p -> c25907:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions DEPEND it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25839:p -> c25706:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c26037:p -> c25904:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions DEPEND it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25839:p -> c25706:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c26037:p -> c25904:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions DEPEND it.apice.sapere.api.ecolaws.filters.OpFilter
+	c26037:p -> c25904:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions DEPEND it.apice.sapere.api.ecolaws.filters.HasFilter
-	c25839:p -> c25709:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.visitors.internal.AuxFunctions DEPEND it.apice.sapere.api.ecolaws.filters.OpFilter
-	c25839:p -> c25706:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c26037:p -> c25907:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

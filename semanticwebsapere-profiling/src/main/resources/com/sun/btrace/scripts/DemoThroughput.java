@@ -70,7 +70,7 @@ public final class DemoThroughput {
 			.newAggregation(AggregationFunction.MAXIMUM);
 
 	/** Number of expected diffusions. */
-	private static int limit = 300;
+	private static int limit = 1000;
 
 	/**
 	 * <p>

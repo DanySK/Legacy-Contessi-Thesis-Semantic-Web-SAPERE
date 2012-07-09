@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.NodeServices
-	c74859 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
+	c75957 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -16,76 +16,76 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c74966 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
+	c76066 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTNeighbour
-	c74975 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BTNeighbour.html">
+	c76075 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BTNeighbour.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BTNeighbour </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTClient
-	c74976 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BTClient.html">
+	c76076 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./BTClient.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BTClient </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent
-	c74977 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./BluetoothManagerAgent.html">
+	c76077 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./BluetoothManagerAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BluetoothManagerAgent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessage
-	c74983 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NodeMessage.html">
+	c76083 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NodeMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NodeMessage </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NetworkManager
-	c74984 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NetworkManager.html">
+	c76084 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NetworkManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NetworkManager </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c74966:p -> c74977:p [dir=back,arrowtail=empty];
+	c76066:p -> c76077:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTNeighbour NAVASSOC it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent
-	c74975:p -> c74977:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76075:p -> c76077:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTClient NAVASSOC it.apice.sapere.node.networking.impl.NodeMessage
-	c74976:p -> c74983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76076:p -> c76083:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTClient NAVASSOC it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent
-	c74976:p -> c74977:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76076:p -> c76077:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTClient NAVASSOC it.apice.sapere.node.networking.impl.NetworkManager
-	c74976:p -> c74984:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76076:p -> c76084:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent NAVASSOC it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent.MessageQueueData
-	c74977:p -> c75023:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76077:p -> c76123:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent NAVASSOC it.apice.sapere.node.networking.bluetooth.impl.BTClient
-	c74977:p -> c74976:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76077:p -> c76076:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent NAVASSOC it.apice.sapere.node.networking.impl.NetworkManager
-	c74977:p -> c74984:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76077:p -> c76084:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent NAVASSOC it.apice.sapere.node.networking.impl.NodeMessage
-	c74977:p -> c74983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c76077:p -> c76083:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.agents.AbstractSystemAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c74966:p -> c74859:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c76066:p -> c75957:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTNeighbour DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c74975:p -> c74983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c76075:p -> c76083:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.bluetooth.impl.BTClient DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c74976:p -> c74983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.node.networking.impl.NetworkManager
-	c74977:p -> c74984:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c74977:p -> c74859:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c76076:p -> c76083:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c74977:p -> c74983:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c76077:p -> c76083:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.node.networking.impl.NetworkManager
+	c76077:p -> c76084:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.api.node.NodeServices
+	c76077:p -> c75957:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent.MessageQueueData
-	c75023 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/node/networking/bluetooth/impl/BluetoothManagerAgent/MessageQueueData.html">
+	c76123 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/node/networking/bluetooth/impl/BluetoothManagerAgent/MessageQueueData.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MessageQueueData </td></tr>
 		</table></td></tr>

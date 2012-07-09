@@ -8,28 +8,28 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.networking.Message
-	c79244 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
+	c80376 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> Message </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents.networking </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage
-	c79369 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../guestsmngt/impl/GuestMessage.html">
+	c80503 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../guestsmngt/impl/GuestMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestMessage </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.guestsmngt.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils
-	c79382 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CommunicationUtils.html">
+	c80516 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CommunicationUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> CommunicationUtils </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils DEPEND it.apice.sapere.node.networking.guestsmngt.impl.GuestMessage
-	c79382:p -> c79369:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c80516:p -> c80503:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.utils.impl.CommunicationUtils DEPEND it.apice.sapere.api.node.agents.networking.Message
-	c79382:p -> c79244:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c80516:p -> c80376:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -100,34 +100,45 @@ public class DiffusionHandler implements SpaceObserver {
 				LoggerFactoryImpl.getInstance()
 						.getLogger(DiffusionHandler.class)
 						.spy("CHECKING LSA for DIFFUSION:\n" + lsa.toString());
+				boolean done = false;
+				for (URI loc : getLSALocation(lsa)) {
+					try {
+						if (loc.equals(LOCAL_VAL)) {
+							throw new SAPEREException("Should not diffuse");
+						}
 
-				try {
-					// Enact diffusion (only if required)
-					manager.diffuse(getLSALocation(lsa), new NodeMessage(
-							NodeMessageType.DIFFUSE, senderId,
-							new SpaceOperation(
-									SpaceOperationType.SYSTEM_DIFFUSE, lsa,
-									"system"), 0, 0, new Float[0]));
+						// Enact diffusion
+						manager.diffuse(loc, new NodeMessage(
+								NodeMessageType.DIFFUSE, senderId,
+								new SpaceOperation(
+										SpaceOperationType.SYSTEM_DIFFUSE, lsa,
+										"system"), 0, 0, new Float[0]));
+						
+						done = true;
 
-					if (_shouldRemove) {
-						// Remove diffused LSA from the LSA-space
-						space.remove(lsa);
+						LoggerFactoryImpl
+								.getInstance()
+								.getLogger(DiffusionHandler.class)
+								.log("DIFFUSEd " + lsa.getLSAid() + " to "
+										+ loc);
+					} catch (SAPEREException ex) {
+//						LoggerFactoryImpl
+//								.getInstance()
+//								.getLogger(DiffusionHandler.class)
+//								.spy(String
+//								.format("LSA <%s> does not need to be diffused",
+//												lsa.getLSAid()));
+						assert ex != null;
+					} catch (Exception ex) {
+						LoggerFactoryImpl.getInstance()
+								.getLogger(DiffusionHandler.class)
+								.error("DIFFUSE failed", ex);
 					}
-
-					LoggerFactoryImpl.getInstance()
-							.getLogger(DiffusionHandler.class)
-							.log("DIFFUSE " + lsa.getLSAid());
-				} catch (SAPEREException ex) {
-					LoggerFactoryImpl
-							.getInstance()
-							.getLogger(DiffusionHandler.class)
-							.spy(String.format(
-									"LSA <%s> does not need to be diffused",
-									lsa.getLSAid()));
-				} catch (Exception ex) {
-					LoggerFactoryImpl.getInstance()
-							.getLogger(DiffusionHandler.class)
-							.error("DIFFUSE failed", ex);
+				}
+				
+				if (_shouldRemove && done) {
+					// Remove diffused LSA from the LSA-space
+					space.remove(lsa);
 				}
 			} catch (Exception ex) {
 				assert ex != null;
@@ -146,15 +157,10 @@ public class DiffusionHandler implements SpaceObserver {
 	 * @throws SAPEREException
 	 *             No diffusion required
 	 */
-	private URI getLSALocation(final CompiledLSA<?> lsa) 
+	private URI[] getLSALocation(final CompiledLSA<?> lsa)
 			throws SAPEREException {
 		try {
-			final URI loc = lsa.readURIProperty(LOCATION_PROP)[0];
-			if (loc.equals(LOCAL_VAL)) {
-				throw new SAPEREException("Should not diffuse");
-			}
-
-			return loc;
+			return lsa.readURIProperty(LOCATION_PROP);
 		} catch (Exception ex) {
 			throw new SAPEREException(
 					"This LSA DOES NOT CONTAIN LOCATION information! "

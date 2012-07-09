@@ -17,10 +17,10 @@ digraph G {
 	c519:p -> c498:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.api.lsas.TestSemanticDescription NAVASSOC it.apice.sapere.api.PrivilegedLSAFactory
 	c498:p -> c520:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.lsas.TestSemanticDescription DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c498:p -> c520:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.TestSemanticDescription DEPEND it.apice.sapere.api.LSAFactory
 	c498:p -> c521:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.lsas.TestSemanticDescription DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c498:p -> c520:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.PrivilegedLSAFactory
 	c520 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/PrivilegedLSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

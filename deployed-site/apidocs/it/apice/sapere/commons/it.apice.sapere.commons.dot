@@ -7,11 +7,25 @@
 digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
+	// it.apice.sapere.commons.DiffusionEcolaw2
+	c12417 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DiffusionEcolaw2.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td> DiffusionEcolaw2 </td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.commons.DiffusionEcolaw
-	c12323 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DiffusionEcolaw.html">
+	c12418 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DiffusionEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionEcolaw </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.commons.AbstractDiffusionEcolawFactory
+	c12419 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractDiffusionEcolawFactory.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td><font face="Helvetica-Oblique"> AbstractDiffusionEcolawFactory </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	//it.apice.sapere.commons.DiffusionEcolaw2 extends it.apice.sapere.commons.AbstractDiffusionEcolawFactory
+	c12419:p -> c12417:p [dir=back,arrowtail=empty];
 }
 

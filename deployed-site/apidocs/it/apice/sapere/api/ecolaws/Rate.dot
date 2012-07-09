@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.EcolawFactory
-	c23634 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../EcolawFactory.html">
+	c23816 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../EcolawFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawFactory </td></tr>
@@ -16,14 +16,14 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.Rate<Type>
-	c23637 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Rate.html">
+	c23819 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Rate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Rate&lt;Type&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23670 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitor/EcolawVisitor.html">
+	c23852 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitor/EcolawVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawVisitor </td></tr>
@@ -31,127 +31,127 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToUpdTemplate
-	c23740 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./compilers/EcolawToUpdTemplate.html">
+	c23922 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./compilers/EcolawToUpdTemplate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawToUpdTemplate </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.compilers </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL
-	c23741 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./compilers/EcolawToSPARQL.html">
+	c23923 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./compilers/EcolawToSPARQL.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawToSPARQL </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.compilers </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.impl.MarkovianRateImpl
-	c23758 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MarkovianRateImpl.html">
+	c23940 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MarkovianRateImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MarkovianRateImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.impl.EcolawImpl
-	c23759 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/EcolawImpl.html">
+	c23941 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/EcolawImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.impl.ASAPRateImpl
-	c23761 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/ASAPRateImpl.html">
+	c23943 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/ASAPRateImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ASAPRateImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type>
-	c23762 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractRateImpl.html">
+	c23944 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractRateImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractRateImpl&lt;Type&gt; </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor
-	c23773 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitors/impl/VarRetrieverVisitor.html">
+	c23955 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitors/impl/VarRetrieverVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> VarRetrieverVisitor </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.visitors.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.visitors.impl.AbstractEcolawVisitor
-	c23774 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitors/impl/AbstractEcolawVisitor.html">
+	c23956 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./visitors/impl/AbstractEcolawVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractEcolawVisitor </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.visitors.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl
-	c23779 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/EcolawFactoryImpl.html">
+	c23961 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/EcolawFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.compilers.EcolawToUpdTemplate implements it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23670:p -> c23740:p [dir=back,arrowtail=empty,style=dashed];
+	c23852:p -> c23922:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL implements it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23670:p -> c23741:p [dir=back,arrowtail=empty,style=dashed];
+	c23852:p -> c23923:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.impl.MarkovianRateImpl extends it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<it.apice.sapere.api.lsas.values.DoubleValue>
-	c23762:p -> c23758:p [dir=back,arrowtail=empty];
+	c23944:p -> c23940:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.impl.MarkovianRateImpl implements it.apice.sapere.api.ecolaws.Rate<Type>
-	c23637:p -> c23758:p [dir=back,arrowtail=empty,style=dashed];
+	c23819:p -> c23940:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.impl.ASAPRateImpl extends it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<java.lang.Double>
-	c23762:p -> c23761:p [dir=back,arrowtail=empty];
+	c23944:p -> c23943:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.impl.ASAPRateImpl implements it.apice.sapere.api.ecolaws.Rate<Type>
-	c23637:p -> c23761:p [dir=back,arrowtail=empty,style=dashed];
+	c23819:p -> c23943:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> implements it.apice.sapere.api.ecolaws.Rate<Type>
-	c23637:p -> c23762:p [dir=back,arrowtail=empty,style=dashed];
+	c23819:p -> c23944:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor extends it.apice.sapere.api.ecolaws.visitors.impl.AbstractEcolawVisitor
-	c23774:p -> c23773:p [dir=back,arrowtail=empty];
+	c23956:p -> c23955:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.visitors.impl.AbstractEcolawVisitor implements it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23670:p -> c23774:p [dir=back,arrowtail=empty,style=dashed];
+	c23852:p -> c23956:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.impl.EcolawFactoryImpl implements it.apice.sapere.api.EcolawFactory
-	c23634:p -> c23779:p [dir=back,arrowtail=empty,style=dashed];
+	c23816:p -> c23961:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.EcolawImpl NAVASSOC it.apice.sapere.api.ecolaws.Rate<Type>
-	c23759:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c23941:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23634:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23816:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23634:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23816:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.EcolawFactory DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23634:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23816:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.Rate<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23637:p -> c23670:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23819:p -> c23852:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToUpdTemplate DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23740:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23922:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.compilers.EcolawToSPARQL DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23741:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23923:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.MarkovianRateImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23758:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23940:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.EcolawImpl DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23759:p -> c23670:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23941:p -> c23852:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.EcolawImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23759:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23941:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.EcolawImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23759:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23941:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.ASAPRateImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23761:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
-	c23762:p -> c23670:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23943:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23762:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23944:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.ecolaws.impl.AbstractRateImpl<Type> DEPEND it.apice.sapere.api.ecolaws.visitor.EcolawVisitor
+	c23944:p -> c23852:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.impl.VarRetrieverVisitor DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23773:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23955:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.impl.AbstractEcolawVisitor DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23774:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23956:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.visitors.impl.AbstractEcolawVisitor DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23774:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23956:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23779:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23961:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23779:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23961:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.EcolawFactoryImpl DEPEND it.apice.sapere.api.ecolaws.Rate<Type>
-	c23779:p -> c23637:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c23961:p -> c23819:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

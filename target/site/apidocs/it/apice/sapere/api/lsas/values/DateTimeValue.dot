@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.LSAFactory
-	c40148 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../LSAFactory.html">
+	c40458 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../LSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAFactory </td></tr>
@@ -16,44 +16,44 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c40209 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValue.html">
+	c40519 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PropertyValue&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.DateTimeValue
-	c40216 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DateTimeValue.html">
+	c40526 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DateTimeValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> DateTimeValue </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.impl.LSAFactoryImpl
-	c40293 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/LSAFactoryImpl.html">
+	c40603 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/LSAFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.DateTimeValueImpl
-	c40309 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/DateTimeValueImpl.html">
+	c40619 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/DateTimeValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DateTimeValueImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.lsas.values.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.DateTimeValue implements it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c40209:p -> c40216:p [dir=back,arrowtail=empty,style=dashed];
+	c40519:p -> c40526:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.lsas.values.impl.DateTimeValueImpl implements it.apice.sapere.api.lsas.values.DateTimeValue
-	c40216:p -> c40309:p [dir=back,arrowtail=empty,style=dashed];
+	c40526:p -> c40619:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
-	c40148:p -> c40216:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c40458:p -> c40526:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.LSAFactory DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c40148:p -> c40209:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
-	c40293:p -> c40216:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c40458:p -> c40519:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.PropertyValue<Type extends java.lang.Comparable<Type>, CompType>
-	c40293:p -> c40209:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c40603:p -> c40519:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.impl.LSAFactoryImpl DEPEND it.apice.sapere.api.lsas.values.DateTimeValue
+	c40603:p -> c40526:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

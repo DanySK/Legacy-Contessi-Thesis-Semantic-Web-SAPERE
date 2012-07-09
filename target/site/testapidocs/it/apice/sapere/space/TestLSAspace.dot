@@ -21,14 +21,14 @@ digraph G {
 	c1156:p -> c1160:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.TestLSAspace NAVASSOC it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c1156:p -> c1162:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c1156:p -> c1160:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c1156:p -> c1159:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.LSAFactory
 	c1156:p -> c1163:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c1156:p -> c1159:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
 	c1156:p -> c1162:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.TestLSAspace DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c1156:p -> c1160:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.TestLSAspace DEPEND org.ops4j.pax.exam.Option
 	c1156:p -> c1164:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.PrivilegedLSAFactory

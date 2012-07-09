@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c71760 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
+	c72834 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c71763 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledLSA.html">
+	c72837 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledLSA.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CompiledLSA&lt;RDFStmtIterType&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.SpaceObserver
-	c71776 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/SpaceObserver.html">
+	c72850 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/SpaceObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SpaceObserver </td></tr>
@@ -32,7 +32,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.SpaceEvent
-	c71777 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/SpaceEvent.html">
+	c72851 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/observation/SpaceEvent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SpaceEvent </td></tr>
@@ -40,13 +40,13 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.DiffusionHandler
-	c71865 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DiffusionHandler.html">
+	c72941 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DiffusionHandler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionHandler </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.NetworkManager
-	c71888 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../node/networking/manager/NetworkManager.html">
+	c72964 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../node/networking/manager/NetworkManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NetworkManager </td></tr>
@@ -54,16 +54,16 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.management.impl.DiffusionHandler implements it.apice.sapere.api.space.observation.SpaceObserver
-	c71776:p -> c71865:p [dir=back,arrowtail=empty,style=dashed];
+	c72850:p -> c72941:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.DiffusionHandler NAVASSOC it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c71865:p -> c71760:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c72941:p -> c72834:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.management.impl.DiffusionHandler NAVASSOC it.apice.sapere.node.networking.manager.NetworkManager
-	c71865:p -> c71888:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c72941:p -> c72964:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> DEPEND it.apice.sapere.api.space.observation.SpaceObserver
-	c71760:p -> c71776:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
-	c71865:p -> c71763:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c72834:p -> c72850:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.observation.SpaceEvent
-	c71865:p -> c71777:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c72941:p -> c72851:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.DiffusionHandler DEPEND it.apice.sapere.api.space.core.CompiledLSA<RDFStmtIterType>
+	c72941:p -> c72837:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

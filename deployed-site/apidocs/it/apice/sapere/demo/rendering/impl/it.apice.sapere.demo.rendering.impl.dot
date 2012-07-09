@@ -8,31 +8,31 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.demo.rendering.impl.Renderable
-	c18051 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Renderable.html">
+	c18191 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Renderable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Renderable </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.rendering.impl.MainFrame
-	c18052 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MainFrame.html">
+	c18192 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MainFrame.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MainFrame </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel
-	c18053 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MainFrame.RenderablePanel.html">
+	c18193 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MainFrame.RenderablePanel.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RenderablePanel </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.demo.rendering.impl.MainFrame NAVASSOC it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel
-	c18052:p -> c18053:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c18192:p -> c18193:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.rendering.impl.MainFrame NAVASSOC it.apice.sapere.demo.rendering.impl.Renderable
-	c18052:p -> c18051:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c18192:p -> c18191:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel NAVASSOC it.apice.sapere.demo.rendering.impl.Renderable
-	c18053:p -> c18051:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c18193:p -> c18191:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.rendering.impl.MainFrame.RenderablePanel NAVASSOC it.apice.sapere.demo.rendering.impl.Renderable
-	c18053:p -> c18051:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c18193:p -> c18191:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

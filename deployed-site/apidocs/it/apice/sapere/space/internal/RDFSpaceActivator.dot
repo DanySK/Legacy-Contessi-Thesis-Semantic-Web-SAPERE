@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.PrivilegedLSAFactory
-	c68569 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/PrivilegedLSAFactory.html">
+	c69099 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/PrivilegedLSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PrivilegedLSAFactory </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c68657 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
+	c69187 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/LSACompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSACompiler&lt;RDFStmtIterType&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c68665 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/match/functions/MatchFunctRegistry.html">
+	c69195 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/match/functions/MatchFunctRegistry.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchFunctRegistry&lt;FunctionType&gt; </td></tr>
@@ -32,7 +32,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.ReasoningLevel
-	c68735 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/impl/ReasoningLevel.html">
+	c69265 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/impl/ReasoningLevel.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> ReasoningLevel </td></tr>
@@ -40,35 +40,35 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.internal.RDFSpaceActivator
-	c68749 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./RDFSpaceActivator.html">
+	c69279 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./RDFSpaceActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RDFSpaceActivator </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.space.internal.RDFSpaceActivator implements org.osgi.framework.BundleActivator
-	c68819:p -> c68749:p [dir=back,arrowtail=empty,style=dashed];
+	c69351:p -> c69279:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceRegistration<S>
-	c68749:p -> c68820:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c69279:p -> c69352:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceRegistration<S>
-	c68749:p -> c68820:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c69279:p -> c69352:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceRegistration<S>
-	c68749:p -> c68820:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c69279:p -> c69352:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceRegistration<S>
-	c68749:p -> c68820:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c69279:p -> c69352:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator NAVASSOC org.osgi.framework.ServiceReference<S>
-	c68749:p -> c68821:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c68749:p -> c68665:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
-	c68749:p -> c68735:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.PrivilegedLSAFactory
-	c68749:p -> c68569:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c69279:p -> c69353:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c68749:p -> c68657:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c69279:p -> c69187:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND org.osgi.framework.BundleContext
-	c68749:p -> c68822:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c69279:p -> c69354:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.core.impl.ReasoningLevel
+	c69279:p -> c69265:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
+	c69279:p -> c69195:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.PrivilegedLSAFactory
+	c69279:p -> c69099:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.osgi.framework.ServiceRegistration<S>
-	c68820 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceRegistration.html">
+	c69352 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceRegistration.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ServiceRegistration&lt;S&gt; </td></tr>
@@ -76,7 +76,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.BundleContext
-	c68822 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
+	c69354 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleContext </td></tr>
@@ -84,7 +84,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.ServiceReference<S>
-	c68821 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceReference.html">
+	c69353 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceReference.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ServiceReference&lt;S&gt; </td></tr>
@@ -92,7 +92,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.BundleActivator
-	c68819 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
+	c69351 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleActivator </td></tr>

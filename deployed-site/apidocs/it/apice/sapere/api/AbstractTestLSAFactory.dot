@@ -8,35 +8,35 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.AbstractTestPrivilegedLSAFactory
-	c20460 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPrivilegedLSAFactory.html">
+	c20618 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestPrivilegedLSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestPrivilegedLSAFactory </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.AbstractTestLSAFactory
-	c20462 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAFactory.html">
+	c20620 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestLSAFactory </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.AbstractLSAModelTest
-	c20464 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractLSAModelTest.html">
+	c20622 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractLSAModelTest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractLSAModelTest </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.LSAFactory
-	c20470 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAFactory.html">
+	c20628 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAFactory </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.AbstractTestPrivilegedLSAFactory extends it.apice.sapere.api.AbstractTestLSAFactory
-	c20462:p -> c20460:p [dir=back,arrowtail=empty];
+	c20620:p -> c20618:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.AbstractTestLSAFactory extends it.apice.sapere.api.AbstractLSAModelTest
-	c20464:p -> c20462:p [dir=back,arrowtail=empty];
+	c20622:p -> c20620:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.api.AbstractTestLSAFactory NAVASSOC it.apice.sapere.api.LSAFactory
-	c20462:p -> c20470:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c20620:p -> c20628:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 }
 

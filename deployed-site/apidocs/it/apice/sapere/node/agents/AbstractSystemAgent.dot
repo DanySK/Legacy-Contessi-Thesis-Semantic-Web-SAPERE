@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.NodeServices
-	c72017 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/NodeServices.html">
+	c73093 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -16,65 +16,65 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.ReactionManagerImpl
-	c72122 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/impl/ReactionManagerImpl.html">
+	c73200 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/impl/ReactionManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c72124 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSystemAgent.html">
+	c73202 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c72130 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractSAPEREAgentImpl.html">
+	c73208 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractSAPEREAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSAPEREAgentImpl </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent
-	c72135 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/bluetooth/impl/BluetoothManagerAgent.html">
+	c73213 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/bluetooth/impl/BluetoothManagerAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> BluetoothManagerAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.bluetooth.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl
-	c72145 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/manager/impl/NetworkManagerImpl.html">
+	c73223 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/manager/impl/NetworkManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NetworkManagerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.manager.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent
-	c72149 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/obsnotif/impl/NotifierAgent.html">
+	c73227 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../networking/obsnotif/impl/NotifierAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NotifierAgent </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.obsnotif.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.management.impl.ReactionManagerImpl extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c72124:p -> c72122:p [dir=back,arrowtail=empty];
+	c73202:p -> c73200:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.agents.AbstractSystemAgent extends it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl
-	c72130:p -> c72124:p [dir=back,arrowtail=empty];
+	c73208:p -> c73202:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c72124:p -> c72135:p [dir=back,arrowtail=empty];
+	c73202:p -> c73213:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c72124:p -> c72145:p [dir=back,arrowtail=empty];
+	c73202:p -> c73223:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c72124:p -> c72149:p [dir=back,arrowtail=empty];
+	c73202:p -> c73227:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.node.NodeServices
-	c72122:p -> c72017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c73200:p -> c73093:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractSystemAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c72124:p -> c72017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c73202:p -> c73093:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.bluetooth.impl.BluetoothManagerAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c72135:p -> c72017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c73213:p -> c73093:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl DEPEND it.apice.sapere.api.node.NodeServices
-	c72145:p -> c72017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c73223:p -> c73093:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c72149:p -> c72017:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c73227:p -> c73093:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

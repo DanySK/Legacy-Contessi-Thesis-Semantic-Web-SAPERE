@@ -8,40 +8,40 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.management.impl.DiffusionHandler
-	c77805 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/DiffusionHandler.html">
+	c78927 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/DiffusionHandler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionHandler </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessage
-	c77823 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/NodeMessage.html">
+	c78945 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../impl/NodeMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NodeMessage </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl
-	c77827 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/NetworkManagerImpl.html">
+	c78949 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/NetworkManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NetworkManagerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.manager.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.NetworkManager
-	c77828 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NetworkManager.html">
+	c78950 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NetworkManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NetworkManager </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl implements it.apice.sapere.node.networking.manager.NetworkManager
-	c77828:p -> c77827:p [dir=back,arrowtail=empty,style=dashed];
+	c78950:p -> c78949:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.DiffusionHandler NAVASSOC it.apice.sapere.node.networking.manager.NetworkManager
-	c77805:p -> c77828:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c78927:p -> c78950:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c77827:p -> c77823:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78949:p -> c78945:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.manager.NetworkManager DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c77828:p -> c77823:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78950:p -> c78945:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

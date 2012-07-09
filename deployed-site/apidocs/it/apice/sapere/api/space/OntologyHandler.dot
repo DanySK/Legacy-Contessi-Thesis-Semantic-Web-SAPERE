@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.RDFFormat
-	c46345 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../RDFFormat.html">
+	c46703 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../RDFFormat.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> RDFFormat </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c46433 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./core/LSAspaceCore.html">
+	c46791 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -24,24 +24,24 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.OntologyHandler
-	c46440 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OntologyHandler.html">
+	c46798 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OntologyHandler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> OntologyHandler </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.LSAspace
-	c46441 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspace.html">
+	c46799 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LSAspace.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspace </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType> implements it.apice.sapere.api.space.OntologyHandler
-	c46440:p -> c46433:p [dir=back,arrowtail=empty,style=dashed];
+	c46798:p -> c46791:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.space.LSAspace implements it.apice.sapere.api.space.OntologyHandler
-	c46440:p -> c46441:p [dir=back,arrowtail=empty,style=dashed];
+	c46798:p -> c46799:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.OntologyHandler DEPEND it.apice.sapere.api.RDFFormat
-	c46440:p -> c46345:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46798:p -> c46703:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

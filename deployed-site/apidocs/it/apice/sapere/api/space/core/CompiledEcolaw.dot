@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.Ecolaw
-	c45581 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/Ecolaw.html">
+	c45933 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/Ecolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Ecolaw </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.management.ReactionManagerObserver
-	c45646 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/ReactionManagerObserver.html">
+	c45998 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/ReactionManagerObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ReactionManagerObserver </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.management.ReactionManager
-	c45647 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/ReactionManager.html">
+	c45999 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../management/ReactionManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ReactionManager </td></tr>
@@ -32,14 +32,14 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.CompiledEcolaw
-	c45663 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CompiledEcolaw.html">
+	c46015 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./CompiledEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CompiledEcolaw </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchResult
-	c45671 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/MatchResult.html">
+	c46023 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/MatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchResult </td></tr>
@@ -47,7 +47,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c45672 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/MatchingEcolawTemplate.html">
+	c46024 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/MatchingEcolawTemplate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolawTemplate </td></tr>
@@ -55,157 +55,168 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl
-	c45740 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/EcolawCompilerImpl.html">
+	c46092 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/EcolawCompilerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EcolawCompilerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl
-	c45742 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/CompiledEcolawImpl.html">
+	c46094 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/CompiledEcolawImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> CompiledEcolawImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl
-	c45743 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractLSAspaceCoreImpl.html">
+	c46095 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/AbstractLSAspaceCoreImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractLSAspaceCoreImpl </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.impl.MutableMatchResultImpl
-	c45747 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/impl/MutableMatchResultImpl.html">
+	c46099 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../match/impl/MutableMatchResultImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MutableMatchResultImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.scheduling.impl.SchedulableMatchResultImpl
-	c45758 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/scheduling/impl/SchedulableMatchResultImpl.html">
+	c46110 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../ecolaws/scheduling/impl/SchedulableMatchResultImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SchedulableMatchResultImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.ecolaws.scheduling.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.commons.DiffusionEcolaw
-	c45759 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../commons/DiffusionEcolaw.html">
+	c46112 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../commons/DiffusionEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionEcolaw </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.commons </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
+	// it.apice.sapere.commons.AbstractDiffusionEcolawFactory
+	c46113 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../commons/AbstractDiffusionEcolawFactory.html">
+		<tr><td><table border="0" cellspacing="0" cellpadding="1">
+			<tr><td><font face="Helvetica-Oblique"> AbstractDiffusionEcolawFactory </font></td></tr>
+			<tr><td><font point-size="7.0"> it.apice.sapere.commons </font></td></tr>
+		</table></td></tr>
+		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.DefaultReactionsScheduler
-	c45760 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/DefaultReactionsScheduler.html">
+	c46114 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/DefaultReactionsScheduler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DefaultReactionsScheduler </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.ReactionManagerLogger
-	c45762 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerLogger.html">
+	c46116 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerLogger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerLogger </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.ReactionManagerImpl
-	c45763 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerImpl.html">
+	c46117 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../management/impl/ReactionManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.management.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.distdemo.sensor.DiffusionEcolaw
-	c45813 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/sensor/DiffusionEcolaw.html">
+	c46167 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/sensor/DiffusionEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionEcolaw </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.distdemo.sensor </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.distdemo.analysis.AggregationEcolaw
-	c45818 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/analysis/AggregationEcolaw.html">
+	c46172 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../distdemo/analysis/AggregationEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> AggregationEcolaw </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.distdemo.analysis </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.core.impl.CompiledEcolawImpl implements it.apice.sapere.api.space.core.CompiledEcolaw
-	c45663:p -> c45742:p [dir=back,arrowtail=empty,style=dashed];
+	c46015:p -> c46094:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.management.impl.ReactionManagerLogger implements it.apice.sapere.api.management.ReactionManagerObserver
-	c45646:p -> c45762:p [dir=back,arrowtail=empty,style=dashed];
+	c45998:p -> c46116:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.management.impl.ReactionManagerImpl implements it.apice.sapere.api.management.ReactionManager
-	c45647:p -> c45763:p [dir=back,arrowtail=empty,style=dashed];
+	c45999:p -> c46117:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl NAVASSOC it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c45742:p -> c45672:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46094:p -> c46024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl NAVASSOC it.apice.sapere.api.ecolaws.Ecolaw
-	c45742:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46094:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.match.impl.MutableMatchResultImpl NAVASSOC it.apice.sapere.api.space.core.CompiledEcolaw
-	c45747:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46099:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.scheduling.impl.SchedulableMatchResultImpl NAVASSOC it.apice.sapere.api.space.match.MatchResult
-	c45758:p -> c45671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46110:p -> c46023:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	// it.apice.sapere.commons.AbstractDiffusionEcolawFactory NAVASSOC it.apice.sapere.api.space.core.CompiledEcolaw
+	c46113:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.management.impl.ReactionManagerImpl NAVASSOC it.apice.sapere.api.space.core.CompiledEcolaw
-	c45763:p -> c45663:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46117:p -> c46015:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.management.impl.ReactionManagerImpl NAVASSOC it.apice.sapere.api.management.ReactionManagerObserver
-	c45763:p -> c45646:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c46117:p -> c45998:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45646:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c45998:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.management.ReactionManager DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45647:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c45999:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.management.ReactionManager DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45647:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c45999:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.management.ReactionManager DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c45647:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c45999:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c45663:p -> c45672:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46015:p -> c46024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.CompiledEcolaw DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c45663:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46015:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.MatchResult DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45671:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45740:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46023:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c45740:p -> c45672:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46092:p -> c46024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c46092:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.EcolawCompilerImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c45740:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46092:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl DEPEND it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c45742:p -> c45672:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46094:p -> c46024:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.CompiledEcolawImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c45742:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46094:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c45743:p -> c45671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46095:p -> c46023:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45743:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46095:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c45743:p -> c45671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46095:p -> c46023:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.impl.MutableMatchResultImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45747:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46099:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.scheduling.impl.SchedulableMatchResultImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45758:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46110:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.commons.DiffusionEcolaw DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45759:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46112:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.commons.AbstractDiffusionEcolawFactory DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c46113:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
+	c46114:p -> c46023:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
+	c46114:p -> c46023:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45760:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
-	c45760:p -> c45671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.DefaultReactionsScheduler DEPEND it.apice.sapere.api.space.match.MatchResult
-	c45760:p -> c45671:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46114:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45762:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46116:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45763:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45763:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46117:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.management.ReactionManagerObserver
-	c45763:p -> c45646:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46117:p -> c45998:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c46117:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.management.ReactionManager
-	c45763:p -> c45647:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46117:p -> c45999:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerImpl DEPEND it.apice.sapere.api.ecolaws.Ecolaw
-	c45763:p -> c45581:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46117:p -> c45933:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.distdemo.sensor.DiffusionEcolaw DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45813:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46167:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.distdemo.analysis.AggregationEcolaw DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c45818:p -> c45663:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c46172:p -> c46015:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

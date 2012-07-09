@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.core.EcolawCompiler
-	c70472 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../api/space/core/EcolawCompiler.html">
+	c71276 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../api/space/core/EcolawCompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> EcolawCompiler </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.CompiledEcolaw
-	c70474 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../api/space/core/CompiledEcolaw.html">
+	c71278 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../api/space/core/CompiledEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CompiledEcolaw </td></tr>
@@ -24,14 +24,14 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.commons.DiffusionEcolaw
-	c70570 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DiffusionEcolaw.html">
+	c71375 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DiffusionEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DiffusionEcolaw </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.commons.DiffusionEcolaw DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c70570:p -> c70474:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c71375:p -> c71278:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.commons.DiffusionEcolaw DEPEND it.apice.sapere.api.space.core.EcolawCompiler
-	c70570:p -> c70472:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c71375:p -> c71276:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

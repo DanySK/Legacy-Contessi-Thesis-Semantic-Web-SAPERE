@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.SAPEREAgent
-	c43330 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgent.html">
+	c43664 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
@@ -16,33 +16,33 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.agents.networking.Subscriber
-	c43332 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Subscriber.html">
+	c43666 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Subscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Subscriber </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber
-	c43455 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/networking/guestsmngt/impl/GuestSubscriber.html">
+	c43791 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/networking/guestsmngt/impl/GuestSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestSubscriber </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.guestsmngt.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest
-	c43467 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/networking/obsnotif/impl/SubscriptionRequest.html">
+	c43803 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/networking/obsnotif/impl/SubscriptionRequest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SubscriptionRequest </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.obsnotif.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.node.agents.SAPEREAgent implements it.apice.sapere.api.node.agents.networking.Subscriber
-	c43332:p -> c43330:p [dir=back,arrowtail=empty,style=dashed];
+	c43666:p -> c43664:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber implements it.apice.sapere.api.node.agents.networking.Subscriber
-	c43332:p -> c43455:p [dir=back,arrowtail=empty,style=dashed];
+	c43666:p -> c43791:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.api.node.agents.networking.Subscriber
-	c43467:p -> c43332:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c43803:p -> c43666:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest DEPEND it.apice.sapere.api.node.agents.networking.Subscriber
-	c43467:p -> c43332:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c43803:p -> c43666:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

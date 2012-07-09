@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="3.611" errors="0" skipped="0" tests="1" name="it.apice.sapere.node.TestSAPEREnode">
+<testsuite failures="1" time="4.091" errors="0" skipped="0" tests="1" name="it.apice.sapere.node.TestSAPEREnode">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -66,7 +66,7 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="3.611" classname="it.apice.sapere.node.TestSAPEREnode" name="testServicesAvailablity:TestSAPEREnode.testServicesAvailablity:NativeContainer:org.apache.felix.framework.FrameworkFactory@2ce1899b">
+  <testcase time="4.091" classname="it.apice.sapere.node.TestSAPEREnode" name="testServicesAvailablity:TestSAPEREnode.testServicesAvailablity:NativeContainer:org.apache.felix.framework.FrameworkFactory@2ce1899b">
     <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
 	at org.junit.Assert.fail(Assert.java:91)
 	at org.junit.Assert.assertTrue(Assert.java:43)
@@ -129,7 +129,7 @@ rdf-model&gt; LSAFactory REGISTERED
 rdf-model&gt; LSAParser REGISTERED
 rdf-model&gt; EcolawFactory REGISTERED
 rdf-model&gt; FormulaFactory REGISTERED
-rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#nodeD95A6E75-1CC0-4ED6-BEF4-9809E725CA6B
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node419333FE-EFF8-4E37-96B9-5C1A1C6898C1
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
 rdf-space&gt; Starting up..
 rdf-space&gt; LSA Factory ACQUIRED
@@ -146,14 +146,14 @@ INFO  $SAPERENodeActivator&gt; Looking for services:
 INFO  $SAPERENodeActivator&gt;    + LSA Factory
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-node]
 ERROR: Bundle semanticwebsapere-node [18] Error starting mvn:it.apice.sapere/semanticwebsapere-node (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-node [18].)
-[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-28cd23aa-d285-4b88-8c09-cbbc27cd7621]
-[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-Executable, value=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, }, ManifestEntry{ key=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }]
-[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9,
-[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9 to be in PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9,
-[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9&quot; and expression=&quot;it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity&quot;
-[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-28cd23aa-d285-4b88-8c09-cbbc27cd7621]
-[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-Executable, value=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, }, ManifestEntry{ key=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }]
-[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@1bb0889a.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-07bde0f8-0347-42d6-97e8-64c300ff92bc]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86, }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86 to be in PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86&quot; and expression=&quot;it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86,
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-07bde0f8-0347-42d6-97e8-64c300ff92bc]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-369e105b-ccfa-45d4-855a-eaddc4745d86, }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@207e5619.]
 SemanticWebSAPERE [RDFModel]: Stopping..
 rdf-model&gt; LSAParser UNREGISTERED.
 rdf-model&gt; LSAFactory UNREGISTERED.
@@ -171,9 +171,9 @@ rdf-model&gt; FormulaFactory UNREGISTERED.
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
-[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
 [org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
 </system-out>
     <system-err>SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in [jar:file:/Users/conteit/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
@@ -200,8 +200,8 @@ SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.clas
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
 log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
-log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@45cfd3b2] whereas object of type 
-log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@3dca1588] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@43be2d65].
 log4j:ERROR Could not instantiate appender named &quot;console&quot;.
 java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
 	at java.lang.ClassLoader.defineClass1(Native Method)

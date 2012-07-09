@@ -8,40 +8,40 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.match.AbstractTestMatchingEcolawTemplate
-	c5523 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestMatchingEcolawTemplate.html">
+	c5565 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AbstractTestMatchingEcolawTemplate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestMatchingEcolawTemplate </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MutableMatchResult
-	c5524 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MutableMatchResult.html">
+	c5566 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MutableMatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MutableMatchResult </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchResult
-	c5525 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchResult.html">
+	c5567 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchResult </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolawTemplate
-	c5526 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchingEcolawTemplate.html">
+	c5568 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchingEcolawTemplate.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolawTemplate </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolaw
-	c5527 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchingEcolaw.html">
+	c5569 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchingEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolaw </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.MutableMatchResult implements it.apice.sapere.api.space.match.MatchResult
-	c5525:p -> c5524:p [dir=back,arrowtail=empty,style=dashed];
+	c5567:p -> c5566:p [dir=back,arrowtail=empty,style=dashed];
 }
 

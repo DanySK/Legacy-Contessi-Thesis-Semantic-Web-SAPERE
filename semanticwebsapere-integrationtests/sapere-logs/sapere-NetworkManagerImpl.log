@@ -1,0 +1,10 @@
+2012-06-21 14:29:05.285 ERROR it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl@network_manager $NetworkManagerImpl> Cannot open an incoming connection
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:383)
+	at java.net.ServerSocket.bind(ServerSocket.java:328)
+	at java.net.ServerSocket.<init>(ServerSocket.java:194)
+	at java.net.ServerSocket.<init>(ServerSocket.java:106)
+	at it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl.behaviour(NetworkManagerImpl.java:289)
+	at it.apice.sapere.node.agents.AbstractSystemAgent.execute(AbstractSystemAgent.java:33)
+	at it.apice.sapere.node.agents.impl.AbstractSAPEREAgentImpl.run(AbstractSAPEREAgentImpl.java:214)

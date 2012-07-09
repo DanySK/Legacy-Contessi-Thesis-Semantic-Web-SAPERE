@@ -8,19 +8,19 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.demo.internal.DemoActivator
-	c82765 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DemoActivator.html">
+	c83925 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DemoActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DemoActivator </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.demo.internal.DemoActivator implements org.osgi.framework.BundleActivator
-	c82781:p -> c82765:p [dir=back,arrowtail=empty,style=dashed];
+	c83941:p -> c83925:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.demo.internal.DemoActivator NAVASSOC org.osgi.framework.ServiceReference<S>
-	c82765:p -> c82782:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c83925:p -> c83942:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.demo.internal.DemoActivator DEPEND org.osgi.framework.BundleContext
-	c82765:p -> c82783:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c83925:p -> c83943:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.osgi.framework.BundleContext
-	c82783 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
+	c83943 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleContext.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleContext </td></tr>
@@ -28,7 +28,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.ServiceReference<S>
-	c82782 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceReference.html">
+	c83942 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceReference.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ServiceReference&lt;S&gt; </td></tr>
@@ -36,7 +36,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.osgi.framework.BundleActivator
-	c82781 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
+	c83941 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> BundleActivator </td></tr>

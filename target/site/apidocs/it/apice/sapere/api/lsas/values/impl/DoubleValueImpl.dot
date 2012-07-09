@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.values.DoubleValue
-	c63967 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../DoubleValue.html">
+	c64461 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../DoubleValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> DoubleValue </td></tr>
@@ -16,20 +16,20 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<Type extends java.lang.Comparable<Type>, CompType>
-	c64054 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
+	c64548 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./PropertyValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> PropertyValueImpl&lt;Type extends Comparable&lt;Type&gt;, CompType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.values.impl.DoubleValueImpl
-	c64060 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DoubleValueImpl.html">
+	c64554 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DoubleValueImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DoubleValueImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.values.impl.DoubleValueImpl extends it.apice.sapere.api.lsas.values.impl.PropertyValueImpl<java.lang.Double, it.apice.sapere.api.lsas.values.DoubleValue>
-	c64054:p -> c64060:p [dir=back,arrowtail=empty];
+	c64548:p -> c64554:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.lsas.values.impl.DoubleValueImpl implements it.apice.sapere.api.lsas.values.DoubleValue
-	c63967:p -> c64060:p [dir=back,arrowtail=empty,style=dashed];
+	c64461:p -> c64554:p [dir=back,arrowtail=empty,style=dashed];
 }
 

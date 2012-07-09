@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.SAPEREAgent
-	c44104 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPEREAgent.html">
+	c44444 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../agents/SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
@@ -16,26 +16,26 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LoggerFactory
-	c44109 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactory.html">
+	c44449 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LoggerFactory </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl
-	c44208 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LoggerFactoryImpl.html">
+	c44548 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/logging/impl/LoggerFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LoggerFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.api.node.logging.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.api.node.logging.impl.LoggerFactoryImpl implements it.apice.sapere.api.node.logging.LoggerFactory
-	c44109:p -> c44208:p [dir=back,arrowtail=empty,style=dashed];
+	c44449:p -> c44548:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.node.logging.LoggerFactory DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
-	c44109:p -> c44104:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
-	c44208:p -> c44104:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c44449:p -> c44444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.logging.LoggerFactory
-	c44208:p -> c44109:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c44548:p -> c44449:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
+	c44548:p -> c44444:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

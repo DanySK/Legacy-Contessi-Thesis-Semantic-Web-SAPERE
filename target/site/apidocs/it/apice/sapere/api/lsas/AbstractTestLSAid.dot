@@ -8,19 +8,19 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.AbstractLSAModelTest
-	c33692 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../AbstractLSAModelTest.html">
+	c33952 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../AbstractLSAModelTest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractLSAModelTest </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.AbstractTestLSAid
-	c33741 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAid.html">
+	c34001 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AbstractTestLSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractTestLSAid </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.AbstractTestLSAid extends it.apice.sapere.api.AbstractLSAModelTest
-	c33692:p -> c33741:p [dir=back,arrowtail=empty];
+	c33952:p -> c34001:p [dir=back,arrowtail=empty];
 }
 

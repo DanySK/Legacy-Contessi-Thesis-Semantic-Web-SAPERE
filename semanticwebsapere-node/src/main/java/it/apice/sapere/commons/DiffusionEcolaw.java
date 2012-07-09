@@ -86,7 +86,7 @@ public final class DiffusionEcolaw {
 				+ "ontologies/2012/0/sapere-model.owl#>")
 		.append("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ")
 		.append("SELECT DISTINCT * WHERE { ")
-		.append("?sourceLsa sapere-model:location sapere-model:local;")
+		.append("?sourceLsa sapere-model:location sapere-model:local; ")
 		.append("rdf:type ").append(type).append(". ")
 		.append("?newLoc rdf:type sapere:neighbour; ")
 		.append("sapere:name ").append(toName).append(". ")
@@ -94,14 +94,6 @@ public final class DiffusionEcolaw {
 
 		
 		return builder.toString();
-		// return "PREFIX sapere: <http://www.sapere-project.eu/"
-		// + "ontologies/2012/0/sapere-model.owl#> "
-		// + "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
-		// + "PREFIX sensing: <http://www.sapere-project.eu/distdemo#> "
-		// + "SELECT DISTINCT * WHERE { " + "?observ rdf:type " + type
-		// + "; sapere:location sapere:local. "
-		// + "?newloc sapere:type sapere:neighbour; " + "sapere:name \""
-		// + toName + "\" }";
 	}
 
 	/**
@@ -136,7 +128,7 @@ public final class DiffusionEcolaw {
 				.append("MODIFY DELETE { !clonedLsa ")
 				.append("sapere-model:location sapere-model:local. ")
 				.append("} INSERT { !clonedLsa sapere-model:location ")
-				.append("?newLoc. } WHERE { }");
+				.append("?newLoc. } WHERE { } ");
 
 		return builder.toString();
 	}

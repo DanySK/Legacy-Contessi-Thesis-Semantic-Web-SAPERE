@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.LSAid
-	c78179 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/lsas/LSAid.html">
+	c79303 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/lsas/LSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAid </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.agents.networking.Subscriber
-	c78211 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Subscriber.html">
+	c79335 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Subscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Subscriber </td></tr>
@@ -24,36 +24,36 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.agents.networking.Message
-	c78212 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
+	c79336 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> Message </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents.networking </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionType
-	c78345 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionType.html">
+	c79471 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./SubscriptionType.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> SubscriptionType </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest
-	c78346 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SubscriptionRequest.html">
+	c79472 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SubscriptionRequest.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SubscriptionRequest </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest extends it.apice.sapere.api.node.agents.networking.Message
-	c78212:p -> c78346:p [dir=back,arrowtail=empty];
+	c79336:p -> c79472:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.api.lsas.LSAid
-	c78346:p -> c78179:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c79472:p -> c79303:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.api.node.agents.networking.Subscriber
-	c78346:p -> c78211:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c79472:p -> c79335:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest NAVASSOC it.apice.sapere.node.networking.obsnotif.impl.SubscriptionType
-	c78346:p -> c78345:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c79472:p -> c79471:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest DEPEND it.apice.sapere.api.node.agents.networking.Subscriber
-	c78346:p -> c78211:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c79472:p -> c79335:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.SubscriptionRequest DEPEND it.apice.sapere.api.lsas.LSAid
-	c78346:p -> c78179:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c79472:p -> c79303:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

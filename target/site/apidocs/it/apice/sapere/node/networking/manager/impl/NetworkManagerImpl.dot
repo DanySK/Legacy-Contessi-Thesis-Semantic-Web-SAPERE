@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.NodeServices
-	c77441 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
+	c78559 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c77442 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/core/LSAspaceCore.html">
+	c78560 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c77443 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/core/LSACompiler.html">
+	c78561 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/core/LSACompiler.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSACompiler&lt;RDFStmtIterType&gt; </td></tr>
@@ -32,27 +32,27 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c77548 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
+	c78668 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.impl.NodeMessage
-	c77565 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NodeMessage.html">
+	c78685 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../impl/NodeMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NodeMessage </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl
-	c77569 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NetworkManagerImpl.html">
+	c78689 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NetworkManagerImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NetworkManagerImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.manager.NetworkManager
-	c77570 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../NetworkManager.html">
+	c78690 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../NetworkManager.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NetworkManager </td></tr>
@@ -60,24 +60,24 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c77548:p -> c77569:p [dir=back,arrowtail=empty];
+	c78668:p -> c78689:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl implements it.apice.sapere.node.networking.manager.NetworkManager
-	c77570:p -> c77569:p [dir=back,arrowtail=empty,style=dashed];
+	c78690:p -> c78689:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl NAVASSOC it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c77569:p -> c77442:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c78689:p -> c78560:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl NAVASSOC it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c77569:p -> c77443:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.node.NodeServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c77441:p -> c77442:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78689:p -> c78561:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.node.NodeServices DEPEND it.apice.sapere.api.space.core.LSACompiler<RDFStmtIterType>
-	c77441:p -> c77443:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78559:p -> c78561:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.node.NodeServices DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
+	c78559:p -> c78560:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.AbstractSystemAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c77548:p -> c77441:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl DEPEND it.apice.sapere.api.node.NodeServices
-	c77569:p -> c77441:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78668:p -> c78559:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c77569:p -> c77565:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78689:p -> c78685:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.node.networking.manager.impl.NetworkManagerImpl DEPEND it.apice.sapere.api.node.NodeServices
+	c78689:p -> c78559:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.manager.NetworkManager DEPEND it.apice.sapere.node.networking.impl.NodeMessage
-	c77570:p -> c77565:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c78690:p -> c78685:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

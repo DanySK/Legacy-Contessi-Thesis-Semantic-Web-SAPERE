@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.NodeServices
-	c46948 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/NodeServices.html">
+	c47310 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -16,59 +16,59 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c46958 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchFunctRegistry.html">
+	c47320 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MatchFunctRegistry.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchFunctRegistry&lt;FunctionType&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl
-	c47035 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MatchFunctRegistryImpl.html">
+	c47397 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MatchFunctRegistryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MatchFunctRegistryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match.functions.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.internal.RDFSpaceActivator
-	c47042 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/internal/RDFSpaceActivator.html">
+	c47404 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../space/internal/RDFSpaceActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> RDFSpaceActivator </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.internal.SAPERENodeActivator
-	c47062 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/internal/SAPERENodeActivator.html">
+	c47426 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/internal/SAPERENodeActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SAPERENodeActivator </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.internal.NodeServicesImpl
-	c47063 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/internal/NodeServicesImpl.html">
+	c47427 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../node/internal/NodeServicesImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NodeServicesImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.internal </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl implements it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c46958:p -> c47035:p [dir=back,arrowtail=empty,style=dashed];
+	c47320:p -> c47397:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.node.internal.NodeServicesImpl implements it.apice.sapere.api.node.NodeServices
-	c46948:p -> c47063:p [dir=back,arrowtail=empty,style=dashed];
+	c47310:p -> c47427:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.internal.SAPERENodeActivator NAVASSOC it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47062:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c47426:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.internal.NodeServicesImpl NAVASSOC it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47063:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c47427:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.node.NodeServices DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c46948:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47310:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.functions.impl.MatchFunctRegistryImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47035:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47397:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.internal.RDFSpaceActivator DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47042:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47404:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47063:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47427:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.space.match.functions.MatchFunctRegistry<FunctionType>
-	c47063:p -> c46958:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47427:p -> c47320:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.internal.NodeServicesImpl DEPEND it.apice.sapere.api.node.NodeServices
-	c47063:p -> c46948:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47427:p -> c47310:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

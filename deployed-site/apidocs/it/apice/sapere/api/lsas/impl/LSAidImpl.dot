@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.lsas.LSAid
-	c61626 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAid.html">
+	c62102 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../LSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAid </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c61648 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitor/LSAVisitor.html">
+	c62124 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../visitor/LSAVisitor.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAVisitor </td></tr>
@@ -24,18 +24,18 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.impl.LSAidImpl
-	c61729 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAidImpl.html">
+	c62205 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LSAidImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAidImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.lsas.impl.LSAidImpl implements it.apice.sapere.api.lsas.LSAid
-	c61626:p -> c61729:p [dir=back,arrowtail=empty,style=dashed];
+	c62102:p -> c62205:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.lsas.LSAid DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c61626:p -> c61648:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62102:p -> c62124:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAidImpl DEPEND it.apice.sapere.api.lsas.LSAid
-	c61729:p -> c61626:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62205:p -> c62102:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.lsas.impl.LSAidImpl DEPEND it.apice.sapere.api.lsas.visitor.LSAVisitor
-	c61729:p -> c61648:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c62205:p -> c62124:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

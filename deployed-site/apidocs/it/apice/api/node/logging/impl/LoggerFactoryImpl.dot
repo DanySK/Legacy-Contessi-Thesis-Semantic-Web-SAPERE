@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.SAPEREAgent
-	c69686 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/agents/SAPEREAgent.html">
+	c70224 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/agents/SAPEREAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPEREAgent </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LogUtils
-	c69690 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/logging/LogUtils.html">
+	c70228 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/logging/LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LoggerFactory
-	c69691 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/logging/LoggerFactory.html">
+	c70229 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../sapere/api/node/logging/LoggerFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LoggerFactory </td></tr>
@@ -32,47 +32,47 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl
-	c69790 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactoryImpl.html">
+	c70328 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LoggerFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LoggerFactoryImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.api.node.logging.impl.LoggerFactoryImpl implements it.apice.sapere.api.node.logging.LoggerFactory
-	c69691:p -> c69790:p [dir=back,arrowtail=empty,style=dashed];
+	c70229:p -> c70328:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl NAVASSOC org.apache.log4j.Level
-	c69790:p -> c69856:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c70328:p -> c70396:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl NAVASSOC org.apache.log4j.Level
-	c69790:p -> c69856:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c70328:p -> c70396:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl NAVASSOC org.apache.log4j.Logger
-	c69790:p -> c69857:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c70328:p -> c70397:p [taillabel="", label="", headlabel="*", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.node.logging.LoggerFactory DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
-	c69691:p -> c69686:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND org.apache.log4j.Appender
-	c69790:p -> c69858:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
-	c69790:p -> c69686:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c69790:p -> c69690:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c70229:p -> c70224:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.logging.LoggerFactory
-	c69790:p -> c69691:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c70328:p -> c70229:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND org.apache.log4j.Logger
-	c69790:p -> c69857:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c70328:p -> c70397:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.logging.LogUtils
+	c70328:p -> c70228:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND org.apache.log4j.Appender
+	c70328:p -> c70398:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.api.node.logging.impl.LoggerFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPEREAgent
+	c70328:p -> c70224:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// org.apache.log4j.Level
-	c69856 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Level.html">
+	c70396 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Level.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Level </td></tr>
 			<tr><td><font point-size="7.0"> org.apache.log4j </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.apache.log4j.Logger
-	c69857 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Logger.html">
+	c70397 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Logger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Logger </td></tr>
 			<tr><td><font point-size="7.0"> org.apache.log4j </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// org.apache.log4j.Appender
-	c69858 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Appender.html">
+	c70398 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/apache/log4j/Appender.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Appender </td></tr>

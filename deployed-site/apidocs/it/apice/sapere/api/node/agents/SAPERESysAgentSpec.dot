@@ -8,14 +8,14 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec
-	c42029 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SAPERESysAgentSpec.html">
+	c42353 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SAPERESysAgentSpec.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SAPERESysAgentSpec </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LogUtils
-	c42036 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../logging/LogUtils.html">
+	c42360 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../logging/LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
@@ -23,7 +23,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.NodeServices
-	c42038 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../NodeServices.html">
+	c42362 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -31,26 +31,26 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SysAgentImpl
-	c42148 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/agents/impl/SysAgentImpl.html">
+	c42474 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/agents/impl/SysAgentImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SysAgentImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl
-	c42149 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/agents/impl/SAPEREAgentsFactoryImpl.html">
+	c42475 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/agents/impl/SAPEREAgentsFactoryImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SAPEREAgentsFactoryImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.impl.SysAgentImpl NAVASSOC it.apice.sapere.api.node.agents.SAPERESysAgentSpec
-	c42148:p -> c42029:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c42474:p -> c42353:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec DEPEND it.apice.sapere.api.node.logging.LogUtils
-	c42029:p -> c42036:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c42353:p -> c42360:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.node.agents.SAPERESysAgentSpec DEPEND it.apice.sapere.api.node.NodeServices
-	c42029:p -> c42038:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c42353:p -> c42362:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.agents.impl.SAPEREAgentsFactoryImpl DEPEND it.apice.sapere.api.node.agents.SAPERESysAgentSpec
-	c42149:p -> c42029:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c42475:p -> c42353:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

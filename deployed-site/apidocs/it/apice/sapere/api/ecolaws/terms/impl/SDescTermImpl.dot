@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.Term<Type>
-	c56936 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Term.html">
+	c57376 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Term.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Term&lt;Type&gt; </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.SDescTerm
-	c56964 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SDescTerm.html">
+	c57404 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../SDescTerm.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SDescTerm </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.PatternNameTerm
-	c56966 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../PatternNameTerm.html">
+	c57406 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../PatternNameTerm.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> PatternNameTerm </td></tr>
@@ -32,7 +32,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.lsas.LSAid
-	c56982 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../lsas/LSAid.html">
+	c57422 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../lsas/LSAid.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAid </td></tr>
@@ -40,30 +40,30 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl
-	c57067 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SDescTermImpl.html">
+	c57507 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SDescTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SDescTermImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<Type>
-	c57071 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AnnotatedVarTermImpl.html">
+	c57511 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AnnotatedVarTermImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> AnnotatedVarTermImpl&lt;Type&gt; </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl extends it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<it.apice.sapere.api.lsas.SemanticDescription>
-	c57071:p -> c57067:p [dir=back,arrowtail=empty];
+	c57511:p -> c57507:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl implements it.apice.sapere.api.ecolaws.terms.SDescTerm
-	c56964:p -> c57067:p [dir=back,arrowtail=empty,style=dashed];
+	c57404:p -> c57507:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl NAVASSOC it.apice.sapere.api.ecolaws.terms.PatternNameTerm
-	c57067:p -> c56966:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c57507:p -> c57406:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.ecolaws.terms.SDescTerm DEPEND it.apice.sapere.api.lsas.LSAid
-	c56964:p -> c56982:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c57404:p -> c57422:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl DEPEND it.apice.sapere.api.lsas.LSAid
-	c57067:p -> c56982:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c57507:p -> c57422:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.SDescTermImpl DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c57067:p -> c56936:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c57507:p -> c57376:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.terms.impl.AnnotatedVarTermImpl<Type> DEPEND it.apice.sapere.api.ecolaws.Term<Type>
-	c57071:p -> c56936:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c57511:p -> c57376:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.agents.networking.Subscriber
-	c75114 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Subscriber.html">
+	c76214 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Subscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Subscriber </td></tr>
@@ -16,21 +16,21 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.agents.networking.Message
-	c75115 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
+	c76215 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/agents/networking/Message.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> Message </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.node.agents.networking </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber
-	c75237 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./GuestSubscriber.html">
+	c76339 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./GuestSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> GuestSubscriber </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber implements it.apice.sapere.api.node.agents.networking.Subscriber
-	c75114:p -> c75237:p [dir=back,arrowtail=empty,style=dashed];
+	c76214:p -> c76339:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.networking.guestsmngt.impl.GuestSubscriber DEPEND it.apice.sapere.api.node.agents.networking.Message
-	c75237:p -> c75115:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c76339:p -> c76215:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

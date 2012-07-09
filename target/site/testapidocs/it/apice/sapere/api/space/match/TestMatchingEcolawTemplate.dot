@@ -16,18 +16,18 @@ digraph G {
 	//it.apice.sapere.api.space.match.TestMatchingEcolawTemplate extends it.apice.sapere.api.space.match.AbstractTestMatchingEcolawTemplate
 	c1082:p -> c1078:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.api.space.match.TestMatchingEcolawTemplate DEPEND it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c1078:p -> c1090:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c1078:p -> c1089:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.TestMatchingEcolawTemplate DEPEND it.apice.sapere.api.space.match.impl.MutableMatchResultImpl
-	c1078:p -> c1095:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c1078:p -> c1094:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.match.impl.MutableMatchResultImpl
-	c1095 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/match/impl/MutableMatchResultImpl.html">
+	c1094 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/match/impl/MutableMatchResultImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MutableMatchResultImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.LSAspaceCore<RDFStmtIterType>
-	c1090 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/LSAspaceCore.html">
+	c1089 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/it/apice/sapere/api/space/core/LSAspaceCore.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LSAspaceCore&lt;RDFStmtIterType&gt; </td></tr>

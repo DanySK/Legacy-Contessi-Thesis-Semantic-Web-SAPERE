@@ -8,42 +8,42 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.match.MutableMatchResult
-	c47477 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MutableMatchResult.html">
+	c47843 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./MutableMatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MutableMatchResult </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchResult
-	c47478 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchResult.html">
+	c47844 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MatchResult.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchResult </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl
-	c47550 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../core/impl/AbstractLSAspaceCoreImpl.html">
+	c47916 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../core/impl/AbstractLSAspaceCoreImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractLSAspaceCoreImpl </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.impl.MutableMatchResultImpl
-	c47554 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MutableMatchResultImpl.html">
+	c47920 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./impl/MutableMatchResultImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> MutableMatchResultImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.match.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.space.match.MutableMatchResult implements it.apice.sapere.api.space.match.MatchResult
-	c47478:p -> c47477:p [dir=back,arrowtail=empty,style=dashed];
+	c47844:p -> c47843:p [dir=back,arrowtail=empty,style=dashed];
 	//it.apice.sapere.api.space.match.impl.MutableMatchResultImpl implements it.apice.sapere.api.space.match.MutableMatchResult
-	c47477:p -> c47554:p [dir=back,arrowtail=empty,style=dashed];
+	c47843:p -> c47920:p [dir=back,arrowtail=empty,style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c47916:p -> c47844:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
+	c47916:p -> c47844:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MutableMatchResult
-	c47550:p -> c47477:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c47550:p -> c47478:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.match.MatchResult
-	c47550:p -> c47478:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c47916:p -> c47843:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

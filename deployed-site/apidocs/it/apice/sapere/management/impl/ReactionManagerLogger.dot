@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.management.ReactionManagerObserver
-	c71231 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/management/ReactionManagerObserver.html">
+	c72301 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/management/ReactionManagerObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ReactionManagerObserver </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.node.logging.LogUtils
-	c71241 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/logging/LogUtils.html">
+	c72311 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/node/logging/LogUtils.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> LogUtils </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.CompiledEcolaw
-	c71248 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledEcolaw.html">
+	c72318 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/core/CompiledEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> CompiledEcolaw </td></tr>
@@ -32,7 +32,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.match.MatchingEcolaw
-	c71258 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/match/MatchingEcolaw.html">
+	c72328 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../api/space/match/MatchingEcolaw.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> MatchingEcolaw </td></tr>
@@ -40,22 +40,22 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.management.impl.ReactionManagerLogger
-	c71347 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ReactionManagerLogger.html">
+	c72419 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ReactionManagerLogger.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ReactionManagerLogger </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.management.impl.ReactionManagerLogger implements it.apice.sapere.api.management.ReactionManagerObserver
-	c71231:p -> c71347:p [dir=back,arrowtail=empty,style=dashed];
+	c72301:p -> c72419:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger NAVASSOC it.apice.sapere.api.node.logging.LogUtils
-	c71347:p -> c71241:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
-	// it.apice.sapere.api.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c71231:p -> c71248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c72419:p -> c72311:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c71231:p -> c71258:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
-	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
-	c71347:p -> c71248:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c72301:p -> c72328:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.api.management.ReactionManagerObserver DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c72301:p -> c72318:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.match.MatchingEcolaw
-	c71347:p -> c71258:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c72419:p -> c72328:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	// it.apice.sapere.management.impl.ReactionManagerLogger DEPEND it.apice.sapere.api.space.core.CompiledEcolaw
+	c72419:p -> c72318:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

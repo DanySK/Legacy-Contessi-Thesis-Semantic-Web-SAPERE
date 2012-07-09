@@ -8,64 +8,64 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.space.observation.SpaceOperationType
-	c48513 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SpaceOperationType.html">
+	c48887 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SpaceOperationType.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;enumeration&raquo; </td></tr>
 			<tr><td> SpaceOperationType </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl
-	c48582 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../core/impl/AbstractLSAspaceCoreImpl.html">
+	c48956 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../core/impl/AbstractLSAspaceCoreImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractLSAspaceCoreImpl </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.api.space.core.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.observation.impl.SpaceEventImpl
-	c48592 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/SpaceEventImpl.html">
+	c48966 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/SpaceEventImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SpaceEventImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.observation.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl
-	c48593 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/LSAEventImpl.html">
+	c48967 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../space/observation/impl/LSAEventImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> LSAEventImpl </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.space.observation.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification
-	c48630 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/networking/obsnotif/impl/Notification.html">
+	c49006 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/networking/obsnotif/impl/Notification.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> Notification </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.obsnotif.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.utils.impl.SpaceOperation
-	c48631 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/networking/utils/impl/SpaceOperation.html">
+	c49007 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../node/networking/utils/impl/SpaceOperation.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> SpaceOperation </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.networking.utils.impl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.space.observation.impl.SpaceEventImpl NAVASSOC it.apice.sapere.api.space.observation.SpaceOperationType
-	c48592:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c48966:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl NAVASSOC it.apice.sapere.api.space.observation.SpaceOperationType
-	c48593:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c48967:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification NAVASSOC it.apice.sapere.api.space.observation.SpaceOperationType
-	c48630:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c49006:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.node.networking.utils.impl.SpaceOperation NAVASSOC it.apice.sapere.api.space.observation.SpaceOperationType
-	c48631:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c49007:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c48582:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c48956:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.SpaceEventImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c48592:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c48966:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.space.observation.impl.LSAEventImpl DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c48593:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c48967:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.Notification DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c48630:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c49006:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.utils.impl.SpaceOperation DEPEND it.apice.sapere.api.space.observation.SpaceOperationType
-	c48631:p -> c48513:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c49007:p -> c48887:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

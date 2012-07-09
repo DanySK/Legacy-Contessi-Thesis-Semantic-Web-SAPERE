@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.node.NodeServices
-	c78473 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
+	c79599 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/node/NodeServices.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> NodeServices </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.SpaceObserver
-	c78490 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/observation/SpaceObserver.html">
+	c79616 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/observation/SpaceObserver.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SpaceObserver </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.space.observation.SpaceEvent
-	c78491 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/observation/SpaceEvent.html">
+	c79617 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../../api/space/observation/SpaceEvent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> SpaceEvent </td></tr>
@@ -32,27 +32,27 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.agents.AbstractSystemAgent
-	c78580 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
+	c79708 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../../agents/AbstractSystemAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> AbstractSystemAgent </font></td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.node.agents </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent
-	c78605 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NotifierAgent.html">
+	c79733 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./NotifierAgent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> NotifierAgent </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent extends it.apice.sapere.node.agents.AbstractSystemAgent
-	c78580:p -> c78605:p [dir=back,arrowtail=empty];
+	c79708:p -> c79733:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent implements it.apice.sapere.api.space.observation.SpaceObserver
-	c78490:p -> c78605:p [dir=back,arrowtail=empty,style=dashed];
+	c79616:p -> c79733:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.node.agents.AbstractSystemAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c78580:p -> c78473:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c79708:p -> c79599:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent DEPEND it.apice.sapere.api.space.observation.SpaceEvent
-	c78605:p -> c78491:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c79733:p -> c79617:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.node.networking.obsnotif.impl.NotifierAgent DEPEND it.apice.sapere.api.node.NodeServices
-	c78605:p -> c78473:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c79733:p -> c79599:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 

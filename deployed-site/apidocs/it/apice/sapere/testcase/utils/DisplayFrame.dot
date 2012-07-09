@@ -8,24 +8,24 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.testcase.DisplayVLCService
-	c80430 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../DisplayVLCService.html">
+	c81572 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../DisplayVLCService.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DisplayVLCService </td></tr>
 			<tr><td><font point-size="7.0"> it.apice.sapere.testcase </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.testcase.utils.DisplayFrame
-	c80431 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DisplayFrame.html">
+	c81573 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DisplayFrame.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DisplayFrame </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.testcase.DisplayVLCService NAVASSOC it.apice.sapere.testcase.utils.DisplayFrame
-	c80430:p -> c80431:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c81572:p -> c81573:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// it.apice.sapere.testcase.utils.DisplayFrame NAVASSOC uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent
-	c80431:p -> c80456:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
+	c81573:p -> c81598:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open];
 	// uk.co.caprica.vlcj.component.EmbeddedMediaPlayerComponent
-	c80456 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/uk/co/caprica/vlcj/component/EmbeddedMediaPlayerComponent.html">
+	c81598 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/uk/co/caprica/vlcj/component/EmbeddedMediaPlayerComponent.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> EmbeddedMediaPlayerComponent </td></tr>
 			<tr><td><font point-size="7.0"> uk.co.caprica.vlcj.component </font></td></tr>

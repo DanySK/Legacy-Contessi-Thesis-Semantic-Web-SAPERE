@@ -8,24 +8,24 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.demo.functions.impl.DistanceFunction
-	c81986 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DistanceFunction.html">
+	c83140 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DistanceFunction.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> DistanceFunction </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.demo.functions.impl.DistanceFunction extends com.hp.hpl.jena.sparql.function.FunctionBase4
-	c82005:p -> c81986:p [dir=back,arrowtail=empty];
+	c83159:p -> c83140:p [dir=back,arrowtail=empty];
 	// it.apice.sapere.demo.functions.impl.DistanceFunction DEPEND com.hp.hpl.jena.sparql.expr.NodeValue
-	c81986:p -> c82006:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c83140:p -> c83160:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// com.hp.hpl.jena.sparql.function.FunctionBase4
-	c82005 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/function/FunctionBase4.html">
+	c83159 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/function/FunctionBase4.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> FunctionBase4 </font></td></tr>
 			<tr><td><font point-size="7.0"> com.hp.hpl.jena.sparql.function </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// com.hp.hpl.jena.sparql.expr.NodeValue
-	c82006 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/expr/NodeValue.html">
+	c83160 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/com/hp/hpl/jena/sparql/expr/NodeValue.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> NodeValue </font></td></tr>
 			<tr><td><font point-size="7.0"> com.hp.hpl.jena.sparql.expr </font></td></tr>

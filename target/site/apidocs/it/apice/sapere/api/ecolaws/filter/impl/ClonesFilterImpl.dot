@@ -8,7 +8,7 @@ digraph G {
 	edge [fontname="Helvetica",fontsize=10,labelfontname="Helvetica",labelfontsize=10];
 	node [fontname="Helvetica",fontsize=10,shape=plaintext];
 	// it.apice.sapere.api.ecolaws.Filter
-	c52291 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Filter.html">
+	c52695 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../Filter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> Filter </td></tr>
@@ -16,7 +16,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filters.ClonesFilter
-	c52300 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../filters/ClonesFilter.html">
+	c52704 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../../filters/ClonesFilter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> &laquo;interface&raquo; </td></tr>
 			<tr><td> ClonesFilter </td></tr>
@@ -24,24 +24,24 @@ digraph G {
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filter.impl.CopyFilterImpl
-	c52399 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./CopyFilterImpl.html">
+	c52803 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./CopyFilterImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td><font face="Helvetica-Oblique"> CopyFilterImpl </font></td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	// it.apice.sapere.api.ecolaws.filter.impl.ClonesFilterImpl
-	c52400 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ClonesFilterImpl.html">
+	c52804 [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ClonesFilterImpl.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 			<tr><td> ClonesFilterImpl </td></tr>
 		</table></td></tr>
 		</table>>, fontname="Helvetica", fontcolor="black", fontsize=9.0];
 	//it.apice.sapere.api.ecolaws.filter.impl.ClonesFilterImpl extends it.apice.sapere.api.ecolaws.filter.impl.CopyFilterImpl
-	c52399:p -> c52400:p [dir=back,arrowtail=empty];
+	c52803:p -> c52804:p [dir=back,arrowtail=empty];
 	//it.apice.sapere.api.ecolaws.filter.impl.ClonesFilterImpl implements it.apice.sapere.api.ecolaws.filters.ClonesFilter
-	c52300:p -> c52400:p [dir=back,arrowtail=empty,style=dashed];
+	c52704:p -> c52804:p [dir=back,arrowtail=empty,style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.CopyFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter
-	c52399:p -> c52291:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52803:p -> c52695:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 	// it.apice.sapere.api.ecolaws.filter.impl.ClonesFilterImpl DEPEND it.apice.sapere.api.ecolaws.Filter
-	c52400:p -> c52291:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
+	c52804:p -> c52695:p [taillabel="", label="", headlabel="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="black", arrowhead=open, style=dashed];
 }
 
