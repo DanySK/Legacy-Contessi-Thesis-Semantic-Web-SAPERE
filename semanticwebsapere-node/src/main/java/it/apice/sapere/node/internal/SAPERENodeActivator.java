@@ -160,12 +160,6 @@ public class SAPERENodeActivator implements BundleActivator {
 					.getProperty("sapere.diffusion.config");
 			if (diffConfig != null) {
 				final File config = new File(diffConfig);
-
-				// final Properties props = new Properties();
-				// props.setProperty("other", "127.0.0.1:20021");
-				// props.setProperty("other2", "127.0.0.1:20022");
-				// props.storeToXML(new FileOutputStream(config),
-				// "Diffusion configuration", "utf-8");
 				NetworkManagerImpl.getInstance().loadTable(config);
 			}
 			log("   + LSA Relocator enabled (port: "
@@ -185,8 +179,9 @@ public class SAPERENodeActivator implements BundleActivator {
 				.addStepAtTheBeginning(syntPropsHdl);
 		log("   + Synthetic Properties handler");
 
+		// true = Relocated LSA is removed, false otherwise
 		lsaSpace.addSpaceObserver(new DiffusionHandler(lsaSpace, lsaFactory
-				.getNodeID(), false));
+				.getNodeID(), true));
 		log("   + Diffusion handler");
 
 		// Reaction manager initialization

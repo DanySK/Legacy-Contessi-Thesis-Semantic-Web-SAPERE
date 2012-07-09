@@ -1,0 +1,53 @@
+PREFIX sapere-model:  <http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#> 
+PREDIX sapere-fn; <http://www.sapere-project.eu/functions>
+
+# 0. Match
+SELECT DISTINCT * WHERE {
+	?sourceLsa sapere-model:location sapere-model:local;
+		rdf:type ex:type.
+	?newLoc rdf:type sapere:neighbour; 
+		sapere:name ex:name.
+	BIND (sapere-fn:generateLSA-id() AS !clonedLsa).
+}
+
+# 1. Create new blank-nodes
+INSERT {
+	!clonedLsa ?prop [ sapere-model:tmp ?bnode ] .	
+} WHERE {
+	!sourceLsa ?prop ?bnode.
+	FILTER EXISTS {
+		?bnode ?prop2 ?value2.
+	}
+};
+
+# 2. Fill each blank-node with relative nested data 
+MODIFY 
+DELETE {
+	?newBNode sapere-model:tmp ?bnode.
+} INSERT {
+	?newBNode ?bProp ?bValue.
+} WHERE {
+	!sourceLsa ?prop ?bnode.
+	?bnode ?bProp ?bValue.
+	!clonedLsa ?prop ?newBNode.
+	?newBNode sapere-model:tmp ?bnode.
+};
+
+# 3. Clone the remaining triples
+INSERT {
+	!clonedLsa ?prop ?value.
+} WHERE {
+	!sourceLsa ?prop ?value.
+	FILTER NOT EXISTS {
+		?value ?bProp ?bValue.
+	}
+};
+	
+# 4. Change location
+MODIFY
+DELETE {
+	!clonedLsa sapere-model:location sapere-model:local.
+} INSERT {
+	!clonedLsa sapere-model:location ?newLoc.
+} WHERE { }
+

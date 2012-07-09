@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="87.859" errors="7" skipped="0" tests="7" name="it.apice.sapere.space.TestLSAspace">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.8-b03-424"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11M3720"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere"/>
+    <property name="java.runtime.version" value="1.6.0_33-b03-424-11M3720"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0y/lbhy86kn1rs50xzlxkbmzlqm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-integrationtests/target/cobertura/cobertura.ser"/>
+    <property name="classworlds.conf" value="/Users/conteit/apache-maven-3.0.4/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.7.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/conteit"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="conteit"/>
+    <property name="java.class.path" value="/Users/conteit/apache-maven-3.0.4/boot/plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean site:site site:attach-descriptor site:deploy"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="it"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_33"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="maven.home" value="/Users/conteit/apache-maven-3.0.4"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="project.build.outputDirectory" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-integrationtests/target/generated-classes/cobertura"/>
+    <property name="mrj.version" value="1070.1.6.0_33-424"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="12.893" classname="it.apice.sapere.space.TestLSAspace" name="testReadExceptions:TestLSAspace.testReadExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@1b435686]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node9CA300CB-0F6D-460E-948D-FEAFB6EDE036
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testReadExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@e75be38.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@4398ee2f] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.454" classname="it.apice.sapere.space.TestLSAspace" name="testUpdateExceptions:TestLSAspace.testUpdateExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@72d006a7]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node54037ED1-98DC-4B32-BB73-7E51C8555602
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testUpdateExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@478dabf1.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@2e8cd4db] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.596" classname="it.apice.sapere.space.TestLSAspace" name="testIgnoreExceptions:TestLSAspace.testIgnoreExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@70284ac3]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node5CC683BE-F656-4CBC-9C1D-C5F4EC4CEF28
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testIgnoreExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@450ae3fb.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@60eb9f58] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.517" classname="it.apice.sapere.space.TestLSAspace" name="testRemoveExceptions:TestLSAspace.testRemoveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@27077aa7]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node9F4D1304-679D-4BE7-9481-2D566B0D3D31
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testRemoveExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@5651e202.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@42f66abc] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.479" classname="it.apice.sapere.space.TestLSAspace" name="testScenario:TestLSAspace.testScenario:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@139c189b]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node2CE4173F-15B5-4E6C-8809-D7C650E7FE6A
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testScenario in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@188f7e20.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@422eb6e9] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.412" classname="it.apice.sapere.space.TestLSAspace" name="testInjectExceptions:TestLSAspace.testInjectExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@44eec35c]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node97D9DB8A-439B-45B4-A748-3114DE309B30
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testInjectExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@4d668534.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@37176e8a] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+  <testcase time="12.508" classname="it.apice.sapere.space.TestLSAspace" name="testObserveExceptions:TestLSAspace.testObserveExceptions:NativeContainer:org.apache.felix.framework.FrameworkFactory@11742dfe">
+    <error message="gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore" type="org.ops4j.pax.swissbox.framework.ServiceLookupException">org.ops4j.pax.swissbox.framework.ServiceLookupException: gave up waiting for service it.apice.sapere.api.space.core.LSAspaceCore
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:122)
+	at org.ops4j.pax.swissbox.framework.ServiceLookup.getService(ServiceLookup.java:83)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectField(ServiceInjector.java:86)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectDeclaredFields(ServiceInjector.java:70)
+	at org.ops4j.pax.exam.inject.internal.ServiceInjector.injectFields(ServiceInjector.java:59)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.createTest(ContainerTestRunner.java:62)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:227)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:224)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:69)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:70)
+	at org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner.runChild(ContainerTestRunner.java:37)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:292)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:136)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.invokeViaJUnit(JUnitProbeInvoker.java:124)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.findAndInvoke(JUnitProbeInvoker.java:94)
+	at org.ops4j.pax.exam.invoker.junit.internal.JUnitProbeInvoker.call(JUnitProbeInvoker.java:77)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@56d5c657]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#node50CE3D82-86C0-4F8C-89AD-FDCCC2227945
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.invoker.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testUpdateExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testScenario&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testReadExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testInjectExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26 to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testObserveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testRemoveExceptions&quot;
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf to be in PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf&quot; and expression=&quot;it.apice.sapere.space.TestLSAspace;testIgnoreExceptions&quot;
+[org.ops4j.pax.exam.invoker.junit.internal.ContainerTestRunner] : running testObserveExceptions in reactor
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-d020f04f-f0fe-4721-86b3-d00abcbe9ef7]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8, value=it.apice.sapere.space.TestLSAspace;testUpdateExceptions }, ManifestEntry{ key=PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856, value=it.apice.sapere.space.TestLSAspace;testScenario }, ManifestEntry{ key=PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf, value=it.apice.sapere.space.TestLSAspace;testReadExceptions }, ManifestEntry{ key=PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91, value=it.apice.sapere.space.TestLSAspace;testInjectExceptions }, ManifestEntry{ key=PaxExam-Executable, value=PaxExam-2e535a3e-4b76-464f-aa98-8d3c0e4d20d8,PaxExam-007c01fd-34df-4de0-b871-aa5d2797e856,PaxExam-d33fbbae-ae00-468f-9df0-b0b64c6e64cf,PaxExam-9a1815aa-2c1d-4fa6-9783-7ef4024c3b91,PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26,PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff,PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, }, ManifestEntry{ key=PaxExam-78a0aaec-84bc-41d1-a938-7b4580ca8a26, value=it.apice.sapere.space.TestLSAspace;testObserveExceptions }, ManifestEntry{ key=PaxExam-b97a6417-b4c4-4edc-8d7e-e14188ecb0ff, value=it.apice.sapere.space.TestLSAspace;testRemoveExceptions }, ManifestEntry{ key=PaxExam-659b10d7-6390-4cca-97f0-87329571d7cf, value=it.apice.sapere.space.TestLSAspace;testIgnoreExceptions }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@36473fa1.]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.invoker.junit]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.servicemix.bundles.junit]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+</system-out>
+    <system-err>java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@12ea9bc8] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+</system-err>
+  </testcase>
+</testsuite>

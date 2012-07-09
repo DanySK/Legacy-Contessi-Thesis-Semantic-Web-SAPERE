@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.5">
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/EcolawFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/ChemicalPattern.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Ecolaw.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Filter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/AssignFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/ClonesFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/CopyFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/ExtendsFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/HasFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/HasNotFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/MatchFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/OpFilter.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/filters/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/FormulaFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/GtEqFormula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/GtFormula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/IsFormula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/LtEqFormula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/LtFormula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/formulas/RightOperand.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Product.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Rate.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Reactant.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scheduling/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scheduling/SchedulableMatchResult.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/scheduling/SchedulingFunction.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/Term.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/AnnotatedVarTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/Formula.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/ListTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/observers/BindingObserver.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/observers/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/PatternNameTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/PropertyTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/SDescTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/ValueTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/terms/VarTerm.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/visitor/EcolawVisitor.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/ecolaws/visitor/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/internal/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/LSAFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/LSAParser.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/LSA.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/LSAid.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/Property.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/PropertyName.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/SemanticDescription.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/BooleanValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/DateTimeValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/DoubleValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/FloatValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/IntegerValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/LiteralValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/LongValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/LSAidValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/PropertyValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/SDescValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/values/URIValue.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/visitor/LSAVisitor.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/lsas/visitor/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/management/AbortException.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/management/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/management/ReactionManager.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/management/ReactionManagerObserver.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/management/ReactionsScheduler.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/LSAspaceAccessPolicy.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/networking/Message.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/networking/Subscriber.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/SAPEREAgent.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/SAPEREAgentsFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/SAPEREAgentSpec.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/agents/SAPERESysAgentSpec.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/logging/LoggerFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/logging/LogUtils.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/NodeServices.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/node/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/PrivilegedLSAFactory.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/RDFFormat.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/SAPEREException.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/CompiledEcolaw.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/CompiledLSA.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/EcolawCompiler.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/LSACompiler.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/LSAspaceCore.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/strategy/CustomStrategyPipeline.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/strategy/CustomStrategyPipelineStep.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/core/strategy/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/LSAspace.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/functions/MatchFunctRegistry.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/functions/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/MatchingEcolaw.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/MatchingEcolawTemplate.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/MatchResult.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/MutableMatchResult.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/match/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/LSAEvent.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/LSAObserver.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/package-info.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/SpaceEvent.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/SpaceObserver.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/observation/SpaceOperationType.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/OntologyHandler.java">
+</file>
+<file name="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-api/src/main/java/it/apice/sapere/api/space/package-info.java">
+</file>
+</checkstyle>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="1" time="3.611" errors="0" skipped="0" tests="1" name="it.apice.sapere.node.TestSAPEREnode">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.8-b03-424"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11M3720"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="IT"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere"/>
+    <property name="java.runtime.version" value="1.6.0_33-b03-424-11M3720"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0y/lbhy86kn1rs50xzlxkbmzlqm0000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-integrationtests/target/cobertura/cobertura.ser"/>
+    <property name="classworlds.conf" value="/Users/conteit/apache-maven-3.0.4/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.7.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/conteit"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="conteit"/>
+    <property name="java.class.path" value="/Users/conteit/apache-maven-3.0.4/boot/plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean site:site site:attach-descriptor site:deploy"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="it"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_33"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="maven.home" value="/Users/conteit/apache-maven-3.0.4"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="project.build.outputDirectory" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-integrationtests/target/generated-classes/cobertura"/>
+    <property name="mrj.version" value="1070.1.6.0_33-424"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="3.611" classname="it.apice.sapere.node.TestSAPEREnode" name="testServicesAvailablity:TestSAPEREnode.testServicesAvailablity:NativeContainer:org.apache.felix.framework.FrameworkFactory@2ce1899b">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: 
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertNotNull(Assert.java:524)
+	at org.junit.Assert.assertNotNull(Assert.java:535)
+	at it.apice.sapere.node.TestSAPEREnode.testServicesAvailablity(TestSAPEREnode.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.ops4j.pax.exam.raw.extender.intern.ProbeInvokerImpl.injectContextAndInvoke(ProbeInvokerImpl.java:124)
+	at org.ops4j.pax.exam.raw.extender.intern.ProbeInvokerImpl.findAndInvoke(ProbeInvokerImpl.java:87)
+	at org.ops4j.pax.exam.raw.extender.intern.ProbeInvokerImpl.call(ProbeInvokerImpl.java:74)
+	at org.ops4j.pax.exam.nat.internal.NativeTestContainer.call(NativeTestContainer.java:95)
+	at org.ops4j.pax.exam.spi.reactors.AllConfinedStagedReactor.invoke(AllConfinedStagedReactor.java:74)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner$3.evaluate(JUnit4TestRunner.java:304)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.ops4j.pax.exam.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:93)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</failure>
+    <system-out>ERROR: Bundle org.ops4j.pax.exam.rbc [2] Error starting link:classpath:META-INF/links/org.ops4j.pax.exam.rbc.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.exam.rbc [2].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Creating bundle watcher with scanner [org.ops4j.pax.swissbox.extender.BundleManifestScanner@1d162212]...
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.exam.extender.service]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.logging.pax-logging-api]
+ERROR: Bundle org.ops4j.pax.logging.pax-logging-api [6] Error starting link:classpath:META-INF/links/org.ops4j.pax.logging.api.link (org.osgi.framework.BundleException: Activator start error in bundle org.ops4j.pax.logging.pax-logging-api [6].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-testplan]
+SemanticWebSAPERE [RDFModel]: Starting up..
+rdf-model&gt; LSAFactory REGISTERED
+rdf-model&gt; LSAParser REGISTERED
+rdf-model&gt; EcolawFactory REGISTERED
+rdf-model&gt; FormulaFactory REGISTERED
+rdf-model&gt; Node URI = http://www.sapere-project.eu/ontologies/2012/0/sapere-model.owl#nodeD95A6E75-1CC0-4ED6-BEF4-9809E725CA6B
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [semanticwebsapere-rdfmodel]
+rdf-space&gt; Starting up..
+rdf-space&gt; LSA Factory ACQUIRED
+rdf-space&gt; LSA Compiler REGISTERED.
+rdf-space&gt; Eco-law Compiler REGISTERED.
+rdf-space&gt; NO reasoner enabled
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfspace]
+ERROR: Bundle semanticwebsapere-rdfspace [17] Error starting mvn:it.apice.sapere/semanticwebsapere-rdfspace (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-rdfspace [17].)
+INFO  $SAPERENodeActivator&gt; ---------------------------------------------------------------
+INFO  $SAPERENodeActivator&gt; SAPERE-node (Self-Aware Pervasive Service Ecosystems)
+INFO  $SAPERENodeActivator&gt; ---------------------------------------------------------------
+INFO  $SAPERENodeActivator&gt; 
+INFO  $SAPERENodeActivator&gt; Looking for services:
+INFO  $SAPERENodeActivator&gt;    + LSA Factory
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-node]
+ERROR: Bundle semanticwebsapere-node [18] Error starting mvn:it.apice.sapere/semanticwebsapere-node (org.osgi.framework.BundleException: Activator start error in bundle semanticwebsapere-node [18].)
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Scanning bundle [PAXEXAM-PROBE-28cd23aa-d285-4b88-8c09-cbbc27cd7621]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Found resources [ManifestEntry{ key=PaxExam-Executable, value=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, }, ManifestEntry{ key=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }]
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-Executable to be in PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Test PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9 to be in PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9,
+[org.ops4j.pax.exam.raw.extender.intern.Probe] : Registering Service: org.ops4j.pax.exam.ProbeInvoker with Probe-Signature=&quot;PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9&quot; and expression=&quot;it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity&quot;
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [PAXEXAM-PROBE-28cd23aa-d285-4b88-8c09-cbbc27cd7621]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Un-registering [ManifestEntry{ key=PaxExam-Executable, value=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, }, ManifestEntry{ key=PaxExam-8a6efeb7-196b-48dc-a28e-e14a6200c2b9, value=it.apice.sapere.node.TestSAPEREnode;testServicesAvailablity }]
+[org.ops4j.pax.exam.raw.extender.intern.TestBundleObserver] : Unregistered testcase [org.ops4j.pax.exam.raw.extender.intern.Probe@1bb0889a.]
+SemanticWebSAPERE [RDFModel]: Stopping..
+rdf-model&gt; LSAParser UNREGISTERED.
+rdf-model&gt; LSAFactory UNREGISTERED.
+rdf-model&gt; EcolawFactory UNREGISTERED.
+rdf-model&gt; FormulaFactory UNREGISTERED.
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-rdfmodel]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-testplan]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-requirements]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [semanticwebsapere-api]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.geronimo.specs.geronimo-atinject_1.0_spec]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.lifecycle]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.extender]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.swissbox.core]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.base]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [osgi.cmpn]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.apache.felix.framework]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.inject]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam]
+[org.ops4j.pax.swissbox.extender.BundleWatcher] : Releasing bundle [org.ops4j.pax.exam.extender.service]
+</system-out>
+    <system-err>SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/conteit/.m2/repository/org/slf4j/slf4j-log4j12/1.6.4/slf4j-log4j12-1.6.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/conteit/.m2/repository/ch/qos/logback/logback-classic/1.0.3/logback-classic-1.0.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+java.lang.ClassCastException: org.ops4j.pax.exam.rbc.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+java.lang.ClassCastException: org.ops4j.pax.logging.internal.Activator cannot be cast to org.osgi.framework.BundleActivator
+	at org.apache.felix.framework.Felix.createBundleActivator(Felix.java:4177)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1972)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [bundle://14.0:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:15/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [bundle://14.0:27/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+log4j:ERROR A &quot;org.apache.log4j.ConsoleAppender&quot; object is not assignable to a &quot;org.apache.log4j.Appender&quot; variable.
+log4j:ERROR The class &quot;org.apache.log4j.Appender&quot; was loaded by 
+log4j:ERROR [org.apache.felix.framework.BundleWiringImpl@45cfd3b2] whereas object of type 
+log4j:ERROR &quot;org.apache.log4j.ConsoleAppender&quot; was loaded by [sun.misc.Launcher$AppClassLoader@1f3e8d89].
+log4j:ERROR Could not instantiate appender named &quot;console&quot;.
+java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:35)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.registerLSAspace(RDFSpaceActivator.java:170)
+	at it.apice.sapere.space.internal.RDFSpaceActivator.start(RDFSpaceActivator.java:67)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 46 more
+it.apice.sapere.api.SAPEREException: Cannot find &quot;LSA Compiler&quot; service
+	at it.apice.sapere.node.internal.SAPERENodeActivator.initLSACompiler(SAPERENodeActivator.java:414)
+	at it.apice.sapere.node.internal.SAPERENodeActivator.start(SAPERENodeActivator.java:108)
+	at org.apache.felix.framework.util.SecureAction.startActivator(SecureAction.java:641)
+	at org.apache.felix.framework.Felix.activateBundle(Felix.java:1977)
+	at org.apache.felix.framework.Felix.startBundle(Felix.java:1895)
+	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1191)
+	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:295)
+	at java.lang.Thread.run(Thread.java:680)
+</system-err>
+  </testcase>
+</testsuite>

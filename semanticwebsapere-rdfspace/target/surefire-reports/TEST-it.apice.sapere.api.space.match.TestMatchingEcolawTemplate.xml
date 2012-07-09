@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="4.521" errors="0" skipped="0" tests="1" name="it.apice.sapere.api.space.match.TestMatchingEcolawTemplate">
+<testsuite failures="0" time="0.426" errors="1" skipped="0" tests="1" name="it.apice.sapere.api.space.match.TestMatchingEcolawTemplate">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -27,9 +27,9 @@
 "/>
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/cobertura/cobertura.ser"/>
     <property name="classworlds.conf" value="/Users/conteit/apache-maven-3.0.4/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="MacRoman"/>
-    <property name="cpd.skip" value="true"/>
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="50.0"/>
@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dcpd.skip=true clean deploy"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean site:site site:attach-descriptor site:deploy"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="it"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -60,10 +60,90 @@
     <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="project.build.outputDirectory" value="/Users/conteit/Desktop/THESIS/sharing/semanticwebsapere/semanticwebsapere-rdfspace/target/generated-classes/cobertura"/>
     <property name="mrj.version" value="1070.1.6.0_33-424"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="4.521" classname="it.apice.sapere.api.space.match.TestMatchingEcolawTemplate" name="testBinding"/>
+  <testcase time="0.426" classname="it.apice.sapere.api.space.match.TestMatchingEcolawTemplate" name="testBinding">
+    <error message="org/w3c/dom/ElementTraversal" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/w3c/dom/ElementTraversal
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClassCond(ClassLoader.java:631)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:615)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:141)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:283)
+	at java.net.URLClassLoader.access$000(URLClassLoader.java:58)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.util.XMLUtils.getLoadingDoc(XMLUtils.java:82)
+	at java.util.XMLUtils.load(XMLUtils.java:54)
+	at java.util.Properties.loadFromXML(Properties.java:852)
+	at com.hp.hpl.jena.util.Metadata.read(Metadata.java:80)
+	at com.hp.hpl.jena.util.Metadata.addMetadata(Metadata.java:54)
+	at com.hp.hpl.jena.util.Metadata.&lt;init&gt;(Metadata.java:48)
+	at com.hp.hpl.jena.JenaRuntime.&lt;clinit&gt;(JenaRuntime.java:37)
+	at com.hp.hpl.jena.rdf.model.impl.RDFReaderFImpl.&lt;clinit&gt;(RDFReaderFImpl.java:74)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.&lt;clinit&gt;(ModelCom.java:54)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:142)
+	at com.hp.hpl.jena.rdf.model.ModelFactory.createDefaultModel(ModelFactory.java:136)
+	at com.hp.hpl.jena.vocabulary.OWL.&lt;clinit&gt;(OWL.java:37)
+	at com.hp.hpl.jena.ontology.ProfileRegistry.&lt;clinit&gt;(ProfileRegistry.java:47)
+	at com.hp.hpl.jena.ontology.OntModelSpec.&lt;clinit&gt;(OntModelSpec.java:53)
+	at it.apice.sapere.space.impl.LSAspaceImpl.initRDFGraphModel(LSAspaceImpl.java:64)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:207)
+	at it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl.&lt;init&gt;(AbstractLSAspaceCoreImpl.java:182)
+	at it.apice.sapere.space.impl.LSAspaceImpl.&lt;init&gt;(LSAspaceImpl.java:47)
+	at it.apice.sapere.api.space.match.TestMatchingEcolawTemplate.createDummySpace(TestMatchingEcolawTemplate.java:113)
+	at it.apice.sapere.api.space.match.TestMatchingEcolawTemplate.createMatchResult(TestMatchingEcolawTemplate.java:99)
+	at it.apice.sapere.api.space.match.TestMatchingEcolawTemplate.createBindings(TestMatchingEcolawTemplate.java:72)
+	at it.apice.sapere.api.space.match.AbstractTestMatchingEcolawTemplate.testBinding(AbstractTestMatchingEcolawTemplate.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+Caused by: java.lang.ClassNotFoundException: org.w3c.dom.ElementTraversal
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 68 more
+</error>
+  </testcase>
 </testsuite>
