@@ -35,6 +35,7 @@ import javax.microedition.io.StreamConnection;
  * @author Paolo Contessi
  * @author Michele Morgagni
  */
+@Deprecated
 public class BTClient {
 
 	/* === BLUETOOTH PROTOCOL CONSTANTS (begin) === */

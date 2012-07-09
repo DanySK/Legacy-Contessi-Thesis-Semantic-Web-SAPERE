@@ -76,6 +76,9 @@ public class TempSensor implements SAPEREAgentSpec {
 	/** Observation LSA. */
 	private transient LSA obsLsa = null;
 
+	/** Sensing counter. */
+	private transient int sCounter = 1;
+
 	/**
 	 * <p>
 	 * Builds a new {@link TempSensor}.
@@ -240,8 +243,8 @@ public class TempSensor implements SAPEREAgentSpec {
 			// Sensed temperature
 			final int temp = rng.nextInt(TEMP_RANGE);
 
-			out.log("Publishing temperature value (" + temp + "), next in "
-					+ rateToMillis(rate) + "ms..");
+			out.log("#" + (sCounter++) + ": Publishing temperature value (" 
+					+ temp + ")");
 			publishTemperature(factory, space, temp);
 			// out.spy(space.toString());
 		} catch (Exception ex) {

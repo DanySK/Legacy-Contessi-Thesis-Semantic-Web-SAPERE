@@ -1,5 +1,6 @@
 package com.sun.btrace.scripts;
 
+import com.sun.btrace.AnyType;
 import com.sun.btrace.BTraceUtils;
 import com.sun.btrace.aggregation.Aggregation;
 import com.sun.btrace.aggregation.AggregationFunction;
@@ -9,6 +10,8 @@ import com.sun.btrace.annotations.Duration;
 import com.sun.btrace.annotations.Kind;
 import com.sun.btrace.annotations.Location;
 import com.sun.btrace.annotations.OnMethod;
+import com.sun.btrace.annotations.Return;
+import com.sun.btrace.annotations.OnEvent;
 import com.sun.btrace.annotations.Property;
 
 /**
@@ -155,6 +158,21 @@ public final class ParseCompileAgent {
 						BTraceUtils.Strings.concat("parse #",
 								BTraceUtils.str(pCounter++)), ":\t"),
 						BTraceUtils.str(durInNS)), " us"));
+	}
+
+   /**
+	 * <p>
+	 * Tries to get LSA length.
+	 * </p>
+	 * 
+	 * @param retVal
+	 *            Return value of the method
+	 */
+	@OnMethod(
+			clazz = "it.apice.sapere.api.space.core.impl.CompiledLSAImpl", 
+			method = "toString", location = @Location(Kind.RETURN))
+	public static void onToString(@Return final AnyType retVal) {
+        BTraceUtils.println(BTraceUtils.strlen(retVal.toString()));
 	}
 	
 	/**

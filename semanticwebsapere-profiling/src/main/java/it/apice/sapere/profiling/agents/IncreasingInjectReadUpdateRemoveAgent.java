@@ -1,5 +1,6 @@
 package it.apice.sapere.profiling.agents;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
@@ -55,6 +56,9 @@ public class IncreasingInjectReadUpdateRemoveAgent implements
 		for (LSA lsa : Utils.parseInfo(services.getLSAParser(), source)) {
 			final CompiledLSA cLsa = services.getLSACompiler().compile(lsa);
 			cLsas.add(cLsa);
+
+			cLsa.toString(RDFFormat.RDF_XML);
+
 
 			services.getLSAspace().inject(cLsa);
 			services.getLSAspace().read(cLsa.getLSAid());

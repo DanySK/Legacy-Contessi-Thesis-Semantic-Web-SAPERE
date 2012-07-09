@@ -1,5 +1,6 @@
 package it.apice.sapere.profiling.agents;
 
+import it.apice.sapere.api.RDFFormat;
 import it.apice.sapere.api.lsas.LSA;
 import it.apice.sapere.api.node.NodeServices;
 import it.apice.sapere.api.node.agents.SAPEREAgent;
@@ -47,12 +48,15 @@ public class InjectReadUpdateRemoveAgent implements SAPERESysAgentSpec {
 	public void behaviour(final NodeServices services, final LogUtils out,
 			final SAPEREAgent me) throws Exception {
 		out.log(String.format(
-				"Inject-Read profiling with data from \"%s\"..", source));
+				"Inject-Read-Update profiling with data from \"%s\"..", 
+				source));
 
 		final List<CompiledLSA> cLsas = new LinkedList<CompiledLSA>();
 		for (LSA lsa : Utils.parseInfo(services.getLSAParser(), source)) {
 			final CompiledLSA cLsa = services.getLSACompiler().compile(lsa);
 			cLsas.add(cLsa);
+			
+			cLsa.toString(RDFFormat.RDF_XML);
 
 			services.getLSAspace().inject(cLsa);
 			services.getLSAspace().read(cLsa.getLSAid());

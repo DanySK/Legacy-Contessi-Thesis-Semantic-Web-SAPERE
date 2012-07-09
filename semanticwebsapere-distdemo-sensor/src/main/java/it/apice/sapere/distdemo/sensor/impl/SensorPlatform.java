@@ -17,7 +17,7 @@ import it.apice.sapere.distdemo.sensor.DiffusionEcolaw;
 public class SensorPlatform {
 
 	/** Number of sensor to be created. */
-	private final int sensorsCount;
+	private final long sensingPeriod;
 
 	/** Reference to reaction manager. */
 	private final transient ReactionManager _manager;
@@ -39,12 +39,12 @@ public class SensorPlatform {
 	 *            Reference to Agents Factory
 	 * @param eCompiler
 	 *            Reference to Eco-law Compiler
-	 * @param numSensors
-	 *            Number of platform's sensors
+	 * @param period
+	 *            Period between temperature sensing
 	 */
 	public SensorPlatform(final ReactionManager manager,
 			final SAPEREAgentsFactory aFactory, final EcolawCompiler eCompiler,
-			final int numSensors) {
+			final long period) {
 		if (manager == null) {
 			throw new IllegalArgumentException("Invalid manager provided");
 		}
@@ -59,10 +59,10 @@ public class SensorPlatform {
 					"Invalid eco-law compiler provided");
 		}
 
-		if (numSensors < 1) {
-			sensorsCount = 1;
+		if (period < 0) {
+			sensingPeriod = 1000L;
 		} else {
-			sensorsCount = numSensors;
+			sensingPeriod = period;
 		}
 
 		_manager = manager;
@@ -92,25 +92,28 @@ public class SensorPlatform {
 	 *             Cannot spawn Agents
 	 */
 	private void runAgents() throws SAPEREException {
-		long waitTime = 2500;
-		for (int counter = 0; counter < sensorsCount; counter++) {
-			TempSensor spec = null;
-			if (sensorsCount == 1) {
-				spec = new TempSensor(0.1, 2, 0);
-			} else {
-				spec = new TempSensor(0.0, 1, counter);
-			}
+		// long waitTime = 2500;
+		// for (int counter = 0; counter < sensingPeriod; counter++) {
+		// TempSensor spec = null;
+		// if (sensingPeriod == 1) {
+		// spec = new TempSensor(0.1, 2, 0);
+		// } else {
+		// spec = new TempSensor(0.0, 1, counter);
+		// }
+		//
+		// _factory.createAgent("temp_sensor" + counter, spec).spawn();
+		//
+		// try {
+		// Thread.sleep(waitTime);
+		// } catch (InterruptedException ex) {
+		// assert ex != null;
+		// }
+		//
+		// waitTime /= 2;
+		// }
 
-			_factory.createAgent("temp_sensor" + counter, spec).spawn();
-			
-			try {
-				Thread.sleep(waitTime);
-			} catch (InterruptedException ex) {
-				assert ex != null;
-			}
-
-			waitTime /= 2;
-		}
+		_factory.createAgent("temp_sensor" + sensingPeriod,
+				new TempSensor(1.0e3 / sensingPeriod, 0.0, 1, 0)).spawn();
 	}
 
 	/**

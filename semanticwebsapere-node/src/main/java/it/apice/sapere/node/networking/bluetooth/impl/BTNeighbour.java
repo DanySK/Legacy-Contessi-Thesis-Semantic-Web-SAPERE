@@ -12,6 +12,7 @@ import it.apice.sapere.node.networking.impl.NodeMessage;
  * @author Michele Morgagni
  * 
  */
+@Deprecated
 public class BTNeighbour implements Neighbour {
 
 	/** Reference to BT Manager. */

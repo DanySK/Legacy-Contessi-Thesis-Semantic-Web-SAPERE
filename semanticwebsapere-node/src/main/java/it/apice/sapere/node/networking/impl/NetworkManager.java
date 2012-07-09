@@ -9,6 +9,7 @@ import it.apice.api.node.logging.impl.LoggerFactoryImpl;
  * @author Michele Morgagni
  * 
  */
+@Deprecated
 public final class NetworkManager {
 
 	/** Table of all neighbours. */

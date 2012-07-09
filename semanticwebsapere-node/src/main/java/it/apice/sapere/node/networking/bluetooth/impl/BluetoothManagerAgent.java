@@ -45,6 +45,7 @@ import javax.microedition.io.StreamConnectionNotifier;
  * @author Paolo Contessi
  * 
  */
+@Deprecated
 public final class BluetoothManagerAgent extends AbstractSystemAgent {
 
 	/** Prefix for Synthetic Properties. */

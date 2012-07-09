@@ -1,5 +1,6 @@
 package com.sun.btrace.scripts;
 
+import com.sun.btrace.AnyType;
 import com.sun.btrace.BTraceUtils;
 import com.sun.btrace.aggregation.Aggregation;
 import com.sun.btrace.aggregation.AggregationFunction;
@@ -8,6 +9,8 @@ import com.sun.btrace.annotations.BTrace;
 import com.sun.btrace.annotations.Duration;
 import com.sun.btrace.annotations.Kind;
 import com.sun.btrace.annotations.Location;
+import com.sun.btrace.annotations.Return;
+import com.sun.btrace.annotations.OnEvent;
 import com.sun.btrace.annotations.OnMethod;
 import com.sun.btrace.annotations.Property;
 
@@ -127,11 +130,14 @@ public final class XInjectReadRemoveAgent {
 	 * 
 	 * @param duration
 	 *            Duration of method execution
+	 * @param clsa
+	 * 			  Input Compiled LSA
 	 */
 	@OnMethod(
 		clazz = "it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl", 
 		method = "inject", location = @Location(Kind.RETURN))
-	public static void onInject(@Duration final long duration) {
+	public static void onInject(@Duration final long duration, 
+			final AnyType clsa) {
 		// Convert nanos to milliseconds
 		final long durInNS = duration / 1000;
 
@@ -149,11 +155,13 @@ public final class XInjectReadRemoveAgent {
 				BTraceUtils.str(maxOpDur.getValueForKey(injectKey)), " us");
 
 		// Print duration on console
-		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
+		BTraceUtils.println(BTraceUtils.concat(
+				BTraceUtils.Strings.concat(BTraceUtils.Strings
 				.concat(BTraceUtils.Strings.concat(
 						BTraceUtils.Strings.concat("inject #",
 								BTraceUtils.str(iCounter++)), ":\t"),
-						BTraceUtils.str(durInNS)), " ns"));
+						BTraceUtils.str(durInNS)), " us:"), 
+						BTraceUtils.str(BTraceUtils.strlen(clsa.toString()))));
 	}
 
 	/**
@@ -235,11 +243,14 @@ public final class XInjectReadRemoveAgent {
 	 * 
 	 * @param duration
 	 *            Duration of method execution
+	 * @param clsa 
+	 * 			  Input Compiled LSA
 	 */
 	@OnMethod(
 		clazz = "it.apice.sapere.api.space.core.impl.AbstractLSAspaceCoreImpl", 
 		method = "remove", location = @Location(Kind.RETURN))
-	public static void onRemove(@Duration final long duration) {
+	public static void onRemove(@Duration final long duration, 
+			final AnyType clsa) {
 		// Convert nanos to milliseconds
 		final long durInNS = duration / 1000;
 
@@ -257,11 +268,31 @@ public final class XInjectReadRemoveAgent {
 				BTraceUtils.str(maxOpDur.getValueForKey(removeKey)), " us");
 
 		// Print duration on console
-		BTraceUtils.println(BTraceUtils.Strings.concat(BTraceUtils.Strings
+		BTraceUtils.println(BTraceUtils.concat(
+				BTraceUtils.Strings.concat(BTraceUtils.Strings
 						.concat(BTraceUtils.Strings.concat(
 								BTraceUtils.Strings.concat("remove #",
 										BTraceUtils.str(rmCounter++)), ":\t"),
-								BTraceUtils.str(durInNS)), " us"));
+						BTraceUtils.str(durInNS)), " us:"), BTraceUtils.str(
+								BTraceUtils.strlen(clsa.toString()))));
+	}
+	
+	/**
+	 * <p>
+	 * Tries to get LSA length.
+	 * </p>
+	 * 
+	 * @param retVal
+	 *            Return value of the method
+	 */
+	//@OnMethod(
+	//		clazz = "it.apice.sapere.api.space.core.impl.CompiledLSAImpl", 
+	//		method = "toString", location = @Location(Kind.RETURN))
+	public static void onToString(@Return final AnyType retVal) {
+        BTraceUtils.println(
+            BTraceUtils.concat(
+                BTraceUtils.concat(BTraceUtils.str(iCounter), ":"),
+                BTraceUtils.str(BTraceUtils.strlen(retVal.toString()))));
 	}
 	
 	/**
